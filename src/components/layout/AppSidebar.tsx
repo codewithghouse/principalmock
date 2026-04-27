@@ -28,31 +28,78 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Full principal menu
-const PRINCIPAL_MENU = [
-  { title: "Dashboard",              icon: LayoutDashboard, path: "/" },
-  { title: "Students",               icon: Users,           path: "/students" },
-  { title: "Student Intelligence",   icon: Brain,           path: "/student-intelligence" },
-  { title: "Risk Students",          icon: AlertTriangle,   path: "/risk-students", badge: true },
-  { title: "Classes & Sections",     icon: Monitor,         path: "/classes" },
-  { title: "Teachers",               icon: GraduationCap,   path: "/teachers" },
-  { title: "Academics",              icon: BookOpen,        path: "/academics" },
-  { title: "Syllabus",               icon: Library,         path: "/syllabus" },
-  { title: "Attendance",             icon: CalendarCheck,   path: "/attendance" },
-  { title: "Discipline & Incidents", icon: ShieldAlert,     path: "/discipline" },
-  { title: "Parent Communication",   icon: MessageSquare,   path: "/parent-communication" },
-  { title: "Teacher Notes",          icon: MessageCircle,   path: "/teacher-notes" },
-  { title: "Exams & Results",        icon: FileText,        path: "/exams" },
-  { title: "Assignments & Marks",    icon: ClipboardList,   path: "/assignments" },
-  { title: "Teacher Performance",    icon: TrendingUp,      path: "/teacher-performance" },
-  { title: "Teacher Leaderboard",    icon: Trophy,          path: "/teacher-leaderboard" },
-  { title: "Principal Leaderboards", icon: Award,           path: "/principal-leaderboards" },
-  { title: "Fee Structure",          icon: DollarSign,      path: "/fee-structure" },
-  { title: "Exam Structure",         icon: Award,           path: "/exam-structure" },
-  { title: "Timetable Setup",        icon: Clock,           path: "/timetable" },
-  { title: "Staff Access",           icon: ShieldCheck,     path: "/access-requests" },
-  { title: "Reports",                icon: BarChart3,       path: "/reports" },
-  { title: "Settings",               icon: Settings,        path: "/settings" },
+type PrincipalNavItem = { title: string; icon: any; path: string; badge?: boolean };
+type PrincipalNavGroup = { label: string; items: PrincipalNavItem[] };
+
+const PRINCIPAL_GROUPS: PrincipalNavGroup[] = [
+  {
+    label: "Overview",
+    items: [
+      { title: "Dashboard", icon: LayoutDashboard, path: "/" },
+    ],
+  },
+  {
+    label: "Students",
+    items: [
+      { title: "Students",             icon: Users,         path: "/students" },
+      { title: "Student Intelligence", icon: Brain,         path: "/student-intelligence" },
+      { title: "Risk Students",        icon: AlertTriangle, path: "/risk-students", badge: true },
+    ],
+  },
+  {
+    label: "Academics",
+    items: [
+      { title: "Classes & Sections", icon: Monitor,       path: "/classes" },
+      { title: "Teachers",           icon: GraduationCap, path: "/teachers" },
+      { title: "Academics",          icon: BookOpen,      path: "/academics" },
+      { title: "Syllabus",           icon: Library,       path: "/syllabus" },
+    ],
+  },
+  {
+    label: "Operations",
+    items: [
+      { title: "Attendance",             icon: CalendarCheck, path: "/attendance" },
+      { title: "Discipline & Incidents", icon: ShieldAlert,   path: "/discipline" },
+    ],
+  },
+  {
+    label: "Communication",
+    items: [
+      { title: "Parent Communication", icon: MessageSquare, path: "/parent-communication" },
+      { title: "Teacher Notes",        icon: MessageCircle, path: "/teacher-notes" },
+    ],
+  },
+  {
+    label: "Assessments",
+    items: [
+      { title: "Exams & Results",     icon: FileText,      path: "/exams" },
+      { title: "Assignments & Marks", icon: ClipboardList, path: "/assignments" },
+    ],
+  },
+  {
+    label: "Performance",
+    items: [
+      { title: "Teacher Performance",    icon: TrendingUp, path: "/teacher-performance" },
+      { title: "Teacher Leaderboard",    icon: Trophy,     path: "/teacher-leaderboard" },
+      { title: "Principal Leaderboards", icon: Award,      path: "/principal-leaderboards" },
+    ],
+  },
+  {
+    label: "Configuration",
+    items: [
+      { title: "Fee Structure",   icon: DollarSign, path: "/fee-structure" },
+      { title: "Exam Structure",  icon: Award,      path: "/exam-structure" },
+      { title: "Timetable Setup", icon: Clock,      path: "/timetable" },
+    ],
+  },
+  {
+    label: "Admin",
+    items: [
+      { title: "Staff Access", icon: ShieldCheck, path: "/access-requests" },
+      { title: "Reports",      icon: BarChart3,   path: "/reports" },
+      { title: "Settings",     icon: Settings,    path: "/settings" },
+    ],
+  },
 ];
 
 /* DEO menu = filtered subset of PRINCIPAL_MENU.
@@ -68,14 +115,15 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
   const location = useLocation();
   const { logout, userData } = useAuth();
 
-  const isDeo      = userData?.role === "data_entry";
-  const menuItems  = isDeo
-    // DEO sees only pages the principal has allowed — filtered from full PRINCIPAL_MENU
-    // so any principal-assigned page appears with proper icon & title.
-    ? PRINCIPAL_MENU.filter(item =>
-        userData?.allowedPages?.includes(item.path)
-      )
-    : PRINCIPAL_MENU;
+  const isDeo = userData?.role === "data_entry";
+  const visibleGroups: PrincipalNavGroup[] = isDeo
+    ? PRINCIPAL_GROUPS.map(group => ({
+        ...group,
+        items: group.items.filter(item =>
+          userData?.allowedPages?.includes(item.path)
+        ),
+      })).filter(group => group.items.length > 0)
+    : PRINCIPAL_GROUPS;
 
   return (
     <aside className="w-[calc(100%-10px)] h-[calc(100%-20px)] mt-[10px] mb-[10px] ml-[10px] bg-card flex flex-col shrink-0 overflow-y-auto rounded-2xl shadow-[0_8px_28px_rgba(15,23,42,0.18)] md:shadow-[0_8px_28px_rgba(15,23,42,0.08)]">
@@ -92,29 +140,37 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
         )}
       </div>
 
-      <nav className="flex-1 px-3 py-4 space-y-1">
-        {menuItems.map((item) => {
-          const isActive = location.pathname === item.path;
-          return (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={onClose}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
-                isActive
-                  ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/10 scale-[1.02]"
-                  : "text-slate-500 hover:bg-slate-50 hover:text-[#1e3a8a]"
-              }`}
-            >
-              <item.icon className={`w-4.5 h-4.5 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`} />
-              <span className="flex-1">{item.title}</span>
-              {/* Staff Access pending badge */}
-              {item.path === "/access-requests" && !isActive && (
-                <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-amber-500 text-white">!</span>
-              )}
-            </NavLink>
-          );
-        })}
+      <nav className="flex-1 px-3 py-4">
+        {visibleGroups.map((group, idx) => (
+          <div key={group.label} className={idx === 0 ? "" : "mt-5"}>
+            <div className="px-3 pb-2 text-[10px] font-black text-slate-400 uppercase tracking-[0.18em]">
+              {group.label}
+            </div>
+            <div className="space-y-1">
+              {group.items.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <NavLink
+                    key={item.path}
+                    to={item.path}
+                    onClick={onClose}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${
+                      isActive
+                        ? "bg-[#1e3a8a] text-white shadow-lg shadow-blue-900/10 scale-[1.02]"
+                        : "text-slate-500 hover:bg-slate-50 hover:text-[#1e3a8a]"
+                    }`}
+                  >
+                    <item.icon className={`w-4.5 h-4.5 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`} />
+                    <span className="flex-1">{item.title}</span>
+                    {item.path === "/access-requests" && !isActive && (
+                      <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-amber-500 text-white">!</span>
+                    )}
+                  </NavLink>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
 
       {/* DEO info panel */}
