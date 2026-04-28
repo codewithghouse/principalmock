@@ -829,7 +829,7 @@ const Students = () => {
                   <FileSpreadsheet className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-semibold text-white">Bulk Student Upload</h2>
+                  <h2 className="text-sm font-normal text-white">Bulk Student Upload</h2>
                   <p className="text-xs text-emerald-200">Upload Excel / CSV to enroll multiple students</p>
                 </div>
               </div>
@@ -844,7 +844,7 @@ const Students = () => {
               <div className="border-2 border-dashed border-emerald-200 rounded-2xl p-6 text-center bg-emerald-50/40 hover:bg-emerald-50 transition-colors cursor-pointer"
                 onClick={() => bulkFileRef.current?.click()}>
                 <Upload className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
-                <p className="text-xs font-semibold text-emerald-700 uppercase tracking-widest">Click to select Excel / CSV file</p>
+                <p className="text-xs font-normal text-emerald-700 uppercase tracking-widest">Click to select Excel / CSV file</p>
                 <p className="text-[12px] text-slate-400 mt-1">Any column headers — system auto-detects & lets you re-map below</p>
                 <input
                   ref={bulkFileRef}
@@ -857,7 +857,7 @@ const Students = () => {
 
               {/* Template download */}
               <button onClick={downloadTemplate}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-emerald-200 text-xs font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors">
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-emerald-200 text-xs font-normal text-emerald-600 hover:bg-emerald-50 transition-colors">
                 <Download className="w-4 h-4" /> Download Default Template
               </button>
 
@@ -866,14 +866,14 @@ const Students = () => {
                 <div className="rounded-2xl border border-slate-100 bg-slate-50/40 p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest">Column Mapping</p>
+                      <p className="text-[12px] font-normal text-slate-500 uppercase tracking-widest">Column Mapping</p>
                       <p className="text-[12px] text-slate-400 mt-1">
                         {bulkHeaders.length} columns detected · auto-matched · adjust if anything looks off
                       </p>
                     </div>
                     <button
                       onClick={() => setBulkMapping(detectColumns(bulkHeaders))}
-                      className="text-[12px] font-semibold text-emerald-700 hover:text-emerald-800 uppercase tracking-wider px-2 py-1 rounded-md hover:bg-emerald-100 transition-colors">
+                      className="text-[12px] font-normal text-emerald-700 hover:text-emerald-800 uppercase tracking-wider px-2 py-1 rounded-md hover:bg-emerald-100 transition-colors">
                       Auto-match
                     </button>
                   </div>
@@ -884,13 +884,13 @@ const Students = () => {
                       const ok = value !== "";
                       return (
                         <div key={field} className="flex items-center gap-2">
-                          <label className="text-[12px] font-semibold text-slate-600 uppercase tracking-wider w-[88px] shrink-0">
+                          <label className="text-[12px] font-normal text-slate-600 uppercase tracking-wider w-[88px] shrink-0">
                             {cfg.label}{cfg.required && <span className="text-rose-500"> *</span>}
                           </label>
                           <select
                             value={value}
                             onChange={e => setBulkMapping(prev => ({ ...prev, [field]: e.target.value }))}
-                            className={`flex-1 text-xs font-semibold rounded-lg border px-2 py-1.5 bg-white outline-none transition-colors ${
+                            className={`flex-1 text-xs font-normal rounded-lg border px-2 py-1.5 bg-white outline-none transition-colors ${
                               cfg.required && !ok
                                 ? "border-rose-300 text-rose-600 focus:border-rose-400"
                                 : ok
@@ -907,7 +907,7 @@ const Students = () => {
                     })}
                   </div>
                   {(!bulkMapping.name || !bulkMapping.email) && (
-                    <p className="text-[12px] font-semibold text-rose-600 mt-3">
+                    <p className="text-[12px] font-normal text-rose-600 mt-3">
                       ⚠ Both <strong>Name</strong> and <strong>Email</strong> must be mapped before uploading.
                     </p>
                   )}
@@ -918,8 +918,8 @@ const Students = () => {
               {bulkRows.length > 0 && (
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest">{bulkRows.length} rows detected</p>
-                    <div className="flex gap-2 text-[12px] font-semibold uppercase">
+                    <p className="text-[12px] font-normal text-slate-500 uppercase tracking-widest">{bulkRows.length} rows detected</p>
+                    <div className="flex gap-2 text-[12px] font-normal uppercase">
                       <span className="text-slate-400">{bulkRows.filter(r => r._status === "pending").length} pending</span>
                       <span className="text-emerald-600">{bulkRows.filter(r => r._status === "success").length} done</span>
                       <span className="text-amber-500">{bulkRows.filter(r => r._status === "duplicate").length} dup</span>
@@ -930,23 +930,23 @@ const Students = () => {
                     <table className="w-full text-xs">
                       <thead>
                         <tr className="bg-slate-50 text-left">
-                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Name</th>
-                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Email</th>
-                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Class</th>
-                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase text-center">Status</th>
+                          <th className="px-3 py-2 text-[12px] font-normal text-slate-400 uppercase">Name</th>
+                          <th className="px-3 py-2 text-[12px] font-normal text-slate-400 uppercase">Email</th>
+                          <th className="px-3 py-2 text-[12px] font-normal text-slate-400 uppercase">Class</th>
+                          <th className="px-3 py-2 text-[12px] font-normal text-slate-400 uppercase text-center">Status</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
                         {bulkRows.slice(0, 50).map((r, i) => (
                           <tr key={i} className="hover:bg-slate-50/50">
-                            <td className="px-3 py-2 font-semibold text-slate-700 truncate max-w-[120px]">{r.name}</td>
+                            <td className="px-3 py-2 font-normal text-slate-700 truncate max-w-[120px]">{r.name}</td>
                             <td className="px-3 py-2 text-slate-400 truncate max-w-[160px]">{r.email}</td>
                             <td className="px-3 py-2 text-slate-500">{r.class || "—"}</td>
                             <td className="px-3 py-2 text-center">
-                              {r._status === "pending"   && <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[12px] font-semibold">PENDING</span>}
-                              {r._status === "success"   && <span className="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-600 text-[12px] font-semibold">DONE</span>}
-                              {r._status === "duplicate" && <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-600 text-[12px] font-semibold">DUP</span>}
-                              {r._status === "error"     && <span className="px-2 py-0.5 rounded-md bg-rose-100 text-rose-600 text-[12px] font-semibold" title={r._error}>ERR</span>}
+                              {r._status === "pending"   && <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[12px] font-normal">PENDING</span>}
+                              {r._status === "success"   && <span className="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-600 text-[12px] font-normal">DONE</span>}
+                              {r._status === "duplicate" && <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-600 text-[12px] font-normal">DUP</span>}
+                              {r._status === "error"     && <span className="px-2 py-0.5 rounded-md bg-rose-100 text-rose-600 text-[12px] font-normal" title={r._error}>ERR</span>}
                             </td>
                           </tr>
                         ))}
@@ -965,7 +965,7 @@ const Students = () => {
                     setShowBulkModal(false);
                     setBulkRows([]); setBulkRawRows([]); setBulkHeaders([]); setBulkMapping(EMPTY_MAPPING);
                   }}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-normal text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button
@@ -975,7 +975,7 @@ const Students = () => {
                     !bulkMapping.name || !bulkMapping.email ||
                     bulkRows.filter(r => r._status === "pending").length === 0
                   }
-                  className="flex-1 h-11 rounded-xl bg-emerald-700 text-white text-xs font-semibold hover:bg-emerald-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-emerald-700 text-white text-xs font-normal hover:bg-emerald-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                   {bulkUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
                   {bulkUploading ? "Uploading..." : `Upload ${bulkRows.filter(r => r._status === "pending").length} Students`}
                 </button>
@@ -998,7 +998,7 @@ const Students = () => {
                   <Archive className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-semibold text-white">Archive Academic Year</h2>
+                  <h2 className="text-sm font-normal text-white">Archive Academic Year</h2>
                   <p className="text-xs text-amber-200">Snapshot all students to archive collection</p>
                 </div>
               </div>
@@ -1011,32 +1011,32 @@ const Students = () => {
 
             <div className="p-6 space-y-5">
               <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-                <p className="text-xs font-semibold text-amber-800">
+                <p className="text-xs font-normal text-amber-800">
                   This will copy all <strong>{studentsData.length} students</strong> into an archive collection under the selected year.
                   Original records will NOT be deleted — this is a snapshot only.
                 </p>
               </div>
 
               <div>
-                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2 block">Archive Year</label>
+                <label className="text-[12px] font-normal text-slate-400 uppercase tracking-widest mb-2 block">Archive Year</label>
                 <input
                   type="number"
                   value={archiveYear}
                   onChange={e => setArchiveYear(e.target.value)}
                   min="2020"
                   max="2040"
-                  className="w-full h-12 px-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 outline-none focus:border-amber-400 transition-all"
+                  className="w-full h-12 px-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-normal text-slate-700 outline-none focus:border-amber-400 transition-all"
                 />
                 <p className="text-[12px] text-slate-400 mt-1">Stored at: students_archive/{archiveYear}/students/...</p>
               </div>
 
               <div className="flex gap-3">
                 <button onClick={() => setShowArchiveModal(false)} disabled={archiving}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-40">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-normal text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-40">
                   Cancel
                 </button>
                 <button onClick={handleArchive} disabled={archiving}
-                  className="flex-1 h-11 rounded-xl bg-amber-600 text-white text-xs font-semibold hover:bg-amber-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-amber-600 text-white text-xs font-normal hover:bg-amber-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
                   {archiving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                   {archiving ? "Archiving..." : "Archive Now"}
                 </button>
@@ -1050,43 +1050,43 @@ const Students = () => {
       <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[480px] rounded-[2rem] p-0 overflow-hidden bg-white">
           <div className="bg-[#1D1D1F] px-6 sm:px-10 py-6 sm:py-8">
-            <DialogTitle className="text-xl sm:text-2xl font-semibold text-white tracking-tight flex items-center gap-3">
+            <DialogTitle className="text-xl sm:text-2xl font-normal text-white tracking-tight flex items-center gap-3">
               <GraduationCap className="w-6 h-6" /> Add New Scholar
             </DialogTitle>
-            <DialogDescription className="text-blue-200/60 font-semibold uppercase text-[12px] tracking-widest mt-1">
+            <DialogDescription className="text-blue-200/60 font-normal uppercase text-[12px] tracking-widest mt-1">
               Institutional Enrollment Registry
             </DialogDescription>
           </div>
 
           <div className="p-6 sm:p-10 space-y-5">
             <div className="space-y-2">
-              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Full Name *</Label>
+              <Label className="text-[12px] font-normal uppercase tracking-widest text-slate-500 ml-1">Full Name *</Label>
               <Input
                 placeholder="e.g. Rahul Sharma"
                 value={newStudent.name}
                 onChange={e => setNewStudent({ ...newStudent, name: e.target.value })}
-                className="rounded-xl border-slate-200 font-semibold py-6 px-5 focus:ring-[#1D1D1F]"
+                className="rounded-xl border-slate-200 font-normal py-6 px-5 focus:ring-[#1D1D1F]"
               />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Email</Label>
+              <Label className="text-[12px] font-normal uppercase tracking-widest text-slate-500 ml-1">Email</Label>
               <Input
                 type="email"
                 placeholder="student@example.com"
                 value={newStudent.email}
                 onChange={e => setNewStudent({ ...newStudent, email: e.target.value })}
-                className="rounded-xl border-slate-200 font-semibold py-6 px-5"
+                className="rounded-xl border-slate-200 font-normal py-6 px-5"
               />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Class *</Label>
+              <Label className="text-[12px] font-normal uppercase tracking-widest text-slate-500 ml-1">Class *</Label>
               {classes.length > 0 ? (
                 <select
                   value={newStudent.classId}
                   onChange={e => setNewStudent({ ...newStudent, classId: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1D1D1F] appearance-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm font-normal text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1D1D1F] appearance-none"
                 >
                   <option value="">Select a class...</option>
                   {classes.map(c => (
@@ -1096,7 +1096,7 @@ const Students = () => {
                   ))}
                 </select>
               ) : (
-                <div className="w-full bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm font-semibold text-amber-700">
+                <div className="w-full bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm font-normal text-amber-700">
                   No classes found. Ask teacher to create classes first.
                 </div>
               )}
@@ -1106,14 +1106,14 @@ const Students = () => {
               <button
                 onClick={handleAddStudent}
                 disabled={saving || !newStudent.name || !newStudent.classId}
-                className="flex-1 bg-[#1D1D1F] text-white px-8 py-4 rounded-xl text-[12px] font-semibold uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
+                className="flex-1 bg-[#1D1D1F] text-white px-8 py-4 rounded-xl text-[12px] font-normal uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />}
                 Add Scholar
               </button>
               <button
                 onClick={() => { setIsAddModalOpen(false); setNewStudent({ name: "", email: "", classId: "" }); }}
-                className="px-8 py-4 rounded-xl text-[12px] font-semibold uppercase tracking-widest text-slate-500 bg-slate-50 hover:bg-slate-100 transition-all"
+                className="px-8 py-4 rounded-xl text-[12px] font-normal uppercase tracking-widest text-slate-500 bg-slate-50 hover:bg-slate-100 transition-all"
               >
                 Cancel
               </button>

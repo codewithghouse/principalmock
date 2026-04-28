@@ -184,7 +184,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
     fontFamily: "inherit",
     fontSize: 12,
     color: T1,
-    fontWeight: 600,
+    fontWeight: 400,
     outline: "none",
     letterSpacing: "-0.1px",
   };
@@ -219,7 +219,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
   if (isMobile) {
     return (
       <div className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
         <div className="px-5 pt-4 flex items-center gap-[12px]">
           <button onClick={onBack}
@@ -227,13 +227,13 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
             style={{ border: "0.5px solid rgba(10,132,255,0.12)", boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
             <ChevronLeft className="w-4 h-4" style={{ color: B1 }} strokeWidth={2.3} />
           </button>
-          <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Generate Report</div>
+          <div className="text-[14px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Generate Report</div>
         </div>
 
-        <div className="flex items-center gap-[8px] px-5 mt-1 text-[12px] font-medium" style={{ color: T4 }}>
+        <div className="flex items-center gap-[8px] px-5 mt-1 text-[12px] font-normal" style={{ color: T4 }}>
           <button onClick={onBack} style={{ color: T3 }}>Reports</button>
           <span>›</span>
-          <strong style={{ color: T1, fontWeight: 600 }}>Generate</strong>
+          <strong style={{ color: T1, fontWeight: 400 }}>Generate</strong>
         </div>
 
         <div className="px-5 pt-[16px] flex items-start gap-3">
@@ -242,7 +242,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
             <Settings className="w-4 h-4 text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[22px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>{reportType}</div>
+            <div className="text-[22px] font-normal leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>{reportType}</div>
             <div className="text-[12px] mt-1" style={{ color: T3 }}>Configure parameters to generate the report</div>
           </div>
         </div>
@@ -257,44 +257,44 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
               style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
               <Settings className="w-[15px] h-[15px]" style={{ color: B1 }} strokeWidth={2.3} />
             </div>
-            <div className="text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Report Configuration</div>
+            <div className="text-[13px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Report Configuration</div>
           </div>
 
           <div className="space-y-3 relative z-10">
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Report Type</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Report Type</div>
               <select value={reportType} onChange={e => setReportType(e.target.value)} style={selectStyle}>
                 {REPORT_TYPES.map(t => <option key={t}>{t}</option>)}
               </select>
             </div>
 
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Date Range</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Date Range</div>
               <div className="grid grid-cols-[1fr_auto_1fr] gap-[8px] items-center">
                 <input type="date" value={dateFrom} onChange={e => setDateFrom(e.target.value)} style={inputStyle} />
-                <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-1" style={{ color: T4 }}>to</span>
+                <span className="text-[12px] font-normal uppercase tracking-[0.08em] px-1" style={{ color: T4 }}>to</span>
                 <input type="date" value={dateTo} onChange={e => setDateTo(e.target.value)} style={inputStyle} />
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-2">
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Grade</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Grade</div>
                 <input value={grade} onChange={e => setGrade(e.target.value)} placeholder="All" style={inputStyle} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Section</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Section</div>
                 <input value={section} onChange={e => setSection(e.target.value)} placeholder="All" style={inputStyle} />
               </div>
             </div>
 
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Subject (Optional)</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Subject (Optional)</div>
               <input value={subject} onChange={e => setSubject(e.target.value)} placeholder="e.g. Mathematics" style={inputStyle} />
             </div>
 
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Output Format</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Output Format</div>
               <div className="grid grid-cols-3 gap-[8px]">
                 {(["PDF", "Excel", "CSV"] as const).map(f => {
                   const active = format === f;
@@ -302,7 +302,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                   return (
                     <button key={f}
                       onClick={() => setFormat(f)}
-                      className="rounded-[12px] py-[12px] flex flex-col items-center gap-[4px] text-[12px] font-semibold active:scale-[0.95] transition-transform"
+                      className="rounded-[12px] py-[12px] flex flex-col items-center gap-[4px] text-[12px] font-normal active:scale-[0.95] transition-transform"
                       style={{
                         background: active ? t.bg : BG,
                         border: active ? `0.5px solid ${t.border}` : `0.5px solid rgba(10,132,255,0.14)`,
@@ -327,12 +327,12 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
         <div className="mx-5 mt-3 bg-white rounded-[20px] overflow-hidden"
           style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
           <div className="px-4 pt-[16px] pb-[12px]">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: T4 }}>Report Preview</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: T4 }}>Report Preview</div>
           </div>
           {loading ? (
             <div className="mx-4 mb-[16px] py-8 rounded-[14px] flex flex-col items-center gap-3" style={{ background: BG }}>
               <Loader2 className="w-8 h-8 animate-spin" style={{ color: B1 }} />
-              <p className="text-[12px] font-semibold tracking-[0.04em]" style={{ color: T4 }}>Loading school data…</p>
+              <p className="text-[12px] font-normal tracking-[0.04em]" style={{ color: T4 }}>Loading school data…</p>
             </div>
           ) : (
             <div className="mx-4 mb-[16px] rounded-[14px] overflow-hidden"
@@ -341,16 +341,16 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)" }}>
                 <div className="absolute -top-[32px] -right-[20px] w-[100px] h-[100px] rounded-full pointer-events-none"
                   style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
-                <div className="text-[14px] font-semibold text-white mb-[2px] relative z-10" style={{ letterSpacing: "-0.2px" }}>{reportType} Report</div>
-                <div className="text-[12px] font-semibold relative z-10" style={{ color: "rgba(255,255,255,0.60)", letterSpacing: "0.04em" }}>{monthLabel}</div>
+                <div className="text-[14px] font-normal text-white mb-[2px] relative z-10" style={{ letterSpacing: "-0.2px" }}>{reportType} Report</div>
+                <div className="text-[12px] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.60)", letterSpacing: "0.04em" }}>{monthLabel}</div>
               </div>
               {previewRows.map(row => (
                 <div key={row.label} className="flex items-center justify-between px-4 py-[12px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                   <div className="flex items-center gap-[8px]">
                     <row.Icon className="w-[13px] h-[13px]" style={{ color: T4 }} strokeWidth={2.3} />
-                    <span className="text-[12px] font-semibold" style={{ color: T3 }}>{row.label}</span>
+                    <span className="text-[12px] font-normal" style={{ color: T3 }}>{row.label}</span>
                   </div>
-                  <span className="text-[13px] font-semibold" style={{ color: row.danger ? RED : T1, letterSpacing: "-0.2px" }}>{row.val}</span>
+                  <span className="text-[13px] font-normal" style={{ color: row.danger ? RED : T1, letterSpacing: "-0.2px" }}>{row.val}</span>
                 </div>
               ))}
             </div>
@@ -364,13 +364,13 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
               style={{ background: VIOLET_S, border: `0.5px solid ${VIOLET_B}` }}>
               <Calendar className="w-[13px] h-[13px]" style={{ color: VIOLET }} strokeWidth={2.3} />
             </div>
-            <div className="text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Schedule Delivery</div>
+            <div className="text-[13px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Schedule Delivery</div>
           </div>
-          <div className="text-[12px] font-medium pl-[32px] mb-[16px]" style={{ color: T4 }}>Optional — auto-send this report on a schedule</div>
+          <div className="text-[12px] font-normal pl-[32px] mb-[16px]" style={{ color: T4 }}>Optional — auto-send this report on a schedule</div>
 
           <div className="space-y-3">
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Frequency</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Frequency</div>
               <select value={frequency} onChange={e => setFrequency(e.target.value)} style={selectStyle}>
                 <option value="">— Select —</option>
                 <option>Daily</option>
@@ -380,7 +380,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
               </select>
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Email To</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Email To</div>
               <input value={emailTo} onChange={e => setEmailTo(e.target.value)} placeholder="email@school.edu" style={inputStyle} />
             </div>
           </div>
@@ -388,7 +388,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
 
         <div className="mx-5 mt-3">
           <button onClick={handleGenerate} disabled={generateDisabled}
-            className="w-full h-12 rounded-[14px] flex items-center justify-center gap-2 text-[14px] font-semibold text-white relative overflow-hidden active:scale-[0.98] transition-transform disabled:opacity-50"
+            className="w-full h-12 rounded-[14px] flex items-center justify-center gap-2 text-[14px] font-normal text-white relative overflow-hidden active:scale-[0.98] transition-transform disabled:opacity-50"
             style={{
               background: generateDisabled ? "linear-gradient(135deg, #8899C5, #A5B2D0)" : `linear-gradient(135deg, ${B1}, ${B2})`,
               boxShadow: generateDisabled ? "0 4px 12px rgba(100,120,180,0.25)" : SH_BTN,
@@ -416,7 +416,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Eye className="w-[13px] h-[13px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>Report Snapshot</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>Report Snapshot</span>
             </div>
             <div className="grid grid-cols-3 gap-[1px] rounded-[14px] overflow-hidden relative z-10" style={{ background: "rgba(255,255,255,0.12)" }}>
               {[
@@ -425,8 +425,8 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 { val: stats.atRisk,        lbl: "At-Risk" },
               ].map(s => (
                 <div key={s.lbl} className="text-center py-3" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[20px] font-semibold leading-none mb-[4px]" style={{ color: "#fff", letterSpacing: "-0.5px" }}>{s.val}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{s.lbl}</div>
+                  <div className="text-[20px] font-normal leading-none mb-[4px]" style={{ color: "#fff", letterSpacing: "-0.5px" }}>{s.val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{s.lbl}</div>
                 </div>
               ))}
             </div>
@@ -443,12 +443,12 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
   // ═══════════════════════════════════════════════════════════════
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
         <div className="flex items-center gap-3">
           <button onClick={onBack}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${SEP}`, color: T3, boxShadow: SH }}>
             <ChevronLeft className="w-4 h-4" strokeWidth={2.3} />
             Back to Reports
@@ -459,13 +459,13 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
               <Settings className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
             </div>
             <div>
-              <div className="text-[24px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>{reportType}</div>
+              <div className="text-[24px] font-normal leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>{reportType}</div>
               <div className="text-[12px] mt-1" style={{ color: T3 }}>Configure parameters to generate the report</div>
             </div>
           </div>
         </div>
         <button onClick={handleGenerate} disabled={generateDisabled}
-          className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
+          className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
           style={{
             background: generateDisabled ? "linear-gradient(135deg, #8899C5, #A5B2D0)" : `linear-gradient(135deg, ${B1}, ${B2})`,
             boxShadow: generateDisabled ? "0 4px 12px rgba(100,120,180,0.25)" : SH_BTN,
@@ -489,39 +489,39 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
                 <Settings className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <h2 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Report Configuration</h2>
+              <h2 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Report Configuration</h2>
             </div>
 
             <div className="space-y-4 relative z-10">
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Report Type</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Report Type</div>
                 <select value={reportType} onChange={e => setReportType(e.target.value)} style={{ ...selectStyle, fontSize: 13, padding: "12px 14px", paddingRight: 34 }}>
                   {REPORT_TYPES.map(t => <option key={t}>{t}</option>)}
                 </select>
               </div>
 
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Date Range</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Date Range</div>
                 <div className="grid grid-cols-[1fr_auto_1fr] gap-[12px] items-center">
                   <input type="date" value={dateFrom} onChange={e => setDateFrom(e.target.value)} style={{ ...inputStyle, fontSize: 13, padding: "12px 14px" }} />
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: T4 }}>to</span>
+                  <span className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: T4 }}>to</span>
                   <input type="date" value={dateTo} onChange={e => setDateTo(e.target.value)} style={{ ...inputStyle, fontSize: 13, padding: "12px 14px" }} />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Grade</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Grade</div>
                   <input value={grade} onChange={e => setGrade(e.target.value)} placeholder="e.g. Grade 6 or All" style={{ ...inputStyle, fontSize: 13, padding: "12px 14px" }} />
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Section</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Section</div>
                   <input value={section} onChange={e => setSection(e.target.value)} placeholder="A or All" style={{ ...inputStyle, fontSize: 13, padding: "12px 14px" }} />
                 </div>
               </div>
 
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Subject (Optional)</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Subject (Optional)</div>
                 <input value={subject} onChange={e => setSubject(e.target.value)} placeholder="e.g. Mathematics" style={{ ...inputStyle, fontSize: 13, padding: "12px 14px" }} />
               </div>
             </div>
@@ -534,7 +534,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: "linear-gradient(135deg,#FFE3E8,#FFC0C8)", border: "0.5px solid rgba(255,59,48,0.22)" }}>
                 <FileText className="w-4 h-4" style={{ color: RED_D }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Output Format</h2>
+              <h2 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Output Format</h2>
             </div>
             <div className="grid grid-cols-3 gap-3">
               {(["PDF", "Excel", "CSV"] as const).map(f => {
@@ -543,7 +543,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 return (
                   <button key={f}
                     onClick={() => setFormat(f)}
-                    className="rounded-[12px] py-[16px] flex flex-col items-center gap-[8px] text-[12px] font-semibold transition-transform hover:-translate-y-0.5"
+                    className="rounded-[12px] py-[16px] flex flex-col items-center gap-[8px] text-[12px] font-normal transition-transform hover:-translate-y-0.5"
                     style={{
                       background: active ? t.bg : BG,
                       border: active ? `0.5px solid ${t.border}` : `0.5px solid rgba(10,132,255,0.14)`,
@@ -569,12 +569,12 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: VIOLET_S, border: `0.5px solid ${VIOLET_B}` }}>
                 <Calendar className="w-4 h-4" style={{ color: VIOLET }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Schedule Delivery</h2>
+              <h2 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Schedule Delivery</h2>
             </div>
-            <p className="text-[12px] font-medium pl-[46px] mb-4" style={{ color: T4 }}>Optional — auto-send this report on a schedule</p>
+            <p className="text-[12px] font-normal pl-[46px] mb-4" style={{ color: T4 }}>Optional — auto-send this report on a schedule</p>
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Frequency</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Frequency</div>
                 <select value={frequency} onChange={e => setFrequency(e.target.value)} style={{ ...selectStyle, fontSize: 13, padding: "12px 14px", paddingRight: 34 }}>
                   <option value="">— Select —</option>
                   <option>Daily</option>
@@ -584,7 +584,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 </select>
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Email To</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px]" style={{ color: T4 }}>Email To</div>
                 <div className="relative">
                   <Mail className="absolute left-[12px] top-1/2 -translate-y-1/2 w-[14px] h-[14px] pointer-events-none" style={{ color: T4 }} strokeWidth={2.3} />
                   <input value={emailTo} onChange={e => setEmailTo(e.target.value)} placeholder="email@school.edu"
@@ -604,14 +604,14 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                 style={{ background: VIOLET_S, border: `0.5px solid ${VIOLET_B}` }}>
                 <Eye className="w-4 h-4" style={{ color: VIOLET }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Report Preview</h2>
+              <h2 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Report Preview</h2>
             </div>
 
             <div className="p-6">
               {loading ? (
                 <div className="py-10 rounded-[14px] flex flex-col items-center gap-3" style={{ background: BG }}>
                   <Loader2 className="w-10 h-10 animate-spin" style={{ color: B1 }} />
-                  <p className="text-[12px] font-semibold tracking-[0.04em]" style={{ color: T4 }}>Loading school data…</p>
+                  <p className="text-[12px] font-normal tracking-[0.04em]" style={{ color: T4 }}>Loading school data…</p>
                 </div>
               ) : (
                 <div className="rounded-[14px] overflow-hidden"
@@ -620,16 +620,16 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                     style={{ background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)" }}>
                     <div className="absolute -top-[32px] -right-[20px] w-[120px] h-[120px] rounded-full pointer-events-none"
                       style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
-                    <div className="text-[18px] font-semibold text-white mb-[4px] relative z-10" style={{ letterSpacing: "-0.3px" }}>{reportType} Report</div>
-                    <div className="text-[12px] font-semibold relative z-10" style={{ color: "rgba(255,255,255,0.60)", letterSpacing: "0.04em" }}>{monthLabel}</div>
+                    <div className="text-[18px] font-normal text-white mb-[4px] relative z-10" style={{ letterSpacing: "-0.3px" }}>{reportType} Report</div>
+                    <div className="text-[12px] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.60)", letterSpacing: "0.04em" }}>{monthLabel}</div>
                   </div>
                   {previewRows.map(row => (
                     <div key={row.label} className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                       <div className="flex items-center gap-2">
                         <row.Icon className="w-[15px] h-[15px]" style={{ color: T4 }} strokeWidth={2.3} />
-                        <span className="text-[13px] font-semibold" style={{ color: T3 }}>{row.label}</span>
+                        <span className="text-[13px] font-normal" style={{ color: T3 }}>{row.label}</span>
                       </div>
-                      <span className="text-[16px] font-semibold" style={{ color: row.danger ? RED : T1, letterSpacing: "-0.3px" }}>{row.val}</span>
+                      <span className="text-[16px] font-normal" style={{ color: row.danger ? RED : T1, letterSpacing: "-0.3px" }}>{row.val}</span>
                     </div>
                   ))}
                 </div>
@@ -638,7 +638,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
           </div>
 
           <button onClick={handleGenerate} disabled={generateDisabled}
-            className="w-full h-[54px] rounded-[14px] flex items-center justify-center gap-[8px] text-[14px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.01] disabled:opacity-50 disabled:hover:scale-100"
+            className="w-full h-[54px] rounded-[14px] flex items-center justify-center gap-[8px] text-[14px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.01] disabled:opacity-50 disabled:hover:scale-100"
             style={{
               background: generateDisabled ? "linear-gradient(135deg, #8899C5, #A5B2D0)" : `linear-gradient(135deg, ${B1}, ${B2})`,
               boxShadow: generateDisabled ? "0 4px 12px rgba(100,120,180,0.25)" : SH_BTN,
@@ -661,16 +661,16 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                   <Eye className="w-4 h-4 text-white" strokeWidth={2.4} />
                 </div>
-                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>Report Snapshot</span>
+                <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>Report Snapshot</span>
               </div>
               <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-                Based on current school data: <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.totalStudents} students</strong>, averaging <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.avgMarks}%</strong> marks and <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.avgAttendance}% attendance</strong>.
-                {stats.atRisk > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.atRisk} student{stats.atRisk === 1 ? "" : "s"}</strong> flagged at-risk.</>}
+                Based on current school data: <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.totalStudents} students</strong>, averaging <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.avgMarks}%</strong> marks and <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.avgAttendance}% attendance</strong>.
+                {stats.atRisk > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.atRisk} student{stats.atRisk === 1 ? "" : "s"}</strong> flagged at-risk.</>}
                 {" "}Report will publish to both teachers and parents on generate.
               </p>
               <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
                 <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: B4 }} />
-                <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-scoped to {userData?.schoolName || "your school"}</span>
+                <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-scoped to {userData?.schoolName || "your school"}</span>
               </div>
             </div>
           )}

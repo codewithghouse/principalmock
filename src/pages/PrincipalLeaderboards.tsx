@@ -28,7 +28,7 @@ import { getBranchInsight, getPrincipalInsight, LeaderboardInsight } from "@/lib
 // ─────────────────────────────────────────────────────────────
 // DESIGN TOKENS
 // ─────────────────────────────────────────────────────────────
-const FONT = "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif";
+const FONT = "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif";
 const T = {
   pageBg: "#F5F5F7", cardBg: "#FFFFFF",
   B1: "#0A84FF", B2: "#3395FF",
@@ -49,7 +49,7 @@ const T = {
 // SHARED ATOMS
 // ─────────────────────────────────────────────────────────────
 const Eyebrow: React.FC<{ children: React.ReactNode; color?: string }> = ({ children, color = T.T4 }) => (
-  <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "1.6px", color, margin: 0, textTransform: "uppercase", fontFamily: FONT }}>{children}</p>
+  <p style={{ fontSize: 9, fontWeight: 400, letterSpacing: "1.6px", color, margin: 0, textTransform: "uppercase", fontFamily: FONT }}>{children}</p>
 );
 
 const PoolBall: React.FC<{ rank: number; isMe?: boolean; size?: number }> = ({ rank, isMe = false, size = 40 }) => {
@@ -67,7 +67,7 @@ const PoolBall: React.FC<{ rank: number; isMe?: boolean; size?: number }> = ({ r
       width: size, height: size, borderRadius: "50%", flexShrink: 0,
       background: s.bg, boxShadow: s.shadow,
       display: "flex", alignItems: "center", justifyContent: "center",
-      fontSize: rank > 9 ? 11 : 13, fontWeight: 600, color: s.color, fontFamily: FONT,
+      fontSize: rank > 9 ? 11 : 13, fontWeight: 400, color: s.color, fontFamily: FONT,
       position: "relative",
     }}>
       {rank}
@@ -79,7 +79,7 @@ const PoolBall: React.FC<{ rank: number; isMe?: boolean; size?: number }> = ({ r
 };
 
 const EntityAvatar: React.FC<{ initials: string; bg: string; color: string; size?: number }> = ({ initials, bg, color, size = 36 }) => (
-  <div style={{ width: size, height: size, borderRadius: "50%", flexShrink: 0, background: bg, color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 600, fontFamily: FONT }}>
+  <div style={{ width: size, height: size, borderRadius: "50%", flexShrink: 0, background: bg, color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 11, fontWeight: 400, fontFamily: FONT }}>
     {initials}
   </div>
 );
@@ -88,7 +88,7 @@ const TrendIndicator: React.FC<{ change: number; trend: "up" | "down" | "same" }
   const isUp = trend === "up"; const isFlat = trend === "same";
   const color = isFlat ? T.T4 : isUp ? T.GREEN : T.RED;
   return (
-    <span style={{ fontSize: 10, fontWeight: 600, color, fontFamily: FONT }}>
+    <span style={{ fontSize: 10, fontWeight: 400, color, fontFamily: FONT }}>
       {isFlat ? "—" : isUp ? "▲" : "▼"} {isFlat ? "0.0" : Math.abs(change).toFixed(1)}
     </span>
   );
@@ -97,16 +97,16 @@ const TrendIndicator: React.FC<{ change: number; trend: "up" | "down" | "same" }
 const AIChip: React.FC<{ label?: string }> = ({ label = "Edullent AI" }) => (
   <div style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "4px 10px", borderRadius: 999, background: T.VIOLET_BG, border: `0.5px solid rgba(175,82,222,0.25)`, marginBottom: 10 }}>
     <span style={{ width: 5, height: 5, borderRadius: "50%", background: T.VIOLET, display: "inline-block" }} />
-    <span style={{ fontSize: 9, fontWeight: 600, color: T.VIOLET, letterSpacing: "0.8px", textTransform: "uppercase", fontFamily: FONT }}>{label}</span>
+    <span style={{ fontSize: 9, fontWeight: 400, color: T.VIOLET, letterSpacing: "0.8px", textTransform: "uppercase", fontFamily: FONT }}>{label}</span>
   </div>
 );
 
 const YouBadge: React.FC = () => (
-  <span style={{ fontSize: 9, fontWeight: 600, padding: "2px 7px", borderRadius: 4, background: T.B1, color: "#fff", textTransform: "uppercase", letterSpacing: "0.6px", fontFamily: FONT, marginLeft: 6 }}>You</span>
+  <span style={{ fontSize: 9, fontWeight: 400, padding: "2px 7px", borderRadius: 4, background: T.B1, color: "#fff", textTransform: "uppercase", letterSpacing: "0.6px", fontFamily: FONT, marginLeft: 6 }}>You</span>
 );
 
 const MyBranchBadge: React.FC = () => (
-  <span style={{ fontSize: 9, fontWeight: 600, padding: "2px 7px", borderRadius: 4, background: T.B1, color: "#fff", textTransform: "uppercase", letterSpacing: "0.6px", fontFamily: FONT, marginLeft: 6 }}>Your branch</span>
+  <span style={{ fontSize: 9, fontWeight: 400, padding: "2px 7px", borderRadius: 4, background: T.B1, color: "#fff", textTransform: "uppercase", letterSpacing: "0.6px", fontFamily: FONT, marginLeft: 6 }}>Your branch</span>
 );
 
 // ─────────────────────────────────────────────────────────────
@@ -170,24 +170,24 @@ const DetailPanel: React.FC<{ entity: DetailEntity; schoolId: string }> = ({ ent
         </div>
 
         {!loading && !err && insight?.isFallback && insight.fallbackReason && (
-          <div style={{ padding: "8px 12px", background: T.ORANGE_BG, border: `0.5px solid rgba(255,149,0,0.20)`, borderRadius: 10, color: T.ORANGE_TEXT, fontSize: 11, fontWeight: 600, fontFamily: FONT, marginBottom: 10 }}>
+          <div style={{ padding: "8px 12px", background: T.ORANGE_BG, border: `0.5px solid rgba(255,149,0,0.20)`, borderRadius: 10, color: T.ORANGE_TEXT, fontSize: 11, fontWeight: 400, fontFamily: FONT, marginBottom: 10 }}>
             {insight.fallbackReason}
           </div>
         )}
 
         {loading && (
-          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 0", color: T.T3, fontSize: 12, fontWeight: 600, fontFamily: FONT }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "10px 0", color: T.T3, fontSize: 12, fontWeight: 400, fontFamily: FONT }}>
             <Loader2 size={14} className="animate-spin" />
             Analysing performance signals…
           </div>
         )}
 
         {err && !loading && (
-          <div style={{ padding: "10px 12px", background: T.RED_BG, border: `0.5px solid rgba(255,59,48,0.20)`, borderRadius: 10, color: T.RED_TEXT, fontSize: 12, fontWeight: 600, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+          <div style={{ padding: "10px 12px", background: T.RED_BG, border: `0.5px solid rgba(255,59,48,0.20)`, borderRadius: 10, color: T.RED_TEXT, fontSize: 12, fontWeight: 400, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
             <span style={{ flex: 1 }}>{err}</span>
             <button
               onClick={() => fetchInsight(true)}
-              style={{ background: "rgba(255,59,48,0.12)", border: `0.5px solid rgba(255,59,48,0.28)`, color: T.RED_TEXT, fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 8, cursor: "pointer", fontFamily: FONT, flexShrink: 0 }}
+              style={{ background: "rgba(255,59,48,0.12)", border: `0.5px solid rgba(255,59,48,0.28)`, color: T.RED_TEXT, fontSize: 11, fontWeight: 400, padding: "4px 10px", borderRadius: 8, cursor: "pointer", fontFamily: FONT, flexShrink: 0 }}
             >
               Retry
             </button>
@@ -208,7 +208,7 @@ const DetailPanel: React.FC<{ entity: DetailEntity; schoolId: string }> = ({ ent
                 insight.whyPosition.map((item, i) => (
                   <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                     <div style={{ width: 5, height: 5, borderRadius: "50%", background: item.color, marginTop: 7, flexShrink: 0 }} />
-                    <p style={{ fontSize: 13, fontWeight: 500, color: T.T1, margin: 0, lineHeight: 1.65, fontFamily: FONT }}>
+                    <p style={{ fontSize: 13, fontWeight: 400, color: T.T1, margin: 0, lineHeight: 1.65, fontFamily: FONT }}>
                       <strong style={{ color: T.T1 }}>{item.bold}</strong>{item.rest}
                     </p>
                   </div>
@@ -231,10 +231,10 @@ const DetailPanel: React.FC<{ entity: DetailEntity; schoolId: string }> = ({ ent
                 border: sol.urgent ? "0.5px solid rgba(255,59,48,0.20)" : T.BORDER,
               }}>
                 {sol.urgent && <AlertTriangle size={12} color={T.RED} strokeWidth={2.5} style={{ marginTop: 3, flexShrink: 0 }} />}
-                <span style={{ flexShrink: 0, fontSize: 18, fontWeight: 600, color: sol.urgent ? T.RED : T.B1, lineHeight: 1, minWidth: 26, fontFamily: FONT }}>
+                <span style={{ flexShrink: 0, fontSize: 18, fontWeight: 400, color: sol.urgent ? T.RED : T.B1, lineHeight: 1, minWidth: 26, fontFamily: FONT }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p style={{ fontSize: 13, fontWeight: 500, color: T.T1, margin: 0, lineHeight: 1.6, fontFamily: FONT }}>{sol.text}</p>
+                <p style={{ fontSize: 13, fontWeight: 400, color: T.T1, margin: 0, lineHeight: 1.6, fontFamily: FONT }}>{sol.text}</p>
               </div>
             ))}
           </div>
@@ -289,13 +289,13 @@ const PoolRow: React.FC<PoolRowProps> = ({
       <EntityAvatar initials={initials} bg={avatarBg} color={avatarColor} size={34} />
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 2 }}>
-          <p style={{ fontSize: 14, fontWeight: 600, color: isHighlighted ? T.B1 : T.T1, margin: 0, letterSpacing: "-0.2px", fontFamily: FONT }}>{name}</p>
+          <p style={{ fontSize: 14, fontWeight: 400, color: isHighlighted ? T.B1 : T.T1, margin: 0, letterSpacing: "-0.2px", fontFamily: FONT }}>{name}</p>
           {badges}
         </div>
-        <p style={{ fontSize: 11, fontWeight: 500, color: T.T3, margin: "2px 0 0", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontFamily: FONT }}>{subLine}</p>
+        <p style={{ fontSize: 11, fontWeight: 400, color: T.T3, margin: "2px 0 0", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontFamily: FONT }}>{subLine}</p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 3, flexShrink: 0 }}>
-        <span style={{ fontSize: 18, fontWeight: 600, color: scoreColor, letterSpacing: "-0.5px", fontFamily: FONT }}>{composite.toFixed(1)}</span>
+        <span style={{ fontSize: 18, fontWeight: 400, color: scoreColor, letterSpacing: "-0.5px", fontFamily: FONT }}>{composite.toFixed(1)}</span>
         <TrendIndicator change={weekChange} trend={trend} />
       </div>
       {expandable && (
@@ -314,8 +314,8 @@ const StatBar: React.FC<{ stats: { label: string; value: string; color: string }
   <div style={{ display: "grid", gridTemplateColumns: `repeat(${stats.length},1fr)`, gap: 8, marginBottom: 16 }}>
     {stats.map((s, i) => (
       <div key={i} style={{ background: T.cardBg, borderRadius: 14, padding: "10px 8px", border: T.BORDER, textAlign: "center", boxShadow: T.SH }}>
-        <p style={{ fontSize: 8, fontWeight: 600, letterSpacing: "1.2px", color: T.T4, margin: "0 0 4px", textTransform: "uppercase", fontFamily: FONT }}>{s.label}</p>
-        <p style={{ fontSize: 22, fontWeight: 600, color: s.color, margin: 0, letterSpacing: "-0.6px", fontFamily: FONT }}>{s.value}</p>
+        <p style={{ fontSize: 8, fontWeight: 400, letterSpacing: "1.2px", color: T.T4, margin: "0 0 4px", textTransform: "uppercase", fontFamily: FONT }}>{s.label}</p>
+        <p style={{ fontSize: 22, fontWeight: 400, color: s.color, margin: 0, letterSpacing: "-0.6px", fontFamily: FONT }}>{s.value}</p>
       </div>
     ))}
   </div>
@@ -329,8 +329,8 @@ const EmptyTab: React.FC<{ title: string; body: string }> = ({ title, body }) =>
     <div style={{ width: 48, height: 48, borderRadius: "50%", background: "rgba(10,132,255,0.06)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 14 }}>
       <Inbox size={22} color={T.B1} />
     </div>
-    <p style={{ fontSize: 15, fontWeight: 600, color: T.T1, margin: "0 0 6px", fontFamily: FONT }}>{title}</p>
-    <p style={{ fontSize: 12, fontWeight: 500, color: T.T3, margin: 0, lineHeight: 1.5, fontFamily: FONT, maxWidth: 360, marginInline: "auto" }}>{body}</p>
+    <p style={{ fontSize: 15, fontWeight: 400, color: T.T1, margin: "0 0 6px", fontFamily: FONT }}>{title}</p>
+    <p style={{ fontSize: 12, fontWeight: 400, color: T.T3, margin: 0, lineHeight: 1.5, fontFamily: FONT, maxWidth: 360, marginInline: "auto" }}>{body}</p>
   </div>
 );
 
@@ -502,7 +502,7 @@ const TeacherLeaderboardView: React.FC<{ data: LeaderboardOutput; myBranchId?: s
               <button key={f} onClick={() => { setBranchFilter(f); setShown(PAGE_SIZE); }} style={{
                 padding: "4px 10px", borderRadius: 999, border: branchFilter === f ? `1.5px solid ${T.B1}` : T.BORDER,
                 background: branchFilter === f ? "rgba(10,132,255,0.08)" : T.cardBg,
-                color: branchFilter === f ? T.B1 : T.T3, fontSize: 10, fontWeight: 600,
+                color: branchFilter === f ? T.B1 : T.T3, fontSize: 10, fontWeight: 400,
                 cursor: "pointer", fontFamily: FONT, letterSpacing: "0.3px",
               }}>
                 {f === "all" ? "All branches" : "My branch"}
@@ -528,7 +528,7 @@ const TeacherLeaderboardView: React.FC<{ data: LeaderboardOutput; myBranchId?: s
         ))}
         {shown < reRanked.length && (
           <div style={{ padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "center", borderTop: T.BORDER_SOFT }}>
-            <button onClick={() => setShown(s => s + PAGE_SIZE)} style={{ fontSize: 12, fontWeight: 600, color: T.B1, background: "transparent", border: "none", cursor: "pointer", fontFamily: FONT }}>
+            <button onClick={() => setShown(s => s + PAGE_SIZE)} style={{ fontSize: 12, fontWeight: 400, color: T.B1, background: "transparent", border: "none", cursor: "pointer", fontFamily: FONT }}>
               Show more ({reRanked.length - shown} remaining) ↓
             </button>
           </div>
@@ -574,7 +574,7 @@ const StudentLeaderboardView: React.FC<{ data: LeaderboardOutput; myBranchId?: s
               <button key={f} onClick={() => { setBranchFilter(f); setShown(PAGE_SIZE); }} style={{
                 padding: "4px 10px", borderRadius: 999, border: branchFilter === f ? `1.5px solid ${T.B1}` : T.BORDER,
                 background: branchFilter === f ? "rgba(10,132,255,0.08)" : T.cardBg,
-                color: branchFilter === f ? T.B1 : T.T3, fontSize: 10, fontWeight: 600,
+                color: branchFilter === f ? T.B1 : T.T3, fontSize: 10, fontWeight: 400,
                 cursor: "pointer", fontFamily: FONT, letterSpacing: "0.3px",
               }}>
                 {f === "all" ? "All branches" : "My branch"}
@@ -600,7 +600,7 @@ const StudentLeaderboardView: React.FC<{ data: LeaderboardOutput; myBranchId?: s
         ))}
         {shown < reRanked.length && (
           <div style={{ padding: "12px 16px", display: "flex", alignItems: "center", justifyContent: "center", borderTop: T.BORDER_SOFT }}>
-            <button onClick={() => setShown(s => s + PAGE_SIZE)} style={{ fontSize: 12, fontWeight: 600, color: T.B1, background: "transparent", border: "none", cursor: "pointer", fontFamily: FONT }}>
+            <button onClick={() => setShown(s => s + PAGE_SIZE)} style={{ fontSize: 12, fontWeight: 400, color: T.B1, background: "transparent", border: "none", cursor: "pointer", fontFamily: FONT }}>
               Show more ({reRanked.length - shown} remaining) ↓
             </button>
           </div>
@@ -860,10 +860,10 @@ const PrincipalLeaderboards: React.FC = () => {
   return (
     <div data-sfpro style={{ background: T.pageBg, minHeight: "100vh", padding: "28px 16px 40px", fontFamily: FONT }}>
       <div style={{ marginBottom: 22 }}>
-        <p style={{ fontSize: 10, fontWeight: 600, letterSpacing: "2px", color: T.T4, margin: "0 0 4px", textTransform: "uppercase", fontFamily: FONT }}>
+        <p style={{ fontSize: 10, fontWeight: 400, letterSpacing: "2px", color: T.T4, margin: "0 0 4px", textTransform: "uppercase", fontFamily: FONT }}>
           {schoolName} {data ? `· Week ${data.meta.weekNumber}` : ""}
         </p>
-        <h1 style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1.1px", color: T.T1, margin: 0, lineHeight: 1, fontFamily: FONT }}>
+        <h1 style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1.1px", color: T.T1, margin: 0, lineHeight: 1, fontFamily: FONT }}>
           Leaderboards
         </h1>
       </div>
@@ -884,10 +884,10 @@ const PrincipalLeaderboards: React.FC = () => {
                 transition: "all .15s",
               }}
             >
-              <p style={{ fontSize: 11, fontWeight: 600, color: active ? T.B1 : T.T3, margin: 0, letterSpacing: "-0.1px", fontFamily: FONT }}>
+              <p style={{ fontSize: 11, fontWeight: 400, color: active ? T.B1 : T.T3, margin: 0, letterSpacing: "-0.1px", fontFamily: FONT }}>
                 {tab.label}
               </p>
-              <p style={{ fontSize: 10, fontWeight: 600, color: active ? T.T3 : T.T4, margin: "1px 0 0", fontFamily: FONT }}>
+              <p style={{ fontSize: 10, fontWeight: 400, color: active ? T.T3 : T.T4, margin: "1px 0 0", fontFamily: FONT }}>
                 {loading ? "…" : tab.count >= 1000 ? `${(tab.count / 1000).toFixed(1)}K` : tab.count}
               </p>
             </button>
@@ -899,9 +899,9 @@ const PrincipalLeaderboards: React.FC = () => {
         <div style={{
           background: T.RED_BG, border: `0.5px solid rgba(255,59,48,0.25)`, borderRadius: 14,
           padding: "11px 14px", marginBottom: 14, color: T.RED_TEXT,
-          fontSize: 11, fontWeight: 600, fontFamily: FONT, lineHeight: 1.5,
+          fontSize: 11, fontWeight: 400, fontFamily: FONT, lineHeight: 1.5,
         }}>
-          <strong style={{ fontWeight: 600 }}>Partial data — {Object.keys(fetchErrors).length} collection(s) failed to load:</strong>{" "}
+          <strong style={{ fontWeight: 400 }}>Partial data — {Object.keys(fetchErrors).length} collection(s) failed to load:</strong>{" "}
           {Object.keys(fetchErrors).join(", ")}. Check console for the Firestore error (usually missing rule, missing index, or schoolId field mismatch). Rankings shown reflect only the data that loaded.
         </div>
       )}
@@ -920,7 +920,7 @@ const PrincipalLeaderboards: React.FC = () => {
       <div style={{ marginTop: 28, textAlign: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 7, padding: "5px 13px", borderRadius: 999, background: T.VIOLET_BG, border: "0.5px solid rgba(175,82,222,0.20)" }}>
           <Sparkles size={11} color={T.VIOLET} />
-          <span style={{ fontSize: 10, fontWeight: 600, color: T.VIOLET, fontFamily: FONT }}>
+          <span style={{ fontSize: 10, fontWeight: 400, color: T.VIOLET, fontFamily: FONT }}>
             Live data · AI insights cached weekly
           </span>
         </div>

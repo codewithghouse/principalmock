@@ -400,7 +400,7 @@ export default function TeacherLeaderboard() {
         <div
           data-sfpro
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
             background: "#F5F5F7",
             minHeight: "100vh",
             paddingBottom: 24,
@@ -427,7 +427,7 @@ export default function TeacherLeaderboard() {
               >
                 <ChevronLeft size={16} color={B1} strokeWidth={2.3} />
               </button>
-              <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Teacher Details</div>
+              <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>Teacher Details</div>
             </div>
           </div>
 
@@ -467,7 +467,7 @@ export default function TeacherLeaderboard() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 22,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: B1,
                   boxShadow: "0 10px 24px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.25)",
                 }}
@@ -494,16 +494,16 @@ export default function TeacherLeaderboard() {
                 </div>
               )}
             </div>
-            <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.4px", position: "relative", zIndex: 1, marginBottom: 3 }}>
+            <div style={{ fontSize: 20, fontWeight: 400, color: "#fff", letterSpacing: "-0.4px", position: "relative", zIndex: 1, marginBottom: 3 }}>
               {selected.teacher.name || selected.teacher.email || "Teacher"}
             </div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", fontWeight: 500, position: "relative", zIndex: 1, marginBottom: 14 }}>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", fontWeight: 400, position: "relative", zIndex: 1, marginBottom: 14 }}>
               {selected.teacher.email || "No email"}
             </div>
-            <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 4, position: "relative", zIndex: 1 }}>
+            <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 4, position: "relative", zIndex: 1 }}>
               Composite Score
             </div>
-            <div style={{ fontSize: 44, fontWeight: 600, color: "#66EEAA", letterSpacing: "-1.6px", lineHeight: 1, position: "relative", zIndex: 1, marginBottom: 14 }}>
+            <div style={{ fontSize: 44, fontWeight: 400, color: "#66EEAA", letterSpacing: "-1.6px", lineHeight: 1, position: "relative", zIndex: 1, marginBottom: 14 }}>
               {selected.composite.toFixed(1)}%
             </div>
             {selected.reasons.length > 0 && (
@@ -517,7 +517,7 @@ export default function TeacherLeaderboard() {
                       background: "rgba(255,204,0,.22)",
                       border: "0.5px solid rgba(255,204,0,.38)",
                       fontSize: 10,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#FFCC00",
                       display: "inline-flex",
                       alignItems: "center",
@@ -544,13 +544,13 @@ export default function TeacherLeaderboard() {
             }}
           >
             <div style={{ padding: "14px 16px 10px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: T4 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: T4 }}>
                 Score Breakdown
               </div>
               <div
                 style={{
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: B1,
                   padding: "2px 8px",
                   borderRadius: 100,
@@ -597,7 +597,7 @@ export default function TeacherLeaderboard() {
                 >
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 7, gap: 8 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 8, minWidth: 0, flex: 1 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: T2, letterSpacing: "-0.1px" }}>{m.label}</div>
+                      <div style={{ fontSize: 13, fontWeight: 400, color: T2, letterSpacing: "-0.1px" }}>{m.label}</div>
                       <div
                         style={{
                           padding: "2px 7px",
@@ -605,7 +605,7 @@ export default function TeacherLeaderboard() {
                           background: "rgba(10,132,255,.08)",
                           border: "0.5px solid rgba(10,132,255,.14)",
                           fontSize: 8,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.06em",
                           textTransform: "uppercase",
                           color: B1,
@@ -667,10 +667,10 @@ export default function TeacherLeaderboard() {
                   border: "0.5px solid rgba(10,132,255,.10)",
                 }}
               >
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                   {s.lbl}
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 600, color: s.color, letterSpacing: "-0.5px", lineHeight: 1 }}>{s.val}</div>
+                <div style={{ fontSize: 22, fontWeight: 400, color: s.color, letterSpacing: "-0.5px", lineHeight: 1 }}>{s.val}</div>
               </div>
             ))}
           </div>
@@ -685,17 +685,17 @@ export default function TeacherLeaderboard() {
               border: "0.5px dashed rgba(10,132,255,.20)",
               fontSize: 10,
               color: T3,
-              fontWeight: 500,
+              fontWeight: 400,
               lineHeight: 1.55,
               textAlign: "center",
             }}
           >
             Weighted signals:{" "}
-            <strong style={{ color: B1, fontWeight: 600 }}>scores 35%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 600 }}>pass rate 20%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 600 }}>attendance 20%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 600 }}>assignments 15%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 600 }}>punctuality 10%</strong>
+            <strong style={{ color: B1, fontWeight: 400 }}>scores 35%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 400 }}>pass rate 20%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 400 }}>attendance 20%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 400 }}>assignments 15%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 400 }}>punctuality 10%</strong>
           </div>
 
           {/* AI */}
@@ -737,20 +737,20 @@ export default function TeacherLeaderboard() {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Teacher Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {selected.teacher.name || "This teacher"}
               </strong>
               's{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {selected.composite.toFixed(1)}%
               </strong>{" "}
               composite is tracked across{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {signalsWithData} of 5
               </strong>{" "}
               signals.{" "}
@@ -758,7 +758,7 @@ export default function TeacherLeaderboard() {
                 <>
                   Standout: {selected.reasons.slice(0, 2).map((r, i) => (
                     <span key={i}>
-                      <strong style={{ color: "#fff", fontWeight: 600 }}>
+                      <strong style={{ color: "#fff", fontWeight: 400 }}>
                         {r.label.toLowerCase()} ({r.value})
                       </strong>
                       {i < Math.min(selected.reasons.length, 2) - 1 ? ", " : "."}
@@ -787,10 +787,10 @@ export default function TeacherLeaderboard() {
                 { v: `#${selectedRank}`, l: "Rank", c: "#FFCC00" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -813,7 +813,7 @@ export default function TeacherLeaderboard() {
               justifyContent: "center",
               gap: 8,
               fontSize: 13,
-              fontWeight: 600,
+              fontWeight: 400,
               cursor: "pointer",
               border: "none",
               boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
@@ -834,7 +834,7 @@ export default function TeacherLeaderboard() {
       <div
         data-sfpro
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -843,7 +843,7 @@ export default function TeacherLeaderboard() {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
               <Trophy size={22} color={GOLD} strokeWidth={2.2} />
               Leaderboard
             </div>
@@ -865,7 +865,7 @@ export default function TeacherLeaderboard() {
                 padding: "8px 32px 8px 11px",
                 fontFamily: "inherit",
                 fontSize: 12,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: T1,
                 outline: "none",
                 cursor: "pointer",
@@ -879,7 +879,7 @@ export default function TeacherLeaderboard() {
             <div style={{ position: "absolute", right: 11, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "flex" }}>
               <ChevronDown size={13} color={T3} strokeWidth={2.4} />
             </div>
-            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginTop: 4, textAlign: "center" }}>
+            <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginTop: 4, textAlign: "center" }}>
               {currentClassName.length > 16 ? currentClassName.slice(0, 14) + "…" : ""}
             </div>
           </div>
@@ -901,7 +901,7 @@ export default function TeacherLeaderboard() {
                   border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                   color: isActive ? "#fff" : T3,
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   boxShadow: isActive
@@ -958,10 +958,10 @@ export default function TeacherLeaderboard() {
                 <Trophy size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                   Branch Avg Score
                 </div>
-                <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                <div style={{ fontSize: 26, fontWeight: 400, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                   {stats.avg.toFixed(1)}%
                 </div>
               </div>
@@ -976,7 +976,7 @@ export default function TeacherLeaderboard() {
                 background: avgTierInfo.bg,
                 border: `0.5px solid ${avgTierInfo.border}`,
                 fontSize: 11,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: avgTierInfo.color,
               }}
             >
@@ -1002,10 +1002,10 @@ export default function TeacherLeaderboard() {
               { v: noDataTeachers.length, l: "No Data", c: noDataTeachers.length > 0 ? "#FF6961" : "#fff" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                <div style={{ fontSize: 18, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 18, fontWeight: 400, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -1102,13 +1102,13 @@ export default function TeacherLeaderboard() {
               >
                 {c.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
+              <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
                 {c.value}
               </div>
-              <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {c.sub}
               </div>
             </div>
@@ -1156,7 +1156,7 @@ export default function TeacherLeaderboard() {
                   background: "rgba(255,255,255,.65)",
                   border: "0.5px solid rgba(255,204,0,.35)",
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   color: "#86310C",
@@ -1175,7 +1175,7 @@ export default function TeacherLeaderboard() {
                   borderRadius: 100,
                   background: "linear-gradient(135deg,#FF9500,#FFCC00)",
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#fff",
                   boxShadow: "0 4px 12px rgba(255,149,0,.35)",
                 }}
@@ -1196,17 +1196,17 @@ export default function TeacherLeaderboard() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 24,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: B1,
                   boxShadow: "0 10px 24px rgba(10,132,255,.20), 0 0 0 4px rgba(255,204,0,.25)",
                 }}
               >
                 {initialsOf(stats.top.teacher.name)}
               </div>
-              <div style={{ fontSize: 18, fontWeight: 600, color: "#331F00", letterSpacing: "-0.3px", marginTop: 2 }}>
+              <div style={{ fontSize: 18, fontWeight: 400, color: "#331F00", letterSpacing: "-0.3px", marginTop: 2 }}>
                 {stats.top.teacher.name || stats.top.teacher.email || "Teacher"}
               </div>
-              <div style={{ fontSize: 42, fontWeight: 600, color: "#00994A", letterSpacing: "-1.6px", lineHeight: 1, marginTop: -2 }}>
+              <div style={{ fontSize: 42, fontWeight: 400, color: "#00994A", letterSpacing: "-1.6px", lineHeight: 1, marginTop: -2 }}>
                 {stats.top.composite.toFixed(0)}%
               </div>
               {stats.top.reasons.length > 0 && (
@@ -1220,7 +1220,7 @@ export default function TeacherLeaderboard() {
                         background: "rgba(255,255,255,.75)",
                         border: "0.5px solid rgba(255,204,0,.35)",
                         fontSize: 10,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: "#86310C",
                         display: "inline-flex",
                         alignItems: "center",
@@ -1276,7 +1276,7 @@ export default function TeacherLeaderboard() {
                 background: "rgba(10,132,255,.08)",
                 border: "0.5px solid rgba(10,132,255,.16)",
                 fontSize: 10,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: B1,
@@ -1293,7 +1293,7 @@ export default function TeacherLeaderboard() {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -1312,7 +1312,7 @@ export default function TeacherLeaderboard() {
               background: "rgba(10,132,255,.10)",
               border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -1341,7 +1341,7 @@ export default function TeacherLeaderboard() {
             }}
           >
             <Trophy size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-            <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No teachers to rank yet</div>
+            <div style={{ fontSize: 14, fontWeight: 400, color: T1 }}>No teachers to rank yet</div>
             <div style={{ fontSize: 11, color: T4, maxWidth: 260, lineHeight: 1.5 }}>
               {classFilter !== "All"
                 ? "No teachers assigned to this class yet, or no performance data recorded."
@@ -1384,7 +1384,7 @@ export default function TeacherLeaderboard() {
                   }}
                 />
                 <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-                  <div style={{ fontSize: 13, fontWeight: 600, color: T4, letterSpacing: "-0.2px", minWidth: 22 }}>
+                  <div style={{ fontSize: 13, fontWeight: 400, color: T4, letterSpacing: "-0.2px", minWidth: 22 }}>
                     #{rank}
                   </div>
                   <div
@@ -1397,7 +1397,7 @@ export default function TeacherLeaderboard() {
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 12,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#fff",
                       flexShrink: 0,
                       boxShadow: avShadowFor(rank, r.composite),
@@ -1406,18 +1406,18 @@ export default function TeacherLeaderboard() {
                     {initText}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {r.teacher.name || r.teacher.email || "Teacher"}
                     </div>
-                    <div style={{ fontSize: 10, color: T4, fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 155 }}>
+                    <div style={{ fontSize: 10, color: T4, fontWeight: 400, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 155 }}>
                       {email}
                     </div>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2, flexShrink: 0 }}>
-                    <div style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-0.5px", lineHeight: 1, color: compositeColor(r.composite) }}>
+                    <div style={{ fontSize: 20, fontWeight: 400, letterSpacing: "-0.5px", lineHeight: 1, color: compositeColor(r.composite) }}>
                       {r.composite.toFixed(0)}%
                     </div>
-                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Composite
                     </div>
                   </div>
@@ -1429,7 +1429,7 @@ export default function TeacherLeaderboard() {
                         padding: "4px 10px",
                         borderRadius: 100,
                         fontSize: 9,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         background: "rgba(255,59,48,.10)",
                         color: "#86170E",
                         border: "0.5px solid rgba(255,59,48,.22)",
@@ -1453,7 +1453,7 @@ export default function TeacherLeaderboard() {
                             padding: "4px 10px",
                             borderRadius: 100,
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             background: tc.bg,
                             color: tc.color,
                             border: `0.5px solid ${tc.border}`,
@@ -1526,18 +1526,18 @@ export default function TeacherLeaderboard() {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Leaderboard Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
               {stats.top ? (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {stats.top.teacher.name || "Top teacher"}
                   </strong>{" "}
                   dominates the board with a{" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {stats.top.composite.toFixed(0)}% composite
                   </strong>
                   {stats.top.reasons.length > 0 && (
@@ -1545,7 +1545,7 @@ export default function TeacherLeaderboard() {
                       {" "}— leading on{" "}
                       {stats.top.reasons.slice(0, 2).map((r, i) => (
                         <span key={i}>
-                          <strong style={{ color: "#fff", fontWeight: 600 }}>
+                          <strong style={{ color: "#fff", fontWeight: 400 }}>
                             {r.label.toLowerCase()} ({r.value})
                           </strong>
                           {i < Math.min(stats.top!.reasons.length, 2) - 1 ? " and " : ""}
@@ -1560,11 +1560,11 @@ export default function TeacherLeaderboard() {
               )}
               {noDataTeachers.length > 0 && (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {noDataTeachers.length} teacher{noDataTeachers.length === 1 ? "" : "s"}
                   </strong>{" "}
                   {noDataTeachers.length === 1 ? "is" : "are"} new with{" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>no data yet</strong>. Schedule their first assessments to unlock full rankings.
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>no data yet</strong>. Schedule their first assessments to unlock full rankings.
                 </>
               )}
             </div>
@@ -1587,10 +1587,10 @@ export default function TeacherLeaderboard() {
                 { v: noDataTeachers.length, l: "New", c: noDataTeachers.length > 0 ? "#FF6961" : "#fff" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1620,7 +1620,7 @@ export default function TeacherLeaderboard() {
       data-sfpro
       className="animate-in fade-in duration-300"
       style={{
-        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+        fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
         paddingBottom: 40,
       }}
     >
@@ -1651,7 +1651,7 @@ export default function TeacherLeaderboard() {
             <Trophy size={24} color="#fff" strokeWidth={2.2} />
           </div>
           <div>
-            <h1 style={{ fontSize: 28, fontWeight: 600, color: "#1D1D1F", letterSpacing: "-0.7px", margin: 0, lineHeight: 1.1 }}>
+            <h1 style={{ fontSize: 28, fontWeight: 400, color: "#1D1D1F", letterSpacing: "-0.7px", margin: 0, lineHeight: 1.1 }}>
               Teacher Leaderboard
             </h1>
             <p style={{ fontSize: 13, color: "#6E6E73", fontWeight: 400, marginTop: 4, margin: 0 }}>
@@ -1685,7 +1685,7 @@ export default function TeacherLeaderboard() {
                     background: active ? "linear-gradient(135deg, #0A84FF, #3395FF)" : "transparent",
                     color: active ? "#fff" : "#6E6E73",
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     border: "none",
@@ -1720,7 +1720,7 @@ export default function TeacherLeaderboard() {
                 borderRadius: 14,
                 padding: "9px 34px 9px 34px",
                 fontSize: 12,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#3A3A3C",
                 outline: "none",
                 cursor: "pointer",
@@ -1807,7 +1807,7 @@ export default function TeacherLeaderboard() {
               <div
                 style={{
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: "rgba(255,255,255,.50)",
@@ -1819,7 +1819,7 @@ export default function TeacherLeaderboard() {
               <div
                 style={{
                   fontSize: 40,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#fff",
                   letterSpacing: "-1.2px",
                   lineHeight: 1,
@@ -1840,7 +1840,7 @@ export default function TeacherLeaderboard() {
               background: desktopAvgTier.bg,
               border: `0.5px solid ${desktopAvgTier.border}`,
               fontSize: 13,
-              fontWeight: 600,
+              fontWeight: 400,
               color: desktopAvgTier.color,
             }}
           >
@@ -1876,7 +1876,7 @@ export default function TeacherLeaderboard() {
                 <div
                   style={{
                     fontSize: 22,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: s.c,
                     letterSpacing: "-0.5px",
                     lineHeight: 1,
@@ -1888,7 +1888,7 @@ export default function TeacherLeaderboard() {
                 <div
                   style={{
                     fontSize: 9,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,.40)",
@@ -1967,9 +1967,9 @@ export default function TeacherLeaderboard() {
               >
                 <Icon size={26} color="#fff" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{c.label}</span>
-              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5 truncate" style={{ color: c.valColor, letterSpacing: "-1.2px" }}>{c.value}</p>
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{c.sub}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{c.label}</span>
+              <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5 truncate" style={{ color: c.valColor, letterSpacing: "-1.2px" }}>{c.value}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{c.sub}</p>
               <Icon
                 size={56}
                 color={c.decorColor}
@@ -1995,7 +1995,7 @@ export default function TeacherLeaderboard() {
           }}
         >
           <Trophy size={56} color="rgba(10,132,255,.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
-          <h3 style={{ fontSize: 16, fontWeight: 600, color: "#1D1D1F", margin: "0 0 6px 0" }}>
+          <h3 style={{ fontSize: 16, fontWeight: 400, color: "#1D1D1F", margin: "0 0 6px 0" }}>
             No teachers to rank yet
           </h3>
           <p style={{ fontSize: 13, color: "#6E6E73", fontWeight: 400, maxWidth: 440, margin: "0 auto", lineHeight: 1.55 }}>
@@ -2053,7 +2053,7 @@ export default function TeacherLeaderboard() {
                   <div
                     style={{
                       fontSize: 10,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       letterSpacing: "0.10em",
                       textTransform: "uppercase",
                       color: "#A1A1A6",
@@ -2065,7 +2065,7 @@ export default function TeacherLeaderboard() {
                   <div
                     style={{
                       fontSize: 17,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#1D1D1F",
                       letterSpacing: "-0.3px",
                       lineHeight: 1.1,
@@ -2138,7 +2138,7 @@ export default function TeacherLeaderboard() {
                   background: "rgba(10,132,255,.08)",
                   border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 11,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   color: "#0A84FF",
@@ -2175,7 +2175,7 @@ export default function TeacherLeaderboard() {
               <h3
                 style={{
                   fontSize: 11,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#1D1D1F",
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -2194,7 +2194,7 @@ export default function TeacherLeaderboard() {
                     background: "rgba(10,132,255,.10)",
                     border: "0.5px solid rgba(10,132,255,.16)",
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "#0A84FF",
                     letterSpacing: "0.04em",
                     textTransform: "none",
@@ -2319,7 +2319,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
           justifyContent: "center",
           color: "#fff",
           fontSize: 18,
-          fontWeight: 600,
+          fontWeight: 400,
           boxShadow: accent.badgeShadow,
           border: "4px solid #fff",
         }}
@@ -2344,7 +2344,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
           alignItems: "center",
           justifyContent: "center",
           fontSize: 20,
-          fontWeight: 600,
+          fontWeight: 400,
           color: "#0A84FF",
           boxShadow: accent.avShadow,
           marginBottom: 14,
@@ -2356,7 +2356,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
       <h4
         style={{
           fontSize: 16,
-          fontWeight: 600,
+          fontWeight: 400,
           color: "#1D1D1F",
           letterSpacing: "-0.3px",
           margin: "0 0 8px 0",
@@ -2373,7 +2373,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
       <div
         style={{
           fontSize: 32,
-          fontWeight: 600,
+          fontWeight: 400,
           color: compositeHex(score.composite),
           letterSpacing: "-1px",
           lineHeight: 1,
@@ -2396,7 +2396,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
                 color: tc.color,
                 border: `0.5px solid ${tc.border}`,
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.02em",
               }}
             >
@@ -2454,7 +2454,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         style={{
           width: 40,
           fontSize: 13,
-          fontWeight: 600,
+          fontWeight: 400,
           color: "#A1A1A6",
           letterSpacing: "-0.2px",
           textAlign: "center",
@@ -2473,7 +2473,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
           alignItems: "center",
           justifyContent: "center",
           fontSize: 14,
-          fontWeight: 600,
+          fontWeight: 400,
           color: "#fff",
           flexShrink: 0,
           boxShadow: avShadow,
@@ -2485,7 +2485,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         <p
           style={{
             fontSize: 14,
-            fontWeight: 600,
+            fontWeight: 400,
             color: "#1D1D1F",
             letterSpacing: "-0.2px",
             margin: 0,
@@ -2500,7 +2500,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
           <p
             style={{
               fontSize: 11,
-              fontWeight: 500,
+              fontWeight: 400,
               color: "#A1A1A6",
               margin: "2px 0 0 0",
               overflow: "hidden",
@@ -2533,7 +2533,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
                 color: tc.color,
                 border: `0.5px solid ${tc.border}`,
                 fontSize: 10,
-                fontWeight: 600,
+                fontWeight: 400,
                 whiteSpace: "nowrap",
               }}
             >
@@ -2546,7 +2546,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         <p
           style={{
             fontSize: 18,
-            fontWeight: 600,
+            fontWeight: 400,
             color: compositeHex(composite),
             letterSpacing: "-0.4px",
             margin: 0,
@@ -2627,7 +2627,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
           overflow: "hidden",
           boxShadow: "0 40px 80px rgba(0,10,60,.45), 0 0 0 .5px rgba(255,255,255,.1)",
           animation: "popIn .4s cubic-bezier(.34,1.26,.64,1) both",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
         }}
       >
         {/* Dark hero header */}
@@ -2667,7 +2667,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 20,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#0A84FF",
                 boxShadow: "0 10px 24px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.25)",
                 flexShrink: 0,
@@ -2676,20 +2676,20 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               {initialsOf(score.teacher.name)}
             </div>
             <div>
-              <h3 style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.4px", margin: 0 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 400, color: "#fff", letterSpacing: "-0.4px", margin: 0 }}>
                 {score.teacher.name || score.teacher.email}
               </h3>
-              <p style={{ fontSize: 12, color: "rgba(255,255,255,.55)", fontWeight: 500, margin: "3px 0 0 0" }}>
+              <p style={{ fontSize: 12, color: "rgba(255,255,255,.55)", fontWeight: 400, margin: "3px 0 0 0" }}>
                 {score.teacher.email || "No email"}
               </p>
               <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 10 }}>
-                <span style={{ fontSize: 32, fontWeight: 600, color: "#66EEAA", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                <span style={{ fontSize: 32, fontWeight: 400, color: "#66EEAA", letterSpacing: "-0.8px", lineHeight: 1 }}>
                   {score.composite.toFixed(1)}%
                 </span>
                 <span
                   style={{
                     fontSize: 9,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,.50)",
@@ -2728,7 +2728,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 style={{
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: "#A1A1A6",
@@ -2750,7 +2750,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                         color: tc.color,
                         border: `0.5px solid ${tc.border}`,
                         fontSize: 12,
-                        fontWeight: 600,
+                        fontWeight: 400,
                       }}
                     >
                       {b.label} · {b.value}
@@ -2773,7 +2773,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 style={{
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: "#A1A1A6",
@@ -2788,7 +2788,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                   background: "rgba(10,132,255,.08)",
                   border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#0A84FF",
                 }}
               >
@@ -2823,7 +2823,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                       }}
                     >
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                        <span style={{ fontSize: 13, fontWeight: 600, color: "#3A3A3C", letterSpacing: "-0.1px" }}>
+                        <span style={{ fontSize: 13, fontWeight: 400, color: "#3A3A3C", letterSpacing: "-0.1px" }}>
                           {m.label}
                         </span>
                         <span
@@ -2833,7 +2833,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                             background: "rgba(10,132,255,.08)",
                             border: "0.5px solid rgba(10,132,255,.14)",
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             letterSpacing: "0.08em",
                             textTransform: "uppercase",
                             color: "#0A84FF",
@@ -2845,7 +2845,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                       <span
                         style={{
                           fontSize: 14,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: valColor,
                           fontStyle: !hasData ? "italic" : "normal",
                         }}
@@ -2902,7 +2902,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                 <div
                   style={{
                     fontSize: 9,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "#A1A1A6",
@@ -2911,7 +2911,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                 >
                   {s.lbl}
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 600, color: "#1D1D1F", letterSpacing: "-0.5px", lineHeight: 1 }}>
+                <div style={{ fontSize: 22, fontWeight: 400, color: "#1D1D1F", letterSpacing: "-0.5px", lineHeight: 1 }}>
                   {s.val}
                 </div>
               </div>
@@ -2932,13 +2932,13 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
             flexShrink: 0,
           }}
         >
-          <p style={{ fontSize: 11, color: "#6E6E73", fontWeight: 500, margin: 0, lineHeight: 1.55 }}>
+          <p style={{ fontSize: 11, color: "#6E6E73", fontWeight: 400, margin: 0, lineHeight: 1.55 }}>
             Weighted signals:{" "}
-            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>scores 35%</strong> ·{" "}
-            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>pass 20%</strong> ·{" "}
-            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>attendance 20%</strong> ·{" "}
-            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>assignments 15%</strong> ·{" "}
-            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>punctuality 10%</strong>
+            <strong style={{ color: "#0A84FF", fontWeight: 400 }}>scores 35%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 400 }}>pass 20%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 400 }}>attendance 20%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 400 }}>assignments 15%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 400 }}>punctuality 10%</strong>
           </p>
           <button
             onClick={onClose}
@@ -2948,7 +2948,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               background: "linear-gradient(135deg, #0A84FF, #3395FF)",
               color: "#fff",
               fontSize: 13,
-              fontWeight: 600,
+              fontWeight: 400,
               border: "none",
               cursor: "pointer",
               boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",

@@ -511,7 +511,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: "#F5F5F7" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: "#F5F5F7" }}>
     <div className="pb-10 w-full px-2">
 
       {/* ── Toolbar ───────────────────────────────────────────────────────────── */}
@@ -521,7 +521,7 @@ const Dashboard = () => {
           <Heart className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Principal Dashboard</div>
+          <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Principal Dashboard</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>Real-time school intelligence overview</div>
         </div>
       </div>
@@ -550,12 +550,12 @@ const Dashboard = () => {
             <Heart className="w-7 h-7 text-white animate-pulse" strokeWidth={2.2} />
           </div>
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="text-[12px] font-normal uppercase tracking-[0.18em] mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>
               Academic Health Index
             </p>
             <div className="flex items-baseline gap-2">
-              <span className="text-[52px] font-semibold tracking-tight leading-none">{displayHealth}</span>
-              <span className="text-lg font-semibold" style={{ color: "rgba(255,255,255,0.35)" }}>/100</span>
+              <span className="text-[52px] font-normal tracking-tight leading-none">{displayHealth}</span>
+              <span className="text-lg font-normal" style={{ color: "rgba(255,255,255,0.35)" }}>/100</span>
             </div>
           </div>
         </div>
@@ -565,15 +565,15 @@ const Dashboard = () => {
             <div className="text-right">
               <div className={`flex items-center gap-1.5 justify-end`} style={{ color: healthDelta >= 0 ? "#34C759" : "#FF6961" }}>
                 {healthDelta >= 0 ? <ArrowUp className="w-4 h-4" /> : <ArrowDown className="w-4 h-4" />}
-                <span className="text-2xl font-semibold tracking-tight">{Math.abs(healthDelta)}%</span>
+                <span className="text-2xl font-normal tracking-tight">{Math.abs(healthDelta)}%</span>
               </div>
-              <p className="text-[12px] font-medium mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>vs Last 7 Days</p>
+              <p className="text-[12px] font-normal mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>vs Last 7 Days</p>
             </div>
           )}
           {healthDelta !== null && <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.20)" }} />}
           <div className="text-right">
-            <p className="text-2xl font-semibold tracking-tight">{healthLabelText}</p>
-            <p className="text-[12px] font-medium mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>Overall Status</p>
+            <p className="text-2xl font-normal tracking-tight">{healthLabelText}</p>
+            <p className="text-[12px] font-normal mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>Overall Status</p>
           </div>
         </div>
       </div>
@@ -592,9 +592,9 @@ const Dashboard = () => {
             style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.28)", transform: "translateZ(18px)" }}>
             <Users className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Total Students</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dB1, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayStudents}</p>
-          <p className="text-[12px] font-semibold" style={{ color: dT3 }}>Enrolled this branch</p>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Total Students</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: dB1, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayStudents}</p>
+          <p className="text-[12px] font-normal" style={{ color: dT3 }}>Enrolled this branch</p>
           <Users className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dB1, opacity: 0.18 }} strokeWidth={2} />
         </div>
 
@@ -609,9 +609,9 @@ const Dashboard = () => {
             style={{ background: `linear-gradient(135deg, ${dGREEN}, #34C759)`, boxShadow: "0 4px 14px rgba(52,199,89,0.26)", transform: "translateZ(18px)" }}>
             <GraduationCap className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Teachers</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dGREEN_D, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayTeachers}</p>
-          <p className="text-[12px] font-semibold" style={{ color: dGREEN_D }}>Active staff</p>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Teachers</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: dGREEN_D, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayTeachers}</p>
+          <p className="text-[12px] font-normal" style={{ color: dGREEN_D }}>Active staff</p>
           <TrendingUp className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dGREEN, opacity: 0.22 }} strokeWidth={2} />
         </div>
 
@@ -626,15 +626,15 @@ const Dashboard = () => {
             style={{ background: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, boxShadow: "0 4px 14px rgba(255,204,0,0.28)", transform: "translateZ(18px)" }}>
             <CalendarCheck className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Today's Attendance</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dGOLD, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayAttendance}</p>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Today's Attendance</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: dGOLD, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayAttendance}</p>
           {attendanceDelta !== null ? (
-            <p className="text-[12px] font-semibold flex items-center gap-1" style={{ color: attendanceDelta >= 0 ? dGREEN_D : dRED }}>
+            <p className="text-[12px] font-normal flex items-center gap-1" style={{ color: attendanceDelta >= 0 ? dGREEN_D : dRED }}>
               {attendanceDelta >= 0 ? <ArrowUp className="w-3 h-3" /> : <ArrowDown className="w-3 h-3" />}
               {Math.abs(attendanceDelta)}% vs yesterday
             </p>
           ) : (
-            <p className="text-[12px] font-semibold" style={{ color: dT3 }}>No data yet</p>
+            <p className="text-[12px] font-normal" style={{ color: dT3 }}>No data yet</p>
           )}
           <BarChart3 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dGOLD, opacity: 0.22 }} strokeWidth={2} />
         </div>
@@ -659,11 +659,11 @@ const Dashboard = () => {
             }}>
             <AlertCircle className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Pending Incidents</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dVIOLET, letterSpacing: "-1.2px" }}>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Pending Incidents</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dVIOLET, letterSpacing: "-1.2px" }}>
             {displayIncidents}
           </p>
-          <p className="text-[12px] font-semibold" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dT3 }}>
+          <p className="text-[12px] font-normal" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dT3 }}>
             {(pendingIncidents ?? 0) > 0 ? "Action required" : "All clear"}
           </p>
           <PieChart className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
@@ -687,11 +687,11 @@ const Dashboard = () => {
                 style={{ background: dRED_S, border: `0.5px solid ${dRED_B}` }}>
                 <AlertCircle className="w-4 h-4" style={{ color: dRED }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</h2>
+              <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</h2>
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); navigate("/risk-students"); }}
-              className="text-[12px] font-semibold flex items-center gap-0.5 transition-colors" style={{ color: dB1 }}>
+              className="text-[12px] font-normal flex items-center gap-0.5 transition-colors" style={{ color: dB1 }}>
               View All <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
@@ -702,7 +702,7 @@ const Dashboard = () => {
                   style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
                   <Heart className="w-6 h-6" style={{ color: dGREEN }} strokeWidth={2.2} />
                 </div>
-                <p className="text-[13px] font-semibold" style={{ color: dT1 }}>No active risk alerts</p>
+                <p className="text-[13px] font-normal" style={{ color: dT1 }}>No active risk alerts</p>
                 <p className="text-[12px] mt-1" style={{ color: dT4 }}>All students are performing within acceptable range</p>
               </div>
             ) : (
@@ -716,11 +716,11 @@ const Dashboard = () => {
                       <span className="w-[10px] h-[10px] rounded-full shrink-0"
                         style={{ background: a.dot, boxShadow: `0 0 0 3px ${isCrit ? "rgba(255,59,48,0.15)" : "rgba(255,204,0,0.15)"}` }} />
                       <div className="min-w-0">
-                        <p className="text-[13px] font-semibold truncate" style={{ color: dT1 }}>{a.name}</p>
+                        <p className="text-[13px] font-normal truncate" style={{ color: dT1 }}>{a.name}</p>
                         <p className="text-[12px] mt-1" style={{ color: dT3 }}>{a.detail}</p>
                       </div>
                     </div>
-                    <span className="text-[12px] font-semibold uppercase tracking-wide px-3 py-1.5 rounded-[8px] shrink-0 ml-4 text-white"
+                    <span className="text-[12px] font-normal uppercase tracking-wide px-3 py-1.5 rounded-[8px] shrink-0 ml-4 text-white"
                       style={{
                         background: isCrit ? `linear-gradient(135deg, ${dRED}, #FF5E55)` : `linear-gradient(135deg, ${dGOLD}, #FFCC00)`,
                         color: isCrit ? "#fff" : "#86310C",
@@ -748,13 +748,13 @@ const Dashboard = () => {
                 style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
                 <CalendarCheck className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Attendance Trend · 30 Days</h2>
+              <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Attendance Trend · 30 Days</h2>
             </div>
           </div>
           <div className="px-4 pt-5 pb-4">
             {trendData.length === 0 ? (
               <div className="h-[220px] flex items-center justify-center">
-                <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No attendance data yet</p>
+                <p className="text-[13px] font-normal" style={{ color: dT4 }}>No attendance data yet</p>
               </div>
             ) : (
               <ResponsiveContainer width="100%" height={220}>
@@ -770,7 +770,7 @@ const Dashboard = () => {
                     dataKey="day"
                     axisLine={false}
                     tickLine={false}
-                    tick={{ fontSize: 10, fill: dT4, fontWeight: 600 }}
+                    tick={{ fontSize: 10, fill: dT4, fontWeight: 400 }}
                     ticks={[1, 5, 10, 15, 20, 25, 30]}
                     dy={6}
                   />
@@ -778,13 +778,13 @@ const Dashboard = () => {
                     domain={["auto", "auto"]}
                     axisLine={false}
                     tickLine={false}
-                    tick={{ fontSize: 10, fill: dT4, fontWeight: 600 }}
+                    tick={{ fontSize: 10, fill: dT4, fontWeight: 400 }}
                     tickFormatter={v => `${v}%`}
                     dx={-4}
                   />
                   <Tooltip
                     formatter={(v: number) => [`${v}%`, "Attendance"]}
-                    contentStyle={{ borderRadius: 12, border: `0.5px solid ${dSEP}`, boxShadow: dSH, fontSize: 12, fontWeight: 600, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}
+                    contentStyle={{ borderRadius: 12, border: `0.5px solid ${dSEP}`, boxShadow: dSH, fontSize: 12, fontWeight: 400, fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}
                     cursor={{ stroke: dB1, strokeWidth: 1, strokeDasharray: "4 4" }}
                   />
                   <Area type="monotone" dataKey="v" stroke={dB1} strokeWidth={2.5} fill="url(#attGrad)" dot={false}
@@ -812,10 +812,10 @@ const Dashboard = () => {
                 style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                 <Star className="w-4 h-4" style={{ color: dVIOLET }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Class Performance Heatmap</h2>
+              <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Class Performance Heatmap</h2>
             </div>
             {heatmapCells.length > 0 && (
-              <span className="text-[12px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
+              <span className="text-[12px] font-normal uppercase tracking-wider px-2.5 py-1 rounded-full"
                 style={{ background: "rgba(175,82,222,0.10)", color: dVIOLET, border: "0.5px solid rgba(175,82,222,0.22)" }}>
                 {heatmapCells.length} {heatmapCells.length === 1 ? "Class" : "Classes"}
               </span>
@@ -824,7 +824,7 @@ const Dashboard = () => {
           <div className="p-6">
             {heatmapCells.length === 0 ? (
               <div className="py-10 text-center">
-                <p className="text-[13px] font-semibold" style={{ color: dT1 }}>No results data yet</p>
+                <p className="text-[13px] font-normal" style={{ color: dT1 }}>No results data yet</p>
                 <p className="text-[12px] mt-1" style={{ color: dT4 }}>Heatmap will populate once exams are graded</p>
               </div>
             ) : (() => {
@@ -843,14 +843,14 @@ const Dashboard = () => {
                   {/* Summary stats strip */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
                     <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(10,132,255,0.05)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Classes</p>
-                      <p className="text-[20px] font-semibold leading-tight mt-1" style={{ color: dB1, letterSpacing: "-0.5px" }}>{heatmapCells.length}</p>
+                      <p className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>Classes</p>
+                      <p className="text-[20px] font-normal leading-tight mt-1" style={{ color: dB1, letterSpacing: "-0.5px" }}>{heatmapCells.length}</p>
                     </div>
                     <div className="no-card-hover rounded-[12px] p-3 relative overflow-hidden"
                       style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Overall Avg</p>
+                      <p className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>Overall Avg</p>
                       <div className="flex items-baseline gap-1 mt-1">
-                        <p className="text-[20px] font-semibold leading-tight" style={{ color: dGREEN_D, letterSpacing: "-0.5px" }}>
+                        <p className="text-[20px] font-normal leading-tight" style={{ color: dGREEN_D, letterSpacing: "-0.5px" }}>
                           {overallAvg !== null ? `${overallAvg}%` : "—"}
                         </p>
                       </div>
@@ -859,20 +859,20 @@ const Dashboard = () => {
                       )}
                     </div>
                     <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(255,204,0,0.08)", border: "0.5px solid rgba(255,204,0,0.20)" }}>
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Top Class</p>
+                      <p className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>Top Class</p>
                       {topCell ? (
                         <div className="flex items-baseline gap-1.5 mt-1">
-                          <p className="text-[15px] font-semibold leading-tight truncate" style={{ color: "#86310C", letterSpacing: "-0.3px" }}>{topCell.cls}</p>
-                          <span className="text-[12px] font-semibold" style={{ color: dGOLD }}>{topCell.avg}%</span>
+                          <p className="text-[15px] font-normal leading-tight truncate" style={{ color: "#86310C", letterSpacing: "-0.3px" }}>{topCell.cls}</p>
+                          <span className="text-[12px] font-normal" style={{ color: dGOLD }}>{topCell.avg}%</span>
                         </div>
                       ) : (
-                        <p className="text-[15px] font-semibold leading-tight mt-1" style={{ color: dT4 }}>—</p>
+                        <p className="text-[15px] font-normal leading-tight mt-1" style={{ color: dT4 }}>—</p>
                       )}
                     </div>
                     <div className="no-card-hover rounded-[12px] p-3"
                       style={{ background: atRiskCount > 0 ? dRED_S : dGREEN_S, border: `0.5px solid ${atRiskCount > 0 ? dRED_B : dGREEN_B}` }}>
-                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>At Risk</p>
-                      <p className="text-[20px] font-semibold leading-tight mt-1"
+                      <p className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>At Risk</p>
+                      <p className="text-[20px] font-normal leading-tight mt-1"
                         style={{ color: atRiskCount > 0 ? dRED : dGREEN_D, letterSpacing: "-0.5px" }}>
                         {atRiskCount}
                       </p>
@@ -892,7 +892,7 @@ const Dashboard = () => {
                       {[100, 75, 50, 25, 0].map(v => (
                         <div key={v} className="absolute left-0 right-0 pointer-events-none"
                           style={{ bottom: `${v}%` }}>
-                          <span className="absolute left-0 top-0 -translate-y-1/2 text-[12px] font-semibold w-[28px] text-right pr-1.5" style={{ color: dT4, letterSpacing: "0.02em" }}>
+                          <span className="absolute left-0 top-0 -translate-y-1/2 text-[12px] font-normal w-[28px] text-right pr-1.5" style={{ color: dT4, letterSpacing: "0.02em" }}>
                             {v}
                           </span>
                           <div className="ml-[32px] h-px" style={{
@@ -909,7 +909,7 @@ const Dashboard = () => {
                             backgroundImage: `repeating-linear-gradient(90deg, ${dT1} 0 5px, transparent 5px 10px)`,
                             opacity: 0.6,
                           }} />
-                          <span className="absolute right-0 -top-[8px] text-[8.5px] font-semibold px-2 py-[2px] rounded-full"
+                          <span className="absolute right-0 -top-[8px] text-[8.5px] font-normal px-2 py-[2px] rounded-full"
                             style={{
                               background: `linear-gradient(135deg, ${dT1}, #3A3A3C)`,
                               color: "#fff",
@@ -942,7 +942,7 @@ const Dashboard = () => {
                               <span className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[18px] rounded-t-[4px] pointer-events-none"
                                 style={{ background: "rgba(10,132,255,0.025)" }} />
                               {/* Score pill above bar */}
-                              <span className="text-[9.5px] font-semibold mb-[4px] leading-none shrink-0 px-1.5 py-[2px] rounded-full relative z-10"
+                              <span className="text-[9.5px] font-normal mb-[4px] leading-none shrink-0 px-1.5 py-[2px] rounded-full relative z-10"
                                 style={{
                                   color: scoreColor,
                                   background: scoreBg,
@@ -982,8 +982,8 @@ const Dashboard = () => {
                         const isPodium = c.avg !== null && rank <= 3;
                         return (
                           <div key={c.cls} className="flex-1 max-w-[40px] flex flex-col items-center gap-[4px]">
-                            <span className="text-[12px] font-semibold truncate max-w-full" style={{ color: dT1, letterSpacing: "-0.1px" }}>{c.cls}</span>
-                            <span className="text-[12px] font-semibold w-[15px] h-[15px] rounded-full flex items-center justify-center leading-none"
+                            <span className="text-[12px] font-normal truncate max-w-full" style={{ color: dT1, letterSpacing: "-0.1px" }}>{c.cls}</span>
+                            <span className="text-[12px] font-normal w-[15px] h-[15px] rounded-full flex items-center justify-center leading-none"
                               style={{
                                 background: isPodium ? `linear-gradient(135deg, ${dGOLD}, #FFCC00)` : dBG2,
                                 color: isPodium ? "#fff" : dT3,
@@ -1004,13 +1004,13 @@ const Dashboard = () => {
                     ].map(({ color, label }) => (
                       <div key={label} className="flex items-center gap-[8px]">
                         <span className="w-3 h-3 rounded-[4px]" style={{ background: color }} />
-                        <span className="text-[12px] font-semibold" style={{ color: dT3 }}>{label}</span>
+                        <span className="text-[12px] font-normal" style={{ color: dT3 }}>{label}</span>
                       </div>
                     ))}
                     {overallAvg !== null && (
                       <div className="flex items-center gap-[8px]">
                         <span className="w-[2px] h-3.5 rounded-full" style={{ background: dT1, opacity: 0.55 }} />
-                        <span className="text-[12px] font-semibold" style={{ color: dT3 }}>School avg ({overallAvg}%)</span>
+                        <span className="text-[12px] font-normal" style={{ color: dT3 }}>School avg ({overallAvg}%)</span>
                       </div>
                     )}
                   </div>
@@ -1036,33 +1036,33 @@ const Dashboard = () => {
                   style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
                   <GraduationCap className="w-4 h-4" style={{ color: dGREEN }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Top Teachers</h2>
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Top Teachers</h2>
               </div>
               <button
                 onClick={(e) => { e.stopPropagation(); navigate("/teacher-performance"); }}
-                className="text-[12px] font-semibold flex items-center gap-0.5" style={{ color: dB1 }}>
+                className="text-[12px] font-normal flex items-center gap-0.5" style={{ color: dB1 }}>
                 View All <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
             <div className="p-5">
               {teacherRows.length === 0 ? (
-                <p className="text-[13px] font-semibold text-center py-6" style={{ color: dT4 }}>No teachers added yet</p>
+                <p className="text-[13px] font-normal text-center py-6" style={{ color: dT4 }}>No teachers added yet</p>
               ) : (
                 <div className="space-y-3">
                   {teacherRows.map(t => (
                     <div key={t.ini + t.name} className="flex items-center gap-3 py-1">
-                      <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                      <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-normal shrink-0"
                         style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                         {t.ini}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[13px] font-semibold truncate leading-tight" style={{ color: dT1 }}>{t.name}</p>
-                        <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>{t.subject}</p>
+                        <p className="text-[13px] font-normal truncate leading-tight" style={{ color: dT1 }}>{t.name}</p>
+                        <p className="text-[12px] font-normal mt-1" style={{ color: dT3 }}>{t.subject}</p>
                       </div>
                       <div className="flex items-center gap-1 shrink-0 px-[12px] py-[4px] rounded-full"
                         style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                         <Star className="w-[13px] h-[13px]" style={{ color: dGOLD, fill: dGOLD }} />
-                        <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
+                        <span className="text-[12px] font-normal" style={{ color: "#86310C" }}>{t.rating}</span>
                       </div>
                     </div>
                   ))}
@@ -1084,10 +1084,10 @@ const Dashboard = () => {
                   style={{ background: dORANGE_S, border: `0.5px solid ${dORANGE_B}` }}>
                   <AlertCircle className="w-4 h-4" style={{ color: dORANGE }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Urgent Communications</h2>
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Urgent Communications</h2>
               </div>
               {urgentComms.length > 0 && (
-                <span className="text-[12px] font-semibold px-3 py-[4px] rounded-full text-white"
+                <span className="text-[12px] font-normal px-3 py-[4px] rounded-full text-white"
                   style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 2px 8px rgba(255,59,48,0.26)" }}>
                   {urgentComms.length} New
                 </span>
@@ -1095,7 +1095,7 @@ const Dashboard = () => {
             </div>
             <div className="p-5">
               {urgentComms.length === 0 ? (
-                <p className="text-[13px] font-semibold text-center py-6" style={{ color: dT4 }}>No urgent messages</p>
+                <p className="text-[13px] font-normal text-center py-6" style={{ color: dT4 }}>No urgent messages</p>
               ) : (
                 <div className="space-y-2.5">
                   {urgentComms.map(c => {
@@ -1106,8 +1106,8 @@ const Dashboard = () => {
                           background: dBG,
                           borderLeft: `3px solid ${isHigh ? dRED : dGOLD}`,
                         }}>
-                        <p className="text-[13px] font-semibold leading-snug" style={{ color: dT1 }}>{c.title}</p>
-                        <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>
+                        <p className="text-[13px] font-normal leading-snug" style={{ color: dT1 }}>{c.title}</p>
+                        <p className="text-[12px] font-normal mt-1" style={{ color: dT3 }}>
                           From: {c.from}{c.time ? ` · ${c.time}` : ""}
                         </p>
                       </div>
@@ -1139,18 +1139,18 @@ const Dashboard = () => {
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Star className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI School Intelligence</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI School Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            School is operating at <strong style={{ color: "#fff", fontWeight: 600 }}>{displayHealth}/100 health</strong>
-            {healthLabelText !== "Loading" && <> · <strong style={{ color: "#fff", fontWeight: 600 }}>{healthLabelText}</strong> tier</>}.
-            {riskAlerts.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{riskAlerts.length} student{riskAlerts.length === 1 ? "" : "s"}</strong> flagged for immediate attention.</>}
-            {attendanceToday !== null && <> Today's attendance at <strong style={{ color: "#fff", fontWeight: 600 }}>{attendanceToday}%</strong>{attendanceDelta !== null ? ` (${attendanceDelta >= 0 ? "+" : ""}${attendanceDelta}% vs yesterday)` : ""}.</>}
+            School is operating at <strong style={{ color: "#fff", fontWeight: 400 }}>{displayHealth}/100 health</strong>
+            {healthLabelText !== "Loading" && <> · <strong style={{ color: "#fff", fontWeight: 400 }}>{healthLabelText}</strong> tier</>}.
+            {riskAlerts.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{riskAlerts.length} student{riskAlerts.length === 1 ? "" : "s"}</strong> flagged for immediate attention.</>}
+            {attendanceToday !== null && <> Today's attendance at <strong style={{ color: "#fff", fontWeight: 400 }}>{attendanceToday}%</strong>{attendanceDelta !== null ? ` (${attendanceDelta >= 0 ? "+" : ""}${attendanceDelta}% vs yesterday)` : ""}.</>}
             {" "}Review risk alerts and urgent communications to maintain momentum.
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}

@@ -426,7 +426,7 @@ const TeacherPerformance = () => {
       <div
         data-sfpro
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -435,7 +435,7 @@ const TeacherPerformance = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Teacher Performance
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400, lineHeight: 1.5 }}>
@@ -461,10 +461,10 @@ const TeacherPerformance = () => {
             }}
           >
             <div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
                 School Avg
               </div>
-              <div style={{ fontSize: 17, fontWeight: 600, color: schoolAvgColor, letterSpacing: "-0.3px", lineHeight: 1 }}>
+              <div style={{ fontSize: 17, fontWeight: 400, color: schoolAvgColor, letterSpacing: "-0.3px", lineHeight: 1 }}>
                 {schoolAvg}%
               </div>
             </div>
@@ -520,10 +520,10 @@ const TeacherPerformance = () => {
                     <GraduationCap size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                    <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                       Avg Class Score
                     </div>
-                    <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                    <div style={{ fontSize: 26, fontWeight: 400, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                       {schoolAvg}%
                     </div>
                   </div>
@@ -538,7 +538,7 @@ const TeacherPerformance = () => {
                     background: avgTierInfo.bg,
                     border: `0.5px solid ${avgTierInfo.border}`,
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: avgTierInfo.color,
                   }}
                 >
@@ -564,10 +564,10 @@ const TeacherPerformance = () => {
                   { v: needsSupportCount, l: "Needs Support", c: needsSupportCount > 0 ? "#FF6961" : "#fff" },
                 ].map((s, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                    <div style={{ fontSize: 18, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                    <div style={{ fontSize: 18, fontWeight: 400, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                       {s.v}
                     </div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                       {s.l}
                     </div>
                   </div>
@@ -664,13 +664,13 @@ const TeacherPerformance = () => {
                   >
                     {c.icon}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
                     {c.label}
                   </div>
-                  <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
+                  <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
                     {c.value}
                   </div>
-                  <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor }}>{c.sub}</div>
+                  <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor }}>{c.sub}</div>
                 </div>
               ))}
             </div>
@@ -705,7 +705,7 @@ const TeacherPerformance = () => {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -723,7 +723,7 @@ const TeacherPerformance = () => {
                   background: "rgba(10,132,255,.10)",
                   border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: B1,
                   textTransform: "none",
                   letterSpacing: "0.04em",
@@ -750,7 +750,7 @@ const TeacherPerformance = () => {
                 }}
               >
                 <GraduationCap size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-                <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No teacher data found</div>
+                <div style={{ fontSize: 14, fontWeight: 400, color: T1 }}>No teacher data found</div>
                 <div style={{ fontSize: 11, color: T4, textAlign: "center", maxWidth: 260, lineHeight: 1.5 }}>
                   Assign teachers to classes to see performance metrics.
                 </div>
@@ -840,7 +840,7 @@ const TeacherPerformance = () => {
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: 16,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           flexShrink: 0,
                           boxShadow: avShadowFor(hasScoreData, t.avgScore),
@@ -849,7 +849,7 @@ const TeacherPerformance = () => {
                         {initText}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 16, fontWeight: 600, color: T1, letterSpacing: "-0.3px", marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        <div style={{ fontSize: 16, fontWeight: 400, color: T1, letterSpacing: "-0.3px", marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {t.name}
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap" }}>
@@ -862,7 +862,7 @@ const TeacherPerformance = () => {
                                   padding: "4px 11px",
                                   borderRadius: 100,
                                   fontSize: 10,
-                                  fontWeight: 600,
+                                  fontWeight: 400,
                                   background: sst.bg,
                                   color: sst.color,
                                   border: sst.border,
@@ -873,7 +873,7 @@ const TeacherPerformance = () => {
                             );
                           })}
                           {t.subjects.length > 2 && (
-                            <span style={{ fontSize: 9, color: T4, fontWeight: 600 }}>+{t.subjects.length - 2}</span>
+                            <span style={{ fontSize: 9, color: T4, fontWeight: 400 }}>+{t.subjects.length - 2}</span>
                           )}
                           {t.subjects.length === 0 && (
                             <span
@@ -881,7 +881,7 @@ const TeacherPerformance = () => {
                                 padding: "4px 11px",
                                 borderRadius: 100,
                                 fontSize: 10,
-                                fontWeight: 600,
+                                fontWeight: 400,
                                 background: "rgba(10,132,255,.10)",
                                 color: B1,
                                 border: "0.5px solid rgba(10,132,255,.20)",
@@ -890,7 +890,7 @@ const TeacherPerformance = () => {
                               Teacher
                             </span>
                           )}
-                          <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: "#248A3D" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 400, color: "#248A3D" }}>
                             <div style={{ width: 5, height: 5, borderRadius: "50%", background: GREEN }} />
                             Active
                           </div>
@@ -904,7 +904,7 @@ const TeacherPerformance = () => {
                             background: t.classCount > 0 ? `linear-gradient(135deg, ${B1}, ${B2})` : "rgba(10,132,255,.10)",
                             border: t.classCount > 0 ? "none" : "0.5px solid rgba(10,132,255,.18)",
                             fontSize: 10,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: t.classCount > 0 ? "#fff" : B1,
                             boxShadow: t.classCount > 0 ? "0 2px 7px rgba(10,132,255,.26)" : "none",
                           }}
@@ -922,7 +922,7 @@ const TeacherPerformance = () => {
                               background: trendBg,
                               border: `0.5px solid ${trendBorder}`,
                               fontSize: 10,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               color: trendColor,
                             }}
                           >
@@ -937,7 +937,7 @@ const TeacherPerformance = () => {
                               background: "rgba(255,149,0,.10)",
                               border: "0.5px solid rgba(255,149,0,.22)",
                               fontSize: 10,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               color: "#86310C",
                             }}
                           >
@@ -989,20 +989,20 @@ const TeacherPerformance = () => {
                           {m.trendIcon ? (
                             <div style={{ display: "flex", alignItems: "center", gap: 3 }}>
                               {m.trendIcon}
-                              <div style={{ fontSize: 14, fontWeight: 600, color: m.color, letterSpacing: "-0.4px", lineHeight: 1 }}>
+                              <div style={{ fontSize: 14, fontWeight: 400, color: m.color, letterSpacing: "-0.4px", lineHeight: 1 }}>
                                 {m.val}
                               </div>
                             </div>
                           ) : (
-                            <div style={{ fontSize: 18, fontWeight: 600, color: m.color, letterSpacing: "-0.4px", lineHeight: 1 }}>
+                            <div style={{ fontSize: 18, fontWeight: 400, color: m.color, letterSpacing: "-0.4px", lineHeight: 1 }}>
                               {m.val}
                             </div>
                           )}
-                          <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: T4 }}>
+                          <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: T4 }}>
                             {m.lbl}
                           </div>
                           {m.sub && (
-                            <div style={{ fontSize: 9, fontWeight: 600, color: T4, marginTop: 1 }}>{m.sub}</div>
+                            <div style={{ fontSize: 9, fontWeight: 400, color: T4, marginTop: 1 }}>{m.sub}</div>
                           )}
                         </div>
                       ))}
@@ -1011,7 +1011,7 @@ const TeacherPerformance = () => {
                     {/* Progress bar (when scored) */}
                     {hasScoreData && (
                       <div style={{ padding: "10px 16px", borderBottom: `0.5px solid ${SEP}` }}>
-                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5, fontSize: 9, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", color: T4 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5, fontSize: 9, fontWeight: 400, textTransform: "uppercase", letterSpacing: "0.08em", color: T4 }}>
                           <span>Class Performance</span>
                           <span style={{ color: avgValColor }}>{t.avgScore}%</span>
                         </div>
@@ -1039,7 +1039,7 @@ const TeacherPerformance = () => {
                         background: "rgba(10,132,255,.03)",
                       }}
                     >
-                      <div style={{ fontSize: 11, fontWeight: 600, color: T3, display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ fontSize: 11, fontWeight: 400, color: T3, display: "flex", alignItems: "center", gap: 6 }}>
                         <BarChart3 size={12} strokeWidth={2.3} />
                         vs School Avg{hasScoreData ? ` (${schoolAvg}%)` : ""}
                       </div>
@@ -1047,7 +1047,7 @@ const TeacherPerformance = () => {
                         <div
                           style={{
                             fontSize: 13,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             display: "flex",
                             alignItems: "center",
                             gap: 5,
@@ -1065,15 +1065,15 @@ const TeacherPerformance = () => {
                             {t.vsSchoolAvg >= 0 ? "+" : ""}
                             {t.vsSchoolAvg}%
                             {" "}
-                            <span style={{ fontSize: 11, fontWeight: 600, color: T3 }}>
+                            <span style={{ fontSize: 11, fontWeight: 400, color: T3 }}>
                               {t.vsSchoolAvg > 2 ? "Above" : t.vsSchoolAvg < -2 ? "Below" : "On Par"}
                             </span>
                           </span>
                         </div>
                       ) : (
-                        <div style={{ fontSize: 13, fontWeight: 600, color: T4, display: "flex", alignItems: "center", gap: 5 }}>
+                        <div style={{ fontSize: 13, fontWeight: 400, color: T4, display: "flex", alignItems: "center", gap: 5 }}>
                           —{" "}
-                          <span style={{ fontSize: 11, color: T4, fontStyle: "italic", fontWeight: 500 }}>No data</span>
+                          <span style={{ fontSize: 11, color: T4, fontStyle: "italic", fontWeight: 400 }}>No data</span>
                         </div>
                       )}
                     </div>
@@ -1091,7 +1091,7 @@ const TeacherPerformance = () => {
                           justifyContent: "center",
                           gap: 6,
                           fontSize: 12,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           background: `linear-gradient(135deg, ${B1}, ${B2})`,
                           color: "#fff",
                           border: "none",
@@ -1113,7 +1113,7 @@ const TeacherPerformance = () => {
                           justifyContent: "center",
                           gap: 6,
                           fontSize: 12,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           background: "#F5F5F7",
                           color: "#3A3A3C",
                           border: "0.5px solid rgba(10,132,255,.16)",
@@ -1170,7 +1170,7 @@ const TeacherPerformance = () => {
                   >
                     <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
                   </div>
-                  <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+                  <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                     AI Performance Intelligence
                   </span>
                 </div>
@@ -1187,7 +1187,7 @@ const TeacherPerformance = () => {
                       return (
                         <>
                           No teacher has recorded score data yet.{" "}
-                          <strong style={{ color: "#fff", fontWeight: 600 }}>
+                          <strong style={{ color: "#fff", fontWeight: 400 }}>
                             Schedule assessments
                           </strong>{" "}
                           to enable proper impact analysis across {filtered.length} teacher{filtered.length === 1 ? "" : "s"}.
@@ -1198,20 +1198,20 @@ const TeacherPerformance = () => {
                       <>
                         {topT && (
                           <>
-                            <strong style={{ color: "#fff", fontWeight: 600 }}>{topT.name}</strong>{" "}
+                            <strong style={{ color: "#fff", fontWeight: 400 }}>{topT.name}</strong>{" "}
                             leads with{" "}
-                            <strong style={{ color: "#fff", fontWeight: 600 }}>
+                            <strong style={{ color: "#fff", fontWeight: 400 }}>
                               {topT.avgScore}%
                             </strong>
                             {topT.subjects[0] ? ` in ${topT.subjects[0]}` : ""}.{" "}
                           </>
                         )}
                         School averages{" "}
-                        <strong style={{ color: "#fff", fontWeight: 600 }}>{schoolAvg}%</strong>{" "}
+                        <strong style={{ color: "#fff", fontWeight: 400 }}>{schoolAvg}%</strong>{" "}
                         across graded teachers.{" "}
                         {withoutData.length > 0 && (
                           <>
-                            <strong style={{ color: "#fff", fontWeight: 600 }}>
+                            <strong style={{ color: "#fff", fontWeight: 400 }}>
                               {withoutData.length} teacher{withoutData.length === 1 ? "" : "s"}
                             </strong>{" "}
                             have no performance data — consider scheduling assessments to enable proper impact analysis.
@@ -1220,7 +1220,7 @@ const TeacherPerformance = () => {
                         {needsSupportCount > 0 && (
                           <>
                             {" "}
-                            <strong style={{ color: "#FF6961", fontWeight: 600 }}>
+                            <strong style={{ color: "#FF6961", fontWeight: 400 }}>
                               {needsSupportCount} teacher{needsSupportCount === 1 ? "" : "s"}
                             </strong>{" "}
                             below 60% need support.
@@ -1249,10 +1249,10 @@ const TeacherPerformance = () => {
                     { v: needsSupportCount, l: "At Risk", c: needsSupportCount > 0 ? "#FF6961" : "#fff" },
                   ].map((s, i) => (
                     <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                      <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                      <div style={{ fontSize: 19, fontWeight: 400, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                         {s.v}
                       </div>
-                      <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                      <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                         {s.l}
                       </div>
                     </div>
@@ -1278,12 +1278,12 @@ const TeacherPerformance = () => {
     : { label: "Weak", c: "#FF6961", bg: "rgba(255,59,48,0.22)", bdr: "rgba(255,59,48,0.4)" };
 
   return (
-    <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Top toolbar */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <GraduationCap className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -1292,9 +1292,9 @@ const TeacherPerformance = () => {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Impact Analysis</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Same Subject Across Teachers</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Same Teacher Across Classes</span>
           </div>
         </div>
@@ -1304,7 +1304,7 @@ const TeacherPerformance = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(10,132,255,0.42)" }} strokeWidth={2.2} />
             <input value={search} onChange={e => setSearch(e.target.value)}
               placeholder="Search teacher or subject…"
-              className="h-[42px] pl-10 pr-4 rounded-[12px] bg-white text-[13px] font-medium outline-none min-w-[280px]"
+              className="h-[42px] pl-10 pr-4 rounded-[12px] bg-white text-[13px] font-normal outline-none min-w-[280px]"
               style={{ color: "#1D1D1F", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)" }} />
           </div>
         </div>
@@ -1324,10 +1324,10 @@ const TeacherPerformance = () => {
             <BarChart3 className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               School Avg · {teachers.length} Teacher{teachers.length === 1 ? "" : "s"}
             </div>
-            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
               {loading ? "—" : `${schoolAvg}%`}
             </div>
           </div>
@@ -1335,7 +1335,7 @@ const TeacherPerformance = () => {
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
           <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
             style={{ background: dSchoolAvgTier.bg, border: `0.5px solid ${dSchoolAvgTier.bdr}` }}>
-            <span className="text-[12px] font-semibold" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label} tier</span>
+            <span className="text-[12px] font-normal" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label} tier</span>
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
@@ -1344,8 +1344,8 @@ const TeacherPerformance = () => {
               { val: dNeedsSupport, label: "Support", color: dNeedsSupport > 0 ? "#FF6961" : "#FFCC00" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-[12px] px-[16px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -1418,9 +1418,9 @@ const TeacherPerformance = () => {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
-              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -1432,9 +1432,9 @@ const TeacherPerformance = () => {
       </div>
 
       {/* Section label */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Faculty Performance Roster
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {dFiltered.length} {dFiltered.length === 1 ? "teacher" : "teachers"}
         </span>
@@ -1446,7 +1446,7 @@ const TeacherPerformance = () => {
         <div className="rounded-[22px] py-10 text-center bg-white"
           style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: "#0A84FF" }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading teacher performance…</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading teacher performance…</p>
         </div>
       ) : dFiltered.length === 0 ? (
         <div className="rounded-[22px] py-10 text-center bg-white"
@@ -1455,7 +1455,7 @@ const TeacherPerformance = () => {
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
             <GraduationCap className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold mb-1" style={{ color: "#1D1D1F" }}>No teacher data found</p>
+          <p className="text-[13px] font-normal mb-1" style={{ color: "#1D1D1F" }}>No teacher data found</p>
           <p className="text-[12px]" style={{ color: "#A1A1A6" }}>{search ? "Try a different search term." : "Assign teachers to classes to see performance."}</p>
         </div>
       ) : (
@@ -1466,7 +1466,7 @@ const TeacherPerformance = () => {
               <thead>
                 <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                   {["Teacher", "Subjects", "Classes", "Students", "Avg Score", "vs School", "Trend", ""].map(h => (
-                    <th key={h} className="py-[16px] px-5 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
+                    <th key={h} className="py-[16px] px-5 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -1485,37 +1485,37 @@ const TeacherPerformance = () => {
                       style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                       <td className="py-[16px] px-5">
                         <div className="flex items-center gap-3">
-                          <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-semibold flex-shrink-0"
+                          <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-normal flex-shrink-0"
                             style={{ background: "linear-gradient(135deg, #3395FF, #5BA9FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.24)" }}>
                             {t.name.substring(0, 2).toUpperCase()}
                           </div>
-                          <span className="text-[13px] font-semibold tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>{t.name}</span>
+                          <span className="text-[13px] font-normal tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>{t.name}</span>
                         </div>
                       </td>
                       <td className="py-[16px] px-5">
                         <div className="flex flex-wrap gap-[4px]">
                           {t.subjects.slice(0, 2).map(s => (
-                            <span key={s} className="text-[12px] font-semibold px-[12px] py-[4px] rounded-full"
+                            <span key={s} className="text-[12px] font-normal px-[12px] py-[4px] rounded-full"
                               style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.18)" }}>{s}</span>
                           ))}
-                          {t.subjects.length > 2 && <span className="text-[12px] font-semibold self-center" style={{ color: "#A1A1A6" }}>+{t.subjects.length - 2}</span>}
+                          {t.subjects.length > 2 && <span className="text-[12px] font-normal self-center" style={{ color: "#A1A1A6" }}>+{t.subjects.length - 2}</span>}
                           {t.subjects.length === 0 && <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
                         </div>
                       </td>
-                      <td className="py-[16px] px-5 text-[12px] font-semibold" style={{ color: "#6E6E73" }}>{t.classCount || "—"}</td>
-                      <td className="py-[16px] px-5 text-[12px] font-semibold" style={{ color: "#6E6E73" }}>{t.studentCount || "—"}</td>
+                      <td className="py-[16px] px-5 text-[12px] font-normal" style={{ color: "#6E6E73" }}>{t.classCount || "—"}</td>
+                      <td className="py-[16px] px-5 text-[12px] font-normal" style={{ color: "#6E6E73" }}>{t.studentCount || "—"}</td>
                       <td className="py-[16px] px-5">
                         {t.avgScore != null ? (
                           <div className="flex items-center gap-2">
-                            <span className="text-[14px] font-semibold" style={{ color: scoreColor, letterSpacing: "-0.2px" }}>{t.avgScore}%</span>
-                            <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                            <span className="text-[14px] font-normal" style={{ color: scoreColor, letterSpacing: "-0.2px" }}>{t.avgScore}%</span>
+                            <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                               style={{ background: gradeStyle.bg, color: gradeStyle.c, border: `0.5px solid ${gradeStyle.bdr}` }}>{g}</span>
                           </div>
                         ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>No data</span>}
                       </td>
                       <td className="py-[16px] px-5">
                         {t.vsSchoolAvg != null ? (
-                          <span className="text-[12px] font-semibold" style={{ color: t.vsSchoolAvg >= 0 ? "#34C759" : "#FF3B30" }}>
+                          <span className="text-[12px] font-normal" style={{ color: t.vsSchoolAvg >= 0 ? "#34C759" : "#FF3B30" }}>
                             {t.vsSchoolAvg >= 0 ? "+" : ""}{t.vsSchoolAvg}%
                           </span>
                         ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
@@ -1524,13 +1524,13 @@ const TeacherPerformance = () => {
                         {T && TIcon ? (
                           <div className="flex items-center gap-[4px]">
                             <TIcon className={`w-[14px] h-[14px] ${T.color}`} strokeWidth={2.3} />
-                            <span className={`text-[12px] font-semibold ${T.color}`}>{T.label}</span>
+                            <span className={`text-[12px] font-normal ${T.color}`}>{T.label}</span>
                           </div>
                         ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
                       </td>
                       <td className="py-[16px] px-5">
                         <button onClick={() => setSelected(t)}
-                          className="h-8 px-[12px] rounded-[10px] flex items-center gap-[4px] text-[12px] font-semibold text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
+                          className="h-8 px-[12px] rounded-[10px] flex items-center gap-[4px] text-[12px] font-normal text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
                           style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.26)" }}>
                           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                           <span className="relative z-10">View</span>

@@ -279,7 +279,7 @@ const TeacherNotes = () => {
       return (
         <div
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
             background: "#F5F5F7",
             height: "100vh",
             display: "flex",
@@ -342,7 +342,7 @@ const TeacherNotes = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 15,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#fff",
                 flexShrink: 0,
                 position: "relative",
@@ -353,10 +353,10 @@ const TeacherNotes = () => {
               {tInitials}
             </div>
             <div style={{ flex: 1, position: "relative", zIndex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 16, fontWeight: 400, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {selectedTeacher.name || "Teacher"}
               </div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,.65)", fontWeight: 500, display: "flex", alignItems: "center", gap: 5 }}>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,.65)", fontWeight: 400, display: "flex", alignItems: "center", gap: 5 }}>
                 <div style={{ width: 5, height: 5, background: "#00EE88", borderRadius: "50%" }} />
                 {selectedTeacher.subject || "Teacher"}
                 {selectedTeacher.assignedClass ? ` · ${selectedTeacher.assignedClass}` : ""} · Active
@@ -443,10 +443,10 @@ const TeacherNotes = () => {
                   borderRight: i < 2 ? "0.5px solid rgba(10,132,255,.10)" : "none",
                 }}
               >
-                <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: "-0.4px", lineHeight: 1, color: s.color }}>
+                <div style={{ fontSize: 18, fontWeight: 400, letterSpacing: "-0.4px", lineHeight: 1, color: s.color }}>
                   {s.val}
                 </div>
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
                   {s.lbl}
                 </div>
               </div>
@@ -489,7 +489,7 @@ const TeacherNotes = () => {
                 >
                   <FileText size={28} color="rgba(10,132,255,.35)" strokeWidth={1.8} />
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: T1, marginBottom: 4 }}>No notes yet</div>
+                <div style={{ fontSize: 14, fontWeight: 400, color: T1, marginBottom: 4 }}>No notes yet</div>
                 <div style={{ fontSize: 11, color: T4 }}>Type below to send the first note.</div>
               </div>
             ) : (
@@ -503,7 +503,7 @@ const TeacherNotes = () => {
                         background: "rgba(10,132,255,.08)",
                         border: "0.5px solid rgba(10,132,255,.14)",
                         fontSize: 10,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T3,
                       }}
                     >
@@ -546,7 +546,7 @@ const TeacherNotes = () => {
                               />
                               <span style={{ position: "relative", zIndex: 1 }}>{n.message}</span>
                             </div>
-                            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 5, marginTop: 4, fontSize: 9, color: "rgba(80,112,176,.7)", fontWeight: 600 }}>
+                            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-end", gap: 5, marginTop: 4, fontSize: 9, color: "rgba(80,112,176,.7)", fontWeight: 400 }}>
                               <span>{fmtTime(n.timestamp)}</span>
                               <span>·</span>
                               <span>{metaIcon}</span>
@@ -569,7 +569,7 @@ const TeacherNotes = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             fontSize: 12,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: "#fff",
                             flexShrink: 0,
                             alignSelf: "flex-end",
@@ -591,13 +591,13 @@ const TeacherNotes = () => {
                               whiteSpace: "pre-wrap",
                             }}
                           >
-                            <div style={{ fontSize: 11, fontWeight: 600, color: B1, marginBottom: 5 }}>
+                            <div style={{ fontSize: 11, fontWeight: 400, color: B1, marginBottom: 5 }}>
                               {senderName}
                               {selectedTeacher.subject ? ` · ${selectedTeacher.subject}` : ""}
                             </div>
                             <div>{n.message}</div>
                           </div>
-                          <div style={{ fontSize: 9, color: n.read === false ? B1 : T4, fontWeight: 600, marginTop: 4, display: "flex", alignItems: "center", gap: 4 }}>
+                          <div style={{ fontSize: 9, color: n.read === false ? B1 : T4, fontWeight: 400, marginTop: 4, display: "flex", alignItems: "center", gap: 4 }}>
                             <Clock size={10} strokeWidth={2.3} />
                             <span>{fmtTime(n.timestamp)}</span>
                             {n.read === false && (
@@ -705,7 +705,7 @@ const TeacherNotes = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -777,10 +777,10 @@ const TeacherNotes = () => {
               >
                 {s.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, lineHeight: 1.3 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, lineHeight: 1.3 }}>
                 {s.label}
               </div>
-              <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.5px", lineHeight: 1, color: s.color }}>
+              <div style={{ fontSize: 22, fontWeight: 400, letterSpacing: "-0.5px", lineHeight: 1, color: s.color }}>
                 {s.value}
               </div>
             </div>
@@ -832,7 +832,7 @@ const TeacherNotes = () => {
             <GraduationCap size={22} color="rgba(255,255,255,.95)" strokeWidth={2.1} />
           </div>
           <div style={{ position: "relative", zIndex: 1, flex: 1 }}>
-            <div style={{ fontSize: 17, fontWeight: 600, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
+            <div style={{ fontSize: 17, fontWeight: 400, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
               Teacher Notes
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,.60)", fontWeight: 400 }}>
@@ -853,7 +853,7 @@ const TeacherNotes = () => {
             <div
               style={{
                 fontSize: 26,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: stats.unread > 0 ? "#FF6961" : "rgba(255,255,255,.8)",
                 letterSpacing: "-0.6px",
                 lineHeight: 1,
@@ -861,7 +861,7 @@ const TeacherNotes = () => {
             >
               {stats.unread}
             </div>
-            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,.45)" }}>
+            <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,.45)" }}>
               Unread
             </div>
           </div>
@@ -907,7 +907,7 @@ const TeacherNotes = () => {
             justifyContent: "center",
             gap: 8,
             fontSize: 14,
-            fontWeight: 600,
+            fontWeight: 400,
             color: "#fff",
             cursor: "pointer",
             border: "none",
@@ -922,7 +922,7 @@ const TeacherNotes = () => {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -940,7 +940,7 @@ const TeacherNotes = () => {
               background: "rgba(10,132,255,.10)",
               border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -970,7 +970,7 @@ const TeacherNotes = () => {
           ) : filteredTeachers.length === 0 ? (
             <div style={{ padding: "32px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
               <User size={36} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 13, fontWeight: 600, color: T2 }}>No teachers found</div>
+              <div style={{ fontSize: 13, fontWeight: 400, color: T2 }}>No teachers found</div>
               <div style={{ fontSize: 11, color: T4 }}>Try a different search term.</div>
             </div>
           ) : (
@@ -1015,7 +1015,7 @@ const TeacherNotes = () => {
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 15,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#fff",
                       flexShrink: 0,
                       position: "relative",
@@ -1049,7 +1049,7 @@ const TeacherNotes = () => {
                           background: RED,
                           borderRadius: 9,
                           fontSize: 10,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           display: "flex",
                           alignItems: "center",
@@ -1063,7 +1063,7 @@ const TeacherNotes = () => {
                     )}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
+                    <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
                       <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
                         {t.name || "Teacher"}
                       </span>
@@ -1073,7 +1073,7 @@ const TeacherNotes = () => {
                             padding: "2px 8px",
                             borderRadius: 100,
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             background: tStyle.tagBg,
                             color: tStyle.tagColor,
                             border: `0.5px solid ${tStyle.tagBorder}`,
@@ -1109,14 +1109,14 @@ const TeacherNotes = () => {
                         No messages yet
                       </div>
                     )}
-                    <div style={{ fontSize: 10, color: T4, fontWeight: 600, marginTop: 2, display: "flex", alignItems: "center", gap: 4 }}>
+                    <div style={{ fontSize: 10, color: T4, fontWeight: 400, marginTop: 2, display: "flex", alignItems: "center", gap: 4 }}>
                       {hasLast ? (
                         <>
                           <Clock size={10} strokeWidth={2.4} />
                           <span>{timeLabel}</span>
                         </>
                       ) : isOnline ? (
-                        <span style={{ color: "#248A3D", fontWeight: 600 }}>● Online</span>
+                        <span style={{ color: "#248A3D", fontWeight: 400 }}>● Online</span>
                       ) : (
                         <>
                           <GraduationCap size={10} strokeWidth={2.4} />
@@ -1201,22 +1201,22 @@ const TeacherNotes = () => {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Notes Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {stats.total} message{stats.total === 1 ? "" : "s"}
               </strong>{" "}
               exchanged with{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {stats.contacted} teacher{stats.contacted === 1 ? "" : "s"}
               </strong>
               .{" "}
               {stats.unread > 0 ? (
                 <>
-                  <strong style={{ color: "#FF6961", fontWeight: 600 }}>
+                  <strong style={{ color: "#FF6961", fontWeight: 400 }}>
                     {stats.unread} unread repl{stats.unread === 1 ? "y" : "ies"}
                   </strong>{" "}
                   require your attention.
@@ -1227,7 +1227,7 @@ const TeacherNotes = () => {
               {teachers.length - stats.contacted > 0 && (
                 <>
                   {" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {teachers.length - stats.contacted} teacher{teachers.length - stats.contacted === 1 ? "" : "s"}
                   </strong>{" "}
                   have no active conversations — consider initiating a performance check-in.
@@ -1253,10 +1253,10 @@ const TeacherNotes = () => {
                 { v: stats.contacted, l: "Teachers", color: "#fff" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1311,7 +1311,7 @@ const TeacherNotes = () => {
 
   return (
     <div className="chat-page w-full h-full flex flex-col overflow-hidden animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* ── Hero (WhatsApp-style top bar — teal green) ──────────────────── */}
       <div className="rounded-[18px] px-6 py-4 flex items-center gap-4 text-white relative overflow-hidden shrink-0"
@@ -1326,28 +1326,28 @@ const TeacherNotes = () => {
           <GraduationCap className="w-5 h-5 text-white" strokeWidth={2.2} />
         </div>
         <div className="relative z-10 flex-1 min-w-0">
-          <div className="text-[18px] font-semibold tracking-tight leading-tight">Teacher Notes</div>
+          <div className="text-[18px] font-normal tracking-tight leading-tight">Teacher Notes</div>
           <p className="text-[12px] mt-1" style={{ color: "rgba(255,255,255,0.72)" }}>
             Direct notes with your teaching staff
           </p>
         </div>
         <div className="relative z-10 flex items-center gap-4">
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none"
+            <div className="text-[18px] font-normal tracking-tight leading-none"
               style={{ color: stats.unread > 0 ? "#FFE48A" : "#fff" }}>
               {stats.unread}
             </div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unread</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unread</div>
           </div>
           <div className="w-px h-8" style={{ background: "rgba(255,255,255,0.20)" }} />
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none text-white">{stats.contacted}</div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Teachers</div>
+            <div className="text-[18px] font-normal tracking-tight leading-none text-white">{stats.contacted}</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Teachers</div>
           </div>
           <div className="w-px h-8" style={{ background: "rgba(255,255,255,0.20)" }} />
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none text-white">{stats.total}</div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Total</div>
+            <div className="text-[18px] font-normal tracking-tight leading-none text-white">{stats.total}</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Total</div>
           </div>
         </div>
       </div>
@@ -1382,7 +1382,7 @@ const TeacherNotes = () => {
               if (!selectedTeacher) setSelectedTeacher(filteredTeachers[0]);
               toast.info("Type your note in the composer on the right.");
             }}
-            className="h-[44px] rounded-[10px] flex items-center justify-center gap-2 text-white text-[14px] font-semibold transition-colors"
+            className="h-[44px] rounded-[10px] flex items-center justify-center gap-2 text-white text-[14px] font-normal transition-colors"
             style={{
               background: WA_GREEN, border: "none",
               boxShadow: "0 4px 12px rgba(37,211,102,0.32), 0 2px 4px rgba(37,211,102,0.18)",
@@ -1393,9 +1393,9 @@ const TeacherNotes = () => {
           </button>
 
           {/* Section label */}
-          <div className="flex items-center gap-2 px-2 pt-1 text-[12px] font-semibold uppercase" style={{ color: WA_TEXT_MUTED, letterSpacing: "0.10em" }}>
+          <div className="flex items-center gap-2 px-2 pt-1 text-[12px] font-normal uppercase" style={{ color: WA_TEXT_MUTED, letterSpacing: "0.10em" }}>
             <span>Teacher Conversations</span>
-            <span className="px-2.5 py-0.5 rounded-full text-[12px] font-semibold"
+            <span className="px-2.5 py-0.5 rounded-full text-[12px] font-normal"
               style={{ background: "rgba(0,128,105,0.10)", color: WA_TEAL_D, letterSpacing: "0.04em", textTransform: "none" }}>
               {filteredTeachers.length} teacher{filteredTeachers.length === 1 ? "" : "s"}
             </span>
@@ -1411,7 +1411,7 @@ const TeacherNotes = () => {
               ) : filteredTeachers.length === 0 ? (
                 <div className="py-10 flex flex-col items-center gap-2">
                   <User size={36} color={WA_TEXT_MUTED} strokeWidth={1.8} style={{ opacity: 0.4 }} />
-                  <div className="text-[13px] font-semibold" style={{ color: WA_TEXT }}>No teachers found</div>
+                  <div className="text-[13px] font-normal" style={{ color: WA_TEXT }}>No teachers found</div>
                   <div className="text-[12px]" style={{ color: WA_TEXT_MUTED }}>Try a different search.</div>
                 </div>
               ) : (
@@ -1433,18 +1433,18 @@ const TeacherNotes = () => {
                         borderLeft: active ? `3px solid ${WA_GREEN}` : "3px solid transparent",
                       }}>
                       {/* Avatar — circular WhatsApp style */}
-                      <div className="w-[49px] h-[49px] rounded-full flex items-center justify-center text-white text-[15px] font-semibold shrink-0 relative"
+                      <div className="w-[49px] h-[49px] rounded-full flex items-center justify-center text-white text-[15px] font-normal shrink-0 relative"
                         style={{ background: st.avBg, letterSpacing: "-0.3px" }}>
                         {(t.name || "TC").substring(0, 2).toUpperCase()}
                       </div>
                       {/* Name + preview */}
                       <div className="flex-1 min-w-0 py-1" style={{ borderBottom: i === filteredTeachers.length - 1 ? "none" : `0.5px solid ${WA_DIVIDER}` }}>
                         <div className="flex items-center justify-between gap-2 mb-[4px]">
-                          <span className="text-[15px] font-medium truncate" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
+                          <span className="text-[15px] font-normal truncate" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
                             {t.name || "Teacher"}
                           </span>
                           {last && (
-                            <span className="text-[11.5px] font-medium shrink-0" style={{ color: unread > 0 ? WA_GREEN_D : WA_TEXT_MUTED }}>
+                            <span className="text-[11.5px] font-normal shrink-0" style={{ color: unread > 0 ? WA_GREEN_D : WA_TEXT_MUTED }}>
                               {timeLabel}
                             </span>
                           )}
@@ -1460,7 +1460,7 @@ const TeacherNotes = () => {
                             </span>
                           </div>
                           {unread > 0 ? (
-                            <span className="min-w-[20px] h-[20px] px-1.5 rounded-full text-[12px] font-semibold text-white flex items-center justify-center shrink-0"
+                            <span className="min-w-[20px] h-[20px] px-1.5 rounded-full text-[12px] font-normal text-white flex items-center justify-center shrink-0"
                               style={{ background: WA_BADGE }}>
                               {unread}
                             </span>
@@ -1508,7 +1508,7 @@ const TeacherNotes = () => {
                 {/* Chat header — WhatsApp Web (light grey) */}
                 <div className="px-4 py-2.5 flex items-center gap-3 shrink-0"
                   style={{ background: WA_PANEL, borderBottom: `0.5px solid ${WA_DIVIDER}` }}>
-                  <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[14px] font-semibold shrink-0"
+                  <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[14px] font-normal shrink-0"
                     style={{
                       background: subjectStyleD(selectedTeacher.subject || "").avBg,
                       letterSpacing: "-0.2px",
@@ -1516,7 +1516,7 @@ const TeacherNotes = () => {
                     {(selectedTeacher.name || "TC").substring(0, 2).toUpperCase()}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[16px] font-medium truncate leading-tight" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
+                    <div className="text-[16px] font-normal truncate leading-tight" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
                       {selectedTeacher.name || "Teacher"}
                     </div>
                     <div className="text-[12.5px] font-normal flex items-center gap-1.5 mt-[2px] truncate" style={{ color: WA_TEXT_MUTED }}>
@@ -1571,14 +1571,14 @@ const TeacherNotes = () => {
                         style={{ background: "#fff", boxShadow: "0 4px 16px rgba(11,20,26,0.06)" }}>
                         <MessageSquare size={28} color={WA_TEAL_D} strokeWidth={1.7} />
                       </div>
-                      <p className="text-[14px] font-medium" style={{ color: WA_TEXT }}>No messages yet</p>
+                      <p className="text-[14px] font-normal" style={{ color: WA_TEXT }}>No messages yet</p>
                       <p className="text-[12.5px]" style={{ color: WA_TEXT_MUTED }}>Type below to start the conversation.</p>
                     </div>
                   ) : (
                     groupedMessages.map(group => (
                       <div key={group.date}>
                         <div className="flex justify-center my-3">
-                          <span className="px-3 py-[4px] rounded-[8px] text-[12px] font-medium"
+                          <span className="px-3 py-[4px] rounded-[8px] text-[12px] font-normal"
                             style={{
                               background: "#FFFFFF",
                               boxShadow: "0 1px 1px rgba(11,20,26,0.04)",
@@ -1612,7 +1612,7 @@ const TeacherNotes = () => {
                                     paddingBottom: 18,
                                   }}>
                                   {!isSent && isFirstInGroup && senderName && (
-                                    <div className="text-[12.5px] font-medium mb-[2px]" style={{ color: WA_TEAL_D }}>{senderName}</div>
+                                    <div className="text-[12.5px] font-normal mb-[2px]" style={{ color: WA_TEAL_D }}>{senderName}</div>
                                   )}
                                   <span>{n.message}</span>
                                   {/* Time + tick — inside bubble (WhatsApp pattern) */}

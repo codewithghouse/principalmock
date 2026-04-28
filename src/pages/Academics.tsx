@@ -110,7 +110,7 @@ const AcademicsDesktop = ({
 
   return (
     <div className="pb-10 w-full px-2"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -120,19 +120,19 @@ const AcademicsDesktop = ({
             <GraduationCap className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Academic Performance</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Academic Performance</div>
             <div className="text-[12px] mt-1" style={{ color: T3 }}>Subject-wise performance across all classes</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={onGenerateReport}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH }}>
             <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Generate Report
           </button>
           <button onClick={onOpenSchedule}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <CalendarCheck className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -156,10 +156,10 @@ const AcademicsDesktop = ({
               <TrendingUp className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>School Average Score</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>School Average Score</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : `${overallAvg}%`}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>across {totalSubjects} subject{totalSubjects === 1 ? "" : "s"}</span>
+                <span className="text-[28px] font-normal leading-none tracking-tight">{loading ? "—" : `${overallAvg}%`}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>across {totalSubjects} subject{totalSubjects === 1 ? "" : "s"}</span>
               </div>
             </div>
           </div>
@@ -172,8 +172,8 @@ const AcademicsDesktop = ({
               <div key={s.label} className="flex items-center gap-2">
                 <span className="w-[10px] h-[10px] rounded-full" style={{ background: s.color, boxShadow: `0 0 0 3px ${s.color}33` }} />
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
-                  <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
+                  <div className="text-[22px] font-normal leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
                 </div>
               </div>
             ))}
@@ -194,14 +194,14 @@ const AcademicsDesktop = ({
             <div className="absolute -top-6 -right-6 w-[100px] h-[100px] rounded-full pointer-events-none"
               style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }} />
             <div className="flex items-center justify-between mb-4 relative">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>{title}</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>{title}</span>
               <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                 style={{ background: grad, boxShadow: shadow }}>
                 <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
             </div>
-            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-            <p className="text-[12px] font-semibold truncate" style={{ color: T3 }}>{sub}</p>
+            <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+            <p className="text-[12px] font-normal truncate" style={{ color: T3 }}>{sub}</p>
           </div>
         ))}
       </div>
@@ -212,8 +212,8 @@ const AcademicsDesktop = ({
           style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
           <BookText className="w-4 h-4 text-white" strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Subject Performance</div>
-        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+        <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Subject Performance</div>
+        <span className="text-[12px] font-normal px-3 py-1 rounded-full"
           style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {subjects.length} subject{subjects.length === 1 ? "" : "s"}
         </span>
@@ -237,7 +237,7 @@ const AcademicsDesktop = ({
             style={{ background: BG, border: `0.5px solid ${SEP}` }}>
             <GraduationCap className="w-8 h-8" style={{ color: T4 }} strokeWidth={2} />
           </div>
-          <p className="text-[14px] font-semibold" style={{ color: T1 }}>No exam scores recorded yet</p>
+          <p className="text-[14px] font-normal" style={{ color: T1 }}>No exam scores recorded yet</p>
           <p className="text-[12px] max-w-[280px]" style={{ color: T4 }}>Subject performance will appear once teachers record results</p>
         </div>
       ) : (
@@ -257,18 +257,18 @@ const AcademicsDesktop = ({
                     style={{ background: grad, boxShadow: "0 4px 14px rgba(10,132,255,0.22)" }}>
                     <s.icon className="w-5 h-5 text-white" strokeWidth={2.3} />
                   </div>
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[12px] py-[4px] rounded-full"
+                  <span className="text-[12px] font-normal uppercase tracking-[0.08em] px-[12px] py-[4px] rounded-full"
                     style={{ background: theme.bg, color: theme.color, border: `0.5px solid ${theme.border}` }}>
                     {s.status}
                   </span>
                 </div>
-                <h3 className="text-[14px] font-semibold mb-1 truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{s.name}</h3>
-                <div className="text-[28px] font-semibold leading-none mb-3" style={{ color: scoreColor(s.avgNum), letterSpacing: "-1px" }}>{s.avg}</div>
+                <h3 className="text-[14px] font-normal mb-1 truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{s.name}</h3>
+                <div className="text-[28px] font-normal leading-none mb-3" style={{ color: scoreColor(s.avgNum), letterSpacing: "-1px" }}>{s.avg}</div>
                 <div className="h-1.5 rounded-[2px] overflow-hidden mb-3" style={{ background: BG2 }}>
                   <div className="h-full rounded-[2px]" style={{ width: `${s.avgNum}%`, background: grad }} />
                 </div>
                 <div className="flex items-center justify-between pt-3" style={{ borderTop: `0.5px solid ${SEP}` }}>
-                  <span className="text-[12px] font-semibold" style={{ color: T3 }}>
+                  <span className="text-[12px] font-normal" style={{ color: T3 }}>
                     {s.weakSections > 0 ? `${s.weakSections} weak section${s.weakSections === 1 ? "" : "s"}` : "All sections good"}
                   </span>
                   <ArrowRight className="w-[14px] h-[14px] transition-transform group-hover:translate-x-1" style={{ color: B1 }} strokeWidth={2.4} />
@@ -290,12 +290,12 @@ const AcademicsDesktop = ({
               style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
               <FileText className="w-4 h-4" style={{ color: VIOLET }} strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Grade Distribution</h2>
+            <h2 className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Grade Distribution</h2>
           </div>
           <div className="p-6">
             {gradeDistData.reduce((s, g) => s + g.value, 0) === 0 ? (
               <div className="flex items-center justify-center h-48">
-                <p className="text-[13px] font-semibold" style={{ color: T4 }}>No data yet</p>
+                <p className="text-[13px] font-normal" style={{ color: T4 }}>No data yet</p>
               </div>
             ) : (() => {
               const gradeColors = [GREEN, B1, GOLD, RED];
@@ -338,7 +338,7 @@ const AcademicsDesktop = ({
                               textAnchor={props.textAnchor}
                               dominantBaseline={props.dominantBaseline}
                               fill="#ffffff"
-                              style={{ fontSize: 14, fontWeight: 600, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}
+                              style={{ fontSize: 14, fontWeight: 400, fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}
                             >
                               {payload.value}
                             </text>
@@ -354,8 +354,8 @@ const AcademicsDesktop = ({
                         <div key={g.name} className="flex items-center gap-2 px-3 py-2 rounded-[12px]"
                           style={{ background: BG, border: `0.5px solid ${SEP}` }}>
                           <span className="w-3 h-3 rounded-[4px]" style={{ background: c }} />
-                          <span className="text-[12px] font-semibold flex-1 truncate" style={{ color: T2 }}>{g.name}</span>
-                          <span className="text-[13px] font-semibold" style={{ color: c }}>{g.value}</span>
+                          <span className="text-[12px] font-normal flex-1 truncate" style={{ color: T2 }}>{g.name}</span>
+                          <span className="text-[13px] font-normal" style={{ color: c }}>{g.value}</span>
                         </div>
                       );
                     })}
@@ -374,12 +374,12 @@ const AcademicsDesktop = ({
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}` }}>
               <TrendingUp className="w-4 h-4" style={{ color: GREEN }} strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Curriculum Progress</h2>
+            <h2 className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Curriculum Progress</h2>
           </div>
           <div className="p-6">
             {curriculumData.length === 0 ? (
               <div className="flex items-center justify-center h-48">
-                <p className="text-[13px] font-semibold" style={{ color: T4 }}>No data yet</p>
+                <p className="text-[13px] font-normal" style={{ color: T4 }}>No data yet</p>
               </div>
             ) : (
               <div className="space-y-4">
@@ -391,8 +391,8 @@ const AcademicsDesktop = ({
                   return (
                     <div key={c.subject}>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-[13px] font-semibold" style={{ color: T1 }}>{c.subject}</span>
-                        <span className="text-[13px] font-semibold" style={{ color }}>{c.progress}%</span>
+                        <span className="text-[13px] font-normal" style={{ color: T1 }}>{c.subject}</span>
+                        <span className="text-[13px] font-normal" style={{ color }}>{c.progress}%</span>
                       </div>
                       <div className="h-2.5 rounded-[3px] overflow-hidden" style={{ background: BG2 }}>
                         <div className="h-full rounded-[3px] transition-all duration-700" style={{ width: `${c.progress}%`, background: grad }} />
@@ -419,8 +419,8 @@ const AcademicsDesktop = ({
               style={{ background: `linear-gradient(135deg, ${RED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
               <AlertTriangle className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Weak Subjects Requiring Attention</h2>
-            <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+            <h2 className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Weak Subjects Requiring Attention</h2>
+            <span className="text-[12px] font-normal px-3 py-1 rounded-full"
               style={{ background: RED_S, color: RED, border: `0.5px solid ${RED_B}` }}>
               {weakItems.length}
             </span>
@@ -430,15 +430,15 @@ const AcademicsDesktop = ({
               <div key={i} className="bg-white rounded-[16px] p-4 flex items-center justify-between"
                 style={{ border: `0.5px solid ${RED_B}`, boxShadow: SH }}>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[13px] font-semibold" style={{ color: T1 }}>{w.subject}</p>
+                  <p className="text-[13px] font-normal" style={{ color: T1 }}>{w.subject}</p>
                   <p className="text-[12px] mt-1 flex items-center gap-1" style={{ color: T3 }}>
                     <Users className="w-[11px] h-[11px]" strokeWidth={2.3} />
                     {w.className} · {w.studentCount} students
                   </p>
                 </div>
                 <div className="text-right ml-3">
-                  <div className="text-[22px] font-semibold leading-none" style={{ color: RED, letterSpacing: "-0.5px" }}>{w.avg}%</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mt-1" style={{ color: T4 }}>Avg</div>
+                  <div className="text-[22px] font-normal leading-none" style={{ color: RED, letterSpacing: "-0.5px" }}>{w.avg}%</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.08em] mt-1" style={{ color: T4 }}>Avg</div>
                 </div>
               </div>
             ))}
@@ -460,17 +460,17 @@ const AcademicsDesktop = ({
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Academic Intelligence</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Academic Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            School is averaging <strong style={{ color: "#fff", fontWeight: 600 }}>{overallAvg}%</strong> across <strong style={{ color: "#fff", fontWeight: 600 }}>{totalSubjects} subjects</strong>.
-            {topSubject && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{topSubject.name}</strong> leads with <strong style={{ color: "#fff", fontWeight: 600 }}>{topSubject.avg}</strong>.</>}
-            {weakCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{weakCount}</strong> subject{weakCount === 1 ? " needs" : "s need"} remedial action across <strong style={{ color: "#fff", fontWeight: 600 }}>{weakItems.length} class section{weakItems.length === 1 ? "" : "s"}</strong>.</>}
+            School is averaging <strong style={{ color: "#fff", fontWeight: 400 }}>{overallAvg}%</strong> across <strong style={{ color: "#fff", fontWeight: 400 }}>{totalSubjects} subjects</strong>.
+            {topSubject && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{topSubject.name}</strong> leads with <strong style={{ color: "#fff", fontWeight: 400 }}>{topSubject.avg}</strong>.</>}
+            {weakCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{weakCount}</strong> subject{weakCount === 1 ? " needs" : "s need"} remedial action across <strong style={{ color: "#fff", fontWeight: 400 }}>{weakItems.length} class section{weakItems.length === 1 ? "" : "s"}</strong>.</>}
             {" "}Schedule focused revision to lift underperforming cohorts before next assessment.
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: B4 }} />
-            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}
@@ -802,7 +802,7 @@ const Academics = () => {
                 <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
                   <CalendarCheck className="w-5 h-5 text-amber-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground">Schedule Remedial</h3>
+                <h3 className="text-lg font-normal text-foreground">Schedule Remedial</h3>
               </div>
               <button onClick={() => setShowScheduleModal(false)} className="p-2 hover:bg-secondary rounded-lg transition-colors">
                 <X className="w-4 h-4" />
@@ -811,9 +811,9 @@ const Academics = () => {
             <form onSubmit={handleScheduleRemedial} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Subject</label>
+                  <label className="text-xs font-normal text-slate-500 uppercase tracking-wider mb-1.5 block">Subject</label>
                   <select
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.subject}
                     onChange={(e) => setRemedialForm({ ...remedialForm, subject: e.target.value })}
                     required
@@ -823,11 +823,11 @@ const Academics = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Grade / Class</label>
+                  <label className="text-xs font-normal text-slate-500 uppercase tracking-wider mb-1.5 block">Grade / Class</label>
                   <input
                     type="text"
                     placeholder="e.g. Grade 9"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.grade}
                     onChange={(e) => setRemedialForm({ ...remedialForm, grade: e.target.value })}
                     required
@@ -836,20 +836,20 @@ const Academics = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Date</label>
+                  <label className="text-xs font-normal text-slate-500 uppercase tracking-wider mb-1.5 block">Date</label>
                   <input
                     type="date"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.date}
                     onChange={(e) => setRemedialForm({ ...remedialForm, date: e.target.value })}
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Time</label>
+                  <label className="text-xs font-normal text-slate-500 uppercase tracking-wider mb-1.5 block">Time</label>
                   <input
                     type="time"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.time}
                     onChange={(e) => setRemedialForm({ ...remedialForm, time: e.target.value })}
                     required
@@ -857,24 +857,24 @@ const Academics = () => {
                 </div>
               </div>
               <div>
-                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Assigned Teacher</label>
+                <label className="text-xs font-normal text-slate-500 uppercase tracking-wider mb-1.5 block">Assigned Teacher</label>
                 <input
                   type="text"
                   placeholder="e.g. Mrs. Kavita"
-                  className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
+                  className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                   value={remedialForm.teacher}
                   onChange={(e) => setRemedialForm({ ...remedialForm, teacher: e.target.value })}
                   required
                 />
               </div>
               <div className="flex gap-3 pt-2">
-                <button type="button" onClick={() => setShowScheduleModal(false)} className="flex-1 py-2.5 rounded-xl border border-border text-sm font-semibold hover:bg-secondary transition-colors">
+                <button type="button" onClick={() => setShowScheduleModal(false)} className="flex-1 py-2.5 rounded-xl border border-border text-sm font-normal hover:bg-secondary transition-colors">
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="flex-1 py-2.5 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 py-2.5 rounded-xl bg-[#1D1D1F] text-white text-sm font-normal hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                   {isSending ? "Scheduling…" : "Confirm & Schedule"}

@@ -721,7 +721,7 @@ export default function FeeStructurePage() {
       return (
         <div
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
             background: "#F5F5F7",
             minHeight: "100vh",
             paddingBottom: 24,
@@ -748,14 +748,14 @@ export default function FeeStructurePage() {
               >
                 <ChevronLeft size={16} color={B1} strokeWidth={2.3} />
               </button>
-              <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Student Payments</div>
+              <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>Student Payments</div>
             </div>
           </div>
 
           {/* Page Head */}
           <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
             <div>
-              <div style={{ fontSize: 22, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ fontSize: 22, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
                 <div
                   style={{
                     width: 30,
@@ -799,7 +799,7 @@ export default function FeeStructurePage() {
                     border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                     color: isActive ? "#fff" : T3,
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                     boxShadow: isActive
@@ -856,10 +856,10 @@ export default function FeeStructurePage() {
                   <TrendingUp size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                 </div>
                 <div>
-                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                  <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                     Collection Rate
                   </div>
-                  <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                  <div style={{ fontSize: 26, fontWeight: 400, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                     {collectionRate.toFixed(1)}%
                   </div>
                 </div>
@@ -874,7 +874,7 @@ export default function FeeStructurePage() {
                   background: "rgba(120,180,255,.22)",
                   border: "0.5px solid rgba(120,180,255,.4)",
                   fontSize: 11,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#AACCFF",
                 }}
               >
@@ -900,10 +900,10 @@ export default function FeeStructurePage() {
                 { v: defaulters, l: "Defaulters", c: "#FFCC00" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 16, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 16, fontWeight: 400, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1005,13 +1005,13 @@ export default function FeeStructurePage() {
                 >
                   {c.icon}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
                   {c.label}
                 </div>
-                <div style={{ fontSize: 18, fontWeight: 600, color: c.valColor, letterSpacing: "-0.7px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <div style={{ fontSize: 18, fontWeight: 400, color: c.valColor, letterSpacing: "-0.7px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {c.value}
                 </div>
-                <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor, position: "relative", zIndex: 1 }}>
                   {c.sub}
                 </div>
               </div>
@@ -1047,7 +1047,7 @@ export default function FeeStructurePage() {
           <div
             style={{
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               letterSpacing: "0.10em",
               textTransform: "uppercase",
               color: T4,
@@ -1065,7 +1065,7 @@ export default function FeeStructurePage() {
                 background: "rgba(10,132,255,.10)",
                 border: "0.5px solid rgba(10,132,255,.16)",
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: B1,
                 textTransform: "none",
                 letterSpacing: "0.04em",
@@ -1092,7 +1092,7 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   cursor: "pointer",
                   boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   border: "0.5px solid rgba(10,132,255,.12)",
@@ -1117,7 +1117,7 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: 10,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   cursor: "pointer",
                   boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   border: "0.5px solid rgba(10,132,255,.12)",
@@ -1149,7 +1149,7 @@ export default function FeeStructurePage() {
               }}
             >
               <Users size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No student data yet</div>
+              <div style={{ fontSize: 14, fontWeight: 400, color: T1 }}>No student data yet</div>
               <div style={{ fontSize: 11, color: T4, maxWidth: 260, lineHeight: 1.5 }}>
                 Upload an Excel with a "Student Name" column to see per-student payment status.
               </div>
@@ -1218,7 +1218,7 @@ export default function FeeStructurePage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 12,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: "#fff",
                         flexShrink: 0,
                         boxShadow: classAvShadows[ci % classAvShadows.length],
@@ -1227,12 +1227,12 @@ export default function FeeStructurePage() {
                       {initial}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", display: "flex", alignItems: "center", gap: 6 }}>
                         {className}
                         <span
                           style={{
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: T4,
                             padding: "1px 7px",
                             borderRadius: 100,
@@ -1243,7 +1243,7 @@ export default function FeeStructurePage() {
                           {studList.length} student{studList.length === 1 ? "" : "s"}
                         </span>
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 5, fontSize: 10, fontWeight: 600 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 5, fontSize: 10, fontWeight: 400 }}>
                         <span style={{ color: GREEN_D, display: "inline-flex", alignItems: "center", gap: 4 }}>
                           <span style={{ width: 5, height: 5, borderRadius: "50%", background: GREEN }} />
                           {fmtInr(classPaid)} paid
@@ -1319,7 +1319,7 @@ export default function FeeStructurePage() {
                                 <div
                                   style={{
                                     fontSize: 9,
-                                    fontWeight: 600,
+                                    fontWeight: 400,
                                     color: "#fff",
                                     padding: "3px 8px",
                                     borderRadius: 100,
@@ -1341,7 +1341,7 @@ export default function FeeStructurePage() {
                                     alignItems: "center",
                                     justifyContent: "center",
                                     fontSize: 11,
-                                    fontWeight: 600,
+                                    fontWeight: 400,
                                     color: "#fff",
                                     flexShrink: 0,
                                   }}
@@ -1349,14 +1349,14 @@ export default function FeeStructurePage() {
                                   {initials || "?"}
                                 </div>
                                 <div style={{ flex: 1, minWidth: 0 }}>
-                                  <div style={{ fontSize: 13, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                  <div style={{ fontSize: 13, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                     {s.studentName}
                                   </div>
-                                  <div style={{ fontSize: 10, color: T3, fontWeight: 500, lineHeight: 1.35, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                  <div style={{ fontSize: 10, color: T3, fontWeight: 400, lineHeight: 1.35, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                     {s.parentName || "—"}
                                   </div>
                                   {s.parentPhone && (
-                                    <div style={{ fontSize: 9, color: T4, fontWeight: 500 }}>{s.parentPhone}</div>
+                                    <div style={{ fontSize: 9, color: T4, fontWeight: 400 }}>{s.parentPhone}</div>
                                   )}
                                 </div>
                                 {isCleared ? (
@@ -1365,7 +1365,7 @@ export default function FeeStructurePage() {
                                       padding: "3px 8px",
                                       borderRadius: 100,
                                       fontSize: 9,
-                                      fontWeight: 600,
+                                      fontWeight: 400,
                                       letterSpacing: "0.02em",
                                       background: "linear-gradient(135deg,#D0F8DE,#A5F0BC)",
                                       color: GREEN_D,
@@ -1386,7 +1386,7 @@ export default function FeeStructurePage() {
                                       padding: "3px 8px",
                                       borderRadius: 100,
                                       fontSize: 9,
-                                      fontWeight: 600,
+                                      fontWeight: 400,
                                       letterSpacing: "0.02em",
                                       background: "linear-gradient(135deg,#FFD8DF,#FFB0BE)",
                                       color: RED_D,
@@ -1412,10 +1412,10 @@ export default function FeeStructurePage() {
                                 >
                                   {qTerms.map((t) => (
                                     <div key={t} style={{ background: "#fff", padding: "7px 4px", textAlign: "center" }}>
-                                      <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: T4, marginBottom: 2, display: "block" }}>
+                                      <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", color: T4, marginBottom: 2, display: "block" }}>
                                         {t}
                                       </div>
-                                      <div style={{ fontSize: 11, fontWeight: 600, color: T2, letterSpacing: "-0.1px" }}>
+                                      <div style={{ fontSize: 11, fontWeight: 400, color: T2, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[t] || 0)}
                                       </div>
                                     </div>
@@ -1438,30 +1438,30 @@ export default function FeeStructurePage() {
                                 >
                                   {halfYearlyTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 400, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         H-Yrly
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 400, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[halfYearlyTerm] || 0)}
                                       </span>
                                     </span>
                                   )}
                                   {annualTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 400, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         Annual
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 400, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[annualTerm] || 0)}
                                       </span>
                                     </span>
                                   )}
                                   {monthlyTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 400, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         Monthly
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 400, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[monthlyTerm] || 0)}
                                       </span>
                                     </span>
@@ -1487,10 +1487,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: (s.paid || 0) > 0 ? GREEN_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: (s.paid || 0) > 0 ? GREEN_D : T4 }}>
                                     Paid
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: (s.paid || 0) > 0 ? "#004018" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 400, letterSpacing: "-0.2px", lineHeight: 1, color: (s.paid || 0) > 0 ? "#004018" : T4 }}>
                                     {fmtInr(s.paid || 0)}
                                   </div>
                                 </div>
@@ -1503,10 +1503,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: hasDiscount ? VIOLET_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: hasDiscount ? VIOLET_D : T4 }}>
                                     Discount
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: hasDiscount ? "#280C5C" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 400, letterSpacing: "-0.2px", lineHeight: 1, color: hasDiscount ? "#280C5C" : T4 }}>
                                     {fmtInr(s.discount || 0)}
                                   </div>
                                 </div>
@@ -1519,10 +1519,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: isPending ? RED_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: isPending ? RED_D : T4 }}>
                                     Pending
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: isPending ? "#60081A" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 400, letterSpacing: "-0.2px", lineHeight: 1, color: isPending ? "#60081A" : T4 }}>
                                     {fmtInr(s.pending || 0)}
                                   </div>
                                 </div>
@@ -1547,7 +1547,7 @@ export default function FeeStructurePage() {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -1559,7 +1559,7 @@ export default function FeeStructurePage() {
         {/* Page Head */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
               <div
                 style={{
                   width: 30,
@@ -1599,10 +1599,10 @@ export default function FeeStructurePage() {
               }}
             >
               <div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 1 }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 1 }}>
                   Students
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 600, color: T1, letterSpacing: "-0.2px", lineHeight: 1 }}>
+                <div style={{ fontSize: 12, fontWeight: 400, color: T1, letterSpacing: "-0.2px", lineHeight: 1 }}>
                   {allStudents.length}
                 </div>
               </div>
@@ -1628,7 +1628,7 @@ export default function FeeStructurePage() {
                     border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                     color: isActive ? "#fff" : T3,
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                     boxShadow: isActive
@@ -1688,10 +1688,10 @@ export default function FeeStructurePage() {
                 <DollarSign size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                   Total Annual Fee
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 600, color: "#fff", letterSpacing: "-0.6px", lineHeight: 1 }}>
+                <div style={{ fontSize: 22, fontWeight: 400, color: "#fff", letterSpacing: "-0.6px", lineHeight: 1 }}>
                   {fmtInrFull(latestBranchTotal)}
                 </div>
               </div>
@@ -1706,7 +1706,7 @@ export default function FeeStructurePage() {
                 background: latestStructure ? "rgba(52,199,89,.22)" : "rgba(255,204,0,.22)",
                 border: latestStructure ? "0.5px solid rgba(52,199,89,.4)" : "0.5px solid rgba(255,204,0,.4)",
                 fontSize: 10,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: latestStructure ? "#66FFAA" : "#FFCC00",
               }}
             >
@@ -1740,10 +1740,10 @@ export default function FeeStructurePage() {
               { v: allStructures.length, l: "Versions", c: "#34C759" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                <div style={{ fontSize: 18, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 18, fontWeight: 400, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -1840,13 +1840,13 @@ export default function FeeStructurePage() {
               >
                 {c.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-0.8px", lineHeight: 1, marginBottom: 4, color: c.color, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 24, fontWeight: 400, letterSpacing: "-0.8px", lineHeight: 1, marginBottom: 4, color: c.color, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {c.value}
               </div>
-              <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {c.sub}
               </div>
             </div>
@@ -1882,16 +1882,16 @@ export default function FeeStructurePage() {
               <Upload size={16} color="#fff" strokeWidth={2.3} />
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>
+              <div style={{ fontSize: 13, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>
                 {allStructures.length > 0 ? "Upload New Version" : "Upload Fee Structure"}
               </div>
-              <div style={{ fontSize: 10, color: T3, fontWeight: 500 }}>
+              <div style={{ fontSize: 10, color: T3, fontWeight: 400 }}>
                 {allStructures.length > 0 ? "Add a revised fee plan for this AY" : "Upload your branch's fee plan"}
               </div>
             </div>
           </div>
           <div style={{ marginBottom: 10 }}>
-            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+            <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
               Academic Year
             </div>
             <input
@@ -1907,13 +1907,13 @@ export default function FeeStructurePage() {
                 fontFamily: "inherit",
                 fontSize: 12,
                 color: T1,
-                fontWeight: 500,
+                fontWeight: 400,
                 outline: "none",
               }}
             />
           </div>
           <div style={{ marginBottom: 10 }}>
-            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+            <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
               Notes
             </div>
             <input
@@ -1929,7 +1929,7 @@ export default function FeeStructurePage() {
                 fontFamily: "inherit",
                 fontSize: 12,
                 color: T1,
-                fontWeight: 500,
+                fontWeight: 400,
                 outline: "none",
               }}
             />
@@ -1947,7 +1947,7 @@ export default function FeeStructurePage() {
               justifyContent: "center",
               gap: 7,
               fontSize: 13,
-              fontWeight: 600,
+              fontWeight: 400,
               cursor: "pointer",
               border: "none",
               boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
@@ -1972,7 +1972,7 @@ export default function FeeStructurePage() {
               justifyContent: "center",
               gap: 6,
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               cursor: "pointer",
               border: "0.5px dashed rgba(10,132,255,.3)",
               letterSpacing: "0.02em",
@@ -1997,11 +1997,11 @@ export default function FeeStructurePage() {
           >
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
               <FileSpreadsheet size={16} color="#86310C" strokeWidth={2.3} />
-              <div style={{ fontSize: 12, fontWeight: 600, color: "#331F00" }}>Review & Publish</div>
+              <div style={{ fontSize: 12, fontWeight: 400, color: "#331F00" }}>Review & Publish</div>
               <span
                 style={{
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: "#86310C",
                   background: "rgba(255,255,255,.65)",
                   padding: "2px 7px",
@@ -2014,7 +2014,7 @@ export default function FeeStructurePage() {
                 Unsaved
               </span>
             </div>
-            <div style={{ fontSize: 11, color: "#86310C", fontWeight: 500, marginBottom: 12, lineHeight: 1.5 }}>
+            <div style={{ fontSize: 11, color: "#86310C", fontWeight: 400, marginBottom: 12, lineHeight: 1.5 }}>
               {draft.mode === "student"
                 ? `${draft.studentRows?.length || 0} students · ${draft.rows.length} classes · ${draft.termTypes.length} terms parsed.`
                 : `${draft.rows.length} classes × ${draft.termTypes.length} terms parsed.`}
@@ -2031,7 +2031,7 @@ export default function FeeStructurePage() {
                   background: "rgba(255,255,255,.75)",
                   color: "#86310C",
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   border: "0.5px solid rgba(255,204,0,.35)",
                   cursor: saving ? "not-allowed" : "pointer",
                   display: "flex",
@@ -2054,7 +2054,7 @@ export default function FeeStructurePage() {
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   border: "none",
                   cursor: saving ? "not-allowed" : "pointer",
                   display: "flex",
@@ -2124,13 +2124,13 @@ export default function FeeStructurePage() {
               <CheckCircle2 size={16} color="#fff" strokeWidth={2.5} />
             </div>
             <div style={{ flex: 1, minWidth: 0, position: "relative", zIndex: 1 }}>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: GREEN_D, marginBottom: 2 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: GREEN_D, marginBottom: 2 }}>
                 Status
               </div>
-              <div style={{ fontSize: 15, fontWeight: 600, color: "#003D18", letterSpacing: "-0.3px", marginBottom: 2 }}>
+              <div style={{ fontSize: 15, fontWeight: 400, color: "#003D18", letterSpacing: "-0.3px", marginBottom: 2 }}>
                 {allStructures.length} upload{allStructures.length === 1 ? "" : "s"} saved
               </div>
-              <div style={{ fontSize: 10, color: "#005A2A", fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 10, color: "#005A2A", fontWeight: 400, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {latestStructure.uploadedBy
                   ? `Last by ${latestStructure.uploadedBy}`
                   : "Latest version live"}
@@ -2202,7 +2202,7 @@ export default function FeeStructurePage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: initial.length > 2 ? 11 : 14,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: "#fff",
                         flexShrink: 0,
                         boxShadow: classAvShadows[ri % classAvShadows.length],
@@ -2211,18 +2211,18 @@ export default function FeeStructurePage() {
                       {initial}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {row.className}
                       </div>
-                      <div style={{ fontSize: 10, color: T4, fontWeight: 500 }}>
+                      <div style={{ fontSize: 10, color: T4, fontWeight: 400 }}>
                         {latestStructure.termTypes.length} term{latestStructure.termTypes.length === 1 ? "" : "s"}
                       </div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ fontSize: 17, fontWeight: 600, color: B1, letterSpacing: "-0.4px", lineHeight: 1 }}>
+                      <div style={{ fontSize: 17, fontWeight: 400, color: B1, letterSpacing: "-0.4px", lineHeight: 1 }}>
                         {fmtInr(classTotal)}
                       </div>
-                      <div style={{ fontSize: 9, color: T4, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 2 }}>
+                      <div style={{ fontSize: 9, color: T4, fontWeight: 400, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 2 }}>
                         Total / yr
                       </div>
                     </div>
@@ -2239,10 +2239,10 @@ export default function FeeStructurePage() {
                     >
                       {quarterTerms.map((t) => (
                         <div key={t} style={{ background: "#fff", padding: "9px 6px", textAlign: "center" }}>
-                          <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
+                          <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
                             {t}
                           </div>
-                          <div style={{ fontSize: 11, fontWeight: 600, color: T2, letterSpacing: "-0.1px", lineHeight: 1 }}>
+                          <div style={{ fontSize: 11, fontWeight: 400, color: T2, letterSpacing: "-0.1px", lineHeight: 1 }}>
                             {fmtInr(row.amounts[t] || 0)}
                           </div>
                         </div>
@@ -2257,7 +2257,7 @@ export default function FeeStructurePage() {
                         padding: "10px 14px",
                         background: "rgba(10,132,255,.03)",
                         fontSize: 10,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T3,
                         gap: 4,
                         flexWrap: "wrap",
@@ -2265,7 +2265,7 @@ export default function FeeStructurePage() {
                     >
                       {nonQuarterTerms.slice(0, 3).map((t) => (
                         <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                          {t} <strong style={{ color: T2, fontWeight: 600 }}>{fmtInr(row.amounts[t] || 0)}</strong>
+                          {t} <strong style={{ color: T2, fontWeight: 400 }}>{fmtInr(row.amounts[t] || 0)}</strong>
                         </span>
                       ))}
                     </div>
@@ -2289,7 +2289,7 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 6,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   cursor: "pointer",
                   boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   border: "0.5px dashed rgba(10,132,255,.3)",
@@ -2317,7 +2317,7 @@ export default function FeeStructurePage() {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -2335,7 +2335,7 @@ export default function FeeStructurePage() {
                   background: "rgba(10,132,255,.10)",
                   border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 9,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: B1,
                   textTransform: "none",
                   letterSpacing: "0.04em",
@@ -2419,7 +2419,7 @@ export default function FeeStructurePage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap", marginBottom: 3 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>
+                        <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>
                           Fee Structure
                         </div>
                         {isLatest && (
@@ -2429,7 +2429,7 @@ export default function FeeStructurePage() {
                               borderRadius: 100,
                               background: `linear-gradient(135deg, ${GREEN}, #22DD77)`,
                               fontSize: 8,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               color: "#fff",
                               letterSpacing: "0.08em",
                               boxShadow: "0 3px 8px rgba(52,199,89,.35)",
@@ -2441,25 +2441,25 @@ export default function FeeStructurePage() {
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", marginBottom: 5 }}>
                         {studentCount > 0 && (
-                          <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(175,82,222,.08)", color: VIOLET, border: "0.5px solid rgba(175,82,222,.16)", fontSize: 9, fontWeight: 600 }}>
+                          <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(175,82,222,.08)", color: VIOLET, border: "0.5px solid rgba(175,82,222,.16)", fontSize: 9, fontWeight: 400 }}>
                             {studentCount} students
                           </span>
                         )}
-                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 600 }}>
+                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 400 }}>
                           {s.rows.length} classes
                         </span>
-                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 600 }}>
+                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 400 }}>
                           {s.termTypes.length} terms
                         </span>
                       </div>
-                      <div style={{ fontSize: 10, color: T3, fontWeight: 500, marginBottom: 2 }}>{uploadedLabel}</div>
-                      <div style={{ fontSize: 9, color: T4, fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      <div style={{ fontSize: 10, color: T3, fontWeight: 400, marginBottom: 2 }}>{uploadedLabel}</div>
+                      <div style={{ fontSize: 9, color: T4, fontWeight: 400, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {s.uploadedBy ? `by ${s.uploadedBy}` : ""}
                         {s.academicYear ? ` · AY ${s.academicYear}` : ""}
                       </div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ fontSize: 15, fontWeight: 600, color: isLatest ? GREEN_D : B1, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 4 }}>
+                      <div style={{ fontSize: 15, fontWeight: 400, color: isLatest ? GREEN_D : B1, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 4 }}>
                         {fmtInr(branchTotal)}
                       </div>
                       {!isLatest && s.id && (
@@ -2474,7 +2474,7 @@ export default function FeeStructurePage() {
                             background: "rgba(255,59,48,.10)",
                             border: "0.5px solid rgba(255,59,48,.22)",
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: RED_D,
                             display: "inline-flex",
                             alignItems: "center",
@@ -2515,17 +2515,17 @@ export default function FeeStructurePage() {
                           borderBottom: `0.5px solid ${SEP}`,
                         }}
                       >
-                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "left" }}>Class</div>
-                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "left" }}>Class</div>
+                        <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {repQuarter || "Term"}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {annualTerm ? "Annual" : (s.termTypes[1] || "—")}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {monthlyTerm ? "Monthly" : (s.termTypes[2] || "—")}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>Total</div>
+                        <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>Total</div>
                       </div>
 
                       {s.rows.map((row, ri) => {
@@ -2543,22 +2543,22 @@ export default function FeeStructurePage() {
                               alignItems: "center",
                             }}
                           >
-                            <div style={{ fontSize: 11, fontWeight: 600, color: T1, letterSpacing: "-0.1px", display: "flex", alignItems: "center", gap: 5, overflow: "hidden" }}>
+                            <div style={{ fontSize: 11, fontWeight: 400, color: T1, letterSpacing: "-0.1px", display: "flex", alignItems: "center", gap: 5, overflow: "hidden" }}>
                               <div style={{ width: 6, height: 6, borderRadius: "50%", background: dotColor, flexShrink: 0 }} />
                               <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                 {row.className}
                               </span>
                             </div>
-                            <div style={{ fontSize: 10, fontWeight: 600, color: T2, textAlign: "right" }}>
+                            <div style={{ fontSize: 10, fontWeight: 400, color: T2, textAlign: "right" }}>
                               {repQuarter ? fmtInr(row.amounts[repQuarter] || 0) : "—"}
                             </div>
-                            <div style={{ fontSize: 10, fontWeight: 600, color: T2, textAlign: "right" }}>
+                            <div style={{ fontSize: 10, fontWeight: 400, color: T2, textAlign: "right" }}>
                               {annualTerm ? fmtInr(row.amounts[annualTerm] || 0) : s.termTypes[1] ? fmtInr(row.amounts[s.termTypes[1]] || 0) : "—"}
                             </div>
-                            <div style={{ fontSize: 10, fontWeight: 600, color: T2, textAlign: "right" }}>
+                            <div style={{ fontSize: 10, fontWeight: 400, color: T2, textAlign: "right" }}>
                               {monthlyTerm ? fmtInr(row.amounts[monthlyTerm] || 0) : s.termTypes[2] ? fmtInr(row.amounts[s.termTypes[2]] || 0) : "—"}
                             </div>
-                            <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
+                            <div style={{ fontSize: 10, fontWeight: 400, color: B1, textAlign: "right" }}>
                               {fmtInr(rowTotal)}
                             </div>
                           </div>
@@ -2577,17 +2577,17 @@ export default function FeeStructurePage() {
                           alignItems: "center",
                         }}
                       >
-                        <div style={{ fontSize: 11, fontWeight: 600, color: B1, letterSpacing: "-0.1px" }}>Branch Total</div>
-                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 11, fontWeight: 400, color: B1, letterSpacing: "-0.1px" }}>Branch Total</div>
+                        <div style={{ fontSize: 10, fontWeight: 400, color: B1, textAlign: "right" }}>
                           {repQuarter ? fmtInr(perTerm[repQuarter] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 400, color: B1, textAlign: "right" }}>
                           {annualTerm ? fmtInr(perTerm[annualTerm] || 0) : s.termTypes[1] ? fmtInr(perTerm[s.termTypes[1]] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 400, color: B1, textAlign: "right" }}>
                           {monthlyTerm ? fmtInr(perTerm[monthlyTerm] || 0) : s.termTypes[2] ? fmtInr(perTerm[s.termTypes[2]] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 600, color: VIOLET_D, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 400, color: VIOLET_D, textAlign: "right" }}>
                           {fmtInr(branchTotal)}
                         </div>
                       </div>
@@ -2597,7 +2597,7 @@ export default function FeeStructurePage() {
                           padding: "10px 14px",
                           background: "rgba(10,132,255,.03)",
                           fontSize: 9,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: T3,
                           display: "flex",
                           justifyContent: "space-between",
@@ -2607,7 +2607,7 @@ export default function FeeStructurePage() {
                         {halfYearlyTerm ? (
                           <span>
                             Half-Yearly total:{" "}
-                            <strong style={{ color: B1, fontWeight: 600 }}>{fmtInr(halfYearlyTotal)}</strong>
+                            <strong style={{ color: B1, fontWeight: 400 }}>{fmtInr(halfYearlyTotal)}</strong>
                           </span>
                         ) : (
                           <span>
@@ -2665,7 +2665,7 @@ export default function FeeStructurePage() {
             >
               <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
             </div>
-            <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+            <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
               AI Fee Intelligence
             </span>
           </div>
@@ -2673,28 +2673,28 @@ export default function FeeStructurePage() {
             {latestStructure ? (
               <>
                 Current structure spans{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>
+                <strong style={{ color: "#fff", fontWeight: 400 }}>
                   {latestClassCount} class{latestClassCount === 1 ? "" : "es"}
                 </strong>{" "}
                 with annual revenue of{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>
+                <strong style={{ color: "#fff", fontWeight: 400 }}>
                   {fmtInrFull(latestBranchTotal)}
                 </strong>{" "}
                 across{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>
+                <strong style={{ color: "#fff", fontWeight: 400 }}>
                   {latestTermCount} term{latestTermCount === 1 ? "" : "s"}
                 </strong>
                 .
                 {allStudents.length > 0 && (
                   <>
                     {" "}Collection rate sits at{" "}
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>
                       {collectionRate.toFixed(1)}%
                     </strong>
                     {defaulters > 0 && (
                       <>
                         {" "}with{" "}
-                        <strong style={{ color: "#FF6961", fontWeight: 600 }}>
+                        <strong style={{ color: "#FF6961", fontWeight: 400 }}>
                           {defaulters} defaulter{defaulters === 1 ? "" : "s"}
                         </strong>
                       </>
@@ -2726,10 +2726,10 @@ export default function FeeStructurePage() {
               { v: latestStructure ? "LIVE" : "—", l: "Status", c: latestStructure ? "#34C759" : "#FFCC00" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                <div style={{ fontSize: 17, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 17, fontWeight: 400, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -2759,12 +2759,12 @@ export default function FeeStructurePage() {
   const dStudentCount = latest?.mode === "student" ? (latest.studentRows?.length || 0) : 0;
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* ── Top toolbar ── */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <DollarSign className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -2773,20 +2773,20 @@ export default function FeeStructurePage() {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Term-wise Plan</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Per-Class Fees</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Version History</span>
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           <button onClick={downloadTemplate}
-            className="h-[42px] px-4 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.06em] bg-white transition-transform active:scale-95 hover:scale-[1.02]"
+            className="h-[42px] px-4 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.06em] bg-white transition-transform active:scale-95 hover:scale-[1.02]"
             style={{ color: "#3A3A3C", border: "0.5px solid rgba(10,132,255,0.16)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)" }}>
             <Download className="w-[13px] h-[13px]" strokeWidth={2.4} /> Template
           </button>
           <button onClick={() => fileRef.current?.click()}
-            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden"
+            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden"
             style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)" }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Upload className="w-[13px] h-[13px] relative z-10" strokeWidth={2.4} />
@@ -2810,10 +2810,10 @@ export default function FeeStructurePage() {
             <DollarSign className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               Branch Total · {latest?.academicYear ? `AY ${latest.academicYear}` : "Latest version"}
             </div>
-            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
               {latest ? `₹ ${currency(dBranchTotal)}` : "—"}
             </div>
           </div>
@@ -2823,13 +2823,13 @@ export default function FeeStructurePage() {
             <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
               style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.4)" }}>
               <CheckCircle2 className="w-[13px] h-[13px]" style={{ color: "#34C759" }} strokeWidth={2.5} />
-              <span className="text-[12px] font-semibold" style={{ color: "#34C759" }}>Published</span>
+              <span className="text-[12px] font-normal" style={{ color: "#34C759" }}>Published</span>
             </div>
           ) : (
             <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
               style={{ background: "rgba(255,204,0,0.22)", border: "0.5px solid rgba(255,204,0,0.4)" }}>
               <AlertCircle className="w-[13px] h-[13px]" style={{ color: "#FFCC00" }} strokeWidth={2.5} />
-              <span className="text-[12px] font-semibold" style={{ color: "#FFCC00" }}>Not published</span>
+              <span className="text-[12px] font-normal" style={{ color: "#FFCC00" }}>Not published</span>
             </div>
           )}
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
@@ -2839,8 +2839,8 @@ export default function FeeStructurePage() {
               { val: dTermCount, label: "Terms", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-[12px] px-[16px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -2860,9 +2860,9 @@ export default function FeeStructurePage() {
             style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 14px rgba(10,132,255,0.28)" }}>
             <FileSpreadsheet className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Versions Saved</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: "#0A84FF", letterSpacing: "-1.2px" }}>{allStructures.length}</p>
-          <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Versions Saved</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: "#0A84FF", letterSpacing: "-1.2px" }}>{allStructures.length}</p>
+          <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>
             {latest?.uploadedBy ? `Last by ${latest.uploadedBy.split("@")[0]}` : "No uploads yet"}
           </p>
           <FileSpreadsheet
@@ -2883,9 +2883,9 @@ export default function FeeStructurePage() {
             style={{ background: "linear-gradient(135deg, #AF52DE, #AF52DE)", boxShadow: "0 4px 14px rgba(175,82,222,0.26)" }}>
             <Users className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Students Tracked</span>
-          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: "#AF52DE", letterSpacing: "-1.2px" }}>{dStudentCount || "—"}</p>
-          <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Students Tracked</span>
+          <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: "#AF52DE", letterSpacing: "-1.2px" }}>{dStudentCount || "—"}</p>
+          <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>
             {dStudentCount > 0 ? "Student-level detail" : "Class-level only"}
           </p>
           <Users
@@ -2906,12 +2906,12 @@ export default function FeeStructurePage() {
             style={{ background: "linear-gradient(135deg, #34C759, #34C759)", boxShadow: "0 4px 14px rgba(52,199,89,0.26)" }}>
             <Calendar className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Academic Year (new upload)</span>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Academic Year (new upload)</span>
           <input
             value={academicYear}
             onChange={e => setAcademicYear(e.target.value)}
             placeholder="e.g., 2026-27"
-            className="w-full h-[40px] px-3 rounded-[11px] text-[15px] font-semibold outline-none relative z-[1]"
+            className="w-full h-[40px] px-3 rounded-[11px] text-[15px] font-normal outline-none relative z-[1]"
             style={{
               background: "#FFFFFF",
               border: "0.5px solid rgba(52,199,89,0.20)",
@@ -2932,12 +2932,12 @@ export default function FeeStructurePage() {
             style={{ background: "linear-gradient(135deg, #FFCC00, #FFCC00)", boxShadow: "0 4px 14px rgba(255,204,0,0.28)" }}>
             <Tag className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Notes (new upload)</span>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Notes (new upload)</span>
           <input
             value={notes}
             onChange={e => setNotes(e.target.value)}
             placeholder="e.g., Revised Q2 fees"
-            className="w-full h-[40px] px-3 rounded-[11px] text-[13px] font-semibold outline-none relative z-[1]"
+            className="w-full h-[40px] px-3 rounded-[11px] text-[13px] font-normal outline-none relative z-[1]"
             style={{
               background: "#FFFFFF",
               border: "0.5px solid rgba(255,204,0,0.20)",
@@ -2955,14 +2955,14 @@ export default function FeeStructurePage() {
             <FileSpreadsheet className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-sm font-semibold text-[#1D1D1F] mb-1">Upload your Fee Structure Excel</h3>
-            <p className="text-xs text-slate-600 font-medium leading-relaxed mb-3">
+            <h3 className="text-sm font-normal text-[#1D1D1F] mb-1">Upload your Fee Structure Excel</h3>
+            <p className="text-xs text-slate-600 font-normal leading-relaxed mb-3">
               Multi-sheet Excel with one sheet per class. Columns: <b>Roll No, Student Name, Q1..Q4, Half-Yearly, Annual, Monthly, Paid, Pending, Parent Name, Parent Phone</b>.
               Each new upload is kept as a separate version — history is preserved.
             </p>
             <button
               onClick={downloadTemplate}
-              className="text-xs font-semibold text-[#1D1D1F] hover:underline flex items-center gap-1"
+              className="text-xs font-normal text-[#1D1D1F] hover:underline flex items-center gap-1"
             >
               <Download className="w-3 h-3" /> Download sample template
             </button>
@@ -2978,12 +2978,12 @@ export default function FeeStructurePage() {
             <div className="flex items-center justify-between px-5 py-3 border-b bg-amber-50 border-amber-100 gap-3 flex-wrap">
               <div className="flex items-center gap-2 flex-wrap">
                 <FileSpreadsheet className="w-4 h-4 text-amber-600" />
-                <h3 className="text-sm font-semibold text-[#1D1D1F]">Review & Publish New Upload</h3>
-                <span className="text-[12px] font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
+                <h3 className="text-sm font-normal text-[#1D1D1F]">Review & Publish New Upload</h3>
+                <span className="text-[12px] font-normal text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
                   Unsaved
                 </span>
               </div>
-              <p className="text-[12px] font-semibold text-slate-500">
+              <p className="text-[12px] font-normal text-slate-500">
                 {draft.mode === "student"
                   ? `${draft.studentRows?.length || 0} students · ${draft.rows.length} classes · ${draft.termTypes.length} terms`
                   : `${draft.rows.length} classes × ${draft.termTypes.length} terms`}
@@ -2994,38 +2994,38 @@ export default function FeeStructurePage() {
               <table className="w-full text-left min-w-[600px]">
                 <thead className="bg-slate-50/60">
                   <tr>
-                    <th className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
+                    <th className="py-3 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
                     {draft.termTypes.map(t => (
-                      <th key={t} className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">
+                      <th key={t} className="py-3 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">
                         <span className="inline-flex items-center gap-1"><Calendar className="w-3 h-3" /> {t}</span>
                       </th>
                     ))}
-                    <th className="py-3 px-5 text-left text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
+                    <th className="py-3 px-5 text-left text-[12px] font-normal text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {draft.rows.map((row, i) => (
                     <tr key={i} className="hover:bg-slate-50/40">
-                      <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">{row.className}</td>
+                      <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">{row.className}</td>
                       {draft.termTypes.map(t => (
-                        <td key={t} className="py-3 px-5 text-sm font-semibold text-slate-600">
+                        <td key={t} className="py-3 px-5 text-sm font-normal text-slate-600">
                           <input
                             type="number"
                             value={row.amounts[t] ?? 0}
                             onChange={e => updateDraftCell(i, t, toNumber(e.target.value))}
-                            className="w-24 bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-semibold outline-none focus:border-blue-300"
+                            className="w-24 bg-slate-50 border border-slate-200 rounded px-2 py-1 text-xs font-normal outline-none focus:border-blue-300"
                           />
                         </td>
                       ))}
-                      <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
+                      <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
                     </tr>
                   ))}
                   <tr className="bg-blue-50/50 border-t-2 border-[#1D1D1F]/10">
-                    <td className="py-3 px-5 text-xs font-semibold text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
+                    <td className="py-3 px-5 text-xs font-normal text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
                     {draft.termTypes.map(t => (
-                      <td key={t} className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
+                      <td key={t} className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
                     ))}
-                    <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">
+                    <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">
                       ₹ {currency(Object.values(perTerm).reduce((a, b) => a + b, 0))}
                     </td>
                   </tr>
@@ -3041,14 +3041,14 @@ export default function FeeStructurePage() {
               <button
                 onClick={() => setDraft(null)}
                 disabled={saving}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50 transition-all"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-normal hover:bg-slate-50 transition-all"
               >
                 <Minus className="w-3.5 h-3.5" /> Discard
               </button>
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-xs font-semibold hover:bg-[#1D1D1F] transition-all shadow-sm disabled:opacity-50"
+                className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-xs font-normal hover:bg-[#1D1D1F] transition-all shadow-sm disabled:opacity-50"
               >
                 {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                 Publish as New Version
@@ -3062,11 +3062,11 @@ export default function FeeStructurePage() {
       {allStructures.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center justify-between px-1">
-            <h2 className="text-sm font-semibold text-[#1D1D1F] uppercase tracking-widest flex items-center gap-2">
+            <h2 className="text-sm font-normal text-[#1D1D1F] uppercase tracking-widest flex items-center gap-2">
               <FileSpreadsheet className="w-4 h-4 text-[#1D1D1F]" />
               Saved Fee Structures · History
             </h2>
-            <p className="text-[12px] font-semibold text-slate-400">
+            <p className="text-[12px] font-normal text-slate-400">
               {allStructures.length} version{allStructures.length !== 1 ? "s" : ""} · newest first
             </p>
           </div>
@@ -3099,35 +3099,35 @@ export default function FeeStructurePage() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-sm font-semibold text-[#1D1D1F] truncate">
+                        <span className="text-sm font-normal text-[#1D1D1F] truncate">
                           {s.academicYear ? `AY ${s.academicYear}` : "Fee Structure"}
                         </span>
                         {isLatest && (
-                          <span className="text-[12px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
+                          <span className="text-[12px] font-normal text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
                             Latest · Live
                           </span>
                         )}
-                        <span className="text-[12px] font-semibold text-slate-400">
+                        <span className="text-[12px] font-normal text-slate-400">
                           {s.mode === "student"
                             ? `${s.studentRows?.length || 0} students · ${s.rows.length} classes`
                             : `${s.rows.length} classes`} · {s.termTypes.length} terms
                         </span>
                       </div>
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
-                        <span className="text-[12px] text-slate-500 font-semibold">{uploadedDate}</span>
-                        {s.uploadedBy && <span className="text-[12px] text-slate-400 font-medium">· by {s.uploadedBy}</span>}
-                        {s.notes && <span className="text-[12px] text-amber-700 font-semibold truncate">· {s.notes}</span>}
+                        <span className="text-[12px] text-slate-500 font-normal">{uploadedDate}</span>
+                        {s.uploadedBy && <span className="text-[12px] text-slate-400 font-normal">· by {s.uploadedBy}</span>}
+                        {s.notes && <span className="text-[12px] text-amber-700 font-normal truncate">· {s.notes}</span>}
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-[12px] font-semibold text-[#1D1D1F] bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                    <span className="text-[12px] font-normal text-[#1D1D1F] bg-white px-2.5 py-1 rounded-lg border border-slate-200">
                       ₹ {currency(branchTotal)}
                     </span>
                     <span
                       role="button"
                       onClick={e => { e.stopPropagation(); s.id && handleDeleteOne(s.id, s.academicYear || uploadedDate); }}
-                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-red-200 text-red-600 text-[12px] font-semibold hover:bg-red-50 transition-all cursor-pointer"
+                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-red-200 text-red-600 text-[12px] font-normal hover:bg-red-50 transition-all cursor-pointer"
                     >
                       <Trash2 className="w-3 h-3" /> Delete
                     </span>
@@ -3140,33 +3140,33 @@ export default function FeeStructurePage() {
                       <table className="w-full text-left min-w-[600px]">
                         <thead className="bg-slate-50/60">
                           <tr>
-                            <th className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
+                            <th className="py-3 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
                             {s.termTypes.map(t => (
-                              <th key={t} className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">
+                              <th key={t} className="py-3 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">
                                 <span className="inline-flex items-center gap-1"><Calendar className="w-3 h-3" /> {t}</span>
                               </th>
                             ))}
-                            <th className="py-3 px-5 text-left text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
+                            <th className="py-3 px-5 text-left text-[12px] font-normal text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                           {s.rows.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/40">
-                              <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">{row.className}</td>
+                              <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">{row.className}</td>
                               {s.termTypes.map(t => (
-                                <td key={t} className="py-3 px-5 text-sm font-semibold text-slate-600">
+                                <td key={t} className="py-3 px-5 text-sm font-normal text-slate-600">
                                   ₹ {currency(row.amounts[t] || 0)}
                                 </td>
                               ))}
-                              <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
+                              <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
                             </tr>
                           ))}
                           <tr className="bg-blue-50/50 border-t-2 border-[#1D1D1F]/10">
-                            <td className="py-3 px-5 text-xs font-semibold text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
+                            <td className="py-3 px-5 text-xs font-normal text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
                             {s.termTypes.map(t => (
-                              <td key={t} className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
+                              <td key={t} className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
                             ))}
-                            <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(branchTotal)}</td>
+                            <td className="py-3 px-5 text-sm font-normal text-[#1D1D1F]">₹ {currency(branchTotal)}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3197,7 +3197,7 @@ export default function FeeStructurePage() {
             uploadedByRole: role,
             isActive: true,
           })}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-normal hover:bg-slate-50 transition-all"
         >
           <Plus className="w-3.5 h-3.5" /> Start from scratch (no Excel)
         </button>
@@ -3268,21 +3268,21 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
       <div className="px-5 py-4 flex items-center justify-between border-b border-slate-100 gap-3 flex-wrap">
         <div className="flex items-center gap-2">
           <User className="w-4 h-4 text-[#1D1D1F]" />
-          <h3 className="text-sm font-semibold text-[#1D1D1F]">Student-level Breakdown</h3>
-          <span className="text-[12px] font-semibold text-slate-400 ml-2">
+          <h3 className="text-sm font-normal text-[#1D1D1F]">Student-level Breakdown</h3>
+          <span className="text-[12px] font-normal text-slate-400 ml-2">
             {totalStudents} student{totalStudents !== 1 ? "s" : ""} · click class to expand
           </span>
         </div>
         <div className="flex items-center gap-1.5">
           <button
             onClick={expandAll}
-            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-semibold uppercase tracking-wider text-slate-600 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-normal uppercase tracking-wider text-slate-600 transition-all"
           >
             Expand All
           </button>
           <button
             onClick={collapseAll}
-            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-semibold uppercase tracking-wider text-slate-600 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-normal uppercase tracking-wider text-slate-600 transition-all"
           >
             Collapse All
           </button>
@@ -3298,8 +3298,8 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
           { label: "Discount Given", value: `₹ ${currency(totalDiscount)}`, color: "text-purple-600",  bg: "bg-purple-50" },
         ].map(s => (
           <div key={s.label} className={`${s.bg} rounded-xl p-3 border border-white/60`}>
-            <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest mb-1">{s.label}</p>
-            <p className={`text-lg font-semibold ${s.color}`}>{s.value}</p>
+            <p className="text-[12px] font-normal text-slate-500 uppercase tracking-widest mb-1">{s.label}</p>
+            <p className={`text-lg font-normal ${s.color}`}>{s.value}</p>
           </div>
         ))}
       </div>
@@ -3318,7 +3318,7 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
         <select
           value={classFilter}
           onChange={e => setClassFilter(e.target.value)}
-          className="px-3 py-2 text-xs font-semibold border border-slate-200 rounded-lg bg-slate-50 outline-none focus:border-blue-300"
+          className="px-3 py-2 text-xs font-normal border border-slate-200 rounded-lg bg-slate-50 outline-none focus:border-blue-300"
         >
           {allClasses.map(c => <option key={c} value={c}>{c === "All" ? "All Classes" : c}</option>)}
         </select>
@@ -3327,7 +3327,7 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
             <button
               key={v}
               onClick={() => setStatusFilter(v)}
-              className={`px-3 py-1 rounded-md text-[12px] font-semibold uppercase tracking-wider transition-all ${
+              className={`px-3 py-1 rounded-md text-[12px] font-normal uppercase tracking-wider transition-all ${
                 statusFilter === v ? "bg-white text-[#1D1D1F] shadow-sm" : "text-slate-500"
               }`}
             >
@@ -3340,7 +3340,7 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
       {/* Student rows grouped by class */}
       <div className="divide-y divide-slate-100">
         {groups.length === 0 ? (
-          <div className="py-10 text-center text-sm text-slate-400 font-medium">No students match the filters</div>
+          <div className="py-10 text-center text-sm text-slate-400 font-normal">No students match the filters</div>
         ) : groups.map(([className, list]) => {
           const isOpen = expanded.has(className);
           const paidSum    = list.reduce((a, s) => a + s.paid, 0);
@@ -3353,12 +3353,12 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <ChevronRight className={`w-4 h-4 text-slate-400 transition-transform ${isOpen ? "rotate-90" : ""}`} />
-                  <span className="text-sm font-semibold text-[#1D1D1F]">{className}</span>
-                  <span className="text-[12px] font-semibold text-slate-500">
+                  <span className="text-sm font-normal text-[#1D1D1F]">{className}</span>
+                  <span className="text-[12px] font-normal text-slate-500">
                     {list.length} student{list.length !== 1 ? "s" : ""}
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-[12px] font-semibold">
+                <div className="flex items-center gap-3 text-[12px] font-normal">
                   <span className="text-emerald-600">₹ {currency(paidSum)} paid</span>
                   {pendingSum > 0 && <span className="text-red-600">₹ {currency(pendingSum)} pending</span>}
                 </div>
@@ -3369,40 +3369,40 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
                   <table className="w-full text-left min-w-[700px]">
                     <thead className="bg-slate-50/60">
                       <tr>
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Roll</th>
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Student Name</th>
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Parent · Phone</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">Roll</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">Student Name</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">Parent · Phone</th>
                         {termTypes.map(t => (
-                          <th key={t} className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">{t}</th>
+                          <th key={t} className="py-2.5 px-5 text-left text-[12px] font-normal text-slate-500 uppercase tracking-widest whitespace-nowrap">{t}</th>
                         ))}
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-purple-600 uppercase tracking-widest whitespace-nowrap">Discount</th>
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-emerald-600 uppercase tracking-widest whitespace-nowrap">Paid</th>
-                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-red-600 uppercase tracking-widest whitespace-nowrap">Pending</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-purple-600 uppercase tracking-widest whitespace-nowrap">Discount</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-emerald-600 uppercase tracking-widest whitespace-nowrap">Paid</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-normal text-red-600 uppercase tracking-widest whitespace-nowrap">Pending</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
                       {list.map((s, i) => (
                         <tr key={i} className={`hover:bg-slate-50/40 ${s.pending > 0 ? "bg-red-50/20" : ""}`}>
-                          <td className="py-2.5 px-5 text-xs font-semibold text-slate-600">{s.rollNo || "—"}</td>
-                          <td className="py-2.5 px-5 text-sm font-semibold text-[#1D1D1F]">{s.studentName}</td>
-                          <td className="py-2.5 px-5 text-xs font-semibold text-slate-600">
+                          <td className="py-2.5 px-5 text-xs font-normal text-slate-600">{s.rollNo || "—"}</td>
+                          <td className="py-2.5 px-5 text-sm font-normal text-[#1D1D1F]">{s.studentName}</td>
+                          <td className="py-2.5 px-5 text-xs font-normal text-slate-600">
                             {s.parentName || s.parentPhone ? (
                               <div className="flex flex-col">
-                                {s.parentName && <span className="text-slate-700 font-semibold">{s.parentName}</span>}
-                                {s.parentPhone && <span className="text-[12px] text-slate-400 font-medium">{s.parentPhone}</span>}
+                                {s.parentName && <span className="text-slate-700 font-normal">{s.parentName}</span>}
+                                {s.parentPhone && <span className="text-[12px] text-slate-400 font-normal">{s.parentPhone}</span>}
                               </div>
                             ) : "—"}
                           </td>
                           {termTypes.map(t => (
-                            <td key={t} className="py-2.5 px-5 text-xs font-semibold text-slate-600">
+                            <td key={t} className="py-2.5 px-5 text-xs font-normal text-slate-600">
                               ₹ {currency(s.amounts[t] || 0)}
                             </td>
                           ))}
-                          <td className="py-2.5 px-5 text-xs font-semibold text-purple-600">
+                          <td className="py-2.5 px-5 text-xs font-normal text-purple-600">
                             {s.discount > 0 ? `₹ ${currency(s.discount)}` : "—"}
                           </td>
-                          <td className="py-2.5 px-5 text-xs font-semibold text-emerald-600">₹ {currency(s.paid)}</td>
-                          <td className={`py-2.5 px-5 text-xs font-semibold ${s.pending > 0 ? "text-red-600" : "text-slate-400"}`}>
+                          <td className="py-2.5 px-5 text-xs font-normal text-emerald-600">₹ {currency(s.paid)}</td>
+                          <td className={`py-2.5 px-5 text-xs font-normal ${s.pending > 0 ? "text-red-600" : "text-slate-400"}`}>
                             {s.pending > 0 ? `₹ ${currency(s.pending)}` : "✓ Cleared"}
                           </td>
                         </tr>

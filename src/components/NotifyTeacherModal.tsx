@@ -165,7 +165,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
               <GraduationCap className="w-5 h-5 text-[#1D1D1F]" />
             </div>
             <div>
-              <h2 className="text-base font-semibold text-slate-900">Notify Teacher</h2>
+              <h2 className="text-base font-normal text-slate-900">Notify Teacher</h2>
               <p className="text-xs text-slate-500">
                 About {student.studentName} · <span style={{ color: meta.color }}>{meta.label}</span>
               </p>
@@ -180,7 +180,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
         <div className="px-6 py-4 space-y-4 overflow-y-auto">
           {/* Teacher selector */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-1.5 block">
               Send to teacher
             </label>
             {loadingTeachers ? (
@@ -189,13 +189,13 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
               </div>
             ) : teachers.length === 0 ? (
               <div className="h-10 rounded-xl bg-rose-50 border border-rose-100 flex items-center px-3">
-                <span className="text-xs font-semibold text-rose-600">No teachers found for this class</span>
+                <span className="text-xs font-normal text-rose-600">No teachers found for this class</span>
               </div>
             ) : (
               <select
                 value={selectedTeacherId}
                 onChange={e => setSelectedTeacherId(e.target.value)}
-                className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-sm font-medium text-slate-800 outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
+                className="w-full h-10 px-3 rounded-xl border border-slate-200 bg-white text-sm font-normal text-slate-800 outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300"
               >
                 {teachers.map(t => (
                   <option key={t.id} value={t.id}>
@@ -208,7 +208,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
 
           {/* Message */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-1.5 block">
               Message (edit as needed)
             </label>
             <textarea
@@ -227,7 +227,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
             className="rounded-xl p-3 border"
             style={{ background: meta.bg, borderColor: meta.border }}
           >
-            <p className="text-[12px] font-semibold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
+            <p className="text-[12px] font-normal uppercase tracking-wider mb-1" style={{ color: meta.color }}>
               Auto-detected reasons
             </p>
             <ul className="text-xs text-slate-700 leading-relaxed">
@@ -242,14 +242,14 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
         <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-end gap-2">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-normal text-slate-700 hover:bg-slate-50"
           >
             Cancel
           </button>
           <button
             onClick={handleSend}
             disabled={sending || !selectedTeacherId || teachers.length === 0}
-            className="px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-50 flex items-center gap-2"
+            className="px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-sm font-normal hover:bg-[#0A84FF] disabled:opacity-50 flex items-center gap-2"
           >
             {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
             Send

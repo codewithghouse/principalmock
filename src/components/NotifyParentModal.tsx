@@ -124,7 +124,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
               <MessageSquare className="w-5 h-5 text-emerald-700" />
             </div>
             <div>
-              <h2 className="text-base font-semibold text-slate-900">Notify Parent</h2>
+              <h2 className="text-base font-normal text-slate-900">Notify Parent</h2>
               <p className="text-xs text-slate-500">
                 About {student.studentName} · <span style={{ color: meta.color }}>{meta.label}</span>
               </p>
@@ -139,17 +139,17 @@ export default function NotifyParentModal({ student, onClose }: Props) {
         <div className="px-6 py-4 space-y-4 overflow-y-auto">
           {/* Parent info */}
           <div className="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2.5">
-            <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-wider mb-1">Recipient</p>
+            <p className="text-[12px] font-normal text-slate-500 uppercase tracking-wider mb-1">Recipient</p>
             {parentEmail ? (
-              <p className="text-sm font-semibold text-slate-800">{parentEmail}</p>
+              <p className="text-sm font-normal text-slate-800">{parentEmail}</p>
             ) : (
-              <p className="text-sm font-semibold text-rose-600">No parent email on file — in-app note only</p>
+              <p className="text-sm font-normal text-rose-600">No parent email on file — in-app note only</p>
             )}
           </div>
 
           {/* Message */}
           <div>
-            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-1.5 block">
               Message (edit as needed)
             </label>
             <textarea
@@ -180,7 +180,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
             className="rounded-xl p-3 border"
             style={{ background: meta.bg, borderColor: meta.border }}
           >
-            <p className="text-[12px] font-semibold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
+            <p className="text-[12px] font-normal uppercase tracking-wider mb-1" style={{ color: meta.color }}>
               What triggered this
             </p>
             <ul className="text-xs text-slate-700 leading-relaxed">
@@ -195,14 +195,14 @@ export default function NotifyParentModal({ student, onClose }: Props) {
         <div className="px-6 py-4 border-t border-slate-100 flex items-center justify-end gap-2">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-normal text-slate-700 hover:bg-slate-50"
           >
             Cancel
           </button>
           <button
             onClick={handleSend}
             disabled={sending}
-            className="px-5 py-2 rounded-xl bg-emerald-600 text-white text-sm font-semibold hover:bg-emerald-700 disabled:opacity-50 flex items-center gap-2"
+            className="px-5 py-2 rounded-xl bg-emerald-600 text-white text-sm font-normal hover:bg-emerald-700 disabled:opacity-50 flex items-center gap-2"
           >
             {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
             Send

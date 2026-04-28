@@ -18,7 +18,7 @@ import { toast } from "sonner";
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     return (
-      <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+      <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-normal shadow-lg">
         Day {payload[0].payload.day}: {payload[0].value}%
       </div>
     );
@@ -341,7 +341,7 @@ const Attendance = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -350,7 +350,7 @@ const Attendance = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Attendance
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400 }}>
@@ -368,7 +368,7 @@ const Attendance = () => {
               alignItems: "center",
               gap: 6,
               fontSize: 12,
-              fontWeight: 600,
+              fontWeight: 400,
               color: "#fff",
               border: "none",
               cursor: "pointer",
@@ -439,10 +439,10 @@ const Attendance = () => {
                     <CheckCircle size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                    <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                       Monthly Average
                     </div>
-                    <div style={{ fontSize: 30, fontWeight: 600, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
+                    <div style={{ fontSize: 30, fontWeight: 400, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
                       {stats.monthlyAvg}
                     </div>
                   </div>
@@ -454,7 +454,7 @@ const Attendance = () => {
                     background: statusChip.bg,
                     border: `0.5px solid ${statusChip.border}`,
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: statusChip.color,
                   }}
                 >
@@ -472,7 +472,7 @@ const Attendance = () => {
                     background: "rgba(255,255,255,.12)",
                     border: "0.5px solid rgba(255,255,255,.18)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "rgba(255,255,255,.75)",
                     whiteSpace: "nowrap",
                   }}
@@ -609,13 +609,13 @@ const Attendance = () => {
                   >
                     {c.icon}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
                     {c.label}
                   </div>
-                  <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
+                  <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
                     {c.value}
                   </div>
-                  <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor }}>{c.sub}</div>
+                  <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor }}>{c.sub}</div>
                 </button>
               ))}
             </div>
@@ -625,7 +625,7 @@ const Attendance = () => {
               <div style={{ padding: "16px 20px 0" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 8 }}>
                   <TrendingDown size={14} color={RED} strokeWidth={2.4} />
-                  <span style={{ fontSize: 10, fontWeight: 600, color: "#B8002D", textTransform: "uppercase", letterSpacing: "0.10em" }}>
+                  <span style={{ fontSize: 10, fontWeight: 400, color: "#B8002D", textTransform: "uppercase", letterSpacing: "0.10em" }}>
                     Sudden Drop Detected
                   </span>
                 </div>
@@ -649,12 +649,12 @@ const Attendance = () => {
                   >
                     <AlertTriangle size={16} color={RED} strokeWidth={2.3} style={{ flexShrink: 0 }} />
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 12, fontWeight: 600, color: "#B8002D", marginBottom: 1 }}>{d.grade}</div>
-                      <div style={{ fontSize: 10, color: RED, fontWeight: 500 }}>
+                      <div style={{ fontSize: 12, fontWeight: 400, color: "#B8002D", marginBottom: 1 }}>{d.grade}</div>
+                      <div style={{ fontSize: 10, color: RED, fontWeight: 400 }}>
                         Dropped {d.drop}% ({d.prev}% → {d.recent}%)
                       </div>
                     </div>
-                    <span style={{ fontSize: 10, fontWeight: 600, color: B1 }}>View →</span>
+                    <span style={{ fontSize: 10, fontWeight: 400, color: B1 }}>View →</span>
                   </button>
                 ))}
               </div>
@@ -665,7 +665,7 @@ const Attendance = () => {
               id="mobile-att-heatmap"
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -689,7 +689,7 @@ const Attendance = () => {
                 border: "0.5px solid rgba(10,132,255,.10)",
               }}
             >
-              <div style={{ fontSize: 15, fontWeight: 600, color: T1, marginBottom: 16, letterSpacing: "-0.2px" }}>
+              <div style={{ fontSize: 15, fontWeight: 400, color: T1, marginBottom: 16, letterSpacing: "-0.2px" }}>
                 Grade-wise Attendance Heatmap
               </div>
 
@@ -704,7 +704,7 @@ const Attendance = () => {
                       <div
                         style={{
                           fontSize: 10,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: T4,
                           letterSpacing: "0.06em",
                           textTransform: "uppercase",
@@ -715,7 +715,7 @@ const Attendance = () => {
                         }}
                       >
                         <span>{g.grade}</span>
-                        <span style={{ color: heatmapTextColor(g.value), fontWeight: 600 }}>{g.pct}</span>
+                        <span style={{ color: heatmapTextColor(g.value), fontWeight: 400 }}>{g.pct}</span>
                       </div>
                       <button
                         onClick={() => setSelectedClass(g.grade)}
@@ -727,7 +727,7 @@ const Attendance = () => {
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: 18,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           position: "relative",
                           overflow: "hidden",
@@ -768,7 +768,7 @@ const Attendance = () => {
                   { color: GOLD, label: "80–89%" },
                   { color: RED, label: "Below 80%" },
                 ].map((l, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10, fontWeight: 600, color: T3 }}>
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10, fontWeight: 400, color: T3 }}>
                     <div style={{ width: 9, height: 9, borderRadius: 3, background: l.color }} />
                     {l.label}
                   </div>
@@ -780,7 +780,7 @@ const Attendance = () => {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -805,7 +805,7 @@ const Attendance = () => {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-                <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>30-Day Attendance Trend</div>
+                <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>30-Day Attendance Trend</div>
                 <div
                   style={{
                     padding: "4px 11px",
@@ -813,7 +813,7 @@ const Attendance = () => {
                     background: "rgba(10,132,255,.10)",
                     border: "0.5px solid rgba(10,132,255,.18)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: B1,
                   }}
                 >
@@ -839,14 +839,14 @@ const Attendance = () => {
                       dataKey="day"
                       axisLine={false}
                       tickLine={false}
-                      tick={{ fontSize: 9, fontWeight: 600, fill: T4 }}
+                      tick={{ fontSize: 9, fontWeight: 400, fill: T4 }}
                       interval={5}
                     />
                     <YAxis
                       domain={["auto", "auto"]}
                       axisLine={false}
                       tickLine={false}
-                      tick={{ fontSize: 9, fontWeight: 600, fill: T4 }}
+                      tick={{ fontSize: 9, fontWeight: 400, fill: T4 }}
                       tickFormatter={(v) => `${v}%`}
                       width={38}
                     />
@@ -887,7 +887,7 @@ const Attendance = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Absent Students Today</div>
+                <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>Absent Students Today</div>
                 <button
                   onClick={handleSendAlerts}
                   style={{
@@ -899,7 +899,7 @@ const Attendance = () => {
                     alignItems: "center",
                     gap: 6,
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "#fff",
                     border: "none",
                     cursor: "pointer",
@@ -928,7 +928,7 @@ const Attendance = () => {
                   >
                     <CheckCircle size={26} color={GREEN} strokeWidth={2.2} />
                   </div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>
+                  <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>
                     No absent students today
                   </div>
                   <div style={{ fontSize: 12, color: T4, fontWeight: 400 }}>
@@ -973,7 +973,7 @@ const Attendance = () => {
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: 14,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           flexShrink: 0,
                         }}
@@ -981,10 +981,10 @@ const Attendance = () => {
                         {s.initials}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {s.name}
                         </div>
-                        <div style={{ fontSize: 11, color: T3, fontWeight: 500 }}>
+                        <div style={{ fontSize: 11, color: T3, fontWeight: 400 }}>
                           {s.grade} · {s.consecutive} · Monthly {s.monthly}
                         </div>
                       </div>
@@ -993,7 +993,7 @@ const Attendance = () => {
                           padding: "5px 10px",
                           borderRadius: 100,
                           fontSize: 10,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: statusColor,
                           background: statusBg,
                           border: `0.5px solid ${statusColor}33`,
@@ -1021,7 +1021,7 @@ const Attendance = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   border: "none",
@@ -1043,7 +1043,7 @@ const Attendance = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   background: "#fff",
                   color: "#3A3A3C",
                   border: "0.5px solid rgba(10,132,255,.16)",
@@ -1065,7 +1065,7 @@ const Attendance = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   background: "#fff",
                   color: "#3A3A3C",
                   border: "0.5px solid rgba(10,132,255,.16)",
@@ -1117,19 +1117,19 @@ const Attendance = () => {
                 >
                   <Sparkles size={14} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
                 </div>
-                <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+                <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                   AI Attendance Intelligence
                 </span>
               </div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
                 Overall attendance is{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>
+                <strong style={{ color: "#fff", fontWeight: 400 }}>
                   {statusChip.label} at {stats.monthlyAvg}
                 </strong>
-                . <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.absentToday} absence{stats.absentToday === 1 ? "" : "s"}</strong> today
+                . <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.absentToday} absence{stats.absentToday === 1 ? "" : "s"}</strong> today
                 {stats.lateToday > 0 ? (
                   <>
-                    {" "}and <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.lateToday} late arrival{stats.lateToday === 1 ? "" : "s"}</strong>
+                    {" "}and <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.lateToday} late arrival{stats.lateToday === 1 ? "" : "s"}</strong>
                   </>
                 ) : (
                   <>. No late arrivals recorded</>
@@ -1137,19 +1137,19 @@ const Attendance = () => {
                 .
                 {bestClass && (
                   <>
-                    {" "}<strong style={{ color: "#fff", fontWeight: 600 }}>{bestClass.grade}</strong> leads with{" "}
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>{bestClass.pct}</strong> attendance.
+                    {" "}<strong style={{ color: "#fff", fontWeight: 400 }}>{bestClass.grade}</strong> leads with{" "}
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>{bestClass.pct}</strong> attendance.
                   </>
                 )}
                 {worstClass && worstClass.value < 85 && (
                   <>
-                    {" "}<strong style={{ color: "#fff", fontWeight: 600 }}>{worstClass.grade}</strong> at{" "}
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>{worstClass.pct}</strong> should be monitored.
+                    {" "}<strong style={{ color: "#fff", fontWeight: 400 }}>{worstClass.grade}</strong> at{" "}
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>{worstClass.pct}</strong> should be monitored.
                   </>
                 )}
                 {suddenDrops.length > 0 && (
                   <>
-                    {" "}<strong style={{ color: "#fff", fontWeight: 600 }}>{suddenDrops.length} sudden drop{suddenDrops.length === 1 ? "" : "s"}</strong> flagged this week.
+                    {" "}<strong style={{ color: "#fff", fontWeight: 400 }}>{suddenDrops.length} sudden drop{suddenDrops.length === 1 ? "" : "s"}</strong> flagged this week.
                   </>
                 )}
               </div>
@@ -1172,10 +1172,10 @@ const Attendance = () => {
                   { v: bestClass ? bestClass.pct : "—", l: "Best Class" },
                 ].map((s, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "13px 12px", textAlign: "center" }}>
-                    <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
+                    <div style={{ fontSize: 20, fontWeight: 400, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
                       {s.v}
                     </div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                       {s.l}
                     </div>
                   </div>
@@ -1212,7 +1212,7 @@ const Attendance = () => {
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -1222,27 +1222,27 @@ const Attendance = () => {
             <CheckCircle className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Attendance</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Attendance</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Monitor student attendance patterns and trends</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => toast.info("Mark attendance — navigate to class detail to record")}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
             <Edit3 className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Mark Attendance
           </button>
           <button
             onClick={() => toast.success("Absence alerts queued for all absent students")}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
             <Bell className="w-[14px] h-[14px]" style={{ color: dORANGE }} strokeWidth={2.3} />
             Send Alerts
           </button>
           <button onClick={generateReport}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: dSH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <FileText className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -1254,7 +1254,7 @@ const Attendance = () => {
       {loading ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-10 h-10 rounded-full border-[3px] border-t-transparent animate-spin" style={{ borderColor: dB1, borderTopColor: "transparent" }} />
-          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading attendance data…</p>
+          <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: dT4 }}>Loading attendance data…</p>
         </div>
       ) : (
         <>
@@ -1273,10 +1273,10 @@ const Attendance = () => {
                   <TrendingUp className="w-7 h-7 text-white" strokeWidth={2.2} />
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Monthly Average</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Monthly Average</div>
                   <div className="flex items-baseline gap-3">
-                    <span className="text-[28px] font-semibold leading-none tracking-tight">{stats.monthlyAvg}</span>
-                    <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+                    <span className="text-[28px] font-normal leading-none tracking-tight">{stats.monthlyAvg}</span>
+                    <span className="text-[12px] font-normal px-3 py-1 rounded-full"
                       style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)" }}>
                       {tier}
                     </span>
@@ -1292,8 +1292,8 @@ const Attendance = () => {
                   <div key={s.label} className="flex items-center gap-2">
                     <span className="w-[10px] h-[10px] rounded-full" style={{ background: s.color, boxShadow: `0 0 0 3px ${s.color}33` }} />
                     <div>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
-                      <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
+                      <div className="text-[22px] font-normal leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
                     </div>
                   </div>
                 ))}
@@ -1314,14 +1314,14 @@ const Attendance = () => {
                 <div className="absolute -top-6 -right-6 w-[100px] h-[100px] rounded-full pointer-events-none"
                   style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }} />
                 <div className="flex items-center justify-between mb-4 relative">
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
+                  <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
                   <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                     style={{ background: grad, boxShadow: shadow }}>
                     <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
                   </div>
                 </div>
-                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-                <p className="text-[12px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
+                <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+                <p className="text-[12px] font-normal truncate" style={{ color: dT3 }}>{sub}</p>
               </div>
             ))}
           </div>
@@ -1335,8 +1335,8 @@ const Attendance = () => {
                   style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
                   <TrendingDown className="w-4 h-4 text-white" strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Sudden Drop Detected</h2>
-                <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Sudden Drop Detected</h2>
+                <span className="text-[12px] font-normal px-3 py-1 rounded-full"
                   style={{ background: dRED_S, color: dRED, border: `0.5px solid ${dRED_B}` }}>
                   {suddenDrops.length}
                 </span>
@@ -1350,13 +1350,13 @@ const Attendance = () => {
                       <AlertTriangle className="w-[18px] h-[18px] text-white" strokeWidth={2.4} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-[13px] font-semibold" style={{ color: dT1 }}>{d.grade}</p>
-                      <p className="text-[12px] font-medium mt-1" style={{ color: dRED }}>
+                      <p className="text-[13px] font-normal" style={{ color: dT1 }}>{d.grade}</p>
+                      <p className="text-[12px] font-normal mt-1" style={{ color: dRED }}>
                         dropped {d.drop}% ({d.prev}% → {d.recent}%)
                       </p>
                     </div>
                     <button onClick={() => setSelectedClass(d.grade)}
-                      className="text-[12px] font-semibold px-3 py-1.5 rounded-[10px] transition-transform hover:scale-[1.04]"
+                      className="text-[12px] font-normal px-3 py-1.5 rounded-[10px] transition-transform hover:scale-[1.04]"
                       style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, color: "#fff", boxShadow: dSH }}>
                       View →
                     </button>
@@ -1376,12 +1376,12 @@ const Attendance = () => {
                   style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                   <CheckCircle className="w-4 h-4" style={{ color: dVIOLET }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Grade-wise Heatmap</h2>
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Grade-wise Heatmap</h2>
               </div>
               <div className="p-6">
                 {gradeHeatmap.length === 0 ? (
                   <div className="flex items-center justify-center h-48">
-                    <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No attendance data available</p>
+                    <p className="text-[13px] font-normal" style={{ color: dT4 }}>No attendance data available</p>
                   </div>
                 ) : (() => {
                   const barData = gradeHeatmap.map((g) => ({
@@ -1402,7 +1402,7 @@ const Attendance = () => {
                             tickLine={false}
                             tickMargin={10}
                             axisLine={false}
-                            tick={{ fontSize: 11, fontWeight: 600, fill: dT3 }}
+                            tick={{ fontSize: 11, fontWeight: 400, fill: dT3 }}
                           />
                           <ChartTooltip
                             cursor={false}
@@ -1429,7 +1429,7 @@ const Attendance = () => {
                         ].map(({ color, label }) => (
                           <div key={label} className="flex items-center gap-[8px]">
                             <span className="w-3 h-3 rounded-[4px]" style={{ background: color }} />
-                            <span className="text-[12px] font-semibold" style={{ color: dT3 }}>{label}</span>
+                            <span className="text-[12px] font-normal" style={{ color: dT3 }}>{label}</span>
                           </div>
                         ))}
                       </div>
@@ -1447,12 +1447,12 @@ const Attendance = () => {
                   style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
                   <TrendingUp className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>30-Day Trend</h2>
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>30-Day Trend</h2>
               </div>
               <div className="px-4 pt-5 pb-4">
                 {trendData.length === 0 ? (
                   <div className="flex items-center justify-center h-[260px]">
-                    <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No trend data available</p>
+                    <p className="text-[13px] font-normal" style={{ color: dT4 }}>No trend data available</p>
                   </div>
                 ) : (
                   <ResponsiveContainer width="100%" height={260}>
@@ -1465,9 +1465,9 @@ const Attendance = () => {
                       </defs>
                       <CartesianGrid strokeDasharray="3 3" stroke="rgba(10,132,255,0.08)" vertical={false} />
                       <XAxis dataKey="day" axisLine={false} tickLine={false}
-                        tick={{ fontSize: 10, fontWeight: 600, fill: dT4 }} interval={4} />
+                        tick={{ fontSize: 10, fontWeight: 400, fill: dT4 }} interval={4} />
                       <YAxis domain={['auto', 'auto']} axisLine={false} tickLine={false}
-                        tick={{ fontSize: 10, fontWeight: 600, fill: dT4 }} tickFormatter={(v) => `${v}%`} />
+                        tick={{ fontSize: 10, fontWeight: 400, fill: dT4 }} tickFormatter={(v) => `${v}%`} />
                       <Tooltip content={<CustomTooltip />} />
                       <Area type="monotone" dataKey="value" stroke={dB1} strokeWidth={2.5} fill="url(#trendGrad)" dot={false}
                         activeDot={{ r: 5, fill: dB1, stroke: "#fff", strokeWidth: 2 }} animationDuration={1200} />
@@ -1487,15 +1487,15 @@ const Attendance = () => {
                   style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
                   <XCircle className="w-4 h-4 text-white" strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Absent Students Today</h2>
-                <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+                <h2 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Absent Students Today</h2>
+                <span className="text-[12px] font-normal px-3 py-1 rounded-full"
                   style={{ background: dRED_S, color: dRED, border: `0.5px solid ${dRED_B}` }}>
                   {absentStudents.length}
                 </span>
               </div>
               {absentStudents.length > 0 && (
                 <button onClick={() => toast.success("Absence alerts queued for all parents")}
-                  className="h-10 px-4 rounded-[12px] flex items-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02]"
+                  className="h-10 px-4 rounded-[12px] flex items-center gap-1.5 text-[12px] font-normal text-white transition-transform hover:scale-[1.02]"
                   style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
                   <Send className="w-[13px] h-[13px]" strokeWidth={2.4} />
                   Alert Parents
@@ -1509,7 +1509,7 @@ const Attendance = () => {
                   style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
                   <CheckCircle className="w-8 h-8" style={{ color: dGREEN }} strokeWidth={2.2} />
                 </div>
-                <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No absent students today</p>
+                <p className="text-[14px] font-normal" style={{ color: dT1 }}>No absent students today</p>
                 <p className="text-[12px]" style={{ color: dT4 }}>All students present or late</p>
               </div>
             ) : (
@@ -1518,7 +1518,7 @@ const Attendance = () => {
                   <thead>
                     <tr style={{ background: dBG, borderBottom: `0.5px solid ${dSEP}` }}>
                       {["Student", "Class", "Contact", "Consecutive", "Monthly %", "Status"].map((h, i) => (
-                        <th key={h} className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.10em] ${i >= 3 && i <= 4 ? "text-center" : "text-left"}`}
+                        <th key={h} className={`px-5 py-3 text-[12px] font-normal uppercase tracking-[0.10em] ${i >= 3 && i <= 4 ? "text-center" : "text-left"}`}
                           style={{ color: dT4 }}>{h}</th>
                       ))}
                     </tr>
@@ -1528,30 +1528,30 @@ const Attendance = () => {
                       <tr key={i} className="transition-colors hover:bg-[#F8FAFF]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                         <td className="px-5 py-4">
                           <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                            <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-normal shrink-0"
                               style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 3px 10px rgba(255,59,48,0.22)" }}>
                               {s.initials}
                             </div>
-                            <p className="text-[13px] font-semibold" style={{ color: dT1 }}>{s.name}</p>
+                            <p className="text-[13px] font-normal" style={{ color: dT1 }}>{s.name}</p>
                           </div>
                         </td>
                         <td className="px-5 py-4">
-                          <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-semibold"
+                          <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-normal"
                             style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                             {s.grade}
                           </span>
                         </td>
-                        <td className="px-5 py-4 text-[12px] font-medium" style={{ color: dT3 }}>{s.contact}</td>
-                        <td className="px-5 py-4 text-center text-[13px] font-semibold"
+                        <td className="px-5 py-4 text-[12px] font-normal" style={{ color: dT3 }}>{s.contact}</td>
+                        <td className="px-5 py-4 text-center text-[13px] font-normal"
                           style={{ color: s.consecutiveNum >= 3 ? dRED : s.consecutiveNum >= 2 ? dORANGE : dT1 }}>
                           {s.consecutive}
                         </td>
-                        <td className="px-5 py-4 text-center text-[13px] font-semibold"
+                        <td className="px-5 py-4 text-center text-[13px] font-normal"
                           style={{ color: s.monthlyVal < 60 ? dRED : s.monthlyVal < 80 ? dORANGE : dGREEN_D }}>
                           {s.monthly}
                         </td>
                         <td className="px-5 py-4">
-                          <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                          <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                             style={{
                               background: s.status === "Chronic" ? dRED_S : s.status === "Warning" ? "rgba(255,204,0,0.10)" : dGREEN_S,
                               color: s.status === "Chronic" ? dRED : s.status === "Warning" ? "#86310C" : dGREEN_D,
@@ -1583,16 +1583,16 @@ const Attendance = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Attendance Intelligence</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Attendance Intelligence</span>
             </div>
             <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-              School attendance is tracking at <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.monthlyAvg}</strong> ({tier}) with <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.presentToday} present</strong>, <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.absentToday} absent</strong>, and <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.lateToday} late</strong> today.
-              {suddenDrops.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{suddenDrops.length} class{suddenDrops.length === 1 ? "" : "es"}</strong> showed a sudden 15%+ drop this week — immediate review recommended.</>}
-              {absentStudents.filter(s => s.status === "Chronic").length > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{absentStudents.filter(s => s.status === "Chronic").length} student{absentStudents.filter(s => s.status === "Chronic").length === 1 ? "" : "s"}</strong> flagged as chronic absentees.</>}
+              School attendance is tracking at <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.monthlyAvg}</strong> ({tier}) with <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.presentToday} present</strong>, <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.absentToday} absent</strong>, and <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.lateToday} late</strong> today.
+              {suddenDrops.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{suddenDrops.length} class{suddenDrops.length === 1 ? "" : "es"}</strong> showed a sudden 15%+ drop this week — immediate review recommended.</>}
+              {absentStudents.filter(s => s.status === "Chronic").length > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{absentStudents.filter(s => s.status === "Chronic").length} student{absentStudents.filter(s => s.status === "Chronic").length === 1 ? "" : "s"}</strong> flagged as chronic absentees.</>}
             </p>
             <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
         </>

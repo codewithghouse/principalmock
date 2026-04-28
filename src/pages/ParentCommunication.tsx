@@ -283,7 +283,7 @@ const ParentCommunication = () => {
       return (
         <div
           style={{
-            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
             background: "#F5F5F7",
             height: "100vh",
             display: "flex",
@@ -346,7 +346,7 @@ const ParentCommunication = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 15,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#fff",
                 flexShrink: 0,
                 position: "relative",
@@ -357,10 +357,10 @@ const ParentCommunication = () => {
               {studentInitials}
             </div>
             <div style={{ flex: 1, position: "relative", zIndex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 16, fontWeight: 600, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 16, fontWeight: 400, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {selectedStudent.studentName || "Student"}
               </div>
-              <div style={{ fontSize: 11, color: "rgba(255,255,255,.65)", fontWeight: 500, display: "flex", alignItems: "center", gap: 5 }}>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,.65)", fontWeight: 400, display: "flex", alignItems: "center", gap: 5 }}>
                 <div style={{ width: 5, height: 5, background: "#00EE88", borderRadius: "50%" }} />
                 Parent{selectedStudent.className ? ` · ${selectedStudent.className}` : ""} · Online
               </div>
@@ -419,10 +419,10 @@ const ParentCommunication = () => {
                   borderRight: i < 2 ? "0.5px solid rgba(10,132,255,.10)" : "none",
                 }}
               >
-                <div style={{ fontSize: 18, fontWeight: 600, letterSpacing: "-0.4px", lineHeight: 1, color: s.color }}>
+                <div style={{ fontSize: 18, fontWeight: 400, letterSpacing: "-0.4px", lineHeight: 1, color: s.color }}>
                   {s.val}
                 </div>
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
                   {s.lbl}
                 </div>
               </div>
@@ -453,7 +453,7 @@ const ParentCommunication = () => {
                 <div style={{ width: 60, height: 60, borderRadius: 20, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 12, boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)" }}>
                   <MessageSquare size={28} color="rgba(10,132,255,.35)" strokeWidth={1.8} />
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: T1, marginBottom: 4 }}>No messages yet</div>
+                <div style={{ fontSize: 14, fontWeight: 400, color: T1, marginBottom: 4 }}>No messages yet</div>
                 <div style={{ fontSize: 11, color: T4 }}>Type below to start the conversation.</div>
               </div>
             ) : (
@@ -467,7 +467,7 @@ const ParentCommunication = () => {
                         background: "rgba(10,132,255,.08)",
                         border: "0.5px solid rgba(10,132,255,.14)",
                         fontSize: 10,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T3,
                       }}
                     >
@@ -504,7 +504,7 @@ const ParentCommunication = () => {
                               />
                               <span style={{ position: "relative", zIndex: 1 }}>{n.message}</span>
                             </div>
-                            <div style={{ fontSize: 9, color: "rgba(80,112,176,.7)", fontWeight: 600, textAlign: "right", marginTop: 4, display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end" }}>
+                            <div style={{ fontSize: 9, color: "rgba(80,112,176,.7)", fontWeight: 400, textAlign: "right", marginTop: 4, display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end" }}>
                               <span>{fmtTime(n.timestamp)}</span>
                               <CheckCheck size={12} color={GREEN} strokeWidth={2.5} />
                             </div>
@@ -526,7 +526,7 @@ const ParentCommunication = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             fontSize: 12,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: "#fff",
                             flexShrink: 0,
                             alignSelf: "flex-end",
@@ -548,10 +548,10 @@ const ParentCommunication = () => {
                               whiteSpace: "pre-wrap",
                             }}
                           >
-                            <div style={{ fontSize: 11, fontWeight: 600, color: B1, marginBottom: 5 }}>{senderName}</div>
+                            <div style={{ fontSize: 11, fontWeight: 400, color: B1, marginBottom: 5 }}>{senderName}</div>
                             <div>{n.message}</div>
                           </div>
-                          <div style={{ fontSize: 9, color: T4, fontWeight: 600, textAlign: "right", marginTop: 4, display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end" }}>
+                          <div style={{ fontSize: 9, color: T4, fontWeight: 400, textAlign: "right", marginTop: 4, display: "flex", alignItems: "center", gap: 4, justifyContent: "flex-end" }}>
                             <span>{fmtTime(n.timestamp)}</span>
                             <Check size={12} color={GREEN} strokeWidth={2.5} />
                           </div>
@@ -653,7 +653,7 @@ const ParentCommunication = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -725,10 +725,10 @@ const ParentCommunication = () => {
               >
                 {s.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, lineHeight: 1.3 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, lineHeight: 1.3 }}>
                 {s.label}
               </div>
-              <div style={{ fontSize: 22, fontWeight: 600, letterSpacing: "-0.5px", lineHeight: 1, color: s.color }}>
+              <div style={{ fontSize: 22, fontWeight: 400, letterSpacing: "-0.5px", lineHeight: 1, color: s.color }}>
                 {s.value}
               </div>
             </div>
@@ -780,7 +780,7 @@ const ParentCommunication = () => {
             <MessageSquare size={22} color="rgba(255,255,255,.95)" strokeWidth={2.1} />
           </div>
           <div style={{ position: "relative", zIndex: 1 }}>
-            <div style={{ fontSize: 17, fontWeight: 600, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
+            <div style={{ fontSize: 17, fontWeight: 400, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
               Parent Communication
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,.60)", fontWeight: 400 }}>
@@ -829,7 +829,7 @@ const ParentCommunication = () => {
             justifyContent: "center",
             gap: 8,
             fontSize: 15,
-            fontWeight: 600,
+            fontWeight: 400,
             color: "#fff",
             cursor: "pointer",
             border: "none",
@@ -844,7 +844,7 @@ const ParentCommunication = () => {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -862,7 +862,7 @@ const ParentCommunication = () => {
               background: "rgba(10,132,255,.10)",
               border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -892,7 +892,7 @@ const ParentCommunication = () => {
           ) : filteredStudents.length === 0 ? (
             <div style={{ padding: "32px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
               <User size={36} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 13, fontWeight: 600, color: T1 }}>No students found</div>
+              <div style={{ fontSize: 13, fontWeight: 400, color: T1 }}>No students found</div>
               <div style={{ fontSize: 11, color: T4 }}>Try a different search term.</div>
             </div>
           ) : (
@@ -936,7 +936,7 @@ const ParentCommunication = () => {
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 15,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#fff",
                       flexShrink: 0,
                       position: "relative",
@@ -961,7 +961,7 @@ const ParentCommunication = () => {
                     )}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
+                    <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
                       <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, minWidth: 0 }}>
                         {s.studentName || "Student"}
                       </span>
@@ -970,7 +970,7 @@ const ParentCommunication = () => {
                           padding: "2px 8px",
                           borderRadius: 100,
                           fontSize: 9,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.04em",
                           background: "rgba(10,132,255,.10)",
                           color: B1,
@@ -994,12 +994,12 @@ const ParentCommunication = () => {
                     >
                       {preview}
                     </div>
-                    <div style={{ fontSize: 10, color: T4, fontWeight: 600, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    <div style={{ fontSize: 10, color: T4, fontWeight: 400, marginTop: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {s.className || ""}{sender ? ` · ${sender}` : ""}
                     </div>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, flexShrink: 0 }}>
-                    {timeLabel && <span style={{ fontSize: 10, fontWeight: 600, color: T4 }}>{timeLabel}</span>}
+                    {timeLabel && <span style={{ fontSize: 10, fontWeight: 400, color: T4 }}>{timeLabel}</span>}
                     {unread > 0 ? (
                       <div
                         style={{
@@ -1010,7 +1010,7 @@ const ParentCommunication = () => {
                           background: B1,
                           color: "#fff",
                           fontSize: 10,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -1069,18 +1069,18 @@ const ParentCommunication = () => {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Communication Summary
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.total} message{stats.total === 1 ? "" : "s"}</strong> sent to{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.contacted} parent{stats.contacted === 1 ? "" : "s"}</strong>.{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.unread} unread repl{stats.unread === 1 ? "y" : "ies"}</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.total} message{stats.total === 1 ? "" : "s"}</strong> sent to{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.contacted} parent{stats.contacted === 1 ? "" : "s"}</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.unread} unread repl{stats.unread === 1 ? "y" : "ies"}</strong>.{" "}
               {allMessages.length > 0 && allMessages[allMessages.length - 1]?.studentName && (
                 <>
                   Last message to{" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {allMessages[allMessages.length - 1].studentName}
                   </strong>
                   .
@@ -1107,10 +1107,10 @@ const ParentCommunication = () => {
                 { v: stats.unread, l: "Unread" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1165,7 +1165,7 @@ const ParentCommunication = () => {
 
   return (
     <div className="chat-page w-full h-full flex flex-col overflow-hidden animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
       <style>{`
         .pc-scroll::-webkit-scrollbar { width: 6px; }
         .pc-scroll::-webkit-scrollbar-thumb { background: rgba(17,27,33,.20); border-radius: 4px; }
@@ -1184,28 +1184,28 @@ const ParentCommunication = () => {
           <MessageSquare className="w-5 h-5 text-white" strokeWidth={2.1} />
         </div>
         <div className="relative z-10 flex-1 min-w-0">
-          <div className="text-[18px] font-semibold tracking-tight leading-tight">Parent Communication</div>
+          <div className="text-[18px] font-normal tracking-tight leading-tight">Parent Communication</div>
           <p className="text-[12px] mt-1" style={{ color: "rgba(255,255,255,0.72)" }}>
             Direct messaging with parents & guardians
           </p>
         </div>
         <div className="relative z-10 flex items-center gap-4">
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none"
+            <div className="text-[18px] font-normal tracking-tight leading-none"
               style={{ color: stats.unread > 0 ? "#FFE48A" : "#fff" }}>
               {stats.unread}
             </div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unread</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Unread</div>
           </div>
           <div className="w-px h-8" style={{ background: "rgba(255,255,255,0.20)" }} />
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none text-white">{stats.contacted}</div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Parents</div>
+            <div className="text-[18px] font-normal tracking-tight leading-none text-white">{stats.contacted}</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Parents</div>
           </div>
           <div className="w-px h-8" style={{ background: "rgba(255,255,255,0.20)" }} />
           <div className="text-right">
-            <div className="text-[18px] font-semibold tracking-tight leading-none text-white">{stats.total}</div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Total</div>
+            <div className="text-[18px] font-normal tracking-tight leading-none text-white">{stats.total}</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mt-1" style={{ color: "rgba(255,255,255,0.55)" }}>Total</div>
           </div>
         </div>
       </div>
@@ -1240,7 +1240,7 @@ const ParentCommunication = () => {
               if (!selectedStudent) setSelectedStudent(filteredStudents[0]);
               toast.info("Type your message in the composer on the right.");
             }}
-            className="h-[44px] rounded-[10px] flex items-center justify-center gap-2 text-white text-[14px] font-semibold transition-colors"
+            className="h-[44px] rounded-[10px] flex items-center justify-center gap-2 text-white text-[14px] font-normal transition-colors"
             style={{
               background: WA_GREEN, border: "none",
               boxShadow: "0 4px 12px rgba(37,211,102,0.32), 0 2px 4px rgba(37,211,102,0.18)",
@@ -1251,9 +1251,9 @@ const ParentCommunication = () => {
           </button>
 
           {/* Section label */}
-          <div className="flex items-center gap-2 px-2 pt-1 text-[12px] font-semibold uppercase" style={{ color: WA_TEXT_MUTED, letterSpacing: "0.10em" }}>
+          <div className="flex items-center gap-2 px-2 pt-1 text-[12px] font-normal uppercase" style={{ color: WA_TEXT_MUTED, letterSpacing: "0.10em" }}>
             <span>Conversations</span>
-            <span className="px-2.5 py-0.5 rounded-full text-[12px] font-semibold"
+            <span className="px-2.5 py-0.5 rounded-full text-[12px] font-normal"
               style={{ background: "rgba(0,128,105,0.10)", color: WA_TEAL_D, letterSpacing: "0.04em", textTransform: "none" }}>
               {filteredStudents.length} parent{filteredStudents.length === 1 ? "" : "s"}
             </span>
@@ -1269,7 +1269,7 @@ const ParentCommunication = () => {
               ) : filteredStudents.length === 0 ? (
                 <div className="py-10 flex flex-col items-center gap-2">
                   <User size={36} color={WA_TEXT_MUTED} strokeWidth={1.8} style={{ opacity: 0.4 }} />
-                  <div className="text-[13px] font-semibold" style={{ color: WA_TEXT }}>No students found</div>
+                  <div className="text-[13px] font-normal" style={{ color: WA_TEXT }}>No students found</div>
                   <div className="text-[12px]" style={{ color: WA_TEXT_MUTED }}>Try a different search.</div>
                 </div>
               ) : (
@@ -1293,18 +1293,18 @@ const ParentCommunication = () => {
                         borderLeft: active ? `3px solid ${WA_GREEN}` : "3px solid transparent",
                       }}>
                       {/* Avatar — circular WhatsApp style */}
-                      <div className="w-[49px] h-[49px] rounded-full flex items-center justify-center text-white text-[15px] font-semibold shrink-0 relative"
+                      <div className="w-[49px] h-[49px] rounded-full flex items-center justify-center text-white text-[15px] font-normal shrink-0 relative"
                         style={{ background: avBg, letterSpacing: "-0.3px" }}>
                         {initText}
                       </div>
                       {/* Name + preview */}
                       <div className="flex-1 min-w-0 py-1" style={{ borderBottom: i === filteredStudents.length - 1 ? "none" : `0.5px solid ${WA_DIVIDER}` }}>
                         <div className="flex items-center justify-between gap-2 mb-[4px]">
-                          <span className="text-[15px] font-medium truncate" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
+                          <span className="text-[15px] font-normal truncate" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
                             {s.studentName || "Student"}
                           </span>
                           {last && (
-                            <span className="text-[11.5px] font-medium shrink-0" style={{ color: unread > 0 ? WA_GREEN_D : WA_TEXT_MUTED }}>
+                            <span className="text-[11.5px] font-normal shrink-0" style={{ color: unread > 0 ? WA_GREEN_D : WA_TEXT_MUTED }}>
                               {timeLabel}
                             </span>
                           )}
@@ -1320,7 +1320,7 @@ const ParentCommunication = () => {
                             </span>
                           </div>
                           {unread > 0 ? (
-                            <span className="min-w-[20px] h-[20px] px-1.5 rounded-full text-[12px] font-semibold text-white flex items-center justify-center shrink-0"
+                            <span className="min-w-[20px] h-[20px] px-1.5 rounded-full text-[12px] font-normal text-white flex items-center justify-center shrink-0"
                               style={{ background: WA_BADGE }}>
                               {unread}
                             </span>
@@ -1368,7 +1368,7 @@ const ParentCommunication = () => {
                 {/* Chat header — WhatsApp Web (light grey) */}
                 <div className="px-4 py-2.5 flex items-center gap-3 shrink-0"
                   style={{ background: WA_PANEL, borderBottom: `0.5px solid ${WA_DIVIDER}` }}>
-                  <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[14px] font-semibold shrink-0"
+                  <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center text-white text-[14px] font-normal shrink-0"
                     style={{
                       background: avatarGradsD[((selectedStudent.studentName || "").charCodeAt(0) || 0) % avatarGradsD.length],
                       letterSpacing: "-0.2px",
@@ -1376,7 +1376,7 @@ const ParentCommunication = () => {
                     {(selectedStudent.studentName || "ST").substring(0, 2).toUpperCase()}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[16px] font-medium truncate leading-tight" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
+                    <div className="text-[16px] font-normal truncate leading-tight" style={{ color: WA_TEXT, letterSpacing: "-0.2px" }}>
                       {selectedStudent.parentName || `Parent of ${selectedStudent.studentName || "Student"}`}
                     </div>
                     <div className="text-[12.5px] font-normal flex items-center gap-1.5 mt-[2px] truncate" style={{ color: WA_TEXT_MUTED }}>
@@ -1426,14 +1426,14 @@ const ParentCommunication = () => {
                         style={{ background: "#fff", boxShadow: "0 4px 16px rgba(11,20,26,0.06)" }}>
                         <MessageSquare size={28} color={WA_TEAL_D} strokeWidth={1.7} />
                       </div>
-                      <p className="text-[14px] font-medium" style={{ color: WA_TEXT }}>No messages yet</p>
+                      <p className="text-[14px] font-normal" style={{ color: WA_TEXT }}>No messages yet</p>
                       <p className="text-[12.5px]" style={{ color: WA_TEXT_MUTED }}>Type below to start the conversation.</p>
                     </div>
                   ) : (
                     groupedMessages.map(group => (
                       <div key={group.date}>
                         <div className="flex justify-center my-3">
-                          <span className="px-3 py-[4px] rounded-[8px] text-[12px] font-medium"
+                          <span className="px-3 py-[4px] rounded-[8px] text-[12px] font-normal"
                             style={{
                               background: "#FFFFFF",
                               boxShadow: "0 1px 1px rgba(11,20,26,0.04)",
@@ -1467,7 +1467,7 @@ const ParentCommunication = () => {
                                     paddingBottom: 18,
                                   }}>
                                   {!isSent && isFirstInGroup && senderName && (
-                                    <div className="text-[12.5px] font-medium mb-[2px]" style={{ color: WA_TEAL_D }}>{senderName}</div>
+                                    <div className="text-[12.5px] font-normal mb-[2px]" style={{ color: WA_TEAL_D }}>{senderName}</div>
                                   )}
                                   <span>{n.message}</span>
                                   {/* Time + tick — inside bubble (WhatsApp pattern) */}

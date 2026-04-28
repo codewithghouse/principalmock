@@ -589,17 +589,17 @@ const Teachers = () => {
     return (
       <>
         <div className="animate-in fade-in duration-500 -mx-3 -mt-3"
-          style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+          style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
           {/* Page head */}
           <div className="flex items-start justify-between px-5 pt-4">
             <div>
-              <div className="text-[24px] font-semibold mb-[4px]" style={{ color: T1, letterSpacing: "-0.6px" }}>Teachers</div>
+              <div className="text-[24px] font-normal mb-[4px]" style={{ color: T1, letterSpacing: "-0.6px" }}>Teachers</div>
               <div className="text-[12px] font-normal" style={{ color: T3 }}>Manage teaching staff and monitor performance</div>
             </div>
             <button
               onClick={() => setIsInviteOpen(true)}
-              className="h-10 px-[16px] rounded-[14px] flex items-center gap-[8px] text-[12px] font-semibold text-white cursor-pointer whitespace-nowrap shrink-0 mt-1 relative overflow-hidden active:scale-[0.95] transition-transform"
+              className="h-10 px-[16px] rounded-[14px] flex items-center gap-[8px] text-[12px] font-normal text-white cursor-pointer whitespace-nowrap shrink-0 mt-1 relative overflow-hidden active:scale-[0.95] transition-transform"
               style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
               <Plus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.5} />
@@ -622,14 +622,14 @@ const Teachers = () => {
                 style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                 <div className="absolute -top-5 -right-4 w-[70px] h-[70px] rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`, opacity: 0.5 }} />
                 <div className="flex items-start justify-between mb-[12px]">
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.07em] leading-[1.4]" style={{ color: T4 }}>{title}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.07em] leading-[1.4]" style={{ color: T4 }}>{title}</div>
                   <div className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center shrink-0"
                     style={{ background: iconBg, border: `0.5px solid ${iconBorder}` }}>
                     <Icon className="w-[14px] h-[14px]" style={{ color: iconColor }} strokeWidth={2.4} />
                   </div>
                 </div>
-                <div className="text-[28px] font-semibold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</div>
-                <div className="text-[12px] font-semibold truncate" style={{ color: subColor }}>{sub}</div>
+                <div className="text-[28px] font-normal leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</div>
+                <div className="text-[12px] font-normal truncate" style={{ color: subColor }}>{sub}</div>
               </button>
             ))}
           </div>
@@ -652,7 +652,7 @@ const Teachers = () => {
             <select
               value={subjectFilter}
               onChange={e => setSubjectFilter(e.target.value)}
-              className="px-3 rounded-[14px] text-[12px] font-semibold bg-white cursor-pointer appearance-none h-11"
+              className="px-3 rounded-[14px] text-[12px] font-normal bg-white cursor-pointer appearance-none h-11"
               style={{
                 border: "0.5px solid rgba(10,132,255,0.12)",
                 color: T2,
@@ -672,7 +672,7 @@ const Teachers = () => {
           <div className="flex gap-2 px-5 pt-[12px]">
             <button
               onClick={() => setViewMode("grid")}
-              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal cursor-pointer active:scale-[0.94] transition-transform"
               style={{
                 background: viewMode === "grid" ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                 color: viewMode === "grid" ? "#fff" : T2,
@@ -685,7 +685,7 @@ const Teachers = () => {
             </button>
             <button
               onClick={() => setViewMode("list")}
-              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal cursor-pointer active:scale-[0.94] transition-transform"
               style={{
                 background: viewMode === "list" ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                 color: viewMode === "list" ? "#fff" : T2,
@@ -698,7 +698,7 @@ const Teachers = () => {
             </button>
             <button
               onClick={() => setIsBulkOpen(true)}
-              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal cursor-pointer active:scale-[0.94] transition-transform"
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, color: GREEN_D, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <Upload className="w-[13px] h-[13px]" strokeWidth={2.3} />
               Bulk Import
@@ -706,7 +706,7 @@ const Teachers = () => {
           </div>
 
           {/* Section label */}
-          <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+          <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
             <span>Faculty Directory</span>
             <span className="px-[8px] py-[4px] rounded-full ml-1" style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.16)", color: B1 }}>
               {filtered.length} teacher{filtered.length === 1 ? "" : "s"}
@@ -719,7 +719,7 @@ const Teachers = () => {
             <div className="mx-5 mt-3 bg-white rounded-[24px] py-10 flex flex-col items-center gap-2"
               style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
               <GraduationCap className="w-12 h-12" style={{ color: T4 }} strokeWidth={1.8} />
-              <div className="text-[14px] font-semibold" style={{ color: T2 }}>No teachers found</div>
+              <div className="text-[14px] font-normal" style={{ color: T2 }}>No teachers found</div>
               <div className="text-[12px]" style={{ color: T4 }}>Try changing your search or filters</div>
             </div>
           ) : (
@@ -738,7 +738,7 @@ const Teachers = () => {
                   {/* Card header */}
                   <div className="flex items-start gap-[16px] pl-[24px] pr-[16px] pt-[16px] pb-4 relative" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                     {/* Avatar */}
-                    <div className="w-[52px] h-[52px] rounded-[17px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+                    <div className="w-[52px] h-[52px] rounded-[17px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
                       style={{ background: av.bg, boxShadow: av.shadow }}>
                       {t.initials}
                     </div>
@@ -751,7 +751,7 @@ const Teachers = () => {
                             value={editName}
                             onChange={e => setEditName(e.target.value)}
                             onKeyDown={e => e.key === "Enter" && handleSaveName(t.id)}
-                            className="flex-1 text-[15px] font-semibold px-2 py-1 rounded-[8px] outline-none"
+                            className="flex-1 text-[15px] font-normal px-2 py-1 rounded-[8px] outline-none"
                             style={{ border: `1px solid ${B1}66`, color: T1 }}
                           />
                           <button onClick={() => handleSaveName(t.id)} className="w-7 h-7 rounded-[8px] flex items-center justify-center text-white shrink-0"
@@ -760,10 +760,10 @@ const Teachers = () => {
                           </button>
                         </div>
                       ) : (
-                        <div className="text-[18px] font-semibold mb-[4px] truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{t.name}</div>
+                        <div className="text-[18px] font-normal mb-[4px] truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{t.name}</div>
                       )}
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.06em] mb-2" style={{ color: T3 }}>{t.subject}</div>
-                      <div className="inline-flex items-center gap-1 px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+                      <div className="text-[12px] font-normal uppercase tracking-[0.06em] mb-2" style={{ color: T3 }}>{t.subject}</div>
+                      <div className="inline-flex items-center gap-1 px-[12px] py-[4px] rounded-full text-[12px] font-normal"
                         style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                         <span className="w-[5px] h-[5px] rounded-full" style={{ background: chip.dotColor, boxShadow: `0 0 0 1.5px ${chip.dotColor}33` }} />
                         {t.status}
@@ -810,53 +810,53 @@ const Teachers = () => {
                   {/* Metrics strip */}
                   <div className="flex" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                     <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px] relative">
-                      <div className="text-[20px] font-semibold leading-none" style={{ color: B1, letterSpacing: "-0.5px" }}>
+                      <div className="text-[20px] font-normal leading-none" style={{ color: B1, letterSpacing: "-0.5px" }}>
                         {t.classCount === null ? <Loader2 className="w-4 h-4 animate-spin inline" /> : t.classCount}
                       </div>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Classes</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Classes</div>
                       <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(10,132,255,0.10)" }} />
                     </div>
                     <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px] relative">
-                      <div className="text-[20px] font-semibold leading-none" style={{ color: teacherAttPct !== null ? GREEN_D : T4, letterSpacing: "-0.5px" }}>
+                      <div className="text-[20px] font-normal leading-none" style={{ color: teacherAttPct !== null ? GREEN_D : T4, letterSpacing: "-0.5px" }}>
                         {teacherAttPct !== null ? `${teacherAttPct}%` : "N/A"}
                       </div>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
                       <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(10,132,255,0.10)" }} />
                     </div>
                     <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px]">
                       <div className="flex items-center gap-[4px]">
                         <Star className="w-[14px] h-[14px]" fill={GOLD} stroke={GOLD} />
-                        <span className="text-[20px] font-semibold" style={{ color: GOLD, letterSpacing: "-0.5px" }}>{t.rating}</span>
+                        <span className="text-[20px] font-normal" style={{ color: GOLD, letterSpacing: "-0.5px" }}>{t.rating}</span>
                       </div>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Rating</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Rating</div>
                     </div>
                   </div>
 
                   {/* Detail rows */}
                   <div className="py-1">
                     <div className="flex items-center justify-between px-[16px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                      <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
+                      <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: T3 }}>
                         <CalendarCheck className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Experience
                       </div>
-                      <div className="text-[13px] font-semibold" style={{ color: t.experience === "N/A" ? T4 : T1, letterSpacing: "-0.1px" }}>{t.experience}</div>
+                      <div className="text-[13px] font-normal" style={{ color: t.experience === "N/A" ? T4 : T1, letterSpacing: "-0.1px" }}>{t.experience}</div>
                     </div>
                     <div className="flex items-center justify-between px-[16px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                      <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
+                      <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: T3 }}>
                         <BookOpen className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Subject
                       </div>
-                      <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+                      <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal"
                         style={{ background: subjectChipColor.bg, color: subjectChipColor.color, border: `0.5px solid ${subjectChipColor.border}` }}>
                         {t.subject}
                       </span>
                     </div>
                     <div className="flex items-center justify-between px-[16px] py-3">
-                      <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
+                      <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: T3 }}>
                         <MapPin className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Campus
                       </div>
-                      <div className="text-[13px] font-semibold truncate max-w-[140px]" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                      <div className="text-[13px] font-normal truncate max-w-[140px]" style={{ color: T1, letterSpacing: "-0.1px" }}>
                         {userData?.schoolName || "—"}
                       </div>
                     </div>
@@ -866,7 +866,7 @@ const Teachers = () => {
                   <div className="flex gap-2 px-4 py-[12px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                     <button
                       onClick={() => setSelectedTeacher(t)}
-                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
+                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white active:scale-[0.95] transition-transform relative overflow-hidden"
                       style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                       <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                       <Eye className="w-[13px] h-[13px] relative z-10" strokeWidth={2.2} />
@@ -874,7 +874,7 @@ const Teachers = () => {
                     </button>
                     <button
                       onClick={() => navigate("/teacher-notes")}
-                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform"
+                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white active:scale-[0.95] transition-transform"
                       style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.24)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                       <MessageSquare className="w-[13px] h-[13px]" strokeWidth={2.2} />
                       Message
@@ -910,26 +910,26 @@ const Teachers = () => {
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                   <TrendingUp className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
                 </div>
-                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Faculty Intelligence</span>
+                <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Faculty Intelligence</span>
               </div>
               <p className="text-[13px] leading-[1.72] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} teacher{totalCount === 1 ? "" : "s"}</strong> on faculty · {activeCount === totalCount ? "All active" : `${activeCount} active`}{onLeaveCount > 0 && `, ${onLeaveCount} on leave`}.
-                {teacherAttPct !== null && <> Teacher attendance is <strong style={{ color: "#fff", fontWeight: 600 }}>{teacherAttPct}%</strong>.</>}
-                {avgRating !== null && <> Average rating from parent feedback: <strong style={{ color: "#fff", fontWeight: 600 }}>{avgRating}/5 stars</strong>.</>}
-                {avgClassPerf !== null && <> Avg class performance across results: <strong style={{ color: "#fff", fontWeight: 600 }}>{avgClassPerf}%</strong>.</>}
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{totalCount} teacher{totalCount === 1 ? "" : "s"}</strong> on faculty · {activeCount === totalCount ? "All active" : `${activeCount} active`}{onLeaveCount > 0 && `, ${onLeaveCount} on leave`}.
+                {teacherAttPct !== null && <> Teacher attendance is <strong style={{ color: "#fff", fontWeight: 400 }}>{teacherAttPct}%</strong>.</>}
+                {avgRating !== null && <> Average rating from parent feedback: <strong style={{ color: "#fff", fontWeight: 400 }}>{avgRating}/5 stars</strong>.</>}
+                {avgClassPerf !== null && <> Avg class performance across results: <strong style={{ color: "#fff", fontWeight: 400 }}>{avgClassPerf}%</strong>.</>}
               </p>
               <div className="grid grid-cols-3 rounded-[16px] overflow-hidden mt-[16px] relative z-10" style={{ gap: "1px", background: "rgba(255,255,255,0.12)" }}>
                 <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{totalCount}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Teachers</div>
+                  <div className="text-[22px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{totalCount}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Teachers</div>
                 </div>
                 <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{avgRating !== null ? `${avgRating} ★` : "—"}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Avg Rating</div>
+                  <div className="text-[22px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{avgRating !== null ? `${avgRating} ★` : "—"}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Avg Rating</div>
                 </div>
                 <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{teacherAttPct !== null ? `${teacherAttPct}%` : "100%"}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Attendance</div>
+                  <div className="text-[22px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{teacherAttPct !== null ? `${teacherAttPct}%` : "100%"}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Attendance</div>
                 </div>
               </div>
             </div>
@@ -942,27 +942,27 @@ const Teachers = () => {
         <Dialog open={isInviteOpen} onOpenChange={setIsInviteOpen}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[440px] rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Invite Teacher</DialogTitle>
+              <DialogTitle className="text-xl font-normal text-[#1D1D1F]">Invite Teacher</DialogTitle>
               <DialogDescription className="text-slate-500">Send an email invitation to a new faculty member.</DialogDescription>
             </DialogHeader>
             <form onSubmit={handleInvite} className="space-y-4 py-2">
               <div className="space-y-1.5">
-                <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Full Name</Label>
+                <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Full Name</Label>
                 <Input placeholder="Mrs. Kavita Sharma" className="h-11 rounded-xl"
                   value={inviteForm.name} onChange={e => setInviteForm({ ...inviteForm, name: e.target.value })} required />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Email Address</Label>
+                <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Email Address</Label>
                 <Input type="email" placeholder="teacher@school.edu" className="h-11 rounded-xl"
                   value={inviteForm.email} onChange={e => setInviteForm({ ...inviteForm, email: e.target.value })} required />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Subject</Label>
+                <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Subject</Label>
                 <Input placeholder="e.g. Mathematics" className="h-11 rounded-xl"
                   value={inviteForm.subject} onChange={e => setInviteForm({ ...inviteForm, subject: e.target.value })} />
               </div>
               <div className="space-y-1.5">
-                <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Assign Class (Optional)</Label>
+                <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Assign Class (Optional)</Label>
                 <select
                   value={inviteForm.assignClassId}
                   onChange={e => setInviteForm({ ...inviteForm, assignClassId: e.target.value })}
@@ -975,7 +975,7 @@ const Teachers = () => {
                 </select>
               </div>
               <button type="submit" disabled={isSending}
-                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-normal hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isSending ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</> : <><CheckCircle className="w-4 h-4" /> Send Invitation</>}
               </button>
@@ -987,7 +987,7 @@ const Teachers = () => {
         <Dialog open={isBulkOpen} onOpenChange={(v) => { setIsBulkOpen(v); if (!v) { setBulkData([]); setBulkDone(false); } }}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[85vh] overflow-y-auto rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-semibold text-[#1D1D1F] flex items-center gap-2">
+              <DialogTitle className="text-xl font-normal text-[#1D1D1F] flex items-center gap-2">
                 <FileSpreadsheet className="w-5 h-5 text-emerald-600" /> Bulk Import Teachers
               </DialogTitle>
               <DialogDescription className="text-slate-500">Upload an Excel/CSV file to import multiple teachers at once.</DialogDescription>
@@ -996,12 +996,12 @@ const Teachers = () => {
               {bulkData.length === 0 ? (
                 <div className="space-y-3">
                   <button onClick={downloadTemplate}
-                    className="w-full h-11 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-slate-100">
+                    className="w-full h-11 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 font-normal text-sm flex items-center justify-center gap-2 hover:bg-slate-100">
                     <Download className="w-4 h-4" /> Download Template
                   </button>
                   <input ref={fileInputRef} type="file" accept=".xlsx,.xls,.csv" onChange={handleFileUpload} className="hidden" />
                   <button onClick={() => fileInputRef.current?.click()}
-                    className="w-full h-12 rounded-xl bg-[#1D1D1F] text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90">
+                    className="w-full h-12 rounded-xl bg-[#1D1D1F] text-white font-normal text-sm flex items-center justify-center gap-2 hover:opacity-90">
                     <Upload className="w-4 h-4" /> Choose Excel / CSV File
                   </button>
                 </div>
@@ -1011,18 +1011,18 @@ const Teachers = () => {
                     <table className="w-full text-sm">
                       <thead className="bg-slate-50 sticky top-0">
                         <tr>
-                          <th className="px-3 py-2 text-left text-[12px] font-semibold uppercase text-slate-500">Name</th>
-                          <th className="px-3 py-2 text-left text-[12px] font-semibold uppercase text-slate-500">Email</th>
-                          <th className="px-3 py-2 text-right text-[12px] font-semibold uppercase text-slate-500">Status</th>
+                          <th className="px-3 py-2 text-left text-[12px] font-normal uppercase text-slate-500">Name</th>
+                          <th className="px-3 py-2 text-left text-[12px] font-normal uppercase text-slate-500">Email</th>
+                          <th className="px-3 py-2 text-right text-[12px] font-normal uppercase text-slate-500">Status</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
                         {bulkData.map((t, i) => (
                           <tr key={i}>
-                            <td className="px-3 py-2 font-semibold text-slate-800 text-xs">{t.name}</td>
+                            <td className="px-3 py-2 font-normal text-slate-800 text-xs">{t.name}</td>
                             <td className="px-3 py-2 text-xs text-slate-500 truncate max-w-[140px]">{t.email}</td>
                             <td className="px-3 py-2 text-right">
-                              <span className={`inline-block text-[12px] font-semibold px-2 py-0.5 rounded-full ${
+                              <span className={`inline-block text-[12px] font-normal px-2 py-0.5 rounded-full ${
                                 t._status === "success" ? "bg-green-100 text-green-700" :
                                 t._status === "duplicate" ? "bg-amber-100 text-amber-700" :
                                 t._status === "error" ? "bg-rose-100 text-rose-700" :
@@ -1039,12 +1039,12 @@ const Teachers = () => {
                   <div className="mt-3 flex gap-2">
                     {!bulkDone && (
                       <button onClick={handleBulkImport} disabled={isBulkProcessing}
-                        className="flex-1 h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50">
+                        className="flex-1 h-11 rounded-xl bg-[#1D1D1F] text-white font-normal text-sm flex items-center justify-center gap-2 disabled:opacity-50">
                         {isBulkProcessing ? <><Loader2 className="w-4 h-4 animate-spin" /> Importing…</> : <><Upload className="w-4 h-4" /> Import {bulkData.length} Teachers</>}
                       </button>
                     )}
                     <button onClick={() => { setBulkData([]); setBulkDone(false); }}
-                      className="px-4 h-11 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-sm font-semibold">
+                      className="px-4 h-11 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 text-sm font-normal">
                       Clear
                     </button>
                   </div>
@@ -1058,7 +1058,7 @@ const Teachers = () => {
         <Dialog open={isRosterOpen} onOpenChange={setIsRosterOpen}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[80vh] overflow-y-auto rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
+              <DialogTitle className="text-xl font-normal text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
               <DialogDescription className="text-slate-500">Students currently enrolled under this teacher.</DialogDescription>
             </DialogHeader>
             <div className="py-2">
@@ -1070,10 +1070,10 @@ const Teachers = () => {
                     {teacherRoster.map(s => (
                       <div key={s.id} className="flex items-center justify-between px-4 py-3">
                         <div className="min-w-0">
-                          <p className="font-semibold text-slate-800 text-sm truncate">{s.studentName}</p>
+                          <p className="font-normal text-slate-800 text-sm truncate">{s.studentName}</p>
                           <p className="text-[12px] text-slate-400 truncate">{s.studentEmail}</p>
                         </div>
-                        <span className="font-semibold text-[#1D1D1F] text-xs shrink-0">{s.className || "General"}</span>
+                        <span className="font-normal text-[#1D1D1F] text-xs shrink-0">{s.className || "General"}</span>
                       </div>
                     ))}
                   </div>
@@ -1081,7 +1081,7 @@ const Teachers = () => {
               ) : (
                 <div className="text-center py-10 bg-slate-50 rounded-xl border border-dashed border-slate-200">
                   <Users className="w-10 h-10 text-slate-200 mx-auto mb-3" />
-                  <p className="text-sm font-semibold text-slate-400">No enrollment records found</p>
+                  <p className="text-sm font-normal text-slate-400">No enrollment records found</p>
                 </div>
               )}
             </div>
@@ -1126,7 +1126,7 @@ const Teachers = () => {
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -1136,21 +1136,21 @@ const Teachers = () => {
             <GraduationCap className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Teachers</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Teachers</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Manage teaching staff and monitor performance</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsBulkOpen(true)}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal transition-transform hover:scale-[1.02]"
             style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, color: dGREEN_D }}>
             <Upload className="w-[14px] h-[14px]" strokeWidth={2.3} />
             Bulk Import
           </button>
           <button
             onClick={() => setIsInviteOpen(true)}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: dSH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -1174,10 +1174,10 @@ const Teachers = () => {
               <Users className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Faculty Directory</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Faculty Directory</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{totalCount}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>active teachers</span>
+                <span className="text-[28px] font-normal leading-none tracking-tight">{totalCount}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>active teachers</span>
               </div>
             </div>
           </div>
@@ -1188,8 +1188,8 @@ const Teachers = () => {
                 <CheckCircle className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Active</div>
-                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{activeCount}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Active</div>
+                <div className="text-[22px] font-normal leading-none" style={{ letterSpacing: "-0.5px" }}>{activeCount}</div>
               </div>
             </div>
             <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.18)" }} />
@@ -1199,8 +1199,8 @@ const Teachers = () => {
                 <Star className="w-[18px] h-[18px] text-white" strokeWidth={2.3} fill="white" />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Avg Rating</div>
-                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{avgRating !== null ? `${avgRating}/5` : "—"}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Avg Rating</div>
+                <div className="text-[22px] font-normal leading-none" style={{ letterSpacing: "-0.5px" }}>{avgRating !== null ? `${avgRating}/5` : "—"}</div>
               </div>
             </div>
           </div>
@@ -1221,14 +1221,14 @@ const Teachers = () => {
             <div className="absolute -top-6 -right-6 w-[100px] h-[100px] rounded-full pointer-events-none"
               style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }} />
             <div className="flex items-center justify-between mb-4 relative">
-              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
               <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                 style={{ background: grad, boxShadow: shadow }}>
                 <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
             </div>
-            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</p>
-            <p className="text-[12px] font-semibold truncate" style={{ color: subColor }}>{sub}</p>
+            <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</p>
+            <p className="text-[12px] font-normal truncate" style={{ color: subColor }}>{sub}</p>
           </button>
         ))}
       </div>
@@ -1242,7 +1242,7 @@ const Teachers = () => {
             placeholder="Search teachers…"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
+            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-normal outline-none"
             style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
           />
         </div>
@@ -1253,7 +1253,7 @@ const Teachers = () => {
           <select key={i}
             value={f.value}
             onChange={e => f.set(e.target.value)}
-            className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-semibold outline-none cursor-pointer appearance-none"
+            className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-normal outline-none cursor-pointer appearance-none"
             style={{
               border: `0.5px solid ${dSEP}`,
               color: dT2,
@@ -1293,7 +1293,7 @@ const Teachers = () => {
       <Dialog open={isBulkOpen} onOpenChange={(o) => { if (!o) { setIsBulkOpen(false); setBulkDone(false); setBulkData([]); } else setIsBulkOpen(true); }}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[560px] max-h-[90vh] overflow-y-auto rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Bulk Import Teachers</DialogTitle>
+            <DialogTitle className="text-xl font-normal text-[#1D1D1F]">Bulk Import Teachers</DialogTitle>
             <DialogDescription className="text-slate-500">Upload an Excel (.xlsx) file to invite multiple teachers at once.</DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
@@ -1304,11 +1304,11 @@ const Teachers = () => {
                   className="border-2 border-dashed border-slate-200 rounded-xl p-10 text-center cursor-pointer hover:border-[#1D1D1F]/40 hover:bg-slate-50 transition-all"
                 >
                   <Upload className="w-10 h-10 text-slate-300 mx-auto mb-3" />
-                  <p className="text-sm font-semibold text-slate-500">Click to upload Excel file</p>
+                  <p className="text-sm font-normal text-slate-500">Click to upload Excel file</p>
                   <p className="text-xs text-slate-400 mt-1">.xlsx or .xls format</p>
                   <input type="file" hidden ref={fileInputRef} accept=".xlsx,.xls" onChange={handleFileUpload} />
                 </div>
-                <button onClick={downloadTemplate} className="mt-2 text-xs font-semibold text-[#1D1D1F] flex items-center gap-1.5 mx-auto hover:underline">
+                <button onClick={downloadTemplate} className="mt-2 text-xs font-normal text-[#1D1D1F] flex items-center gap-1.5 mx-auto hover:underline">
                   <Download className="w-3 h-3" /> Download template
                 </button>
               </div>
@@ -1318,10 +1318,10 @@ const Teachers = () => {
                 {bulkData.map((t, idx) => (
                   <div key={idx} className="flex items-center justify-between px-4 py-3 border-b border-slate-50 last:border-0 bg-white">
                     <div>
-                      <p className="text-sm font-semibold text-slate-800">{t.name}</p>
+                      <p className="text-sm font-normal text-slate-800">{t.name}</p>
                       <p className="text-xs text-slate-400">{t.email}</p>
                     </div>
-                    <span className={`text-[12px] font-semibold px-2 py-1 rounded-full uppercase ${
+                    <span className={`text-[12px] font-normal px-2 py-1 rounded-full uppercase ${
                       t._status === "success"   ? "bg-green-50 text-green-600"  :
                       t._status === "duplicate" ? "bg-amber-50 text-amber-600"  :
                       t._status === "error"     ? "bg-red-50 text-red-600"      :
@@ -1339,8 +1339,8 @@ const Teachers = () => {
                   { label: "Failed",     color: "bg-red-50 text-red-600",      count: bulkData.filter(t => t._status === "error").length      },
                 ].map(({ label, color, count }) => (
                   <div key={label} className={`p-4 rounded-xl border text-center ${color.replace("text-", "border-").replace("600", "100")}`}>
-                    <p className={`text-2xl font-semibold ${color.split(" ")[1]}`}>{count}</p>
-                    <p className={`text-[12px] font-semibold uppercase ${color.split(" ")[1]}`}>{label}</p>
+                    <p className={`text-2xl font-normal ${color.split(" ")[1]}`}>{count}</p>
+                    <p className={`text-[12px] font-normal uppercase ${color.split(" ")[1]}`}>{label}</p>
                   </div>
                 ))}
               </div>
@@ -1351,14 +1351,14 @@ const Teachers = () => {
               <button
                 onClick={handleBulkImport}
                 disabled={bulkData.length === 0 || isBulkProcessing}
-                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-normal hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isBulkProcessing ? <><Loader2 className="w-4 h-4 animate-spin" /> Importing…</> : <><Upload className="w-4 h-4" /> Import & Invite All</>}
               </button>
             ) : (
               <button
                 onClick={() => { setIsBulkOpen(false); setBulkDone(false); setBulkData([]); }}
-                className="w-full h-11 rounded-xl bg-green-600 text-white font-semibold hover:opacity-90 flex items-center justify-center gap-2"
+                className="w-full h-11 rounded-xl bg-green-600 text-white font-normal hover:opacity-90 flex items-center justify-center gap-2"
               >
                 <CheckCircle className="w-4 h-4" /> Done
               </button>
@@ -1371,29 +1371,29 @@ const Teachers = () => {
       <Dialog open={isInviteOpen} onOpenChange={setIsInviteOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[425px] rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Add Teacher</DialogTitle>
+            <DialogTitle className="text-xl font-normal text-[#1D1D1F]">Add Teacher</DialogTitle>
             <DialogDescription className="text-slate-500">
               They'll receive an email invitation to join {userData?.schoolName || "the school"}.
             </DialogDescription>
           </DialogHeader>
           <form onSubmit={handleInvite} className="space-y-4 py-2">
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Full Name</Label>
+              <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Full Name</Label>
               <Input placeholder="Mrs. Kavita Sharma" className="h-11 rounded-xl"
                 value={inviteForm.name} onChange={e => setInviteForm({ ...inviteForm, name: e.target.value })} required />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Email Address</Label>
+              <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Email Address</Label>
               <Input type="email" placeholder="teacher@school.edu" className="h-11 rounded-xl"
                 value={inviteForm.email} onChange={e => setInviteForm({ ...inviteForm, email: e.target.value })} required />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Subject</Label>
+              <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Subject</Label>
               <Input placeholder="e.g. Mathematics" className="h-11 rounded-xl"
                 value={inviteForm.subject} onChange={e => setInviteForm({ ...inviteForm, subject: e.target.value })} />
             </div>
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Assign Class (Optional)</Label>
+              <Label className="text-xs font-normal text-slate-500 uppercase tracking-wide">Assign Class (Optional)</Label>
               <select
                 value={inviteForm.assignClassId}
                 onChange={e => setInviteForm({ ...inviteForm, assignClassId: e.target.value })}
@@ -1406,7 +1406,7 @@ const Teachers = () => {
               </select>
             </div>
             <button type="submit" disabled={isSending}
-              className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-normal hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {isSending ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</> : <><CheckCircle className="w-4 h-4" /> Send Invitation</>}
             </button>
@@ -1418,7 +1418,7 @@ const Teachers = () => {
       <Dialog open={isRosterOpen} onOpenChange={setIsRosterOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[80vh] overflow-y-auto rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
+            <DialogTitle className="text-xl font-normal text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
             <DialogDescription className="text-slate-500">Students currently enrolled under this teacher.</DialogDescription>
           </DialogHeader>
           <div className="py-2">
@@ -1429,21 +1429,21 @@ const Teachers = () => {
                 <table className="w-full text-sm min-w-[400px]">
                   <thead className="bg-[#1D1D1F] text-white">
                     <tr>
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide">Student</th>
-                      <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide">Class</th>
-                      <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide">Status</th>
+                      <th className="px-5 py-3 text-left text-xs font-normal uppercase tracking-wide">Student</th>
+                      <th className="px-5 py-3 text-left text-xs font-normal uppercase tracking-wide">Class</th>
+                      <th className="px-5 py-3 text-right text-xs font-normal uppercase tracking-wide">Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50">
                     {teacherRoster.map(s => (
                       <tr key={s.id} className="hover:bg-slate-50 transition-colors">
                         <td className="px-5 py-3">
-                          <p className="font-semibold text-slate-800">{s.studentName}</p>
+                          <p className="font-normal text-slate-800">{s.studentName}</p>
                           <p className="text-xs text-slate-400 mt-1">{s.studentEmail}</p>
                         </td>
-                        <td className="px-5 py-3 font-semibold text-[#1D1D1F]">{s.className || "General"}</td>
+                        <td className="px-5 py-3 font-normal text-[#1D1D1F]">{s.className || "General"}</td>
                         <td className="px-5 py-3 text-right">
-                          <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full uppercase ${
+                          <span className={`text-[12px] font-normal px-2.5 py-1 rounded-full uppercase ${
                             s.status === "Active" ? "bg-green-50 text-green-600" : "bg-blue-50 text-blue-600"
                           }`}>{s.status}</span>
                         </td>
@@ -1455,7 +1455,7 @@ const Teachers = () => {
             ) : (
               <div className="text-center py-10 bg-slate-50 rounded-xl border border-dashed border-slate-200">
                 <Users className="w-10 h-10 text-slate-200 mx-auto mb-3" />
-                <p className="text-sm font-semibold text-slate-400">No enrollment records found</p>
+                <p className="text-sm font-normal text-slate-400">No enrollment records found</p>
               </div>
             )}
           </div>
@@ -1468,8 +1468,8 @@ const Teachers = () => {
           style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
           <GraduationCap className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Faculty Directory</div>
-        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+        <div className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Faculty Directory</div>
+        <span className="text-[12px] font-normal px-3 py-1 rounded-full"
           style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length} teacher{filtered.length === 1 ? "" : "s"}
         </span>
@@ -1482,7 +1482,7 @@ const Teachers = () => {
             style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
             <GraduationCap className="w-8 h-8" style={{ color: dB1 }} strokeWidth={2} />
           </div>
-          <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No teachers found</p>
+          <p className="text-[14px] font-normal" style={{ color: dT1 }}>No teachers found</p>
           <p className="text-[12px]" style={{ color: dT4 }}>Try changing your search or filters</p>
         </div>
       ) : viewMode === "grid" ? (
@@ -1532,7 +1532,7 @@ const Teachers = () => {
 
                 {/* Avatar row */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-white text-[15px] font-semibold shrink-0"
+                  <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-white text-[15px] font-normal shrink-0"
                     style={{ background: av.bg, boxShadow: av.shadow }}>
                     {t.initials}
                   </div>
@@ -1542,7 +1542,7 @@ const Teachers = () => {
                         <input autoFocus value={editName}
                           onChange={e => setEditName(e.target.value)}
                           onKeyDown={e => e.key === "Enter" && handleSaveName(t.id)}
-                          className="w-full text-[14px] font-semibold rounded-[8px] px-2 py-1 outline-none"
+                          className="w-full text-[14px] font-normal rounded-[8px] px-2 py-1 outline-none"
                           style={{ border: `1px solid ${dB1}66`, color: dT1 }} />
                         <button onClick={() => handleSaveName(t.id)}
                           className="w-7 h-7 rounded-[8px] flex items-center justify-center text-white shrink-0"
@@ -1551,7 +1551,7 @@ const Teachers = () => {
                         </button>
                       </div>
                     ) : (
-                      <h3 className="text-[14px] font-semibold truncate leading-tight" style={{ color: dT1, letterSpacing: "-0.1px" }}>{t.name}</h3>
+                      <h3 className="text-[14px] font-normal truncate leading-tight" style={{ color: dT1, letterSpacing: "-0.1px" }}>{t.name}</h3>
                     )}
                     <p className="text-[12px] mt-1 truncate" style={{ color: dT3 }}>{t.subject}</p>
                   </div>
@@ -1560,37 +1560,37 @@ const Teachers = () => {
                 {/* Stats */}
                 <div className="space-y-[12px] pt-3" style={{ borderTop: `0.5px solid ${dSEP}` }}>
                   <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <span className="flex items-center gap-1.5 text-[12px] font-normal" style={{ color: dT3 }}>
                       <BookOpen className="w-[12px] h-[12px]" strokeWidth={2.2} />
                       Classes
                     </span>
-                    <span className="text-[13px] font-semibold" style={{ color: dT1 }}>
+                    <span className="text-[13px] font-normal" style={{ color: dT1 }}>
                       {t.classCount === null ? <Loader2 className="w-3.5 h-3.5 animate-spin inline" style={{ color: dT4 }} /> : t.classCount}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <span className="flex items-center gap-1.5 text-[12px] font-normal" style={{ color: dT3 }}>
                       <MapPin className="w-[12px] h-[12px]" strokeWidth={2.2} />
                       Experience
                     </span>
-                    <span className="text-[13px] font-semibold" style={{ color: dT1 }}>{t.experience}</span>
+                    <span className="text-[13px] font-normal" style={{ color: dT1 }}>{t.experience}</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <span className="flex items-center gap-1.5 text-[12px] font-normal" style={{ color: dT3 }}>
                       <Star className="w-[12px] h-[12px]" strokeWidth={2.2} />
                       Rating
                     </span>
                     <span className="flex items-center gap-1 px-2 py-[2px] rounded-full"
                       style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                       <Star className="w-[11px] h-[11px]" style={{ color: dGOLD, fill: dGOLD }} />
-                      <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
+                      <span className="text-[12px] font-normal" style={{ color: "#86310C" }}>{t.rating}</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Status Badge */}
                 <div className="mt-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                  <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                     style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                     <span className="w-[6px] h-[6px] rounded-full" style={{ background: chip.color }} />
                     {t.status}
@@ -1609,7 +1609,7 @@ const Teachers = () => {
               <thead>
                 <tr style={{ background: dBG, borderBottom: `0.5px solid ${dSEP}` }}>
                   {["Teacher", "Subject", "Classes", "Experience", "Rating", "Status", "Actions"].map((h, i) => (
-                    <th key={h} className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.10em] ${i >= 2 && i <= 5 ? "text-center" : i === 6 ? "text-right" : "text-left"}`}
+                    <th key={h} className={`px-5 py-3 text-[12px] font-normal uppercase tracking-[0.10em] ${i >= 2 && i <= 5 ? "text-center" : i === 6 ? "text-right" : "text-left"}`}
                       style={{ color: dT4 }}>{h}</th>
                   ))}
                 </tr>
@@ -1625,35 +1625,35 @@ const Teachers = () => {
                       style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                          <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-normal shrink-0"
                             style={{ background: av.bg, boxShadow: av.shadow }}>
                             {t.initials}
                           </div>
                           <div>
-                            <p className="text-[13px] font-semibold" style={{ color: dT1 }}>{t.name}</p>
-                            <p className="text-[12px] font-medium" style={{ color: dT3 }}>{t.email}</p>
+                            <p className="text-[13px] font-normal" style={{ color: dT1 }}>{t.name}</p>
+                            <p className="text-[12px] font-normal" style={{ color: dT3 }}>{t.email}</p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-4">
-                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-semibold"
+                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-normal"
                           style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                           {t.subject}
                         </span>
                       </td>
-                      <td className="px-5 py-4 text-center text-[13px] font-semibold" style={{ color: dT1 }}>
+                      <td className="px-5 py-4 text-center text-[13px] font-normal" style={{ color: dT1 }}>
                         {t.classCount === null ? "…" : t.classCount}
                       </td>
-                      <td className="px-5 py-4 text-center text-[12px] font-medium" style={{ color: dT3 }}>{t.experience}</td>
+                      <td className="px-5 py-4 text-center text-[12px] font-normal" style={{ color: dT3 }}>{t.experience}</td>
                       <td className="px-5 py-4 text-center">
                         <span className="inline-flex items-center justify-center gap-1 px-3 py-[4px] rounded-full"
                           style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                           <Star className="w-[11px] h-[11px]" style={{ color: dGOLD, fill: dGOLD }} />
-                          <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
+                          <span className="text-[12px] font-normal" style={{ color: "#86310C" }}>{t.rating}</span>
                         </span>
                       </td>
                       <td className="px-5 py-4 text-center">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                        <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                           style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                           <span className="w-[6px] h-[6px] rounded-full" style={{ background: chip.color }} />
                           {t.status}

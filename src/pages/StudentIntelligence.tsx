@@ -441,21 +441,21 @@ export default function StudentIntelligence() {
           <button onClick={() => navigate(`/students/${stu.studentId}`)}
             className="w-full flex items-start gap-[16px] px-[16px] pt-[16px] pb-4 text-left active:bg-[#F5F5F7] transition-colors"
             style={{ borderBottom: `0.5px solid ${SEP}` }}>
-            <div className="w-[50px] h-[50px] rounded-[16px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+            <div className="w-[50px] h-[50px] rounded-[16px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
               style={{ background: avatarGrad, boxShadow: avatarShadow }}>
               {initials}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap mb-1">
-                <div className="text-[16px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{stu.studentName}</div>
-                <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.06em]"
+                <div className="text-[16px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{stu.studentName}</div>
+                <div className="px-[12px] py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.06em]"
                   style={{ background: stu.category === "weak" ? RED_S : stu.category === "developing" ? ORANGE_S : GREEN_S,
                            color: stu.category === "weak" ? RED : stu.category === "developing" ? "#86310C" : GREEN_D,
                            border: `0.5px solid ${stu.category === "weak" ? RED_B : stu.category === "developing" ? ORANGE_B : GREEN_B}` }}>
                   {stu.category}
                 </div>
               </div>
-              <div className="text-[12px] font-medium mb-[4px]" style={{ color: T3 }}>
+              <div className="text-[12px] font-normal mb-[4px]" style={{ color: T3 }}>
                 {stu.className ? `Class ${stu.className}` : "No class"}{stu.rollNo ? ` · Roll ${stu.rollNo}` : ""}
               </div>
               <div className="text-[12px] font-normal truncate" style={{ color: T3 }}>
@@ -473,8 +473,8 @@ export default function StudentIntelligence() {
             ].map((cell, i, arr) => (
               <div key={cell.label} className="flex-1 px-4 py-[16px] flex flex-col gap-[4px] relative">
                 {i < arr.length - 1 && <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(10,132,255,0.10)" }} />}
-                <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>{cell.label}</span>
-                <span className="text-[22px] font-semibold leading-none" style={{ color: cell.color, letterSpacing: "-0.6px" }}>{cell.val}</span>
+                <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>{cell.label}</span>
+                <span className="text-[22px] font-normal leading-none" style={{ color: cell.color, letterSpacing: "-0.6px" }}>{cell.val}</span>
                 <div className="h-1 rounded-[2px] overflow-hidden" style={{ background: BG2 }}>
                   <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, cell.pct))}%`, background: cell.grad }} />
                 </div>
@@ -485,19 +485,19 @@ export default function StudentIntelligence() {
           {/* Actions */}
           <div className="flex gap-2 px-[16px] py-[16px]">
             <button onClick={e => { e.stopPropagation(); setAiInsightStudent(stu); }}
-              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold tracking-[0.02em] active:scale-[0.95] transition-transform"
+              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal tracking-[0.02em] active:scale-[0.95] transition-transform"
               style={{ background: BG, border: "0.5px solid rgba(10,132,255,0.16)", color: B1, boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.3} />
               AI Analysis
             </button>
             <button onClick={e => { e.stopPropagation(); setNotifyTeacher(stu); }}
-              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold tracking-[0.02em] active:scale-[0.95] transition-transform bg-white"
+              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal tracking-[0.02em] active:scale-[0.95] transition-transform bg-white"
               style={{ border: "0.5px solid rgba(10,132,255,0.14)", color: "#3A3A3C", boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <GraduationCap className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
               Teacher
             </button>
             <button onClick={e => { e.stopPropagation(); setNotifyParent(stu); }}
-              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold tracking-[0.02em] text-white active:scale-[0.95] transition-transform relative overflow-hidden"
+              className="flex-1 h-[42px] rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal tracking-[0.02em] text-white active:scale-[0.95] transition-transform relative overflow-hidden"
               style={{ background: `linear-gradient(135deg, ${GREEN}, #34C759)`, boxShadow: "0 4px 14px rgba(52,199,89,0.32)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
               <MessageSquare className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
@@ -516,8 +516,8 @@ export default function StudentIntelligence() {
             style={{ background: t.iconBg, border: `0.5px solid ${t.iconBorder}` }}>
             <Icon className="w-4 h-4" style={{ color: t.color }} strokeWidth={2.3} />
           </div>
-          <div className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>{label}</div>
-          <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+          <div className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>{label}</div>
+          <div className="px-[12px] py-[4px] rounded-full text-[12px] font-normal"
             style={{ background: tier === "weak" ? RED_S : tier === "developing" ? ORANGE_S : GREEN_S,
                      color: tier === "weak" ? RED : tier === "developing" ? "#86310C" : GREEN_D,
                      border: `0.5px solid ${tier === "weak" ? RED_B : tier === "developing" ? ORANGE_B : GREEN_B}` }}>
@@ -537,7 +537,7 @@ export default function StudentIntelligence() {
             style={{ background: t.iconBg, border: `0.5px solid ${t.iconBorder}` }}>
             <Icon className="w-5 h-5" style={{ color: t.color }} strokeWidth={2.2} />
           </div>
-          <div className="text-[14px] font-semibold" style={{ color: "#3A3A3C", letterSpacing: "-0.2px" }}>No {CATEGORY_META[tier].label.toLowerCase()} students</div>
+          <div className="text-[14px] font-normal" style={{ color: "#3A3A3C", letterSpacing: "-0.2px" }}>No {CATEGORY_META[tier].label.toLowerCase()} students</div>
           <div className="text-[12px] text-center max-w-[220px] leading-[1.55] font-normal" style={{ color: T4 }}>{msg}</div>
         </div>
       );
@@ -545,11 +545,11 @@ export default function StudentIntelligence() {
 
     return (
       <div data-sfpro className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
         {/* Page Head */}
         <div className="px-5 pt-4">
-          <div className="text-[28px] font-semibold mb-[4px]" style={{ color: T1, letterSpacing: "-0.7px" }}>Student Intelligence</div>
+          <div className="text-[28px] font-normal mb-[4px]" style={{ color: T1, letterSpacing: "-0.7px" }}>Student Intelligence</div>
           <div className="text-[12px] leading-[1.65] font-normal" style={{ color: T3 }}>
             Auto-detected performance tiers · Filter by class · Notify teacher or parent in one click
           </div>
@@ -559,7 +559,7 @@ export default function StudentIntelligence() {
         <button
           onClick={() => setNotifyAllOpen(true)}
           disabled={loading || classified.length === 0}
-          className="mx-5 mt-[16px] w-[calc(100%-40px)] h-[50px] rounded-[16px] flex items-center justify-center gap-2 text-[14px] font-semibold text-white disabled:opacity-50 relative overflow-hidden active:scale-[0.97] transition-transform"
+          className="mx-5 mt-[16px] w-[calc(100%-40px)] h-[50px] rounded-[16px] flex items-center justify-center gap-2 text-[14px] font-normal text-white disabled:opacity-50 relative overflow-hidden active:scale-[0.97] transition-transform"
           style={{
             background: "linear-gradient(135deg, #1D1D1F, #0A84FF)",
             boxShadow: "0 6px 22px rgba(0,8,64,0.30), 0 2px 6px rgba(0,8,64,0.16)",
@@ -590,7 +590,7 @@ export default function StudentIntelligence() {
         <select
           value={classFilter}
           onChange={e => setClassFilter(e.target.value)}
-          className="w-[calc(100%-40px)] mx-5 mt-[12px] py-3 px-4 rounded-[14px] text-[14px] font-semibold outline-none cursor-pointer appearance-none bg-white"
+          className="w-[calc(100%-40px)] mx-5 mt-[12px] py-3 px-4 rounded-[14px] text-[14px] font-normal outline-none cursor-pointer appearance-none bg-white"
           style={{
             border: "0.5px solid rgba(10,132,255,0.14)",
             color: T1,
@@ -636,8 +636,8 @@ export default function StudentIntelligence() {
                   style={{ background: t.iconBg, border: `0.5px solid ${t.iconBorder}` }}>
                   <Icon className="w-[15px] h-[15px]" style={{ color: t.color }} strokeWidth={2.5} />
                 </div>
-                <div className="text-[28px] font-semibold leading-none mb-[4px]" style={{ color: t.color, letterSpacing: "-1px" }}>{count}</div>
-                <div className="text-[13px] font-semibold mb-[4px]" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
+                <div className="text-[28px] font-normal leading-none mb-[4px]" style={{ color: t.color, letterSpacing: "-1px" }}>{count}</div>
+                <div className="text-[13px] font-normal mb-[4px]" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
                 <div className="text-[12px] font-normal leading-[1.4]" style={{ color: T3 }}>{t.desc}</div>
               </button>
             );
@@ -648,7 +648,7 @@ export default function StudentIntelligence() {
         {loading && (
           <div className="flex flex-col items-center gap-3 py-10">
             <Loader2 className="w-8 h-8 animate-spin" style={{ color: B1 }} />
-            <p className="text-[12px] font-medium" style={{ color: T4 }}>Loading student intelligence…</p>
+            <p className="text-[12px] font-normal" style={{ color: T4 }}>Loading student intelligence…</p>
           </div>
         )}
 
@@ -683,16 +683,16 @@ export default function StudentIntelligence() {
                     style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                     <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
                   </div>
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Class Intelligence</span>
+                  <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Class Intelligence</span>
                 </div>
                 <p className="text-[13px] leading-[1.72] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>{weakList.length} student{weakList.length === 1 ? "" : "s"}</strong> performing below passing threshold.
-                  {weakList[0] && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{weakList[0].studentName}</strong>'s <strong style={{ color: "#fff", fontWeight: 600 }}>{weakList[0].avgScore}% average</strong> requires immediate teacher intervention.</>}
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>{weakList.length} student{weakList.length === 1 ? "" : "s"}</strong> performing below passing threshold.
+                  {weakList[0] && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{weakList[0].studentName}</strong>'s <strong style={{ color: "#fff", fontWeight: 400 }}>{weakList[0].avgScore}% average</strong> requires immediate teacher intervention.</>}
                   {" "}Focused revision and teacher support can significantly improve outcomes before the next assessment.
                 </p>
                 <div className="flex items-center gap-[8px] mt-[16px] pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
                   <div className="w-[6px] h-[6px] rounded-full" style={{ background: B4 }} />
-                  <span className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated from real-time assessment data</span>
+                  <span className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated from real-time assessment data</span>
                 </div>
               </div>
             )}
@@ -740,7 +740,7 @@ export default function StudentIntelligence() {
 
   return (
     <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -750,14 +750,14 @@ export default function StudentIntelligence() {
             <Sparkles className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Student Intelligence</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Student Intelligence</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Auto-detected performance tiers · Filter by class · Notify in one click</div>
           </div>
         </div>
         <button
           onClick={() => setNotifyAllOpen(true)}
           disabled={loading || classified.length === 0}
-          className="h-11 px-5 rounded-[14px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
+          className="h-11 px-5 rounded-[14px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100"
           style={{
             background: "linear-gradient(135deg, #1D1D1F, #0A84FF)",
             boxShadow: "0 6px 22px rgba(0,8,64,0.28), 0 2px 6px rgba(0,8,64,0.14)",
@@ -788,10 +788,10 @@ export default function StudentIntelligence() {
               <Users className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total Students Analyzed</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total Students Analyzed</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{classified.length}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.45)" }}>students</span>
+                <span className="text-[28px] font-normal leading-none tracking-tight">{classified.length}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.45)" }}>students</span>
               </div>
             </div>
           </div>
@@ -805,8 +805,8 @@ export default function StudentIntelligence() {
                     <t.Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
                   </div>
                   <div>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{t.label}</div>
-                    <div className="text-[24px] font-semibold leading-none" style={{ letterSpacing: "-0.6px" }}>{counts[k]}</div>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{t.label}</div>
+                    <div className="text-[24px] font-normal leading-none" style={{ letterSpacing: "-0.6px" }}>{counts[k]}</div>
                   </div>
                 </div>
               );
@@ -843,9 +843,9 @@ export default function StudentIntelligence() {
                   <div className="w-[8px] h-[8px] rounded-full animate-pulse mt-2" style={{ background: td.color, boxShadow: `0 0 0 3px ${td.color}33` }} />
                 )}
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{td.label}</span>
-              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: td.color, letterSpacing: "-1.2px" }}>{counts[t.key]}</p>
-              <p className="text-[12px] font-semibold" style={{ color: dT3 }}>{td.desc}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{td.label}</span>
+              <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: td.color, letterSpacing: "-1.2px" }}>{counts[t.key]}</p>
+              <p className="text-[12px] font-normal" style={{ color: dT3 }}>{td.desc}</p>
               <td.Icon className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: td.color, opacity: 0.18 }} strokeWidth={2} />
             </button>
           );
@@ -861,14 +861,14 @@ export default function StudentIntelligence() {
             placeholder="Search student, roll no, class..."
             value={search}
             onChange={e => setSearch(e.target.value)}
-            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
+            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-normal outline-none"
             style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
           />
         </div>
         <select
           value={classFilter}
           onChange={e => setClassFilter(e.target.value)}
-          className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-semibold outline-none cursor-pointer appearance-none"
+          className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-normal outline-none cursor-pointer appearance-none"
           style={{
             border: `0.5px solid ${dSEP}`,
             color: dT2,
@@ -894,16 +894,16 @@ export default function StudentIntelligence() {
           style={{ background: tierThemeD[activeTab].grad, boxShadow: tierThemeD[activeTab].shadow }}>
           {(() => { const Ic = tierThemeD[activeTab].Icon; return <Ic className="w-4 h-4 text-white" strokeWidth={2.4} />; })()}
         </div>
-        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>
+        <div className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>
           {CATEGORY_META[activeTab].label} Students
         </div>
-        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+        <span className="text-[12px] font-normal px-3 py-1 rounded-full"
           style={{ background: tierThemeD[activeTab].soft, color: tierThemeD[activeTab].color, border: `0.5px solid ${tierThemeD[activeTab].border}` }}>
           {visible.length}
         </span>
         {classFilter !== "all" && (
           <button onClick={() => setClassFilter("all")}
-            className="ml-auto text-[12px] font-semibold hover:underline" style={{ color: dB1 }}>
+            className="ml-auto text-[12px] font-normal hover:underline" style={{ color: dB1 }}>
             Clear class filter
           </button>
         )}
@@ -913,7 +913,7 @@ export default function StudentIntelligence() {
       {loading ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <Loader2 className="w-8 h-8 animate-spin" style={{ color: dB1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading student intelligence…</p>
+          <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: dT4 }}>Loading student intelligence…</p>
         </div>
       ) : visible.length === 0 ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
@@ -921,7 +921,7 @@ export default function StudentIntelligence() {
             style={{ background: tierThemeD[activeTab].soft, border: `0.5px solid ${tierThemeD[activeTab].border}` }}>
             {(() => { const Ic = tierThemeD[activeTab].Icon; return <Ic className="w-6 h-6" style={{ color: tierThemeD[activeTab].color }} strokeWidth={2.2} />; })()}
           </div>
-          <p className="text-[14px] font-semibold" style={{ color: dT1 }}>
+          <p className="text-[14px] font-normal" style={{ color: dT1 }}>
             No students in this tier {classFilter !== "all" ? "for selected class" : ""}.
           </p>
           <p className="text-[12px]" style={{ color: dT4 }}>Try switching tier or clearing class filter</p>
@@ -946,19 +946,19 @@ export default function StudentIntelligence() {
                   onClick={() => navigate(`/students/${stu.studentId}`)}
                   className="w-full flex items-center gap-4 pl-6 pr-5 pt-5 pb-4 text-left hover:bg-[#F8FAFF] transition-colors"
                   style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
                     style={{ background: t.grad, boxShadow: t.shadow }}>
                     {initials}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <div className="text-[15px] font-semibold truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{stu.studentName}</div>
-                      <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                      <div className="text-[15px] font-normal truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{stu.studentName}</div>
+                      <div className="px-[12px] py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                         style={{ background: t.soft, color: t.color, border: `0.5px solid ${t.border}` }}>
                         {CATEGORY_META[stu.category].label}
                       </div>
                     </div>
-                    <div className="text-[12px] font-medium" style={{ color: dT3 }}>
+                    <div className="text-[12px] font-normal" style={{ color: dT3 }}>
                       {stu.className ? `Class ${stu.className}` : "No class"}{stu.rollNo ? ` · Roll ${stu.rollNo}` : ""}
                     </div>
                     <div className="text-[12px] mt-1 truncate" style={{ color: dT3 }}>
@@ -976,8 +976,8 @@ export default function StudentIntelligence() {
                     { label: "Tier", val: CATEGORY_META[stu.category].label, color: t.color, pct: 100 },
                   ].map((cell, i, arr) => (
                     <div key={cell.label} className="px-4 py-3" style={{ borderRight: i < arr.length - 1 ? `0.5px solid ${dSEP}` : undefined, borderBottom: `0.5px solid ${dSEP}` }}>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
-                      <div className="text-[20px] font-semibold leading-none mb-1.5" style={{ color: cell.color, letterSpacing: "-0.4px" }}>{cell.val}</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
+                      <div className="text-[20px] font-normal leading-none mb-1.5" style={{ color: cell.color, letterSpacing: "-0.4px" }}>{cell.val}</div>
                       <div className="h-1 rounded-[2px]" style={{ background: dBG2 }}>
                         <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, cell.pct))}%`, background: cell.color }} />
                       </div>
@@ -988,19 +988,19 @@ export default function StudentIntelligence() {
                 {/* Actions */}
                 <div className="flex gap-2 p-4">
                   <button onClick={() => setAiInsightStudent(stu)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold transition-transform hover:scale-[1.02]"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal transition-transform hover:scale-[1.02]"
                     style={{ background: dBG, border: `0.5px solid rgba(10,132,255,0.18)`, color: dB1, boxShadow: dSH }}>
                     <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.3} />
                     AI Analysis
                   </button>
                   <button onClick={() => setNotifyTeacher(stu)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
                     style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
                     <GraduationCap className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     Notify Teacher
                   </button>
                   <button onClick={() => setNotifyParent(stu)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${dGREEN}, #34C759)`, boxShadow: "0 4px 14px rgba(52,199,89,0.30)" }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.10) 0%, transparent 52%)" }} />
                     <MessageSquare className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
@@ -1027,21 +1027,21 @@ export default function StudentIntelligence() {
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Class Intelligence</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Class Intelligence</span>
           </div>
           {(() => {
             const weakFirst = classified.filter(s => s.category === "weak").sort((a, b) => a.avgScore - b.avgScore)[0];
             return (
               <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{counts.weak} student{counts.weak === 1 ? "" : "s"}</strong> performing below passing threshold.
-                {weakFirst && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{weakFirst.studentName}</strong>'s <strong style={{ color: "#fff", fontWeight: 600 }}>{weakFirst.avgScore}% average</strong> requires immediate teacher intervention.</>}
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{counts.weak} student{counts.weak === 1 ? "" : "s"}</strong> performing below passing threshold.
+                {weakFirst && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{weakFirst.studentName}</strong>'s <strong style={{ color: "#fff", fontWeight: 400 }}>{weakFirst.avgScore}% average</strong> requires immediate teacher intervention.</>}
                 {" "}Focused revision and teacher support can significantly improve outcomes before the next assessment.
               </p>
             );
           })()}
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated from real-time assessment data</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated from real-time assessment data</span>
           </div>
         </div>
       )}

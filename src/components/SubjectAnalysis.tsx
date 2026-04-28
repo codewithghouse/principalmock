@@ -248,7 +248,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
         <button onClick={onBack} className="hover:text-foreground transition-colors">Academics</button>
         <span>/</span>
-        <span className="text-foreground font-semibold">Subject Analysis</span>
+        <span className="text-foreground font-normal">Subject Analysis</span>
       </div>
 
       {/* ── HEADER ─────────────────────────────────────────────────────────── */}
@@ -258,9 +258,9 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
             <subject.icon className={`w-7 h-7 ${subject.iconColor || "text-slate-500"}`} />
           </div>
           <div>
-            <h1 className="text-2xl font-semibold text-foreground tracking-tight">{subject.name}</h1>
-            <p className="text-sm text-muted-foreground font-medium mt-1">
-              Overall Average: <span className={`font-semibold ${avgColor}`}>{subject.avg}</span>
+            <h1 className="text-2xl font-normal text-foreground tracking-tight">{subject.name}</h1>
+            <p className="text-sm text-muted-foreground font-normal mt-1">
+              Overall Average: <span className={`font-normal ${avgColor}`}>{subject.avg}</span>
               {totalStudents > 0 && <><span className="mx-2">•</span>{totalStudents} students</>}
             </p>
           </div>
@@ -268,7 +268,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
         <div className="flex gap-3 shrink-0">
           <button
             onClick={handleExportPDF}
-            className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-xl text-sm font-semibold bg-card text-foreground hover:bg-secondary transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-xl text-sm font-normal bg-card text-foreground hover:bg-secondary transition-colors"
           >
             <Printer className="w-4 h-4" /> Export PDF
           </button>
@@ -286,9 +286,9 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Section-wise Performance */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-foreground mb-5">Section-wise Performance</h3>
+              <h3 className="text-base font-normal text-foreground mb-5">Section-wise Performance</h3>
               {sectionData.length === 0 ? (
-                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-semibold">
+                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-normal">
                   No section data yet
                 </div>
               ) : (
@@ -298,19 +298,19 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <XAxis
                       type="number" domain={[0, 100]}
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 11, fontWeight: 600, fill: "#A1A1A6" }}
+                      tick={{ fontSize: 11, fontWeight: 400, fill: "#A1A1A6" }}
                       tickFormatter={(v) => `${v}%`}
                     />
                     <YAxis
                       type="category" dataKey="section"
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 12, fontWeight: 600, fill: "#6E6E73" }}
+                      tick={{ fontSize: 12, fontWeight: 400, fill: "#6E6E73" }}
                       width={40}
                     />
                     <Tooltip
                       content={({ active, payload }: any) =>
                         active && payload?.length ? (
-                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-normal shadow-lg">
                             {payload[0].payload.section}: {payload[0].value}%
                           </div>
                         ) : null
@@ -318,7 +318,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                       cursor={{ fill: "rgba(0,0,0,0.02)" }}
                     />
                     <Bar dataKey="value" radius={[0, 6, 6, 0]} animationDuration={1000} barSize={20}
-                      label={{ position: "right", fontSize: 11, fontWeight: 600, fill: "#6E6E73", formatter: (v: number) => `${v}%` }}
+                      label={{ position: "right", fontSize: 11, fontWeight: 400, fill: "#6E6E73", formatter: (v: number) => `${v}%` }}
                     >
                       {sectionData.map((entry, i) => (
                         <Cell key={i} fill={entry.color} />
@@ -338,11 +338,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <TrendingUp className="w-4 h-4 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">Top Performing Section</h4>
+                    <h4 className="text-sm font-normal text-foreground mb-1">Top Performing Section</h4>
                     {insights?.top ? (
-                      <p className="text-sm text-muted-foreground font-medium">
-                        <span className="font-semibold text-foreground">{insights.top.section}</span> with{" "}
-                        <span className="text-green-600 font-semibold">{insights.top.value}%</span> average
+                      <p className="text-sm text-muted-foreground font-normal">
+                        <span className="font-normal text-foreground">{insights.top.section}</span> with{" "}
+                        <span className="text-green-600 font-normal">{insights.top.value}%</span> average
                         {insights.top.teacherName !== "—" && ` (${insights.top.teacherName})`}
                       </p>
                     ) : (
@@ -359,11 +359,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <TrendingDown className="w-4 h-4 text-red-500" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-foreground mb-1">Weakest Section</h4>
+                    <h4 className="text-sm font-normal text-foreground mb-1">Weakest Section</h4>
                     {insights?.weak ? (
-                      <p className="text-sm text-muted-foreground font-medium">
-                        <span className="font-semibold text-foreground">{insights.weak.section}</span> with{" "}
-                        <span className="text-red-500 font-semibold">{insights.weak.value}%</span> average
+                      <p className="text-sm text-muted-foreground font-normal">
+                        <span className="font-normal text-foreground">{insights.weak.section}</span> with{" "}
+                        <span className="text-red-500 font-normal">{insights.weak.value}%</span> average
                         {insights.weak.teacherName !== "—" && ` (${insights.weak.teacherName})`}
                       </p>
                     ) : (
@@ -375,10 +375,10 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
               {/* Key Issues */}
               <div className="bg-card border border-border rounded-2xl p-5 shadow-sm flex-1">
-                <h4 className="text-sm font-semibold text-foreground mb-3">Key Issues Identified</h4>
+                <h4 className="text-sm font-normal text-foreground mb-3">Key Issues Identified</h4>
                 <ul className="space-y-2.5">
                   {(insights?.issues || ["No issues to report"]).map((issue, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground font-medium">
+                    <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground font-normal">
                       <span className="text-slate-400 mt-1.5 shrink-0">•</span>
                       {issue}
                     </li>
@@ -393,9 +393,9 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Student Marks Distribution */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-foreground mb-5">Student Marks Distribution</h3>
+              <h3 className="text-base font-normal text-foreground mb-5">Student Marks Distribution</h3>
               {marksDistData.every((d) => d.students === 0) ? (
-                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-semibold">
+                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-normal">
                   No marks data yet
                 </div>
               ) : (
@@ -404,16 +404,16 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
                     <XAxis
                       dataKey="range" axisLine={false} tickLine={false}
-                      tick={{ fontSize: 11, fontWeight: 600, fill: "#A1A1A6" }}
+                      tick={{ fontSize: 11, fontWeight: 400, fill: "#A1A1A6" }}
                     />
                     <YAxis
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }}
+                      tick={{ fontSize: 10, fontWeight: 400, fill: "#A1A1A6" }}
                     />
                     <Tooltip
                       content={({ active, payload }: any) =>
                         active && payload?.length ? (
-                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-normal shadow-lg">
                             {payload[0].payload.range}: {payload[0].value} students
                           </div>
                         ) : null
@@ -432,11 +432,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Teacher Effectiveness */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-foreground mb-5">Teacher Effectiveness</h3>
+              <h3 className="text-base font-normal text-foreground mb-5">Teacher Effectiveness</h3>
               {teacherData.length === 0 ? (
                 <div className="flex flex-col items-center justify-center py-10 text-slate-400">
                   <User className="w-10 h-10 mb-3 opacity-20" />
-                  <p className="text-sm font-semibold">No teacher data found</p>
+                  <p className="text-sm font-normal">No teacher data found</p>
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -447,19 +447,19 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     >
                       <div className="flex items-center gap-3">
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-sm font-semibold shadow-sm"
+                          className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-sm font-normal shadow-sm"
                           style={{ backgroundColor: t.avatarBg }}
                         >
                           {t.initials}
                         </div>
                         <div>
-                          <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                          <p className="text-xs text-muted-foreground font-medium">{t.grades}</p>
+                          <p className="text-sm font-normal text-foreground">{t.name}</p>
+                          <p className="text-xs text-muted-foreground font-normal">{t.grades}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-lg font-semibold" style={{ color: t.avgColor }}>{t.avg}%</p>
-                        <p className="text-[12px] font-semibold text-muted-foreground uppercase tracking-wider">avg</p>
+                        <p className="text-lg font-normal" style={{ color: t.avgColor }}>{t.avg}%</p>
+                        <p className="text-[12px] font-normal text-muted-foreground uppercase tracking-wider">avg</p>
                       </div>
                     </div>
                   ))}
@@ -474,7 +474,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       <div className="mt-8">
         <button
           onClick={onBack}
-          className="px-6 py-2.5 bg-card border border-border rounded-xl text-sm font-semibold text-foreground shadow-sm hover:bg-secondary transition-colors inline-flex items-center gap-2"
+          className="px-6 py-2.5 bg-card border border-border rounded-xl text-sm font-normal text-foreground shadow-sm hover:bg-secondary transition-colors inline-flex items-center gap-2"
         >
           <ChevronLeft className="w-4 h-4" /> Back to Academics
         </button>

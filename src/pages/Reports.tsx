@@ -362,7 +362,7 @@ const Reports = () => {
   if (isMobile) {
     return (
       <div className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
         {/* Page head */}
         <div className="px-5 pt-4 flex items-center gap-3">
@@ -371,7 +371,7 @@ const Reports = () => {
             <FileText className="w-4 h-4 text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[22px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Reports</div>
+            <div className="text-[22px] font-normal leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Reports</div>
             <div className="text-[12px] mt-1" style={{ color: T3 }}>Generate and manage school reports</div>
           </div>
         </div>
@@ -391,11 +391,11 @@ const Reports = () => {
                 <BarChart3 className="w-[18px] h-[18px] text-white" strokeWidth={2.1} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Available Reports</div>
-                <div className="text-[28px] font-semibold leading-none" style={{ letterSpacing: "-0.8px" }}>{totalTemplates} Templates</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Available Reports</div>
+                <div className="text-[28px] font-normal leading-none" style={{ letterSpacing: "-0.8px" }}>{totalTemplates} Templates</div>
               </div>
             </div>
-            <div className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-semibold"
+            <div className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-normal"
               style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.40)", color: "#66FFAA" }}>
               <div className="w-[6px] h-[6px] rounded-full" style={{ background: "#66FFAA", boxShadow: "0 0 8px rgba(102,255,170,0.8)" }} />
               Ready
@@ -408,8 +408,8 @@ const Reports = () => {
               { val: recentReports.length, lbl: "Generated", color: "#34C759" },
             ].map(x => (
               <div key={x.lbl} className="text-center py-[12px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[16px] font-semibold leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
+                <div className="text-[16px] font-normal leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
               </div>
             ))}
           </div>
@@ -439,10 +439,10 @@ const Reports = () => {
                   <Icon className="w-[22px] h-[22px] text-white" strokeWidth={2.3} />
                 </div>
                 <div className="relative z-10">
-                  <div className="text-[14px] font-semibold leading-[1.15] mb-[4px]" style={{ color: v.nameColor, letterSpacing: "-0.2px" }}>
+                  <div className="text-[14px] font-normal leading-[1.15] mb-[4px]" style={{ color: v.nameColor, letterSpacing: "-0.2px" }}>
                     {cat.label}{isCustom ? " · Build your own" : ""}
                   </div>
-                  <div className="text-[12px] font-semibold" style={{ color: v.subColor }}>{cat.count}</div>
+                  <div className="text-[12px] font-normal" style={{ color: v.subColor }}>{cat.count}</div>
                 </div>
                 <Icon className="absolute bottom-[12px] right-[12px] w-12 h-12 pointer-events-none"
                   style={{ color: v.accent, opacity: 0.18 }} strokeWidth={2} />
@@ -452,7 +452,7 @@ const Reports = () => {
         </div>
 
         {/* Pre-built label */}
-        <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+        <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
           <span>Pre-built Templates</span>
           <span className="px-[8px] py-[4px] rounded-full ml-1" style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.16)", color: B1 }}>
             {preBuiltCount} quick picks
@@ -479,8 +479,8 @@ const Reports = () => {
                   style={{ background: v.iconBg, boxShadow: v.iconShadow }}>
                   <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
                 </div>
-                <div className="text-[12px] font-semibold leading-[1.2] mb-[4px] relative z-10" style={{ color: v.nameColor, letterSpacing: "-0.1px" }}>{tpl.title}</div>
-                <div className="text-[12px] font-semibold leading-[1.4] relative z-10" style={{ color: v.subColor }}>{tpl.desc}</div>
+                <div className="text-[12px] font-normal leading-[1.2] mb-[4px] relative z-10" style={{ color: v.nameColor, letterSpacing: "-0.1px" }}>{tpl.title}</div>
+                <div className="text-[12px] font-normal leading-[1.4] relative z-10" style={{ color: v.subColor }}>{tpl.desc}</div>
                 <Icon className="absolute bottom-[8px] right-[8px] w-9 h-9 pointer-events-none"
                   style={{ color: v.accent, opacity: 0.18 }} strokeWidth={2} />
               </button>
@@ -489,7 +489,7 @@ const Reports = () => {
         </div>
 
         {/* Recents label */}
-        <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+        <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
           <span>Recently Generated</span>
           <span className="px-[8px] py-[4px] rounded-full ml-1" style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.16)", color: B1 }}>
             {recentReports.length} report{recentReports.length === 1 ? "" : "s"}
@@ -501,7 +501,7 @@ const Reports = () => {
         {isLoading ? (
           <div className="mx-5 mt-[12px] bg-white rounded-[18px] py-10 flex flex-col items-center gap-3" style={{ border: "0.5px dashed rgba(10,132,255,0.22)", boxShadow: SH }}>
             <Loader2 className="w-7 h-7 animate-spin" style={{ color: B1 }} />
-            <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: T4 }}>Loading reports…</p>
+            <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: T4 }}>Loading reports…</p>
           </div>
         ) : recentReports.length === 0 ? (
           <div className="mx-5 mt-[12px] bg-white rounded-[18px] py-6 px-4 text-center" style={{ border: "0.5px dashed rgba(10,132,255,0.22)", boxShadow: SH }}>
@@ -509,8 +509,8 @@ const Reports = () => {
               style={{ background: "linear-gradient(135deg,#EBEBF0,#D4E4FF)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
               <Clock className="w-[22px] h-[22px]" style={{ color: B1 }} strokeWidth={2.2} />
             </div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-1" style={{ color: T3 }}>No reports generated yet</div>
-            <div className="text-[12px] font-medium" style={{ color: T4 }}>Start by picking a template above</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-1" style={{ color: T3 }}>No reports generated yet</div>
+            <div className="text-[12px] font-normal" style={{ color: T4 }}>Start by picking a template above</div>
           </div>
         ) : (
           <div className="px-5 pt-3 space-y-2">
@@ -522,8 +522,8 @@ const Reports = () => {
                   <FileText className="w-4 h-4 text-white" strokeWidth={2.3} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[12px] font-semibold truncate" style={{ color: T1 }}>{report.title}</p>
-                  <p className="text-[12px] font-medium mt-1" style={{ color: T3 }}>
+                  <p className="text-[12px] font-normal truncate" style={{ color: T1 }}>{report.title}</p>
+                  <p className="text-[12px] font-normal mt-1" style={{ color: T3 }}>
                     {report.createdAt?.toDate?.().toLocaleDateString("en-IN", { day: "numeric", month: "short" }) || "—"} · {report.format || "PDF"}
                   </p>
                 </div>
@@ -545,7 +545,7 @@ const Reports = () => {
         {/* Action stack */}
         <div className="px-5 pt-3">
           <button onClick={() => setSelectedTemplate("Custom")}
-            className="w-full h-[46px] rounded-[14px] flex items-center justify-center gap-[8px] text-[13px] font-semibold text-white relative overflow-hidden active:scale-[0.97] transition-transform"
+            className="w-full h-[46px] rounded-[14px] flex items-center justify-center gap-[8px] text-[13px] font-normal text-white relative overflow-hidden active:scale-[0.97] transition-transform"
             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[15px] h-[15px] relative z-10" strokeWidth={2.5} />
@@ -553,13 +553,13 @@ const Reports = () => {
           </button>
           <div className="flex gap-2 mt-2">
             <button onClick={() => toast.info("Scheduling panel coming soon")}
-              className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold bg-white active:scale-[0.96] transition-transform"
+              className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal bg-white active:scale-[0.96] transition-transform"
               style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <Calendar className="w-[12px] h-[12px]" strokeWidth={2.3} />
               Schedule
             </button>
             <button onClick={() => toast.info("Export kicked off")}
-              className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold bg-white active:scale-[0.96] transition-transform"
+              className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal bg-white active:scale-[0.96] transition-transform"
               style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <Download className="w-[12px] h-[12px]" strokeWidth={2.3} />
               Export Data
@@ -577,7 +577,7 @@ const Reports = () => {
   // ═══════════════════════════════════════════════════════════════
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -587,25 +587,25 @@ const Reports = () => {
             <FileText className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Reports</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Reports</div>
             <div className="text-[12px] mt-1" style={{ color: T3 }}>Generate and manage school reports</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={() => toast.info("Scheduling panel coming soon")}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH }}>
             <Calendar className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Schedule
           </button>
           <button onClick={() => toast.info("Export kicked off")}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH }}>
             <Download className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Export Data
           </button>
           <button onClick={() => setSelectedTemplate("Custom")}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -629,11 +629,11 @@ const Reports = () => {
               <BarChart3 className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Available Reports</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Available Reports</div>
               <div className="flex items-baseline gap-3">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{totalTemplates}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>templates</span>
-                <span className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-semibold"
+                <span className="text-[28px] font-normal leading-none tracking-tight">{totalTemplates}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>templates</span>
+                <span className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-normal"
                   style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.40)", color: "#66FFAA" }}>
                   <div className="w-[6px] h-[6px] rounded-full" style={{ background: "#66FFAA", boxShadow: "0 0 8px rgba(102,255,170,0.8)" }} />
                   Ready
@@ -650,11 +650,11 @@ const Reports = () => {
               <div key={x.lbl} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                   style={{ background: "rgba(255,255,255,0.16)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
-                  <span className="text-[14px] font-semibold" style={{ color: x.color }}>{x.val}</span>
+                  <span className="text-[14px] font-normal" style={{ color: x.color }}>{x.val}</span>
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{x.lbl}</div>
-                  <div className="text-[18px] font-semibold leading-none" style={{ letterSpacing: "-0.3px", color: x.color }}>{x.val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{x.lbl}</div>
+                  <div className="text-[18px] font-normal leading-none" style={{ letterSpacing: "-0.3px", color: x.color }}>{x.val}</div>
                 </div>
               </div>
             ))}
@@ -685,9 +685,9 @@ const Reports = () => {
               >
                 <cat.icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{cat.id === "custom" ? "Custom" : "Category"}</span>
-              <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1" style={{ color: p.nameColor, letterSpacing: "-0.5px" }}>{cat.label}</p>
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{cat.count}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{cat.id === "custom" ? "Custom" : "Category"}</span>
+              <p className="text-[20px] font-normal tracking-tight leading-tight mb-1" style={{ color: p.nameColor, letterSpacing: "-0.5px" }}>{cat.label}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{cat.count}</p>
               <cat.icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: p.decorColor, opacity: 0.18 }}
@@ -706,8 +706,8 @@ const Reports = () => {
             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
             <Layout className="w-4 h-4 text-white" strokeWidth={2.4} />
           </div>
-          <h2 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Pre-built Report Templates</h2>
-          <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+          <h2 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Pre-built Report Templates</h2>
+          <span className="text-[12px] font-normal px-3 py-1 rounded-full"
             style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
             {preBuiltCount} quick picks
           </span>
@@ -725,8 +725,8 @@ const Reports = () => {
                   <tpl.icon className="w-[18px] h-[18px]" style={{ color: theme.color }} strokeWidth={2.3} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[14px] font-semibold mb-1" style={{ color: T1, letterSpacing: "-0.2px" }}>{tpl.title}</div>
-                  <div className="text-[12px] font-medium truncate" style={{ color: T4 }}>{tpl.desc}</div>
+                  <div className="text-[14px] font-normal mb-1" style={{ color: T1, letterSpacing: "-0.2px" }}>{tpl.title}</div>
+                  <div className="text-[12px] font-normal truncate" style={{ color: T4 }}>{tpl.desc}</div>
                 </div>
               </button>
             );
@@ -743,14 +743,14 @@ const Reports = () => {
               style={{ background: VIOLET_S, border: `0.5px solid ${VIOLET_B}` }}>
               <Clock className="w-4 h-4" style={{ color: VIOLET }} strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Recently Generated</h2>
-            <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+            <h2 className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Recently Generated</h2>
+            <span className="text-[12px] font-normal px-3 py-1 rounded-full"
               style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
               {recentReports.length}
             </span>
           </div>
           {recentReports.length > 0 && (
-            <button className="text-[12px] font-semibold flex items-center gap-1 transition-colors" style={{ color: B1 }}>
+            <button className="text-[12px] font-normal flex items-center gap-1 transition-colors" style={{ color: B1 }}>
               View All <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
             </button>
           )}
@@ -759,7 +759,7 @@ const Reports = () => {
         {isLoading ? (
           <div className="py-10 flex flex-col items-center gap-3">
             <Loader2 className="w-8 h-8 animate-spin" style={{ color: B1 }} />
-            <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: T4 }}>Loading reports…</p>
+            <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: T4 }}>Loading reports…</p>
           </div>
         ) : recentReports.length === 0 ? (
           <div className="py-10 flex flex-col items-center gap-3 text-center">
@@ -767,7 +767,7 @@ const Reports = () => {
               style={{ background: "linear-gradient(135deg,#EBEBF0,#D4E4FF)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
               <Clock className="w-6 h-6" style={{ color: B1 }} strokeWidth={2.2} />
             </div>
-            <p className="text-[13px] font-semibold" style={{ color: T1 }}>No reports generated yet</p>
+            <p className="text-[13px] font-normal" style={{ color: T1 }}>No reports generated yet</p>
             <p className="text-[12px]" style={{ color: T4 }}>Click "Generate New Report" above to create one</p>
           </div>
         ) : (
@@ -776,7 +776,7 @@ const Reports = () => {
               <thead>
                 <tr style={{ background: BG, borderBottom: `0.5px solid ${SEP}` }}>
                   {["Report Name", "Type", "Generated On", "Format", "Actions"].map(h => (
-                    <th key={h} className="px-6 py-3 text-left text-[12px] font-semibold uppercase tracking-[0.12em]"
+                    <th key={h} className="px-6 py-3 text-left text-[12px] font-normal uppercase tracking-[0.12em]"
                       style={{ color: T4 }}>{h}</th>
                   ))}
                 </tr>
@@ -796,22 +796,22 @@ const Reports = () => {
                             <FileText className="w-4 h-4 text-white" strokeWidth={2.3} />
                           </div>
                           <div>
-                            <p className="text-[13px] font-semibold" style={{ color: T1 }}>{report.title}</p>
-                            <p className="text-[12px] font-medium" style={{ color: T3 }}>{report.generatedBy || "System"}</p>
+                            <p className="text-[13px] font-normal" style={{ color: T1 }}>{report.title}</p>
+                            <p className="text-[12px] font-normal" style={{ color: T3 }}>{report.generatedBy || "System"}</p>
                           </div>
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-semibold"
+                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-normal"
                           style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                           {report.reportType || "General"}
                         </span>
                       </td>
-                      <td className="px-6 py-4 text-[12px] font-medium" style={{ color: T3 }}>
+                      <td className="px-6 py-4 text-[12px] font-normal" style={{ color: T3 }}>
                         {report.createdAt?.toDate?.().toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }) || "—"}
                       </td>
                       <td className="px-6 py-4">
-                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                           style={{ background: fmtTheme.bg, color: fmtTheme.color, border: `0.5px solid ${fmtTheme.border}` }}>
                           {fmt}
                         </span>
@@ -819,7 +819,7 @@ const Reports = () => {
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-2">
                           <button onClick={() => handleDownload(report)}
-                            className="inline-flex items-center gap-1.5 h-9 px-3 rounded-[11px] text-[12px] font-semibold text-white transition-transform hover:scale-[1.04]"
+                            className="inline-flex items-center gap-1.5 h-9 px-3 rounded-[11px] text-[12px] font-normal text-white transition-transform hover:scale-[1.04]"
                             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                             <Download className="w-[13px] h-[13px]" strokeWidth={2.4} />
                             Download
@@ -853,15 +853,15 @@ const Reports = () => {
             style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
             <BarChart3 className="w-4 h-4 text-white" strokeWidth={2.4} />
           </div>
-          <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Reports Intelligence</span>
+          <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Reports Intelligence</span>
         </div>
         <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-          <strong style={{ color: "#fff", fontWeight: 600 }}>{totalTemplates} templates</strong> available across <strong style={{ color: "#fff", fontWeight: 600 }}>{categoriesCount} categories</strong>, with <strong style={{ color: "#fff", fontWeight: 600 }}>{preBuiltCount} ready-to-use pre-built reports</strong>.
-          {recentReports.length > 0 ? <> You've generated <strong style={{ color: "#fff", fontWeight: 600 }}>{recentReports.length} report{recentReports.length === 1 ? "" : "s"}</strong> recently — downloads publish to both teachers and parents automatically.</> : <> Generate your first report to publish insights to teachers and parents.</>}
+          <strong style={{ color: "#fff", fontWeight: 400 }}>{totalTemplates} templates</strong> available across <strong style={{ color: "#fff", fontWeight: 400 }}>{categoriesCount} categories</strong>, with <strong style={{ color: "#fff", fontWeight: 400 }}>{preBuiltCount} ready-to-use pre-built reports</strong>.
+          {recentReports.length > 0 ? <> You've generated <strong style={{ color: "#fff", fontWeight: 400 }}>{recentReports.length} report{recentReports.length === 1 ? "" : "s"}</strong> recently — downloads publish to both teachers and parents automatically.</> : <> Generate your first report to publish insights to teachers and parents.</>}
         </p>
         <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
           <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: B4 }} />
-          <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-scoped to {userData?.schoolName || "your school"}</span>
+          <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-scoped to {userData?.schoolName || "your school"}</span>
         </div>
       </div>
     </div>

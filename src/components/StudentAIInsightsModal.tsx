@@ -113,12 +113,12 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
               <Sparkles className="w-5 h-5" style={{ color: catMeta.color }} />
             </div>
             <div className="min-w-0">
-              <h2 className="text-base font-semibold text-slate-900 truncate">
+              <h2 className="text-base font-normal text-slate-900 truncate">
                 AI Analysis — {student.studentName}
               </h2>
               <div className="flex items-center gap-2 flex-wrap mt-1">
                 <span
-                  className="text-[12px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                  className="text-[12px] font-normal uppercase tracking-wider px-2 py-0.5 rounded-full"
                   style={{ background: catMeta.bg, color: catMeta.color, border: `1px solid ${catMeta.border}` }}
                 >
                   {catMeta.label}
@@ -128,7 +128,7 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
                 </span>
                 {urgency && (
                   <span
-                    className="text-[12px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1"
+                    className="text-[12px] font-normal px-2 py-0.5 rounded-full flex items-center gap-1"
                     style={{ background: urgency.bg, color: urgency.color, border: `1px solid ${urgency.border}` }}
                   >
                     <AlertCircle className="w-2.5 h-2.5" />
@@ -158,7 +158,7 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
           {loading ? (
             <div className="py-10 flex flex-col items-center justify-center gap-3">
               <Loader2 className="w-6 h-6 animate-spin text-[#1D1D1F]" />
-              <p className="text-xs font-semibold text-slate-500">
+              <p className="text-xs font-normal text-slate-500">
                 Analyzing {student.studentName}'s performance...
               </p>
               <p className="text-[12px] text-slate-400">This takes 5-10 seconds on first run</p>
@@ -166,12 +166,12 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
           ) : error ? (
             <div className="py-10 text-center px-6">
               <AlertCircle className="w-10 h-10 text-rose-400 mx-auto mb-3" />
-              <p className="text-sm font-semibold text-slate-900 mb-1">Couldn't generate analysis</p>
+              <p className="text-sm font-normal text-slate-900 mb-1">Couldn't generate analysis</p>
               <p className="text-xs text-slate-500 mb-4">{error}</p>
               <button
                 onClick={handleRegenerate}
                 disabled={regenerating}
-                className="px-4 py-2 rounded-xl bg-[#1D1D1F] text-white text-xs font-semibold hover:bg-[#0A84FF] disabled:opacity-50 inline-flex items-center gap-2"
+                className="px-4 py-2 rounded-xl bg-[#1D1D1F] text-white text-xs font-normal hover:bg-[#0A84FF] disabled:opacity-50 inline-flex items-center gap-2"
               >
                 {regenerating ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <RefreshCw className="w-3.5 h-3.5" />}
                 Try Again
@@ -184,12 +184,12 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
                 className="rounded-xl p-4 border"
                 style={{ background: catMeta.bg, borderColor: catMeta.border }}
               >
-                <p className="text-[12px] font-semibold uppercase tracking-wider mb-1.5" style={{ color: catMeta.color }}>
+                <p className="text-[12px] font-normal uppercase tracking-wider mb-1.5" style={{ color: catMeta.color }}>
                   Summary
                 </p>
                 <p className="text-sm text-slate-800 leading-relaxed">{insight.summary}</p>
                 {confidence && (
-                  <p className="text-[12px] font-semibold mt-2.5 flex items-center gap-1" style={{ color: confidence.color }}>
+                  <p className="text-[12px] font-normal mt-2.5 flex items-center gap-1" style={{ color: confidence.color }}>
                     <Zap className="w-2.5 h-2.5" />
                     {confidence.label}
                   </p>
@@ -227,7 +227,7 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
               <div className="rounded-xl border border-slate-200 overflow-hidden">
                 <div className="px-4 py-2.5 bg-slate-50 border-b border-slate-100 flex items-center gap-2">
                   <TrendingUp className="w-4 h-4 text-amber-600" />
-                  <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">Timeline</span>
+                  <span className="text-xs font-normal text-slate-700 uppercase tracking-wider">Timeline</span>
                 </div>
                 <div className="divide-y divide-slate-100">
                   <TimelineRow
@@ -262,7 +262,7 @@ export default function StudentAIInsightsModal({ student, onClose }: Props) {
           </div>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+            className="px-4 py-1.5 rounded-xl border border-slate-200 text-xs font-normal text-slate-700 hover:bg-slate-50"
           >
             Close
           </button>
@@ -290,13 +290,13 @@ function InsightSection({
     <div>
       <div className="flex items-center gap-2 mb-2">
         {icon}
-        <h3 className="text-sm font-semibold text-slate-900">{title}</h3>
+        <h3 className="text-sm font-normal text-slate-900">{title}</h3>
       </div>
       <ul className="space-y-1.5">
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-2">
             <span
-              className="text-xs font-semibold mt-1 flex-shrink-0"
+              className="text-xs font-normal mt-1 flex-shrink-0"
               style={{ color: bulletColor, minWidth: 12 }}
             >
               {bullet}
@@ -322,7 +322,7 @@ function TimelineRow({
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-wider">{label}</p>
+        <p className="text-[12px] font-normal text-slate-400 uppercase tracking-wider">{label}</p>
         <p className="text-sm text-slate-800 mt-1 leading-relaxed">{text}</p>
       </div>
       <ChevronRight className="w-3.5 h-3.5 text-slate-300 flex-shrink-0 mt-1" />

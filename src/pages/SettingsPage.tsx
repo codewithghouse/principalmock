@@ -65,14 +65,14 @@ function Field({ label, value, onChange, type = "text", placeholder = "", icon: 
 }) {
   return (
     <div>
-      <label className="text-[12px] font-semibold uppercase tracking-[0.06em] block mb-[4px]" style={{ color: T3 }}>{label}</label>
+      <label className="text-[12px] font-normal uppercase tracking-[0.06em] block mb-[4px]" style={{ color: T3 }}>{label}</label>
       <div className="relative flex items-center">
         {Icon && <Icon className="absolute left-[12px] pointer-events-none w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.42)" }} strokeWidth={2.3} />}
         <input type={type} value={value} onChange={e => onChange(e.target.value)} placeholder={placeholder}
           className="w-full rounded-[12px] outline-none transition-colors"
           style={{
             background: BG, border: `0.5px solid rgba(10,132,255,0.12)`, fontFamily: "inherit",
-            fontSize: small ? 11 : 12, fontWeight: 500, color: T1,
+            fontSize: small ? 11 : 12, fontWeight: 400, color: T1,
             padding: Icon ? "11px 12px 11px 36px" : "11px 12px",
           }} />
       </div>
@@ -101,8 +101,8 @@ function SectionCard({ icon: Icon, iconTone = "blue", title, subtitle, children 
           <Icon className="w-4 h-4" style={{ color: t.color }} strokeWidth={2.3} />
         </div>
         <div>
-          <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>{title}</div>
-          {subtitle && <div className="text-[12px] font-medium mt-[2px]" style={{ color: T4 }}>{subtitle}</div>}
+          <div className="text-[14px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>{title}</div>
+          {subtitle && <div className="text-[12px] font-normal mt-[2px]" style={{ color: T4 }}>{subtitle}</div>}
         </div>
       </div>
       <div className="p-4">{children}</div>
@@ -113,7 +113,7 @@ function SectionCard({ icon: Icon, iconTone = "blue", title, subtitle, children 
 function SaveBar({ saving, onClick, label = "Save Changes" }: { saving: boolean; onClick: () => void; label?: string }) {
   return (
     <button onClick={onClick} disabled={saving}
-      className="w-full h-[50px] rounded-[16px] flex items-center justify-center gap-2 font-semibold text-[13px] text-white relative overflow-hidden transition-transform hover:scale-[1.01] disabled:opacity-60"
+      className="w-full h-[50px] rounded-[16px] flex items-center justify-center gap-2 font-normal text-[13px] text-white relative overflow-hidden transition-transform hover:scale-[1.01] disabled:opacity-60"
       style={{ background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 50%, #0A84FF 100%)", boxShadow: "0 8px 22px rgba(0,20,80,0.42), 0 2px 5px rgba(0,20,80,0.3)" }}>
       <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
       {saving ? <><Loader2 className="w-[14px] h-[14px] animate-spin relative z-10" /><span className="relative z-10">Saving…</span></>
@@ -139,7 +139,7 @@ const SettingsPage = () => {
 
   return (
     <div className={`${isMobile ? "-mx-3 -mt-3" : "w-full px-2"} pb-10 animate-in fade-in duration-500`}
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: isMobile ? BG : undefined, minHeight: isMobile ? "100vh" : undefined }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: isMobile ? BG : undefined, minHeight: isMobile ? "100vh" : undefined }}>
 
       <div className={`flex items-center justify-between gap-4 ${isMobile ? "px-5 pt-4 pb-2" : "pt-2 pb-5"} flex-wrap`}>
         <div className="flex items-center gap-4">
@@ -148,7 +148,7 @@ const SettingsPage = () => {
             {activeMeta ? <activeMeta.icon className={`${isMobile ? "w-4 h-4" : "w-[22px] h-[22px]"} text-white`} strokeWidth={2.4} /> : null}
           </div>
           <div>
-            <div className={`${isMobile ? "text-[22px]" : "text-[24px]"} font-semibold leading-none`} style={{ color: T1, letterSpacing: "-0.6px" }}>Settings</div>
+            <div className={`${isMobile ? "text-[22px]" : "text-[24px]"} font-normal leading-none`} style={{ color: T1, letterSpacing: "-0.6px" }}>Settings</div>
             <div className={`${isMobile ? "text-[12px]" : "text-[12px]"} mt-1`} style={{ color: T3 }}>Configure school and system settings</div>
           </div>
         </div>
@@ -156,7 +156,7 @@ const SettingsPage = () => {
           <div className="flex items-center gap-[8px] px-[12px] py-[8px] rounded-[12px] bg-white"
             style={{ border: `0.5px solid rgba(10,132,255,0.14)`, boxShadow: SH }}>
             <Shield className="w-[13px] h-[13px]" style={{ color: B1 }} strokeWidth={2.4} />
-            <span className="text-[12px] font-semibold" style={{ color: B1 }}>Admin Access</span>
+            <span className="text-[12px] font-normal" style={{ color: B1 }}>Admin Access</span>
           </div>
         )}
       </div>
@@ -167,7 +167,7 @@ const SettingsPage = () => {
             const active = activeTab === t.id;
             return (
               <button key={t.id} onClick={() => setActiveTab(t.id)}
-                className={`${isMobile ? "h-9" : "h-11"} px-4 rounded-full flex items-center gap-[8px] ${isMobile ? "text-[12px]" : "text-[12px]"} font-semibold whitespace-nowrap transition-transform hover:scale-[1.02] shrink-0`}
+                className={`${isMobile ? "h-9" : "h-11"} px-4 rounded-full flex items-center gap-[8px] ${isMobile ? "text-[12px]" : "text-[12px]"} font-normal whitespace-nowrap transition-transform hover:scale-[1.02] shrink-0`}
                 style={{
                   background: active ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                   color: active ? "#fff" : T3,
@@ -320,11 +320,11 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
               <School className={`${isMobile ? "w-[18px] h-[18px]" : "w-7 h-7"} text-white`} strokeWidth={2.1} />
             </div>
             <div className="min-w-0">
-              <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>School Profile</div>
-              <div className={`${isMobile ? "text-[22px]" : "text-[28px]"} font-semibold leading-none truncate`} style={{ letterSpacing: "-0.6px" }}>{form.schoolName || "Untitled"}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>School Profile</div>
+              <div className={`${isMobile ? "text-[22px]" : "text-[28px]"} font-normal leading-none truncate`} style={{ letterSpacing: "-0.6px" }}>{form.schoolName || "Untitled"}</div>
             </div>
           </div>
-          <span className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-semibold"
+          <span className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-normal"
             style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.40)", color: "#34C759" }}>
             <CheckCircle2 className="w-[11px] h-[11px]" strokeWidth={2.8} />
             {profileCompletePct}% Complete
@@ -337,8 +337,8 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
             { val: `${prefsOn}/3`, lbl: "Prefs On", color: "#34C759" },
           ].map(x => (
             <div key={x.lbl} className="text-center py-[12px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-              <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
+              <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
             </div>
           ))}
         </div>
@@ -364,9 +364,9 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
               <Field label="End Date" value={form.academicEnd} onChange={set("academicEnd") as any} type="date" />
             </div>
             <div className="p-[12px] px-3 rounded-[12px]" style={{ background: "rgba(10,132,255,0.05)", border: "0.5px solid rgba(10,132,255,0.12)" }}>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[4px]" style={{ color: T3 }}>Current Session</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-[4px]" style={{ color: T3 }}>Current Session</div>
               <input value={form.currentSession} onChange={e => set("currentSession")(e.target.value)} placeholder="2025 – 2026"
-                className="w-full bg-transparent text-[13px] font-semibold outline-none" style={{ color: T1 }} />
+                className="w-full bg-transparent text-[13px] font-normal outline-none" style={{ color: T1 }} />
             </div>
           </div>
         </SectionCard>
@@ -381,17 +381,17 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
 
         <SectionCard icon={Upload} iconTone="blue" title="School Logo" subtitle="Brand asset for reports & UI">
           <div className="flex items-center gap-3 p-3 rounded-[14px]" style={{ background: BG, border: `0.5px solid ${SEP}` }}>
-            <div className="w-14 h-14 rounded-[14px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+            <div className="w-14 h-14 rounded-[14px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
               style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.24)" }}>
               {initials}
             </div>
             <div className="flex-1">
-              <button className="flex items-center gap-[8px] px-3 py-2 rounded-[11px] bg-white text-[12px] font-semibold transition-transform hover:scale-[1.02]"
+              <button className="flex items-center gap-[8px] px-3 py-2 rounded-[11px] bg-white text-[12px] font-normal transition-transform hover:scale-[1.02]"
                 style={{ color: T2, border: "0.5px solid rgba(10,132,255,0.16)", boxShadow: SH }}>
                 <Upload className="w-[12px] h-[12px]" strokeWidth={2.4} />
                 Upload New Logo
               </button>
-              <div className="text-[12px] font-medium mt-[8px]" style={{ color: T4 }}>Recommended: 200×200px · PNG or JPG</div>
+              <div className="text-[12px] font-normal mt-[8px]" style={{ color: T4 }}>Recommended: 200×200px · PNG or JPG</div>
             </div>
           </div>
         </SectionCard>
@@ -417,8 +417,8 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
                       <row.icon className="w-4 h-4" style={{ color: t.color }} strokeWidth={2.3} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[12px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>{row.name}</div>
-                      <div className="text-[12px] font-medium mt-[2px]" style={{ color: T3 }}>{row.desc}</div>
+                      <div className="text-[12px] font-normal" style={{ color: T1, letterSpacing: "-0.1px" }}>{row.name}</div>
+                      <div className="text-[12px] font-normal mt-[2px]" style={{ color: T3 }}>{row.desc}</div>
                     </div>
                     <Toggle checked={form[row.key as keyof typeof form] as boolean} onChange={v => set(row.key)(v)} tone={row.tone} />
                   </div>
@@ -442,11 +442,11 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
             style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
             <Sparkles className="w-[13px] h-[13px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Profile Intelligence</span>
+          <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Profile Intelligence</span>
         </div>
         <p className="text-[12px] leading-[1.72] relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-          Profile is <strong style={{ color: "#fff", fontWeight: 600 }}>{profileCompletePct}% complete</strong>.
-          {missingFields > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{missingFields} field{missingFields === 1 ? "" : "s"}</strong> still missing — these affect <strong style={{ color: "#fff", fontWeight: 600 }}>reports</strong> and <strong style={{ color: "#fff", fontWeight: 600 }}>parent-facing communications</strong>.</>}
+          Profile is <strong style={{ color: "#fff", fontWeight: 400 }}>{profileCompletePct}% complete</strong>.
+          {missingFields > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{missingFields} field{missingFields === 1 ? "" : "s"}</strong> still missing — these affect <strong style={{ color: "#fff", fontWeight: 400 }}>reports</strong> and <strong style={{ color: "#fff", fontWeight: 400 }}>parent-facing communications</strong>.</>}
         </p>
         <div className="grid grid-cols-3 gap-[1px] rounded-[14px] overflow-hidden relative z-10 mt-3" style={{ background: "rgba(255,255,255,0.12)" }}>
           {[
@@ -455,8 +455,8 @@ function SchoolProfileTab({ isMobile, schoolId, userData, user }: any) {
             { val: `${prefsOn}/3`, lbl: "Prefs On", color: "#fff" },
           ].map(s => (
             <div key={s.lbl} className="text-center py-[12px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-              <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color: s.color, letterSpacing: "-0.4px" }}>{s.val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.07em]" style={{ color: "rgba(255,255,255,0.40)" }}>{s.lbl}</div>
+              <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color: s.color, letterSpacing: "-0.4px" }}>{s.val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.07em]" style={{ color: "rgba(255,255,255,0.40)" }}>{s.lbl}</div>
             </div>
           ))}
         </div>
@@ -535,11 +535,11 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
               <BookOpen className={`${isMobile ? "w-[18px] h-[18px]" : "w-7 h-7"} text-white`} strokeWidth={2.1} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Pass Threshold</div>
-              <div className={`${isMobile ? "text-[24px]" : "text-[28px]"} font-semibold leading-none`} style={{ letterSpacing: "-0.6px" }}>{passThreshold}%</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Pass Threshold</div>
+              <div className={`${isMobile ? "text-[24px]" : "text-[28px]"} font-normal leading-none`} style={{ letterSpacing: "-0.6px" }}>{passThreshold}%</div>
             </div>
           </div>
-          <span className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-semibold"
+          <span className="flex items-center gap-[4px] px-3 py-[4px] rounded-full text-[12px] font-normal"
             style={{ background: "rgba(255,149,0,0.20)", border: "0.5px solid rgba(255,149,0,0.35)", color: "#FFCC00" }}>
             <AlertTriangle className="w-[11px] h-[11px]" strokeWidth={2.5} />
             Active
@@ -552,8 +552,8 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
             { val: workingDays, lbl: "Days/Yr", color: "#FFCC00" },
           ].map(x => (
             <div key={x.lbl} className="text-center py-[12px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-              <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
+              <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color: x.color, letterSpacing: "-0.3px" }}>{x.val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>{x.lbl}</div>
             </div>
           ))}
         </div>
@@ -562,7 +562,7 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
       <div className="mt-3 px-[12px] py-[12px] rounded-[14px] flex items-start gap-[8px]"
         style={{ background: "rgba(255,149,0,0.07)", border: "0.5px solid rgba(255,149,0,0.22)" }}>
         <AlertTriangle className="w-4 h-4 shrink-0 mt-[1px]" style={{ color: ORANGE }} strokeWidth={2.3} />
-        <div className="text-[12px] font-semibold leading-[1.5]" style={{ color: "#6B3800" }}>
+        <div className="text-[12px] font-normal leading-[1.5]" style={{ color: "#6B3800" }}>
           Students scoring below Pass Threshold are marked as <strong>"Failed"</strong> and appear in the At-Risk list.
         </div>
       </div>
@@ -579,7 +579,7 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
               <Field label="Grade C starts %" value={gradeC} onChange={setGradeC} type="number" />
             </div>
             <div className="p-[12px] px-3 rounded-[13px]" style={{ background: BG, border: `0.5px solid rgba(10,132,255,0.08)` }}>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[8px]" style={{ color: T4 }}>Grade Preview</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-[8px]" style={{ color: T4 }}>Grade Preview</div>
               <div className="flex gap-[8px] flex-wrap">
                 {[
                   { grade: "A", min: gradeA, bg: GREEN_S, color: GREEN_D, border: GREEN_B },
@@ -587,7 +587,7 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
                   { grade: "C", min: gradeC, bg: ORANGE_S, color: "#86310C", border: ORANGE_B },
                   { grade: "F", min: "0",    bg: RED_S, color: "#A0001D", border: RED_B },
                 ].map(g => (
-                  <div key={g.grade} className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+                  <div key={g.grade} className="px-[12px] py-[4px] rounded-full text-[12px] font-normal"
                     style={{ background: g.bg, color: g.color, border: `0.5px solid ${g.border}` }}>
                     {g.grade} ≥ {g.min}%
                   </div>
@@ -601,8 +601,8 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
           <div className="flex flex-col gap-3">
             <Field label="Total Working Days (per year)" value={workingDays} onChange={setWorkingDays} type="number" />
             <div className="p-[12px] px-3 rounded-[12px]" style={{ background: "rgba(10,132,255,0.05)", border: "0.5px solid rgba(10,132,255,0.12)" }}>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[4px]" style={{ color: T3 }}>Attendance formula</div>
-              <div className="text-[12px] font-semibold" style={{ color: T1 }}>Days Present ÷ {workingDays} × 100</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-[4px]" style={{ color: T3 }}>Attendance formula</div>
+              <div className="text-[12px] font-normal" style={{ color: T1 }}>Days Present ÷ {workingDays} × 100</div>
             </div>
           </div>
         </SectionCard>
@@ -613,10 +613,10 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
               <input value={newSubject} onChange={e => setNewSubject(e.target.value)}
                 onKeyDown={e => e.key === "Enter" && addSubject()}
                 placeholder="Add subject (e.g. Mathematics)"
-                className="flex-1 rounded-[12px] px-3 py-[12px] text-[12px] font-medium outline-none"
+                className="flex-1 rounded-[12px] px-3 py-[12px] text-[12px] font-normal outline-none"
                 style={{ background: BG, border: `0.5px solid rgba(10,132,255,0.12)`, color: T1, fontFamily: "inherit" }} />
               <button onClick={addSubject}
-                className="px-[16px] rounded-[12px] flex items-center gap-[4px] text-[12px] font-semibold text-white transition-transform hover:scale-[1.02]"
+                className="px-[16px] rounded-[12px] flex items-center gap-[4px] text-[12px] font-normal text-white transition-transform hover:scale-[1.02]"
                 style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
                 <Plus className="w-[13px] h-[13px]" strokeWidth={2.5} /> Add
               </button>
@@ -625,7 +625,7 @@ function AcademicSettingsTab({ isMobile, schoolId }: { isMobile: boolean; school
               {subjects.length === 0 ? (
                 <p className="text-[12px] italic px-1 py-2" style={{ color: T4 }}>No subjects added yet.</p>
               ) : subjects.map(s => (
-                <div key={s} className="flex items-center gap-[8px] px-3 py-[8px] rounded-full text-[12px] font-semibold"
+                <div key={s} className="flex items-center gap-[8px] px-3 py-[8px] rounded-full text-[12px] font-normal"
                   style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                   {s}
                   <button onClick={() => removeSubject(s)} className="hover:text-red-500 transition-colors">
@@ -720,8 +720,8 @@ function NotificationsTab({ isMobile, schoolId }: { isMobile: boolean; schoolId:
                     <c.icon className="w-4 h-4" style={{ color: t.color }} strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[12px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>{c.label}</div>
-                    <div className="text-[12px] font-medium mt-[2px]" style={{ color: T3 }}>{c.desc}</div>
+                    <div className="text-[12px] font-normal" style={{ color: T1, letterSpacing: "-0.1px" }}>{c.label}</div>
+                    <div className="text-[12px] font-normal mt-[2px]" style={{ color: T3 }}>{c.desc}</div>
                   </div>
                   <Toggle checked={prefs[c.key as keyof typeof prefs] as boolean} onChange={() => toggle(c.key)} tone={c.tone === "violet" ? "violet" : c.tone === "blue" ? "blue" : "green"} />
                 </div>
@@ -741,8 +741,8 @@ function NotificationsTab({ isMobile, schoolId }: { isMobile: boolean; schoolId:
                     <a.icon className="w-4 h-4" style={{ color: t.color }} strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[12px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>{a.label}</div>
-                    <div className="text-[12px] font-medium mt-[2px]" style={{ color: T3 }}>{a.desc}</div>
+                    <div className="text-[12px] font-normal" style={{ color: T1, letterSpacing: "-0.1px" }}>{a.label}</div>
+                    <div className="text-[12px] font-normal mt-[2px]" style={{ color: T3 }}>{a.desc}</div>
                   </div>
                   <Toggle checked={prefs[a.key as keyof typeof prefs] as boolean} onChange={() => toggle(a.key)} />
                 </div>
@@ -815,7 +815,7 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
     <div className={isMobile ? "px-5 pt-[16px]" : ""}>
       <div className="flex justify-end mb-3">
         <button onClick={() => setAddOpen(true)}
-          className="h-10 px-[16px] rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+          className="h-10 px-[16px] rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
           style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
           <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
           <Plus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.5} />
@@ -831,7 +831,7 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
             style={{ background: "rgba(10,132,255,0.08)", border: `0.5px solid ${SEP}` }}>
             <Users className="w-6 h-6" style={{ color: T4 }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold" style={{ color: T1 }}>No users found</p>
+          <p className="text-[13px] font-normal" style={{ color: T1 }}>No users found</p>
           <p className="text-[12px]" style={{ color: T4 }}>Add your first admin, teacher, or staff member</p>
         </div>
       ) : (
@@ -843,19 +843,19 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
               <div key={u.id} className="bg-white rounded-[20px] p-[12px] flex items-center gap-[12px] relative overflow-hidden cursor-pointer transition-transform hover:scale-[1.01]"
                 style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
                 <div className="absolute left-0 top-0 bottom-0 w-1" style={{ background: theme.accent }} />
-                <div className="w-[42px] h-[42px] rounded-[14px] flex items-center justify-center text-[13px] font-semibold text-white shrink-0 ml-[4px]"
+                <div className="w-[42px] h-[42px] rounded-[14px] flex items-center justify-center text-[13px] font-normal text-white shrink-0 ml-[4px]"
                   style={{ background: theme.avatar, boxShadow: `0 3px 10px ${theme.color}33` }}>
                   {initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[13px] font-semibold truncate mb-[2px]" style={{ color: T1, letterSpacing: "-0.2px" }}>{u.name || "—"}</div>
+                  <div className="text-[13px] font-normal truncate mb-[2px]" style={{ color: T1, letterSpacing: "-0.2px" }}>{u.name || "—"}</div>
                   <div className="text-[12px] truncate" style={{ color: T3 }}>{u.email || "—"}</div>
                   <div className="flex items-center gap-[4px] mt-[4px]">
-                    <span className="inline-flex items-center px-2 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.06em]"
+                    <span className="inline-flex items-center px-2 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.06em]"
                       style={{ background: theme.bg, color: theme.color, border: `0.5px solid ${theme.border}` }}>
                       {u.role || "staff"}
                     </span>
-                    <span className="inline-flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: (u.status || "Active").toLowerCase() === "active" ? GREEN_D : ORANGE }}>
+                    <span className="inline-flex items-center gap-[4px] text-[12px] font-normal" style={{ color: (u.status || "Active").toLowerCase() === "active" ? GREEN_D : ORANGE }}>
                       <CheckCircle2 className="w-[10px] h-[10px]" />
                       {u.status || "Active"}
                     </span>
@@ -876,7 +876,7 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
           <div className="bg-white rounded-[22px] p-6 w-full max-w-md animate-in zoom-in-95 duration-200"
             style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-[16px] font-semibold" style={{ color: T1, letterSpacing: "-0.3px" }}>Add New User</h3>
+              <h3 className="text-[16px] font-normal" style={{ color: T1, letterSpacing: "-0.3px" }}>Add New User</h3>
               <button onClick={() => setAddOpen(false)} className="w-8 h-8 rounded-[10px] flex items-center justify-center"
                 style={{ background: BG, color: T4 }}>
                 <X className="w-4 h-4" />
@@ -886,9 +886,9 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
               <Field label="Full Name" value={newName} onChange={setNewName} placeholder="Dr. Firstname Lastname" icon={User} />
               <Field label="Email" value={newEmail} onChange={setNewEmail} type="email" placeholder="user@school.edu" icon={Mail} />
               <div>
-                <label className="text-[12px] font-semibold uppercase tracking-[0.06em] block mb-[4px]" style={{ color: T3 }}>Role</label>
+                <label className="text-[12px] font-normal uppercase tracking-[0.06em] block mb-[4px]" style={{ color: T3 }}>Role</label>
                 <select value={newRole} onChange={e => setNewRole(e.target.value)}
-                  className="w-full rounded-[12px] px-3 py-[12px] text-[12px] font-semibold outline-none appearance-none cursor-pointer"
+                  className="w-full rounded-[12px] px-3 py-[12px] text-[12px] font-normal outline-none appearance-none cursor-pointer"
                   style={{
                     background: BG, border: `0.5px solid rgba(10,132,255,0.12)`, color: T1, fontFamily: "inherit",
                     backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235070B0' stroke-width='2.4' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")`,
@@ -903,12 +903,12 @@ function UsersPermissionsTab({ isMobile, schoolId, userData }: any) {
             </div>
             <div className="flex gap-2 mt-5">
               <button onClick={() => setAddOpen(false)}
-                className="flex-1 h-11 rounded-[12px] text-[12px] font-semibold bg-white"
+                className="flex-1 h-11 rounded-[12px] text-[12px] font-normal bg-white"
                 style={{ border: `0.5px solid ${SEP}`, color: T3, boxShadow: SH }}>
                 Cancel
               </button>
               <button onClick={handleAdd} disabled={adding}
-                className="flex-1 h-11 rounded-[12px] flex items-center justify-center gap-2 text-[12px] font-semibold text-white relative overflow-hidden disabled:opacity-60"
+                className="flex-1 h-11 rounded-[12px] flex items-center justify-center gap-2 text-[12px] font-normal text-white relative overflow-hidden disabled:opacity-60"
                 style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
                 <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                 {adding ? <><Loader2 className="w-4 h-4 animate-spin relative z-10" /><span className="relative z-10">Adding…</span></>
@@ -928,7 +928,7 @@ function DataManagementTab({ isMobile }: { isMobile: boolean }) {
       <div className="px-[12px] py-[12px] rounded-[14px] flex items-start gap-[8px] mb-3"
         style={{ background: "rgba(255,59,48,0.07)", border: "0.5px solid rgba(255,59,48,0.22)" }}>
         <AlertTriangle className="w-4 h-4 shrink-0 mt-[1px]" style={{ color: RED }} strokeWidth={2.3} />
-        <div className="text-[12px] font-semibold leading-[1.5]" style={{ color: "#7A0018" }}>
+        <div className="text-[12px] font-normal leading-[1.5]" style={{ color: "#7A0018" }}>
           Data operations are permanent and cannot be undone. Proceed with caution.
         </div>
       </div>
@@ -947,19 +947,19 @@ function DataManagementTab({ isMobile }: { isMobile: boolean }) {
             style={{ background: "rgba(175,82,222,0.16)", border: "0.5px solid rgba(175,82,222,0.32)" }}>
             <Database className="w-4 h-4 text-white" strokeWidth={2.3} />
           </div>
-          <div className="text-[15px] font-semibold text-white" style={{ letterSpacing: "-0.2px" }}>Data Migration Engine</div>
+          <div className="text-[15px] font-normal text-white" style={{ letterSpacing: "-0.2px" }}>Data Migration Engine</div>
         </div>
-        <div className="text-[12px] font-semibold uppercase tracking-[0.04em] mb-[16px] relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
+        <div className="text-[12px] font-normal uppercase tracking-[0.04em] mb-[16px] relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
           Backfill legacy records · Rebuild indexes · Seed demo data
         </div>
 
         <div className="flex gap-2 relative z-10 mb-[16px]">
-          <button className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.08em] transition-transform hover:scale-[1.02]"
+          <button className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.08em] transition-transform hover:scale-[1.02]"
             style={{ background: "linear-gradient(135deg, rgba(52,199,89,0.16), rgba(52,199,89,0.08))", border: "0.5px solid rgba(52,199,89,0.4)", color: "#34C759" }}>
             <Download className="w-[13px] h-[13px]" strokeWidth={2.4} />
             Export Data
           </button>
-          <button className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.08em] text-white transition-transform hover:scale-[1.02]"
+          <button className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.08em] text-white transition-transform hover:scale-[1.02]"
             style={{ background: "linear-gradient(135deg, rgba(175,82,222,0.85), rgba(175,82,222,0.55))", border: "0.5px solid rgba(175,82,222,0.5)", boxShadow: "0 4px 14px rgba(175,82,222,0.32)" }}>
             <RefreshCw className="w-[13px] h-[13px]" strokeWidth={2.4} />
             Run Migration
@@ -972,8 +972,8 @@ function DataManagementTab({ isMobile }: { isMobile: boolean }) {
             style={{ background: "rgba(255,255,255,0.05)", border: "0.5px solid rgba(255,255,255,0.12)" }}>
             <Shield className="w-6 h-6 text-white" strokeWidth={2.2} />
           </div>
-          <div className="text-[14px] font-semibold text-white mb-[4px]">System Status Nominal</div>
-          <div className="text-[12px] font-semibold uppercase tracking-[0.08em] leading-[1.55]" style={{ color: "rgba(255,255,255,0.38)" }}>
+          <div className="text-[14px] font-normal text-white mb-[4px]">System Status Nominal</div>
+          <div className="text-[12px] font-normal uppercase tracking-[0.08em] leading-[1.55]" style={{ color: "rgba(255,255,255,0.38)" }}>
             All databases synced · Last backup 2h ago
           </div>
         </div>

@@ -122,12 +122,12 @@ const ClassesSectionsMobile = ({
   const uniqueGrades = new Set(classes.map(c => c.grade).filter(Boolean)).size;
 
   return (
-    <div className="pb-6" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
+    <div className="pb-6" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
 
       {/* ── Page Head ── */}
       <div className="px-5 pt-3 flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <h1 className="text-[24px] font-semibold leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
+          <h1 className="text-[24px] font-normal leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
             Classes &amp; Sections
           </h1>
           <p className="text-[12px] font-normal mt-1" style={{ color: T3 }}>
@@ -136,7 +136,7 @@ const ClassesSectionsMobile = ({
         </div>
         <button
           onClick={onAddClass}
-          className="h-10 px-4 rounded-[14px] flex items-center gap-1.5 text-[12px] font-semibold text-white whitespace-nowrap flex-shrink-0 transition-transform active:scale-95 relative overflow-hidden mt-1"
+          className="h-10 px-4 rounded-[14px] flex items-center gap-1.5 text-[12px] font-normal text-white whitespace-nowrap flex-shrink-0 transition-transform active:scale-95 relative overflow-hidden mt-1"
           style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
           <Plus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.5} />
@@ -147,7 +147,7 @@ const ClassesSectionsMobile = ({
       {loading ? (
         <div className="py-10 text-center">
           <Loader2 className="w-8 h-8 animate-spin mx-auto mb-3" style={{ color: B1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: T4 }}>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: T4 }}>
             Loading classes...
           </p>
         </div>
@@ -168,7 +168,7 @@ const ClassesSectionsMobile = ({
                     <div className="absolute -top-5 -right-4 w-16 h-16 rounded-full pointer-events-none"
                       style={{ background: `radial-gradient(circle, ${accent}1A 0%, transparent 70%)` }} />
                     <div className="flex items-center justify-between mb-2 relative">
-                      <div className="text-[14px] font-semibold tracking-[-0.3px]" style={{ color: T1 }}>Grade {g.grade}</div>
+                      <div className="text-[14px] font-normal tracking-[-0.3px]" style={{ color: T1 }}>Grade {g.grade}</div>
                       <div className="w-6 h-6 rounded-[8px] flex items-center justify-center"
                         style={{ background: `${accent}1F`, border: `0.5px solid ${accent}38` }}>
                         <Icon className="w-[12px] h-[12px]" strokeWidth={2.4} style={{ color: accent }} />
@@ -183,8 +183,8 @@ const ClassesSectionsMobile = ({
                       ].map((row, i, arr) => (
                         <div key={row.label} className="flex items-center justify-between py-[4px]"
                           style={i < arr.length - 1 ? { borderBottom: `0.5px solid ${SEP}` } : {}}>
-                          <span className="text-[12px] font-semibold" style={{ color: T4 }}>{row.label}</span>
-                          <span className="text-[12px] font-semibold" style={{ color: row.color }}>{row.val}</span>
+                          <span className="text-[12px] font-normal" style={{ color: T4 }}>{row.label}</span>
+                          <span className="text-[12px] font-normal" style={{ color: row.color }}>{row.val}</span>
                         </div>
                       ))}
                     </div>
@@ -199,9 +199,9 @@ const ClassesSectionsMobile = ({
           )}
 
           {/* ── Section Performance label ── */}
-          <div className="px-5 pt-4 pb-1 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+          <div className="px-5 pt-4 pb-1 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
             Section Performance
-            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal ml-1"
               style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.16)" }}>
               {classes.length} {classes.length === 1 ? "class" : "classes"}
             </span>
@@ -213,7 +213,7 @@ const ClassesSectionsMobile = ({
             <div className="mx-5 mt-3 rounded-[22px] py-10 px-5 bg-white text-center"
               style={{ boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,0.10)" }}>
               <BookOpen className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-              <p className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: T3 }}>
+              <p className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: T3 }}>
                 No classes yet
               </p>
               <p className="text-[12px] mt-2" style={{ color: T4 }}>
@@ -241,21 +241,21 @@ const ClassesSectionsMobile = ({
 
                   {/* Top: chip + name + status badge */}
                   <div className="flex items-center gap-3 pl-[24px] pr-[16px] pt-4 pb-[16px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="w-[42px] h-[42px] rounded-[13px] flex items-center justify-center text-white text-[12px] font-semibold flex-shrink-0"
+                    <div className="w-[42px] h-[42px] rounded-[13px] flex items-center justify-center text-white text-[12px] font-normal flex-shrink-0"
                       style={{ background: theme.chipGrad, boxShadow: theme.chipShadow }}>
                       {chipText}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-[15px] font-semibold leading-tight tracking-[-0.2px] truncate" style={{ color: T1 }}>
+                      <div className="text-[15px] font-normal leading-tight tracking-[-0.2px] truncate" style={{ color: T1 }}>
                         {cls.name}
                       </div>
                       {cls.subject && (
-                        <div className="text-[12px] font-medium uppercase mt-[4px] tracking-[0.05em] truncate" style={{ color: T3 }}>
+                        <div className="text-[12px] font-normal uppercase mt-[4px] tracking-[0.05em] truncate" style={{ color: T3 }}>
                           {cls.subject}
                         </div>
                       )}
                     </div>
-                    <span className="px-3 py-[4px] rounded-full text-[12px] font-semibold tracking-[0.04em] inline-flex items-center gap-[4px] flex-shrink-0"
+                    <span className="px-3 py-[4px] rounded-full text-[12px] font-normal tracking-[0.04em] inline-flex items-center gap-[4px] flex-shrink-0"
                       style={{ background: theme.badgeBg, color: theme.badgeText, border: `0.5px solid ${theme.badgeBdr}` }}>
                       <StatusIcon className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       {theme.label}
@@ -266,18 +266,18 @@ const ClassesSectionsMobile = ({
                   <div className="flex items-center gap-[12px] pl-[24px] pr-[16px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                     {cls.teacherName ? (
                       <>
-                        <div className="w-7 h-7 rounded-[9px] flex items-center justify-center text-white text-[12px] font-semibold flex-shrink-0"
+                        <div className="w-7 h-7 rounded-[9px] flex items-center justify-center text-white text-[12px] font-normal flex-shrink-0"
                           style={{ background: avGrad(cls.teacherName) }}>
                           {teacherInitials(cls.teacherName)}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <span className="text-[12px] font-semibold mr-1" style={{ color: T4 }}>Teacher ·</span>
-                          <span className="text-[13px] font-semibold tracking-[-0.1px]" style={{ color: T1 }}>
+                          <span className="text-[12px] font-normal mr-1" style={{ color: T4 }}>Teacher ·</span>
+                          <span className="text-[13px] font-normal tracking-[-0.1px]" style={{ color: T1 }}>
                             {cls.teacherName}
                           </span>
                         </div>
                         <button onClick={() => onChangeTeacher(cls)}
-                          className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold transition-transform active:scale-90"
+                          className="px-[12px] py-[4px] rounded-full text-[12px] font-normal transition-transform active:scale-90"
                           style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
                           Change
                         </button>
@@ -288,11 +288,11 @@ const ClassesSectionsMobile = ({
                           style={{ background: BG2 }}>
                           <UsersIcon className="w-[14px] h-[14px]" style={{ color: T4 }} strokeWidth={2.2} />
                         </div>
-                        <span className="text-[12px] font-semibold flex-1" style={{ color: T4 }}>
+                        <span className="text-[12px] font-normal flex-1" style={{ color: T4 }}>
                           No teacher assigned
                         </span>
                         <button onClick={() => onChangeTeacher(cls)}
-                          className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white transition-transform active:scale-90"
+                          className="px-[12px] py-[4px] rounded-full text-[12px] font-normal text-white transition-transform active:scale-90"
                           style={{ background: GRAD_PRIMARY, boxShadow: "0 2px 8px rgba(10,132,255,0.28)" }}>
                           Assign
                         </button>
@@ -303,15 +303,15 @@ const ClassesSectionsMobile = ({
                   {/* Metrics 3-col */}
                   <div className="grid" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
                     <div className="px-[12px] py-3 flex flex-col gap-1 relative" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Students</div>
-                      <div className="text-[18px] font-semibold leading-none tracking-[-0.4px]" style={{ color: B1 }}>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Students</div>
+                      <div className="text-[18px] font-normal leading-none tracking-[-0.4px]" style={{ color: B1 }}>
                         {cls.studentCount}
                       </div>
-                      <div className="text-[12px] font-medium mt-[1px]" style={{ color: T4 }}>Enrolled</div>
+                      <div className="text-[12px] font-normal mt-[1px]" style={{ color: T4 }}>Enrolled</div>
                     </div>
                     <div className="px-[12px] py-3 flex flex-col gap-1 relative" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Avg Marks</div>
-                      <div className="text-[18px] font-semibold leading-none tracking-[-0.4px]" style={{ color: marksColor }}>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Avg Marks</div>
+                      <div className="text-[18px] font-normal leading-none tracking-[-0.4px]" style={{ color: marksColor }}>
                         {hasMarks ? cls.avgMarks : "—"}
                       </div>
                       {hasMarks ? (
@@ -319,12 +319,12 @@ const ClassesSectionsMobile = ({
                           <div className="h-full rounded-[2px]" style={{ width: `${Math.max(0, Math.min(100, cls.avgMarksNum))}%`, background: `linear-gradient(90deg, ${marksColor}, ${marksColor}AA)` }} />
                         </div>
                       ) : (
-                        <div className="text-[12px] font-medium mt-[1px]" style={{ color: T4 }}>{marksSub}</div>
+                        <div className="text-[12px] font-normal mt-[1px]" style={{ color: T4 }}>{marksSub}</div>
                       )}
                     </div>
                     <div className="px-[12px] py-3 flex flex-col gap-1">
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
-                      <div className="text-[18px] font-semibold leading-none tracking-[-0.4px]" style={{ color: attColor }}>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
+                      <div className="text-[18px] font-normal leading-none tracking-[-0.4px]" style={{ color: attColor }}>
                         {hasAtt ? cls.attendance : "—"}
                       </div>
                       {hasAtt ? (
@@ -332,7 +332,7 @@ const ClassesSectionsMobile = ({
                           <div className="h-full rounded-[2px]" style={{ width: `${Math.max(0, Math.min(100, cls.attendanceNum))}%`, background: `linear-gradient(90deg, ${attColor}, ${attColor}AA)` }} />
                         </div>
                       ) : (
-                        <div className="text-[12px] font-medium mt-[1px]" style={{ color: T4 }}>{attendanceSub}</div>
+                        <div className="text-[12px] font-normal mt-[1px]" style={{ color: T4 }}>{attendanceSub}</div>
                       )}
                     </div>
                   </div>
@@ -340,8 +340,8 @@ const ClassesSectionsMobile = ({
                   {/* Weak subject strip */}
                   <div className="flex items-center gap-2 px-[16px] py-[12px]" style={{ borderTop: `0.5px solid ${SEP}`, borderBottom: `0.5px solid ${SEP}` }}>
                     <BookOpen className="w-3 h-3 flex-shrink-0" style={{ color: T4 }} strokeWidth={2.3} />
-                    <span className="text-[12px] font-semibold" style={{ color: T4 }}>Weak Subject:</span>
-                    <span className="text-[12px] font-semibold truncate" style={{ color: cls.weakSubject && cls.weakSubject !== "—" ? RED : T3 }}>
+                    <span className="text-[12px] font-normal" style={{ color: T4 }}>Weak Subject:</span>
+                    <span className="text-[12px] font-normal truncate" style={{ color: cls.weakSubject && cls.weakSubject !== "—" ? RED : T3 }}>
                       {cls.weakSubject && cls.weakSubject !== "—" ? cls.weakSubject : "—"}
                     </span>
                   </div>
@@ -349,13 +349,13 @@ const ClassesSectionsMobile = ({
                   {/* Action bar */}
                   <div className="flex gap-2 px-4 py-[12px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                     <button onClick={() => onOpenStudents(cls)}
-                      className="flex-1 h-10 rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.02em] transition-transform active:scale-95 bg-white"
+                      className="flex-1 h-10 rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.02em] transition-transform active:scale-95 bg-white"
                       style={{ color: T2, border: "0.5px solid rgba(10,132,255,0.16)", boxShadow: SHADOW_SM }}>
                       <UsersIcon className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.2} />
                       Students
                     </button>
                     <button onClick={() => onViewSection(cls)}
-                      className="flex-1 h-10 rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white tracking-[0.02em] transition-transform active:scale-95 relative overflow-hidden"
+                      className="flex-1 h-10 rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal text-white tracking-[0.02em] transition-transform active:scale-95 relative overflow-hidden"
                       style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.24)" }}>
                       <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 52%)" }} />
                       <ArrowRight className="w-[13px] h-[13px] relative z-10" strokeWidth={2.4} />
@@ -382,7 +382,7 @@ const ClassesSectionsMobile = ({
               }}>
               <div className="absolute -top-9 -right-6 w-[160px] h-[160px] rounded-full pointer-events-none"
                 style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
-              <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-3 relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
+              <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-3 relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
                 Institutional Class Summary · {yearStart}–{yearEnd}
               </div>
               <div className="grid grid-cols-3 gap-[1px] rounded-[16px] overflow-hidden relative z-10" style={{ background: "rgba(255,255,255,0.12)" }}>
@@ -392,8 +392,8 @@ const ClassesSectionsMobile = ({
                   { val: uniqueGrades, label: "Grades" },
                 ].map(({ val, label }) => (
                   <div key={label} className="py-[16px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                    <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{val}</div>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                    <div className="text-[22px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{val}</div>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
                   </div>
                 ))}
               </div>

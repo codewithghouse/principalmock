@@ -35,10 +35,10 @@ const PIE_COLORS: Record<string, string> = {
 
 const getSeverityBadge = (severity: string) => {
   const s = (severity || '').toUpperCase();
-  if (s === 'CRITICAL') return <span className="px-2.5 py-1 bg-red-100 text-red-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">CRITICAL</span>;
-  if (s === 'HIGH')     return <span className="px-2.5 py-1 bg-orange-100 text-orange-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">HIGH</span>;
-  if (s === 'MEDIUM')   return <span className="px-2.5 py-1 bg-amber-100 text-amber-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">MEDIUM</span>;
-  return <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[12px] font-semibold uppercase tracking-wider rounded-md">LOW</span>;
+  if (s === 'CRITICAL') return <span className="px-2.5 py-1 bg-red-100 text-red-700 text-[12px] font-normal uppercase tracking-wider rounded-md">CRITICAL</span>;
+  if (s === 'HIGH')     return <span className="px-2.5 py-1 bg-orange-100 text-orange-700 text-[12px] font-normal uppercase tracking-wider rounded-md">HIGH</span>;
+  if (s === 'MEDIUM')   return <span className="px-2.5 py-1 bg-amber-100 text-amber-700 text-[12px] font-normal uppercase tracking-wider rounded-md">MEDIUM</span>;
+  return <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[12px] font-normal uppercase tracking-wider rounded-md">LOW</span>;
 };
 
 const getStatusColor = (status: string) => {
@@ -394,7 +394,7 @@ const Discipline = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -403,7 +403,7 @@ const Discipline = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Discipline & Incidents
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400 }}>
@@ -421,7 +421,7 @@ const Discipline = () => {
               alignItems: "center",
               gap: 6,
               fontSize: 12,
-              fontWeight: 600,
+              fontWeight: 400,
               color: "#fff",
               border: "none",
               cursor: "pointer",
@@ -492,10 +492,10 @@ const Discipline = () => {
                     <AlertTriangle size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                    <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                       Critical Cases
                     </div>
-                    <div style={{ fontSize: 30, fontWeight: 600, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
+                    <div style={{ fontSize: 30, fontWeight: 400, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
                       {stats.criticalCount}
                     </div>
                   </div>
@@ -507,7 +507,7 @@ const Discipline = () => {
                     background: "rgba(255,59,48,.26)",
                     border: "0.5px solid rgba(255,59,48,.40)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "#FF6961",
                   }}
                 >
@@ -525,7 +525,7 @@ const Discipline = () => {
                     background: "rgba(255,255,255,.12)",
                     border: "0.5px solid rgba(255,255,255,.18)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "rgba(255,255,255,.75)",
                   }}
                 >
@@ -542,7 +542,7 @@ const Discipline = () => {
                     background: "rgba(255,255,255,.12)",
                     border: "0.5px solid rgba(255,255,255,.18)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "rgba(255,255,255,.75)",
                   }}
                 >
@@ -653,13 +653,13 @@ const Discipline = () => {
                   >
                     {c.icon}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
                     {c.label}
                   </div>
-                  <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
+                  <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
                     {c.value}
                   </div>
-                  <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor }}>{c.sub}</div>
+                  <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor }}>{c.sub}</div>
                 </button>
               ))}
             </div>
@@ -686,7 +686,7 @@ const Discipline = () => {
                     padding: "8px 16px",
                     borderRadius: 13,
                     fontSize: 12,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     cursor: "pointer",
                     whiteSpace: "nowrap",
                     flexShrink: 0,
@@ -717,7 +717,7 @@ const Discipline = () => {
                   padding: "0 12px",
                   borderRadius: 13,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: T2,
                   cursor: "pointer",
                   whiteSpace: "nowrap",
@@ -765,7 +765,7 @@ const Discipline = () => {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -790,7 +790,7 @@ const Discipline = () => {
                 border: "0.5px solid rgba(10,132,255,.10)",
               }}
             >
-              <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 16 }}>
+              <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 16 }}>
                 Incident Type Breakdown
               </div>
 
@@ -828,10 +828,10 @@ const Discipline = () => {
                         textAlign: "center",
                       }}
                     >
-                      <div style={{ fontSize: 22, fontWeight: 600, color: B1, letterSpacing: "-0.5px", lineHeight: 1 }}>
+                      <div style={{ fontSize: 22, fontWeight: 400, color: B1, letterSpacing: "-0.5px", lineHeight: 1 }}>
                         {biggestPie ? `${biggestPie.value}%` : "0%"}
                       </div>
-                      <div style={{ fontSize: 9, fontWeight: 600, color: T4, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 2 }}>
+                      <div style={{ fontSize: 9, fontWeight: 400, color: T4, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 2 }}>
                         {biggestPie ? biggestPie.name : "—"}
                       </div>
                     </div>
@@ -843,12 +843,12 @@ const Discipline = () => {
                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, opacity: p.value === 0 ? 0.45 : 1 }}>
                           <div style={{ width: 10, height: 10, borderRadius: 3, background: p.color, flexShrink: 0 }} />
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontSize: 13, fontWeight: 600, color: T1, marginBottom: 1 }}>{p.name}</div>
-                            <div style={{ fontSize: 10, color: T4, fontWeight: 500 }}>
+                            <div style={{ fontSize: 13, fontWeight: 400, color: T1, marginBottom: 1 }}>{p.name}</div>
+                            <div style={{ fontSize: 10, color: T4, fontWeight: 400 }}>
                               {count} incident{count === 1 ? "" : "s"}
                             </div>
                           </div>
-                          <div style={{ fontSize: 13, fontWeight: 600, color: p.color }}>{p.value}%</div>
+                          <div style={{ fontSize: 13, fontWeight: 400, color: p.color }}>{p.value}%</div>
                         </div>
                       );
                     })}
@@ -862,7 +862,7 @@ const Discipline = () => {
               id="mobile-incident-list"
               style={{
                 fontSize: 9,
-                fontWeight: 600,
+                fontWeight: 400,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -896,7 +896,7 @@ const Discipline = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Recent Incidents</div>
+                <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px" }}>Recent Incidents</div>
                 <div
                   style={{
                     padding: "4px 10px",
@@ -904,7 +904,7 @@ const Discipline = () => {
                     background: "rgba(10,132,255,.10)",
                     border: "0.5px solid rgba(10,132,255,.18)",
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: B1,
                   }}
                 >
@@ -915,7 +915,7 @@ const Discipline = () => {
               {filteredIncidents.length === 0 ? (
                 <div style={{ padding: "36px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
                   <ShieldAlert size={48} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-                  <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No incidents found</div>
+                  <div style={{ fontSize: 14, fontWeight: 400, color: T1 }}>No incidents found</div>
                   <div style={{ fontSize: 11, color: T4 }}>Try adjusting your filters</div>
                 </div>
               ) : (
@@ -959,7 +959,7 @@ const Discipline = () => {
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: 13,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           flexShrink: 0,
                           boxShadow: "0 3px 10px rgba(10,132,255,.26)",
@@ -968,16 +968,16 @@ const Discipline = () => {
                         {initials}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {name}
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap", marginBottom: 8 }}>
-                          <span style={{ fontSize: 10, fontWeight: 600, color: T3, display: "inline-flex", alignItems: "center", gap: 3 }}>
+                          <span style={{ fontSize: 10, fontWeight: 400, color: T3, display: "inline-flex", alignItems: "center", gap: 3 }}>
                             <BookOpen size={11} strokeWidth={2.4} />
                             {typeLabel}
                             {grade && ` · ${grade}`}
                           </span>
-                          <span style={{ fontSize: 10, fontWeight: 600, color: T4, display: "inline-flex", alignItems: "center", gap: 3 }}>
+                          <span style={{ fontSize: 10, fontWeight: 400, color: T4, display: "inline-flex", alignItems: "center", gap: 3 }}>
                             <Calendar size={10} strokeWidth={2.4} />
                             {dateLabel}
                           </span>
@@ -988,7 +988,7 @@ const Discipline = () => {
                               padding: "4px 9px",
                               borderRadius: 100,
                               fontSize: 9,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               letterSpacing: "0.06em",
                               textTransform: "uppercase",
                               background: sev.bg,
@@ -1004,7 +1004,7 @@ const Discipline = () => {
                               padding: "4px 10px",
                               borderRadius: 100,
                               fontSize: 10,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               background: st.bg,
                               color: st.color,
                               border: st.border,
@@ -1015,7 +1015,7 @@ const Discipline = () => {
                         </div>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, flexShrink: 0 }}>
-                        <span style={{ fontSize: 11, fontWeight: 600, color: B1, display: "flex", alignItems: "center", gap: 3 }}>
+                        <span style={{ fontSize: 11, fontWeight: 400, color: B1, display: "flex", alignItems: "center", gap: 3 }}>
                           View
                           <ChevronRight size={12} strokeWidth={2.5} />
                         </span>
@@ -1044,7 +1044,7 @@ const Discipline = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   border: "none",
@@ -1066,7 +1066,7 @@ const Discipline = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   background: "#fff",
                   color: "#3A3A3C",
                   border: "0.5px solid rgba(10,132,255,.16)",
@@ -1118,22 +1118,22 @@ const Discipline = () => {
                 >
                   <Sparkles size={14} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
                 </div>
-                <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+                <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                   AI Discipline Intelligence
                 </span>
               </div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>
+                <strong style={{ color: "#fff", fontWeight: 400 }}>
                   {stats.criticalCount} critical incident{stats.criticalCount === 1 ? "" : "s"}
                 </strong>{" "}
                 recorded{incidents.length > 0 ? " this term" : ""}.{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{resolvedCount} resolved</strong>,{" "}
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{openCount} open</strong>.{" "}
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{resolvedCount} resolved</strong>,{" "}
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{openCount} open</strong>.{" "}
                 {stats.todayCount === 0 ? "No new incidents today." : `${stats.todayCount} new today.`}
                 {biggestPie && (
                   <>
-                    {" "}<strong style={{ color: "#fff", fontWeight: 600 }}>{biggestPie.name}</strong> is the dominant type at{" "}
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>{biggestPie.value}%</strong>.
+                    {" "}<strong style={{ color: "#fff", fontWeight: 400 }}>{biggestPie.name}</strong> is the dominant type at{" "}
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>{biggestPie.value}%</strong>.
                   </>
                 )}{" "}
                 Maintain monitoring and follow up on pending cases to ensure a safe learning environment.
@@ -1157,10 +1157,10 @@ const Discipline = () => {
                   { v: openCount, l: "Pending" },
                 ].map((s, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "13px 12px", textAlign: "center" }}>
-                    <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
+                    <div style={{ fontSize: 20, fontWeight: 400, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
                       {s.v}
                     </div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                       {s.l}
                     </div>
                   </div>
@@ -1206,7 +1206,7 @@ const Discipline = () => {
               {/* Header */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 22px 16px", borderBottom: `0.5px solid ${SEP}` }}>
                 <div>
-                  <div style={{ fontSize: 18, fontWeight: 600, color: T1, letterSpacing: "-0.4px" }}>Log New Incident</div>
+                  <div style={{ fontSize: 18, fontWeight: 400, color: T1, letterSpacing: "-0.4px" }}>Log New Incident</div>
                   <div style={{ fontSize: 11, color: T4, marginTop: 2 }}>Fill in the details below to record an incident</div>
                 </div>
                 <button
@@ -1232,7 +1232,7 @@ const Discipline = () => {
               <div style={{ padding: "18px 22px 0" }}>
                 {/* Title */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Incident Title<span style={{ color: RED, marginLeft: 2 }}>*</span>
                   </div>
                   <input
@@ -1246,7 +1246,7 @@ const Discipline = () => {
                 {/* Student Name + Grade */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Student Name<span style={{ color: RED, marginLeft: 2 }}>*</span>
                     </div>
                     <input
@@ -1257,7 +1257,7 @@ const Discipline = () => {
                     />
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Grade / Class
                     </div>
                     <input
@@ -1272,7 +1272,7 @@ const Discipline = () => {
                 {/* Type + Severity */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Incident Type<span style={{ color: RED, marginLeft: 2 }}>*</span>
                     </div>
                     <select
@@ -1288,7 +1288,7 @@ const Discipline = () => {
                     </select>
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Severity
                     </div>
                     <select
@@ -1307,7 +1307,7 @@ const Discipline = () => {
                 {/* Date + Time */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Date
                     </div>
                     <input
@@ -1318,7 +1318,7 @@ const Discipline = () => {
                     />
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Time
                     </div>
                     <input
@@ -1332,7 +1332,7 @@ const Discipline = () => {
 
                 {/* Location */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Location
                   </div>
                   <input
@@ -1345,7 +1345,7 @@ const Discipline = () => {
 
                 {/* Reported By */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Reported By
                   </div>
                   <input
@@ -1358,7 +1358,7 @@ const Discipline = () => {
 
                 {/* Description */}
                 <div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Description
                   </div>
                   <textarea
@@ -1384,7 +1384,7 @@ const Discipline = () => {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 14,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: T2,
                     cursor: "pointer",
                   }}
@@ -1411,7 +1411,7 @@ const Discipline = () => {
                     justifyContent: "center",
                     gap: 7,
                     fontSize: 14,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "#fff",
                     border: "none",
                     cursor: saving ? "not-allowed" : "pointer",
@@ -1463,7 +1463,7 @@ const Discipline = () => {
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
@@ -1473,20 +1473,20 @@ const Discipline = () => {
             <ShieldAlert className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Discipline & Incidents</div>
+            <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Discipline & Incidents</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Track and manage disciplinary incidents</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={generateReport}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
             <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Generate Report
           </button>
           <button
             onClick={() => setShowLogModal(true)}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-normal text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 6px 22px rgba(255,59,48,0.36), 0 2px 5px rgba(255,59,48,0.18)" }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -1498,7 +1498,7 @@ const Discipline = () => {
       {loading ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-10 h-10 rounded-full border-[3px] border-t-transparent animate-spin" style={{ borderColor: dB1, borderTopColor: "transparent" }} />
-          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading incidents…</p>
+          <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: dT4 }}>Loading incidents…</p>
         </div>
       ) : (
         <>
@@ -1517,20 +1517,20 @@ const Discipline = () => {
                   <AlertTriangle className="w-7 h-7 text-white" strokeWidth={2.2} />
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>This Week's Incidents</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>This Week's Incidents</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[28px] font-semibold leading-none tracking-tight">{stats.weekCount}</span>
-                    <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>logged · {stats.pendingCount} pending</span>
+                    <span className="text-[28px] font-normal leading-none tracking-tight">{stats.weekCount}</span>
+                    <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>logged · {stats.pendingCount} pending</span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-semibold"
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-normal"
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)" }}>
                   <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.4} />
                   {stats.criticalCount > 0 ? `${stats.criticalCount} Critical` : "All Clear"}
                 </div>
-                <div className="flex items-center gap-2 text-[12px] font-semibold" style={{ color: "rgba(255,255,255,0.82)" }}>
+                <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: "rgba(255,255,255,0.82)" }}>
                   <AlertCircle className="w-[14px] h-[14px]" strokeWidth={2.4} />
                   {stats.todayCount} today
                 </div>
@@ -1581,9 +1581,9 @@ const Discipline = () => {
                 >
                   <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
                 </div>
-                <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
-                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-                <p className="text-[12px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
+                <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
+                <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+                <p className="text-[12px] font-normal truncate" style={{ color: dT3 }}>{sub}</p>
                 <Icon
                   className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                   style={{ color: decorColor, opacity: 0.18 }}
@@ -1600,7 +1600,7 @@ const Discipline = () => {
               return (
                 <button key={f}
                   onClick={() => setFilterType(f)}
-                  className="h-10 px-5 rounded-[13px] text-[12px] font-semibold transition-transform hover:scale-[1.02]"
+                  className="h-10 px-5 rounded-[13px] text-[12px] font-normal transition-transform hover:scale-[1.02]"
                   style={{
                     background: active ? `linear-gradient(135deg, ${dB1}, ${dB2})` : "#FFFFFF",
                     color: active ? "#fff" : dT3,
@@ -1614,7 +1614,7 @@ const Discipline = () => {
             <select
               value={statusFilter}
               onChange={e => setStatusFilter(e.target.value)}
-              className="h-10 px-4 pr-8 rounded-[13px] text-[12px] font-semibold bg-white outline-none appearance-none cursor-pointer"
+              className="h-10 px-4 pr-8 rounded-[13px] text-[12px] font-normal bg-white outline-none appearance-none cursor-pointer"
               style={{
                 border: `0.5px solid ${dSEP}`,
                 color: dT2,
@@ -1635,7 +1635,7 @@ const Discipline = () => {
                 placeholder="Search student / type..."
                 value={searchTerm}
                 onChange={e => setSearchTerm(e.target.value)}
-                className="w-full h-10 px-4 rounded-[13px] bg-white text-[12px] font-medium outline-none"
+                className="w-full h-10 px-4 rounded-[13px] bg-white text-[12px] font-normal outline-none"
                 style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
               />
             </div>
@@ -1651,12 +1651,12 @@ const Discipline = () => {
                   style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                   <BookOpen className="w-4 h-4" style={{ color: dVIOLET }} strokeWidth={2.4} />
                 </div>
-                <h3 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Incident Types</h3>
+                <h3 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Incident Types</h3>
               </div>
               <div className="p-6">
                 {pieData.length === 0 ? (
                   <div className="flex items-center justify-center h-[220px]">
-                    <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No data available</p>
+                    <p className="text-[13px] font-normal" style={{ color: dT4 }}>No data available</p>
                   </div>
                 ) : (() => {
                   const totalIncidents = pieData.reduce((acc: number, c: any) => acc + (Number(c.value) || 0), 0);
@@ -1696,14 +1696,14 @@ const Discipline = () => {
                                       <tspan
                                         x={viewBox.cx}
                                         y={viewBox.cy}
-                                        style={{ fill: dT1, fontSize: 28, fontWeight: 600, letterSpacing: "-0.5px" }}
+                                        style={{ fill: dT1, fontSize: 28, fontWeight: 400, letterSpacing: "-0.5px" }}
                                       >
                                         {totalIncidents}%
                                       </tspan>
                                       <tspan
                                         x={viewBox.cx}
                                         y={(viewBox.cy || 0) + 22}
-                                        style={{ fill: dT4, fontSize: 11, fontWeight: 600 }}
+                                        style={{ fill: dT4, fontSize: 11, fontWeight: 400 }}
                                       >
                                         Total Share
                                       </tspan>
@@ -1722,9 +1722,9 @@ const Discipline = () => {
                             style={{ background: dBG, border: `0.5px solid ${dSEP}` }}>
                             <div className="flex items-center gap-2">
                               <div className="w-[10px] h-[10px] rounded-[3px]" style={{ background: p.color }} />
-                              <span className="text-[12px] font-semibold" style={{ color: dT2 }}>{p.name}</span>
+                              <span className="text-[12px] font-normal" style={{ color: dT2 }}>{p.name}</span>
                             </div>
-                            <span className="text-[13px] font-semibold" style={{ color: p.color }}>{p.value}%</span>
+                            <span className="text-[13px] font-normal" style={{ color: p.color }}>{p.value}%</span>
                           </div>
                         ))}
                       </div>
@@ -1743,8 +1743,8 @@ const Discipline = () => {
                     style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
                     <ShieldAlert className="w-4 h-4 text-white" strokeWidth={2.4} />
                   </div>
-                  <h3 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recent Incidents</h3>
-                  <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+                  <h3 className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recent Incidents</h3>
+                  <span className="text-[12px] font-normal px-3 py-1 rounded-full"
                     style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
                     {filteredIncidents.length}
                   </span>
@@ -1756,7 +1756,7 @@ const Discipline = () => {
                     style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
                     <ShieldAlert className="w-8 h-8" style={{ color: dGREEN }} strokeWidth={2.2} />
                   </div>
-                  <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No incidents found</p>
+                  <p className="text-[14px] font-normal" style={{ color: dT1 }}>No incidents found</p>
                   <p className="text-[12px]" style={{ color: dT4 }}>Try adjusting your filters</p>
                 </div>
               ) : (
@@ -1765,7 +1765,7 @@ const Discipline = () => {
                     <thead>
                       <tr style={{ background: dBG, borderBottom: `0.5px solid ${dSEP}` }}>
                         {["Date", "Student", "Type", "Severity", "Status", ""].map((h, i) => (
-                          <th key={i} className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.10em] ${i === 5 ? "text-right" : "text-left"}`}
+                          <th key={i} className={`px-5 py-3 text-[12px] font-normal uppercase tracking-[0.10em] ${i === 5 ? "text-right" : "text-left"}`}
                             style={{ color: dT4 }}>{h}</th>
                         ))}
                       </tr>
@@ -1780,32 +1780,32 @@ const Discipline = () => {
                             className="transition-colors hover:bg-[#F8FAFF] cursor-pointer"
                             style={{ borderBottom: `0.5px solid ${dSEP}`, background: isSevere ? "rgba(255,59,48,0.02)" : "transparent" }}
                             onClick={() => setSelectedIncident(inc)}>
-                            <td className="px-5 py-4 whitespace-nowrap text-[12px] font-medium" style={{ color: dT3 }}>
+                            <td className="px-5 py-4 whitespace-nowrap text-[12px] font-normal" style={{ color: dT3 }}>
                               {inc.date ? new Date(inc.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' }) : '—'}
                             </td>
                             <td className="px-5 py-4">
                               <div className="flex items-center gap-3">
-                                <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                                <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-normal shrink-0"
                                   style={{ background: sev.grad, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                                   {(inc.student?.name || 'UK').split(" ").map((w: string) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase()}
                                 </div>
                                 <div className="min-w-0">
-                                  <p className="text-[13px] font-semibold truncate" style={{ color: dT1 }}>{inc.student?.name || 'Unknown'}</p>
-                                  {inc.student?.grade && <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>{inc.student.grade}</p>}
+                                  <p className="text-[13px] font-normal truncate" style={{ color: dT1 }}>{inc.student?.name || 'Unknown'}</p>
+                                  {inc.student?.grade && <p className="text-[12px] font-normal mt-1" style={{ color: dT3 }}>{inc.student.grade}</p>}
                                 </div>
                               </div>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="text-[12px] font-semibold" style={{ color: dT2 }}>{inc.type || inc.title || '—'}</span>
+                              <span className="text-[12px] font-normal" style={{ color: dT2 }}>{inc.type || inc.title || '—'}</span>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                              <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                                 style={{ background: sev.bg, color: sev.color, border: `0.5px solid ${sev.border}` }}>
                                 {(inc.severity || 'LOW').toUpperCase()}
                               </span>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                              <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                                 style={{ background: st.bg, color: st.color, border: `0.5px solid ${st.border}` }}>
                                 <span className="w-[6px] h-[6px] rounded-full" style={{ background: st.dot }} />
                                 {inc.status || 'Open'}
@@ -1813,7 +1813,7 @@ const Discipline = () => {
                             </td>
                             <td className="px-5 py-4 text-right" onClick={e => e.stopPropagation()}>
                               <button onClick={() => setSelectedIncident(inc)}
-                                className="inline-flex items-center gap-1 h-9 px-3 rounded-[11px] text-[12px] font-semibold text-white transition-transform hover:scale-[1.04]"
+                                className="inline-flex items-center gap-1 h-9 px-3 rounded-[11px] text-[12px] font-normal text-white transition-transform hover:scale-[1.04]"
                                 style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                                 View <ChevronRight className="w-3 h-3" strokeWidth={2.5} />
                               </button>
@@ -1841,17 +1841,17 @@ const Discipline = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Discipline Intelligence</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Discipline Intelligence</span>
             </div>
             <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.weekCount} incident{stats.weekCount === 1 ? "" : "s"}</strong> logged this week with <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.pendingCount}</strong> awaiting follow-up.
-              {stats.criticalCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.criticalCount} critical case{stats.criticalCount === 1 ? "" : "s"}</strong> require immediate attention.</>}
-              {pieData.length > 0 && <> Most common type: <strong style={{ color: "#fff", fontWeight: 600 }}>{pieData[0].name}</strong> at <strong style={{ color: "#fff", fontWeight: 600 }}>{pieData[0].value}%</strong>.</>}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.weekCount} incident{stats.weekCount === 1 ? "" : "s"}</strong> logged this week with <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.pendingCount}</strong> awaiting follow-up.
+              {stats.criticalCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{stats.criticalCount} critical case{stats.criticalCount === 1 ? "" : "s"}</strong> require immediate attention.</>}
+              {pieData.length > 0 && <> Most common type: <strong style={{ color: "#fff", fontWeight: 400 }}>{pieData[0].name}</strong> at <strong style={{ color: "#fff", fontWeight: 400 }}>{pieData[0].value}%</strong>.</>}
               {" "}Review pending cases and schedule counseling sessions for chronic offenders.
             </p>
             <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
         </>
@@ -1862,7 +1862,7 @@ const Discipline = () => {
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-card rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between px-8 py-5 border-b border-border">
-              <h2 className="text-base font-semibold text-foreground">Log New Incident</h2>
+              <h2 className="text-base font-normal text-foreground">Log New Incident</h2>
               <button onClick={() => setShowLogModal(false)} className="p-2 hover:bg-secondary rounded-lg transition-colors">
                 <X className="w-4 h-4 text-muted-foreground" />
               </button>
@@ -1870,33 +1870,33 @@ const Discipline = () => {
             <div className="px-8 py-5 space-y-4">
               {/* Title */}
               <div>
-                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Title *</label>
+                <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Title *</label>
                 <input
                   value={form.title}
                   onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                   placeholder="e.g. Bullying Incident – Physical Altercation"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Student */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Student Name *</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Student Name *</label>
                   <input
                     value={form.studentName}
                     onChange={e => setForm(f => ({ ...f, studentName: e.target.value }))}
                     placeholder="Full name"
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Grade / Class</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Grade / Class</label>
                   <input
                     value={form.studentGrade}
                     onChange={e => setForm(f => ({ ...f, studentGrade: e.target.value }))}
                     placeholder="e.g. 9A"
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
               </div>
@@ -1904,11 +1904,11 @@ const Discipline = () => {
               {/* Type + Severity */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Type *</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Type *</label>
                   <select
                     value={form.type}
                     onChange={e => setForm(f => ({ ...f, type: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   >
                     <option>Behavioral</option>
                     <option>Academic</option>
@@ -1918,11 +1918,11 @@ const Discipline = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Severity</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Severity</label>
                   <select
                     value={form.severity}
                     onChange={e => setForm(f => ({ ...f, severity: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   >
                     <option>Low</option>
                     <option>Medium</option>
@@ -1935,56 +1935,56 @@ const Discipline = () => {
               {/* Date + Time */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Date</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Date</label>
                   <input
                     type="date"
                     value={form.date}
                     onChange={e => setForm(f => ({ ...f, date: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Time</label>
+                  <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Time</label>
                   <input
                     type="time"
                     value={form.time}
                     onChange={e => setForm(f => ({ ...f, time: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
               </div>
 
               {/* Location */}
               <div>
-                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Location</label>
+                <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Location</label>
                 <input
                   value={form.location}
                   onChange={e => setForm(f => ({ ...f, location: e.target.value }))}
                   placeholder="e.g. School Playground, Classroom 5B"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Reported By */}
               <div>
-                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Reported By</label>
+                <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Reported By</label>
                 <input
                   value={form.reportedBy}
                   onChange={e => setForm(f => ({ ...f, reportedBy: e.target.value }))}
                   placeholder="Teacher / Staff name"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Description */}
               <div>
-                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Description</label>
+                <label className="text-xs font-normal text-muted-foreground uppercase tracking-wider mb-1.5 block">Description</label>
                 <textarea
                   rows={3}
                   value={form.description}
                   onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
                   placeholder="Describe what happened..."
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background resize-none"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-normal focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background resize-none"
                 />
               </div>
             </div>
@@ -1992,14 +1992,14 @@ const Discipline = () => {
             <div className="px-8 py-5 border-t border-border flex gap-3">
               <button
                 onClick={() => setShowLogModal(false)}
-                className="flex-1 py-2.5 border border-border rounded-xl text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
+                className="flex-1 py-2.5 border border-border rounded-xl text-sm font-normal text-foreground hover:bg-secondary transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleLogIncident}
                 disabled={saving || !form.studentName || !form.title}
-                className="flex-1 py-2.5 bg-[#e11d48] text-white rounded-xl text-sm font-semibold hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 py-2.5 bg-[#e11d48] text-white rounded-xl text-sm font-normal hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {saving ? 'Saving...' : 'Log Incident'}
               </button>

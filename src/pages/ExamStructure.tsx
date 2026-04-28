@@ -243,7 +243,7 @@ const ExamStructure = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -252,7 +252,7 @@ const ExamStructure = () => {
         {/* Page Head */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
               <div
                 style={{
                   width: 30,
@@ -271,9 +271,9 @@ const ExamStructure = () => {
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400, lineHeight: 1.5, display: "flex", alignItems: "center", gap: 5, flexWrap: "wrap" }}>
               <span>Exam Types</span>
-              <span style={{ color: T4, fontWeight: 600 }}>·</span>
+              <span style={{ color: T4, fontWeight: 400 }}>·</span>
               <span>Marking</span>
-              <span style={{ color: T4, fontWeight: 600 }}>·</span>
+              <span style={{ color: T4, fontWeight: 400 }}>·</span>
               <span>Grading</span>
             </div>
           </div>
@@ -297,7 +297,7 @@ const ExamStructure = () => {
             justifyContent: "center",
             gap: 7,
             fontSize: 13,
-            fontWeight: 600,
+            fontWeight: 400,
             cursor: "pointer",
             border: "none",
             boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
@@ -349,10 +349,10 @@ const ExamStructure = () => {
                 <Layers size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                   Total Weight
                 </div>
-                <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                <div style={{ fontSize: 26, fontWeight: 400, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                   {totalWeight}%
                 </div>
               </div>
@@ -367,7 +367,7 @@ const ExamStructure = () => {
                 background: weightChip.bg,
                 border: `0.5px solid ${weightChip.border}`,
                 fontSize: 11,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: weightChip.color,
               }}
             >
@@ -397,10 +397,10 @@ const ExamStructure = () => {
               { v: examTypes.length ? `${avgPassPct}%` : "—", l: "Avg Pass", c: "#34C759" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 10px", textAlign: "center" }}>
-                <div style={{ fontSize: 16, fontWeight: 600, color: s.c, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 16, fontWeight: 400, color: s.c, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -499,13 +499,13 @@ const ExamStructure = () => {
               >
                 {c.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 26, fontWeight: 600, color: c.valColor, letterSpacing: "-0.9px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 26, fontWeight: 400, color: c.valColor, letterSpacing: "-0.9px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {c.value}
               </div>
-              <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, position: "relative", zIndex: 1 }}>
+              <div style={{ fontSize: 10, fontWeight: 400, color: c.subColor, position: "relative", zIndex: 1 }}>
                 {c.sub}
               </div>
             </div>
@@ -516,7 +516,7 @@ const ExamStructure = () => {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -534,7 +534,7 @@ const ExamStructure = () => {
               background: "rgba(10,132,255,.10)",
               border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -550,7 +550,7 @@ const ExamStructure = () => {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10, padding: "50px 0" }}>
             <Loader2 size={28} color={B1} style={{ animation: "spin 1s linear infinite" }} />
             <style>{`@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}`}</style>
-            <div style={{ fontSize: 10, fontWeight: 600, color: T4, letterSpacing: "0.10em", textTransform: "uppercase" }}>
+            <div style={{ fontSize: 10, fontWeight: 400, color: T4, letterSpacing: "0.10em", textTransform: "uppercase" }}>
               Loading exam structure...
             </div>
           </div>
@@ -571,7 +571,7 @@ const ExamStructure = () => {
             }}
           >
             <BookOpen size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-            <div style={{ fontSize: 13, fontWeight: 600, color: T1, letterSpacing: "0.10em", textTransform: "uppercase" }}>
+            <div style={{ fontSize: 13, fontWeight: 400, color: T1, letterSpacing: "0.10em", textTransform: "uppercase" }}>
               No exam types configured
             </div>
             <div style={{ fontSize: 11, color: T4, maxWidth: 260, lineHeight: 1.5 }}>
@@ -623,7 +623,7 @@ const ExamStructure = () => {
                     <BookOpen size={18} color={B1} strokeWidth={2.2} />
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    <div style={{ fontSize: 15, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 4, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {exam.name || "Untitled Exam"}
                     </div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
@@ -640,7 +640,7 @@ const ExamStructure = () => {
                             background: "rgba(10,132,255,.08)",
                             border: "0.5px solid rgba(10,132,255,.14)",
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: B1,
                             letterSpacing: "0.02em",
                             display: "inline-flex",
@@ -648,7 +648,7 @@ const ExamStructure = () => {
                             gap: 3,
                           }}
                         >
-                          {m.l}: <strong style={{ color: T1, fontWeight: 600 }}>{m.v}</strong>
+                          {m.l}: <strong style={{ color: T1, fontWeight: 400 }}>{m.v}</strong>
                         </span>
                       ))}
                       <span
@@ -658,7 +658,7 @@ const ExamStructure = () => {
                           background: "rgba(10,132,255,.08)",
                           border: "0.5px solid rgba(10,132,255,.14)",
                           fontSize: 9,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: B1,
                           letterSpacing: "0.02em",
                           maxWidth: 70,
@@ -683,7 +683,7 @@ const ExamStructure = () => {
                         background: `linear-gradient(135deg, ${B1}, ${B2})`,
                         color: "#fff",
                         fontSize: 10,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         display: "flex",
                         alignItems: "center",
                         gap: 4,
@@ -747,7 +747,7 @@ const ExamStructure = () => {
                         { label: "Weight % (of Final)", key: "weightPct" as const, val: exam.weightPct, type: "number" as const },
                       ].map((f) => (
                         <div key={f.key} style={{ display: "flex", flexDirection: "column" }}>
-                          <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                          <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                             {f.label}
                           </div>
                           <input
@@ -766,7 +766,7 @@ const ExamStructure = () => {
                               fontFamily: "inherit",
                               fontSize: 13,
                               color: T1,
-                              fontWeight: 600,
+                              fontWeight: 400,
                               outline: "none",
                               letterSpacing: "-0.1px",
                             }}
@@ -777,7 +777,7 @@ const ExamStructure = () => {
 
                     {/* Applicable Classes full row */}
                     <div style={{ padding: "14px 16px", borderBottom: `0.5px solid ${SEP}` }}>
-                      <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                      <div style={{ fontSize: 8, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                         Applicable Classes
                       </div>
                       <input
@@ -794,7 +794,7 @@ const ExamStructure = () => {
                           fontFamily: "inherit",
                           fontSize: 13,
                           color: T1,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           outline: "none",
                           letterSpacing: "-0.1px",
                         }}
@@ -804,7 +804,7 @@ const ExamStructure = () => {
                     {/* Grading scale */}
                     <div style={{ padding: "14px 16px" }}>
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-                        <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                        <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                           Grading Scale · {exam.gradingScale.length} {exam.gradingScale.length === 1 ? "row" : "rows"}
                         </div>
                         <button
@@ -815,7 +815,7 @@ const ExamStructure = () => {
                             background: "#fff",
                             border: "0.5px dashed rgba(10,132,255,.3)",
                             fontSize: 9,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: B1,
                             display: "inline-flex",
                             alignItems: "center",
@@ -854,7 +854,7 @@ const ExamStructure = () => {
                               key={hi}
                               style={{
                                 fontSize: 8,
-                                fontWeight: 600,
+                                fontWeight: 400,
                                 letterSpacing: "0.08em",
                                 textTransform: "uppercase",
                                 color: B1,
@@ -889,7 +889,7 @@ const ExamStructure = () => {
                                   background: "#fff",
                                   border: "0.5px solid rgba(10,132,255,.15)",
                                   fontSize: 11,
-                                  fontWeight: 600,
+                                  fontWeight: 400,
                                   color: T1,
                                   textAlign: "center",
                                   letterSpacing: "-0.1px",
@@ -907,7 +907,7 @@ const ExamStructure = () => {
                                   background: "#fff",
                                   border: "0.5px solid rgba(10,132,255,.12)",
                                   fontSize: 11,
-                                  fontWeight: 600,
+                                  fontWeight: 400,
                                   color: T1,
                                   textAlign: "center",
                                   outline: "none",
@@ -925,7 +925,7 @@ const ExamStructure = () => {
                                   background: "#fff",
                                   border: "0.5px solid rgba(10,132,255,.12)",
                                   fontSize: 11,
-                                  fontWeight: 600,
+                                  fontWeight: 400,
                                   color: T1,
                                   textAlign: "center",
                                   outline: "none",
@@ -953,7 +953,7 @@ const ExamStructure = () => {
                                     padding: "3px 9px",
                                     borderRadius: 100,
                                     fontSize: 10,
-                                    fontWeight: 600,
+                                    fontWeight: 400,
                                     letterSpacing: "-0.1px",
                                     background: g.color + "20",
                                     color: g.color,
@@ -977,7 +977,7 @@ const ExamStructure = () => {
                           );
                         })}
                       </div>
-                      <div style={{ marginTop: 9, fontSize: 9, color: T4, fontWeight: 500, textAlign: "center", lineHeight: 1.4, padding: "0 4px" }}>
+                      <div style={{ marginTop: 9, fontSize: 9, color: T4, fontWeight: 400, textAlign: "center", lineHeight: 1.4, padding: "0 4px" }}>
                         Ranges should cover 0–100 without gaps. Lower grades should have lower min %.
                       </div>
                     </div>
@@ -1028,40 +1028,40 @@ const ExamStructure = () => {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Exam Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
               {examTypes.length === 0 ? (
-                <>No exam types configured yet. Tap <strong style={{ color: "#fff", fontWeight: 600 }}>"Add Exam Type"</strong> to create your first structure using quick presets like Unit Test, Mid Term, or Final Exam.</>
+                <>No exam types configured yet. Tap <strong style={{ color: "#fff", fontWeight: 400 }}>"Add Exam Type"</strong> to create your first structure using quick presets like Unit Test, Mid Term, or Final Exam.</>
               ) : (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {examTypes.length} exam type{examTypes.length === 1 ? "" : "s"}
                   </strong>{" "}
                   configured, carrying{" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>{totalWeight}% total weight</strong>.{" "}
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>{totalWeight}% total weight</strong>.{" "}
                   {totalGradeRows > 0 && (
                     <>
                       Grading scale spans{" "}
-                      <strong style={{ color: "#fff", fontWeight: 600 }}>{totalGradeRows} row{totalGradeRows === 1 ? "" : "s"}</strong>
+                      <strong style={{ color: "#fff", fontWeight: 400 }}>{totalGradeRows} row{totalGradeRows === 1 ? "" : "s"}</strong>
                       {" "}with avg{" "}
-                      <strong style={{ color: "#fff", fontWeight: 600 }}>{avgPassPct}% pass threshold</strong>.{" "}
+                      <strong style={{ color: "#fff", fontWeight: 400 }}>{avgPassPct}% pass threshold</strong>.{" "}
                     </>
                   )}
                   {totalWeight < 100 && totalWeight > 0 && (
                     <>
-                      <strong style={{ color: "#FFCC00", fontWeight: 600 }}>{100 - totalWeight}% short</strong> — add more exam types to reach full weight.
+                      <strong style={{ color: "#FFCC00", fontWeight: 400 }}>{100 - totalWeight}% short</strong> — add more exam types to reach full weight.
                     </>
                   )}
                   {totalWeight > 100 && (
                     <>
-                      <strong style={{ color: "#FF6961", fontWeight: 600 }}>{totalWeight - 100}% over</strong> — rebalance weights.
+                      <strong style={{ color: "#FF6961", fontWeight: 400 }}>{totalWeight - 100}% over</strong> — rebalance weights.
                     </>
                   )}
                   {totalWeight === 100 && (
-                    <>Weight distribution is <strong style={{ color: "#34C759", fontWeight: 600 }}>balanced</strong>. Consider diversifying by adding Mid Term + Final Exam if needed.</>
+                    <>Weight distribution is <strong style={{ color: "#34C759", fontWeight: 400 }}>balanced</strong>. Consider diversifying by adding Mid Term + Final Exam if needed.</>
                   )}
                 </>
               )}
@@ -1085,10 +1085,10 @@ const ExamStructure = () => {
                 { v: `${totalWeight}%`, l: "Weight", c: totalWeight === 100 ? "#34C759" : totalWeight > 100 ? "#FF6961" : "#FFCC00" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1176,10 +1176,10 @@ const ExamStructure = () => {
                   <BookOpen size={18} color="#fff" strokeWidth={2.2} />
                 </div>
                 <div style={{ flex: 1, minWidth: 0, position: "relative", zIndex: 1 }}>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
+                  <div style={{ fontSize: 15, fontWeight: 400, color: "#fff", letterSpacing: "-0.3px", marginBottom: 2 }}>
                     New Exam Type
                   </div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,.62)", fontWeight: 500 }}>
+                  <div style={{ fontSize: 11, color: "rgba(255,255,255,.62)", fontWeight: 400 }}>
                     Configure exam structure &amp; grading
                   </div>
                 </div>
@@ -1208,7 +1208,7 @@ const ExamStructure = () => {
               <div style={{ padding: "16px 16px 14px", overflowY: "auto" }}>
                 {/* Preset grid */}
                 <div style={{ marginBottom: 14 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7, display: "flex", alignItems: "center", gap: 5 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7, display: "flex", alignItems: "center", gap: 5 }}>
                     <span style={{ width: 10, height: 2, background: B1, borderRadius: 2, display: "inline-block" }} />
                     Quick Preset
                   </div>
@@ -1225,7 +1225,7 @@ const ExamStructure = () => {
                             background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#F5F5F7",
                             border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.14)",
                             fontSize: 10,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: isActive ? "#fff" : T2,
                             letterSpacing: "0.04em",
                             textTransform: "uppercase",
@@ -1243,7 +1243,7 @@ const ExamStructure = () => {
 
                 {/* Exam Name */}
                 <div style={{ marginBottom: 12 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                     Exam Name <span style={{ color: RED, marginLeft: 2 }}>*</span>
                   </div>
                   <input
@@ -1259,7 +1259,7 @@ const ExamStructure = () => {
                       fontFamily: "inherit",
                       fontSize: 13,
                       color: T1,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       outline: "none",
                     }}
                   />
@@ -1273,7 +1273,7 @@ const ExamStructure = () => {
                     { label: "Weight %", key: "weightPct" as const, val: newExam.weightPct },
                   ].map((f) => (
                     <div key={f.key}>
-                      <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                      <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                         {f.label}
                       </div>
                       <input
@@ -1289,7 +1289,7 @@ const ExamStructure = () => {
                           fontFamily: "inherit",
                           fontSize: 13,
                           color: T1,
-                          fontWeight: 500,
+                          fontWeight: 400,
                           outline: "none",
                         }}
                       />
@@ -1299,7 +1299,7 @@ const ExamStructure = () => {
 
                 {/* Applicable Classes */}
                 <div style={{ marginBottom: 12 }}>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                     Applicable Classes
                   </div>
                   <input
@@ -1315,7 +1315,7 @@ const ExamStructure = () => {
                       fontFamily: "inherit",
                       fontSize: 13,
                       color: T1,
-                      fontWeight: 500,
+                      fontWeight: 400,
                       outline: "none",
                     }}
                   />
@@ -1329,12 +1329,12 @@ const ExamStructure = () => {
                     border: "0.5px dashed rgba(10,132,255,.18)",
                     fontSize: 10,
                     color: T3,
-                    fontWeight: 500,
+                    fontWeight: 400,
                     lineHeight: 1.5,
                     marginTop: 4,
                   }}
                 >
-                  Default grading scale (<strong style={{ color: B1, fontWeight: 600 }}>A+→F</strong>) will be applied — customise after creation.
+                  Default grading scale (<strong style={{ color: B1, fontWeight: 400 }}>A+→F</strong>) will be applied — customise after creation.
                 </div>
               </div>
 
@@ -1360,7 +1360,7 @@ const ExamStructure = () => {
                     boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                     border: "0.5px solid rgba(10,132,255,.14)",
                     fontSize: 13,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     cursor: "pointer",
                     letterSpacing: "0.02em",
                     fontFamily: "inherit",
@@ -1378,7 +1378,7 @@ const ExamStructure = () => {
                     background: `linear-gradient(135deg, ${B1}, ${B2})`,
                     color: "#fff",
                     fontSize: 13,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     cursor: saving === "new" || !newExam.name.trim() ? "not-allowed" : "pointer",
                     border: "none",
                     boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
@@ -1418,12 +1418,12 @@ const ExamStructure = () => {
     : { label: `${100 - dTotalWeight}% Short`, c: "#FFCC00", bg: "rgba(255,204,0,0.22)", bdr: "rgba(255,204,0,0.4)" };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* ── Top toolbar ── */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <ClipboardList className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -1432,14 +1432,14 @@ const ExamStructure = () => {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Exam Types</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Marking Schemes</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Grading Scales</span>
           </div>
         </div>
         <button onClick={() => { setNewExam(emptyExam()); setShowAddModal(true); }}
-          className="h-[44px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-[0.97] hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
+          className="h-[44px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.06em] transition-transform active:scale-[0.97] hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
           style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)" }}>
           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
           <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.4} />
@@ -1461,10 +1461,10 @@ const ExamStructure = () => {
             <BookOpen className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               Total Weight · {examTypes.length} Exam Type{examTypes.length === 1 ? "" : "s"}
             </div>
-            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
               {dTotalWeight}%
             </div>
           </div>
@@ -1472,7 +1472,7 @@ const ExamStructure = () => {
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
           <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
             style={{ background: dWeightChip.bg, border: `0.5px solid ${dWeightChip.bdr}` }}>
-            <span className="text-[12px] font-semibold" style={{ color: dWeightChip.c }}>{dWeightChip.label}</span>
+            <span className="text-[12px] font-normal" style={{ color: dWeightChip.c }}>{dWeightChip.label}</span>
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
@@ -1481,8 +1481,8 @@ const ExamStructure = () => {
               { val: dAvgPass ? `${dAvgPass}%` : "—", label: "Avg Pass", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-[12px] px-[16px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -1539,9 +1539,9 @@ const ExamStructure = () => {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
-              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -1553,9 +1553,9 @@ const ExamStructure = () => {
       </div>
 
       {/* ── Section label ── */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Your Exam Types
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {examTypes.length} {examTypes.length === 1 ? "type" : "types"}
         </span>
@@ -1567,7 +1567,7 @@ const ExamStructure = () => {
         <div className="rounded-[22px] py-10 text-center bg-white"
           style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: "#0A84FF" }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading exam structure…</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading exam structure…</p>
         </div>
       ) : examTypes.length === 0 ? (
         <div className="rounded-[22px] py-10 text-center bg-white"
@@ -1576,7 +1576,7 @@ const ExamStructure = () => {
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
             <BookOpen className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold mb-1" style={{ color: "#1D1D1F" }}>No exam types configured</p>
+          <p className="text-[13px] font-normal mb-1" style={{ color: "#1D1D1F" }}>No exam types configured</p>
           <p className="text-[12px]" style={{ color: "#A1A1A6" }}>Click "Add Exam Type" to create your first exam structure.</p>
         </div>
       ) : (
@@ -1604,22 +1604,22 @@ const ExamStructure = () => {
                     <BookOpen className="w-[19px] h-[19px]" style={{ color: isExp ? "#fff" : "#0A84FF" }} strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[18px] font-semibold tracking-[-0.3px] truncate" style={{ color: "#1D1D1F" }}>{exam.name}</div>
+                    <div className="text-[18px] font-normal tracking-[-0.3px] truncate" style={{ color: "#1D1D1F" }}>{exam.name}</div>
                     <div className="flex items-center gap-[12px] mt-[4px] flex-wrap">
-                      <span className="text-[12px] font-semibold" style={{ color: "#6E6E73" }}>Max {exam.maxMarks}</span>
+                      <span className="text-[12px] font-normal" style={{ color: "#6E6E73" }}>Max {exam.maxMarks}</span>
                       <span className="w-[3px] h-[3px] rounded-full" style={{ background: "#A1A1A6" }} />
-                      <span className="text-[12px] font-semibold" style={{ color: "#6E6E73" }}>Pass {exam.passingMarks}</span>
+                      <span className="text-[12px] font-normal" style={{ color: "#6E6E73" }}>Pass {exam.passingMarks}</span>
                       <span className="w-[3px] h-[3px] rounded-full" style={{ background: "#A1A1A6" }} />
-                      <span className="text-[12px] font-semibold" style={{ color: "#6E6E73" }}>Classes: {exam.applicableClasses}</span>
+                      <span className="text-[12px] font-normal" style={{ color: "#6E6E73" }}>Classes: {exam.applicableClasses}</span>
                     </div>
                   </div>
-                  <div className="px-[12px] py-[8px] rounded-full text-[12px] font-semibold flex-shrink-0"
+                  <div className="px-[12px] py-[8px] rounded-full text-[12px] font-normal flex-shrink-0"
                     style={{ background: wChip.bg, color: wChip.c, border: `0.5px solid ${wChip.bdr}` }}>
                     {exam.weightPct}% weight
                   </div>
                   <button onClick={e => { e.stopPropagation(); handleSave(exam); }}
                     disabled={saving === exam.id}
-                    className="h-9 px-[16px] rounded-[11px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.05em] transition-transform active:scale-95 hover:scale-[1.03] disabled:opacity-60 relative overflow-hidden"
+                    className="h-9 px-[16px] rounded-[11px] flex items-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.05em] transition-transform active:scale-95 hover:scale-[1.03] disabled:opacity-60 relative overflow-hidden"
                     style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.26)" }}>
                     <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                     {saving === exam.id ? <Loader2 className="w-[13px] h-[13px] relative z-10 animate-spin" /> : <Save className="w-[13px] h-[13px] relative z-10" strokeWidth={2.4} />}
@@ -1649,21 +1649,21 @@ const ExamStructure = () => {
                         { label: "Weight % of final", key: "weightPct" as keyof ExamType, type: "number", val: exam.weightPct },
                       ].map(f => (
                         <div key={f.key}>
-                          <label className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1.5 block" style={{ color: "#A1A1A6" }}>{f.label}</label>
+                          <label className="text-[12px] font-normal uppercase tracking-[0.09em] mb-1.5 block" style={{ color: "#A1A1A6" }}>{f.label}</label>
                           <input type={f.type} value={f.val as string | number}
                             onChange={e => updateExam(exam.id, { [f.key]: f.type === "number" ? parseInt(e.target.value) || 0 : e.target.value })}
-                            className="w-full h-10 px-3 rounded-[10px] text-[12px] font-semibold outline-none"
+                            className="w-full h-10 px-3 rounded-[10px] text-[12px] font-normal outline-none"
                             style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                         </div>
                       ))}
                     </div>
 
                     <div>
-                      <label className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1.5 block" style={{ color: "#A1A1A6" }}>Applicable Classes</label>
+                      <label className="text-[12px] font-normal uppercase tracking-[0.09em] mb-1.5 block" style={{ color: "#A1A1A6" }}>Applicable Classes</label>
                       <input type="text" value={exam.applicableClasses}
                         onChange={e => updateExam(exam.id, { applicableClasses: e.target.value })}
                         placeholder='e.g. "All" or "8-A, 9-B, 10-C"'
-                        className="w-1/2 h-10 px-3 rounded-[10px] text-[12px] font-semibold outline-none"
+                        className="w-1/2 h-10 px-3 rounded-[10px] text-[12px] font-normal outline-none"
                         style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                     </div>
 
@@ -1672,14 +1672,14 @@ const ExamStructure = () => {
                       <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                           <Layers className="w-[15px] h-[15px]" style={{ color: "#0A84FF" }} strokeWidth={2.3} />
-                          <label className="text-[12px] font-semibold uppercase tracking-[0.1em]" style={{ color: "#3A3A3C" }}>Grading Scale</label>
-                          <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                          <label className="text-[12px] font-normal uppercase tracking-[0.1em]" style={{ color: "#3A3A3C" }}>Grading Scale</label>
+                          <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                             style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
                             {exam.gradingScale.length} rows
                           </span>
                         </div>
                         <button onClick={() => addGradeRow(exam.id)}
-                          className="h-8 px-[12px] rounded-[10px] flex items-center gap-[4px] text-[12px] font-semibold uppercase tracking-[0.05em] transition-transform active:scale-95 hover:scale-[1.03]"
+                          className="h-8 px-[12px] rounded-[10px] flex items-center gap-[4px] text-[12px] font-normal uppercase tracking-[0.05em] transition-transform active:scale-95 hover:scale-[1.03]"
                           style={{ background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.22)" }}>
                           <Plus className="w-3 h-3" strokeWidth={2.6} /> Add Row
                         </button>
@@ -1689,7 +1689,7 @@ const ExamStructure = () => {
                           <thead>
                             <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                               {["Grade", "Min %", "Max %", "Color", "Preview", ""].map(h => (
-                                <th key={h} className="px-3 py-[12px] text-left text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "#A1A1A6" }}>{h}</th>
+                                <th key={h} className="px-3 py-[12px] text-left text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "#A1A1A6" }}>{h}</th>
                               ))}
                             </tr>
                           </thead>
@@ -1698,17 +1698,17 @@ const ExamStructure = () => {
                               <tr key={g.id} style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                                 <td className="px-3 py-[12px]">
                                   <input value={g.label} onChange={e => updateGrade(exam.id, g.id, { label: e.target.value })}
-                                    className="w-14 h-8 px-2 rounded-[8px] text-[12px] font-semibold text-center outline-none"
+                                    className="w-14 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
                                     style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
                                   <input type="number" value={g.minPct} onChange={e => updateGrade(exam.id, g.id, { minPct: parseInt(e.target.value) || 0 })}
-                                    className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-semibold text-center outline-none"
+                                    className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
                                     style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
                                   <input type="number" value={g.maxPct} onChange={e => updateGrade(exam.id, g.id, { maxPct: parseInt(e.target.value) || 0 })}
-                                    className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-semibold text-center outline-none"
+                                    className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
                                     style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
@@ -1717,7 +1717,7 @@ const ExamStructure = () => {
                                     style={{ background: "#fff", border: "0.5px solid rgba(10,132,255,0.14)" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
-                                  <span className="px-3 py-1 rounded-full text-[12px] font-semibold"
+                                  <span className="px-3 py-1 rounded-full text-[12px] font-normal"
                                     style={{ background: g.color + "20", color: g.color, border: `0.5px solid ${g.color}40` }}>
                                     {g.label || "—"}
                                   </span>
@@ -1760,19 +1760,19 @@ const ExamStructure = () => {
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                   <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
                 </div>
-                <span className="text-[12px] font-semibold uppercase tracking-[0.14em]" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <span className="text-[12px] font-normal uppercase tracking-[0.14em]" style={{ color: "rgba(255,255,255,0.55)" }}>
                   AI Exam Structure Intelligence
                 </span>
               </div>
               <div className="text-[13px] leading-[1.72] max-w-[720px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                 {dTotalWeight === 100 ? (
-                  <><strong style={{ color: "#fff", fontWeight: 600 }}>Perfectly balanced</strong> — your {examTypes.length} exam type{examTypes.length === 1 ? "" : "s"} sum to 100%. Average pass threshold is <strong style={{ color: "#fff", fontWeight: 600 }}>{dAvgPass}%</strong>.</>
+                  <><strong style={{ color: "#fff", fontWeight: 400 }}>Perfectly balanced</strong> — your {examTypes.length} exam type{examTypes.length === 1 ? "" : "s"} sum to 100%. Average pass threshold is <strong style={{ color: "#fff", fontWeight: 400 }}>{dAvgPass}%</strong>.</>
                 ) : dTotalWeight > 100 ? (
-                  <>Weights <strong style={{ color: "#fff", fontWeight: 600 }}>exceed 100% by {dTotalWeight - 100}%</strong> — reduce individual exam weights to balance. Target: 100% total.</>
+                  <>Weights <strong style={{ color: "#fff", fontWeight: 400 }}>exceed 100% by {dTotalWeight - 100}%</strong> — reduce individual exam weights to balance. Target: 100% total.</>
                 ) : dTotalWeight === 0 ? (
-                  <>No weights assigned yet — set <strong style={{ color: "#fff", fontWeight: 600 }}>Weight %</strong> on each exam so they sum to 100%.</>
+                  <>No weights assigned yet — set <strong style={{ color: "#fff", fontWeight: 400 }}>Weight %</strong> on each exam so they sum to 100%.</>
                 ) : (
-                  <>Weights are <strong style={{ color: "#fff", fontWeight: 600 }}>{100 - dTotalWeight}% short of 100%</strong> — add missing weight across exams, or create an additional exam type.</>
+                  <>Weights are <strong style={{ color: "#fff", fontWeight: 400 }}>{100 - dTotalWeight}% short of 100%</strong> — add missing weight across exams, or create an additional exam type.</>
                 )}
               </div>
             </div>
@@ -1783,8 +1783,8 @@ const ExamStructure = () => {
                 { val: dWeightChip.label, label: "Status", color: dWeightChip.c },
               ].map(({ val, label, color }) => (
                 <div key={label} className="py-[16px] px-5 text-center min-w-[96px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[20px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                  <div className="text-[20px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -1805,7 +1805,7 @@ const ExamStructure = () => {
                   <BookOpen className="w-4 h-4 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-semibold text-white">New Exam Type</h2>
+                  <h2 className="text-sm font-normal text-white">New Exam Type</h2>
                   <p className="text-xs text-blue-200">Configure exam structure & grading</p>
                 </div>
               </div>
@@ -1818,11 +1818,11 @@ const ExamStructure = () => {
 
               {/* Quick presets */}
               <div>
-                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2 block">Quick Preset</label>
+                <label className="text-[12px] font-normal text-slate-400 uppercase tracking-widest mb-2 block">Quick Preset</label>
                 <div className="flex flex-wrap gap-2">
                   {PRESET_TYPES.map(p => (
                     <button key={p} onClick={() => setNewExam(e => ({ ...e, name: p }))}
-                      className={`px-3 py-1.5 rounded-lg text-[12px] font-semibold uppercase tracking-widest transition-colors border ${
+                      className={`px-3 py-1.5 rounded-lg text-[12px] font-normal uppercase tracking-widest transition-colors border ${
                         newExam.name === p ? "bg-[#1D1D1F] text-white border-[#1D1D1F]" : "bg-slate-50 text-slate-500 border-slate-100 hover:border-slate-300"
                       }`}>
                       {p}
@@ -1833,10 +1833,10 @@ const ExamStructure = () => {
 
               {/* Fields */}
               <div>
-                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5 block">Exam Name *</label>
+                <label className="text-[12px] font-normal text-slate-400 uppercase tracking-widest mb-1.5 block">Exam Name *</label>
                 <input value={newExam.name} onChange={e => setNewExam(n => ({ ...n, name: e.target.value }))}
                   placeholder="e.g. Unit Test 1"
-                  className="w-full h-10 px-4 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 outline-none focus:border-blue-300 transition-all" />
+                  className="w-full h-10 px-4 bg-slate-50 border border-slate-100 rounded-xl text-xs font-normal text-slate-700 outline-none focus:border-blue-300 transition-all" />
               </div>
 
               <div className="grid grid-cols-3 gap-3">
@@ -1846,29 +1846,29 @@ const ExamStructure = () => {
                   { label: "Weight %",      key: "weightPct"    as const, val: newExam.weightPct },
                 ].map(f => (
                   <div key={f.key}>
-                    <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5 block">{f.label}</label>
+                    <label className="text-[12px] font-normal text-slate-400 uppercase tracking-widest mb-1.5 block">{f.label}</label>
                     <input type="number" value={f.val}
                       onChange={e => setNewExam(n => ({ ...n, [f.key]: parseInt(e.target.value) || 0 }))}
-                      className="w-full h-10 px-3 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 outline-none focus:border-blue-300 transition-all" />
+                      className="w-full h-10 px-3 bg-slate-50 border border-slate-100 rounded-xl text-xs font-normal text-slate-700 outline-none focus:border-blue-300 transition-all" />
                   </div>
                 ))}
               </div>
 
               <div>
-                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5 block">Applicable Classes</label>
+                <label className="text-[12px] font-normal text-slate-400 uppercase tracking-widest mb-1.5 block">Applicable Classes</label>
                 <input value={newExam.applicableClasses} onChange={e => setNewExam(n => ({ ...n, applicableClasses: e.target.value }))}
                   placeholder='e.g. "All" or "8-A, 9-B"'
-                  className="w-full h-10 px-4 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold text-slate-700 outline-none focus:border-blue-300 transition-all" />
+                  className="w-full h-10 px-4 bg-slate-50 border border-slate-100 rounded-xl text-xs font-normal text-slate-700 outline-none focus:border-blue-300 transition-all" />
                 <p className="text-[12px] text-slate-300 mt-1">Default grading scale (A+→F) will be applied — customise after creation.</p>
               </div>
 
               <div className="flex gap-3 pt-1">
                 <button onClick={() => setShowAddModal(false)}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-normal text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button onClick={handleAdd} disabled={saving === "new" || !newExam.name.trim()}
-                  className="flex-1 h-11 rounded-xl bg-[#1D1D1F] text-white text-xs font-semibold hover:bg-blue-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-[#1D1D1F] text-white text-xs font-normal hover:bg-blue-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                   {saving === "new" ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                   {saving === "new" ? "Creating..." : "Create Exam Type"}
                 </button>

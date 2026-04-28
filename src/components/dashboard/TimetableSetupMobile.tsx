@@ -85,13 +85,13 @@ const TimetableSetupMobile = ({
   return (
     <div
       className="pb-6"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}
     >
 
       {/* Page head */}
       <div className="px-5 pt-3 flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
-          <div className="text-[24px] font-semibold leading-tight tracking-[-0.6px] flex items-center gap-2" style={{ color: T1 }}>
+          <div className="text-[24px] font-normal leading-tight tracking-[-0.6px] flex items-center gap-2" style={{ color: T1 }}>
             <div className="w-[30px] h-[30px] rounded-[10px] flex items-center justify-center flex-shrink-0"
               style={{ background: GRAD_PRIMARY, boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <Clock className="w-4 h-4 text-white" strokeWidth={2.4} />
@@ -100,7 +100,7 @@ const TimetableSetupMobile = ({
           </div>
           <div className="text-[12px] font-normal mt-1 flex items-center gap-[4px]" style={{ color: T3 }}>
             <span>Period Config</span>
-            <span className="font-semibold" style={{ color: T4 }}>·</span>
+            <span className="font-normal" style={{ color: T4 }}>·</span>
             <span>Teacher Assignments</span>
           </div>
         </div>
@@ -114,7 +114,7 @@ const TimetableSetupMobile = ({
             const active = viewMode === m;
             return (
               <button key={m} onClick={() => setViewMode(m)}
-                className="px-[12px] py-[8px] rounded-[8px] text-[12px] font-semibold uppercase tracking-[0.06em] transition-all"
+                className="px-[12px] py-[8px] rounded-[8px] text-[12px] font-normal uppercase tracking-[0.06em] transition-all"
                 style={active
                   ? { background: "#fff", color: B1, boxShadow: "0 2px 6px rgba(10,132,255,0.18)" }
                   : { background: "transparent", color: T4 }}>
@@ -124,7 +124,7 @@ const TimetableSetupMobile = ({
           })}
         </div>
         <button onClick={onSave} disabled={saving || !selectedClass || loading}
-          className="flex-1 h-[38px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.04em] transition-transform active:scale-[0.97] disabled:opacity-50 relative overflow-hidden"
+          className="flex-1 h-[38px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.04em] transition-transform active:scale-[0.97] disabled:opacity-50 relative overflow-hidden"
           style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
           {saving
@@ -148,10 +148,10 @@ const TimetableSetupMobile = ({
               <Grid3x3 className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
             </div>
             <div className="min-w-0">
-              <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px] truncate" style={{ color: "rgba(255,255,255,0.50)" }}>
+              <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px] truncate" style={{ color: "rgba(255,255,255,0.50)" }}>
                 {className} · Total Periods
               </div>
-              <div className="text-[28px] font-semibold text-white leading-none tracking-[-0.8px]">
+              <div className="text-[28px] font-normal text-white leading-none tracking-[-0.8px]">
                 {totalPeriods}
               </div>
             </div>
@@ -160,12 +160,12 @@ const TimetableSetupMobile = ({
             <div className="flex items-center gap-[4px] px-3 py-[4px] rounded-full flex-shrink-0"
               style={{ background: "rgba(255,149,0,0.22)", border: "0.5px solid rgba(255,149,0,0.4)" }}>
               <AlertTriangle className="w-[11px] h-[11px]" style={{ color: "#FFCC00" }} strokeWidth={2.5} />
-              <span className="text-[12px] font-semibold" style={{ color: "#FFCC00" }}>Empty</span>
+              <span className="text-[12px] font-normal" style={{ color: "#FFCC00" }}>Empty</span>
             </div>
           ) : (
             <div className="flex items-center gap-[4px] px-3 py-[4px] rounded-full flex-shrink-0"
               style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.4)" }}>
-              <span className="text-[12px] font-semibold" style={{ color: "#34C759" }}>{workingDays}/6 Days</span>
+              <span className="text-[12px] font-normal" style={{ color: "#34C759" }}>{workingDays}/6 Days</span>
             </div>
           )}
         </div>
@@ -176,8 +176,8 @@ const TimetableSetupMobile = ({
             { val: workingDays, label: "Days Set", color: "#FFCC00" },
           ].map(({ val, label, color }) => (
             <div key={label} className="py-[12px] px-[12px] text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-              <div className="text-[16px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.3px" }}>{val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+              <div className="text-[16px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.3px" }}>{val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
             </div>
           ))}
         </div>
@@ -193,8 +193,8 @@ const TimetableSetupMobile = ({
           <GraduationCap className="w-[18px] h-[18px] text-white" strokeWidth={2.4} />
         </div>
         <div className="flex-1 min-w-0 relative z-10">
-          <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Select Class</div>
-          <div className="text-[18px] font-semibold leading-none tracking-[-0.3px] truncate" style={{ color: T1 }}>
+          <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[4px]" style={{ color: T4 }}>Select Class</div>
+          <div className="text-[18px] font-normal leading-none tracking-[-0.3px] truncate" style={{ color: T1 }}>
             {className}
           </div>
         </div>
@@ -251,18 +251,18 @@ const TimetableSetupMobile = ({
                 style={{ background: "rgba(255,255,255,0.75)", border: "0.5px solid rgba(255,255,255,0.95)", boxShadow: "0 2px 6px rgba(0,0,0,0.05)" }}>
                 {st.ico}
               </div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2 relative z-[1]" style={{ color: st.lbl }}>{s.label}</div>
-              <div className="text-[28px] font-semibold leading-none tracking-[-0.9px] mb-1 relative z-[1]" style={{ color: st.val }}>{s.val}</div>
-              <div className="text-[12px] font-semibold relative z-[1]" style={{ color: st.lbl }}>{s.sub}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-2 relative z-[1]" style={{ color: st.lbl }}>{s.label}</div>
+              <div className="text-[28px] font-normal leading-none tracking-[-0.9px] mb-1 relative z-[1]" style={{ color: st.val }}>{s.val}</div>
+              <div className="text-[12px] font-normal relative z-[1]" style={{ color: st.lbl }}>{s.sub}</div>
             </div>
           );
         })}
       </div>
 
       {/* Weekly Schedule section label */}
-      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
         Weekly Schedule
-        <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.16)" }}>
           6 days{cls ? ` · ${cls.name}` : ""}
         </span>
@@ -273,13 +273,13 @@ const TimetableSetupMobile = ({
       {loading ? (
         <div className="py-10 text-center">
           <Loader2 className="w-7 h-7 animate-spin mx-auto mb-3" style={{ color: B1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: T4 }}>Loading timetable…</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: T4 }}>Loading timetable…</p>
         </div>
       ) : !selectedClass ? (
         <div className="mx-5 mt-3 rounded-[22px] py-10 px-5 bg-white text-center"
           style={{ boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <GraduationCap className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: T3 }}>No class selected</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: T3 }}>No class selected</p>
           <p className="text-[12px] mt-2" style={{ color: T4 }}>Add a class via Classes & Sections first.</p>
         </div>
       ) : (
@@ -309,12 +309,12 @@ const TimetableSetupMobile = ({
                   <Clock className="w-4 h-4" style={{ color: isExpanded ? "#fff" : T3 }} strokeWidth={2.3} />
                 </div>
                 <div className="flex-1 min-w-0 text-left">
-                  <div className="text-[15px] font-semibold tracking-[-0.2px] flex items-center gap-[4px]" style={{ color: T1 }}>
+                  <div className="text-[15px] font-normal tracking-[-0.2px] flex items-center gap-[4px]" style={{ color: T1 }}>
                     <span className="w-[7px] h-[7px] rounded-full inline-block flex-shrink-0" style={{ background: dayDot }} />
                     {day}
                   </div>
-                  <div className="text-[12px] font-medium mt-[2px] flex items-center gap-[4px]" style={{ color: T4 }}>
-                    <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                  <div className="text-[12px] font-normal mt-[2px] flex items-center gap-[4px]" style={{ color: T4 }}>
+                    <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                       style={isExpanded
                         ? { background: "rgba(255,149,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }
                         : { background: "rgba(10,132,255,0.08)", color: B1, border: "0.5px solid rgba(10,132,255,0.14)", letterSpacing: "0.02em" }}>
@@ -343,9 +343,9 @@ const TimetableSetupMobile = ({
                         style={{ background: "linear-gradient(135deg, #EBEBF0, #D4E4FF)", border: "0.5px solid rgba(10,132,255,0.15)" }}>
                         <Plus className="w-5 h-5" style={{ color: B1 }} strokeWidth={2.2} />
                       </div>
-                      <div className="text-[12px] font-semibold leading-[1.55] relative z-[1]" style={{ color: T3 }}>
+                      <div className="text-[12px] font-normal leading-[1.55] relative z-[1]" style={{ color: T3 }}>
                         No periods added —<br />
-                        tap <strong style={{ color: T1, fontWeight: 600 }}>"Add Period"</strong> below
+                        tap <strong style={{ color: T1, fontWeight: 400 }}>"Add Period"</strong> below
                       </div>
                     </div>
                   ) : (
@@ -360,11 +360,11 @@ const TimetableSetupMobile = ({
                               boxShadow: SHADOW_SM,
                             }}>
                             <div className="flex items-center gap-2 mb-2">
-                              <div className="text-[12px] font-semibold w-[18px] flex-shrink-0" style={{ color: T4 }}>
+                              <div className="text-[12px] font-normal w-[18px] flex-shrink-0" style={{ color: T4 }}>
                                 #{idx + 1}
                               </div>
                               {p.isBreak ? (
-                                <div className="flex items-center gap-[4px] px-[8px] py-[4px] rounded-full text-[12px] font-semibold flex-shrink-0"
+                                <div className="flex items-center gap-[4px] px-[8px] py-[4px] rounded-full text-[12px] font-normal flex-shrink-0"
                                   style={{ background: "rgba(255,149,0,0.12)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }}>
                                   <Coffee className="w-[11px] h-[11px]" strokeWidth={2.5} />
                                   Break
@@ -373,12 +373,12 @@ const TimetableSetupMobile = ({
                               <div className="flex items-center gap-[8px] flex-1">
                                 <input type="time" value={p.startTime}
                                   onChange={e => onUpdatePeriod(day, p.id, { startTime: e.target.value })}
-                                  className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-semibold outline-none"
+                                  className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-normal outline-none"
                                   style={{ background: BG2, border: "0.5px solid rgba(10,132,255,0.12)", color: T1 }} />
-                                <span className="text-[12px] font-semibold" style={{ color: T4 }}>→</span>
+                                <span className="text-[12px] font-normal" style={{ color: T4 }}>→</span>
                                 <input type="time" value={p.endTime}
                                   onChange={e => onUpdatePeriod(day, p.id, { endTime: e.target.value })}
-                                  className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-semibold outline-none"
+                                  className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-normal outline-none"
                                   style={{ background: BG2, border: "0.5px solid rgba(10,132,255,0.12)", color: T1 }} />
                               </div>
                               <button onClick={() => onRemovePeriod(day, p.id)}
@@ -392,7 +392,7 @@ const TimetableSetupMobile = ({
                               <div className="flex flex-col gap-[8px]">
                                 <select value={p.teacherId}
                                   onChange={e => onTeacherChange(day, p.id, e.target.value)}
-                                  className="w-full h-9 px-2 rounded-[9px] text-[12px] font-semibold outline-none"
+                                  className="w-full h-9 px-2 rounded-[9px] text-[12px] font-normal outline-none"
                                   style={{ background: "#fff", border: "0.5px solid rgba(10,132,255,0.16)", color: p.teacherId ? T1 : T4 }}>
                                   <option value="">Select teacher…</option>
                                   {teachers.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
@@ -400,7 +400,7 @@ const TimetableSetupMobile = ({
                                 <select value={p.subject}
                                   onChange={e => onUpdatePeriod(day, p.id, { subject: e.target.value })}
                                   disabled={!p.teacherId}
-                                  className="w-full h-9 px-2 rounded-[9px] text-[12px] font-semibold outline-none disabled:opacity-50"
+                                  className="w-full h-9 px-2 rounded-[9px] text-[12px] font-normal outline-none disabled:opacity-50"
                                   style={{ background: "#fff", border: "0.5px solid rgba(10,132,255,0.16)", color: p.subject ? T1 : T4 }}>
                                   <option value="">{p.teacherId ? "Select subject…" : "Pick teacher first"}</option>
                                   {teacherSubjects.map(s => <option key={s} value={s}>{s}</option>)}
@@ -416,7 +416,7 @@ const TimetableSetupMobile = ({
                   {/* Action buttons */}
                   <div className="flex gap-2">
                     <button onClick={() => onAddPeriod(day)}
-                      className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.04em] transition-transform active:scale-[0.96]"
+                      className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96]"
                       style={{
                         background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)",
                         color: B1,
@@ -427,7 +427,7 @@ const TimetableSetupMobile = ({
                       Add Period
                     </button>
                     <button onClick={() => onAddBreak(day)}
-                      className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.04em] transition-transform active:scale-[0.96]"
+                      className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96]"
                       style={{
                         background: "linear-gradient(135deg, #FFF4E0, #FFDB99)",
                         color: "#86310C",
@@ -442,12 +442,12 @@ const TimetableSetupMobile = ({
                   {/* Copy to another day — only when this day has periods */}
                   {periods.length > 0 && (
                     <div className="flex items-center gap-2 mt-2 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
-                      <span className="text-[12px] font-semibold uppercase tracking-[0.10em] flex-shrink-0" style={{ color: T4 }}>
+                      <span className="text-[12px] font-normal uppercase tracking-[0.10em] flex-shrink-0" style={{ color: T4 }}>
                         Copy to:
                       </span>
                       {DAYS.filter(d => d !== day).map(d => (
                         <button key={d} onClick={() => onCopyDay(day, d)}
-                          className="flex-shrink-0 px-[12px] py-[4px] rounded-full text-[12px] font-semibold active:scale-95 transition-transform"
+                          className="flex-shrink-0 px-[12px] py-[4px] rounded-full text-[12px] font-normal active:scale-95 transition-transform"
                           style={{ background: "#fff", color: T2, border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: SHADOW_SM }}>
                           {d.slice(0, 3)}
                         </button>
@@ -475,31 +475,31 @@ const TimetableSetupMobile = ({
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Sparkles className="w-[13px] h-[13px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
             </div>
-            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
               AI Timetable Intelligence
             </span>
           </div>
           <div className="text-[12px] leading-[1.72] relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
             {totalPeriods === 0 ? (
               <>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{className} timetable is empty</strong> — 0 periods across 6 days.
-                Start with <strong style={{ color: "#fff", fontWeight: 600 }}>Monday</strong>, add 6–8 periods + 1–2 breaks,
-                then tap a day's <strong style={{ color: "#fff", fontWeight: 600 }}>Copy to</strong> chip to duplicate.
-                Typical CBSE Class 10 runs <strong style={{ color: "#fff", fontWeight: 600 }}>8 periods × 40 min</strong> with a 20-min break after period 3.
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{className} timetable is empty</strong> — 0 periods across 6 days.
+                Start with <strong style={{ color: "#fff", fontWeight: 400 }}>Monday</strong>, add 6–8 periods + 1–2 breaks,
+                then tap a day's <strong style={{ color: "#fff", fontWeight: 400 }}>Copy to</strong> chip to duplicate.
+                Typical CBSE Class 10 runs <strong style={{ color: "#fff", fontWeight: 400 }}>8 periods × 40 min</strong> with a 20-min break after period 3.
               </>
             ) : workingDays < 6 ? (
               <>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>{6 - workingDays} day{6 - workingDays === 1 ? "" : "s"} still empty</strong> —
-                fastest path: pick the day with <strong style={{ color: "#fff", fontWeight: 600 }}>{totalPeriods} periods</strong> already set,
-                and use <strong style={{ color: "#fff", fontWeight: 600 }}>"Copy to"</strong> to seed the rest.
+                <strong style={{ color: "#fff", fontWeight: 400 }}>{6 - workingDays} day{6 - workingDays === 1 ? "" : "s"} still empty</strong> —
+                fastest path: pick the day with <strong style={{ color: "#fff", fontWeight: 400 }}>{totalPeriods} periods</strong> already set,
+                and use <strong style={{ color: "#fff", fontWeight: 400 }}>"Copy to"</strong> to seed the rest.
                 You can adjust per-day afterwards.
               </>
             ) : (
               <>
-                <strong style={{ color: "#fff", fontWeight: 600 }}>All 6 days configured</strong> with
-                <strong style={{ color: "#fff", fontWeight: 600 }}> {totalPeriods} periods</strong> across
-                <strong style={{ color: "#fff", fontWeight: 600 }}> {uniqueSubjects} subject{uniqueSubjects === 1 ? "" : "s"}</strong>.
-                Tap <strong style={{ color: "#fff", fontWeight: 600 }}>Save Timetable</strong> to publish.
+                <strong style={{ color: "#fff", fontWeight: 400 }}>All 6 days configured</strong> with
+                <strong style={{ color: "#fff", fontWeight: 400 }}> {totalPeriods} periods</strong> across
+                <strong style={{ color: "#fff", fontWeight: 400 }}> {uniqueSubjects} subject{uniqueSubjects === 1 ? "" : "s"}</strong>.
+                Tap <strong style={{ color: "#fff", fontWeight: 400 }}>Save Timetable</strong> to publish.
               </>
             )}
           </div>
@@ -510,8 +510,8 @@ const TimetableSetupMobile = ({
               { val: totalPeriods === 0 ? "Empty" : workingDays < 6 ? "Partial" : "Ready", label: "Status", color: totalPeriods === 0 ? "#FF6961" : workingDays < 6 ? "#FFCC00" : "#34C759" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-3 px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[20px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[20px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>

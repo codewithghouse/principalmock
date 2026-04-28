@@ -500,11 +500,11 @@ const RiskStudents = () => {
 
     return (
       <div data-sfpro className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
         {/* Page Head */}
         <div className="px-5 pt-4">
-          <div className="text-[28px] font-semibold mb-1" style={{ color: T1, letterSpacing: "-0.7px" }}>Risk Students</div>
+          <div className="text-[28px] font-normal mb-1" style={{ color: T1, letterSpacing: "-0.7px" }}>Risk Students</div>
           <div className="text-[12px] font-normal" style={{ color: T3 }}>Monitor and intervene with at-risk students</div>
         </div>
 
@@ -528,17 +528,17 @@ const RiskStudents = () => {
                 <AlertTriangle className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
-                <div className="text-[28px] font-semibold leading-none text-white" style={{ letterSpacing: "-1px" }}>{loading ? "—" : riskStudents.length}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
+                <div className="text-[28px] font-normal leading-none text-white" style={{ letterSpacing: "-1px" }}>{loading ? "—" : riskStudents.length}</div>
               </div>
             </div>
-            <div className="flex items-center gap-[4px] px-[12px] py-[8px] rounded-full text-[12px] font-semibold text-white"
+            <div className="flex items-center gap-[4px] px-[12px] py-[8px] rounded-full text-[12px] font-normal text-white"
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)", WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}>
               <Sparkles className="w-[11px] h-[11px] text-white" strokeWidth={2.5} />
               Needs Action
             </div>
           </div>
-          <div className="flex items-center gap-1 mt-1 text-[12px] font-semibold relative z-10" style={{ color: "rgba(255,255,255,0.65)" }}>
+          <div className="flex items-center gap-1 mt-1 text-[12px] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.65)" }}>
             <span className="mr-[2px]">{newThisWeek >= 0 ? `${newThisWeek} new` : "0"} this week</span>
             <span>· Monitoring Active</span>
           </div>
@@ -561,9 +561,9 @@ const RiskStudents = () => {
                 style={{ background: iconBg, border: `0.5px solid ${iconBorder}` }}>
                 <Icon className="w-[14px] h-[14px]" style={{ color: iconColor }} strokeWidth={2.4} />
               </div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style={{ color: T4 }}>{label}</div>
-              <div className="text-[28px] font-semibold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{loading ? "—" : val}</div>
-              <div className="text-[12px] font-medium truncate" style={{ color: subColor }}>{sub}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-2" style={{ color: T4 }}>{label}</div>
+              <div className="text-[28px] font-normal leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{loading ? "—" : val}</div>
+              <div className="text-[12px] font-normal truncate" style={{ color: subColor }}>{sub}</div>
             </button>
           ))}
         </div>
@@ -579,7 +579,7 @@ const RiskStudents = () => {
             const active = filterTab === key;
             return (
               <button key={key} onClick={() => setFilterTab(key)}
-                className="px-4 py-[8px] rounded-[13px] text-[12px] font-semibold whitespace-nowrap flex-shrink-0 active:scale-[0.94] transition-transform"
+                className="px-4 py-[8px] rounded-[13px] text-[12px] font-normal whitespace-nowrap flex-shrink-0 active:scale-[0.94] transition-transform"
                 style={{
                   background: active ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                   color: active ? "#fff" : T3,
@@ -594,7 +594,7 @@ const RiskStudents = () => {
         </div>
 
         {/* Section label */}
-        <div className="px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
+        <div className="px-5 pt-4 text-[12px] font-normal uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
           <span>Student Risk Profiles</span>
           <span className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
         </div>
@@ -603,7 +603,7 @@ const RiskStudents = () => {
         {loading ? (
           <div className="flex flex-col items-center gap-3 py-10">
             <Loader2 className="w-10 h-10 animate-spin" style={{ color: B1 }} />
-            <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: T4 }}>Analyzing Student Risk Data…</p>
+            <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: T4 }}>Analyzing Student Risk Data…</p>
           </div>
         ) : filtered.length === 0 ? (
           <div className="mx-5 mt-3 bg-white rounded-[24px] py-10 flex flex-col items-center gap-[12px]"
@@ -612,7 +612,7 @@ const RiskStudents = () => {
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
               <ShieldAlert className="w-7 h-7" style={{ color: GREEN }} strokeWidth={2.2} />
             </div>
-            <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>
+            <div className="text-[14px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>
               {filterTab === "All" ? "No at-risk students detected" : `No ${filterTab.toLowerCase()} students`}
             </div>
             <div className="text-[12px] text-center max-w-[220px] font-normal leading-[1.55]" style={{ color: T4 }}>
@@ -634,19 +634,19 @@ const RiskStudents = () => {
                   onClick={() => setSelectedStudent(s)}
                   className="w-full flex items-start gap-[12px] pl-[24px] pr-[16px] pt-[16px] pb-[16px] text-left active:bg-[#F5F5F7] transition-colors"
                   style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                  <div className="w-12 h-12 rounded-[15px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+                  <div className="w-12 h-12 rounded-[15px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
                     style={{ background: theme.avBg, boxShadow: theme.avShadow }}>
                     {initials}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <div className="text-[16px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{s.name}</div>
-                      <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
+                      <div className="text-[16px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{s.name}</div>
+                      <div className="px-[12px] py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em]"
                         style={{ background: theme.badgeBg, color: theme.badgeColor, boxShadow: theme.badgeShadow }}>
                         {s.riskLevel}
                       </div>
                     </div>
-                    <div className="flex items-center gap-[4px] text-[12px] font-medium" style={{ color: T3 }}>
+                    <div className="flex items-center gap-[4px] text-[12px] font-normal" style={{ color: T3 }}>
                       <Users className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       {s.className || "—"}
                       {s.attPct !== null && ` · Att: ${s.attPct}%`}
@@ -660,40 +660,40 @@ const RiskStudents = () => {
                 <div className="grid grid-cols-2">
                   <div className="px-[16px] py-[12px] flex flex-col gap-1"
                     style={{ borderRight: `0.5px solid ${SEP}`, borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Level</div>
-                    <div className="flex items-center gap-[4px] text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Level</div>
+                    <div className="flex items-center gap-[4px] text-[13px] font-normal" style={{ color: T1, letterSpacing: "-0.1px" }}>
                       <span className="w-[7px] h-[7px] rounded-full animate-pulse" style={{ background: theme.dotColor, boxShadow: `0 0 0 2.5px ${theme.dotRing}` }} />
                       {s.riskLevel === "CRITICAL" ? "Critical" : s.riskLevel === "WARNING" ? "Warning" : "Monitoring"}
                     </div>
                   </div>
                   <div className="px-[16px] py-[12px] flex flex-col gap-1" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Days Flagged</div>
-                    <div className="flex items-center gap-[4px] text-[14px] font-semibold" style={{ color: ORANGE }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Days Flagged</div>
+                    <div className="flex items-center gap-[4px] text-[14px] font-normal" style={{ color: ORANGE }}>
                       <Loader2 className="w-3 h-3" style={{ display: "none" }} />
                       <CalendarPlus className="w-[12px] h-[12px]" strokeWidth={2.4} />
                       {s.daysFlagged > 0 ? `${s.daysFlagged} day${s.daysFlagged === 1 ? "" : "s"}` : "Today"}
                     </div>
                   </div>
                   <div className="px-[16px] py-[12px] flex flex-col gap-1" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Factors</div>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Factors</div>
                     <div className="flex flex-wrap gap-1">
                       {s.riskFactors.slice(0, 2).map((f, i) => (
-                        <span key={i} className="inline-flex items-center px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+                        <span key={i} className="inline-flex items-center px-[8px] py-[4px] rounded-full text-[12px] font-normal"
                           style={{ background: "rgba(255,59,48,0.09)", color: RED, border: "0.5px solid rgba(255,59,48,0.20)" }}>
                           {f}
                         </span>
                       ))}
                       {s.riskFactors.length > 2 && (
-                        <span className="text-[12px] font-semibold" style={{ color: T3 }}>+{s.riskFactors.length - 2}</span>
+                        <span className="text-[12px] font-normal" style={{ color: T3 }}>+{s.riskFactors.length - 2}</span>
                       )}
                     </div>
                   </div>
                   <div className="px-[16px] py-[12px] flex flex-col gap-1">
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned To</div>
-                    <div className="flex items-center gap-[4px] text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned To</div>
+                    <div className="flex items-center gap-[4px] text-[13px] font-normal" style={{ color: T1, letterSpacing: "-0.1px" }}>
                       {s.assignedTo && s.assignedTo !== "—" ? (
                         <>
-                          <span className="w-[22px] h-[22px] rounded-[7px] flex items-center justify-center text-[12px] font-semibold text-white"
+                          <span className="w-[22px] h-[22px] rounded-[7px] flex items-center justify-center text-[12px] font-normal text-white"
                             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})` }}>
                             {getInitials(s.assignedTo)}
                           </span>
@@ -709,8 +709,8 @@ const RiskStudents = () => {
                 {/* Score strip */}
                 <div className="flex">
                   <div className="flex-1 px-[16px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>AVG Score</div>
-                    <div className="text-[22px] font-semibold leading-none mb-1" style={{ color: s.avgScore != null && s.avgScore < 40 ? RED : s.avgScore != null && s.avgScore < 55 ? ORANGE : GREEN_D, letterSpacing: "-0.5px" }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>AVG Score</div>
+                    <div className="text-[22px] font-normal leading-none mb-1" style={{ color: s.avgScore != null && s.avgScore < 40 ? RED : s.avgScore != null && s.avgScore < 55 ? ORANGE : GREEN_D, letterSpacing: "-0.5px" }}>
                       {s.avgScore != null ? `${s.avgScore}%` : "—"}
                     </div>
                     <div className="h-1 rounded-[2px] overflow-hidden" style={{ background: BG2 }}>
@@ -718,8 +718,8 @@ const RiskStudents = () => {
                     </div>
                   </div>
                   <div className="flex-1 px-[16px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Attendance</div>
-                    <div className="text-[22px] font-semibold leading-none mb-1" style={{ color: s.attPct != null && s.attPct >= 85 ? GREEN_D : s.attPct != null && s.attPct >= 70 ? ORANGE : RED, letterSpacing: "-0.5px" }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Attendance</div>
+                    <div className="text-[22px] font-normal leading-none mb-1" style={{ color: s.attPct != null && s.attPct >= 85 ? GREEN_D : s.attPct != null && s.attPct >= 70 ? ORANGE : RED, letterSpacing: "-0.5px" }}>
                       {s.attPct != null ? `${s.attPct}%` : "—"}
                     </div>
                     <div className="h-1 rounded-[2px] overflow-hidden" style={{ background: BG2 }}>
@@ -727,8 +727,8 @@ const RiskStudents = () => {
                     </div>
                   </div>
                   <div className="flex-1 px-[16px] py-3">
-                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Last Action</div>
-                    <div className="text-[13px] font-semibold leading-tight mb-1 truncate" style={{ color: s.lastAction && s.lastAction !== "—" ? T1 : T3, letterSpacing: "-0.1px" }}>
+                    <div className="text-[12px] font-normal uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Last Action</div>
+                    <div className="text-[13px] font-normal leading-tight mb-1 truncate" style={{ color: s.lastAction && s.lastAction !== "—" ? T1 : T3, letterSpacing: "-0.1px" }}>
                       {s.lastAction && s.lastAction !== "—" ? s.lastAction : "None yet"}
                     </div>
                     <div className="h-1 rounded-[2px]" style={{ background: BG2 }} />
@@ -738,20 +738,20 @@ const RiskStudents = () => {
                 {/* Action buttons */}
                 <div className="flex gap-2 px-4 py-[12px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                   <button onClick={() => setMeetingStudent(s)}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white active:scale-[0.95] transition-transform relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                     <CalendarPlus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
                     <span className="relative z-10">Meet</span>
                   </button>
                   <button onClick={() => setSelectedStudent(s)}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform"
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white active:scale-[0.95] transition-transform"
                     style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <ArrowRight className="w-[13px] h-[13px]" strokeWidth={2.3} />
                     View Action
                   </button>
                   <button onClick={() => navigate("/parent-communication")}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold active:scale-[0.95] transition-transform bg-white"
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-normal active:scale-[0.95] transition-transform bg-white"
                     style={{ border: "0.5px solid rgba(10,132,255,0.16)", color: "#3A3A3C", boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     Notify
@@ -780,17 +780,17 @@ const RiskStudents = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
               </div>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
             </div>
             <p className="text-[13px] leading-[1.72] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.daysFlagged} day{topStudent.daysFlagged === 1 ? "" : "s"}</strong>.
-              {topStudent.avgScore != null && topStudent.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.avgScore}%</strong> is significantly below the passing threshold.</>}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudent.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudent.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudent.daysFlagged} day{topStudent.daysFlagged === 1 ? "" : "s"}</strong>.
+              {topStudent.avgScore != null && topStudent.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudent.avgScore}%</strong> is significantly below the passing threshold.</>}
               {topStudent.attPct != null && <> Attendance {topStudent.attPct >= 85 ? "remains strong" : "needs improvement"} at {topStudent.attPct}%.</>}
-              {topStudent.assignedTo && topStudent.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.assignedTo}</strong> recommended.</>}
+              {topStudent.assignedTo && topStudent.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudent.assignedTo}</strong> recommended.</>}
             </p>
             <div className="flex items-center gap-2 mt-[16px] pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full" style={{ background: "#7CBBFF" }} />
-              <span className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
         )}
@@ -799,7 +799,7 @@ const RiskStudents = () => {
         {!loading && topStudent && (
           <div className="mx-5 mt-3 bg-white rounded-[22px] px-[16px] py-[16px]"
             style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
-            <div className="text-[15px] font-semibold mb-[16px]" style={{ color: T1, letterSpacing: "-0.2px" }}>Intervention Timeline</div>
+            <div className="text-[15px] font-normal mb-[16px]" style={{ color: T1, letterSpacing: "-0.2px" }}>Intervention Timeline</div>
 
             {[
               { color: RED,    ring: "rgba(255,59,48,0.20)",  action: `Student flagged as ${topStudent.riskLevel.charAt(0) + topStudent.riskLevel.slice(1).toLowerCase()}`, date: `${topStudent.daysFlagged || 0} days ago · Auto-detected`, connector: true },
@@ -812,11 +812,11 @@ const RiskStudents = () => {
                   {row.connector && <div className="w-[1.5px] flex-1 min-h-[22px] mt-[4px]" style={{ background: `linear-gradient(180deg, ${row.color}55, rgba(10,132,255,0.10))` }} />}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[13px] font-semibold leading-tight mb-[2px]"
+                  <div className="text-[13px] font-normal leading-tight mb-[2px]"
                     style={{ color: row.muted ? T4 : T1, letterSpacing: "-0.1px", fontWeight: row.muted ? 600 : 700 }}>
                     {row.action}
                   </div>
-                  <div className="text-[12px] font-semibold" style={{ color: T4 }}>{row.date}</div>
+                  <div className="text-[12px] font-normal" style={{ color: T4 }}>{row.date}</div>
                 </div>
               </div>
             ))}
@@ -832,7 +832,7 @@ const RiskStudents = () => {
                 style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
                 <Sparkles className="w-4 h-4" style={{ color: B1 }} strokeWidth={2.3} />
               </div>
-              <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
+              <div className="text-[14px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -847,8 +847,8 @@ const RiskStudents = () => {
                     <Icon className="w-[13px] h-[13px] text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[13px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
-                    <div className="text-[12px] font-medium mt-[2px] truncate" style={{ color: T3 }}>{sub}</div>
+                    <div className="text-[13px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
+                    <div className="text-[12px] font-normal mt-[2px] truncate" style={{ color: T3 }}>{sub}</div>
                   </div>
                   <ChevronRight className="w-[13px] h-[13px]" style={{ color: T4 }} strokeWidth={2.5} />
                 </button>
@@ -906,7 +906,7 @@ const RiskStudents = () => {
   // ── Render ───────────────────────────────────────────────────────────────────
   return (
     <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center gap-4 pt-2 pb-5">
@@ -915,7 +915,7 @@ const RiskStudents = () => {
           <AlertTriangle className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Risk Students</div>
+          <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Risk Students</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>Monitor and intervene with at-risk students</div>
         </div>
       </div>
@@ -935,20 +935,20 @@ const RiskStudents = () => {
               <AlertTriangle className="w-7 h-7 text-white animate-pulse" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : riskStudents.length}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>students flagged</span>
+                <span className="text-[28px] font-normal leading-none tracking-tight">{loading ? "—" : riskStudents.length}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>students flagged</span>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-semibold"
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-normal"
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)" }}>
               <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.4} />
               Needs Action
             </div>
-            <div className="flex items-center gap-2 text-[12px] font-semibold" style={{ color: "rgba(255,255,255,0.82)" }}>
+            <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: "rgba(255,255,255,0.82)" }}>
               <UserPlus className="w-[14px] h-[14px]" strokeWidth={2.4} />
               {newThisWeek} new this week
             </div>
@@ -977,7 +977,7 @@ const RiskStudents = () => {
               }}
             >
               <div className="flex items-start justify-between mb-3">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "#A1A1A6" }}>
+                <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "#A1A1A6" }}>
                   {label}
                 </span>
                 <div
@@ -988,12 +988,12 @@ const RiskStudents = () => {
                 </div>
               </div>
               <p
-                className="text-[28px] font-semibold tracking-tight leading-none mb-2"
+                className="text-[28px] font-normal tracking-tight leading-none mb-2"
                 style={{ color: valColor, letterSpacing: "-1px", fontFeatureSettings: "'tnum' 1" }}
               >
                 {loading ? "—" : val}
               </p>
-              <p className="text-[12px] font-medium" style={{ color: "#A1A1A6" }}>{sub}</p>
+              <p className="text-[12px] font-normal" style={{ color: "#A1A1A6" }}>{sub}</p>
             </button>
           );
         })}
@@ -1008,7 +1008,7 @@ const RiskStudents = () => {
             <button
               key={tab}
               onClick={() => setFilterTab(tab)}
-              className="h-10 px-5 rounded-[13px] text-[13px] font-semibold transition-transform hover:scale-[1.02]"
+              className="h-10 px-5 rounded-[13px] text-[13px] font-normal transition-transform hover:scale-[1.02]"
               style={{
                 background: active ? `linear-gradient(135deg, ${dB1}, ${dB2})` : "#FFFFFF",
                 color: active ? "#fff" : dT3,
@@ -1027,8 +1027,8 @@ const RiskStudents = () => {
           style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
           <Users className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Student Risk Profiles</div>
-        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+        <div className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Student Risk Profiles</div>
+        <span className="text-[12px] font-normal px-3 py-1 rounded-full"
           style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length}
         </span>
@@ -1038,7 +1038,7 @@ const RiskStudents = () => {
       {loading ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <Loader2 className="w-10 h-10 animate-spin" style={{ color: dB1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Analyzing Student Risk Data…</p>
+          <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: dT4 }}>Analyzing Student Risk Data…</p>
         </div>
       ) : filtered.length === 0 ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
@@ -1046,7 +1046,7 @@ const RiskStudents = () => {
             style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
             <ShieldAlert className="w-8 h-8" style={{ color: dGREEN }} strokeWidth={2.2} />
           </div>
-          <p className="text-[14px] font-semibold" style={{ color: dT1 }}>
+          <p className="text-[14px] font-normal" style={{ color: dT1 }}>
             {filterTab === "All" ? "No at-risk students detected" : `No ${filterTab.toLowerCase()} students`}
           </p>
           <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>
@@ -1066,19 +1066,19 @@ const RiskStudents = () => {
                 <button onClick={() => setSelectedStudent(s)}
                   className="w-full flex items-center gap-4 pl-6 pr-5 pt-5 pb-4 text-left hover:bg-[#F8FAFF] transition-colors"
                   style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
+                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
                     style={{ background: theme.grad, boxShadow: theme.shadow }}>
                     {getInitialsD(s.name)}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <div className="text-[15px] font-semibold truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{s.name}</div>
-                      <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em] text-white"
+                      <div className="text-[15px] font-normal truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{s.name}</div>
+                      <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal uppercase tracking-[0.08em] text-white"
                         style={{ background: theme.grad, boxShadow: `0 2px 6px ${theme.color}44` }}>
                         {s.riskLevel}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <div className="flex items-center gap-1.5 text-[12px] font-normal" style={{ color: dT3 }}>
                       <Users className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       {s.className || "—"}
                       {s.attPct !== null && ` · Att: ${s.attPct}%`}
@@ -1098,8 +1098,8 @@ const RiskStudents = () => {
                   ].map((cell, i, arr) => (
                     <div key={cell.label} className="px-4 py-3"
                       style={{ borderRight: i < arr.length - 1 ? `0.5px solid ${dSEP}` : undefined, borderBottom: `0.5px solid ${dSEP}` }}>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[4px]" style={{ color: dT4 }}>{cell.label}</div>
-                      <div className="text-[14px] font-semibold truncate" style={{ color: cell.color, letterSpacing: "-0.1px" }}>{cell.val}</div>
+                      <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-[4px]" style={{ color: dT4 }}>{cell.label}</div>
+                      <div className="text-[14px] font-normal truncate" style={{ color: cell.color, letterSpacing: "-0.1px" }}>{cell.val}</div>
                     </div>
                   ))}
                 </div>
@@ -1108,13 +1108,13 @@ const RiskStudents = () => {
                 {s.riskFactors.length > 0 && (
                   <div className="px-6 py-3 flex flex-wrap gap-1.5" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                     {s.riskFactors.slice(0, 4).map((f, i) => (
-                      <span key={i} className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+                      <span key={i} className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-normal"
                         style={{ background: dRED_S, color: dRED, border: `0.5px solid ${dRED_B}` }}>
                         {f}
                       </span>
                     ))}
                     {s.riskFactors.length > 4 && (
-                      <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+                      <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-normal"
                         style={{ background: dBG2, color: dT3 }}>
                         +{s.riskFactors.length - 4} more
                       </span>
@@ -1131,8 +1131,8 @@ const RiskStudents = () => {
                   ].map((cell, i, arr) => (
                     <div key={cell.label} className="px-4 py-3"
                       style={{ borderRight: i < arr.length - 1 ? `0.5px solid ${dSEP}` : undefined, borderBottom: `0.5px solid ${dSEP}` }}>
-                      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
-                      <div className={`${cell.isText ? "text-[13px]" : "text-[20px]"} font-semibold leading-none ${cell.isText ? "mb-0 truncate" : "mb-1.5"}`}
+                      <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
+                      <div className={`${cell.isText ? "text-[13px]" : "text-[20px]"} font-normal leading-none ${cell.isText ? "mb-0 truncate" : "mb-1.5"}`}
                         style={{ color: cell.color, letterSpacing: "-0.3px" }}>{cell.val}</div>
                       {!cell.isText && (
                         <div className="h-1 rounded-[2px]" style={{ background: dBG2 }}>
@@ -1146,20 +1146,20 @@ const RiskStudents = () => {
                 {/* Actions */}
                 <div className="flex gap-2 p-4">
                   <button onClick={() => setMeetingStudent(s)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: dSH_BTN }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
                     <CalendarPlus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
                     <span className="relative z-10">Schedule Meet</span>
                   </button>
                   <button onClick={() => setSelectedStudent(s)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02]"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal text-white transition-transform hover:scale-[1.02]"
                     style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)" }}>
                     <ArrowRight className="w-[13px] h-[13px]" strokeWidth={2.3} />
                     View Intervention
                   </button>
                   <button onClick={() => navigate("/parent-communication")}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal bg-white transition-transform hover:scale-[1.02]"
                     style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
                     <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     Notify Parent
@@ -1188,17 +1188,17 @@ const RiskStudents = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
             </div>
             <p className="text-[14px] leading-[1.75] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.88)" }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.daysFlagged} day{topStudentD.daysFlagged === 1 ? "" : "s"}</strong>.
-              {topStudentD.avgScore != null && topStudentD.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.avgScore}%</strong> is significantly below the passing threshold.</>}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudentD.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudentD.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudentD.daysFlagged} day{topStudentD.daysFlagged === 1 ? "" : "s"}</strong>.
+              {topStudentD.avgScore != null && topStudentD.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudentD.avgScore}%</strong> is significantly below the passing threshold.</>}
               {topStudentD.attPct != null && <> Attendance {topStudentD.attPct >= 85 ? "remains strong" : "needs improvement"} at {topStudentD.attPct}%.</>}
-              {topStudentD.assignedTo && topStudentD.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.assignedTo}</strong> recommended.</>}
+              {topStudentD.assignedTo && topStudentD.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 400 }}>{topStudentD.assignedTo}</strong> recommended.</>}
             </p>
             <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
 
@@ -1210,7 +1210,7 @@ const RiskStudents = () => {
                 style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
                 <Sparkles className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
               </div>
-              <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
+              <div className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
             </div>
             <div className="flex flex-col gap-2">
               {[
@@ -1225,8 +1225,8 @@ const RiskStudents = () => {
                     <Icon className="w-[14px] h-[14px] text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[13px] font-semibold truncate" style={{ color: dT1, letterSpacing: "-0.1px" }}>{label}</div>
-                    <div className="text-[12px] font-medium mt-1 truncate" style={{ color: dT3 }}>{sub}</div>
+                    <div className="text-[13px] font-normal truncate" style={{ color: dT1, letterSpacing: "-0.1px" }}>{label}</div>
+                    <div className="text-[12px] font-normal mt-1 truncate" style={{ color: dT3 }}>{sub}</div>
                   </div>
                   <ChevronRight className="w-[14px] h-[14px]" style={{ color: dT4 }} strokeWidth={2.5} />
                 </button>

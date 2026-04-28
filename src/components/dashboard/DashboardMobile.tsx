@@ -121,20 +121,20 @@ const DashboardMobile = ({
             <ShieldCheck className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.1} />
           </div>
           <div>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Academic Health Index</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Academic Health Index</div>
             <div className="flex items-baseline gap-1">
-              <div className="text-[28px] font-semibold leading-none text-white" style={{ letterSpacing: "-1px" }}>{displayHealth}</div>
-              <div className="text-[13px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>/100</div>
+              <div className="text-[28px] font-normal leading-none text-white" style={{ letterSpacing: "-1px" }}>{displayHealth}</div>
+              <div className="text-[13px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>/100</div>
             </div>
           </div>
         </div>
         <div className="text-right relative z-10">
-          <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-1" style={{ color: "rgba(255,255,255,0.42)" }}>Overall Status</div>
-          <div className="text-[18px] font-semibold text-white" style={{ letterSpacing: "-0.3px" }}>{healthStatus(healthIndex)}</div>
+          <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-1" style={{ color: "rgba(255,255,255,0.42)" }}>Overall Status</div>
+          <div className="text-[18px] font-normal text-white" style={{ letterSpacing: "-0.3px" }}>{healthStatus(healthIndex)}</div>
           {healthDelta !== null && (
             <div className="flex items-center gap-1 justify-end mt-[2px]" style={{ color: healthDelta >= 0 ? "#34C759" : "#FF6961" }}>
               {healthDelta >= 0 ? <TrendingUp className="w-[11px] h-[11px]" /> : <TrendingDown className="w-[11px] h-[11px]" />}
-              <span className="text-[12px] font-semibold">{Math.abs(healthDelta)}% vs 7d</span>
+              <span className="text-[12px] font-normal">{Math.abs(healthDelta)}% vs 7d</span>
             </div>
           )}
         </div>
@@ -201,13 +201,13 @@ const DashboardMobile = ({
             style={{ background: iconBg, boxShadow: iconShadow }}>
             <Icon className="w-[22px] h-[22px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px] leading-[1.3] whitespace-pre-line relative z-10" style={{ color: T4 }}>
+          <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-[8px] leading-[1.3] whitespace-pre-line relative z-10" style={{ color: T4 }}>
             {label}
           </span>
-          <div className="text-[28px] font-semibold leading-none mb-[8px] relative z-10" style={{ color: valColor, letterSpacing: "-1px" }}>
+          <div className="text-[28px] font-normal leading-none mb-[8px] relative z-10" style={{ color: valColor, letterSpacing: "-1px" }}>
             {String(value)}
           </div>
-          <div className="text-[12px] font-semibold truncate relative z-10" style={{ color: subColor }}>{sub}</div>
+          <div className="text-[12px] font-normal truncate relative z-10" style={{ color: subColor }}>{sub}</div>
           <Decor className="absolute bottom-[12px] right-[12px] w-12 h-12 pointer-events-none" style={{ color: decorColor, opacity: decorOpacity }} strokeWidth={2} />
         </button>
       ))}
@@ -215,7 +215,7 @@ const DashboardMobile = ({
   );
 
   const SectionLabel = ({ text }: { text: string }) => (
-    <div className="px-5 pt-[16px] text-[12px] font-semibold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
+    <div className="px-5 pt-[16px] text-[12px] font-normal uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
       <span>{text}</span>
       <span className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
     </div>
@@ -236,9 +236,9 @@ const DashboardMobile = ({
       <SectionLabel text="Risk Alerts" />
       <SectionCard onClick={() => navigate("/risk-students")}>
         <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</div>
+          <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</div>
           <button onClick={() => navigate("/risk-students")}
-            className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
+            className="text-[12px] font-normal flex items-center gap-[4px] active:opacity-70"
             style={{ color: B1 }}>
             View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
           </button>
@@ -249,7 +249,7 @@ const DashboardMobile = ({
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 6px rgba(52,199,89,0.05)" }}>
               <CheckCircle2 className="w-5 h-5" style={{ color: GREEN }} strokeWidth={2.2} />
             </div>
-            <div className="text-[13px] font-semibold" style={{ color: T3 }}>No active risk alerts</div>
+            <div className="text-[13px] font-normal" style={{ color: T3 }}>No active risk alerts</div>
           </div>
         ) : (
           riskAlerts.map((a, i, arr) => {
@@ -265,10 +265,10 @@ const DashboardMobile = ({
                     boxShadow: critical ? "0 0 0 3px rgba(255,59,48,0.18)" : "0 0 0 3px rgba(255,149,0,0.16)",
                   }} />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[14px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 3 }}>{a.name}</div>
-                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>{a.detail}</div>
+                  <div className="text-[14px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 3 }}>{a.name}</div>
+                  <div className="text-[12px] font-normal truncate" style={{ color: T3 }}>{a.detail}</div>
                 </div>
-                <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white uppercase tracking-[0.08em] shrink-0"
+                <div className="px-[12px] py-[4px] rounded-full text-[12px] font-normal text-white uppercase tracking-[0.08em] shrink-0"
                   style={{
                     background: critical ? RED : ORANGE,
                     boxShadow: critical ? "0 2px 8px rgba(255,59,48,0.28)" : "0 2px 8px rgba(255,149,0,0.26)",
@@ -289,8 +289,8 @@ const DashboardMobile = ({
         onClick={() => navigate("/attendance")}
         className="w-full px-[16px] pt-4 pb-3 flex items-center justify-between active:opacity-80"
         style={{ borderBottom: `0.5px solid ${SEP}` }}>
-        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Attendance Trend</div>
-        <div className="text-[12px] font-semibold" style={{ color: T4 }}>Last 30 days</div>
+        <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Attendance Trend</div>
+        <div className="text-[12px] font-normal" style={{ color: T4 }}>Last 30 days</div>
       </button>
       <div className="p-[16px]">
         {trendData.length === 0 ? (
@@ -299,7 +299,7 @@ const DashboardMobile = ({
               style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
               <CalendarCheck className="w-5 h-5" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
             </div>
-            <div className="text-[12px] font-medium" style={{ color: T4 }}>No attendance data yet</div>
+            <div className="text-[12px] font-normal" style={{ color: T4 }}>No attendance data yet</div>
           </div>
         ) : (
           <div style={{ height: 110 }}>
@@ -316,8 +316,8 @@ const DashboardMobile = ({
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="0" vertical={false} stroke="rgba(10,132,255,0.06)" />
-                <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 600 }} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 600 }} domain={[0, 100]} width={30} />
+                <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 400 }} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 400 }} domain={[0, 100]} width={30} />
                 <Tooltip
                   contentStyle={{ borderRadius: 12, border: "0.5px solid rgba(10,132,255,0.15)", boxShadow: "0 4px 20px rgba(10,132,255,0.12)", fontSize: 11, padding: "6px 10px" }}
                   formatter={(val: any) => [`${val}%`, "Attendance"]}
@@ -335,9 +335,9 @@ const DashboardMobile = ({
   const Heatmap = (
     <SectionCard onClick={() => navigate("/academics")}>
       <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Class Performance</div>
+        <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Class Performance</div>
         <button onClick={() => navigate("/academics")}
-          className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
+          className="text-[12px] font-normal flex items-center gap-[4px] active:opacity-70"
           style={{ color: B1 }}>
           Details <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
         </button>
@@ -345,11 +345,11 @@ const DashboardMobile = ({
       <div className="p-[16px]">
         {heatmapCells.length === 0 ? (
           <div className="flex flex-col items-center gap-[8px] py-6">
-            <div className="text-[12px] font-medium" style={{ color: T4 }}>No class data yet</div>
+            <div className="text-[12px] font-normal" style={{ color: T4 }}>No class data yet</div>
           </div>
         ) : (
           <>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[12px]" style={{ color: T4 }}>Institutional Grade</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.08em] mb-[12px]" style={{ color: T4 }}>Institutional Grade</div>
             <div className="flex gap-[12px] items-end overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
               {heatmapCells.map((c) => {
                 const grad = heatGradient(c.color);
@@ -361,22 +361,22 @@ const DashboardMobile = ({
                     <div className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center"
                       style={{ background: grad.bg, boxShadow: grad.shadow }}>
                       {c.avg !== null && (
-                        <span className="text-[13px] font-semibold text-white" style={{ letterSpacing: "-0.2px" }}>{c.avg}%</span>
+                        <span className="text-[13px] font-normal text-white" style={{ letterSpacing: "-0.2px" }}>{c.avg}%</span>
                       )}
                     </div>
-                    <span className="text-[12px] font-semibold tracking-[0.04em]" style={{ color: T3 }}>{c.cls}</span>
+                    <span className="text-[12px] font-normal tracking-[0.04em]" style={{ color: T3 }}>{c.cls}</span>
                   </button>
                 );
               })}
             </div>
             <div className="flex items-center gap-[16px] pt-3 mt-3" style={{ borderTop: `0.5px solid ${SEP}` }}>
-              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-normal" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: GREEN }} />Good (≥75%)
               </div>
-              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-normal" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: ORANGE }} />Average (55-74%)
               </div>
-              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-normal" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: RED }} />Weak (&lt;55%)
               </div>
             </div>
@@ -391,9 +391,9 @@ const DashboardMobile = ({
       <SectionLabel text="Faculty" />
       <SectionCard onClick={() => navigate("/teacher-performance")}>
         <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Teacher Performance</div>
+          <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Teacher Performance</div>
           <button onClick={() => navigate("/teacher-performance")}
-            className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
+            className="text-[12px] font-normal flex items-center gap-[4px] active:opacity-70"
             style={{ color: B1 }}>
             View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
           </button>
@@ -404,7 +404,7 @@ const DashboardMobile = ({
               style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
               <GraduationCap className="w-5 h-5" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
             </div>
-            <div className="text-[12px] font-medium" style={{ color: T4 }}>No teachers yet</div>
+            <div className="text-[12px] font-normal" style={{ color: T4 }}>No teachers yet</div>
           </div>
         ) : (
           teacherRows.map((t, i, arr) => {
@@ -414,15 +414,15 @@ const DashboardMobile = ({
                 onClick={(e) => { e.stopPropagation(); navigate("/teachers"); }}
                 className="w-full flex items-center gap-3 px-[16px] py-[12px] text-left active:bg-[#F5F5F7] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
-                <div className="w-10 h-10 rounded-[13px] flex items-center justify-center text-[13px] font-semibold text-white shrink-0"
+                <div className="w-10 h-10 rounded-[13px] flex items-center justify-center text-[13px] font-normal text-white shrink-0"
                   style={{ background: av.bg, boxShadow: av.shadow }}>
                   {t.ini}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[14px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 2 }}>{t.name}</div>
-                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>{t.subject}</div>
+                  <div className="text-[14px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 2 }}>{t.name}</div>
+                  <div className="text-[12px] font-normal truncate" style={{ color: T3 }}>{t.subject}</div>
                 </div>
-                <div className="flex items-center gap-1 text-[14px] font-semibold shrink-0" style={{ color: GOLD }}>
+                <div className="flex items-center gap-1 text-[14px] font-normal shrink-0" style={{ color: GOLD }}>
                   <Star className="w-[13px] h-[13px]" fill={GOLD} stroke={GOLD} />
                   {t.rating || "—"}
                 </div>
@@ -439,15 +439,15 @@ const DashboardMobile = ({
       <SectionLabel text="Communications" />
       <SectionCard onClick={() => navigate("/parent-communication")}>
         <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Urgent Communications</div>
+          <div className="text-[15px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Urgent Communications</div>
           {urgentComms.length === 0 ? (
-            <div className="px-[12px] py-1 rounded-full text-[12px] font-semibold"
+            <div className="px-[12px] py-1 rounded-full text-[12px] font-normal"
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, color: GREEN_D }}>
               All clear
             </div>
           ) : (
             <button onClick={() => navigate("/parent-communication")}
-              className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
+              className="text-[12px] font-normal flex items-center gap-[4px] active:opacity-70"
               style={{ color: B1 }}>
               View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
             </button>
@@ -459,7 +459,7 @@ const DashboardMobile = ({
               style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 8px rgba(10,132,255,0.04)" }}>
               <CheckCircle2 className="w-[22px] h-[22px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.1} />
             </div>
-            <div className="text-[13px] font-medium" style={{ color: T3 }}>No urgent messages</div>
+            <div className="text-[13px] font-normal" style={{ color: T3 }}>No urgent messages</div>
             <div className="text-[12px] font-normal text-center max-w-[200px] leading-[1.55]" style={{ color: T4 }}>
               All communication channels are clear.
             </div>
@@ -474,12 +474,12 @@ const DashboardMobile = ({
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
                 <div className="w-1 h-10 rounded-full shrink-0 mt-1" style={{ background: isHigh ? RED : ORANGE }} />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[13px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.1px", marginBottom: 2 }}>{c.title}</div>
-                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>
+                  <div className="text-[13px] font-normal truncate" style={{ color: T1, letterSpacing: "-0.1px", marginBottom: 2 }}>{c.title}</div>
+                  <div className="text-[12px] font-normal truncate" style={{ color: T3 }}>
                     {c.from}{c.time ? ` · ${c.time}` : ""}
                   </div>
                 </div>
-                <div className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold shrink-0 uppercase tracking-[0.06em]"
+                <div className="px-[8px] py-[4px] rounded-full text-[12px] font-normal shrink-0 uppercase tracking-[0.06em]"
                   style={{
                     background: isHigh ? "rgba(255,59,48,0.10)" : "rgba(255,149,0,0.10)",
                     color: isHigh ? RED : "#86310C",
@@ -502,9 +502,9 @@ const DashboardMobile = ({
     return (
       <div
         className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
         <div className="px-5 pt-4">
-          <div className="text-[24px] font-semibold" style={{ color: T1, letterSpacing: "-0.6px" }}>Analytics</div>
+          <div className="text-[24px] font-normal" style={{ color: T1, letterSpacing: "-0.6px" }}>Analytics</div>
           <div className="text-[12px] font-normal mt-[4px]" style={{ color: T3 }}>Attendance trends and class performance</div>
         </div>
         {Hero}
@@ -522,9 +522,9 @@ const DashboardMobile = ({
     return (
       <div
         className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
         <div className="px-5 pt-4">
-          <div className="text-[24px] font-semibold" style={{ color: T1, letterSpacing: "-0.6px" }}>Faculty</div>
+          <div className="text-[24px] font-normal" style={{ color: T1, letterSpacing: "-0.6px" }}>Faculty</div>
           <div className="text-[12px] font-normal mt-[4px]" style={{ color: T3 }}>Teacher performance &amp; ratings</div>
         </div>
         {TeachersCard}
@@ -532,8 +532,8 @@ const DashboardMobile = ({
           <button onClick={() => navigate("/teacher-leaderboard")}
             className="w-full flex items-center justify-between active:opacity-80">
             <div>
-              <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Full Leaderboard</div>
-              <div className="text-[12px] font-medium mt-[2px]" style={{ color: T3 }}>See ranked teacher scores</div>
+              <div className="text-[14px] font-normal" style={{ color: T1, letterSpacing: "-0.2px" }}>Full Leaderboard</div>
+              <div className="text-[12px] font-normal mt-[2px]" style={{ color: T3 }}>See ranked teacher scores</div>
             </div>
             <ChevronRight className="w-[16px] h-[16px]" style={{ color: B1 }} strokeWidth={2.5} />
           </button>
@@ -549,7 +549,7 @@ const DashboardMobile = ({
   return (
     <div
       className="animate-in fade-in duration-500 -mx-3 -mt-3"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
       {Hero}
       {StatGrid}
       {RiskAlerts}

@@ -159,10 +159,10 @@ const AcademicsMobile = ({
   // ── Loading state ────────────────────────────────────────────────────────
   if (loading) {
     return (
-      <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}
+      <div style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}
         className="pb-6 flex flex-col items-center justify-center py-10">
         <Loader2 className="w-8 h-8 animate-spin mb-3" style={{ color: B1 }} />
-        <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: T4 }}>
+        <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: T4 }}>
           Loading academic data…
         </p>
       </div>
@@ -170,11 +170,11 @@ const AcademicsMobile = ({
   }
 
   return (
-    <div className="pb-6" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
+    <div className="pb-6" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
 
       {/* ── Page Head ── */}
       <div className="px-5 pt-3">
-        <h1 className="text-[24px] font-semibold leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
+        <h1 className="text-[24px] font-normal leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
           Academic Performance
         </h1>
         <p className="text-[12px] font-normal mt-1" style={{ color: T3 }}>
@@ -197,26 +197,26 @@ const AcademicsMobile = ({
               <GraduationCap className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+              <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
                 General Score
               </div>
-              <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+              <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
                 {generalScore}%
               </div>
             </div>
           </div>
-          <div className="px-[12px] py-[8px] rounded-full text-[12px] font-semibold"
+          <div className="px-[12px] py-[8px] rounded-full text-[12px] font-normal"
             style={{ background: overall.bg, border: `0.5px solid ${overall.bdr}`, color: overall.color }}>
             {overall.label}
           </div>
         </div>
         <div className="flex items-center gap-[8px] relative z-10 flex-wrap">
-          <div className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-semibold"
+          <div className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-normal"
             style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.20)", color: "rgba(255,255,255,0.80)" }}>
             <div className="w-[6px] h-[6px] rounded-full" style={{ background: RED, boxShadow: `0 0 0 2px rgba(255,59,48,0.22)` }} />
             Weak Sections: {weakCount}
           </div>
-          <div className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-semibold"
+          <div className="flex items-center gap-[4px] px-3 py-[8px] rounded-full text-[12px] font-normal"
             style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.20)", color: "rgba(255,255,255,0.80)" }}>
             <div className="w-[6px] h-[6px] rounded-full" style={{ background: GREEN, boxShadow: `0 0 0 2px rgba(52,199,89,0.22)` }} />
             Strong: {strongCount}
@@ -233,10 +233,10 @@ const AcademicsMobile = ({
             style={{ background: "rgba(52,199,89,0.10)", border: "0.5px solid rgba(52,199,89,0.22)" }}>
             <CheckCircle className="w-[14px] h-[14px]" style={{ color: GREEN }} strokeWidth={2.5} />
           </div>
-          <div className="text-[20px] font-semibold leading-none tracking-[-0.5px]" style={{ color: gradeTotal > 0 ? GREEN : T4 }}>
+          <div className="text-[20px] font-normal leading-none tracking-[-0.5px]" style={{ color: gradeTotal > 0 ? GREEN : T4 }}>
             {gradeTotal > 0 ? topGrade : "—"}
           </div>
-          <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Top Grade</div>
+          <div className="text-[12px] font-normal uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Top Grade</div>
         </button>
 
         <button onClick={handleViewDetails} disabled={subjects.length === 0}
@@ -246,8 +246,8 @@ const AcademicsMobile = ({
             style={{ background: "rgba(255,149,0,0.12)", border: "0.5px solid rgba(255,149,0,0.22)" }}>
             <AlertTriangle className="w-[14px] h-[14px]" style={{ color: ORANGE }} strokeWidth={2.5} />
           </div>
-          <div className="text-[20px] font-semibold leading-none tracking-[-0.5px]" style={{ color: ORANGE }}>{weakCount}</div>
-          <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Weak Sec.</div>
+          <div className="text-[20px] font-normal leading-none tracking-[-0.5px]" style={{ color: ORANGE }}>{weakCount}</div>
+          <div className="text-[12px] font-normal uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Weak Sec.</div>
         </button>
 
         <button onClick={handleViewDetails} disabled={subjects.length === 0}
@@ -257,15 +257,15 @@ const AcademicsMobile = ({
             style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
             <BarChart3 className="w-[14px] h-[14px]" style={{ color: B1 }} strokeWidth={2.5} />
           </div>
-          <div className="text-[20px] font-semibold leading-none tracking-[-0.5px]" style={{ color: B1 }}>
+          <div className="text-[20px] font-normal leading-none tracking-[-0.5px]" style={{ color: B1 }}>
             {curriculumAvg > 0 ? `${curriculumAvg}%` : "—"}
           </div>
-          <div className="text-[12px] font-semibold uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Curriculum</div>
+          <div className="text-[12px] font-normal uppercase tracking-[0.08em] text-center" style={{ color: T4 }}>Curriculum</div>
         </button>
       </div>
 
       {/* ── Section label: Grade Distribution ── */}
-      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
         Grade Distribution
         <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
       </div>
@@ -276,10 +276,10 @@ const AcademicsMobile = ({
         <div className="absolute -top-8 -right-6 w-[130px] h-[130px] rounded-full pointer-events-none"
           style={{ background: "radial-gradient(circle, rgba(10,132,255,0.05) 0%, transparent 70%)" }} />
         <div className="flex items-center justify-between mb-[16px] relative z-10">
-          <div className="text-[15px] font-semibold tracking-[-0.2px]" style={{ color: T1 }}>
+          <div className="text-[15px] font-normal tracking-[-0.2px]" style={{ color: T1 }}>
             Grade Distribution — Latest Exam
           </div>
-          <div className="px-[12px] py-1 rounded-full text-[12px] font-semibold"
+          <div className="px-[12px] py-1 rounded-full text-[12px] font-normal"
             style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
             Live
           </div>
@@ -302,10 +302,10 @@ const AcademicsMobile = ({
               )) : null}
             </svg>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-              <div className="text-[24px] font-semibold leading-none tracking-[-0.8px]" style={{ color: T1 }}>
+              <div className="text-[24px] font-normal leading-none tracking-[-0.8px]" style={{ color: T1 }}>
                 {generalScore}%
               </div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mt-[2px]" style={{ color: T4 }}>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em] mt-[2px]" style={{ color: T4 }}>
                 General
               </div>
             </div>
@@ -317,10 +317,10 @@ const AcademicsMobile = ({
               <div key={letter} className="flex items-center gap-2">
                 <div className="w-[10px] h-[10px] rounded-[3px] flex-shrink-0" style={{ background: GRADE_COLORS[letter] }} />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[12px] font-semibold tracking-[-0.1px]" style={{ color: T1 }}>{letter} Grade</div>
-                  <div className="text-[12px] font-medium" style={{ color: T4 }}>{GRADE_RANGES[letter]}</div>
+                  <div className="text-[12px] font-normal tracking-[-0.1px]" style={{ color: T1 }}>{letter} Grade</div>
+                  <div className="text-[12px] font-normal" style={{ color: T4 }}>{GRADE_RANGES[letter]}</div>
                 </div>
-                <div className="text-[13px] font-semibold tracking-[-0.1px]" style={{ color: GRADE_COLORS[letter] }}>
+                <div className="text-[13px] font-normal tracking-[-0.1px]" style={{ color: GRADE_COLORS[letter] }}>
                   {pct}%
                 </div>
               </div>
@@ -345,11 +345,11 @@ const AcademicsMobile = ({
                 : letter === "C" ? <AlertTriangle className="w-[14px] h-[14px]" style={{ color: GRADE_COLORS[letter] }} strokeWidth={2.5} />
                 : <XCircle className="w-[14px] h-[14px]" style={{ color: GRADE_COLORS[letter] }} strokeWidth={2.5} />}
             </div>
-            <div className="text-[24px] font-semibold leading-none tracking-[-0.6px] mb-[4px] relative" style={{ color: GRADE_COLORS[letter] }}>
+            <div className="text-[24px] font-normal leading-none tracking-[-0.6px] mb-[4px] relative" style={{ color: GRADE_COLORS[letter] }}>
               {letter}
             </div>
-            <div className="text-[12px] font-semibold mb-[4px]" style={{ color: T4 }}>{GRADE_RANGES[letter]}</div>
-            <div className="text-[12px] font-semibold" style={{ color: GRADE_SUB_COLORS[letter] }}>
+            <div className="text-[12px] font-normal mb-[4px]" style={{ color: T4 }}>{GRADE_RANGES[letter]}</div>
+            <div className="text-[12px] font-normal" style={{ color: GRADE_SUB_COLORS[letter] }}>
               {pct}% · {GRADE_SUBS[letter]}
             </div>
             <div className="h-1 rounded-[2px] mt-2 overflow-hidden" style={{ background: BG2 }}>
@@ -361,7 +361,7 @@ const AcademicsMobile = ({
       </div>
 
       {/* ── Section label: Curriculum Progress ── */}
-      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+      <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
         Curriculum Progress
         <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
       </div>
@@ -371,8 +371,8 @@ const AcademicsMobile = ({
         <div className="mx-5 mt-3 rounded-[24px] p-5 bg-white"
           style={{ boxShadow: SHADOW_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <div className="flex items-center justify-between mb-4">
-            <div className="text-[15px] font-semibold tracking-[-0.2px]" style={{ color: T1 }}>Curriculum Progress</div>
-            <div className="px-[12px] py-1 rounded-full text-[12px] font-semibold"
+            <div className="text-[15px] font-normal tracking-[-0.2px]" style={{ color: T1 }}>Curriculum Progress</div>
+            <div className="px-[12px] py-1 rounded-full text-[12px] font-normal"
               style={{ background: currChip.bg, color: currChip.color, border: `0.5px solid ${currChip.bdr}` }}>
               {currChip.label}
             </div>
@@ -391,9 +391,9 @@ const AcademicsMobile = ({
                       style={{ background: subjectIconGrad(row.subject) }}>
                       <GraduationCap className="w-3 h-3 text-white" strokeWidth={2.4} />
                     </div>
-                    <span className="text-[13px] font-semibold tracking-[-0.1px] truncate" style={{ color: T1 }}>{row.subject}</span>
+                    <span className="text-[13px] font-normal tracking-[-0.1px] truncate" style={{ color: T1 }}>{row.subject}</span>
                   </div>
-                  <span className="text-[14px] font-semibold tracking-[-0.2px] flex-shrink-0" style={{ color: pc.color }}>
+                  <span className="text-[14px] font-normal tracking-[-0.2px] flex-shrink-0" style={{ color: pc.color }}>
                     {pct}%
                   </span>
                 </div>
@@ -404,7 +404,7 @@ const AcademicsMobile = ({
                       style={{ background: "linear-gradient(90deg, rgba(255,255,255,0.22) 0%, transparent 100%)" }} />
                   </div>
                 </div>
-                <div className="text-[12px] font-medium mt-[4px]" style={{ color: T4 }}>{avgText}</div>
+                <div className="text-[12px] font-normal mt-[4px]" style={{ color: T4 }}>{avgText}</div>
               </button>
             );
           })}
@@ -413,21 +413,21 @@ const AcademicsMobile = ({
         <div className="mx-5 mt-3 rounded-[24px] p-8 bg-white text-center"
           style={{ boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <BarChart3 className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: T3 }}>No curriculum data</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: T3 }}>No curriculum data</p>
         </div>
       )}
 
       {/* ── Action Row ── */}
       <div className="flex gap-2 px-5 pt-3.5 flex-wrap">
         <button onClick={handleViewDetails} disabled={subjects.length === 0}
-          className="flex-1 min-w-[100px] h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white transition-transform active:scale-95 relative overflow-hidden disabled:opacity-60"
+          className="flex-1 min-w-[100px] h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal text-white transition-transform active:scale-95 relative overflow-hidden disabled:opacity-60"
           style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
           <TrendingUp className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
           <span className="relative z-10">View Details</span>
         </button>
         <button onClick={onGenerateReport}
-          className="flex-1 min-w-[100px] h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold bg-white transition-transform active:scale-95"
+          className="flex-1 min-w-[100px] h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal bg-white transition-transform active:scale-95"
           style={{ color: T2, border: "0.5px solid rgba(10,132,255,0.16)", boxShadow: SHADOW_SM }}>
           <FileText className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
           Generate Report
@@ -436,7 +436,7 @@ const AcademicsMobile = ({
 
       <div className="px-5 mt-2">
         <button onClick={onOpenScheduleModal}
-          className="w-full h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-semibold transition-transform active:scale-95"
+          className="w-full h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[12px] font-normal transition-transform active:scale-95"
           style={{ background: "rgba(52,199,89,0.10)", border: "0.5px solid rgba(52,199,89,0.22)", color: "#248A3D" }}>
           <CalendarCheck className="w-[13px] h-[13px]" strokeWidth={2.3} />
           Schedule Remedial
@@ -456,7 +456,7 @@ const AcademicsMobile = ({
             style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
             <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
           </div>
-          <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
+          <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
             AI Performance Intelligence
           </span>
         </div>
@@ -471,8 +471,8 @@ const AcademicsMobile = ({
             { val: `${atRiskPct}%`, label: "At Risk" },
           ].map(({ val, label }) => (
             <div key={label} className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-              <div className="text-[20px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.5px" }}>{val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+              <div className="text-[20px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.5px" }}>{val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
             </div>
           ))}
         </div>
@@ -481,9 +481,9 @@ const AcademicsMobile = ({
       {/* ── Weak Items List (if any) ── */}
       {weakItems.length > 0 && (
         <>
-          <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+          <div className="px-5 pt-4 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
             Needs Attention
-            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal ml-1"
               style={{ background: "rgba(255,59,48,0.10)", color: RED, border: "0.5px solid rgba(255,59,48,0.22)" }}>
               {weakItems.length}
             </span>
@@ -504,14 +504,14 @@ const AcademicsMobile = ({
                     <AlertTriangle className="w-[15px] h-[15px] text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[13px] font-semibold tracking-[-0.1px] truncate" style={{ color: T1 }}>
+                    <div className="text-[13px] font-normal tracking-[-0.1px] truncate" style={{ color: T1 }}>
                       {w.subject} · {w.className}
                     </div>
-                    <div className="text-[12px] font-medium mt-[2px]" style={{ color: T4 }}>
+                    <div className="text-[12px] font-normal mt-[2px]" style={{ color: T4 }}>
                       {w.studentCount} student{w.studentCount === 1 ? "" : "s"} · avg {w.avg}%
                     </div>
                   </div>
-                  <div className="px-[12px] py-1 rounded-full text-[12px] font-semibold flex-shrink-0"
+                  <div className="px-[12px] py-1 rounded-full text-[12px] font-normal flex-shrink-0"
                     style={{ background: "rgba(255,59,48,0.10)", color: RED, border: "0.5px solid rgba(255,59,48,0.22)" }}>
                     {w.avg}%
                   </div>

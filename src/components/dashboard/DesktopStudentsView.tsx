@@ -105,7 +105,7 @@ const DesktopStudentsView = ({
   return (
     <div
       style={{
-        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+        fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
         background: BG,
         minHeight: "100vh",
         margin: "-16px -24px 0",
@@ -115,7 +115,7 @@ const DesktopStudentsView = ({
       {/* ── Page Head ── */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 24, marginBottom: 18 }}>
         <div style={{ minWidth: 0 }}>
-          <h1 style={{ fontSize: 32, fontWeight: 600, color: T1, letterSpacing: "-0.8px", margin: 0, lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: 32, fontWeight: 400, color: T1, letterSpacing: "-0.8px", margin: 0, lineHeight: 1.1 }}>
             Student Directory
           </h1>
           <div
@@ -125,7 +125,7 @@ const DesktopStudentsView = ({
               gap: 6,
               marginTop: 6,
               fontSize: 10,
-              fontWeight: 600,
+              fontWeight: 400,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               color: B1,
@@ -148,10 +148,10 @@ const DesktopStudentsView = ({
             flexShrink: 0,
           }}
         >
-          <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 3 }}>
+          <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 3 }}>
             Total Scholars
           </div>
-          <div style={{ fontSize: 28, fontWeight: 600, color: B1, letterSpacing: "-0.6px", lineHeight: 1 }}>
+          <div style={{ fontSize: 28, fontWeight: 400, color: B1, letterSpacing: "-0.6px", lineHeight: 1 }}>
             {loading ? "—" : studentsData.length}
           </div>
         </div>
@@ -177,7 +177,7 @@ const DesktopStudentsView = ({
               borderRadius: 16,
               background: "#fff",
               fontSize: 14,
-              fontWeight: 500,
+              fontWeight: 400,
               color: T1,
               outline: "none",
               border: "0.5px solid rgba(10,132,255,0.12)",
@@ -197,7 +197,7 @@ const DesktopStudentsView = ({
               padding: "0 38px 0 36px",
               borderRadius: 14,
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
               cursor: "pointer",
@@ -241,7 +241,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             cursor: "pointer",
@@ -273,7 +273,7 @@ const DesktopStudentsView = ({
               justifyContent: "center",
               gap: 6,
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
               cursor: "pointer",
@@ -300,7 +300,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 7,
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             color: "#fff",
@@ -336,7 +336,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             background: "#fff",
@@ -362,7 +362,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             background: "rgba(52,199,89,0.10)",
@@ -387,7 +387,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             background: "rgba(255,149,0,0.10)",
@@ -440,10 +440,10 @@ const DesktopStudentsView = ({
               borderRight: i < arr.length - 1 ? "0.5px solid rgba(10,132,255,0.10)" : "none",
             }}
           >
-            <div style={{ fontSize: 26, fontWeight: 600, color: s.color, letterSpacing: "-0.7px", lineHeight: 1 }}>
+            <div style={{ fontSize: 26, fontWeight: 400, color: s.color, letterSpacing: "-0.7px", lineHeight: 1 }}>
               {s.val}
             </div>
-            <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+            <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
               {s.label}
             </div>
           </div>
@@ -458,7 +458,7 @@ const DesktopStudentsView = ({
           alignItems: "center",
           gap: 8,
           fontSize: 10,
-          fontWeight: 600,
+          fontWeight: 400,
           letterSpacing: "0.12em",
           textTransform: "uppercase",
           color: T4,
@@ -474,7 +474,7 @@ const DesktopStudentsView = ({
         <div style={{ padding: "60px 0", textAlign: "center" }}>
           <Loader2 size={32} color={B1} style={{ animation: "spin 1s linear infinite", marginBottom: 12 }} />
           <style>{`@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}`}</style>
-          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
+          <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
             Loading roster...
           </p>
         </div>
@@ -490,7 +490,7 @@ const DesktopStudentsView = ({
           }}
         >
           <UserIcon size={48} color="rgba(10,132,255,0.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
-          <p style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#6E6E73", margin: 0 }}>
+          <p style={{ fontSize: 13, fontWeight: 400, letterSpacing: "0.14em", textTransform: "uppercase", color: "#6E6E73", margin: 0 }}>
             {searchTerm || atRiskFilter ? "No matching scholars" : "No scholars enrolled"}
           </p>
           {(searchTerm || atRiskFilter) && (
@@ -523,7 +523,7 @@ const DesktopStudentsView = ({
                     border: "0.5px solid rgba(10,132,255,0.18)",
                     color: B1,
                     fontSize: 12,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}
@@ -534,7 +534,7 @@ const DesktopStudentsView = ({
                 <span
                   style={{
                     fontSize: 11,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.10em",
                     textTransform: "uppercase",
                     color: T4,
@@ -586,7 +586,7 @@ const DesktopStudentsView = ({
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 18,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#fff",
                       flexShrink: 0,
                       boxShadow: "0 4px 14px rgba(10,132,255,0.28)",
@@ -598,7 +598,7 @@ const DesktopStudentsView = ({
                     <div
                       style={{
                         fontSize: 17,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T1,
                         letterSpacing: "-0.3px",
                         textTransform: "uppercase",
@@ -612,7 +612,7 @@ const DesktopStudentsView = ({
                     <div
                       style={{
                         fontSize: 11,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T4,
                         letterSpacing: "0.04em",
                         marginTop: 4,
@@ -624,7 +624,7 @@ const DesktopStudentsView = ({
                         whiteSpace: "nowrap",
                       }}
                     >
-                      <span style={{ color: B3, fontWeight: 600 }}>#</span>
+                      <span style={{ color: B3, fontWeight: 400 }}>#</span>
                       <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {email || s.id.slice(0, 20)}
                       </span>
@@ -637,7 +637,7 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.04em",
                           background: "rgba(255,59,48,0.10)",
                           color: RED,
@@ -652,7 +652,7 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.04em",
                           background: "rgba(52,199,89,0.10)",
                           color: "#248A3D",
@@ -667,7 +667,7 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.04em",
                           background: "rgba(10,132,255,0.10)",
                           color: B1,
@@ -692,10 +692,10 @@ const DesktopStudentsView = ({
                       borderBottom: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Campus Branch
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, display: "flex", alignItems: "center", gap: 7, letterSpacing: "-0.1px" }}>
+                    <div style={{ fontSize: 14, fontWeight: 400, color: T1, display: "flex", alignItems: "center", gap: 7, letterSpacing: "-0.1px" }}>
                       <MapPin size={13} color="rgba(10,132,255,0.6)" strokeWidth={2.3} />
                       {s.branchId || defaultBranchId || "—"}
                     </div>
@@ -709,16 +709,16 @@ const DesktopStudentsView = ({
                       borderBottom: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Institutional Grade
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 600, display: "flex", alignItems: "center", gap: 7 }}>
+                    <div style={{ fontSize: 14, fontWeight: 400, display: "flex", alignItems: "center", gap: 7 }}>
                       <span
                         style={{
                           padding: "4px 14px",
                           borderRadius: 100,
                           fontSize: 12,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: "#fff",
                           background: GRAD_PRIMARY,
                           boxShadow: "0 2px 7px rgba(10,132,255,0.28)",
@@ -737,13 +737,13 @@ const DesktopStudentsView = ({
                       borderRight: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Assigned Faculty
                     </div>
                     <div
                       style={{
                         fontSize: 14,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: T1,
                         display: "flex",
                         alignItems: "center",
@@ -772,13 +772,13 @@ const DesktopStudentsView = ({
                     </div>
                   </div>
                   <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 4 }}>
-                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Attendance
                     </div>
                     <div
                       style={{
                         fontSize: 14,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: attValid ? (attGood ? "#248A3D" : RED) : T4,
                         display: "flex",
                         alignItems: "center",
@@ -817,7 +817,7 @@ const DesktopStudentsView = ({
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 13,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       color: "#fff",
                       letterSpacing: "0.04em",
                       background: GRAD_PRIMARY,
@@ -904,7 +904,7 @@ const DesktopStudentsView = ({
             border: "0.5px solid rgba(10,132,255,0.10)",
           }}
         >
-          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, margin: 0 }}>
+          <p style={{ fontSize: 11, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, margin: 0 }}>
             Showing {pageStart}–{pageEnd} of {filtered.length} {filtered.length === 1 ? "Student" : "Students"}
           </p>
           {totalPages > 1 && (
@@ -940,7 +940,7 @@ const DesktopStudentsView = ({
                     height: 36,
                     borderRadius: 11,
                     fontSize: 12,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: active ? "#fff" : T4,
                     background: active ? GRAD_PRIMARY : "#fff",
                     border: active ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,0.12)",
@@ -1007,7 +1007,7 @@ const DesktopStudentsView = ({
           <div
             style={{
               fontSize: 10,
-              fontWeight: 600,
+              fontWeight: 400,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.48)",
@@ -1043,13 +1043,13 @@ const DesktopStudentsView = ({
                   background: "rgba(255,255,255,0.08)",
                 }}
               >
-                <div style={{ fontSize: 28, fontWeight: 600, color: "#fff", lineHeight: 1, marginBottom: 4, letterSpacing: "-0.8px" }}>
+                <div style={{ fontSize: 28, fontWeight: 400, color: "#fff", lineHeight: 1, marginBottom: 4, letterSpacing: "-0.8px" }}>
                   {val}
                 </div>
                 <div
                   style={{
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,0.40)",

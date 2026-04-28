@@ -140,7 +140,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -152,7 +152,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             onClick={onBack}
             style={{
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               cursor: "pointer",
               display: "flex",
@@ -167,7 +167,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             Assignments & Marks
           </button>
           <span style={{ fontSize: 11, color: T4 }}>/</span>
-          <span style={{ fontSize: 11, fontWeight: 600, color: T2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
+          <span style={{ fontSize: 11, fontWeight: 400, color: T2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
             {group.title}
           </span>
         </div>
@@ -199,10 +199,10 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
           />
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 12, gap: 10 }}>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 20, fontWeight: 600, color: T1, letterSpacing: "-0.4px", textTransform: "capitalize", marginBottom: 5, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 20, fontWeight: 400, color: T1, letterSpacing: "-0.4px", textTransform: "capitalize", marginBottom: 5, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {group.title}
               </div>
-              <div style={{ fontSize: 11, color: T4, fontWeight: 600, display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
+              <div style={{ fontSize: 11, color: T4, fontWeight: 400, display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
                 <span
                   style={{
                     padding: "3px 9px",
@@ -210,7 +210,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                     background: `linear-gradient(135deg, ${B1}, ${B2})`,
                     color: "#fff",
                     fontSize: 10,
-                    fontWeight: 600,
+                    fontWeight: 400,
                   }}
                 >
                   {group.className}
@@ -231,7 +231,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 alignItems: "center",
                 gap: 6,
                 fontSize: 12,
-                fontWeight: 600,
+                fontWeight: 400,
                 color: "#fff",
                 cursor: "pointer",
                 border: "none",
@@ -342,7 +342,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               <div
                 style={{
                   fontSize: c.isText ? 13 : 22,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   color: c.color,
                   letterSpacing: "-0.5px",
                   lineHeight: 1,
@@ -354,7 +354,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 {c.value}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
+              <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
                 {c.label}
               </div>
             </div>
@@ -365,7 +365,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -391,13 +391,13 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
           }}
         >
           <div style={{ padding: "15px 18px 12px", borderBottom: `0.5px solid ${SEP}` }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>Student-wise Marks</div>
+            <div style={{ fontSize: 14, fontWeight: 400, color: T1 }}>Student-wise Marks</div>
           </div>
 
           {sorted.length === 0 ? (
             <div style={{ padding: "32px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
               <FileText size={36} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 13, fontWeight: 600, color: T2 }}>No submissions yet</div>
+              <div style={{ fontSize: 13, fontWeight: 400, color: T2 }}>No submissions yet</div>
             </div>
           ) : (
             sorted.map((r, i) => {
@@ -421,7 +421,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               return (
                 <div key={r.studentId || i} style={{ display: "flex", flexDirection: "column", borderBottom: isLast ? "none" : `0.5px solid ${SEP}` }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 11, padding: "14px 18px" }}>
-                    <div style={{ fontSize: 11, fontWeight: 600, color: T4, width: 18, textAlign: "center", flexShrink: 0 }}>
+                    <div style={{ fontSize: 11, fontWeight: 400, color: T4, width: 18, textAlign: "center", flexShrink: 0 }}>
                       {i + 1}
                     </div>
                     <div
@@ -434,7 +434,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 13,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         color: "#fff",
                         flexShrink: 0,
                         boxShadow: "0 3px 10px rgba(10,132,255,.24)",
@@ -443,10 +443,10 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                       {(r.studentName || "ST").substring(0, 2).toUpperCase()}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      <div style={{ fontSize: 14, fontWeight: 400, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {r.studentName || "—"}
                       </div>
-                      <div style={{ fontSize: 11, color: T4, fontWeight: 600 }}>
+                      <div style={{ fontSize: 11, color: T4, fontWeight: 400 }}>
                         {r.className || group.className}
                       </div>
                       {graded && gradeInfo && (
@@ -463,7 +463,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                       )}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 5, flexShrink: 0 }}>
-                      <div style={{ fontSize: 17, fontWeight: 600, letterSpacing: "-0.3px", color: graded ? (gradeInfo!.letter === "D" ? RED : gradeInfo!.letter === "A" ? GREEN : gradeInfo!.color) : T4 }}>
+                      <div style={{ fontSize: 17, fontWeight: 400, letterSpacing: "-0.3px", color: graded ? (gradeInfo!.letter === "D" ? RED : gradeInfo!.letter === "A" ? GREEN : gradeInfo!.color) : T4 }}>
                         {graded ? `${score}/100` : "—"}
                       </div>
                       {gradeInfo && (
@@ -472,7 +472,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                             padding: "4px 11px",
                             borderRadius: 100,
                             fontSize: 11,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             textAlign: "center",
                             background: gradeInfo.bg,
                             color: gradeInfo.color,
@@ -498,7 +498,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                           alignItems: "center",
                           gap: 5,
                           fontSize: 9,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           letterSpacing: "0.10em",
                           textTransform: "uppercase",
                           color: needsAttention ? RED : VIOLET,
@@ -563,16 +563,16 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Marks Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
               {group.title} shows a class average of{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{group.avgScore}%</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{group.avgScore}%</strong>.{" "}
               {group.topStudent && group.topStudent !== "—" && (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>
                     {group.topStudent} ({group.topScore}%)
                   </strong>{" "}
                   demonstrates excellent understanding.
@@ -612,10 +612,10 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 ];
               })().map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 600, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 400, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -637,7 +637,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             background: "#fff",
             border: "0.5px solid rgba(10,132,255,.14)",
             fontSize: 13,
-            fontWeight: 600,
+            fontWeight: 400,
             color: T2,
             cursor: "pointer",
             boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
@@ -652,18 +652,18 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
   }
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Breadcrumb */}
       <div className="pt-2 pb-3 flex items-center gap-[8px]">
         <button onClick={onBack}
-          className="flex items-center gap-1 text-[12px] font-semibold transition-opacity active:opacity-60 hover:opacity-80"
+          className="flex items-center gap-1 text-[12px] font-normal transition-opacity active:opacity-60 hover:opacity-80"
           style={{ color: "#0A84FF" }}>
           <ChevronLeft className="w-3 h-3" strokeWidth={2.5} />
           Assignments &amp; Marks
         </button>
         <span className="text-[12px]" style={{ color: "#A1A1A6" }}>/</span>
-        <span className="text-[12px] font-semibold truncate max-w-[280px] capitalize" style={{ color: "#3A3A3C" }}>{group.title}</span>
+        <span className="text-[12px] font-normal truncate max-w-[280px] capitalize" style={{ color: "#3A3A3C" }}>{group.title}</span>
       </div>
 
       {/* Marks hero card */}
@@ -673,19 +673,19 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
           style={{ background: `radial-gradient(circle, rgba(10,132,255,0.06) 0%, transparent 70%)` }} />
         <div className="flex items-start justify-between gap-4 relative">
           <div className="min-w-0 flex-1">
-            <div className="text-[24px] font-semibold leading-tight tracking-[-0.5px] capitalize mb-[8px]" style={{ color: "#1D1D1F" }}>
+            <div className="text-[24px] font-normal leading-tight tracking-[-0.5px] capitalize mb-[8px]" style={{ color: "#1D1D1F" }}>
               {group.title}
             </div>
-            <div className="text-[12px] font-semibold flex items-center gap-[8px] flex-wrap" style={{ color: "#6E6E73" }}>
-              <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white"
+            <div className="text-[12px] font-normal flex items-center gap-[8px] flex-wrap" style={{ color: "#6E6E73" }}>
+              <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal text-white"
                 style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)" }}>{group.className}</span>
-              <span>Teacher: <strong style={{ color: "#3A3A3C", fontWeight: 600 }}>{group.teacherName}</strong></span>
+              <span>Teacher: <strong style={{ color: "#3A3A3C", fontWeight: 400 }}>{group.teacherName}</strong></span>
               <span className="w-[3px] h-[3px] rounded-full" style={{ background: "#A1A1A6" }} />
               <span>Due: {fmtDate(group.dueDate)}</span>
             </div>
           </div>
           <button onClick={handleDownload}
-            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
+            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
             style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)" }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Download className="w-[14px] h-[14px] relative z-10" strokeWidth={2.4} />
@@ -765,13 +765,13 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
               {s.isText ? (
-                <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
+                <p className="text-[20px] font-normal tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
               ) : (
-                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+                <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
               )}
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -783,9 +783,9 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
       </div>
 
       {/* Section label */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Student-wise Marks
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {sorted.length} {sorted.length === 1 ? "student" : "students"}
         </span>
@@ -800,7 +800,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             <thead>
               <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                 {["#", "Student", "Score", "Grade", "AI Feedback"].map(h => (
-                  <th key={h} className="px-5 py-[16px] text-left text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
+                  <th key={h} className="px-5 py-[16px] text-left text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -819,31 +819,31 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 return (
                   <tr key={r.studentId || i} className="transition-colors hover:bg-[#F5F5F7]"
                     style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
-                    <td className="px-5 py-[16px] text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>{i + 1}</td>
+                    <td className="px-5 py-[16px] text-[12px] font-normal" style={{ color: "#A1A1A6" }}>{i + 1}</td>
                     <td className="px-5 py-[16px]">
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-semibold flex-shrink-0"
+                        <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-normal flex-shrink-0"
                           style={{ background: "linear-gradient(135deg, #3395FF, #5BA9FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.24)" }}>
                           {name.substring(0, 2).toUpperCase()}
                         </div>
-                        <span className="text-[13px] font-semibold tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>{name}</span>
+                        <span className="text-[13px] font-normal tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>{name}</span>
                       </div>
                     </td>
                     <td className="px-5 py-[16px]">
                       {graded ? (
                         <div className="flex items-center gap-3">
-                          <span className="text-[15px] font-semibold tracking-[-0.3px]" style={{ color: scoreColor }}>{score}/100</span>
+                          <span className="text-[15px] font-normal tracking-[-0.3px]" style={{ color: scoreColor }}>{score}/100</span>
                           <div className="h-1 w-[80px] rounded-[2px] overflow-hidden" style={{ background: "#EBEBF0" }}>
                             <div className="h-full rounded-[2px]" style={{ width: `${Math.max(0, Math.min(100, score!))}%`, background: gStyle!.fill }} />
                           </div>
                         </div>
                       ) : (
-                        <span className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>Not graded</span>
+                        <span className="text-[12px] font-normal" style={{ color: "#A1A1A6" }}>Not graded</span>
                       )}
                     </td>
                     <td className="px-5 py-[16px]">
                       {lg && gStyle ? (
-                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-[11px] text-[13px] font-semibold"
+                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-[11px] text-[13px] font-normal"
                           style={{ background: gStyle.bg, color: gStyle.c, border: `0.5px solid ${gStyle.bdr}` }}>
                           {lg.letter}
                         </span>
@@ -857,7 +857,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                           <p className="text-[12px] leading-[1.55]" style={{ color: "#6E6E73" }}>
                             {aiFeedback(score!, r.studentName || "", group.title)}
                           </p>
-                          <span className="inline-flex items-center gap-1 mt-[8px] px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+                          <span className="inline-flex items-center gap-1 mt-[8px] px-[8px] py-[4px] rounded-full text-[12px] font-normal"
                             style={{ background: "rgba(175,82,222,0.10)", color: "#AF52DE", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                             <Sparkles className="w-[10px] h-[10px]" strokeWidth={2.3} /> AI
                           </span>
@@ -876,7 +876,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
 
       {/* Back button */}
       <button onClick={onBack}
-        className="mt-5 h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold bg-white transition-transform active:scale-95 hover:scale-[1.02]"
+        className="mt-5 h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal bg-white transition-transform active:scale-95 hover:scale-[1.02]"
         style={{ color: "#3A3A3C", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)" }}>
         <ChevronLeft className="w-[14px] h-[14px]" strokeWidth={2.4} />
         Back to Assignments
@@ -1104,12 +1104,12 @@ export default function AssignmentMarks() {
     : { label: "Needs Work", c: "#FF6961", bg: "rgba(255,59,48,0.22)", bdr: "rgba(255,59,48,0.4)" };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Top toolbar */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <FileText className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -1118,9 +1118,9 @@ export default function AssignmentMarks() {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Class-wise Marks</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Teacher Submissions</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>AI Feedback Engine</span>
           </div>
         </div>
@@ -1140,10 +1140,10 @@ export default function AssignmentMarks() {
             <TrendingUp className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               School Avg Score · {stats.totalGraded} Graded Submission{stats.totalGraded === 1 ? "" : "s"}
             </div>
-            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
               {loading ? "—" : `${stats.avgScore}%`}
             </div>
           </div>
@@ -1151,7 +1151,7 @@ export default function AssignmentMarks() {
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
           <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
             style={{ background: dSchoolAvgTier.bg, border: `0.5px solid ${dSchoolAvgTier.bdr}` }}>
-            <span className="text-[12px] font-semibold" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label}</span>
+            <span className="text-[12px] font-normal" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label}</span>
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
@@ -1160,8 +1160,8 @@ export default function AssignmentMarks() {
               { val: stats.topStudent && stats.topStudent !== "—" ? stats.topStudent.split(" ")[0] : "—", label: "Topper", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-[12px] px-[16px] text-center min-w-[80px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[18px] font-semibold leading-none mb-[4px] truncate" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[18px] font-normal leading-none mb-[4px] truncate" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -1235,13 +1235,13 @@ export default function AssignmentMarks() {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
               {s.isText ? (
-                <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
+                <p className="text-[20px] font-normal tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
               ) : (
-                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+                <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
               )}
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -1259,7 +1259,7 @@ export default function AssignmentMarks() {
             const active = classFilter === cls;
             return (
               <button key={cls} onClick={() => setClassFilter(cls)}
-                className="h-[36px] px-4 rounded-[12px] text-[12px] font-semibold whitespace-nowrap transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
+                className="h-[36px] px-4 rounded-[12px] text-[12px] font-normal whitespace-nowrap transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
                 style={active
                   ? { background: "linear-gradient(135deg, #0A84FF, #3395FF)", color: "#fff", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)", letterSpacing: "0.04em" }
                   : { background: "#fff", color: "#6E6E73", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)", letterSpacing: "0.04em" }}>
@@ -1272,9 +1272,9 @@ export default function AssignmentMarks() {
       )}
 
       {/* Section label */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         {classFilter === "All" ? "All Assignments" : `${classFilter} Assignments`}
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {filtered.length} {filtered.length === 1 ? "assignment" : "assignments"}
         </span>
@@ -1286,7 +1286,7 @@ export default function AssignmentMarks() {
         <div className="rounded-[22px] py-10 text-center bg-white"
           style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: "#0A84FF" }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading assignments…</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading assignments…</p>
         </div>
       ) : filtered.length === 0 ? (
         <div className="rounded-[22px] py-10 text-center bg-white"
@@ -1295,7 +1295,7 @@ export default function AssignmentMarks() {
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
             <FileText className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold mb-1" style={{ color: "#1D1D1F" }}>No assignment marks yet</p>
+          <p className="text-[13px] font-normal mb-1" style={{ color: "#1D1D1F" }}>No assignment marks yet</p>
           <p className="text-[12px] max-w-[440px] mx-auto leading-[1.55]" style={{ color: "#A1A1A6" }}>
             Teachers enter marks via Teacher Dashboard → Assignments → Grade Assignment.
           </p>
@@ -1308,7 +1308,7 @@ export default function AssignmentMarks() {
               <thead>
                 <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                   {["Assignment", "Class", "Teacher", "Due Date", "Graded", "Avg Score", "Top Score", ""].map(h => (
-                    <th key={h} className="px-5 py-[16px] text-left text-[12px] font-semibold uppercase tracking-[0.10em] whitespace-nowrap" style={{ color: "#A1A1A6" }}>{h}</th>
+                    <th key={h} className="px-5 py-[16px] text-left text-[12px] font-normal uppercase tracking-[0.10em] whitespace-nowrap" style={{ color: "#A1A1A6" }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -1326,31 +1326,31 @@ export default function AssignmentMarks() {
                             style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.28)" }}>
                             <FileText className="w-[16px] h-[16px] text-white" strokeWidth={2.3} />
                           </div>
-                          <p className="text-[13px] font-semibold tracking-[-0.2px] capitalize" style={{ color: "#1D1D1F" }}>{g.title}</p>
+                          <p className="text-[13px] font-normal tracking-[-0.2px] capitalize" style={{ color: "#1D1D1F" }}>{g.title}</p>
                         </div>
                       </td>
                       {/* Class */}
                       <td className="px-5 py-[16px]">
-                        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white"
+                        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal text-white"
                           style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 2px 7px rgba(10,132,255,0.28)" }}>
                           {g.className}
                         </span>
                       </td>
                       {/* Teacher */}
-                      <td className="px-5 py-[16px] text-[12px] font-semibold" style={{ color: "#6E6E73" }}>{g.teacherName}</td>
+                      <td className="px-5 py-[16px] text-[12px] font-normal" style={{ color: "#6E6E73" }}>{g.teacherName}</td>
                       {/* Due date */}
                       <td className="px-5 py-[16px]">
-                        <span className="text-[12px] font-semibold flex items-center gap-[4px]" style={{ color: "#A1A1A6" }}>
+                        <span className="text-[12px] font-normal flex items-center gap-[4px]" style={{ color: "#A1A1A6" }}>
                           <Clock className="w-3 h-3" strokeWidth={2.3} /> {fmtDate(g.dueDate)}
                         </span>
                       </td>
                       {/* Graded */}
                       <td className="px-5 py-[16px]">
                         <div className="flex items-center gap-2">
-                          <span className="text-[13px] font-semibold" style={{ color: "#1D1D1F" }}>{g.gradedCount}</span>
-                          <span className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>/ {g.results.length}</span>
+                          <span className="text-[13px] font-normal" style={{ color: "#1D1D1F" }}>{g.gradedCount}</span>
+                          <span className="text-[12px] font-normal" style={{ color: "#A1A1A6" }}>/ {g.results.length}</span>
                           {allGraded && (
-                            <span className="flex items-center gap-[4px] px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                            <span className="flex items-center gap-[4px] px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                               style={{ background: "rgba(52,199,89,0.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,0.22)" }}>
                               <Check className="w-[10px] h-[10px]" strokeWidth={2.6} /> Complete
                             </span>
@@ -1361,7 +1361,7 @@ export default function AssignmentMarks() {
                       <td className="px-5 py-[16px]">
                         {g.gradedCount > 0 ? (
                           <div className="flex items-center gap-2">
-                            <span className="text-[14px] font-semibold" style={{ color: avgColor, letterSpacing: "-0.2px" }}>{g.avgScore}%</span>
+                            <span className="text-[14px] font-normal" style={{ color: avgColor, letterSpacing: "-0.2px" }}>{g.avgScore}%</span>
                             <div className="h-1 w-[70px] rounded-[2px] overflow-hidden" style={{ background: "#EBEBF0" }}>
                               <div className="h-full rounded-[2px]"
                                 style={{ width: `${Math.max(0, Math.min(100, g.avgScore))}%`, background: `linear-gradient(90deg, ${avgColor}, ${avgColor}AA)` }} />
@@ -1373,15 +1373,15 @@ export default function AssignmentMarks() {
                       <td className="px-5 py-[16px]">
                         {g.gradedCount > 0 ? (
                           <div>
-                            <p className="text-[14px] font-semibold" style={{ color: "#34C759" }}>{g.topScore}%</p>
-                            <p className="text-[12px] font-semibold truncate max-w-[120px]" style={{ color: "#A1A1A6" }}>{g.topStudent}</p>
+                            <p className="text-[14px] font-normal" style={{ color: "#34C759" }}>{g.topScore}%</p>
+                            <p className="text-[12px] font-normal truncate max-w-[120px]" style={{ color: "#A1A1A6" }}>{g.topStudent}</p>
                           </div>
                         ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
                       </td>
                       {/* View button */}
                       <td className="px-5 py-[16px]">
                         <button onClick={() => setSelectedGroup(g)}
-                          className="h-9 px-4 rounded-[11px] flex items-center gap-[4px] text-[12px] font-semibold text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
+                          className="h-9 px-4 rounded-[11px] flex items-center gap-[4px] text-[12px] font-normal text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
                           style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.26)" }}>
                           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                           <span className="relative z-10">View Marks</span>

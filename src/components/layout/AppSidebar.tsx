@@ -130,11 +130,11 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
 
       {/* Role badge */}
       <div className="px-4 py-3 border-b border-slate-50 flex items-center justify-between">
-        <span className="text-[12px] font-semibold text-muted-foreground uppercase tracking-[0.2em]">
+        <span className="text-[12px] font-normal text-muted-foreground uppercase tracking-[0.2em]">
           Navigation
         </span>
         {isDeo && (
-          <span className="flex items-center gap-1 px-2 py-1 bg-amber-100 text-amber-700 rounded-lg text-[12px] font-semibold uppercase tracking-widest">
+          <span className="flex items-center gap-1 px-2 py-1 bg-amber-100 text-amber-700 rounded-lg text-[12px] font-normal uppercase tracking-widest">
             <KeyRound className="w-2.5 h-2.5" /> Data Entry
           </span>
         )}
@@ -143,7 +143,7 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
       <nav className="flex-1 px-3 py-4">
         {visibleGroups.map((group, idx) => (
           <div key={group.label} className={idx === 0 ? "" : "mt-5"}>
-            <div className="px-3 pb-2 text-[12px] font-semibold text-slate-400 uppercase tracking-[0.18em]">
+            <div className="px-3 pb-2 text-[12px] font-normal text-slate-400 uppercase tracking-[0.18em]">
               {group.label}
             </div>
             <div className="space-y-1">
@@ -154,7 +154,7 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
                     key={item.path}
                     to={item.path}
                     onClick={onClose}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-normal transition-all duration-300 ${
                       isActive
                         ? "bg-[#1D1D1F] text-white shadow-lg shadow-blue-900/10 scale-[1.02]"
                         : "text-slate-500 hover:bg-slate-50 hover:text-[#1D1D1F]"
@@ -163,7 +163,7 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
                     <item.icon className={`w-4.5 h-4.5 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`} />
                     <span className="flex-1">{item.title}</span>
                     {item.path === "/access-requests" && !isActive && (
-                      <span className="text-[12px] font-semibold px-1.5 py-0.5 rounded-full bg-amber-500 text-white">!</span>
+                      <span className="text-[12px] font-normal px-1.5 py-0.5 rounded-full bg-amber-500 text-white">!</span>
                     )}
                   </NavLink>
                 );
@@ -176,7 +176,7 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
       {/* DEO info panel */}
       {isDeo && (
         <div className="mx-3 mb-3 p-3 bg-amber-50 border border-amber-100 rounded-2xl">
-          <p className="text-[12px] font-semibold text-amber-700 uppercase tracking-widest">Limited Access</p>
+          <p className="text-[12px] font-normal text-amber-700 uppercase tracking-widest">Limited Access</p>
           <p className="text-[12px] text-amber-600 mt-1">
             {userData?.allowedPages?.length || 0} pages granted by principal
           </p>
@@ -187,7 +187,7 @@ const AppSidebar = ({ onClose }: AppSidebarProps) => {
         <Button
           variant="ghost"
           onClick={logout}
-          className="w-full justify-start gap-3 h-12 rounded-xl text-rose-500 hover:bg-rose-50 hover:text-rose-600 font-semibold transition-colors"
+          className="w-full justify-start gap-3 h-12 rounded-xl text-rose-500 hover:bg-rose-50 hover:text-rose-600 font-normal transition-colors"
         >
           <LogOut className="w-5 h-5" />
           <span>Sign Out</span>

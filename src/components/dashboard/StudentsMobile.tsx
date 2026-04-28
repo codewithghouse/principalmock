@@ -120,24 +120,24 @@ const StudentsMobile = ({
   };
 
   return (
-    <div className="pb-6" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
+    <div className="pb-6" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0" }}>
       <div className="px-5 pt-3">
 
         {/* ── Page Head ── */}
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h1 className="text-[24px] font-semibold leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
+            <h1 className="text-[24px] font-normal leading-tight tracking-[-0.6px]" style={{ color: T1 }}>
               Student Directory
             </h1>
-            <div className="inline-flex items-center gap-1.5 mt-1 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: B1 }}>
+            <div className="inline-flex items-center gap-1.5 mt-1 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: B1 }}>
               <Sparkles className="w-[11px] h-[11px]" strokeWidth={2.5} />
               Real-Time Enrollment Audit Engine
             </div>
           </div>
           <div className="flex flex-col items-center px-[16px] py-2 rounded-[16px] flex-shrink-0"
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
-            <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-[2px]" style={{ color: T4 }}>Total Scholars</div>
-            <div className="text-[22px] font-semibold leading-none tracking-[-0.5px]" style={{ color: B1 }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.10em] mb-[2px]" style={{ color: T4 }}>Total Scholars</div>
+            <div className="text-[22px] font-normal leading-none tracking-[-0.5px]" style={{ color: B1 }}>
               {loading ? "—" : studentsTotal}
             </div>
           </div>
@@ -155,7 +155,7 @@ const StudentsMobile = ({
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Search roster..."
-            className="w-full pl-10 pr-4 py-[12px] rounded-[16px] bg-white text-[14px] font-medium outline-none"
+            className="w-full pl-10 pr-4 py-[12px] rounded-[16px] bg-white text-[14px] font-normal outline-none"
             style={{ color: T1, border: "0.5px solid rgba(10,132,255,0.12)", boxShadow: SHADOW_SM, letterSpacing: "-0.1px" }}
           />
         </div>
@@ -164,7 +164,7 @@ const StudentsMobile = ({
         <div className="mt-3 flex gap-2 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
           <button
             onClick={toggleAtRisk}
-            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
+            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
             style={{
               background: atRiskFilter ? RED : "rgba(255,59,48,0.10)",
               color: atRiskFilter ? "#fff" : RED,
@@ -176,7 +176,7 @@ const StudentsMobile = ({
 
           <button
             onClick={onAddClick}
-            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] whitespace-nowrap text-white flex-shrink-0 transition-transform active:scale-95 relative overflow-hidden"
+            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.04em] whitespace-nowrap text-white flex-shrink-0 transition-transform active:scale-95 relative overflow-hidden"
             style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.5} />
@@ -185,7 +185,7 @@ const StudentsMobile = ({
 
           <button
             onClick={onExportClick}
-            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] whitespace-nowrap bg-white flex-shrink-0 transition-transform active:scale-95"
+            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.04em] whitespace-nowrap bg-white flex-shrink-0 transition-transform active:scale-95"
             style={{ color: T2, border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: SHADOW_SM }}>
             <Download className="w-3 h-3" strokeWidth={2.5} />
             EXPORT
@@ -193,7 +193,7 @@ const StudentsMobile = ({
 
           <button
             onClick={onBulkClick}
-            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
+            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
             style={{ background: "rgba(52,199,89,0.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,0.22)" }}>
             <Upload className="w-3 h-3" strokeWidth={2.5} />
             BULK UPLOAD
@@ -201,7 +201,7 @@ const StudentsMobile = ({
 
           <button
             onClick={onArchiveClick}
-            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-semibold tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
+            className="h-10 px-[16px] rounded-[13px] flex items-center justify-center gap-1.5 text-[12px] font-normal tracking-[0.04em] whitespace-nowrap flex-shrink-0 transition-transform active:scale-95"
             style={{ background: "rgba(255,149,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }}>
             <Archive className="w-3 h-3" strokeWidth={2.5} />
             ARCHIVE
@@ -219,14 +219,14 @@ const StudentsMobile = ({
           ].map((s, i, arr) => (
             <div key={s.label} className="flex-1 py-[16px] px-3 flex flex-col items-center gap-1 relative"
               style={i < arr.length - 1 ? { borderRight: "0.5px solid rgba(10,132,255,0.10)" } : {}}>
-              <div className="text-[20px] font-semibold leading-none tracking-[-0.5px]" style={{ color: s.color }}>{s.val}</div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: T4 }}>{s.label}</div>
+              <div className="text-[20px] font-normal leading-none tracking-[-0.5px]" style={{ color: s.color }}>{s.val}</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.08em]" style={{ color: T4 }}>{s.label}</div>
             </div>
           ))}
         </div>
 
         {/* ── Section label ── */}
-        <div className="pt-4 pb-1 flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+        <div className="pt-4 pb-1 flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: T4 }}>
           Scholar Details
           <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
         </div>
@@ -236,7 +236,7 @@ const StudentsMobile = ({
       {loading ? (
         <div className="py-10 text-center">
           <Loader2 className="w-7 h-7 animate-spin mx-auto mb-3" style={{ color: B1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: T4 }}>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: T4 }}>
             Loading roster...
           </p>
         </div>
@@ -244,7 +244,7 @@ const StudentsMobile = ({
         <div className="mx-5 mt-3 rounded-[22px] py-10 px-5 bg-white text-center"
           style={{ boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <UserIcon className="w-10 h-10 mx-auto mb-3" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: T3 }}>
+          <p className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: T3 }}>
             {searchTerm || atRiskFilter ? "No matching scholars" : "No scholars enrolled"}
           </p>
           {(searchTerm || atRiskFilter) && (
@@ -266,32 +266,32 @@ const StudentsMobile = ({
 
               {/* Top: avatar + name/email + status badge */}
               <div className="flex items-center gap-[16px] px-[16px] pt-[16px] pb-4" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                <div className="w-[50px] h-[50px] rounded-[16px] flex items-center justify-center text-[18px] font-semibold text-white flex-shrink-0"
+                <div className="w-[50px] h-[50px] rounded-[16px] flex items-center justify-center text-[18px] font-normal text-white flex-shrink-0"
                   style={{ background: avGrad(s.initials || s.name), boxShadow: "0 4px 14px rgba(10,132,255,0.28)" }}>
                   {s.initials}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[16px] font-semibold uppercase tracking-[-0.3px] truncate" style={{ color: T1 }}>
+                  <div className="text-[16px] font-normal uppercase tracking-[-0.3px] truncate" style={{ color: T1 }}>
                     {s.name}
                   </div>
-                  <div className="text-[12px] font-semibold tracking-[0.04em] mt-1 flex items-center gap-1 truncate" style={{ color: T4 }}>
-                    <span style={{ color: B3, fontWeight: 600 }}>#</span>
+                  <div className="text-[12px] font-normal tracking-[0.04em] mt-1 flex items-center gap-1 truncate" style={{ color: T4 }}>
+                    <span style={{ color: B3, fontWeight: 400 }}>#</span>
                     <span className="truncate">{email || s.id.slice(0, 14)}</span>
                   </div>
                 </div>
                 <div className="flex flex-shrink-0">
                   {s.isAtRisk ? (
-                    <span className="px-3 py-[4px] rounded-full text-[12px] font-semibold tracking-[0.04em]"
+                    <span className="px-3 py-[4px] rounded-full text-[12px] font-normal tracking-[0.04em]"
                       style={{ background: "rgba(255,59,48,0.10)", color: RED, border: "0.5px solid rgba(255,59,48,0.22)" }}>
                       At Risk
                     </span>
                   ) : isActive ? (
-                    <span className="px-3 py-[4px] rounded-full text-[12px] font-semibold tracking-[0.04em]"
+                    <span className="px-3 py-[4px] rounded-full text-[12px] font-normal tracking-[0.04em]"
                       style={{ background: "rgba(52,199,89,0.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,0.22)" }}>
                       Active
                     </span>
                   ) : (
-                    <span className="px-3 py-[4px] rounded-full text-[12px] font-semibold tracking-[0.04em]"
+                    <span className="px-3 py-[4px] rounded-full text-[12px] font-normal tracking-[0.04em]"
                       style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                       Invited
                     </span>
@@ -302,24 +302,24 @@ const StudentsMobile = ({
               {/* Meta grid 2×2 */}
               <div className="grid" style={{ gridTemplateColumns: "1fr 1fr" }}>
                 <div className="px-4 py-[12px] flex flex-col gap-[4px]" style={{ borderRight: `0.5px solid ${SEP}`, borderBottom: `0.5px solid ${SEP}` }}>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Campus Branch</div>
-                  <div className="text-[13px] font-semibold flex items-center gap-1.5" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Campus Branch</div>
+                  <div className="text-[13px] font-normal flex items-center gap-1.5" style={{ color: T1, letterSpacing: "-0.1px" }}>
                     <MapPin className="w-3 h-3" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     {s.branchId || defaultBranchId || "—"}
                   </div>
                 </div>
                 <div className="px-4 py-[12px] flex flex-col gap-[4px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Institutional Grade</div>
-                  <div className="text-[13px] font-semibold flex items-center gap-1.5" style={{ color: T1 }}>
-                    <span className="px-3 py-1 rounded-full text-[12px] font-semibold text-white"
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Institutional Grade</div>
+                  <div className="text-[13px] font-normal flex items-center gap-1.5" style={{ color: T1 }}>
+                    <span className="px-3 py-1 rounded-full text-[12px] font-normal text-white"
                       style={{ background: GRAD_PRIMARY, boxShadow: "0 2px 7px rgba(10,132,255,0.28)" }}>
                       {s.gradeDisplay || "—"}
                     </span>
                   </div>
                 </div>
                 <div className="px-4 py-[12px] flex flex-col gap-[4px]" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned Faculty</div>
-                  <div className="text-[13px] font-semibold flex items-center gap-1.5 min-w-0" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned Faculty</div>
+                  <div className="text-[13px] font-normal flex items-center gap-1.5 min-w-0" style={{ color: T1, letterSpacing: "-0.1px" }}>
                     <div className="w-5 h-5 rounded-[6px] flex items-center justify-center flex-shrink-0"
                       style={{ background: GRAD_FAC_ICO }}>
                       <GraduationCap className="w-[11px] h-[11px] text-white" strokeWidth={2.3} />
@@ -328,8 +328,8 @@ const StudentsMobile = ({
                   </div>
                 </div>
                 <div className="px-4 py-[12px] flex flex-col gap-[4px]">
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
-                  <div className="text-[13px] font-semibold flex items-center gap-1.5"
+                  <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
+                  <div className="text-[13px] font-normal flex items-center gap-1.5"
                     style={{ color: attValid ? (attGood ? "#248A3D" : RED) : T4, letterSpacing: "-0.1px" }}>
                     <CheckCircle className="w-3 h-3" strokeWidth={2.5}
                       style={{ color: attValid ? (attGood ? GREEN : RED) : T4 }} />
@@ -342,7 +342,7 @@ const StudentsMobile = ({
               <div className="flex items-center gap-[12px] px-[16px] py-[16px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                 <button
                   onClick={() => onProfileClick(s)}
-                  className="flex-1 h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[13px] font-semibold text-white tracking-[0.04em] transition-transform active:scale-95 relative overflow-hidden"
+                  className="flex-1 h-11 rounded-[14px] flex items-center justify-center gap-[8px] text-[13px] font-normal text-white tracking-[0.04em] transition-transform active:scale-95 relative overflow-hidden"
                   style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
                   <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                   <UserIcon className="w-[14px] h-[14px] relative z-10" strokeWidth={2.2} />
@@ -372,7 +372,7 @@ const StudentsMobile = ({
       {!loading && filteredCount > itemsPerPage && (
         <div className="mx-5 mt-3 px-[16px] py-3 rounded-[18px] bg-white flex items-center justify-between gap-2"
           style={{ boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,0.10)" }}>
-          <p className="text-[12px] font-semibold uppercase tracking-wider" style={{ color: T4 }}>
+          <p className="text-[12px] font-normal uppercase tracking-wider" style={{ color: T4 }}>
             {pageStart}–{pageEnd} of {filteredCount}
           </p>
           <div className="flex items-center gap-1.5">
@@ -384,7 +384,7 @@ const StudentsMobile = ({
               aria-label="Previous page">
               <ChevronLeft className="w-[14px] h-[14px]" style={{ color: T2 }} />
             </button>
-            <span className="text-[12px] font-semibold px-2" style={{ color: T1 }}>
+            <span className="text-[12px] font-normal px-2" style={{ color: T1 }}>
               {currentPage} / {totalPages}
             </span>
             <button
@@ -408,7 +408,7 @@ const StudentsMobile = ({
           }}>
           <div className="absolute -top-9 -right-6 w-[160px] h-[160px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
-          <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-3 relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
+          <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-3 relative z-10" style={{ color: "rgba(255,255,255,0.48)" }}>
             Enrollment Registry · Academic Year {new Date().getFullYear()}–{String(new Date().getFullYear() + 1).slice(2)}
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[16px] overflow-hidden relative z-10" style={{ background: "rgba(255,255,255,0.12)" }}>
@@ -418,8 +418,8 @@ const StudentsMobile = ({
               { val: aGrades, label: "Grades" },
             ].map(({ val, label }) => (
               <div key={label} className="py-[16px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[24px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.7px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[24px] font-normal text-white leading-none mb-1" style={{ letterSpacing: "-0.7px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>

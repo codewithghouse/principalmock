@@ -37,11 +37,11 @@ const Card=({children,title,action,style:st}:{children:React.ReactNode;title?:st
       boxShadow:"0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.12), 0 18px 44px rgba(10,132,255,.15)",
       ...st,
     }}>
-    {title&&<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 20px",borderBottom:`1px solid ${T.s2}`}}><span style={{fontSize:14,fontWeight:600,color:T.ink}}>{title}</span>{action||null}</div>}
+    {title&&<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 20px",borderBottom:`1px solid ${T.s2}`}}><span style={{fontSize:14,fontWeight: 400,color:T.ink}}>{title}</span>{action||null}</div>}
     <div style={{padding:"16px 20px"}}>{children}</div>
   </div>
 );
-const DLink=()=><span style={{fontSize:11,color:T.blue,fontWeight:500,cursor:"pointer"}}>Details →</span>;
+const DLink=()=><span style={{fontSize:11,color:T.blue,fontWeight: 400,cursor:"pointer"}}>Details →</span>;
 const StarRow=({rating}:{rating:number})=><div style={{display:"flex",gap:2}}>{[1,2,3,4,5].map(i=><Star key={i} size={14} fill={i<=Math.round(rating)?"#FF9500":"none"} color={i<=Math.round(rating)?"#FF9500":"#EBEBF0"}/>)}</div>;
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -197,11 +197,11 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
     <div style={{minHeight:"100vh",background:T.bg,fontFamily:"'Inter',-apple-system,sans-serif"}}>
       {/* Top bar */}
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:20}}>
-        <button onClick={onBack} style={{display:"flex",alignItems:"center",gap:6,padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:13,fontWeight:500,cursor:"pointer"}}><ArrowLeft size={14}/>All teachers</button>
+        <button onClick={onBack} style={{display:"flex",alignItems:"center",gap:6,padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:13,fontWeight: 400,cursor:"pointer"}}><ArrowLeft size={14}/>All teachers</button>
         <div style={{display:"flex",gap:8}}>
-          <button onClick={()=>setEditOpen(true)} style={{padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:12,fontWeight:500,cursor:"pointer"}}>Edit</button>
-          <button onClick={()=>window.print()} style={{padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:12,fontWeight:500,cursor:"pointer"}}>Export</button>
-          <button style={{padding:"8px 16px",borderRadius:10,border:"none",background:T.blue,color:"#fff",fontSize:12,fontWeight:600,cursor:"pointer"}}>Contact</button>
+          <button onClick={()=>setEditOpen(true)} style={{padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:12,fontWeight: 400,cursor:"pointer"}}>Edit</button>
+          <button onClick={()=>window.print()} style={{padding:"8px 16px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:12,fontWeight: 400,cursor:"pointer"}}>Export</button>
+          <button style={{padding:"8px 16px",borderRadius:10,border:"none",background:T.blue,color:"#fff",fontSize:12,fontWeight: 400,cursor:"pointer"}}>Contact</button>
         </div>
       </div>
 
@@ -211,38 +211,38 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
         <div style={{display:"flex",flexDirection:"column",gap:16}}>
           <Card title="Teaching Performance">
             <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:16}}>
-              <div style={{position:"relative",width:64,height:64}}><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke={T.s2} strokeWidth="6"/><circle cx="32" cy="32" r="26" fill="none" stroke={T.blue} strokeWidth="6" strokeLinecap="round" strokeDasharray={2*Math.PI*26} strokeDashoffset={2*Math.PI*26*(1-perfMetrics.classAvg/100)} transform="rotate(-90 32 32)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight: 600,color:T.blue}}>{perfMetrics.classAvg}%</div></div>
-              <div><div style={{fontSize:28,fontWeight: 600,color:T.ink}}>{perfMetrics.classAvg}%</div><div style={{fontSize:11,color:T.ink3}}>Class Average // {assignedClasses.length} classes</div></div>
+              <div style={{position:"relative",width:64,height:64}}><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke={T.s2} strokeWidth="6"/><circle cx="32" cy="32" r="26" fill="none" stroke={T.blue} strokeWidth="6" strokeLinecap="round" strokeDasharray={2*Math.PI*26} strokeDashoffset={2*Math.PI*26*(1-perfMetrics.classAvg/100)} transform="rotate(-90 32 32)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight: 400,color:T.blue}}>{perfMetrics.classAvg}%</div></div>
+              <div><div style={{fontSize:28,fontWeight: 400,color:T.ink}}>{perfMetrics.classAvg}%</div><div style={{fontSize:11,color:T.ink3}}>Class Average // {assignedClasses.length} classes</div></div>
             </div>
-            {[{l:"Pass Rate",v:perfMetrics.passRate},{l:"Satisfaction",v:perfMetrics.satisfaction},{l:"Attendance",v:attRate}].map(r=>{const c=r.v>=80?T.grn:r.v>=50?T.amb:T.red;return<div key={r.l} style={{marginBottom:8}}><div style={{display:"flex",justifyContent:"space-between",fontSize:11,marginBottom:3}}><span style={{color:T.ink3}}>{r.l}</span><span style={{fontWeight:600,color:c}}>{r.v}%</span></div><div style={{height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:c,borderRadius:3,transition:"width 1s"}}/></div></div>;})}
+            {[{l:"Pass Rate",v:perfMetrics.passRate},{l:"Satisfaction",v:perfMetrics.satisfaction},{l:"Attendance",v:attRate}].map(r=>{const c=r.v>=80?T.grn:r.v>=50?T.amb:T.red;return<div key={r.l} style={{marginBottom:8}}><div style={{display:"flex",justifyContent:"space-between",fontSize:11,marginBottom:3}}><span style={{color:T.ink3}}>{r.l}</span><span style={{fontWeight: 400,color:c}}>{r.v}%</span></div><div style={{height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:c,borderRadius:3,transition:"width 1s"}}/></div></div>;})}
           </Card>
           <Card title="Attendance">
             <div style={{display:"flex",alignItems:"center",gap:16}}>
-              <div style={{position:"relative",width:72,height:72}}><svg width="72" height="72" viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke={T.s2} strokeWidth="7"/><circle cx="36" cy="36" r="28" fill="none" stroke={attRate>=85?T.grn:T.amb} strokeWidth="7" strokeLinecap="round" strokeDasharray={2*Math.PI*28} strokeDashoffset={2*Math.PI*28*(1-attRate/100)} transform="rotate(-90 36 36)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,fontWeight: 600,color:attRate>=85?T.grn:T.amb}}>{attRate}%</div></div>
-              <div><div style={{fontSize:15,fontWeight:600,color:T.ink}}>This Month</div><div style={{fontSize:12,color:T.ink3,marginTop:2}}>Classes: {thisMonth.classesTaken}/{thisMonth.totalClasses}</div><div style={{fontSize:11,color:T.ink3,marginTop:2}}>Tests: {thisMonth.testsCount} // Meetings: {thisMonth.meetingsCount}</div></div>
+              <div style={{position:"relative",width:72,height:72}}><svg width="72" height="72" viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke={T.s2} strokeWidth="7"/><circle cx="36" cy="36" r="28" fill="none" stroke={attRate>=85?T.grn:T.amb} strokeWidth="7" strokeLinecap="round" strokeDasharray={2*Math.PI*28} strokeDashoffset={2*Math.PI*28*(1-attRate/100)} transform="rotate(-90 36 36)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,fontWeight: 400,color:attRate>=85?T.grn:T.amb}}>{attRate}%</div></div>
+              <div><div style={{fontSize:15,fontWeight: 400,color:T.ink}}>This Month</div><div style={{fontSize:12,color:T.ink3,marginTop:2}}>Classes: {thisMonth.classesTaken}/{thisMonth.totalClasses}</div><div style={{fontSize:11,color:T.ink3,marginTop:2}}>Tests: {thisMonth.testsCount} // Meetings: {thisMonth.meetingsCount}</div></div>
             </div>
           </Card>
           <Card title="Subject Mastery" action={<DLink/>}>
             {radarData.length>=3&&<div style={{height:180,marginBottom:12}}><ResponsiveContainer width="100%" height="100%"><RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}><PolarGrid stroke={T.s2}/><PolarAngleAxis dataKey="subject" tick={{fill:T.ink3,fontSize:10}}/><Radar dataKey="score" stroke={T.blue} fill={T.blue} fillOpacity={0.15} strokeWidth={2}/></RadarChart></ResponsiveContainer></div>}
-            {subjectData.map(s=><div key={s.name} style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}><span style={{fontSize:11,color:T.ink3,width:80,flexShrink:0}}>{s.name}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${s.avg}%`,background:s.avg>=75?T.blue:s.avg>=50?T.grn:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight:600,color:T.ink,width:28,textAlign:"right"}}>{s.avg}</span></div>)}
+            {subjectData.map(s=><div key={s.name} style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}><span style={{fontSize:11,color:T.ink3,width:80,flexShrink:0}}>{s.name}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${s.avg}%`,background:s.avg>=75?T.blue:s.avg>=50?T.grn:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight: 400,color:T.ink,width:28,textAlign:"right"}}>{s.avg}</span></div>)}
           </Card>
         </div>
 
         {/* CENTER */}
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",paddingTop:20}}>
-          <div style={{width:140,height:140,borderRadius:"50%",border:`4px solid ${T.blue}`,background:T.blBg,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,boxShadow:"0 8px 30px rgba(59,91,219,0.15)"}}><span style={{fontSize:42,fontWeight: 600,color:T.blue}}>{initials}</span></div>
-          <h2 style={{fontSize:20,fontWeight: 600,color:T.ink,textAlign:"center",marginBottom:4}}>{name}</h2>
+          <div style={{width:140,height:140,borderRadius:"50%",border:`4px solid ${T.blue}`,background:T.blBg,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,boxShadow:"0 8px 30px rgba(59,91,219,0.15)"}}><span style={{fontSize:42,fontWeight: 400,color:T.blue}}>{initials}</span></div>
+          <h2 style={{fontSize:20,fontWeight: 400,color:T.ink,textAlign:"center",marginBottom:4}}>{name}</h2>
           <p style={{fontSize:12,color:T.ink3,textAlign:"center",marginBottom:4}}>{subject} Teacher</p>
           <p style={{fontSize:11,color:T.ink3,textAlign:"center",marginBottom:6}}>{teacher.experience||"—"} exp // {teacher.email||"—"}</p>
-          <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:10}}><StarRow rating={avgRating}/><span style={{fontSize:12,fontWeight:600,color:T.amb,marginLeft:4}}>{avgRating.toFixed(1)}</span></div>
+          <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:10}}><StarRow rating={avgRating}/><span style={{fontSize:12,fontWeight: 400,color:T.amb,marginLeft:4}}>{avgRating.toFixed(1)}</span></div>
           <div style={{display:"flex",gap:6,marginBottom:12}}>
-            <span style={{padding:"4px 12px",borderRadius:20,background:teacher.status==="Active"?T.glBg:T.alBg,color:teacher.status==="Active"?T.grn:T.amb,fontSize:10,fontWeight:600}}>{teacher.status||"Active"}</span>
-            <span style={{padding:"4px 12px",borderRadius:20,background:riskColor===T.grn?T.glBg:riskColor===T.amb?T.alBg:T.rlBg,color:riskColor,fontSize:10,fontWeight:600}}>{riskLevel}</span>
+            <span style={{padding:"4px 12px",borderRadius:20,background:teacher.status==="Active"?T.glBg:T.alBg,color:teacher.status==="Active"?T.grn:T.amb,fontSize:10,fontWeight: 400}}>{teacher.status||"Active"}</span>
+            <span style={{padding:"4px 12px",borderRadius:20,background:riskColor===T.grn?T.glBg:riskColor===T.amb?T.alBg:T.rlBg,color:riskColor,fontSize:10,fontWeight: 400}}>{riskLevel}</span>
           </div>
           <div style={{width:"100%",marginTop:8}}>
             {[{l:"Phone",v:teacher.phone||"—"},{l:"Classes",v:assignedClasses.length},{l:"Students",v:totalStudents},{l:"Rating",v:`${avgRating.toFixed(1)}/5`}].map(r=>
               <div key={r.l} style={{display:"flex",justifyContent:"space-between",padding:"6px 0",borderBottom:`1px solid ${T.s2}`,fontSize:11}}>
-                <span style={{color:T.ink3}}>{r.l}</span><span style={{color:T.ink,fontWeight:500}}>{r.v}</span>
+                <span style={{color:T.ink3}}>{r.l}</span><span style={{color:T.ink,fontWeight: 400}}>{r.v}</span>
               </div>
             )}
           </div>
@@ -253,25 +253,25 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
           <Card title="Assigned Classes" action={<DLink/>}>
             {assignedClasses.length===0?<p style={{fontSize:12,color:T.ink3,textAlign:"center"}}>No classes</p>:
               assignedClasses.map(c=><div key={c.id} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:`1px solid ${T.s2}`}}>
-                <div><div style={{fontSize:13,fontWeight:500,color:T.ink}}>{c.name||c.id}</div><div style={{fontSize:10,color:T.ink3,marginTop:2}}>{c.stuCount} students</div></div>
-                <div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:600,color:c.avgScore!=null?(c.avgScore>=75?T.grn:c.avgScore>=55?T.amb:T.red):T.ink3}}>{c.avgScore!=null?`${c.avgScore}%`:"—"}</div><div style={{fontSize:10,color:c.perf==="Good"?T.grn:c.perf==="Average"?T.amb:T.red}}>{c.perf}</div></div>
+                <div><div style={{fontSize:13,fontWeight: 400,color:T.ink}}>{c.name||c.id}</div><div style={{fontSize:10,color:T.ink3,marginTop:2}}>{c.stuCount} students</div></div>
+                <div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight: 400,color:c.avgScore!=null?(c.avgScore>=75?T.grn:c.avgScore>=55?T.amb:T.red):T.ink3}}>{c.avgScore!=null?`${c.avgScore}%`:"—"}</div><div style={{fontSize:10,color:c.perf==="Good"?T.grn:c.perf==="Average"?T.amb:T.red}}>{c.perf}</div></div>
               </div>)}
           </Card>
           <Card title="AI Intelligence" action={<DLink/>}>
-            <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:8}}><span style={{fontSize:11,color:T.ink3}}>Overall rating:</span><span style={{fontSize:20,fontWeight: 600,color:T.blue}}>{perfMetrics.classAvg>=75?"Excellent":perfMetrics.classAvg>=50?"Good":"Needs Improvement"}</span></div>
+            <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:8}}><span style={{fontSize:11,color:T.ink3}}>Overall rating:</span><span style={{fontSize:20,fontWeight: 400,color:T.blue}}>{perfMetrics.classAvg>=75?"Excellent":perfMetrics.classAvg>=50?"Good":"Needs Improvement"}</span></div>
             <p style={{fontSize:11,color:T.ink3,lineHeight:1.6}}>{perfMetrics.classAvg>=75?"Strong teaching performance. Students consistently achieving above average.":perfMetrics.classAvg>=50?"Moderate performance. Consider focused improvement strategies.":"Performance below expectations. Intervention recommended."}</p>
           </Card>
           <Card title={`Reviews · ${reviews.length}`} action={<DLink/>}>
             {reviews.length===0?<p style={{fontSize:12,color:T.ink3,textAlign:"center"}}>No reviews yet</p>:
               reviews.slice(0,3).map(r=><div key={r.id} style={{padding:"8px 0",borderBottom:`1px solid ${T.s2}`}}>
-                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:4}}><span style={{fontSize:12,fontWeight:500,color:T.ink}}>{r.parentName||r.studentName||"Parent"}</span><StarRow rating={r.rating||0}/></div>
+                <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:4}}><span style={{fontSize:12,fontWeight: 400,color:T.ink}}>{r.parentName||r.studentName||"Parent"}</span><StarRow rating={r.rating||0}/></div>
                 <p style={{fontSize:11,color:T.ink2,lineHeight:1.5,margin:0}}>{(r.review||r.comment||"").slice(0,100)}</p>
               </div>)}
           </Card>
           <Card title="Quick Message">
             <div style={{display:"flex",gap:8}}>
               <input value={msgText} onChange={e=>setMsgText(e.target.value)} placeholder="Message teacher..." onKeyDown={e=>{if(e.key==="Enter")handleSendMsg();}} style={{flex:1,padding:"8px 12px",borderRadius:10,border:`1px solid ${T.bdr}`,fontSize:12,outline:"none"}}/>
-              <button onClick={handleSendMsg} disabled={sendingMsg||!msgText.trim()} style={{padding:"8px 14px",borderRadius:10,background:T.blue,color:"#fff",border:"none",fontSize:12,fontWeight:600,cursor:"pointer",opacity:msgText.trim()?1:0.5}}><Send size={12}/></button>
+              <button onClick={handleSendMsg} disabled={sendingMsg||!msgText.trim()} style={{padding:"8px 14px",borderRadius:10,background:T.blue,color:"#fff",border:"none",fontSize:12,fontWeight: 400,cursor:"pointer",opacity:msgText.trim()?1:0.5}}><Send size={12}/></button>
             </div>
           </Card>
         </div>
@@ -299,8 +299,8 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
                 <a.icon size={20} color={a.col}/>
               </div>
               <div style={{minWidth:0}}>
-                <div style={{fontSize:28,fontWeight: 600,color:a.col,lineHeight:1}}>{a.v}</div>
-                <div style={{fontSize:11,fontWeight:600,color:T.ink3,marginTop:4,textTransform:"uppercase",letterSpacing:"0.04em"}}>{a.l}</div>
+                <div style={{fontSize:28,fontWeight: 400,color:a.col,lineHeight:1}}>{a.v}</div>
+                <div style={{fontSize:11,fontWeight: 400,color:T.ink3,marginTop:4,textTransform:"uppercase",letterSpacing:"0.04em"}}>{a.l}</div>
               </div>
             </div>
           ))}
@@ -311,15 +311,15 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20,marginBottom:20}}>
         <Card title={`Top Students · ${studentRankings.length}`} action={<span style={{fontSize:11,color:T.blue,cursor:"pointer"}}>View All →</span>}>
           {studentRankings.slice(0,5).map((s,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:`1px solid ${T.s2}`}}>
-            <div style={{width:28,height:28,borderRadius:8,background:i<3?T.blBg:T.s1,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight: 600,color:i<3?T.blue:T.ink3}}>{i+1}</div>
-            <div style={{flex:1,minWidth:0}}><div style={{fontSize:12,fontWeight:500,color:T.ink}}>{s.name}</div><div style={{fontSize:10,color:T.ink3}}>{s.className}</div></div>
-            <span style={{fontSize:13,fontWeight: 600,color:s.avg>=75?T.grn:s.avg>=50?T.amb:T.red}}>{s.avg}%</span>
+            <div style={{width:28,height:28,borderRadius:8,background:i<3?T.blBg:T.s1,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight: 400,color:i<3?T.blue:T.ink3}}>{i+1}</div>
+            <div style={{flex:1,minWidth:0}}><div style={{fontSize:12,fontWeight: 400,color:T.ink}}>{s.name}</div><div style={{fontSize:10,color:T.ink3}}>{s.className}</div></div>
+            <span style={{fontSize:13,fontWeight: 400,color:s.avg>=75?T.grn:s.avg>=50?T.amb:T.red}}>{s.avg}%</span>
           </div>)}
           {studentRankings.length===0&&<p style={{fontSize:12,color:T.ink3,textAlign:"center"}}>No student data</p>}
         </Card>
         <Card title="Risk Assessment" action={<DLink/>}>
-          <div style={{fontSize:22,fontWeight: 600,color:riskColor,marginBottom:14}}>{riskLevel}</div>
-          {[{l:"CLASS AVG",v:perfMetrics.classAvg},{l:"PASS RATE",v:perfMetrics.passRate},{l:"ATTENDANCE",v:attRate},{l:"SATISFACTION",v:perfMetrics.satisfaction}].map(r=><div key={r.l} style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}><span style={{fontSize:11,color:T.ink3,width:100}}>{r.l}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:r.v>=80?T.blue:r.v>=50?T.amb:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight:600,color:r.v>=80?T.blue:r.v>=50?T.amb:T.red,width:40,textAlign:"right"}}>{r.v}%</span></div>)}
+          <div style={{fontSize:22,fontWeight: 400,color:riskColor,marginBottom:14}}>{riskLevel}</div>
+          {[{l:"CLASS AVG",v:perfMetrics.classAvg},{l:"PASS RATE",v:perfMetrics.passRate},{l:"ATTENDANCE",v:attRate},{l:"SATISFACTION",v:perfMetrics.satisfaction}].map(r=><div key={r.l} style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}><span style={{fontSize:11,color:T.ink3,width:100}}>{r.l}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:r.v>=80?T.blue:r.v>=50?T.amb:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight: 400,color:r.v>=80?T.blue:r.v>=50?T.amb:T.red,width:40,textAlign:"right"}}>{r.v}%</span></div>)}
         </Card>
       </div>
 
@@ -328,14 +328,14 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
         <Card title="Attendance Calendar">
           <div style={{display:"flex",alignItems:"center",justifyContent:"center",gap:16,marginBottom:14}}>
             <button onClick={()=>setCalMonth(new Date(calY,calM-1))} style={{background:"none",border:"none",cursor:"pointer",color:T.ink3}}><ChevronLeft size={16}/></button>
-            <span style={{fontSize:13,fontWeight:600,color:T.ink}}>{MONTHS[calM]} {calY}</span>
+            <span style={{fontSize:13,fontWeight: 400,color:T.ink}}>{MONTHS[calM]} {calY}</span>
             <button onClick={()=>setCalMonth(new Date(calY,calM+1))} style={{background:"none",border:"none",cursor:"pointer",color:T.ink3}}><ChevronRight size={16}/></button>
           </div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8,marginBottom:14}}>
-            {[{v:calP,c:T.grn,l:"PRESENT"},{v:calL,c:T.amb,l:"LATE"},{v:calA,c:T.red,l:"ABSENT"}].map(x=><div key={x.l} style={{textAlign:"center",padding:"10px 0",background:x.c===T.grn?T.glBg:x.c===T.amb?T.alBg:T.rlBg,borderRadius:10}}><div style={{fontSize:20,fontWeight: 600,color:x.c}}>{x.v}</div><div style={{fontSize:10,color:x.c}}>{x.l}</div></div>)}
+            {[{v:calP,c:T.grn,l:"PRESENT"},{v:calL,c:T.amb,l:"LATE"},{v:calA,c:T.red,l:"ABSENT"}].map(x=><div key={x.l} style={{textAlign:"center",padding:"10px 0",background:x.c===T.grn?T.glBg:x.c===T.amb?T.alBg:T.rlBg,borderRadius:10}}><div style={{fontSize:20,fontWeight: 400,color:x.c}}>{x.v}</div><div style={{fontSize:10,color:x.c}}>{x.l}</div></div>)}
           </div>
           <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:4,textAlign:"center"}}>
-            {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=><div key={d} style={{fontSize:10,fontWeight:600,color:T.ink3,padding:"4px 0"}}>{d}</div>)}
+            {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=><div key={d} style={{fontSize:10,fontWeight: 400,color:T.ink3,padding:"4px 0"}}>{d}</div>)}
             {calDays.map((d,i)=>{if(!d)return<div key={i}/>;const isT=d.date.toDateString()===today.toDateString();const bg=d.status==="present"?T.grn:d.status==="late"?T.amb:d.status==="absent"?T.red:"transparent";return<div key={i} style={{width:32,height:32,borderRadius:isT?"50%":8,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:isT?700:400,color:d.status?"#fff":T.ink,background:isT&&!d.status?T.blue:bg,...(isT&&!d.status?{color:"#fff"}:{})}}>{d.dayNum}</div>;})}
           </div>
         </Card>
@@ -355,7 +355,7 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
           ].map(item=>
             <div key={item.l} style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"8px 0",borderBottom:`1px solid ${T.s2}`}}>
               <div style={{display:"flex",alignItems:"center",gap:8}}><item.icon size={14} color={T.ink3}/><span style={{fontSize:12,color:T.ink3}}>{item.l}</span></div>
-              <span style={{fontSize:13,fontWeight:600,color:T.ink}}>{item.v}</span>
+              <span style={{fontSize:13,fontWeight: 400,color:T.ink}}>{item.v}</span>
             </div>
           )}
         </Card>
@@ -366,18 +366,18 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
         <Card title={`Reviews · ${reviews.length} entries`}>
           {reviews.slice(0,4).map(r=><div key={r.id} style={{padding:"12px 0",borderBottom:`1px solid ${T.s2}`}}>
             <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:4}}>
-              <span style={{fontSize:13,fontWeight:600,color:T.ink}}>{r.parentName||r.studentName||"Parent"}</span>
-              <span style={{padding:"2px 8px",borderRadius:4,background:T.blBg,color:T.blue,fontSize:10,fontWeight:600}}>PARENT</span>
+              <span style={{fontSize:13,fontWeight: 400,color:T.ink}}>{r.parentName||r.studentName||"Parent"}</span>
+              <span style={{padding:"2px 8px",borderRadius:4,background:T.blBg,color:T.blue,fontSize:10,fontWeight: 400}}>PARENT</span>
               <span style={{fontSize:10,color:T.ink3,marginLeft:"auto"}}>{timeAgo(r.createdAt)}</span>
             </div>
-            <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:4}}><StarRow rating={r.rating||0}/><span style={{fontSize:11,color:T.amb,fontWeight:500}}>{r.rating||0}/5</span></div>
+            <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:4}}><StarRow rating={r.rating||0}/><span style={{fontSize:11,color:T.amb,fontWeight: 400}}>{r.rating||0}/5</span></div>
             <p style={{fontSize:12,color:T.ink2,lineHeight:1.5,margin:0}}>{(r.review||r.comment||"").slice(0,120)}</p>
           </div>)}
           {reviews.length===0&&<p style={{fontSize:12,color:T.ink3,textAlign:"center",padding:"16px 0"}}>No reviews</p>}
         </Card>
         <Card title="Subject Performance">
           {subjectData.length>0&&<div style={{height:160,marginBottom:12}}><ResponsiveContainer width="100%" height="100%"><BarChart data={subjectData}><CartesianGrid strokeDasharray="3 3" stroke={T.s2}/><XAxis dataKey="name" tick={{fill:T.ink3,fontSize:9}}/><YAxis tick={{fill:T.ink3,fontSize:9}} domain={[0,100]}/><Tooltip contentStyle={{background:T.white,border:`1px solid ${T.bdr}`,borderRadius:8,fontSize:11}}/><Bar dataKey="avg" fill={T.blue} radius={[4,4,0,0]}/></BarChart></ResponsiveContainer></div>}
-          {subjectData.map(s=><div key={s.name} style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}><span style={{fontSize:11,color:T.ink3,width:80,flexShrink:0}}>{s.name}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${s.avg}%`,background:s.avg>=75?T.blue:s.avg>=50?T.grn:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight:600,color:T.ink,width:28,textAlign:"right"}}>{s.avg}</span></div>)}
+          {subjectData.map(s=><div key={s.name} style={{display:"flex",alignItems:"center",gap:8,marginBottom:6}}><span style={{fontSize:11,color:T.ink3,width:80,flexShrink:0}}>{s.name}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${s.avg}%`,background:s.avg>=75?T.blue:s.avg>=50?T.grn:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight: 400,color:T.ink,width:28,textAlign:"right"}}>{s.avg}</span></div>)}
         </Card>
       </div>
 
@@ -390,14 +390,14 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
       {editOpen&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.4)",backdropFilter:"blur(4px)",zIndex:50,display:"flex",alignItems:"center",justifyContent:"center",padding:24}} onClick={()=>setEditOpen(false)}>
         <div style={{background:T.white,borderRadius:20,width:"100%",maxWidth:400,boxShadow:"0 20px 60px rgba(0,0,0,0.2)"}} onClick={e=>e.stopPropagation()}>
           <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"16px 20px",borderBottom:`1px solid ${T.s2}`}}>
-            <h3 style={{fontSize:16,fontWeight:600,color:T.ink,margin:0}}>Edit Teacher</h3>
+            <h3 style={{fontSize:16,fontWeight: 400,color:T.ink,margin:0}}>Edit Teacher</h3>
             <button onClick={()=>setEditOpen(false)} style={{width:28,height:28,border:"none",background:T.s1,borderRadius:8,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}><X size={14} color={T.ink3}/></button>
           </div>
           <div style={{padding:20,display:"flex",flexDirection:"column",gap:14}}>
-            {[{l:"Phone",k:"phone"},{l:"Experience",k:"experience"},{l:"Bio",k:"bio"},{l:"Status",k:"status"}].map(f=><div key={f.k}><label style={{fontSize:11,fontWeight:600,color:T.ink3,textTransform:"uppercase",letterSpacing:"0.05em",marginBottom:6,display:"block"}}>{f.l}</label><input value={(editForm as any)[f.k]} onChange={e=>setEditForm({...editForm,[f.k]:e.target.value})} style={{width:"100%",padding:"10px 12px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.s1,fontSize:13,color:T.ink,outline:"none"}}/></div>)}
+            {[{l:"Phone",k:"phone"},{l:"Experience",k:"experience"},{l:"Bio",k:"bio"},{l:"Status",k:"status"}].map(f=><div key={f.k}><label style={{fontSize:11,fontWeight: 400,color:T.ink3,textTransform:"uppercase",letterSpacing:"0.05em",marginBottom:6,display:"block"}}>{f.l}</label><input value={(editForm as any)[f.k]} onChange={e=>setEditForm({...editForm,[f.k]:e.target.value})} style={{width:"100%",padding:"10px 12px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.s1,fontSize:13,color:T.ink,outline:"none"}}/></div>)}
             <div style={{display:"flex",gap:8,marginTop:4}}>
               <button onClick={()=>setEditOpen(false)} style={{flex:1,padding:"10px",borderRadius:10,border:`1px solid ${T.bdr}`,background:T.white,color:T.ink2,fontSize:13,cursor:"pointer"}}>Cancel</button>
-              <button onClick={handleSaveEdit} disabled={savingEdit} style={{flex:1,padding:"10px",borderRadius:10,border:"none",background:T.blue,color:"#fff",fontSize:13,fontWeight:600,cursor:"pointer",opacity:savingEdit?0.7:1}}>{savingEdit?"Saving...":"Save"}</button>
+              <button onClick={handleSaveEdit} disabled={savingEdit} style={{flex:1,padding:"10px",borderRadius:10,border:"none",background:T.blue,color:"#fff",fontSize:13,fontWeight: 400,cursor:"pointer",opacity:savingEdit?0.7:1}}>{savingEdit?"Saving...":"Save"}</button>
             </div>
           </div>
         </div>

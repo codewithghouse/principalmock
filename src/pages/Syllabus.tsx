@@ -89,14 +89,14 @@ const StatCard = ({
 }) => (
   <div className="clickable-card bg-white border border-slate-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
     <div className="flex items-center justify-between mb-3">
-      <span className="text-sm text-slate-500 font-medium">{title}</span>
+      <span className="text-sm text-slate-500 font-normal">{title}</span>
       <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${iconBg}`}>
         <Icon className="w-4.5 h-4.5" />
       </div>
     </div>
-    <div className="text-2xl font-semibold text-[#1D1D1F] mb-1">{value}</div>
+    <div className="text-2xl font-normal text-[#1D1D1F] mb-1">{value}</div>
     {subtitle && (
-      <span className="text-xs font-semibold text-slate-400">{subtitle}</span>
+      <span className="text-xs font-normal text-slate-400">{subtitle}</span>
     )}
   </div>
 );
@@ -288,7 +288,7 @@ const Syllabus = () => {
     return (
       <div className="flex flex-col items-center justify-center py-28 bg-white rounded-2xl border border-dashed border-slate-200">
         <Library className="w-12 h-12 text-slate-200 mb-4" />
-        <p className="text-base font-semibold text-slate-400">Please sign in</p>
+        <p className="text-base font-normal text-slate-400">Please sign in</p>
         <p className="text-sm text-slate-300 mt-1">You need to be logged in to view syllabi.</p>
       </div>
     );
@@ -393,7 +393,7 @@ const Syllabus = () => {
     return (
       <div
         style={{
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
           background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -402,7 +402,7 @@ const Syllabus = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 400, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Syllabus
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400, lineHeight: 1.5 }}>
@@ -420,7 +420,7 @@ const Syllabus = () => {
               alignItems: "center",
               gap: 6,
               fontSize: 12,
-              fontWeight: 600,
+              fontWeight: 400,
               color: "#fff",
               border: "none",
               cursor: "pointer",
@@ -553,13 +553,13 @@ const Syllabus = () => {
                 >
                   <Icon size={22} color="#fff" strokeWidth={2.3} />
                 </div>
-                <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, lineHeight: 1.3, marginBottom: 6, whiteSpace: "pre-line", position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 10, fontWeight: 400, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, lineHeight: 1.3, marginBottom: 6, whiteSpace: "pre-line", position: "relative", zIndex: 1 }}>
                   {card.label}
                 </div>
-                <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 6, color: card.valColor, position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 28, fontWeight: 400, letterSpacing: "-1px", lineHeight: 1, marginBottom: 6, color: card.valColor, position: "relative", zIndex: 1 }}>
                   {card.value}
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 600, color: card.subColor, position: "relative", zIndex: 1 }}>{card.sub}</div>
+                <div style={{ fontSize: 11, fontWeight: 400, color: card.subColor, position: "relative", zIndex: 1 }}>{card.sub}</div>
                 <Decor
                   size={48}
                   strokeWidth={2}
@@ -610,7 +610,7 @@ const Syllabus = () => {
               border: "0.5px solid rgba(10,132,255,.12)",
               fontFamily: "inherit",
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               color: T2,
               boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
               cursor: "pointer",
@@ -635,7 +635,7 @@ const Syllabus = () => {
               border: "0.5px solid rgba(10,132,255,.12)",
               fontFamily: "inherit",
               fontSize: 11,
-              fontWeight: 600,
+              fontWeight: 400,
               color: T2,
               boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
               cursor: "pointer",
@@ -655,7 +655,7 @@ const Syllabus = () => {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 600,
+            fontWeight: 400,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -673,7 +673,7 @@ const Syllabus = () => {
               background: "rgba(10,132,255,.10)",
               border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 600,
+              fontWeight: 400,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -695,7 +695,7 @@ const Syllabus = () => {
               borderRadius: 14,
               fontSize: 12,
               color: RED,
-              fontWeight: 600,
+              fontWeight: 400,
             }}
           >
             {error}
@@ -741,7 +741,7 @@ const Syllabus = () => {
                 <FileText size={28} color="#fff" strokeWidth={2.2} />
               )}
             </div>
-            <div style={{ fontSize: 17, fontWeight: 600, color: T1, letterSpacing: "-0.3px", textAlign: "center" }}>
+            <div style={{ fontSize: 17, fontWeight: 400, color: T1, letterSpacing: "-0.3px", textAlign: "center" }}>
               {syllabi.length === 0 ? "No syllabi uploaded yet" : "No syllabi match your filters"}
             </div>
             <div style={{ fontSize: 12, color: T3, textAlign: "center", maxWidth: 220, lineHeight: 1.6, fontWeight: 400 }}>
@@ -759,7 +759,7 @@ const Syllabus = () => {
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   fontSize: 12,
-                  fontWeight: 600,
+                  fontWeight: 400,
                   border: "none",
                   cursor: "pointer",
                   boxShadow: "0 6px 22px rgba(10,132,255,.40)",
@@ -806,7 +806,7 @@ const Syllabus = () => {
                         padding: "5px 13px",
                         borderRadius: 100,
                         fontSize: 11,
-                        fontWeight: 600,
+                        fontWeight: 400,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
                         flexShrink: 0,
@@ -837,7 +837,7 @@ const Syllabus = () => {
                   </div>
 
                   <div style={{ flex: 1, paddingLeft: 4, minWidth: 0 }}>
-                    <div style={{ fontSize: 16, fontWeight: 600, color: T1, letterSpacing: "-0.3px", marginBottom: 6, lineHeight: 1.3 }}>
+                    <div style={{ fontSize: 16, fontWeight: 400, color: T1, letterSpacing: "-0.3px", marginBottom: 6, lineHeight: 1.3 }}>
                       {title}
                     </div>
 
@@ -875,7 +875,7 @@ const Syllabus = () => {
                       <span
                         style={{
                           fontSize: 11,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: T2,
                           letterSpacing: "-0.1px",
                           flex: 1,
@@ -889,7 +889,7 @@ const Syllabus = () => {
                       <span
                         style={{
                           fontSize: 10,
-                          fontWeight: 600,
+                          fontWeight: 400,
                           color: T4,
                           flexShrink: 0,
                           background: "#EBEBF0",
@@ -923,16 +923,16 @@ const Syllabus = () => {
                             alignItems: "center",
                             justifyContent: "center",
                             fontSize: 8,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: "#fff",
                             flexShrink: 0,
                           }}
                         >
                           {teacherInit}
                         </div>
-                        <span style={{ fontSize: 11, fontWeight: 600, color: T2 }}>{teacherName}</span>
+                        <span style={{ fontSize: 11, fontWeight: 400, color: T2 }}>{teacherName}</span>
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: T4 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 400, color: T4 }}>
                         <Clock size={11} strokeWidth={2.3} />
                         {formatRelativeTime(s.uploadedAt)}
                       </div>
@@ -947,7 +947,7 @@ const Syllabus = () => {
                             background: "rgba(175,82,222,.10)",
                             border: "0.5px solid rgba(175,82,222,.20)",
                             fontSize: 10,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: VIOLET,
                           }}
                         >
@@ -966,7 +966,7 @@ const Syllabus = () => {
                             background: "rgba(10,132,255,.10)",
                             border: "0.5px solid rgba(10,132,255,.18)",
                             fontSize: 10,
-                            fontWeight: 600,
+                            fontWeight: 400,
                             color: B1,
                           }}
                         >
@@ -991,7 +991,7 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       background: `linear-gradient(135deg, ${B1}, ${B2})`,
                       color: "#fff",
                       border: "none",
@@ -1013,7 +1013,7 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       background: "rgba(52,199,89,.10)",
                       color: "#248A3D",
                       border: "0.5px solid rgba(52,199,89,.22)",
@@ -1035,7 +1035,7 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 600,
+                      fontWeight: 400,
                       background: "rgba(255,59,48,.10)",
                       color: RED,
                       border: "0.5px solid rgba(255,59,48,.22)",
@@ -1094,23 +1094,23 @@ const Syllabus = () => {
               >
                 <Sparkles size={14} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Syllabus Intelligence
               </span>
             </div>
             <div style={{ fontSize: 13, color: "rgba(255,255,255,.85)", lineHeight: 1.72, fontWeight: 400, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} syllab{totalCount === 1 ? "us" : "i"}</strong> uploaded for{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{totalCount} syllab{totalCount === 1 ? "us" : "i"}</strong> uploaded for{" "}
+              <strong style={{ color: "#fff", fontWeight: 400 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong>.{" "}
               Subject coverage at{" "}
-              <strong style={{ color: "#fff", fontWeight: 600 }}>
+              <strong style={{ color: "#fff", fontWeight: 400 }}>
                 {classesCount === 0 ? "0%" : `${Math.min(100, Math.round((subjectsCount / Math.max(1, classesCount)) * 100))}%`}
               </strong>
               {subjectsCount === 0 ? " — no subject tags assigned yet." : "."}
               {lastUploadRel && (
                 <>
                   {" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.by}</strong> uploaded the latest document{" "}
-                  <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.rel}</strong>.
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>{lastUploadRel.by}</strong> uploaded the latest document{" "}
+                  <strong style={{ color: "#fff", fontWeight: 400 }}>{lastUploadRel.rel}</strong>.
                 </>
               )}
               {subjectsCount === 0 && " Consider adding subject metadata to improve tracking and student accessibility."}
@@ -1134,10 +1134,10 @@ const Syllabus = () => {
                 { v: lastUploadShort, l: "Last Upload" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "13px 12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
+                  <div style={{ fontSize: 20, fontWeight: 400, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 400, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1168,7 +1168,7 @@ const Syllabus = () => {
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center gap-4 pt-2 pb-5">
@@ -1177,7 +1177,7 @@ const Syllabus = () => {
           <Library className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Syllabus</div>
+          <div className="text-[24px] font-normal leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Syllabus</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>View and manage syllabi uploaded by teachers for your branch</div>
         </div>
       </div>
@@ -1197,10 +1197,10 @@ const Syllabus = () => {
               <FileText className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Syllabus Library</div>
+              <div className="text-[12px] font-normal uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Syllabus Library</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : totalCount}</span>
-                <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>total documents</span>
+                <span className="text-[28px] font-normal leading-none tracking-tight">{loading ? "—" : totalCount}</span>
+                <span className="text-[14px] font-normal" style={{ color: "rgba(255,255,255,0.50)" }}>total documents</span>
               </div>
             </div>
           </div>
@@ -1211,8 +1211,8 @@ const Syllabus = () => {
                 <Clock className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Last Upload</div>
-                <div className="text-[18px] font-semibold leading-none" style={{ letterSpacing: "-0.3px" }}>{lastUploadShort}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Last Upload</div>
+                <div className="text-[18px] font-normal leading-none" style={{ letterSpacing: "-0.3px" }}>{lastUploadShort}</div>
               </div>
             </div>
             <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.18)" }} />
@@ -1222,8 +1222,8 @@ const Syllabus = () => {
                 <CheckCircle2 className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>This Week</div>
-                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{updatedThisWeek}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>This Week</div>
+                <div className="text-[22px] font-normal leading-none" style={{ letterSpacing: "-0.5px" }}>{updatedThisWeek}</div>
               </div>
             </div>
           </div>
@@ -1281,9 +1281,9 @@ const Syllabus = () => {
             >
               <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
             </div>
-            <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
-            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-            <p className="text-[12px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
+            <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
+            <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+            <p className="text-[12px] font-normal truncate" style={{ color: dT3 }}>{sub}</p>
             <Icon
               className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
               style={{ color: decorColor, opacity: 0.18 }}
@@ -1302,7 +1302,7 @@ const Syllabus = () => {
             placeholder="Search by filename, title, or teacher…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
+            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-normal outline-none"
             style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
           />
         </div>
@@ -1313,7 +1313,7 @@ const Syllabus = () => {
           <select key={i}
             value={f.value}
             onChange={(e) => f.set(e.target.value)}
-            className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-semibold outline-none cursor-pointer appearance-none"
+            className="h-11 px-4 pr-10 bg-white rounded-[14px] text-[13px] font-normal outline-none cursor-pointer appearance-none"
             style={{
               border: `0.5px solid ${dSEP}`,
               color: dT2,
@@ -1331,7 +1331,7 @@ const Syllabus = () => {
 
       {/* Error */}
       {error && !loading && (
-        <div className="mt-4 p-4 rounded-[14px] text-[13px] font-medium"
+        <div className="mt-4 p-4 rounded-[14px] text-[13px] font-normal"
           style={{ background: "rgba(255,59,48,0.06)", border: "0.5px solid rgba(255,59,48,0.20)", color: dRED }}>
           {error}
         </div>
@@ -1343,8 +1343,8 @@ const Syllabus = () => {
           style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
           <FileText className="w-4 h-4 text-white" strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Uploaded Syllabi</div>
-        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+        <div className="text-[15px] font-normal" style={{ color: dT1, letterSpacing: "-0.2px" }}>Uploaded Syllabi</div>
+        <span className="text-[12px] font-normal px-3 py-1 rounded-full"
           style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length}
         </span>
@@ -1354,7 +1354,7 @@ const Syllabus = () => {
       {loading ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <Loader2 className="w-8 h-8 animate-spin" style={{ color: dB1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading syllabi…</p>
+          <p className="text-[12px] font-normal uppercase tracking-widest" style={{ color: dT4 }}>Loading syllabi…</p>
         </div>
       ) : filtered.length === 0 ? (
         <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
@@ -1368,12 +1368,12 @@ const Syllabus = () => {
           </div>
           {syllabi.length === 0 ? (
             <>
-              <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No syllabi uploaded yet</p>
+              <p className="text-[14px] font-normal" style={{ color: dT1 }}>No syllabi uploaded yet</p>
               <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>Teachers can upload syllabi from their dashboard.</p>
             </>
           ) : (
             <>
-              <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No syllabi match your filters</p>
+              <p className="text-[14px] font-normal" style={{ color: dT1 }}>No syllabi match your filters</p>
               <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>Try clearing filters or changing your search.</p>
             </>
           )}
@@ -1395,43 +1395,43 @@ const Syllabus = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
+                      <span className="text-[12px] font-normal uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
                         style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                         {classLabel}
                       </span>
                       {s.subject && (
-                        <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
+                        <span className="text-[12px] font-normal uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
                           style={{ background: "rgba(175,82,222,0.10)", color: dVIOLET, border: "0.5px solid rgba(175,82,222,0.22)" }}>
                           {s.subject}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-[14px] font-semibold leading-tight line-clamp-2" style={{ color: dT1, letterSpacing: "-0.2px" }}>{title}</h3>
+                    <h3 className="text-[14px] font-normal leading-tight line-clamp-2" style={{ color: dT1, letterSpacing: "-0.2px" }}>{title}</h3>
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="flex-1 p-5 flex flex-col gap-3">
-                  <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: dT3 }}>
+                  <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: dT3 }}>
                     <FileText className="w-[12px] h-[12px] shrink-0" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.4} />
                     <span className="truncate">{s.fileName || "file.pdf"}</span>
-                    <span className="text-[12px] font-semibold px-[8px] py-[2px] rounded-full shrink-0"
+                    <span className="text-[12px] font-normal px-[8px] py-[2px] rounded-full shrink-0"
                       style={{ background: dBG, color: dT2 }}>
                       {formatFileSize(s.fileSize)}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: dT3 }}>
-                    <div className="w-5 h-5 rounded-[6px] flex items-center justify-center text-[12px] font-semibold text-white shrink-0"
+                  <div className="flex items-center gap-2 text-[12px] font-normal" style={{ color: dT3 }}>
+                    <div className="w-5 h-5 rounded-[6px] flex items-center justify-center text-[12px] font-normal text-white shrink-0"
                       style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})` }}>
                       {(s.uploadedByName || "U").split(" ").map(w => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase()}
                     </div>
-                    <span className="truncate" style={{ color: dT2, fontWeight: 600 }}>{s.uploadedByName || "Unknown"}</span>
+                    <span className="truncate" style={{ color: dT2, fontWeight: 400 }}>{s.uploadedByName || "Unknown"}</span>
                     <span className="text-[12px]" style={{ color: dT4 }}>·</span>
                     <span>{formatRelativeTime(s.uploadedAt)}</span>
                   </div>
                   {s.academicYear && (
                     <div>
-                      <span className="inline-flex items-center gap-1 text-[12px] font-semibold px-[8px] py-[4px] rounded-full uppercase tracking-[0.08em]"
+                      <span className="inline-flex items-center gap-1 text-[12px] font-normal px-[8px] py-[4px] rounded-full uppercase tracking-[0.08em]"
                         style={{ background: "rgba(255,204,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                         <Calendar className="w-[11px] h-[11px]" strokeWidth={2.4} />
                         {s.academicYear}
@@ -1443,7 +1443,7 @@ const Syllabus = () => {
                 {/* Actions */}
                 <div className="flex gap-2 p-4" style={{ borderTop: `0.5px solid ${dSEP}`, background: dBG }}>
                   <button onClick={() => handleView(s.fileUrl)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-normal text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
                     <Eye className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
@@ -1478,16 +1478,16 @@ const Syllabus = () => {
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Syllabus Intelligence</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Syllabus Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            Your library has <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} syllabi</strong> across <strong style={{ color: "#fff", fontWeight: 600 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong> and <strong style={{ color: "#fff", fontWeight: 600 }}>{subjectsCount} subject{subjectsCount === 1 ? "" : "s"}</strong>.
-            Latest upload by <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.by}</strong> was <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.rel}</strong>.
-            {updatedThisWeek > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{updatedThisWeek}</strong> new document{updatedThisWeek === 1 ? "" : "s"} added this week.</>}
+            Your library has <strong style={{ color: "#fff", fontWeight: 400 }}>{totalCount} syllabi</strong> across <strong style={{ color: "#fff", fontWeight: 400 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong> and <strong style={{ color: "#fff", fontWeight: 400 }}>{subjectsCount} subject{subjectsCount === 1 ? "" : "s"}</strong>.
+            Latest upload by <strong style={{ color: "#fff", fontWeight: 400 }}>{lastUploadRel.by}</strong> was <strong style={{ color: "#fff", fontWeight: 400 }}>{lastUploadRel.rel}</strong>.
+            {updatedThisWeek > 0 && <> <strong style={{ color: "#fff", fontWeight: 400 }}>{updatedThisWeek}</strong> new document{updatedThisWeek === 1 ? "" : "s"} added this week.</>}
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}

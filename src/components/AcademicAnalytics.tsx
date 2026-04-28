@@ -119,7 +119,7 @@ const AcademicAnalytics = () => {
         <div className="bg-card border border-border shadow-sm rounded-2xl p-10 flex flex-col items-center justify-center text-center w-full mb-6 relative overflow-hidden group">
            <div className="absolute -left-10 -top-10 w-40 h-40 bg-indigo-50 rounded-full blur-3xl opacity-50 block"></div>
            <Activity className="w-12 h-12 text-slate-300 mb-4 animate-pulse duration-1000 relative z-10" />
-           <p className="text-base font-semibold text-slate-600 max-w-md relative z-10">{placeholderMessage}</p>
+           <p className="text-base font-normal text-slate-600 max-w-md relative z-10">{placeholderMessage}</p>
         </div>
      );
   }
@@ -143,10 +143,10 @@ const AcademicAnalytics = () => {
     <div className="bg-card border border-border shadow-sm rounded-2xl p-8 mb-6 w-full animate-in fade-in duration-500">
       <div className="flex items-center justify-between mb-8 pb-4 border-b border-border">
          <div>
-            <h2 className="text-xl font-semibold text-foreground flex items-center gap-2">
+            <h2 className="text-xl font-normal text-foreground flex items-center gap-2">
                <Sparkles className="w-5 h-5 text-indigo-500" /> Academic Analytics Engine
             </h2>
-            <p className="text-sm font-medium text-muted-foreground mt-1">AI-driven academic performance mapping and historical comparison</p>
+            <p className="text-sm font-normal text-muted-foreground mt-1">AI-driven academic performance mapping and historical comparison</p>
          </div>
          {loading && <Loader2 className="w-5 h-5 animate-spin text-indigo-500" />}
       </div>
@@ -157,12 +157,12 @@ const AcademicAnalytics = () => {
             {/* Performance Trend Analysis */}
             <div className="p-5 border border-border rounded-xl bg-slate-50/50 hover:bg-white transition-all shadow-none hover:shadow-sm group">
                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold flex items-center gap-2 text-slate-800"><Activity className="w-4 h-4 text-blue-500"/> Performance Trend</h3>
-                  <span className={`px-2 py-0.5 rounded text-[12px] font-semibold uppercase tracking-widest border ${getTrendColor(extractTrendWord(data?.performance_trend))}`}>
+                  <h3 className="text-sm font-normal flex items-center gap-2 text-slate-800"><Activity className="w-4 h-4 text-blue-500"/> Performance Trend</h3>
+                  <span className={`px-2 py-0.5 rounded text-[12px] font-normal uppercase tracking-widest border ${getTrendColor(extractTrendWord(data?.performance_trend))}`}>
                      {loading ? "PROCESSING" : extractTrendWord(data?.performance_trend)}
                   </span>
                </div>
-               <p className="text-sm font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
+               <p className="text-sm font-normal text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
                   {data?.performance_trend || (loading ? "Generating insight..." : "No trend insight available.")}
                </p>
             </div>
@@ -170,12 +170,12 @@ const AcademicAnalytics = () => {
             {/* Monthly Trend Analytics */}
             <div className="p-5 border border-border rounded-xl bg-slate-50/50 hover:bg-white transition-all shadow-none hover:shadow-sm group">
                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold flex items-center gap-2 text-slate-800"><Calendar className="w-4 h-4 text-purple-500"/> Monthly Average Trend</h3>
-                  <span className={`px-2 py-0.5 rounded text-[12px] font-semibold uppercase tracking-widest border ${getTrendColor(extractTrendWord(data?.monthly_trend))}`}>
+                  <h3 className="text-sm font-normal flex items-center gap-2 text-slate-800"><Calendar className="w-4 h-4 text-purple-500"/> Monthly Average Trend</h3>
+                  <span className={`px-2 py-0.5 rounded text-[12px] font-normal uppercase tracking-widest border ${getTrendColor(extractTrendWord(data?.monthly_trend))}`}>
                      {loading ? "PROCESSING" : extractTrendWord(data?.monthly_trend)}
                   </span>
                </div>
-               <p className="text-sm font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
+               <p className="text-sm font-normal text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
                   {data?.monthly_trend || (loading ? "Generating insight..." : "No monthly insight available.")}
                </p>
             </div>
@@ -183,9 +183,9 @@ const AcademicAnalytics = () => {
             {/* Historical Comparison */}
             <div className="p-5 border border-border rounded-xl bg-slate-50/50 hover:bg-white transition-all shadow-none hover:shadow-sm group">
                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-semibold flex items-center gap-2 text-slate-800"><BarChart2 className="w-4 h-4 text-green-500"/> Historical Comparison</h3>
+                  <h3 className="text-sm font-normal flex items-center gap-2 text-slate-800"><BarChart2 className="w-4 h-4 text-green-500"/> Historical Comparison</h3>
                </div>
-               <p className="text-sm font-semibold text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
+               <p className="text-sm font-normal text-slate-600 leading-relaxed group-hover:text-slate-900 transition-colors">
                   {data?.historical_comparison || (loading ? "Generating insight..." : "No historical comparison available.")}
                </p>
             </div>
@@ -196,9 +196,9 @@ const AcademicAnalytics = () => {
             
             {/* Grade Distribution Mapping */}
             <div className="border border-border rounded-xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow">
-               <h3 className="text-sm font-semibold flex flex-wrap gap-2 items-center justify-between text-slate-800 mb-4">
+               <h3 className="text-sm font-normal flex flex-wrap gap-2 items-center justify-between text-slate-800 mb-4">
                   Grade Distribution Mapping
-                  <span className="text-[12px] bg-blue-50 text-blue-700 px-2 py-1 rounded font-semibold uppercase border border-blue-200/50">Cohort Analytics</span>
+                  <span className="text-[12px] bg-blue-50 text-blue-700 px-2 py-1 rounded font-normal uppercase border border-blue-200/50">Cohort Analytics</span>
                </h3>
                <div className="h-28 w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -214,7 +214,7 @@ const AcademicAnalytics = () => {
                      </BarChart>
                   </ResponsiveContainer>
                </div>
-               <p className="text-xs font-semibold text-slate-600 mt-3 text-center italic bg-slate-50/80 p-2.5 rounded-lg border border-slate-100 flex items-center justify-center gap-2">
+               <p className="text-xs font-normal text-slate-600 mt-3 text-center italic bg-slate-50/80 p-2.5 rounded-lg border border-slate-100 flex items-center justify-center gap-2">
                   <span className="shrink-0 w-2 h-2 rounded-full bg-blue-500 block"></span>
                   {data?.distribution_summary || "Analyzing score distribution clusters..."}
                </p>
@@ -222,9 +222,9 @@ const AcademicAnalytics = () => {
 
             {/* Monthly Performance Graphs */}
             <div className="border border-border rounded-xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow flex flex-col">
-               <h3 className="text-sm font-semibold flex flex-wrap gap-2 items-center justify-between text-slate-800 mb-4">
+               <h3 className="text-sm font-normal flex flex-wrap gap-2 items-center justify-between text-slate-800 mb-4">
                   Monthly Performance Tracking
-                  <span className="text-[12px] bg-purple-50 text-purple-700 px-2 py-1 rounded font-semibold uppercase border border-purple-200/50">Timeline</span>
+                  <span className="text-[12px] bg-purple-50 text-purple-700 px-2 py-1 rounded font-normal uppercase border border-purple-200/50">Timeline</span>
                </h3>
                <div className="flex-1 w-full relative min-h-[120px]">
                   <ResponsiveContainer width="100%" height="100%">

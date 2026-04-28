@@ -299,7 +299,7 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
               <Users className="w-5 h-5 text-[#1D1D1F]" />
             </div>
             <div>
-              <h2 className="text-base font-semibold text-slate-900">Notify All Class Teachers</h2>
+              <h2 className="text-base font-normal text-slate-900">Notify All Class Teachers</h2>
               <p className="text-xs text-slate-500">Each teacher gets info only about their own class students</p>
             </div>
           </div>
@@ -313,7 +313,7 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
 
           {/* Category toggles */}
           <div>
-            <p className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2">
+            <p className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-2">
               Include categories
             </p>
             <div className="grid grid-cols-3 gap-2">
@@ -347,7 +347,7 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
           {/* Editable intro / outro */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+              <label className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-1.5 block">
                 Intro (prepended to each message)
               </label>
               <textarea
@@ -358,7 +358,7 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
               />
             </div>
             <div>
-              <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
+              <label className="text-xs font-normal text-slate-700 uppercase tracking-wider mb-1.5 block">
                 Outro (appended to each message)
               </label>
               <textarea
@@ -373,10 +373,10 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
           {/* Preview list */}
           <div className="border border-slate-200 rounded-xl overflow-hidden">
             <div className="px-4 py-2.5 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
-              <span className="text-xs font-semibold text-slate-700 uppercase tracking-wider">
+              <span className="text-xs font-normal text-slate-700 uppercase tracking-wider">
                 Preview — who will receive
               </span>
-              <span className="text-xs font-semibold text-slate-600">
+              <span className="text-xs font-normal text-slate-600">
                 {loadingTeachers ? "..." : `${bundles.length} teacher${bundles.length !== 1 ? "s" : ""} · ${totalStudents} student${totalStudents !== 1 ? "s" : ""}`}
               </span>
             </div>
@@ -400,31 +400,31 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
                 bundles.map(b => (
                   <div key={b.teacherId} className="px-4 py-3 flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                      <span className="text-[12px] font-semibold text-[#1D1D1F]">
+                      <span className="text-[12px] font-normal text-[#1D1D1F]">
                         {initials(b.teacherName)}
                       </span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-slate-900 truncate">{b.teacherName}</p>
+                      <p className="text-sm font-normal text-slate-900 truncate">{b.teacherName}</p>
                       <p className="text-[12px] text-slate-500 truncate">
                         {b.classIds.length} class{b.classIds.length !== 1 ? "es" : ""} · {b.students.length} student{b.students.length !== 1 ? "s" : ""}
                       </p>
                     </div>
                     <div className="flex items-center gap-1.5 flex-shrink-0">
                       {b.counts.weak > 0 && (
-                        <span className="text-[12px] font-semibold px-2 py-0.5 rounded-full"
+                        <span className="text-[12px] font-normal px-2 py-0.5 rounded-full"
                               style={{ background: CATEGORY_META.weak.bg, color: CATEGORY_META.weak.color }}>
                           🔴 {b.counts.weak}
                         </span>
                       )}
                       {b.counts.developing > 0 && (
-                        <span className="text-[12px] font-semibold px-2 py-0.5 rounded-full"
+                        <span className="text-[12px] font-normal px-2 py-0.5 rounded-full"
                               style={{ background: CATEGORY_META.developing.bg, color: CATEGORY_META.developing.color }}>
                           🟡 {b.counts.developing}
                         </span>
                       )}
                       {b.counts.smart > 0 && (
-                        <span className="text-[12px] font-semibold px-2 py-0.5 rounded-full"
+                        <span className="text-[12px] font-normal px-2 py-0.5 rounded-full"
                               style={{ background: CATEGORY_META.smart.bg, color: CATEGORY_META.smart.color }}>
                           🟢 {b.counts.smart}
                         </span>
@@ -455,14 +455,14 @@ export default function NotifyAllTeachersModal({ classified, onClose }: Props) {
             <button
               onClick={onClose}
               disabled={sending}
-              className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+              className="px-4 py-2 rounded-xl border border-slate-200 text-sm font-normal text-slate-700 hover:bg-slate-50 disabled:opacity-50"
             >
               Cancel
             </button>
             <button
               onClick={handleSendAll}
               disabled={sending || bundles.length === 0 || !anyCategory}
-              className="px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-50 flex items-center gap-2"
+              className="px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-sm font-normal hover:bg-[#0A84FF] disabled:opacity-50 flex items-center gap-2"
             >
               {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
               Send to {bundles.length} teacher{bundles.length !== 1 ? "s" : ""}
@@ -503,8 +503,8 @@ function CategoryToggle({
         style={{ accentColor: meta.color }}
       />
       <Icon className="w-4 h-4" style={{ color: meta.color }} />
-      <span className="text-sm font-semibold text-slate-900 flex-1">{label}</span>
-      <span className="text-xs font-semibold" style={{ color: meta.color }}>{count}</span>
+      <span className="text-sm font-normal text-slate-900 flex-1">{label}</span>
+      <span className="text-xs font-normal" style={{ color: meta.color }}>{count}</span>
     </label>
   );
 }

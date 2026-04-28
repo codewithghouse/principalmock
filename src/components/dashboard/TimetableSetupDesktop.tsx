@@ -86,17 +86,17 @@ const DayCard = ({
           <Clock className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-[16px] font-semibold tracking-[-0.2px] flex items-center gap-[8px]" style={{ color: T1 }}>
+          <div className="text-[16px] font-normal tracking-[-0.2px] flex items-center gap-[8px]" style={{ color: T1 }}>
             <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: dot }} />
             {day}
           </div>
-          <div className="text-[12px] font-medium mt-[2px] flex items-center gap-[4px]" style={{ color: T4 }}>
-            <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+          <div className="text-[12px] font-normal mt-[2px] flex items-center gap-[4px]" style={{ color: T4 }}>
+            <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
               style={{ background: count > 0 ? "rgba(10,132,255,0.08)" : "rgba(255,149,0,0.10)", color: count > 0 ? B1 : "#86310C", border: `0.5px solid ${count > 0 ? "rgba(10,132,255,0.14)" : "rgba(255,149,0,0.22)"}` }}>
               {count} {count === 1 ? "Period" : "Periods"}
             </span>
             {breakCount > 0 && (
-              <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+              <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                 style={{ background: "rgba(255,149,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }}>
                 {breakCount} Break{breakCount === 1 ? "" : "s"}
               </span>
@@ -110,7 +110,7 @@ const DayCard = ({
             <select
               onChange={e => { if (e.target.value) { onCopyDay(day, e.target.value); e.target.value = ""; } }}
               defaultValue=""
-              className="h-8 pl-[32px] pr-[24px] rounded-[10px] text-[12px] font-semibold outline-none cursor-pointer appearance-none"
+              className="h-8 pl-[32px] pr-[24px] rounded-[10px] text-[12px] font-normal outline-none cursor-pointer appearance-none"
               style={{ background: "rgba(10,132,255,0.08)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}
               aria-label={`Copy ${day} to another day`}
             >
@@ -133,7 +133,7 @@ const DayCard = ({
               style={{ background: "linear-gradient(135deg, #EBEBF0, #D4E4FF)", border: "0.5px solid rgba(10,132,255,0.15)" }}>
               <Plus className="w-5 h-5" style={{ color: B1 }} strokeWidth={2.2} />
             </div>
-            <div className="text-[12px] font-semibold leading-[1.55] relative z-[1]" style={{ color: T3 }}>
+            <div className="text-[12px] font-normal leading-[1.55] relative z-[1]" style={{ color: T3 }}>
               No periods added —<br />
               use the buttons below
             </div>
@@ -149,9 +149,9 @@ const DayCard = ({
                   boxShadow: SHADOW_SM,
                 }}>
                 <div className="flex items-center gap-2 mb-[12px]">
-                  <div className="text-[12px] font-semibold w-[18px] flex-shrink-0" style={{ color: T4 }}>#{idx + 1}</div>
+                  <div className="text-[12px] font-normal w-[18px] flex-shrink-0" style={{ color: T4 }}>#{idx + 1}</div>
                   {p.isBreak && (
-                    <div className="flex items-center gap-[4px] px-[8px] py-[4px] rounded-full text-[12px] font-semibold flex-shrink-0"
+                    <div className="flex items-center gap-[4px] px-[8px] py-[4px] rounded-full text-[12px] font-normal flex-shrink-0"
                       style={{ background: "rgba(255,149,0,0.12)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }}>
                       <Coffee className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       Break
@@ -160,12 +160,12 @@ const DayCard = ({
                   <div className="flex items-center gap-[8px] flex-1">
                     <input type="time" value={p.startTime}
                       onChange={e => onUpdatePeriod(day, p.id, { startTime: e.target.value })}
-                      className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-semibold outline-none"
+                      className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-normal outline-none"
                       style={{ background: BG2, border: "0.5px solid rgba(10,132,255,0.12)", color: T1 }} />
-                    <span className="text-[12px] font-semibold" style={{ color: T4 }}>→</span>
+                    <span className="text-[12px] font-normal" style={{ color: T4 }}>→</span>
                     <input type="time" value={p.endTime}
                       onChange={e => onUpdatePeriod(day, p.id, { endTime: e.target.value })}
-                      className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-semibold outline-none"
+                      className="flex-1 min-w-0 h-8 px-2 rounded-[8px] text-[12px] font-normal outline-none"
                       style={{ background: BG2, border: "0.5px solid rgba(10,132,255,0.12)", color: T1 }} />
                   </div>
                   <button onClick={() => onRemovePeriod(day, p.id)}
@@ -181,7 +181,7 @@ const DayCard = ({
                       <User className="w-[13px] h-[13px] absolute left-[12px] top-1/2 -translate-y-1/2 pointer-events-none" style={{ color: T4 }} strokeWidth={2.3} />
                       <select value={p.teacherId}
                         onChange={e => onTeacherChange(day, p.id, e.target.value)}
-                        className="w-full h-9 pl-[32px] pr-2 rounded-[9px] text-[12px] font-semibold outline-none appearance-none"
+                        className="w-full h-9 pl-[32px] pr-2 rounded-[9px] text-[12px] font-normal outline-none appearance-none"
                         style={{ background: "#fff", border: "0.5px solid rgba(10,132,255,0.16)", color: p.teacherId ? T1 : T4 }}>
                         <option value="">Teacher…</option>
                         {teachers.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
@@ -192,7 +192,7 @@ const DayCard = ({
                       <select value={p.subject}
                         onChange={e => onUpdatePeriod(day, p.id, { subject: e.target.value })}
                         disabled={!p.teacherId}
-                        className="w-full h-9 pl-[32px] pr-2 rounded-[9px] text-[12px] font-semibold outline-none appearance-none disabled:opacity-50"
+                        className="w-full h-9 pl-[32px] pr-2 rounded-[9px] text-[12px] font-normal outline-none appearance-none disabled:opacity-50"
                         style={{ background: "#fff", border: "0.5px solid rgba(10,132,255,0.16)", color: p.subject ? T1 : T4 }}>
                         <option value="">{p.teacherId ? "Subject…" : "Pick teacher first"}</option>
                         {teacherSubjects.map(s => <option key={s} value={s}>{s}</option>)}
@@ -209,7 +209,7 @@ const DayCard = ({
       {/* Action buttons */}
       <div className="flex gap-2 px-4 pb-4">
         <button onClick={() => onAddPeriod(day)}
-          className="flex-1 h-[40px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.04em] transition-transform active:scale-[0.96] hover:scale-[1.02]"
+          className="flex-1 h-[40px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96] hover:scale-[1.02]"
           style={{
             background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)",
             color: B1,
@@ -220,7 +220,7 @@ const DayCard = ({
           Add Period
         </button>
         <button onClick={() => onAddBreak(day)}
-          className="flex-1 h-[40px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.04em] transition-transform active:scale-[0.96] hover:scale-[1.02]"
+          className="flex-1 h-[40px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96] hover:scale-[1.02]"
           style={{
             background: "linear-gradient(135deg, #FFF4E0, #FFDB99)",
             color: "#86310C",
@@ -252,14 +252,14 @@ const GridView = ({ schedule, onJumpToDay }: GridViewProps) => {
       style={{ background: "#fff", boxShadow: SHADOW_LG, border: "1px solid rgba(10,132,255,0.14)" }}>
       {/* Day header row */}
       <div className="grid" style={{ gridTemplateColumns: `80px repeat(${DAYS.length}, 1fr)` }}>
-        <div className="py-[16px] px-3 text-center text-[12px] font-semibold uppercase tracking-[0.10em]"
+        <div className="py-[16px] px-3 text-center text-[12px] font-normal uppercase tracking-[0.10em]"
           style={{ background: "rgba(10,132,255,0.05)", color: T4, borderRight: `1px solid ${SEP}`, borderBottom: `1px solid ${SEP}` }}>
           Slot
         </div>
         {DAYS.map((d, i) => (
           <button key={d}
             onClick={() => onJumpToDay(d)}
-            className="py-[16px] px-2 text-center text-[12px] font-semibold transition-colors hover:bg-[#F5F5F7]"
+            className="py-[16px] px-2 text-center text-[12px] font-normal transition-colors hover:bg-[#F5F5F7]"
             style={{
               background: "rgba(10,132,255,0.04)", color: T1,
               borderRight: i < DAYS.length - 1 ? `1px solid ${SEP}` : undefined,
@@ -269,7 +269,7 @@ const GridView = ({ schedule, onJumpToDay }: GridViewProps) => {
               <span className="w-2 h-2 rounded-full" style={{ background: DAY_DOT[d] }} />
               {d}
             </div>
-            <div className="text-[12px] font-semibold mt-[4px]" style={{ color: T4 }}>
+            <div className="text-[12px] font-normal mt-[4px]" style={{ color: T4 }}>
               {(schedule[d] || []).filter(p => !p.isBreak).length} periods
             </div>
           </button>
@@ -283,13 +283,13 @@ const GridView = ({ schedule, onJumpToDay }: GridViewProps) => {
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
             <Grid3x3 className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold mb-1" style={{ color: T1 }}>Empty timetable</p>
+          <p className="text-[13px] font-normal mb-1" style={{ color: T1 }}>Empty timetable</p>
           <p className="text-[12px]" style={{ color: T4 }}>Switch to Edit view and add periods to any day.</p>
         </div>
       ) : (
         Array.from({ length: maxRows }, (_, rowIdx) => (
           <div key={rowIdx} className="grid" style={{ gridTemplateColumns: `80px repeat(${DAYS.length}, 1fr)` }}>
-            <div className="py-3 px-3 text-center text-[12px] font-semibold flex items-center justify-center"
+            <div className="py-3 px-3 text-center text-[12px] font-normal flex items-center justify-center"
               style={{ background: "rgba(10,132,255,0.02)", color: T3, borderRight: `1px solid ${SEP}`, borderBottom: rowIdx < maxRows - 1 ? `0.5px solid ${SEP}` : undefined }}>
               {rowIdx + 1}
             </div>
@@ -304,26 +304,26 @@ const GridView = ({ schedule, onJumpToDay }: GridViewProps) => {
                     borderBottom: rowIdx < maxRows - 1 ? `0.5px solid ${SEP}` : undefined,
                   }}>
                   {!p ? (
-                    <span className="text-[12px] font-medium opacity-40" style={{ color: T4 }}>—</span>
+                    <span className="text-[12px] font-normal opacity-40" style={{ color: T4 }}>—</span>
                   ) : p.isBreak ? (
-                    <div className="w-full rounded-[10px] px-2 py-[8px] text-center text-[12px] font-semibold"
+                    <div className="w-full rounded-[10px] px-2 py-[8px] text-center text-[12px] font-normal"
                       style={{ background: "rgba(255,149,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,149,0,0.22)" }}>
                       <div className="flex items-center justify-center gap-1 mb-[2px]">
                         <Coffee className="w-[11px] h-[11px]" strokeWidth={2.5} />
                         Break
                       </div>
-                      <div className="text-[12px] font-semibold opacity-80">{p.startTime}–{p.endTime}</div>
+                      <div className="text-[12px] font-normal opacity-80">{p.startTime}–{p.endTime}</div>
                     </div>
                   ) : (
                     <div className="w-full rounded-[10px] px-2 py-[8px] text-center"
                       style={{ background: sty!.bg, border: `0.5px solid ${sty!.bdr}` }}>
-                      <div className="text-[12px] font-semibold truncate" style={{ color: sty!.text }}>
+                      <div className="text-[12px] font-normal truncate" style={{ color: sty!.text }}>
                         {p.subject || "—"}
                       </div>
-                      <div className="text-[12px] font-semibold mt-[2px] truncate" style={{ color: T3 }}>
+                      <div className="text-[12px] font-normal mt-[2px] truncate" style={{ color: T3 }}>
                         {p.teacherName || "No teacher"}
                       </div>
-                      <div className="text-[12px] font-medium mt-[1px]" style={{ color: T4 }}>
+                      <div className="text-[12px] font-normal mt-[1px]" style={{ color: T4 }}>
                         {p.startTime}–{p.endTime}
                       </div>
                     </div>
@@ -371,12 +371,12 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
   };
 
   return (
-    <div className="pb-10 w-full px-2" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* ── Top toolbar ── */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: T1 }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: T1 }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: GRAD_PRIMARY, boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <Clock className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -385,12 +385,12 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: T3 }}>
             <span>Period Config</span>
-            <span className="font-semibold" style={{ color: T4 }}>·</span>
+            <span className="font-normal" style={{ color: T4 }}>·</span>
             <span>Teacher Assignments</span>
             {cls && (
               <>
-                <span className="font-semibold" style={{ color: T4 }}>·</span>
-                <span className="font-semibold" style={{ color: B1 }}>{cls.name}</span>
+                <span className="font-normal" style={{ color: T4 }}>·</span>
+                <span className="font-normal" style={{ color: B1 }}>{cls.name}</span>
               </>
             )}
           </div>
@@ -406,7 +406,7 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
               const active = viewMode === k;
               return (
                 <button key={k} onClick={() => setViewMode(k)}
-                  className="px-[12px] py-[8px] rounded-[9px] text-[12px] font-semibold uppercase tracking-[0.06em] transition-all flex items-center gap-[4px]"
+                  className="px-[12px] py-[8px] rounded-[9px] text-[12px] font-normal uppercase tracking-[0.06em] transition-all flex items-center gap-[4px]"
                   style={active
                     ? { background: "#fff", color: B1, boxShadow: "0 2px 6px rgba(10,132,255,0.18)" }
                     : { background: "transparent", color: T4 }}>
@@ -417,7 +417,7 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
             })}
           </div>
           <button onClick={onSave} disabled={saving || !selectedClass || loading}
-            className="h-[44px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-[0.97] hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 relative overflow-hidden"
+            className="h-[44px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-normal text-white uppercase tracking-[0.06em] transition-transform active:scale-[0.97] hover:scale-[1.02] disabled:opacity-50 disabled:hover:scale-100 relative overflow-hidden"
             style={{ background: GRAD_PRIMARY, boxShadow: SHADOW_BTN }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             {saving
@@ -443,10 +443,10 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
               <Grid3x3 className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
             </div>
             <div className="min-w-0">
-              <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+              <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
                 {className} · Total Periods
               </div>
-              <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
+              <div className="text-[28px] font-normal text-white leading-none tracking-[-1px]">
                 {totalPeriods}
               </div>
             </div>
@@ -456,17 +456,17 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
               <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
                 style={{ background: "rgba(255,149,0,0.22)", border: "0.5px solid rgba(255,149,0,0.4)" }}>
                 <AlertTriangle className="w-[13px] h-[13px]" style={{ color: "#FFCC00" }} strokeWidth={2.5} />
-                <span className="text-[12px] font-semibold" style={{ color: "#FFCC00" }}>Empty</span>
+                <span className="text-[12px] font-normal" style={{ color: "#FFCC00" }}>Empty</span>
               </div>
             ) : workingDays < 6 ? (
               <div className="px-[16px] py-[8px] rounded-full"
                 style={{ background: "rgba(255,204,0,0.22)", border: "0.5px solid rgba(255,204,0,0.4)" }}>
-                <span className="text-[12px] font-semibold" style={{ color: "#FFCC00" }}>{workingDays}/6 days set</span>
+                <span className="text-[12px] font-normal" style={{ color: "#FFCC00" }}>{workingDays}/6 days set</span>
               </div>
             ) : (
               <div className="px-[16px] py-[8px] rounded-full"
                 style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.4)" }}>
-                <span className="text-[12px] font-semibold" style={{ color: "#34C759" }}>All 6 days ready</span>
+                <span className="text-[12px] font-normal" style={{ color: "#34C759" }}>All 6 days ready</span>
               </div>
             )}
             <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
@@ -476,8 +476,8 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
                 { val: workingDays, label: "Days", color: "#FFCC00" },
               ].map(({ val, label, color }) => (
                 <div key={label} className="py-[12px] px-[16px] text-center min-w-[70px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                  <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
                 </div>
               ))}
             </div>
@@ -494,12 +494,12 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
             <GraduationCap className="w-[19px] h-[19px] text-white" strokeWidth={2.3} />
           </div>
           <div className="flex-1 min-w-0 relative z-10">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: T4 }}>Select Class</div>
+            <div className="text-[12px] font-normal uppercase tracking-[0.12em] mb-[4px]" style={{ color: T4 }}>Select Class</div>
             <div className="relative">
               <select
                 value={selectedClass}
                 onChange={e => setSelectedClass(e.target.value)}
-                className="w-full h-[30px] pr-[24px] text-[18px] font-semibold tracking-[-0.3px] bg-transparent outline-none appearance-none cursor-pointer truncate"
+                className="w-full h-[30px] pr-[24px] text-[18px] font-normal tracking-[-0.3px] bg-transparent outline-none appearance-none cursor-pointer truncate"
                 style={{ color: T1 }}>
                 {classes.length === 0 && <option value="">No classes</option>}
                 {classes.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -559,9 +559,9 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
-              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
-              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+              <p className="text-[12px] font-normal truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -573,9 +573,9 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
       </div>
 
       {/* ── Weekly Schedule section label ── */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: T4 }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: T4 }}>
         Weekly Schedule
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {viewMode === "grid" ? "Grid view" : "Edit view"}{cls ? ` · ${cls.name}` : ""}
         </span>
@@ -587,13 +587,13 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
         <div className="rounded-[22px] py-10 text-center bg-white"
           style={{ boxShadow: SHADOW_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: B1 }} />
-          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: T4 }}>Loading timetable…</p>
+          <p className="text-[12px] font-normal uppercase tracking-[0.16em]" style={{ color: T4 }}>Loading timetable…</p>
         </div>
       ) : !selectedClass ? (
         <div className="rounded-[22px] py-10 bg-white text-center"
           style={{ boxShadow: SHADOW_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <GraduationCap className="w-12 h-12 mx-auto mb-3" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-          <p className="text-[13px] font-semibold uppercase tracking-[0.12em]" style={{ color: T3 }}>No class selected</p>
+          <p className="text-[13px] font-normal uppercase tracking-[0.12em]" style={{ color: T3 }}>No class selected</p>
           <p className="text-[12px] mt-2" style={{ color: T4 }}>Pick a class from the selector above to begin.</p>
         </div>
       ) : viewMode === "grid" ? (
@@ -635,31 +635,31 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                   <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
                 </div>
-                <span className="text-[12px] font-semibold uppercase tracking-[0.14em]" style={{ color: "rgba(255,255,255,0.55)" }}>
+                <span className="text-[12px] font-normal uppercase tracking-[0.14em]" style={{ color: "rgba(255,255,255,0.55)" }}>
                   AI Timetable Intelligence
                 </span>
               </div>
               <div className="text-[13px] leading-[1.72] max-w-[720px]" style={{ color: "rgba(255,255,255,0.85)" }}>
                 {totalPeriods === 0 ? (
                   <>
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>{className} timetable is empty</strong> — 0 periods across 6 days.
-                    Start with <strong style={{ color: "#fff", fontWeight: 600 }}>Monday</strong>, add 6–8 periods + 1–2 breaks,
-                    then use <strong style={{ color: "#fff", fontWeight: 600 }}>"Copy to"</strong> on that day's header to duplicate.
-                    Typical CBSE Class 10 runs <strong style={{ color: "#fff", fontWeight: 600 }}>8 periods × 40 min</strong> with a 20-min break after period 3.
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>{className} timetable is empty</strong> — 0 periods across 6 days.
+                    Start with <strong style={{ color: "#fff", fontWeight: 400 }}>Monday</strong>, add 6–8 periods + 1–2 breaks,
+                    then use <strong style={{ color: "#fff", fontWeight: 400 }}>"Copy to"</strong> on that day's header to duplicate.
+                    Typical CBSE Class 10 runs <strong style={{ color: "#fff", fontWeight: 400 }}>8 periods × 40 min</strong> with a 20-min break after period 3.
                   </>
                 ) : workingDays < 6 ? (
                   <>
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>{6 - workingDays} day{6 - workingDays === 1 ? "" : "s"} still empty</strong> —
-                    fastest path: pick a day with periods already set and use <strong style={{ color: "#fff", fontWeight: 600 }}>"Copy to"</strong> to seed the rest.
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>{6 - workingDays} day{6 - workingDays === 1 ? "" : "s"} still empty</strong> —
+                    fastest path: pick a day with periods already set and use <strong style={{ color: "#fff", fontWeight: 400 }}>"Copy to"</strong> to seed the rest.
                     Per-day adjustments remain possible afterwards.
                   </>
                 ) : (
                   <>
-                    <strong style={{ color: "#fff", fontWeight: 600 }}>All 6 days configured</strong> with
-                    <strong style={{ color: "#fff", fontWeight: 600 }}> {totalPeriods} periods</strong> across
-                    <strong style={{ color: "#fff", fontWeight: 600 }}> {uniqueSubjects} subject{uniqueSubjects === 1 ? "" : "s"}</strong>
-                    and <strong style={{ color: "#fff", fontWeight: 600 }}>{teachersUsed} teacher{teachersUsed === 1 ? "" : "s"}</strong>.
-                    Tap <strong style={{ color: "#fff", fontWeight: 600 }}>Save Timetable</strong> to publish.
+                    <strong style={{ color: "#fff", fontWeight: 400 }}>All 6 days configured</strong> with
+                    <strong style={{ color: "#fff", fontWeight: 400 }}> {totalPeriods} periods</strong> across
+                    <strong style={{ color: "#fff", fontWeight: 400 }}> {uniqueSubjects} subject{uniqueSubjects === 1 ? "" : "s"}</strong>
+                    and <strong style={{ color: "#fff", fontWeight: 400 }}>{teachersUsed} teacher{teachersUsed === 1 ? "" : "s"}</strong>.
+                    Tap <strong style={{ color: "#fff", fontWeight: 400 }}>Save Timetable</strong> to publish.
                   </>
                 )}
               </div>
@@ -671,8 +671,8 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
                 { val: totalPeriods === 0 ? "Empty" : workingDays < 6 ? "Partial" : "Ready", label: "Status", color: totalPeriods === 0 ? "#FF6961" : workingDays < 6 ? "#FFCC00" : "#34C759" },
               ].map(({ val, label, color }) => (
                 <div key={label} className="py-[16px] px-5 text-center min-w-[90px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
-                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                  <div className="text-[22px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.5px" }}>{val}</div>
+                  <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
                 </div>
               ))}
             </div>

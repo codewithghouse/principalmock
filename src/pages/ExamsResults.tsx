@@ -341,12 +341,12 @@ export default function ExamsResults() {
     : { label: "Weak", c: "#FF6961", bg: "rgba(255,59,48,0.22)", bdr: "rgba(255,59,48,0.4)" };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>
 
       {/* Top toolbar */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
+          <div className="text-[28px] font-normal leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <FileText className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
@@ -355,9 +355,9 @@ export default function ExamsResults() {
           </div>
           <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Results Analysis</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Subject Performance</span>
-            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
+            <span className="font-normal" style={{ color: "#A1A1A6" }}>·</span>
             <span>Merit &amp; Fail Lists</span>
           </div>
         </div>
@@ -378,10 +378,10 @@ export default function ExamsResults() {
             <FileText className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-normal uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               Latest Exam {latestExam?.dateLabel && `· ${latestExam.dateLabel}`}
             </div>
-            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px] truncate">
+            <div className="text-[28px] font-normal text-white leading-none tracking-[-1px] truncate">
               {loading ? "…" : latestExam?.name || "No exam results yet"}
             </div>
           </div>
@@ -389,7 +389,7 @@ export default function ExamsResults() {
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
           <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
             style={{ background: dPassTier.bg, border: `0.5px solid ${dPassTier.bdr}` }}>
-            <span className="text-[12px] font-semibold" style={{ color: dPassTier.c }}>{dPassTier.label}</span>
+            <span className="text-[12px] font-normal" style={{ color: dPassTier.c }}>{dPassTier.label}</span>
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
@@ -398,8 +398,8 @@ export default function ExamsResults() {
               { val: latestExam ? `${latestExam.avgPct}%` : "—", label: "Avg %", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
               <div key={label} className="py-[12px] px-[16px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+                <div className="text-[18px] font-normal leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -475,13 +475,13 @@ export default function ExamsResults() {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
+              <span className="block text-[12px] font-normal uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
               {s.isText ? (
-                <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
+                <p className="text-[20px] font-normal tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
               ) : (
-                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+                <p className="text-[28px] font-normal tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
               )}
-              <p className="text-[12px] font-semibold truncate flex items-center gap-1" style={{ color: i === 2 && passRateDiff !== null ? (passRateDiff >= 0 ? "#248A3D" : "#FF3B30") : "#6E6E73" }}>
+              <p className="text-[12px] font-normal truncate flex items-center gap-1" style={{ color: i === 2 && passRateDiff !== null ? (passRateDiff >= 0 ? "#248A3D" : "#FF3B30") : "#6E6E73" }}>
                 {i === 2 && passRateDiff !== null && (passRateDiff >= 0 ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />)}
                 {s.sub}
               </p>
@@ -496,9 +496,9 @@ export default function ExamsResults() {
       </div>
 
       {/* Upcoming exams section */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Upcoming Exams
-        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
           style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {upcomingExams.length} scheduled
         </span>
@@ -516,7 +516,7 @@ export default function ExamsResults() {
               <Calendar className="w-[18px] h-[18px]" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
             </div>
             <div>
-              <p className="text-[13px] font-semibold" style={{ color: "#1D1D1F" }}>No upcoming exams scheduled</p>
+              <p className="text-[13px] font-normal" style={{ color: "#1D1D1F" }}>No upcoming exams scheduled</p>
               <p className="text-[12px] mt-1" style={{ color: "#A1A1A6" }}>Teachers can create exams from the Teacher Dashboard.</p>
             </div>
           </div>
@@ -528,11 +528,11 @@ export default function ExamsResults() {
               return (
                 <div key={exam.id} className="rounded-[14px] px-4 py-3 relative overflow-hidden transition-transform active:scale-[0.98] hover:scale-[1.02]"
                   style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.10)", borderLeftWidth: "4px", borderLeftColor: color }}>
-                  <p className="text-[13px] font-semibold truncate" style={{ color: "#1D1D1F" }}>{exam.title || exam.testName}</p>
+                  <p className="text-[13px] font-normal truncate" style={{ color: "#1D1D1F" }}>{exam.title || exam.testName}</p>
                   <p className="text-[12px] mt-1 flex items-center gap-1" style={{ color: "#6E6E73" }}>
                     <Calendar className="w-3 h-3" strokeWidth={2.3} /> {dateStr || "Date TBD"}
                   </p>
-                  <p className="text-[12px] font-semibold mt-[2px]" style={{ color: "#A1A1A6" }}>
+                  <p className="text-[12px] font-normal mt-[2px]" style={{ color: "#A1A1A6" }}>
                     {exam.className ? `Class ${exam.className}` : exam.subject || ""}
                   </p>
                 </div>
@@ -543,7 +543,7 @@ export default function ExamsResults() {
       </div>
 
       {/* Analytics section label */}
-      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+      <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Analytics
         <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
       </div>
@@ -554,8 +554,8 @@ export default function ExamsResults() {
         <div className="rounded-[22px] bg-white p-5"
           style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <div className="flex items-center justify-between mb-4">
-            <div className="text-[14px] font-semibold tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>Subject-wise Pass Rates</div>
-            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+            <div className="text-[14px] font-normal tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>Subject-wise Pass Rates</div>
+            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal"
               style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
               {subjectData.length} subjects
             </span>
@@ -565,7 +565,7 @@ export default function ExamsResults() {
           ) : subjectData.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-10 text-center">
               <FileText className="w-10 h-10 mb-2" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-              <p className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>No subject data yet</p>
+              <p className="text-[12px] font-normal" style={{ color: "#A1A1A6" }}>No subject data yet</p>
             </div>
           ) : (
             <div className="h-60">
@@ -573,14 +573,14 @@ export default function ExamsResults() {
                 <BarChart data={subjectData} margin={{ top: 16, right: 8, left: -20, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#EBEBF0" />
                   <XAxis dataKey="name" axisLine={false} tickLine={false}
-                    tick={{ fontSize: 11, fill: "#6E6E73", fontWeight: 600 }} dy={8} />
+                    tick={{ fontSize: 11, fill: "#6E6E73", fontWeight: 400 }} dy={8} />
                   <YAxis axisLine={false} tickLine={false}
                     tick={{ fontSize: 11, fill: "#A1A1A6" }} domain={[0, 100]} />
                   <RechartsTip
                     formatter={(v: any) => [`${v}%`, "Pass Rate"]}
-                    contentStyle={{ borderRadius: "10px", border: "0.5px solid rgba(10,132,255,0.14)", fontSize: 12, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", boxShadow: "0 4px 16px rgba(10,132,255,0.12)" }}
+                    contentStyle={{ borderRadius: "10px", border: "0.5px solid rgba(10,132,255,0.14)", fontSize: 12, fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", boxShadow: "0 4px 16px rgba(10,132,255,0.12)" }}
                   />
-                  <Bar dataKey="passRate" radius={[6, 6, 0, 0]} maxBarSize={52} label={{ position: "top", fontSize: 11, fontWeight: 600, fill: "#1D1D1F", formatter: (v: any) => `${v}%` }}>
+                  <Bar dataKey="passRate" radius={[6, 6, 0, 0]} maxBarSize={52} label={{ position: "top", fontSize: 11, fontWeight: 400, fill: "#1D1D1F", formatter: (v: any) => `${v}%` }}>
                     {subjectData.map((d, i) => (
                       <Cell key={i} fill={d.passRate >= 80 ? "#34C759" : d.passRate >= 60 ? "#FF9500" : "#FF3B30"} />
                     ))}
@@ -595,8 +595,8 @@ export default function ExamsResults() {
         <div className="rounded-[22px] bg-white p-5"
           style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <div className="flex items-center justify-between mb-4">
-            <div className="text-[14px] font-semibold tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>Grade Distribution</div>
-            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+            <div className="text-[14px] font-normal tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>Grade Distribution</div>
+            <span className="px-[8px] py-[4px] rounded-full text-[12px] font-normal"
               style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
               Latest exam
             </span>
@@ -606,7 +606,7 @@ export default function ExamsResults() {
           ) : gradeData.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-10 text-center">
               <FileText className="w-10 h-10 mb-2" style={{ color: "rgba(10,132,255,0.20)" }} strokeWidth={1.8} />
-              <p className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>No grade data yet</p>
+              <p className="text-[12px] font-normal" style={{ color: "#A1A1A6" }}>No grade data yet</p>
             </div>
           ) : (() => {
             const slugify = (s: string) => (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "g";
@@ -647,7 +647,7 @@ export default function ExamsResults() {
                             textAnchor={props.textAnchor}
                             dominantBaseline={props.dominantBaseline}
                             fill="#ffffff"
-                            style={{ fontSize: 14, fontWeight: 600, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}
+                            style={{ fontSize: 14, fontWeight: 400, fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}
                           >
                             {payload.value}
                           </text>
@@ -660,7 +660,7 @@ export default function ExamsResults() {
                   {gradeData.map((d, i) => (
                     <div key={i} className="flex items-center gap-1.5">
                       <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: d.color }} />
-                      <span className="text-[12px] font-semibold" style={{ color: "#6E6E73", fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>{d.name}</span>
+                      <span className="text-[12px] font-normal" style={{ color: "#6E6E73", fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif" }}>{d.name}</span>
                     </div>
                   ))}
                 </div>
@@ -673,10 +673,10 @@ export default function ExamsResults() {
       {/* Failed students by subject */}
       {!loading && failedBySubject.length > 0 && (
         <>
-          <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+          <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
             Failed Students by Subject
             {latestExam && (
-              <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+              <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
                 style={{ background: "rgba(255,59,48,0.10)", color: "#FF3B30", border: "0.5px solid rgba(255,59,48,0.22)" }}>
                 {latestExam.name}
               </span>
@@ -691,9 +691,9 @@ export default function ExamsResults() {
                   style={{ background: "linear-gradient(135deg, rgba(255,59,48,0.08), rgba(255,59,48,0.04))", borderBottom: "0.5px solid rgba(255,59,48,0.14)" }}>
                   <div className="flex items-center gap-[8px]">
                     <AlertTriangle className="w-[13px] h-[13px]" style={{ color: "#FF3B30" }} strokeWidth={2.4} />
-                    <span className="text-[12px] font-semibold uppercase tracking-[0.05em]" style={{ color: "#86170E" }}>{subject}</span>
+                    <span className="text-[12px] font-normal uppercase tracking-[0.05em]" style={{ color: "#86170E" }}>{subject}</span>
                   </div>
-                  <span className="px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                  <span className="px-[8px] py-[2px] rounded-full text-[12px] font-normal"
                     style={{ background: "rgba(255,59,48,0.12)", color: "#FF3B30", border: "0.5px solid rgba(255,59,48,0.22)" }}>
                     {students.length} failed
                   </span>
@@ -703,17 +703,17 @@ export default function ExamsResults() {
                     <div key={i} className="flex items-center justify-between px-4 py-[12px]"
                       style={i < Math.min(arr.length, 5) - 1 ? { borderBottom: "0.5px solid rgba(255,59,48,0.05)" } : {}}>
                       <div className="flex items-center gap-[8px] min-w-0">
-                        <div className="w-7 h-7 rounded-[9px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                        <div className="w-7 h-7 rounded-[9px] flex items-center justify-center text-white text-[12px] font-normal shrink-0"
                           style={{ background: "linear-gradient(135deg, #FF3B30, #FF5E55)", boxShadow: "0 2px 6px rgba(255,59,48,0.22)" }}>
                           {s.studentName?.substring(0, 2).toUpperCase()}
                         </div>
-                        <p className="text-[12px] font-semibold truncate" style={{ color: "#1D1D1F" }}>{s.studentName}</p>
+                        <p className="text-[12px] font-normal truncate" style={{ color: "#1D1D1F" }}>{s.studentName}</p>
                       </div>
-                      <span className="text-[12px] font-semibold shrink-0 ml-2" style={{ color: "#FF3B30" }}>{Math.round(s.percentage)}%</span>
+                      <span className="text-[12px] font-normal shrink-0 ml-2" style={{ color: "#FF3B30" }}>{Math.round(s.percentage)}%</span>
                     </div>
                   ))}
                   {students.length > 5 && (
-                    <p className="px-4 py-[8px] text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>+{students.length - 5} more</p>
+                    <p className="px-4 py-[8px] text-[12px] font-normal" style={{ color: "#A1A1A6" }}>+{students.length - 5} more</p>
                   )}
                 </div>
               </div>
@@ -725,9 +725,9 @@ export default function ExamsResults() {
       {/* All exams */}
       {!loading && examGroups.length > 0 && (
         <>
-          <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
+          <div className="flex items-center gap-2 text-[12px] font-normal uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
             All Exams
-            <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+            <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal ml-1"
               style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
               {examGroups.length} {examGroups.length === 1 ? "exam" : "exams"}
             </span>
@@ -740,7 +740,7 @@ export default function ExamsResults() {
                 <thead>
                   <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                     {["Exam Name", "Date", "Students", "Pass Rate", "Avg %", ""].map(h => (
-                      <th key={h} className="px-6 py-[16px] text-left text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
+                      <th key={h} className="px-6 py-[16px] text-left text-[12px] font-normal uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -757,23 +757,23 @@ export default function ExamsResults() {
                               style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.28)" }}>
                               <FileText className="w-[16px] h-[16px] text-white" strokeWidth={2.3} />
                             </div>
-                            <span className="text-[13px] font-semibold tracking-[-0.2px] capitalize" style={{ color: "#1D1D1F" }}>{exam.name}</span>
+                            <span className="text-[13px] font-normal tracking-[-0.2px] capitalize" style={{ color: "#1D1D1F" }}>{exam.name}</span>
                           </div>
                         </td>
-                        <td className="px-6 py-[16px] text-[12px] font-semibold" style={{ color: "#6E6E73" }}>{exam.dateLabel || "—"}</td>
-                        <td className="px-6 py-[16px] text-[13px] font-semibold" style={{ color: "#1D1D1F" }}>{exam.totalStudents}</td>
+                        <td className="px-6 py-[16px] text-[12px] font-normal" style={{ color: "#6E6E73" }}>{exam.dateLabel || "—"}</td>
+                        <td className="px-6 py-[16px] text-[13px] font-normal" style={{ color: "#1D1D1F" }}>{exam.totalStudents}</td>
                         <td className="px-6 py-[16px]">
-                          <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
+                          <span className="px-[12px] py-[4px] rounded-full text-[12px] font-normal"
                             style={{ background: `${passColor}15`, color: passColor, border: `0.5px solid ${passColor}35` }}>
                             {exam.passRate}%
                           </span>
                         </td>
                         <td className="px-6 py-[16px]">
-                          <span className="text-[13px] font-semibold" style={{ color: avgColor }}>{exam.avgPct}%</span>
+                          <span className="text-[13px] font-normal" style={{ color: avgColor }}>{exam.avgPct}%</span>
                         </td>
                         <td className="px-6 py-[16px]">
                           <button onClick={() => setSelectedExam(exam)}
-                            className="h-9 px-4 rounded-[11px] flex items-center gap-[4px] text-[12px] font-semibold text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
+                            className="h-9 px-4 rounded-[11px] flex items-center gap-[4px] text-[12px] font-normal text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
                             style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.26)" }}>
                             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                             <span className="relative z-10">View Results</span>
@@ -798,7 +798,7 @@ export default function ExamsResults() {
             style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
             <FileText className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-semibold mb-1" style={{ color: "#1D1D1F" }}>No exam results yet</p>
+          <p className="text-[13px] font-normal mb-1" style={{ color: "#1D1D1F" }}>No exam results yet</p>
           <p className="text-[12px]" style={{ color: "#A1A1A6" }}>Teachers submit scores via Teacher Dashboard → Tests &amp; Exams.</p>
         </div>
       )}
