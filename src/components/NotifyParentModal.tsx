@@ -124,7 +124,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
               <MessageSquare className="w-5 h-5 text-emerald-700" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-slate-900">Notify Parent</h2>
+              <h2 className="text-base font-semibold text-slate-900">Notify Parent</h2>
               <p className="text-xs text-slate-500">
                 About {student.studentName} · <span style={{ color: meta.color }}>{meta.label}</span>
               </p>
@@ -139,7 +139,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
         <div className="px-6 py-4 space-y-4 overflow-y-auto">
           {/* Parent info */}
           <div className="rounded-xl bg-slate-50 border border-slate-100 px-3 py-2.5">
-            <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-0.5">Recipient</p>
+            <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-wider mb-1">Recipient</p>
             {parentEmail ? (
               <p className="text-sm font-semibold text-slate-800">{parentEmail}</p>
             ) : (
@@ -149,7 +149,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
 
           {/* Message */}
           <div>
-            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
               Message (edit as needed)
             </label>
             <textarea
@@ -180,7 +180,7 @@ export default function NotifyParentModal({ student, onClose }: Props) {
             className="rounded-xl p-3 border"
             style={{ background: meta.bg, borderColor: meta.border }}
           >
-            <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
+            <p className="text-[12px] font-semibold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
               What triggered this
             </p>
             <ul className="text-xs text-slate-700 leading-relaxed">
@@ -230,20 +230,20 @@ function buildParentEmailHtml({
   const safeBody     = escapeHtml(message).replace(/\n/g, "<br>");
 
   return `
-    <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: auto; padding: 0; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-      <div style="background: #1e3a8a; padding: 24px 28px;">
+    <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: auto; padding: 0; border: 1px solid #EBEBF0; border-radius: 12px; overflow: hidden;">
+      <div style="background: #1D1D1F; padding: 24px 28px;">
         <h1 style="color: #fff; margin: 0; font-size: 20px; font-weight: 700; letter-spacing: 0.5px;">EDULLENT</h1>
         <p style="color: #bfdbfe; margin: 4px 0 0; font-size: 13px;">Update from ${safeSchool}</p>
       </div>
       <div style="padding: 28px; background: #fff;">
-        <h2 style="color: #1e293b; font-size: 17px; margin: 0 0 6px;">About ${safeName}</h2>
-        <p style="color: #64748b; font-size: 12px; margin: 0 0 18px;">Sent by ${safePrincipal}</p>
-        <div style="background: #f8fafc; border-left: 3px solid #1e3a8a; padding: 16px 18px; border-radius: 0 8px 8px 0; color: #334155; font-size: 14px; line-height: 1.65;">
+        <h2 style="color: #1D1D1F; font-size: 17px; margin: 0 0 6px;">About ${safeName}</h2>
+        <p style="color: #6E6E73; font-size: 12px; margin: 0 0 18px;">Sent by ${safePrincipal}</p>
+        <div style="background: #F5F5F7; border-left: 3px solid #1D1D1F; padding: 16px 18px; border-radius: 0 8px 8px 0; color: #3A3A3C; font-size: 14px; line-height: 1.65;">
           ${safeBody}
         </div>
       </div>
-      <div style="background: #f1f5f9; padding: 14px 28px; text-align: center;">
-        <p style="color: #94a3b8; font-size: 11px; margin: 0;">Powered by Edullent &middot; ${safeSchool}</p>
+      <div style="background: #F5F5F7; padding: 14px 28px; text-align: center;">
+        <p style="color: #A1A1A6; font-size: 11px; margin: 0;">Powered by Edullent &middot; ${safeSchool}</p>
       </div>
     </div>
   `;

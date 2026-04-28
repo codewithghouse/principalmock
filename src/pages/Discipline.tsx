@@ -22,23 +22,23 @@ const renderLabel = ({ cx, cy, midAngle, outerRadius, name }: any) => {
   const y = cy + radius * Math.sin(-midAngle * RADIAN);
   return (
     <text x={x} y={y} textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central"
-      fontSize={10} fontWeight={700} fill="#64748b">
+      fontSize={10} fontWeight={700} fill="#6E6E73">
       {name}
     </text>
   );
 };
 
 const PIE_COLORS: Record<string, string> = {
-  Behavioral: "#f59e0b", Academic: "#1e3a8a", Safety: "#ef4444",
-  Property: "#94a3b8", Other: "#64748b"
+  Behavioral: "#FF9500", Academic: "#1D1D1F", Safety: "#FF3B30",
+  Property: "#A1A1A6", Other: "#6E6E73"
 };
 
 const getSeverityBadge = (severity: string) => {
   const s = (severity || '').toUpperCase();
-  if (s === 'CRITICAL') return <span className="px-2.5 py-1 bg-red-100 text-red-700 text-[10px] font-black uppercase tracking-wider rounded-md">CRITICAL</span>;
-  if (s === 'HIGH')     return <span className="px-2.5 py-1 bg-orange-100 text-orange-700 text-[10px] font-black uppercase tracking-wider rounded-md">HIGH</span>;
-  if (s === 'MEDIUM')   return <span className="px-2.5 py-1 bg-amber-100 text-amber-700 text-[10px] font-black uppercase tracking-wider rounded-md">MEDIUM</span>;
-  return <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[10px] font-black uppercase tracking-wider rounded-md">LOW</span>;
+  if (s === 'CRITICAL') return <span className="px-2.5 py-1 bg-red-100 text-red-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">CRITICAL</span>;
+  if (s === 'HIGH')     return <span className="px-2.5 py-1 bg-orange-100 text-orange-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">HIGH</span>;
+  if (s === 'MEDIUM')   return <span className="px-2.5 py-1 bg-amber-100 text-amber-700 text-[12px] font-semibold uppercase tracking-wider rounded-md">MEDIUM</span>;
+  return <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[12px] font-semibold uppercase tracking-wider rounded-md">LOW</span>;
 };
 
 const getStatusColor = (status: string) => {
@@ -51,15 +51,15 @@ const getStatusColor = (status: string) => {
 const fieldInputStyle = (t1: string, t4: string): React.CSSProperties => ({
   width: "100%",
   padding: "12px 14px",
-  background: "#EEF4FF",
+  background: "#F5F5F7",
   borderRadius: 13,
-  border: "0.5px solid rgba(0,85,255,.12)",
+  border: "0.5px solid rgba(10,132,255,.12)",
   fontFamily: "inherit",
   fontSize: 13,
   color: t1,
   fontWeight: 400,
   outline: "none",
-  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
   // placeholder handled via pseudo; fallback: rely on browser defaults
   ...({} as any),
   // keep t4 referenced
@@ -69,15 +69,15 @@ const fieldInputStyle = (t1: string, t4: string): React.CSSProperties => ({
 const selectInputStyle = (t1: string): React.CSSProperties => ({
   width: "100%",
   padding: "12px 14px",
-  background: "#EEF4FF",
+  background: "#F5F5F7",
   borderRadius: 13,
-  border: "0.5px solid rgba(0,85,255,.12)",
+  border: "0.5px solid rgba(10,132,255,.12)",
   fontFamily: "inherit",
   fontSize: 13,
   color: t1,
   fontWeight: 400,
   outline: "none",
-  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
   appearance: "none",
   WebkitAppearance: "none",
   backgroundImage:
@@ -135,7 +135,7 @@ const MOCK_PIE_DATA = (() => {
   MOCK_INCIDENTS.forEach(i => { map[i.type] = (map[i.type] || 0) + 1; });
   const total = MOCK_INCIDENTS.length;
   return Object.entries(map).map(([name, count]) => ({
-    name, value: Math.round((count / total) * 100), color: PIE_COLORS[name] || "#94a3b8",
+    name, value: Math.round((count / total) * 100), color: PIE_COLORS[name] || "#A1A1A6",
   }));
 })();
 
@@ -189,7 +189,7 @@ const Discipline = () => {
       });
       const total = data.length || 1;
       setPieData(Object.entries(typeMap).map(([name, count]) => ({
-        name, value: Math.round((count / total) * 100), color: PIE_COLORS[name] || '#94a3b8'
+        name, value: Math.round((count / total) * 100), color: PIE_COLORS[name] || '#A1A1A6'
       })));
 
       setLoading(false);
@@ -262,9 +262,9 @@ const Discipline = () => {
       badge: "Discipline",
       heroStats: [
         { label: "Today",    value: stats.todayCount,    color: "#f87171" },
-        { label: "Pending",  value: stats.pendingCount,  color: "#fbbf24" },
+        { label: "Pending",  value: stats.pendingCount,  color: "#FFCC00" },
         { label: "This Week", value: stats.weekCount },
-        { label: "Critical", value: stats.criticalCount, color: stats.criticalCount > 0 ? "#f87171" : "#4ade80" },
+        { label: "Critical", value: stats.criticalCount, color: stats.criticalCount > 0 ? "#f87171" : "#34C759" },
       ],
       sections: [
         {
@@ -287,18 +287,18 @@ const Discipline = () => {
 
   // ───────────────────────── MOBILE RETURN ─────────────────────────────────
   if (isMobile) {
-    const B1 = "#0055FF";
-    const B2 = "#1166FF";
-    const B3 = "#2277FF";
-    const GREEN = "#00C853";
-    const RED = "#FF3355";
-    const GOLD = "#FFAA00";
-    const ORANGE = "#FF8800";
-    const T1 = "#001040";
-    const T2 = "#002080";
-    const T3 = "#5070B0";
-    const T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,.07)";
+    const B1 = "#0A84FF";
+    const B2 = "#3395FF";
+    const B3 = "#5BA9FF";
+    const GREEN = "#34C759";
+    const RED = "#FF3B30";
+    const GOLD = "#FFCC00";
+    const ORANGE = "#FF9500";
+    const T1 = "#1D1D1F";
+    const T2 = "#3A3A3C";
+    const T3 = "#6E6E73";
+    const T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,.07)";
 
     const resolvedCount = incidents.filter((i) => (i.status || "").toLowerCase() === "resolved").length;
     const openCount = incidents.length - resolvedCount;
@@ -313,10 +313,10 @@ const Discipline = () => {
 
     const avGrad = [
       `linear-gradient(135deg, ${B1}, ${B3})`,
-      `linear-gradient(135deg, #7B3FF4, #AA77FF)`,
-      `linear-gradient(135deg, ${GREEN}, #22EE66)`,
-      `linear-gradient(135deg, ${GOLD}, #FFCC55)`,
-      `linear-gradient(135deg, ${RED}, #FF6688)`,
+      `linear-gradient(135deg, #AF52DE, #AA77FF)`,
+      `linear-gradient(135deg, ${GREEN}, #34C759)`,
+      `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
+      `linear-gradient(135deg, ${RED}, #FF5E55)`,
     ];
 
     const sevStyle = (sev: string) => {
@@ -327,26 +327,26 @@ const Discipline = () => {
           bg: RED,
           color: "#fff",
           border: "none",
-          shadow: "0 2px 7px rgba(255,51,85,.28)",
-          stripe: "linear-gradient(180deg,#FF3355,#FF6688)",
+          shadow: "0 2px 7px rgba(255,59,48,.28)",
+          stripe: "linear-gradient(180deg,#FF3B30,#FF5E55)",
         };
       if (s === "HIGH")
         return {
           label: "HIGH",
-          bg: "rgba(255,136,0,.10)",
-          color: "#884400",
-          border: "0.5px solid rgba(255,136,0,.22)",
+          bg: "rgba(255,149,0,.10)",
+          color: "#86310C",
+          border: "0.5px solid rgba(255,149,0,.22)",
           shadow: "none",
           stripe: `linear-gradient(180deg,${ORANGE},#FFB344)`,
         };
       if (s === "MEDIUM")
         return {
           label: "MEDIUM",
-          bg: "rgba(255,170,0,.10)",
-          color: "#884400",
-          border: "0.5px solid rgba(255,170,0,.22)",
+          bg: "rgba(255,204,0,.10)",
+          color: "#86310C",
+          border: "0.5px solid rgba(255,204,0,.22)",
           shadow: "none",
-          stripe: `linear-gradient(180deg,${GOLD},#FFCC55)`,
+          stripe: `linear-gradient(180deg,${GOLD},#FFCC00)`,
         };
       return {
         label: "LOW",
@@ -360,15 +360,15 @@ const Discipline = () => {
 
     const statusStyle = (status: string) => {
       const s = status || "Open";
-      if (s === "Resolved") return { bg: "rgba(0,200,83,.10)", color: "#007830", border: "0.5px solid rgba(0,200,83,.22)" };
-      if (s === "Under Review") return { bg: "rgba(255,136,0,.10)", color: "#884400", border: "0.5px solid rgba(255,136,0,.22)" };
-      return { bg: "rgba(0,85,255,.10)", color: B1, border: "0.5px solid rgba(0,85,255,.22)" };
+      if (s === "Resolved") return { bg: "rgba(52,199,89,.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,.22)" };
+      if (s === "Under Review") return { bg: "rgba(255,149,0,.10)", color: "#86310C", border: "0.5px solid rgba(255,149,0,.22)" };
+      return { bg: "rgba(10,132,255,.10)", color: B1, border: "0.5px solid rgba(10,132,255,.22)" };
     };
 
     const PIE_MOBILE_COLOR: Record<string, string> = {
       Behavioral: RED,
       Academic: B1,
-      Safety: "#CC2244",
+      Safety: "#86170E",
       Property: T3,
       Other: GOLD,
     };
@@ -394,8 +394,8 @@ const Discipline = () => {
     return (
       <div
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
-          background: "#EEF4FF",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -403,7 +403,7 @@ const Discipline = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Discipline & Incidents
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400 }}>
@@ -416,16 +416,16 @@ const Discipline = () => {
               height: 40,
               padding: "0 14px",
               borderRadius: 14,
-              background: `linear-gradient(135deg, ${RED}, #FF6688)`,
+              background: `linear-gradient(135deg, ${RED}, #FF5E55)`,
               display: "flex",
               alignItems: "center",
               gap: 6,
               fontSize: 12,
-              fontWeight: 700,
+              fontWeight: 600,
               color: "#fff",
               border: "none",
               cursor: "pointer",
-              boxShadow: "0 5px 18px rgba(255,51,85,.32)",
+              boxShadow: "0 5px 18px rgba(255,59,48,.32)",
               marginTop: 4,
               flexShrink: 0,
             }}
@@ -441,7 +441,7 @@ const Discipline = () => {
               style={{
                 width: 32,
                 height: 32,
-                border: `3px solid rgba(0,85,255,.2)`,
+                border: `3px solid rgba(10,132,255,.2)`,
                 borderTopColor: B1,
                 borderRadius: "50%",
                 animation: "spin 1s linear infinite",
@@ -455,7 +455,7 @@ const Discipline = () => {
             <div
               style={{
                 margin: "14px 20px 0",
-                background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+                background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
                 borderRadius: 22,
                 padding: "16px 18px",
                 position: "relative",
@@ -492,10 +492,10 @@ const Discipline = () => {
                     <AlertTriangle size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                   </div>
                   <div>
-                    <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                       Critical Cases
                     </div>
-                    <div style={{ fontSize: 30, fontWeight: 700, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
+                    <div style={{ fontSize: 30, fontWeight: 600, color: "#fff", letterSpacing: "-1px", lineHeight: 1 }}>
                       {stats.criticalCount}
                     </div>
                   </div>
@@ -504,11 +504,11 @@ const Discipline = () => {
                   style={{
                     padding: "6px 12px",
                     borderRadius: 100,
-                    background: "rgba(255,51,85,.26)",
-                    border: "0.5px solid rgba(255,51,85,.40)",
+                    background: "rgba(255,59,48,.26)",
+                    border: "0.5px solid rgba(255,59,48,.40)",
                     fontSize: 11,
-                    fontWeight: 700,
-                    color: "#FF8899",
+                    fontWeight: 600,
+                    color: "#FF6961",
                   }}
                 >
                   {stats.criticalCount > 0 ? "High Priority" : "All Clear"}
@@ -525,7 +525,7 @@ const Discipline = () => {
                     background: "rgba(255,255,255,.12)",
                     border: "0.5px solid rgba(255,255,255,.18)",
                     fontSize: 11,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: "rgba(255,255,255,.75)",
                   }}
                 >
@@ -542,7 +542,7 @@ const Discipline = () => {
                     background: "rgba(255,255,255,.12)",
                     border: "0.5px solid rgba(255,255,255,.18)",
                     fontSize: 11,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: "rgba(255,255,255,.75)",
                   }}
                 >
@@ -562,9 +562,9 @@ const Discipline = () => {
                   color: T1,
                   subColor: T4,
                   icon: <AlertCircle size={14} color={B1} strokeWidth={2.4} />,
-                  bg: "rgba(0,85,255,.10)",
-                  border: "rgba(0,85,255,.18)",
-                  glow: "rgba(0,85,255,.10)",
+                  bg: "rgba(10,132,255,.10)",
+                  border: "rgba(10,132,255,.18)",
+                  glow: "rgba(10,132,255,.10)",
                   filter: null,
                 },
                 {
@@ -572,11 +572,11 @@ const Discipline = () => {
                   value: stats.pendingCount,
                   sub: "Require follow-up",
                   color: GOLD,
-                  subColor: "#884400",
+                  subColor: "#86310C",
                   icon: <Clock size={14} color={GOLD} strokeWidth={2.4} />,
-                  bg: "rgba(255,170,0,.10)",
-                  border: "rgba(255,170,0,.22)",
-                  glow: "rgba(255,170,0,.10)",
+                  bg: "rgba(255,204,0,.10)",
+                  border: "rgba(255,204,0,.22)",
+                  glow: "rgba(255,204,0,.10)",
                   filter: "pending",
                 },
                 {
@@ -586,9 +586,9 @@ const Discipline = () => {
                   color: B1,
                   subColor: T4,
                   icon: <Calendar size={14} color={B1} strokeWidth={2.4} />,
-                  bg: "rgba(0,85,255,.10)",
-                  border: "rgba(0,85,255,.18)",
-                  glow: "rgba(0,85,255,.10)",
+                  bg: "rgba(10,132,255,.10)",
+                  border: "rgba(10,132,255,.18)",
+                  glow: "rgba(10,132,255,.10)",
                   filter: "week",
                 },
                 {
@@ -598,9 +598,9 @@ const Discipline = () => {
                   color: RED,
                   subColor: RED,
                   icon: <AlertTriangle size={14} color={RED} strokeWidth={2.4} />,
-                  bg: "rgba(255,51,85,.10)",
-                  border: "rgba(255,51,85,.22)",
-                  glow: "rgba(255,51,85,.10)",
+                  bg: "rgba(255,59,48,.10)",
+                  border: "rgba(255,59,48,.22)",
+                  glow: "rgba(255,59,48,.10)",
                   filter: "critical",
                 },
               ].map((c, i) => (
@@ -616,7 +616,7 @@ const Discipline = () => {
                     background: "#fff",
                     borderRadius: 20,
                     padding: 16,
-                    boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
+                    boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
                     border: "none",
                     position: "relative",
                     overflow: "hidden",
@@ -653,10 +653,10 @@ const Discipline = () => {
                   >
                     {c.icon}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 10 }}>
                     {c.label}
                   </div>
-                  <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
+                  <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 5, color: c.color }}>
                     {c.value}
                   </div>
                   <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor }}>{c.sub}</div>
@@ -686,24 +686,24 @@ const Discipline = () => {
                     padding: "8px 16px",
                     borderRadius: 13,
                     fontSize: 12,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     cursor: "pointer",
                     whiteSpace: "nowrap",
                     flexShrink: 0,
                     border: f.active
                       ? "none"
                       : f.red
-                      ? "0.5px solid rgba(255,51,85,.22)"
-                      : "0.5px solid rgba(0,85,255,.12)",
+                      ? "0.5px solid rgba(255,59,48,.22)"
+                      : "0.5px solid rgba(10,132,255,.12)",
                     background: f.active
                       ? `linear-gradient(135deg, ${B1}, ${B2})`
                       : f.red
-                      ? "rgba(255,51,85,.10)"
+                      ? "rgba(255,59,48,.10)"
                       : "#fff",
                     color: f.active ? "#fff" : f.red ? RED : T3,
                     boxShadow: f.active
-                      ? "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)"
-                      : "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                      ? "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)"
+                      : "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   }}
                 >
                   {f.label}
@@ -717,14 +717,14 @@ const Discipline = () => {
                   padding: "0 12px",
                   borderRadius: 13,
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: T2,
                   cursor: "pointer",
                   whiteSpace: "nowrap",
                   flexShrink: 0,
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   background: "#fff",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   fontFamily: "inherit",
                   height: 36,
                   appearance: "none",
@@ -750,13 +750,13 @@ const Discipline = () => {
                   padding: "12px 14px",
                   background: "#fff",
                   borderRadius: 13,
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   fontFamily: "inherit",
                   fontSize: 13,
                   color: T1,
                   fontWeight: 400,
                   outline: "none",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 }}
               />
             </div>
@@ -765,7 +765,7 @@ const Discipline = () => {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -776,7 +776,7 @@ const Discipline = () => {
               }}
             >
               <span>Incident Type Breakdown</span>
-              <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+              <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
             </div>
 
             {/* DONUT CARD */}
@@ -786,11 +786,11 @@ const Discipline = () => {
                 background: "#fff",
                 borderRadius: 24,
                 padding: 20,
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
-                border: "0.5px solid rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
+                border: "0.5px solid rgba(10,132,255,.10)",
               }}
             >
-              <div style={{ fontSize: 15, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 16 }}>
+              <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 16 }}>
                 Incident Type Breakdown
               </div>
 
@@ -802,7 +802,7 @@ const Discipline = () => {
                 <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
                   <div style={{ position: "relative", width: 130, height: 130, flexShrink: 0 }}>
                     <svg width="130" height="130" viewBox="0 0 130 130">
-                      <circle cx="65" cy="65" r={donutR} fill="none" stroke="#E0ECFF" strokeWidth="18" />
+                      <circle cx="65" cy="65" r={donutR} fill="none" stroke="#EBEBF0" strokeWidth="18" />
                       <g transform="rotate(-90 65 65)">
                         {donutSegments.map((seg, i) => (
                           <circle
@@ -828,10 +828,10 @@ const Discipline = () => {
                         textAlign: "center",
                       }}
                     >
-                      <div style={{ fontSize: 22, fontWeight: 700, color: B1, letterSpacing: "-0.5px", lineHeight: 1 }}>
+                      <div style={{ fontSize: 22, fontWeight: 600, color: B1, letterSpacing: "-0.5px", lineHeight: 1 }}>
                         {biggestPie ? `${biggestPie.value}%` : "0%"}
                       </div>
-                      <div style={{ fontSize: 9, fontWeight: 700, color: T4, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 2 }}>
+                      <div style={{ fontSize: 9, fontWeight: 600, color: T4, textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 2 }}>
                         {biggestPie ? biggestPie.name : "—"}
                       </div>
                     </div>
@@ -843,12 +843,12 @@ const Discipline = () => {
                         <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, opacity: p.value === 0 ? 0.45 : 1 }}>
                           <div style={{ width: 10, height: 10, borderRadius: 3, background: p.color, flexShrink: 0 }} />
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontSize: 13, fontWeight: 700, color: T1, marginBottom: 1 }}>{p.name}</div>
+                            <div style={{ fontSize: 13, fontWeight: 600, color: T1, marginBottom: 1 }}>{p.name}</div>
                             <div style={{ fontSize: 10, color: T4, fontWeight: 500 }}>
                               {count} incident{count === 1 ? "" : "s"}
                             </div>
                           </div>
-                          <div style={{ fontSize: 13, fontWeight: 700, color: p.color }}>{p.value}%</div>
+                          <div style={{ fontSize: 13, fontWeight: 600, color: p.color }}>{p.value}%</div>
                         </div>
                       );
                     })}
@@ -862,7 +862,7 @@ const Discipline = () => {
               id="mobile-incident-list"
               style={{
                 fontSize: 9,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -873,7 +873,7 @@ const Discipline = () => {
               }}
             >
               <span>Recent Incidents</span>
-              <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+              <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
             </div>
 
             {/* INCIDENT CARD */}
@@ -883,8 +883,8 @@ const Discipline = () => {
                 background: "#fff",
                 borderRadius: 24,
                 overflow: "hidden",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
-                border: "0.5px solid rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
+                border: "0.5px solid rgba(10,132,255,.10)",
               }}
             >
               <div
@@ -896,15 +896,15 @@ const Discipline = () => {
                   justifyContent: "space-between",
                 }}
               >
-                <div style={{ fontSize: 15, fontWeight: 700, color: T1, letterSpacing: "-0.2px" }}>Recent Incidents</div>
+                <div style={{ fontSize: 15, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Recent Incidents</div>
                 <div
                   style={{
                     padding: "4px 10px",
                     borderRadius: 100,
-                    background: "rgba(0,85,255,.10)",
-                    border: "0.5px solid rgba(0,85,255,.18)",
+                    background: "rgba(10,132,255,.10)",
+                    border: "0.5px solid rgba(10,132,255,.18)",
                     fontSize: 11,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: B1,
                   }}
                 >
@@ -914,8 +914,8 @@ const Discipline = () => {
 
               {filteredIncidents.length === 0 ? (
                 <div style={{ padding: "36px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-                  <ShieldAlert size={48} color="rgba(0,85,255,.22)" strokeWidth={1.8} />
-                  <div style={{ fontSize: 14, fontWeight: 700, color: T1 }}>No incidents found</div>
+                  <ShieldAlert size={48} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
+                  <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No incidents found</div>
                   <div style={{ fontSize: 11, color: T4 }}>Try adjusting your filters</div>
                 </div>
               ) : (
@@ -959,16 +959,16 @@ const Discipline = () => {
                           alignItems: "center",
                           justifyContent: "center",
                           fontSize: 13,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: "#fff",
                           flexShrink: 0,
-                          boxShadow: "0 3px 10px rgba(0,85,255,.26)",
+                          boxShadow: "0 3px 10px rgba(10,132,255,.26)",
                         }}
                       >
                         {initials}
                       </div>
                       <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                           {name}
                         </div>
                         <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap", marginBottom: 8 }}>
@@ -988,7 +988,7 @@ const Discipline = () => {
                               padding: "4px 9px",
                               borderRadius: 100,
                               fontSize: 9,
-                              fontWeight: 700,
+                              fontWeight: 600,
                               letterSpacing: "0.06em",
                               textTransform: "uppercase",
                               background: sev.bg,
@@ -1004,7 +1004,7 @@ const Discipline = () => {
                               padding: "4px 10px",
                               borderRadius: 100,
                               fontSize: 10,
-                              fontWeight: 700,
+                              fontWeight: 600,
                               background: st.bg,
                               color: st.color,
                               border: st.border,
@@ -1015,7 +1015,7 @@ const Discipline = () => {
                         </div>
                       </div>
                       <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6, flexShrink: 0 }}>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: B1, display: "flex", alignItems: "center", gap: 3 }}>
+                        <span style={{ fontSize: 11, fontWeight: 600, color: B1, display: "flex", alignItems: "center", gap: 3 }}>
                           View
                           <ChevronRight size={12} strokeWidth={2.5} />
                         </span>
@@ -1044,12 +1044,12 @@ const Discipline = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   border: "none",
                   cursor: "pointer",
-                  boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+                  boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
                 }}
               >
                 <AlertCircle size={13} strokeWidth={2.2} />
@@ -1066,15 +1066,15 @@ const Discipline = () => {
                   justifyContent: "center",
                   gap: 7,
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   background: "#fff",
-                  color: "#002080",
-                  border: "0.5px solid rgba(0,85,255,.16)",
+                  color: "#3A3A3C",
+                  border: "0.5px solid rgba(10,132,255,.16)",
                   cursor: "pointer",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 }}
               >
-                <FileText size={13} color="rgba(0,85,255,.6)" strokeWidth={2.2} />
+                <FileText size={13} color="rgba(10,132,255,.6)" strokeWidth={2.2} />
                 Generate Report
               </button>
             </div>
@@ -1083,7 +1083,7 @@ const Discipline = () => {
             <div
               style={{
                 margin: "12px 20px 0",
-                background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)",
+                background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)",
                 borderRadius: 24,
                 padding: "20px 22px",
                 boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -1118,22 +1118,22 @@ const Discipline = () => {
                 >
                   <Sparkles size={14} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
                 </div>
-                <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+                <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                   AI Discipline Intelligence
                 </span>
               </div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-                <strong style={{ color: "#fff", fontWeight: 700 }}>
+                <strong style={{ color: "#fff", fontWeight: 600 }}>
                   {stats.criticalCount} critical incident{stats.criticalCount === 1 ? "" : "s"}
                 </strong>{" "}
                 recorded{incidents.length > 0 ? " this term" : ""}.{" "}
-                <strong style={{ color: "#fff", fontWeight: 700 }}>{resolvedCount} resolved</strong>,{" "}
-                <strong style={{ color: "#fff", fontWeight: 700 }}>{openCount} open</strong>.{" "}
+                <strong style={{ color: "#fff", fontWeight: 600 }}>{resolvedCount} resolved</strong>,{" "}
+                <strong style={{ color: "#fff", fontWeight: 600 }}>{openCount} open</strong>.{" "}
                 {stats.todayCount === 0 ? "No new incidents today." : `${stats.todayCount} new today.`}
                 {biggestPie && (
                   <>
-                    {" "}<strong style={{ color: "#fff", fontWeight: 700 }}>{biggestPie.name}</strong> is the dominant type at{" "}
-                    <strong style={{ color: "#fff", fontWeight: 700 }}>{biggestPie.value}%</strong>.
+                    {" "}<strong style={{ color: "#fff", fontWeight: 600 }}>{biggestPie.name}</strong> is the dominant type at{" "}
+                    <strong style={{ color: "#fff", fontWeight: 600 }}>{biggestPie.value}%</strong>.
                   </>
                 )}{" "}
                 Maintain monitoring and follow up on pending cases to ensure a safe learning environment.
@@ -1157,10 +1157,10 @@ const Discipline = () => {
                   { v: openCount, l: "Pending" },
                 ].map((s, i) => (
                   <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "13px 12px", textAlign: "center" }}>
-                    <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
+                    <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
                       {s.v}
                     </div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                       {s.l}
                     </div>
                   </div>
@@ -1201,12 +1201,12 @@ const Discipline = () => {
               }}
             >
               <style>{`@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}`}</style>
-              <div style={{ width: 44, height: 5, background: "rgba(0,85,255,.18)", borderRadius: 3, margin: "14px auto 0" }} />
+              <div style={{ width: 44, height: 5, background: "rgba(10,132,255,.18)", borderRadius: 3, margin: "14px auto 0" }} />
 
               {/* Header */}
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "18px 22px 16px", borderBottom: `0.5px solid ${SEP}` }}>
                 <div>
-                  <div style={{ fontSize: 18, fontWeight: 700, color: T1, letterSpacing: "-0.4px" }}>Log New Incident</div>
+                  <div style={{ fontSize: 18, fontWeight: 600, color: T1, letterSpacing: "-0.4px" }}>Log New Incident</div>
                   <div style={{ fontSize: 11, color: T4, marginTop: 2 }}>Fill in the details below to record an incident</div>
                 </div>
                 <button
@@ -1215,8 +1215,8 @@ const Discipline = () => {
                     width: 30,
                     height: 30,
                     borderRadius: 9,
-                    background: "rgba(0,85,255,.10)",
-                    border: "0.5px solid rgba(0,85,255,.18)",
+                    background: "rgba(10,132,255,.10)",
+                    border: "0.5px solid rgba(10,132,255,.18)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -1224,7 +1224,7 @@ const Discipline = () => {
                     flexShrink: 0,
                   }}
                 >
-                  <X size={13} color="rgba(0,85,255,.6)" strokeWidth={2.5} />
+                  <X size={13} color="rgba(10,132,255,.6)" strokeWidth={2.5} />
                 </button>
               </div>
 
@@ -1232,7 +1232,7 @@ const Discipline = () => {
               <div style={{ padding: "18px 22px 0" }}>
                 {/* Title */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Incident Title<span style={{ color: RED, marginLeft: 2 }}>*</span>
                   </div>
                   <input
@@ -1246,7 +1246,7 @@ const Discipline = () => {
                 {/* Student Name + Grade */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Student Name<span style={{ color: RED, marginLeft: 2 }}>*</span>
                     </div>
                     <input
@@ -1257,7 +1257,7 @@ const Discipline = () => {
                     />
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Grade / Class
                     </div>
                     <input
@@ -1272,7 +1272,7 @@ const Discipline = () => {
                 {/* Type + Severity */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Incident Type<span style={{ color: RED, marginLeft: 2 }}>*</span>
                     </div>
                     <select
@@ -1288,7 +1288,7 @@ const Discipline = () => {
                     </select>
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Severity
                     </div>
                     <select
@@ -1307,7 +1307,7 @@ const Discipline = () => {
                 {/* Date + Time */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 16 }}>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Date
                     </div>
                     <input
@@ -1318,7 +1318,7 @@ const Discipline = () => {
                     />
                   </div>
                   <div>
-                    <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                    <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                       Time
                     </div>
                     <input
@@ -1332,7 +1332,7 @@ const Discipline = () => {
 
                 {/* Location */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Location
                   </div>
                   <input
@@ -1345,7 +1345,7 @@ const Discipline = () => {
 
                 {/* Reported By */}
                 <div style={{ marginBottom: 16 }}>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Reported By
                   </div>
                   <input
@@ -1358,7 +1358,7 @@ const Discipline = () => {
 
                 {/* Description */}
                 <div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 7 }}>
                     Description
                   </div>
                   <textarea
@@ -1378,13 +1378,13 @@ const Discipline = () => {
                     flex: 1,
                     height: 48,
                     borderRadius: 15,
-                    background: "#EEF4FF",
-                    border: "0.5px solid rgba(0,85,255,.16)",
+                    background: "#F5F5F7",
+                    border: "0.5px solid rgba(10,132,255,.16)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: 14,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: T2,
                     cursor: "pointer",
                   }}
@@ -1405,17 +1405,17 @@ const Discipline = () => {
                     flex: 1.3,
                     height: 48,
                     borderRadius: 15,
-                    background: `linear-gradient(135deg, ${RED}, #FF6688)`,
+                    background: `linear-gradient(135deg, ${RED}, #FF5E55)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap: 7,
                     fontSize: 14,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: "#fff",
                     border: "none",
                     cursor: saving ? "not-allowed" : "pointer",
-                    boxShadow: "0 5px 18px rgba(255,51,85,.30)",
+                    boxShadow: "0 5px 18px rgba(255,59,48,.30)",
                     opacity: saving || !form.studentName || !form.title ? 0.55 : 1,
                   }}
                 >
@@ -1433,61 +1433,61 @@ const Discipline = () => {
   // ═══════════════════════════════════════════════════════════════
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
-  const dB1 = "#0055FF", dB2 = "#1166FF", dB4 = "#4499FF";
-  const dBG = "#EEF4FF", dBG2 = "#E0ECFF";
-  const dT1 = "#001040", dT2 = "#002080", dT3 = "#5070B0", dT4 = "#99AACC";
-  const dSEP = "rgba(0,85,255,0.08)";
-  const dGREEN = "#00C853", dGREEN_D = "#007830", dGREEN_S = "rgba(0,200,83,0.10)", dGREEN_B = "rgba(0,200,83,0.22)";
-  const dRED = "#FF3355", dRED_S = "rgba(255,51,85,0.10)", dRED_B = "rgba(255,51,85,0.22)";
-  const dORANGE = "#FF8800";
-  const dGOLD = "#FFAA00";
-  const dVIOLET = "#7B3FF4";
-  const dSH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 10px rgba(0,85,255,0.07), 0 10px 28px rgba(0,85,255,0.09)";
-  const dSH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.10), 0 18px 44px rgba(0,85,255,0.12)";
-  const dSH_BTN = "0 6px 22px rgba(0,85,255,0.38), 0 2px 5px rgba(0,85,255,0.18)";
+  const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
+  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
+  const dSEP = "rgba(10,132,255,0.08)";
+  const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
+  const dRED = "#FF3B30", dRED_S = "rgba(255,59,48,0.10)", dRED_B = "rgba(255,59,48,0.22)";
+  const dORANGE = "#FF9500";
+  const dGOLD = "#FFCC00";
+  const dVIOLET = "#AF52DE";
+  const dSH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 10px rgba(10,132,255,0.07), 0 10px 28px rgba(10,132,255,0.09)";
+  const dSH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.10), 0 18px 44px rgba(10,132,255,0.12)";
+  const dSH_BTN = "0 6px 22px rgba(10,132,255,0.38), 0 2px 5px rgba(10,132,255,0.18)";
 
   const sevTheme = (sev: string) => {
     const s = (sev || "").toUpperCase();
-    if (s === "CRITICAL") return { grad: `linear-gradient(135deg, ${dRED}, #FF6688)`, bg: dRED_S, color: dRED, border: dRED_B };
-    if (s === "HIGH")     return { grad: `linear-gradient(135deg, ${dORANGE}, #FFAA66)`, bg: "rgba(255,136,0,0.10)", color: dORANGE, border: "rgba(255,136,0,0.22)" };
-    if (s === "MEDIUM")   return { grad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`, bg: "rgba(255,170,0,0.10)", color: "#884400", border: "rgba(255,170,0,0.22)" };
+    if (s === "CRITICAL") return { grad: `linear-gradient(135deg, ${dRED}, #FF5E55)`, bg: dRED_S, color: dRED, border: dRED_B };
+    if (s === "HIGH")     return { grad: `linear-gradient(135deg, ${dORANGE}, #FFAA66)`, bg: "rgba(255,149,0,0.10)", color: dORANGE, border: "rgba(255,149,0,0.22)" };
+    if (s === "MEDIUM")   return { grad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, bg: "rgba(255,204,0,0.10)", color: "#86310C", border: "rgba(255,204,0,0.22)" };
     return                  { grad: `linear-gradient(135deg, ${dT3}, ${dT4})`, bg: "rgba(153,170,204,0.10)", color: dT3, border: "rgba(153,170,204,0.22)" };
   };
 
   const statusTheme = (status: string) => {
     if (status === "Resolved")     return { bg: dGREEN_S, color: dGREEN_D, border: dGREEN_B, dot: dGREEN };
-    if (status === "Under Review") return { bg: "rgba(255,170,0,0.10)", color: "#884400", border: "rgba(255,170,0,0.22)", dot: dGOLD };
-    if (status === "Open")         return { bg: "rgba(0,85,255,0.10)", color: dB1, border: "rgba(0,85,255,0.20)", dot: dB1 };
+    if (status === "Under Review") return { bg: "rgba(255,204,0,0.10)", color: "#86310C", border: "rgba(255,204,0,0.22)", dot: dGOLD };
+    if (status === "Open")         return { bg: "rgba(10,132,255,0.10)", color: dB1, border: "rgba(10,132,255,0.20)", dot: dB1 };
     return                             { bg: "rgba(153,170,204,0.10)", color: dT3, border: "rgba(153,170,204,0.22)", dot: dT4 };
   };
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-            style={{ background: `linear-gradient(135deg, ${dRED}, #FF6688)`, boxShadow: "0 6px 18px rgba(255,51,85,0.28)" }}>
+            style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 6px 18px rgba(255,59,48,0.28)" }}>
             <ShieldAlert className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-bold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Discipline & Incidents</div>
+            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Discipline & Incidents</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Track and manage disciplinary incidents</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={generateReport}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-bold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
-            <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+            <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Generate Report
           </button>
           <button
             onClick={() => setShowLogModal(true)}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-bold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
-            style={{ background: `linear-gradient(135deg, ${dRED}, #FF6688)`, boxShadow: "0 6px 22px rgba(255,51,85,0.36), 0 2px 5px rgba(255,51,85,0.18)" }}>
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 6px 22px rgba(255,59,48,0.36), 0 2px 5px rgba(255,59,48,0.18)" }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
             <span className="relative z-10">Log New Incident</span>
@@ -1496,16 +1496,16 @@ const Discipline = () => {
       </div>
 
       {loading ? (
-        <div className="bg-white rounded-[20px] py-24 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-10 h-10 rounded-full border-[3px] border-t-transparent animate-spin" style={{ borderColor: dB1, borderTopColor: "transparent" }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: dT4 }}>Loading incidents…</p>
+          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading incidents…</p>
         </div>
       ) : (
         <>
           {/* Red Hero Banner */}
-          <div className="rounded-[22px] px-7 py-6 relative overflow-hidden text-white"
+          <div className="rounded-[22px] px-8 py-6 relative overflow-hidden text-white"
             style={{
-              background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3355 100%)",
+              background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3B30 100%)",
               boxShadow: "0 10px 36px rgba(204,0,51,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
             }}>
             <div className="absolute -right-12 -top-12 w-[220px] h-[220px] rounded-full pointer-events-none"
@@ -1517,20 +1517,20 @@ const Discipline = () => {
                   <AlertTriangle className="w-7 h-7 text-white" strokeWidth={2.2} />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.16em] mb-[6px]" style={{ color: "rgba(255,255,255,0.55)" }}>This Week's Incidents</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>This Week's Incidents</div>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-[48px] font-bold leading-none tracking-tight">{stats.weekCount}</span>
+                    <span className="text-[28px] font-semibold leading-none tracking-tight">{stats.weekCount}</span>
                     <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>logged · {stats.pendingCount} pending</span>
                   </div>
                 </div>
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-bold"
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-semibold"
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)" }}>
                   <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.4} />
                   {stats.criticalCount > 0 ? `${stats.criticalCount} Critical` : "All Clear"}
                 </div>
-                <div className="flex items-center gap-2 text-[12px] font-bold" style={{ color: "rgba(255,255,255,0.82)" }}>
+                <div className="flex items-center gap-2 text-[12px] font-semibold" style={{ color: "rgba(255,255,255,0.82)" }}>
                   <AlertCircle className="w-[14px] h-[14px]" strokeWidth={2.4} />
                   {stats.todayCount} today
                 </div>
@@ -1544,29 +1544,29 @@ const Discipline = () => {
               {
                 title: "Today's Incidents", val: stats.todayCount, valColor: dRED, sub: "Logged today", Icon: AlertCircle,
                 cardGrad: "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)",
-                tileGrad: `linear-gradient(135deg, ${dRED}, #FF6688)`,
-                tileShadow: "0 4px 14px rgba(255,51,85,0.28)",
+                tileGrad: `linear-gradient(135deg, ${dRED}, #FF5E55)`,
+                tileShadow: "0 4px 14px rgba(255,59,48,0.28)",
                 decorColor: dRED,
               },
               {
                 title: "Pending Actions", val: stats.pendingCount, valColor: dGOLD, sub: "Require follow-up", Icon: Clock,
-                cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-                tileGrad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`,
-                tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
+                cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+                tileGrad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`,
+                tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
                 decorColor: dGOLD,
               },
               {
                 title: "This Week", val: stats.weekCount, valColor: dB1, sub: "Total incidents", Icon: Calendar,
-                cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
+                cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
                 tileGrad: `linear-gradient(135deg, ${dB1}, ${dB2})`,
-                tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
+                tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
                 decorColor: dB1,
               },
               {
                 title: "Critical Cases", val: stats.criticalCount, valColor: dVIOLET, sub: "High priority", Icon: AlertTriangle,
-                cardGrad: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-                tileGrad: `linear-gradient(135deg, ${dVIOLET}, #A07CF8)`,
-                tileShadow: "0 4px 14px rgba(123,63,244,0.26)",
+                cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+                tileGrad: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`,
+                tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
                 decorColor: dVIOLET,
               },
             ].map(({ title, val, valColor, sub, Icon, cardGrad, tileGrad, tileShadow, decorColor }) => (
@@ -1581,9 +1581,9 @@ const Discipline = () => {
                 >
                   <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
                 </div>
-                <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
-                <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-                <p className="text-[11px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
+                <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
+                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+                <p className="text-[12px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
                 <Icon
                   className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                   style={{ color: decorColor, opacity: 0.18 }}
@@ -1600,7 +1600,7 @@ const Discipline = () => {
               return (
                 <button key={f}
                   onClick={() => setFilterType(f)}
-                  className="h-10 px-5 rounded-[13px] text-[12px] font-bold transition-transform hover:scale-[1.02]"
+                  className="h-10 px-5 rounded-[13px] text-[12px] font-semibold transition-transform hover:scale-[1.02]"
                   style={{
                     background: active ? `linear-gradient(135deg, ${dB1}, ${dB2})` : "#FFFFFF",
                     color: active ? "#fff" : dT3,
@@ -1614,7 +1614,7 @@ const Discipline = () => {
             <select
               value={statusFilter}
               onChange={e => setStatusFilter(e.target.value)}
-              className="h-10 px-4 pr-9 rounded-[13px] text-[12px] font-bold bg-white outline-none appearance-none cursor-pointer"
+              className="h-10 px-4 pr-8 rounded-[13px] text-[12px] font-semibold bg-white outline-none appearance-none cursor-pointer"
               style={{
                 border: `0.5px solid ${dSEP}`,
                 color: dT2,
@@ -1646,17 +1646,17 @@ const Discipline = () => {
             {/* Pie */}
             <div className="lg:col-span-4 bg-white rounded-[20px] overflow-hidden"
               style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
-              <div className="flex items-center gap-[10px] px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+              <div className="flex items-center gap-[12px] px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                 <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                  style={{ background: "rgba(123,63,244,0.10)", border: "0.5px solid rgba(123,63,244,0.22)" }}>
+                  style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                   <BookOpen className="w-4 h-4" style={{ color: dVIOLET }} strokeWidth={2.4} />
                 </div>
-                <h3 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Incident Types</h3>
+                <h3 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Incident Types</h3>
               </div>
               <div className="p-6">
                 {pieData.length === 0 ? (
                   <div className="flex items-center justify-center h-[220px]">
-                    <p className="text-[13px] font-bold" style={{ color: dT4 }}>No data available</p>
+                    <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No data available</p>
                   </div>
                 ) : (() => {
                   const totalIncidents = pieData.reduce((acc: number, c: any) => acc + (Number(c.value) || 0), 0);
@@ -1696,7 +1696,7 @@ const Discipline = () => {
                                       <tspan
                                         x={viewBox.cx}
                                         y={viewBox.cy}
-                                        style={{ fill: dT1, fontSize: 28, fontWeight: 800, letterSpacing: "-0.5px" }}
+                                        style={{ fill: dT1, fontSize: 28, fontWeight: 600, letterSpacing: "-0.5px" }}
                                       >
                                         {totalIncidents}%
                                       </tspan>
@@ -1722,9 +1722,9 @@ const Discipline = () => {
                             style={{ background: dBG, border: `0.5px solid ${dSEP}` }}>
                             <div className="flex items-center gap-2">
                               <div className="w-[10px] h-[10px] rounded-[3px]" style={{ background: p.color }} />
-                              <span className="text-[12px] font-bold" style={{ color: dT2 }}>{p.name}</span>
+                              <span className="text-[12px] font-semibold" style={{ color: dT2 }}>{p.name}</span>
                             </div>
-                            <span className="text-[13px] font-bold" style={{ color: p.color }}>{p.value}%</span>
+                            <span className="text-[13px] font-semibold" style={{ color: p.color }}>{p.value}%</span>
                           </div>
                         ))}
                       </div>
@@ -1737,27 +1737,27 @@ const Discipline = () => {
             {/* Table */}
             <div className="lg:col-span-8 bg-white rounded-[20px] overflow-hidden"
               style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
-              <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-                <div className="flex items-center gap-[10px]">
+              <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+                <div className="flex items-center gap-[12px]">
                   <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg, ${dRED}, #FF6688)`, boxShadow: "0 4px 14px rgba(255,51,85,0.26)" }}>
+                    style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
                     <ShieldAlert className="w-4 h-4 text-white" strokeWidth={2.4} />
                   </div>
-                  <h3 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recent Incidents</h3>
-                  <span className="text-[11px] font-bold px-3 py-1 rounded-full"
-                    style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.18)" }}>
+                  <h3 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recent Incidents</h3>
+                  <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+                    style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
                     {filteredIncidents.length}
                   </span>
                 </div>
               </div>
               {filteredIncidents.length === 0 ? (
-                <div className="py-16 flex flex-col items-center gap-3 text-center">
+                <div className="py-10 flex flex-col items-center gap-3 text-center">
                   <div className="w-16 h-16 rounded-[18px] flex items-center justify-center"
-                    style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(0,200,83,0.05)" }}>
+                    style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
                     <ShieldAlert className="w-8 h-8" style={{ color: dGREEN }} strokeWidth={2.2} />
                   </div>
-                  <p className="text-[14px] font-bold" style={{ color: dT1 }}>No incidents found</p>
-                  <p className="text-[11px]" style={{ color: dT4 }}>Try adjusting your filters</p>
+                  <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No incidents found</p>
+                  <p className="text-[12px]" style={{ color: dT4 }}>Try adjusting your filters</p>
                 </div>
               ) : (
                 <div className="overflow-x-auto">
@@ -1765,7 +1765,7 @@ const Discipline = () => {
                     <thead>
                       <tr style={{ background: dBG, borderBottom: `0.5px solid ${dSEP}` }}>
                         {["Date", "Student", "Type", "Severity", "Status", ""].map((h, i) => (
-                          <th key={i} className={`px-5 py-3 text-[10px] font-bold uppercase tracking-[0.10em] ${i === 5 ? "text-right" : "text-left"}`}
+                          <th key={i} className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.10em] ${i === 5 ? "text-right" : "text-left"}`}
                             style={{ color: dT4 }}>{h}</th>
                         ))}
                       </tr>
@@ -1778,34 +1778,34 @@ const Discipline = () => {
                         return (
                           <tr key={inc.id || i}
                             className="transition-colors hover:bg-[#F8FAFF] cursor-pointer"
-                            style={{ borderBottom: `0.5px solid ${dSEP}`, background: isSevere ? "rgba(255,51,85,0.02)" : "transparent" }}
+                            style={{ borderBottom: `0.5px solid ${dSEP}`, background: isSevere ? "rgba(255,59,48,0.02)" : "transparent" }}
                             onClick={() => setSelectedIncident(inc)}>
                             <td className="px-5 py-4 whitespace-nowrap text-[12px] font-medium" style={{ color: dT3 }}>
                               {inc.date ? new Date(inc.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' }) : '—'}
                             </td>
                             <td className="px-5 py-4">
                               <div className="flex items-center gap-3">
-                                <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[11px] font-bold shrink-0"
-                                  style={{ background: sev.grad, boxShadow: "0 3px 10px rgba(0,85,255,0.22)" }}>
+                                <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                                  style={{ background: sev.grad, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                                   {(inc.student?.name || 'UK').split(" ").map((w: string) => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase()}
                                 </div>
                                 <div className="min-w-0">
-                                  <p className="text-[13px] font-bold truncate" style={{ color: dT1 }}>{inc.student?.name || 'Unknown'}</p>
-                                  {inc.student?.grade && <p className="text-[10px] font-medium mt-0.5" style={{ color: dT3 }}>{inc.student.grade}</p>}
+                                  <p className="text-[13px] font-semibold truncate" style={{ color: dT1 }}>{inc.student?.name || 'Unknown'}</p>
+                                  {inc.student?.grade && <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>{inc.student.grade}</p>}
                                 </div>
                               </div>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="text-[12px] font-bold" style={{ color: dT2 }}>{inc.type || inc.title || '—'}</span>
+                              <span className="text-[12px] font-semibold" style={{ color: dT2 }}>{inc.type || inc.title || '—'}</span>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="inline-flex items-center px-[10px] py-[4px] rounded-full text-[10px] font-bold uppercase tracking-[0.08em]"
+                              <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
                                 style={{ background: sev.bg, color: sev.color, border: `0.5px solid ${sev.border}` }}>
                                 {(inc.severity || 'LOW').toUpperCase()}
                               </span>
                             </td>
                             <td className="px-5 py-4">
-                              <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[10px] font-bold uppercase tracking-[0.08em]"
+                              <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
                                 style={{ background: st.bg, color: st.color, border: `0.5px solid ${st.border}` }}>
                                 <span className="w-[6px] h-[6px] rounded-full" style={{ background: st.dot }} />
                                 {inc.status || 'Open'}
@@ -1813,8 +1813,8 @@ const Discipline = () => {
                             </td>
                             <td className="px-5 py-4 text-right" onClick={e => e.stopPropagation()}>
                               <button onClick={() => setSelectedIncident(inc)}
-                                className="inline-flex items-center gap-1 h-9 px-3 rounded-[11px] text-[11px] font-bold text-white transition-transform hover:scale-[1.04]"
-                                style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(0,85,255,0.22)" }}>
+                                className="inline-flex items-center gap-1 h-9 px-3 rounded-[11px] text-[12px] font-semibold text-white transition-transform hover:scale-[1.04]"
+                                style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                                 View <ChevronRight className="w-3 h-3" strokeWidth={2.5} />
                               </button>
                             </td>
@@ -1829,9 +1829,9 @@ const Discipline = () => {
           </div>
 
           {/* AI Intelligence */}
-          <div className="mt-5 rounded-[22px] px-7 py-6 relative overflow-hidden"
+          <div className="mt-5 rounded-[22px] px-8 py-6 relative overflow-hidden"
             style={{
-              background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+              background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
               boxShadow: "0 10px 36px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
             }}>
             <div className="absolute -top-10 -right-7 w-[200px] h-[200px] rounded-full pointer-events-none"
@@ -1841,17 +1841,17 @@ const Discipline = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Discipline Intelligence</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Discipline Intelligence</span>
             </div>
             <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{stats.weekCount} incident{stats.weekCount === 1 ? "" : "s"}</strong> logged this week with <strong style={{ color: "#fff", fontWeight: 700 }}>{stats.pendingCount}</strong> awaiting follow-up.
-              {stats.criticalCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 700 }}>{stats.criticalCount} critical case{stats.criticalCount === 1 ? "" : "s"}</strong> require immediate attention.</>}
-              {pieData.length > 0 && <> Most common type: <strong style={{ color: "#fff", fontWeight: 700 }}>{pieData[0].name}</strong> at <strong style={{ color: "#fff", fontWeight: 700 }}>{pieData[0].value}%</strong>.</>}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.weekCount} incident{stats.weekCount === 1 ? "" : "s"}</strong> logged this week with <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.pendingCount}</strong> awaiting follow-up.
+              {stats.criticalCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{stats.criticalCount} critical case{stats.criticalCount === 1 ? "" : "s"}</strong> require immediate attention.</>}
+              {pieData.length > 0 && <> Most common type: <strong style={{ color: "#fff", fontWeight: 600 }}>{pieData[0].name}</strong> at <strong style={{ color: "#fff", fontWeight: 600 }}>{pieData[0].value}%</strong>.</>}
               {" "}Review pending cases and schedule counseling sessions for chronic offenders.
             </p>
             <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-              <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
         </>
@@ -1861,42 +1861,42 @@ const Discipline = () => {
       {showLogModal && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-card rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between px-7 py-5 border-b border-border">
-              <h2 className="text-base font-bold text-foreground">Log New Incident</h2>
+            <div className="flex items-center justify-between px-8 py-5 border-b border-border">
+              <h2 className="text-base font-semibold text-foreground">Log New Incident</h2>
               <button onClick={() => setShowLogModal(false)} className="p-2 hover:bg-secondary rounded-lg transition-colors">
                 <X className="w-4 h-4 text-muted-foreground" />
               </button>
             </div>
-            <div className="px-7 py-5 space-y-4">
+            <div className="px-8 py-5 space-y-4">
               {/* Title */}
               <div>
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Title *</label>
+                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Title *</label>
                 <input
                   value={form.title}
                   onChange={e => setForm(f => ({ ...f, title: e.target.value }))}
                   placeholder="e.g. Bullying Incident – Physical Altercation"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Student */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Student Name *</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Student Name *</label>
                   <input
                     value={form.studentName}
                     onChange={e => setForm(f => ({ ...f, studentName: e.target.value }))}
                     placeholder="Full name"
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Grade / Class</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Grade / Class</label>
                   <input
                     value={form.studentGrade}
                     onChange={e => setForm(f => ({ ...f, studentGrade: e.target.value }))}
                     placeholder="e.g. 9A"
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
               </div>
@@ -1904,11 +1904,11 @@ const Discipline = () => {
               {/* Type + Severity */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Type *</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Incident Type *</label>
                   <select
                     value={form.type}
                     onChange={e => setForm(f => ({ ...f, type: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   >
                     <option>Behavioral</option>
                     <option>Academic</option>
@@ -1918,11 +1918,11 @@ const Discipline = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Severity</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Severity</label>
                   <select
                     value={form.severity}
                     onChange={e => setForm(f => ({ ...f, severity: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   >
                     <option>Low</option>
                     <option>Medium</option>
@@ -1935,71 +1935,71 @@ const Discipline = () => {
               {/* Date + Time */}
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Date</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Date</label>
                   <input
                     type="date"
                     value={form.date}
                     onChange={e => setForm(f => ({ ...f, date: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Time</label>
+                  <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Time</label>
                   <input
                     type="time"
                     value={form.time}
                     onChange={e => setForm(f => ({ ...f, time: e.target.value }))}
-                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                    className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                   />
                 </div>
               </div>
 
               {/* Location */}
               <div>
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Location</label>
+                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Location</label>
                 <input
                   value={form.location}
                   onChange={e => setForm(f => ({ ...f, location: e.target.value }))}
                   placeholder="e.g. School Playground, Classroom 5B"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Reported By */}
               <div>
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Reported By</label>
+                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Reported By</label>
                 <input
                   value={form.reportedBy}
                   onChange={e => setForm(f => ({ ...f, reportedBy: e.target.value }))}
                   placeholder="Teacher / Staff name"
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background"
                 />
               </div>
 
               {/* Description */}
               <div>
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1.5 block">Description</label>
+                <label className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1.5 block">Description</label>
                 <textarea
                   rows={3}
                   value={form.description}
                   onChange={e => setForm(f => ({ ...f, description: e.target.value }))}
                   placeholder="Describe what happened..."
-                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-background resize-none"
+                  className="w-full border border-border rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-background resize-none"
                 />
               </div>
             </div>
 
-            <div className="px-7 py-5 border-t border-border flex gap-3">
+            <div className="px-8 py-5 border-t border-border flex gap-3">
               <button
                 onClick={() => setShowLogModal(false)}
-                className="flex-1 py-2.5 border border-border rounded-xl text-sm font-bold text-foreground hover:bg-secondary transition-colors"
+                className="flex-1 py-2.5 border border-border rounded-xl text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
               >
                 Cancel
               </button>
               <button
                 onClick={handleLogIncident}
                 disabled={saving || !form.studentName || !form.title}
-                className="flex-1 py-2.5 bg-[#e11d48] text-white rounded-xl text-sm font-bold hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 py-2.5 bg-[#e11d48] text-white rounded-xl text-sm font-semibold hover:bg-red-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {saving ? 'Saving...' : 'Log Incident'}
               </button>

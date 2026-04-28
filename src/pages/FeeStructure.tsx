@@ -590,7 +590,7 @@ export default function FeeStructurePage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="w-8 h-8 animate-spin text-[#1e3a8a]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#1D1D1F]" />
       </div>
     );
   }
@@ -610,24 +610,24 @@ export default function FeeStructurePage() {
 
   // ───────────────────────── MOBILE RETURN ─────────────────────────────────
   if (isMobile) {
-    const B1 = "#0055FF";
-    const B2 = "#1166FF";
-    const B3 = "#2277FF";
-    const B4 = "#4499FF";
-    const GREEN = "#00C853";
-    const GREEN_D = "#007830";
-    const RED = "#FF3355";
-    const RED_D = "#B01030";
-    const ORANGE = "#FF8800";
-    const ORANGE_D = "#884400";
-    const GOLD = "#FFAA00";
-    const VIOLET = "#7B3FF4";
+    const B1 = "#0A84FF";
+    const B2 = "#3395FF";
+    const B3 = "#5BA9FF";
+    const B4 = "#7CBBFF";
+    const GREEN = "#34C759";
+    const GREEN_D = "#248A3D";
+    const RED = "#FF3B30";
+    const RED_D = "#86170E";
+    const ORANGE = "#FF9500";
+    const ORANGE_D = "#86310C";
+    const GOLD = "#FFCC00";
+    const VIOLET = "#AF52DE";
     const VIOLET_D = "#5023B0";
-    const T1 = "#001040";
-    const T2 = "#002080";
-    const T3 = "#5070B0";
-    const T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,.07)";
+    const T1 = "#1D1D1F";
+    const T2 = "#3A3A3C";
+    const T3 = "#6E6E73";
+    const T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,.07)";
 
     const fmtInr = (n: number) => {
       if (n >= 10000000) return `₹${(n / 10000000).toFixed(2)}Cr`;
@@ -686,31 +686,31 @@ export default function FeeStructurePage() {
     const classAvGrads = [
       `linear-gradient(135deg, ${B1}, ${B3})`,
       `linear-gradient(135deg, ${GREEN}, #22DD77)`,
-      `linear-gradient(135deg, ${ORANGE}, #FFCC44)`,
-      `linear-gradient(135deg, ${VIOLET}, #A075FF)`,
-      `linear-gradient(135deg, ${GOLD}, #FFCC44)`,
+      `linear-gradient(135deg, ${ORANGE}, #FFCC00)`,
+      `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
+      `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
     ];
     const classAvShadows = [
-      "0 4px 12px rgba(0,85,255,.28)",
-      "0 4px 12px rgba(0,200,83,.28)",
-      "0 4px 12px rgba(255,136,0,.28)",
-      "0 4px 12px rgba(123,63,244,.28)",
-      "0 4px 12px rgba(255,170,0,.28)",
+      "0 4px 12px rgba(10,132,255,.28)",
+      "0 4px 12px rgba(52,199,89,.28)",
+      "0 4px 12px rgba(255,149,0,.28)",
+      "0 4px 12px rgba(175,82,222,.28)",
+      "0 4px 12px rgba(255,204,0,.28)",
     ];
     const classAccents = [
       `linear-gradient(180deg, ${B1}, ${B4})`,
-      `linear-gradient(180deg, ${GREEN}, #66EE88)`,
-      `linear-gradient(180deg, ${ORANGE}, #FFCC44)`,
-      `linear-gradient(180deg, ${VIOLET}, #A075FF)`,
-      `linear-gradient(180deg, ${GOLD}, #FFCC44)`,
+      `linear-gradient(180deg, ${GREEN}, #34C759)`,
+      `linear-gradient(180deg, ${ORANGE}, #FFCC00)`,
+      `linear-gradient(180deg, ${VIOLET}, #AF52DE)`,
+      `linear-gradient(180deg, ${GOLD}, #FFCC00)`,
     ];
 
     const studentAvGrads = [
       `linear-gradient(135deg, ${GREEN}, #22DD77)`,
-      `linear-gradient(135deg, ${VIOLET}, #A075FF)`,
+      `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
       `linear-gradient(135deg, ${B1}, ${B3})`,
-      `linear-gradient(135deg, ${ORANGE}, #FFCC44)`,
-      `linear-gradient(135deg, ${GOLD}, #FFCC44)`,
+      `linear-gradient(135deg, ${ORANGE}, #FFCC00)`,
+      `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
     ];
 
     // Upload / AY change handlers
@@ -721,8 +721,8 @@ export default function FeeStructurePage() {
       return (
         <div
           style={{
-            fontFamily: "'DM Sans', -apple-system, sans-serif",
-            background: "#EEF4FF",
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            background: "#F5F5F7",
             minHeight: "100vh",
             paddingBottom: 24,
           }}
@@ -740,32 +740,32 @@ export default function FeeStructurePage() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   cursor: "pointer",
                 }}
                 aria-label="Back"
               >
                 <ChevronLeft size={16} color={B1} strokeWidth={2.3} />
               </button>
-              <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px" }}>Student Payments</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Student Payments</div>
             </div>
           </div>
 
           {/* Page Head */}
           <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
             <div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ fontSize: 22, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
                 <div
                   style={{
                     width: 30,
                     height: 30,
                     borderRadius: 10,
-                    background: `linear-gradient(135deg, ${VIOLET}, #A075FF)`,
+                    background: `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 4px 12px rgba(123,63,244,.32)",
+                    boxShadow: "0 4px 12px rgba(175,82,222,.32)",
                   }}
                 >
                   <Users size={16} color="#fff" strokeWidth={2.4} />
@@ -796,15 +796,15 @@ export default function FeeStructurePage() {
                     padding: "9px 6px",
                     borderRadius: 12,
                     background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#fff",
-                    border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,.12)",
+                    border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                     color: isActive ? "#fff" : T3,
                     fontSize: 10,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                     boxShadow: isActive
-                      ? "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)"
-                      : "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                      ? "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)"
+                      : "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                     cursor: "pointer",
                     fontFamily: "inherit",
                   }}
@@ -819,7 +819,7 @@ export default function FeeStructurePage() {
           <div
             style={{
               margin: "14px 20px 0",
-              background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+              background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
               borderRadius: 22,
               padding: "16px 18px",
               position: "relative",
@@ -856,10 +856,10 @@ export default function FeeStructurePage() {
                   <TrendingUp size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
                 </div>
                 <div>
-                  <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                     Collection Rate
                   </div>
-                  <div style={{ fontSize: 26, fontWeight: 700, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                  <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                     {collectionRate.toFixed(1)}%
                   </div>
                 </div>
@@ -874,7 +874,7 @@ export default function FeeStructurePage() {
                   background: "rgba(120,180,255,.22)",
                   border: "0.5px solid rgba(120,180,255,.4)",
                   fontSize: 11,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: "#AACCFF",
                 }}
               >
@@ -895,15 +895,15 @@ export default function FeeStructurePage() {
               }}
             >
               {[
-                { v: fmtInr(totalPaid), l: "Paid", c: "#66EE88" },
-                { v: fmtInr(totalPending), l: "Pending", c: "#FF99AA" },
-                { v: defaulters, l: "Defaulters", c: "#FFDD88" },
+                { v: fmtInr(totalPaid), l: "Paid", c: "#34C759" },
+                { v: fmtInr(totalPending), l: "Pending", c: "#FF6961" },
+                { v: defaulters, l: "Defaulters", c: "#FFCC00" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 16, fontWeight: 700, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 16, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -919,7 +919,7 @@ export default function FeeStructurePage() {
                 value: fmtInrFull(totalPaid),
                 sub: `${cleared} students cleared`,
                 bg: "linear-gradient(140deg,#E8FCF0 0%,#A8F0C4 60%,#7AE8A6 100%)",
-                border: "0.5px solid rgba(0,200,83,.35)",
+                border: "0.5px solid rgba(52,199,89,.35)",
                 lblColor: GREEN_D,
                 valColor: "#005A20",
                 subColor: GREEN_D,
@@ -931,7 +931,7 @@ export default function FeeStructurePage() {
                 value: fmtInrFull(totalPending),
                 sub: `${defaulters} students owe`,
                 bg: "linear-gradient(140deg,#FFECEE 0%,#FFBFC8 60%,#FF99A8 100%)",
-                border: "0.5px solid rgba(255,51,85,.35)",
+                border: "0.5px solid rgba(255,59,48,.35)",
                 lblColor: RED_D,
                 valColor: "#8A0A22",
                 subColor: RED_D,
@@ -943,9 +943,9 @@ export default function FeeStructurePage() {
                 value: defaulters,
                 sub: allStudents.length > 0 ? `${((defaulters / allStudents.length) * 100).toFixed(1)}% of branch` : "—",
                 bg: "linear-gradient(140deg,#FFF4E0 0%,#FFDB99 60%,#FFC266 100%)",
-                border: "0.5px solid rgba(255,136,0,.35)",
+                border: "0.5px solid rgba(255,149,0,.35)",
                 lblColor: ORANGE_D,
-                valColor: "#663300",
+                valColor: "#86310C",
                 subColor: ORANGE_D,
                 iconColor: ORANGE_D,
                 icon: <AlertTriangle size={14} color={ORANGE_D} strokeWidth={2.5} />,
@@ -955,7 +955,7 @@ export default function FeeStructurePage() {
                 value: fmtInrFull(totalDiscount),
                 sub: `${discountApprovals} waivers approved`,
                 bg: "linear-gradient(140deg,#F3EAFF 0%,#D6BCFF 60%,#B899FF 100%)",
-                border: "0.5px solid rgba(123,63,244,.35)",
+                border: "0.5px solid rgba(175,82,222,.35)",
                 lblColor: VIOLET_D,
                 valColor: "#3A1580",
                 subColor: VIOLET_D,
@@ -1005,10 +1005,10 @@ export default function FeeStructurePage() {
                 >
                   {c.icon}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: c.lblColor, marginBottom: 8, position: "relative", zIndex: 1 }}>
                   {c.label}
                 </div>
-                <div style={{ fontSize: 18, fontWeight: 700, color: c.valColor, letterSpacing: "-0.7px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                <div style={{ fontSize: 18, fontWeight: 600, color: c.valColor, letterSpacing: "-0.7px", lineHeight: 1, marginBottom: 4, position: "relative", zIndex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                   {c.value}
                 </div>
                 <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, position: "relative", zIndex: 1 }}>
@@ -1021,7 +1021,7 @@ export default function FeeStructurePage() {
           {/* Search */}
           <div style={{ margin: "14px 20px 0", position: "relative" }}>
             <div style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "flex" }}>
-              <Search size={15} color="rgba(0,85,255,.42)" strokeWidth={2.2} />
+              <Search size={15} color="rgba(10,132,255,.42)" strokeWidth={2.2} />
             </div>
             <input
               value={mobileStudentSearch}
@@ -1032,13 +1032,13 @@ export default function FeeStructurePage() {
                 padding: "12px 16px 12px 42px",
                 background: "#fff",
                 borderRadius: 14,
-                border: "0.5px solid rgba(0,85,255,.12)",
+                border: "0.5px solid rgba(10,132,255,.12)",
                 fontFamily: "inherit",
                 fontSize: 13,
                 color: T1,
                 fontWeight: 400,
                 outline: "none",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
               }}
             />
           </div>
@@ -1047,7 +1047,7 @@ export default function FeeStructurePage() {
           <div
             style={{
               fontSize: 9,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "0.10em",
               textTransform: "uppercase",
               color: T4,
@@ -1062,10 +1062,10 @@ export default function FeeStructurePage() {
               style={{
                 padding: "3px 9px",
                 borderRadius: 100,
-                background: "rgba(0,85,255,.10)",
-                border: "0.5px solid rgba(0,85,255,.16)",
+                background: "rgba(10,132,255,.10)",
+                border: "0.5px solid rgba(10,132,255,.16)",
                 fontSize: 9,
-                fontWeight: 700,
+                fontWeight: 600,
                 color: B1,
                 textTransform: "none",
                 letterSpacing: "0.04em",
@@ -1073,7 +1073,7 @@ export default function FeeStructurePage() {
             >
               {studentsByClass.size} class{studentsByClass.size === 1 ? "" : "es"}
             </span>
-            <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+            <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
           </div>
 
           {/* Expand / Collapse All buttons */}
@@ -1092,10 +1092,10 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   cursor: "pointer",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
                   fontFamily: "inherit",
@@ -1117,10 +1117,10 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   cursor: "pointer",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",
                   fontFamily: "inherit",
@@ -1140,7 +1140,7 @@ export default function FeeStructurePage() {
                 background: "#fff",
                 borderRadius: 22,
                 padding: "32px 20px",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -1148,8 +1148,8 @@ export default function FeeStructurePage() {
                 textAlign: "center",
               }}
             >
-              <Users size={44} color="rgba(0,85,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 14, fontWeight: 700, color: T1 }}>No student data yet</div>
+              <Users size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
+              <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No student data yet</div>
               <div style={{ fontSize: 11, color: T4, maxWidth: 260, lineHeight: 1.5 }}>
                 Upload an Excel with a "Student Name" column to see per-student payment status.
               </div>
@@ -1170,9 +1170,9 @@ export default function FeeStructurePage() {
                     background: "#fff",
                     borderRadius: 18,
                     boxShadow: isExpanded
-                      ? "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)"
-                      : "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                    border: isExpanded ? "0.5px solid rgba(0,85,255,.18)" : "0.5px solid rgba(0,85,255,.08)",
+                      ? "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)"
+                      : "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                    border: isExpanded ? "0.5px solid rgba(10,132,255,.18)" : "0.5px solid rgba(10,132,255,.08)",
                     position: "relative",
                     overflow: "hidden",
                   }}
@@ -1218,7 +1218,7 @@ export default function FeeStructurePage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 12,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: "#fff",
                         flexShrink: 0,
                         boxShadow: classAvShadows[ci % classAvShadows.length],
@@ -1227,23 +1227,23 @@ export default function FeeStructurePage() {
                       {initial}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px", display: "flex", alignItems: "center", gap: 6 }}>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", display: "flex", alignItems: "center", gap: 6 }}>
                         {className}
                         <span
                           style={{
                             fontSize: 9,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             color: T4,
                             padding: "1px 7px",
                             borderRadius: 100,
-                            background: "rgba(0,85,255,.08)",
+                            background: "rgba(10,132,255,.08)",
                             letterSpacing: "0.02em",
                           }}
                         >
                           {studList.length} student{studList.length === 1 ? "" : "s"}
                         </span>
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 5, fontSize: 10, fontWeight: 700 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 5, fontSize: 10, fontWeight: 600 }}>
                         <span style={{ color: GREEN_D, display: "inline-flex", alignItems: "center", gap: 4 }}>
                           <span style={{ width: 5, height: 5, borderRadius: "50%", background: GREEN }} />
                           {fmtInr(classPaid)} paid
@@ -1266,7 +1266,7 @@ export default function FeeStructurePage() {
                     />
                   </button>
                   {isExpanded && (
-                    <div style={{ padding: "4px 12px 12px", background: "rgba(0,85,255,.025)", borderTop: `0.5px solid rgba(0,85,255,.08)` }}>
+                    <div style={{ padding: "4px 12px 12px", background: "rgba(10,132,255,.025)", borderTop: `0.5px solid rgba(10,132,255,.08)` }}>
                       {filtered.length === 0 ? (
                         <div style={{ padding: "16px 18px", fontSize: 11, color: T4, textAlign: "center", fontStyle: "italic" }}>
                           {mobileStudentSearch.trim() || mobileStudentFilter !== "all"
@@ -1286,10 +1286,10 @@ export default function FeeStructurePage() {
                             .join("")
                             .toUpperCase();
                           const stripeColor = isCleared
-                            ? `linear-gradient(180deg, ${GREEN}, #66EE88)`
+                            ? `linear-gradient(180deg, ${GREEN}, #34C759)`
                             : isPending
-                            ? `linear-gradient(180deg, ${RED}, #FF7788)`
-                            : `linear-gradient(180deg, ${B1}, #4499FF)`;
+                            ? `linear-gradient(180deg, ${RED}, #FF5E55)`
+                            : `linear-gradient(180deg, ${B1}, #7CBBFF)`;
 
                           // Extract term categories from latestStructure.termTypes
                           const terms = latestStructure?.termTypes || [];
@@ -1305,8 +1305,8 @@ export default function FeeStructurePage() {
                                 marginTop: 10,
                                 background: "#fff",
                                 borderRadius: 16,
-                                boxShadow: "0 2px 10px rgba(0,85,255,.08)",
-                                border: "0.5px solid rgba(0,85,255,.10)",
+                                boxShadow: "0 2px 10px rgba(10,132,255,.08)",
+                                border: "0.5px solid rgba(10,132,255,.10)",
                                 overflow: "hidden",
                                 position: "relative",
                               }}
@@ -1319,14 +1319,14 @@ export default function FeeStructurePage() {
                                 <div
                                   style={{
                                     fontSize: 9,
-                                    fontWeight: 700,
+                                    fontWeight: 600,
                                     color: "#fff",
                                     padding: "3px 8px",
                                     borderRadius: 100,
                                     letterSpacing: "0.04em",
                                     flexShrink: 0,
                                     background: `linear-gradient(135deg, ${B1}, ${B2})`,
-                                    boxShadow: "0 2px 6px rgba(0,85,255,.3)",
+                                    boxShadow: "0 2px 6px rgba(10,132,255,.3)",
                                   }}
                                 >
                                   {s.rollNo || `#${si + 1}`}
@@ -1341,7 +1341,7 @@ export default function FeeStructurePage() {
                                     alignItems: "center",
                                     justifyContent: "center",
                                     fontSize: 11,
-                                    fontWeight: 700,
+                                    fontWeight: 600,
                                     color: "#fff",
                                     flexShrink: 0,
                                   }}
@@ -1349,7 +1349,7 @@ export default function FeeStructurePage() {
                                   {initials || "?"}
                                 </div>
                                 <div style={{ flex: 1, minWidth: 0 }}>
-                                  <div style={{ fontSize: 13, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                  <div style={{ fontSize: 13, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                     {s.studentName}
                                   </div>
                                   <div style={{ fontSize: 10, color: T3, fontWeight: 500, lineHeight: 1.35, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -1365,11 +1365,11 @@ export default function FeeStructurePage() {
                                       padding: "3px 8px",
                                       borderRadius: 100,
                                       fontSize: 9,
-                                      fontWeight: 700,
+                                      fontWeight: 600,
                                       letterSpacing: "0.02em",
                                       background: "linear-gradient(135deg,#D0F8DE,#A5F0BC)",
                                       color: GREEN_D,
-                                      border: `0.5px solid ${"rgba(0,200,83,.22)"}`,
+                                      border: `0.5px solid ${"rgba(52,199,89,.22)"}`,
                                       display: "inline-flex",
                                       alignItems: "center",
                                       gap: 3,
@@ -1386,11 +1386,11 @@ export default function FeeStructurePage() {
                                       padding: "3px 8px",
                                       borderRadius: 100,
                                       fontSize: 9,
-                                      fontWeight: 700,
+                                      fontWeight: 600,
                                       letterSpacing: "0.02em",
                                       background: "linear-gradient(135deg,#FFD8DF,#FFB0BE)",
                                       color: RED_D,
-                                      border: `0.5px solid ${"rgba(255,51,85,.22)"}`,
+                                      border: `0.5px solid ${"rgba(255,59,48,.22)"}`,
                                       flexShrink: 0,
                                       whiteSpace: "nowrap",
                                     }}
@@ -1407,15 +1407,15 @@ export default function FeeStructurePage() {
                                     display: "grid",
                                     gridTemplateColumns: `repeat(${qTerms.length}, 1fr)`,
                                     gap: 1,
-                                    background: "rgba(0,85,255,.10)",
+                                    background: "rgba(10,132,255,.10)",
                                   }}
                                 >
                                   {qTerms.map((t) => (
                                     <div key={t} style={{ background: "#fff", padding: "7px 4px", textAlign: "center" }}>
-                                      <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: T4, marginBottom: 2, display: "block" }}>
+                                      <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: T4, marginBottom: 2, display: "block" }}>
                                         {t}
                                       </div>
-                                      <div style={{ fontSize: 11, fontWeight: 700, color: T2, letterSpacing: "-0.1px" }}>
+                                      <div style={{ fontSize: 11, fontWeight: 600, color: T2, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[t] || 0)}
                                       </div>
                                     </div>
@@ -1430,7 +1430,7 @@ export default function FeeStructurePage() {
                                     display: "flex",
                                     justifyContent: "space-around",
                                     padding: "8px 14px",
-                                    background: "rgba(0,85,255,.03)",
+                                    background: "rgba(10,132,255,.03)",
                                     borderBottom: `0.5px solid ${SEP}`,
                                     gap: 4,
                                     flexWrap: "wrap",
@@ -1438,30 +1438,30 @@ export default function FeeStructurePage() {
                                 >
                                   {halfYearlyTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 700, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         H-Yrly
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 700, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[halfYearlyTerm] || 0)}
                                       </span>
                                     </span>
                                   )}
                                   {annualTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 700, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         Annual
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 700, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[annualTerm] || 0)}
                                       </span>
                                     </span>
                                   )}
                                   {monthlyTerm && (
                                     <span style={{ display: "inline-flex", alignItems: "center", gap: 4, fontSize: 10 }}>
-                                      <span style={{ color: T4, fontWeight: 700, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
+                                      <span style={{ color: T4, fontWeight: 600, textTransform: "uppercase", fontSize: 8, letterSpacing: "0.06em" }}>
                                         Monthly
                                       </span>
-                                      <span style={{ color: T2, fontWeight: 700, letterSpacing: "-0.1px" }}>
+                                      <span style={{ color: T2, fontWeight: 600, letterSpacing: "-0.1px" }}>
                                         {fmtInr(s.amounts[monthlyTerm] || 0)}
                                       </span>
                                     </span>
@@ -1475,7 +1475,7 @@ export default function FeeStructurePage() {
                                   display: "grid",
                                   gridTemplateColumns: "1fr 1fr 1fr",
                                   gap: 1,
-                                  background: "rgba(0,85,255,.08)",
+                                  background: "rgba(10,132,255,.08)",
                                 }}
                               >
                                 <div
@@ -1487,10 +1487,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: (s.paid || 0) > 0 ? GREEN_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: (s.paid || 0) > 0 ? GREEN_D : T4 }}>
                                     Paid
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "-0.2px", lineHeight: 1, color: (s.paid || 0) > 0 ? "#004018" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: (s.paid || 0) > 0 ? "#004018" : T4 }}>
                                     {fmtInr(s.paid || 0)}
                                   </div>
                                 </div>
@@ -1503,10 +1503,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: hasDiscount ? VIOLET_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: hasDiscount ? VIOLET_D : T4 }}>
                                     Discount
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "-0.2px", lineHeight: 1, color: hasDiscount ? "#280C5C" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: hasDiscount ? "#280C5C" : T4 }}>
                                     {fmtInr(s.discount || 0)}
                                   </div>
                                 </div>
@@ -1519,10 +1519,10 @@ export default function FeeStructurePage() {
                                       : "#fff",
                                   }}
                                 >
-                                  <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: isPending ? RED_D : T4 }}>
+                                  <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2, display: "block", color: isPending ? RED_D : T4 }}>
                                     Pending
                                   </div>
-                                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "-0.2px", lineHeight: 1, color: isPending ? "#60081A" : T4 }}>
+                                  <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "-0.2px", lineHeight: 1, color: isPending ? "#60081A" : T4 }}>
                                     {fmtInr(s.pending || 0)}
                                   </div>
                                 </div>
@@ -1547,8 +1547,8 @@ export default function FeeStructurePage() {
     return (
       <div
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
-          background: "#EEF4FF",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -1559,7 +1559,7 @@ export default function FeeStructurePage() {
         {/* Page Head */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
               <div
                 style={{
                   width: 30,
@@ -1569,7 +1569,7 @@ export default function FeeStructurePage() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 4px 12px rgba(0,200,83,.32)",
+                  boxShadow: "0 4px 12px rgba(52,199,89,.32)",
                 }}
               >
                 <DollarSign size={16} color="#fff" strokeWidth={2.4} />
@@ -1591,18 +1591,18 @@ export default function FeeStructurePage() {
                 padding: "8px 11px",
                 borderRadius: 14,
                 background: "#fff",
-                border: "0.5px solid rgba(0,85,255,.14)",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                border: "0.5px solid rgba(10,132,255,.14)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 flexShrink: 0,
                 marginTop: 4,
                 cursor: "pointer",
               }}
             >
               <div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 1 }}>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 1 }}>
                   Students
                 </div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: T1, letterSpacing: "-0.2px", lineHeight: 1 }}>
+                <div style={{ fontSize: 12, fontWeight: 600, color: T1, letterSpacing: "-0.2px", lineHeight: 1 }}>
                   {allStudents.length}
                 </div>
               </div>
@@ -1625,15 +1625,15 @@ export default function FeeStructurePage() {
                     padding: "9px 6px",
                     borderRadius: 12,
                     background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#fff",
-                    border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,.12)",
+                    border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                     color: isActive ? "#fff" : T3,
                     fontSize: 10,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                     boxShadow: isActive
-                      ? "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)"
-                      : "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                      ? "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)"
+                      : "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                     cursor: "pointer",
                     fontFamily: "inherit",
                     minWidth: 90,
@@ -1651,7 +1651,7 @@ export default function FeeStructurePage() {
         <div
           style={{
             margin: "14px 20px 0",
-            background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+            background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
             borderRadius: 22,
             padding: "16px 18px",
             position: "relative",
@@ -1688,10 +1688,10 @@ export default function FeeStructurePage() {
                 <DollarSign size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                   Total Annual Fee
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", letterSpacing: "-0.6px", lineHeight: 1 }}>
+                <div style={{ fontSize: 22, fontWeight: 600, color: "#fff", letterSpacing: "-0.6px", lineHeight: 1 }}>
                   {fmtInrFull(latestBranchTotal)}
                 </div>
               </div>
@@ -1703,11 +1703,11 @@ export default function FeeStructurePage() {
                 gap: 5,
                 padding: "5px 12px",
                 borderRadius: 100,
-                background: latestStructure ? "rgba(0,200,83,.22)" : "rgba(255,170,0,.22)",
-                border: latestStructure ? "0.5px solid rgba(0,200,83,.4)" : "0.5px solid rgba(255,170,0,.4)",
+                background: latestStructure ? "rgba(52,199,89,.22)" : "rgba(255,204,0,.22)",
+                border: latestStructure ? "0.5px solid rgba(52,199,89,.4)" : "0.5px solid rgba(255,204,0,.4)",
                 fontSize: 10,
-                fontWeight: 700,
-                color: latestStructure ? "#66FFAA" : "#FFDD88",
+                fontWeight: 600,
+                color: latestStructure ? "#66FFAA" : "#FFCC00",
               }}
             >
               <div
@@ -1715,7 +1715,7 @@ export default function FeeStructurePage() {
                   width: 6,
                   height: 6,
                   borderRadius: "50%",
-                  background: latestStructure ? "#66FFAA" : "#FFDD88",
+                  background: latestStructure ? "#66FFAA" : "#FFCC00",
                   boxShadow: latestStructure ? "0 0 8px rgba(102,255,170,.8)" : "none",
                 }}
               />
@@ -1736,14 +1736,14 @@ export default function FeeStructurePage() {
           >
             {[
               { v: latestClassCount, l: "Classes", c: "#fff" },
-              { v: latestTermCount, l: "Terms", c: "#FFDD88" },
-              { v: allStructures.length, l: "Versions", c: "#66EE88" },
+              { v: latestTermCount, l: "Terms", c: "#FFCC00" },
+              { v: allStructures.length, l: "Versions", c: "#34C759" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                <div style={{ fontSize: 18, fontWeight: 700, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 18, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -1761,9 +1761,9 @@ export default function FeeStructurePage() {
               color: B1,
               subColor: T4,
               icon: <FileSpreadsheet size={13} color={B1} strokeWidth={2.4} />,
-              bg: "rgba(0,85,255,.10)",
-              border: "rgba(0,85,255,.18)",
-              glow: "rgba(0,85,255,.10)",
+              bg: "rgba(10,132,255,.10)",
+              border: "rgba(10,132,255,.18)",
+              glow: "rgba(10,132,255,.10)",
             },
             {
               label: "Fee Terms",
@@ -1772,9 +1772,9 @@ export default function FeeStructurePage() {
               color: VIOLET,
               subColor: VIOLET_D,
               icon: <Calendar size={13} color={VIOLET} strokeWidth={2.4} />,
-              bg: "rgba(123,63,244,.10)",
-              border: "rgba(123,63,244,.22)",
-              glow: "rgba(123,63,244,.10)",
+              bg: "rgba(175,82,222,.10)",
+              border: "rgba(175,82,222,.22)",
+              glow: "rgba(175,82,222,.10)",
             },
             {
               label: "Annual Avg",
@@ -1783,9 +1783,9 @@ export default function FeeStructurePage() {
               color: GREEN_D,
               subColor: GREEN_D,
               icon: <TrendingUp size={13} color={GREEN} strokeWidth={2.4} />,
-              bg: "rgba(0,200,83,.10)",
-              border: "rgba(0,200,83,.22)",
-              glow: "rgba(0,200,83,.10)",
+              bg: "rgba(52,199,89,.10)",
+              border: "rgba(52,199,89,.22)",
+              glow: "rgba(52,199,89,.10)",
             },
             {
               label: "Monthly Avg",
@@ -1794,9 +1794,9 @@ export default function FeeStructurePage() {
               color: ORANGE,
               subColor: ORANGE_D,
               icon: <Clock size={13} color={ORANGE} strokeWidth={2.4} />,
-              bg: "rgba(255,136,0,.10)",
-              border: "rgba(255,136,0,.22)",
-              glow: "rgba(255,136,0,.10)",
+              bg: "rgba(255,149,0,.10)",
+              border: "rgba(255,149,0,.22)",
+              glow: "rgba(255,149,0,.10)",
             },
           ].map((c, i) => (
             <div
@@ -1805,8 +1805,8 @@ export default function FeeStructurePage() {
                 background: "#fff",
                 borderRadius: 20,
                 padding: 15,
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-                border: "0.5px solid rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+                border: "0.5px solid rgba(10,132,255,.10)",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -1840,10 +1840,10 @@ export default function FeeStructurePage() {
               >
                 {c.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
+              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.8px", lineHeight: 1, marginBottom: 4, color: c.color, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 24, fontWeight: 600, letterSpacing: "-0.8px", lineHeight: 1, marginBottom: 4, color: c.color, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {c.value}
               </div>
               <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -1860,8 +1860,8 @@ export default function FeeStructurePage() {
             background: "#fff",
             borderRadius: 20,
             padding: 16,
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-            border: "0.5px solid rgba(0,85,255,.10)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+            border: "0.5px solid rgba(10,132,255,.10)",
             position: "relative",
             overflow: "hidden",
           }}
@@ -1876,13 +1876,13 @@ export default function FeeStructurePage() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 4px 12px rgba(0,85,255,.32)",
+                boxShadow: "0 4px 12px rgba(10,132,255,.32)",
               }}
             >
               <Upload size={16} color="#fff" strokeWidth={2.3} />
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: T1, letterSpacing: "-0.2px" }}>
+              <div style={{ fontSize: 13, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>
                 {allStructures.length > 0 ? "Upload New Version" : "Upload Fee Structure"}
               </div>
               <div style={{ fontSize: 10, color: T3, fontWeight: 500 }}>
@@ -1891,7 +1891,7 @@ export default function FeeStructurePage() {
             </div>
           </div>
           <div style={{ marginBottom: 10 }}>
-            <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
               Academic Year
             </div>
             <input
@@ -1901,9 +1901,9 @@ export default function FeeStructurePage() {
               style={{
                 width: "100%",
                 padding: "10px 14px",
-                background: "#EEF4FF",
+                background: "#F5F5F7",
                 borderRadius: 12,
-                border: "0.5px solid rgba(0,85,255,.14)",
+                border: "0.5px solid rgba(10,132,255,.14)",
                 fontFamily: "inherit",
                 fontSize: 12,
                 color: T1,
@@ -1913,7 +1913,7 @@ export default function FeeStructurePage() {
             />
           </div>
           <div style={{ marginBottom: 10 }}>
-            <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
               Notes
             </div>
             <input
@@ -1923,9 +1923,9 @@ export default function FeeStructurePage() {
               style={{
                 width: "100%",
                 padding: "10px 14px",
-                background: "#EEF4FF",
+                background: "#F5F5F7",
                 borderRadius: 12,
-                border: "0.5px solid rgba(0,85,255,.14)",
+                border: "0.5px solid rgba(10,132,255,.14)",
                 fontFamily: "inherit",
                 fontSize: 12,
                 color: T1,
@@ -1947,10 +1947,10 @@ export default function FeeStructurePage() {
               justifyContent: "center",
               gap: 7,
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 600,
               cursor: "pointer",
               border: "none",
-              boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+              boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
               marginTop: 4,
               letterSpacing: "0.02em",
             }}
@@ -1965,16 +1965,16 @@ export default function FeeStructurePage() {
               marginTop: 8,
               height: 36,
               borderRadius: 11,
-              background: "#EEF4FF",
+              background: "#F5F5F7",
               color: B1,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               gap: 6,
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               cursor: "pointer",
-              border: "0.5px dashed rgba(0,85,255,.3)",
+              border: "0.5px dashed rgba(10,132,255,.3)",
               letterSpacing: "0.02em",
             }}
           >
@@ -1988,21 +1988,21 @@ export default function FeeStructurePage() {
           <div
             style={{
               margin: "14px 20px 0",
-              background: "linear-gradient(140deg,#FFF6D6 0%,#FFE58A 42%,#FFCC44 100%)",
+              background: "linear-gradient(140deg,#FFF6D6 0%,#FFE58A 42%,#FFCC00 100%)",
               borderRadius: 18,
               padding: "14px 16px",
-              border: "0.5px solid rgba(255,170,0,.35)",
-              boxShadow: "0 6px 20px rgba(255,170,0,.24)",
+              border: "0.5px solid rgba(255,204,0,.35)",
+              boxShadow: "0 6px 20px rgba(255,204,0,.24)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-              <FileSpreadsheet size={16} color="#885500" strokeWidth={2.3} />
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#331F00" }}>Review & Publish</div>
+              <FileSpreadsheet size={16} color="#86310C" strokeWidth={2.3} />
+              <div style={{ fontSize: 12, fontWeight: 600, color: "#331F00" }}>Review & Publish</div>
               <span
                 style={{
                   fontSize: 9,
-                  fontWeight: 700,
-                  color: "#885500",
+                  fontWeight: 600,
+                  color: "#86310C",
                   background: "rgba(255,255,255,.65)",
                   padding: "2px 7px",
                   borderRadius: 100,
@@ -2014,7 +2014,7 @@ export default function FeeStructurePage() {
                 Unsaved
               </span>
             </div>
-            <div style={{ fontSize: 11, color: "#663300", fontWeight: 500, marginBottom: 12, lineHeight: 1.5 }}>
+            <div style={{ fontSize: 11, color: "#86310C", fontWeight: 500, marginBottom: 12, lineHeight: 1.5 }}>
               {draft.mode === "student"
                 ? `${draft.studentRows?.length || 0} students · ${draft.rows.length} classes · ${draft.termTypes.length} terms parsed.`
                 : `${draft.rows.length} classes × ${draft.termTypes.length} terms parsed.`}
@@ -2029,10 +2029,10 @@ export default function FeeStructurePage() {
                   height: 40,
                   borderRadius: 12,
                   background: "rgba(255,255,255,.75)",
-                  color: "#885500",
+                  color: "#86310C",
                   fontSize: 12,
-                  fontWeight: 700,
-                  border: "0.5px solid rgba(255,170,0,.35)",
+                  fontWeight: 600,
+                  border: "0.5px solid rgba(255,204,0,.35)",
                   cursor: saving ? "not-allowed" : "pointer",
                   display: "flex",
                   alignItems: "center",
@@ -2054,14 +2054,14 @@ export default function FeeStructurePage() {
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   border: "none",
                   cursor: saving ? "not-allowed" : "pointer",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 6,
-                  boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+                  boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
                   opacity: saving ? 0.65 : 1,
                 }}
               >
@@ -2085,8 +2085,8 @@ export default function FeeStructurePage() {
               padding: "13px 14px",
               background: "linear-gradient(135deg,#E5FCEE 0%,#C8F5DA 100%)",
               borderRadius: 16,
-              border: "0.5px solid rgba(0,200,83,.3)",
-              boxShadow: "0 6px 18px rgba(0,200,83,.10)",
+              border: "0.5px solid rgba(52,199,89,.3)",
+              boxShadow: "0 6px 18px rgba(52,199,89,.10)",
               display: "flex",
               alignItems: "center",
               gap: 12,
@@ -2116,7 +2116,7 @@ export default function FeeStructurePage() {
                 alignItems: "center",
                 justifyContent: "center",
                 flexShrink: 0,
-                boxShadow: "0 4px 12px rgba(0,200,83,.35)",
+                boxShadow: "0 4px 12px rgba(52,199,89,.35)",
                 position: "relative",
                 zIndex: 1,
               }}
@@ -2124,10 +2124,10 @@ export default function FeeStructurePage() {
               <CheckCircle2 size={16} color="#fff" strokeWidth={2.5} />
             </div>
             <div style={{ flex: 1, minWidth: 0, position: "relative", zIndex: 1 }}>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: GREEN_D, marginBottom: 2 }}>
+              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: GREEN_D, marginBottom: 2 }}>
                 Status
               </div>
-              <div style={{ fontSize: 15, fontWeight: 700, color: "#003D18", letterSpacing: "-0.3px", marginBottom: 2 }}>
+              <div style={{ fontSize: 15, fontWeight: 600, color: "#003D18", letterSpacing: "-0.3px", marginBottom: 2 }}>
                 {allStructures.length} upload{allStructures.length === 1 ? "" : "s"} saved
               </div>
               <div style={{ fontSize: 10, color: "#005A2A", fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -2142,7 +2142,7 @@ export default function FeeStructurePage() {
                 height: 8,
                 borderRadius: "50%",
                 background: GREEN,
-                boxShadow: "0 0 0 3px rgba(0,200,83,.25), 0 0 12px rgba(0,200,83,.6)",
+                boxShadow: "0 0 0 3px rgba(52,199,89,.25), 0 0 12px rgba(52,199,89,.6)",
                 flexShrink: 0,
                 position: "relative",
                 zIndex: 1,
@@ -2175,8 +2175,8 @@ export default function FeeStructurePage() {
                     margin: "10px 20px 0",
                     background: "#fff",
                     borderRadius: 20,
-                    boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08), 0 10px 26px rgba(0,85,255,.10)",
-                    border: "0.5px solid rgba(0,85,255,.08)",
+                    boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08), 0 10px 26px rgba(10,132,255,.10)",
+                    border: "0.5px solid rgba(10,132,255,.08)",
                     position: "relative",
                     overflow: "hidden",
                   }}
@@ -2202,7 +2202,7 @@ export default function FeeStructurePage() {
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: initial.length > 2 ? 11 : 14,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: "#fff",
                         flexShrink: 0,
                         boxShadow: classAvShadows[ri % classAvShadows.length],
@@ -2211,7 +2211,7 @@ export default function FeeStructurePage() {
                       {initial}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {row.className}
                       </div>
                       <div style={{ fontSize: 10, color: T4, fontWeight: 500 }}>
@@ -2219,10 +2219,10 @@ export default function FeeStructurePage() {
                       </div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ fontSize: 17, fontWeight: 700, color: B1, letterSpacing: "-0.4px", lineHeight: 1 }}>
+                      <div style={{ fontSize: 17, fontWeight: 600, color: B1, letterSpacing: "-0.4px", lineHeight: 1 }}>
                         {fmtInr(classTotal)}
                       </div>
-                      <div style={{ fontSize: 9, color: T4, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 2 }}>
+                      <div style={{ fontSize: 9, color: T4, fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", marginTop: 2 }}>
                         Total / yr
                       </div>
                     </div>
@@ -2233,16 +2233,16 @@ export default function FeeStructurePage() {
                         display: "grid",
                         gridTemplateColumns: `repeat(${quarterTerms.length}, 1fr)`,
                         gap: 1,
-                        background: "rgba(0,85,255,.10)",
+                        background: "rgba(10,132,255,.10)",
                         borderBottom: `0.5px solid ${SEP}`,
                       }}
                     >
                       {quarterTerms.map((t) => (
                         <div key={t} style={{ background: "#fff", padding: "9px 6px", textAlign: "center" }}>
-                          <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
+                          <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginBottom: 2 }}>
                             {t}
                           </div>
-                          <div style={{ fontSize: 11, fontWeight: 700, color: T2, letterSpacing: "-0.1px", lineHeight: 1 }}>
+                          <div style={{ fontSize: 11, fontWeight: 600, color: T2, letterSpacing: "-0.1px", lineHeight: 1 }}>
                             {fmtInr(row.amounts[t] || 0)}
                           </div>
                         </div>
@@ -2255,7 +2255,7 @@ export default function FeeStructurePage() {
                         display: "flex",
                         justifyContent: "space-around",
                         padding: "10px 14px",
-                        background: "rgba(0,85,255,.03)",
+                        background: "rgba(10,132,255,.03)",
                         fontSize: 10,
                         fontWeight: 600,
                         color: T3,
@@ -2265,7 +2265,7 @@ export default function FeeStructurePage() {
                     >
                       {nonQuarterTerms.slice(0, 3).map((t) => (
                         <span key={t} style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
-                          {t} <strong style={{ color: T2, fontWeight: 700 }}>{fmtInr(row.amounts[t] || 0)}</strong>
+                          {t} <strong style={{ color: T2, fontWeight: 600 }}>{fmtInr(row.amounts[t] || 0)}</strong>
                         </span>
                       ))}
                     </div>
@@ -2289,10 +2289,10 @@ export default function FeeStructurePage() {
                   justifyContent: "center",
                   gap: 6,
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   cursor: "pointer",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px dashed rgba(0,85,255,.3)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px dashed rgba(10,132,255,.3)",
                 }}
               >
                 {mobileShowAllClasses ? (
@@ -2317,7 +2317,7 @@ export default function FeeStructurePage() {
             <div
               style={{
                 fontSize: 9,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.10em",
                 textTransform: "uppercase",
                 color: T4,
@@ -2332,10 +2332,10 @@ export default function FeeStructurePage() {
                 style={{
                   padding: "3px 9px",
                   borderRadius: 100,
-                  background: "rgba(0,85,255,.10)",
-                  border: "0.5px solid rgba(0,85,255,.16)",
+                  background: "rgba(10,132,255,.10)",
+                  border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 9,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: B1,
                   textTransform: "none",
                   letterSpacing: "0.04em",
@@ -2343,7 +2343,7 @@ export default function FeeStructurePage() {
               >
                 {allStructures.length} version{allStructures.length === 1 ? "" : "s"}
               </span>
-              <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+              <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
             </div>
 
             {allStructures.map((s, i) => {
@@ -2373,9 +2373,9 @@ export default function FeeStructurePage() {
                     background: isLatest ? "linear-gradient(135deg,#E5FCEE 0%,#F4FFF8 60%,#FFFFFF 100%)" : "#fff",
                     borderRadius: 20,
                     boxShadow: isLatest
-                      ? "0 10px 28px rgba(0,200,83,.14), 0 0 0 .5px rgba(0,200,83,.22)"
-                      : "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-                    border: `0.5px solid ${isLatest ? "rgba(0,200,83,.3)" : "rgba(0,85,255,.10)"}`,
+                      ? "0 10px 28px rgba(52,199,89,.14), 0 0 0 .5px rgba(52,199,89,.22)"
+                      : "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+                    border: `0.5px solid ${isLatest ? "rgba(52,199,89,.3)" : "rgba(10,132,255,.10)"}`,
                     position: "relative",
                     overflow: "hidden",
                   }}
@@ -2384,7 +2384,7 @@ export default function FeeStructurePage() {
                     onClick={() => s.id && toggleCard(s.id)}
                     style={{
                       padding: "14px 16px",
-                      borderBottom: isExpanded ? `0.5px solid ${isLatest ? "rgba(0,200,83,.15)" : SEP}` : "none",
+                      borderBottom: isExpanded ? `0.5px solid ${isLatest ? "rgba(52,199,89,.15)" : SEP}` : "none",
                       display: "flex",
                       alignItems: "flex-start",
                       gap: 11,
@@ -2408,7 +2408,7 @@ export default function FeeStructurePage() {
                         alignItems: "center",
                         justifyContent: "center",
                         flexShrink: 0,
-                        boxShadow: isLatest ? "0 4px 12px rgba(0,200,83,.35)" : "none",
+                        boxShadow: isLatest ? "0 4px 12px rgba(52,199,89,.35)" : "none",
                       }}
                     >
                       {isLatest ? (
@@ -2419,7 +2419,7 @@ export default function FeeStructurePage() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap", marginBottom: 3 }}>
-                        <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px" }}>
+                        <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>
                           Fee Structure
                         </div>
                         {isLatest && (
@@ -2429,10 +2429,10 @@ export default function FeeStructurePage() {
                               borderRadius: 100,
                               background: `linear-gradient(135deg, ${GREEN}, #22DD77)`,
                               fontSize: 8,
-                              fontWeight: 700,
+                              fontWeight: 600,
                               color: "#fff",
                               letterSpacing: "0.08em",
-                              boxShadow: "0 3px 8px rgba(0,200,83,.35)",
+                              boxShadow: "0 3px 8px rgba(52,199,89,.35)",
                             }}
                           >
                             LATEST · LIVE
@@ -2441,14 +2441,14 @@ export default function FeeStructurePage() {
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap", marginBottom: 5 }}>
                         {studentCount > 0 && (
-                          <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(123,63,244,.08)", color: VIOLET, border: "0.5px solid rgba(123,63,244,.16)", fontSize: 9, fontWeight: 700 }}>
+                          <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(175,82,222,.08)", color: VIOLET, border: "0.5px solid rgba(175,82,222,.16)", fontSize: 9, fontWeight: 600 }}>
                             {studentCount} students
                           </span>
                         )}
-                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(0,85,255,.08)", color: B1, border: "0.5px solid rgba(0,85,255,.14)", fontSize: 9, fontWeight: 700 }}>
+                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 600 }}>
                           {s.rows.length} classes
                         </span>
-                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(0,85,255,.08)", color: B1, border: "0.5px solid rgba(0,85,255,.14)", fontSize: 9, fontWeight: 700 }}>
+                        <span style={{ padding: "3px 7px", borderRadius: 100, background: "rgba(10,132,255,.08)", color: B1, border: "0.5px solid rgba(10,132,255,.14)", fontSize: 9, fontWeight: 600 }}>
                           {s.termTypes.length} terms
                         </span>
                       </div>
@@ -2459,7 +2459,7 @@ export default function FeeStructurePage() {
                       </div>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: isLatest ? GREEN_D : B1, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 4 }}>
+                      <div style={{ fontSize: 15, fontWeight: 600, color: isLatest ? GREEN_D : B1, letterSpacing: "-0.3px", lineHeight: 1, marginBottom: 4 }}>
                         {fmtInr(branchTotal)}
                       </div>
                       {!isLatest && s.id && (
@@ -2471,10 +2471,10 @@ export default function FeeStructurePage() {
                           style={{
                             padding: "3px 9px",
                             borderRadius: 100,
-                            background: "rgba(255,51,85,.10)",
-                            border: "0.5px solid rgba(255,51,85,.22)",
+                            background: "rgba(255,59,48,.10)",
+                            border: "0.5px solid rgba(255,59,48,.22)",
                             fontSize: 9,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             color: RED_D,
                             display: "inline-flex",
                             alignItems: "center",
@@ -2511,21 +2511,21 @@ export default function FeeStructurePage() {
                           gridTemplateColumns: "74px 1fr 1fr 1fr 1fr",
                           gap: 2,
                           padding: "10px 14px",
-                          background: "linear-gradient(90deg, rgba(0,85,255,.08), rgba(0,85,255,.04))",
+                          background: "linear-gradient(90deg, rgba(10,132,255,.08), rgba(10,132,255,.04))",
                           borderBottom: `0.5px solid ${SEP}`,
                         }}
                       >
-                        <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "left" }}>Class</div>
-                        <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "left" }}>Class</div>
+                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {repQuarter || "Term"}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {annualTerm ? "Annual" : (s.termTypes[1] || "—")}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>
                           {monthlyTerm ? "Monthly" : (s.termTypes[2] || "—")}
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>Total</div>
+                        <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: B1, textAlign: "right" }}>Total</div>
                       </div>
 
                       {s.rows.map((row, ri) => {
@@ -2543,7 +2543,7 @@ export default function FeeStructurePage() {
                               alignItems: "center",
                             }}
                           >
-                            <div style={{ fontSize: 11, fontWeight: 700, color: T1, letterSpacing: "-0.1px", display: "flex", alignItems: "center", gap: 5, overflow: "hidden" }}>
+                            <div style={{ fontSize: 11, fontWeight: 600, color: T1, letterSpacing: "-0.1px", display: "flex", alignItems: "center", gap: 5, overflow: "hidden" }}>
                               <div style={{ width: 6, height: 6, borderRadius: "50%", background: dotColor, flexShrink: 0 }} />
                               <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                                 {row.className}
@@ -2558,7 +2558,7 @@ export default function FeeStructurePage() {
                             <div style={{ fontSize: 10, fontWeight: 600, color: T2, textAlign: "right" }}>
                               {monthlyTerm ? fmtInr(row.amounts[monthlyTerm] || 0) : s.termTypes[2] ? fmtInr(row.amounts[s.termTypes[2]] || 0) : "—"}
                             </div>
-                            <div style={{ fontSize: 10, fontWeight: 700, color: B1, textAlign: "right" }}>
+                            <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
                               {fmtInr(rowTotal)}
                             </div>
                           </div>
@@ -2572,22 +2572,22 @@ export default function FeeStructurePage() {
                           gridTemplateColumns: "74px 1fr 1fr 1fr 1fr",
                           gap: 2,
                           padding: "10px 14px",
-                          background: "linear-gradient(90deg, rgba(0,85,255,.10), rgba(0,85,255,.05))",
-                          borderTop: "0.5px solid rgba(0,85,255,.20)",
+                          background: "linear-gradient(90deg, rgba(10,132,255,.10), rgba(10,132,255,.05))",
+                          borderTop: "0.5px solid rgba(10,132,255,.20)",
                           alignItems: "center",
                         }}
                       >
-                        <div style={{ fontSize: 11, fontWeight: 700, color: B1, letterSpacing: "-0.1px" }}>Branch Total</div>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 11, fontWeight: 600, color: B1, letterSpacing: "-0.1px" }}>Branch Total</div>
+                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
                           {repQuarter ? fmtInr(perTerm[repQuarter] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
                           {annualTerm ? fmtInr(perTerm[annualTerm] || 0) : s.termTypes[1] ? fmtInr(perTerm[s.termTypes[1]] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: B1, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 600, color: B1, textAlign: "right" }}>
                           {monthlyTerm ? fmtInr(perTerm[monthlyTerm] || 0) : s.termTypes[2] ? fmtInr(perTerm[s.termTypes[2]] || 0) : "—"}
                         </div>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: VIOLET_D, textAlign: "right" }}>
+                        <div style={{ fontSize: 10, fontWeight: 600, color: VIOLET_D, textAlign: "right" }}>
                           {fmtInr(branchTotal)}
                         </div>
                       </div>
@@ -2595,7 +2595,7 @@ export default function FeeStructurePage() {
                       <div
                         style={{
                           padding: "10px 14px",
-                          background: "rgba(0,85,255,.03)",
+                          background: "rgba(10,132,255,.03)",
                           fontSize: 9,
                           fontWeight: 600,
                           color: T3,
@@ -2607,7 +2607,7 @@ export default function FeeStructurePage() {
                         {halfYearlyTerm ? (
                           <span>
                             Half-Yearly total:{" "}
-                            <strong style={{ color: B1, fontWeight: 700 }}>{fmtInr(halfYearlyTotal)}</strong>
+                            <strong style={{ color: B1, fontWeight: 600 }}>{fmtInr(halfYearlyTotal)}</strong>
                           </span>
                         ) : (
                           <span>
@@ -2630,7 +2630,7 @@ export default function FeeStructurePage() {
         <div
           style={{
             margin: "12px 20px 0",
-            background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)",
+            background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)",
             borderRadius: 22,
             padding: "18px 20px",
             boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -2665,7 +2665,7 @@ export default function FeeStructurePage() {
             >
               <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
             </div>
-            <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+            <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
               AI Fee Intelligence
             </span>
           </div>
@@ -2673,28 +2673,28 @@ export default function FeeStructurePage() {
             {latestStructure ? (
               <>
                 Current structure spans{" "}
-                <strong style={{ color: "#fff", fontWeight: 700 }}>
+                <strong style={{ color: "#fff", fontWeight: 600 }}>
                   {latestClassCount} class{latestClassCount === 1 ? "" : "es"}
                 </strong>{" "}
                 with annual revenue of{" "}
-                <strong style={{ color: "#fff", fontWeight: 700 }}>
+                <strong style={{ color: "#fff", fontWeight: 600 }}>
                   {fmtInrFull(latestBranchTotal)}
                 </strong>{" "}
                 across{" "}
-                <strong style={{ color: "#fff", fontWeight: 700 }}>
+                <strong style={{ color: "#fff", fontWeight: 600 }}>
                   {latestTermCount} term{latestTermCount === 1 ? "" : "s"}
                 </strong>
                 .
                 {allStudents.length > 0 && (
                   <>
                     {" "}Collection rate sits at{" "}
-                    <strong style={{ color: "#fff", fontWeight: 700 }}>
+                    <strong style={{ color: "#fff", fontWeight: 600 }}>
                       {collectionRate.toFixed(1)}%
                     </strong>
                     {defaulters > 0 && (
                       <>
                         {" "}with{" "}
-                        <strong style={{ color: "#FF99AA", fontWeight: 700 }}>
+                        <strong style={{ color: "#FF6961", fontWeight: 600 }}>
                           {defaulters} defaulter{defaulters === 1 ? "" : "s"}
                         </strong>
                       </>
@@ -2722,14 +2722,14 @@ export default function FeeStructurePage() {
           >
             {[
               { v: latestClassCount, l: "Classes", c: "#fff" },
-              { v: fmtInr(latestBranchTotal), l: "Annual", c: "#FFDD88" },
-              { v: latestStructure ? "LIVE" : "—", l: "Status", c: latestStructure ? "#66EE88" : "#FFDD88" },
+              { v: fmtInr(latestBranchTotal), l: "Annual", c: "#FFCC00" },
+              { v: latestStructure ? "LIVE" : "—", l: "Status", c: latestStructure ? "#34C759" : "#FFCC00" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                <div style={{ fontSize: 17, fontWeight: 700, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 17, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -2759,35 +2759,35 @@ export default function FeeStructurePage() {
   const dStudentCount = latest?.mode === "student" ? (latest.studentRows?.length || 0) : 0;
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* ── Top toolbar ── */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-bold leading-tight tracking-[-0.7px] flex items-center gap-[10px]" style={{ color: "#001040" }}>
+          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 4px 12px rgba(0,85,255,0.32)" }}>
+              style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <DollarSign className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
             </div>
             Fee Structure
           </div>
-          <div className="text-[12px] font-normal mt-[6px] ml-[46px] flex items-center gap-[6px]" style={{ color: "#5070B0" }}>
+          <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Term-wise Plan</span>
-            <span className="font-bold" style={{ color: "#99AACC" }}>·</span>
+            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
             <span>Per-Class Fees</span>
-            <span className="font-bold" style={{ color: "#99AACC" }}>·</span>
+            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
             <span>Version History</span>
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
           <button onClick={downloadTemplate}
-            className="h-[42px] px-4 rounded-[12px] flex items-center gap-[6px] text-[11px] font-bold uppercase tracking-[0.06em] bg-white transition-transform active:scale-95 hover:scale-[1.02]"
-            style={{ color: "#002080", border: "0.5px solid rgba(0,85,255,0.16)", boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.09)" }}>
+            className="h-[42px] px-4 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold uppercase tracking-[0.06em] bg-white transition-transform active:scale-95 hover:scale-[1.02]"
+            style={{ color: "#3A3A3C", border: "0.5px solid rgba(10,132,255,0.16)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)" }}>
             <Download className="w-[13px] h-[13px]" strokeWidth={2.4} /> Template
           </button>
           <button onClick={() => fileRef.current?.click()}
-            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[6px] text-[11px] font-bold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden"
-            style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)" }}>
+            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden"
+            style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)" }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Upload className="w-[13px] h-[13px] relative z-10" strokeWidth={2.4} />
             <span className="relative z-10">{allStructures.length > 0 ? "Upload New Version" : "Upload Excel"}</span>
@@ -2799,7 +2799,7 @@ export default function FeeStructurePage() {
       {/* ── Hero banner ── */}
       <div className="rounded-[22px] px-6 py-5 relative overflow-hidden flex items-center justify-between gap-5 mb-4"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 8px 26px rgba(0,8,60,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
         }}>
         <div className="absolute -top-12 -right-8 w-[180px] h-[180px] rounded-full pointer-events-none"
@@ -2810,37 +2810,37 @@ export default function FeeStructurePage() {
             <DollarSign className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[9px] font-bold uppercase tracking-[0.14em] mb-[5px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               Branch Total · {latest?.academicYear ? `AY ${latest.academicYear}` : "Latest version"}
             </div>
-            <div className="text-[34px] font-bold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
               {latest ? `₹ ${currency(dBranchTotal)}` : "—"}
             </div>
           </div>
         </div>
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
           {latest ? (
-            <div className="flex items-center gap-[5px] px-[14px] py-[7px] rounded-full"
-              style={{ background: "rgba(0,200,83,0.22)", border: "0.5px solid rgba(0,200,83,0.4)" }}>
-              <CheckCircle2 className="w-[13px] h-[13px]" style={{ color: "#66EE88" }} strokeWidth={2.5} />
-              <span className="text-[12px] font-bold" style={{ color: "#66EE88" }}>Published</span>
+            <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
+              style={{ background: "rgba(52,199,89,0.22)", border: "0.5px solid rgba(52,199,89,0.4)" }}>
+              <CheckCircle2 className="w-[13px] h-[13px]" style={{ color: "#34C759" }} strokeWidth={2.5} />
+              <span className="text-[12px] font-semibold" style={{ color: "#34C759" }}>Published</span>
             </div>
           ) : (
-            <div className="flex items-center gap-[5px] px-[14px] py-[7px] rounded-full"
-              style={{ background: "rgba(255,170,0,0.22)", border: "0.5px solid rgba(255,170,0,0.4)" }}>
-              <AlertCircle className="w-[13px] h-[13px]" style={{ color: "#FFDD88" }} strokeWidth={2.5} />
-              <span className="text-[12px] font-bold" style={{ color: "#FFDD88" }}>Not published</span>
+            <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
+              style={{ background: "rgba(255,204,0,0.22)", border: "0.5px solid rgba(255,204,0,0.4)" }}>
+              <AlertCircle className="w-[13px] h-[13px]" style={{ color: "#FFCC00" }} strokeWidth={2.5} />
+              <span className="text-[12px] font-semibold" style={{ color: "#FFCC00" }}>Not published</span>
             </div>
           )}
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
               { val: allStructures.length, label: "Versions", color: "#fff" },
-              { val: dClassCount, label: "Classes", color: "#66EE88" },
-              { val: dTermCount, label: "Terms", color: "#FFDD88" },
+              { val: dClassCount, label: "Classes", color: "#34C759" },
+              { val: dTermCount, label: "Terms", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
-              <div key={label} className="py-[10px] px-[14px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[17px] font-bold leading-none mb-[3px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[8px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+              <div key={label} className="py-[12px] px-[16px] text-center min-w-[72px]" style={{ background: "rgba(255,255,255,0.08)" }}>
+                <div className="text-[18px] font-semibold leading-none mb-[4px]" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -2852,22 +2852,22 @@ export default function FeeStructurePage() {
         {/* Versions Saved — blue */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-            boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-            border: "0.5px solid rgba(0,85,255,0.08)",
+            background: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.08)",
           }}>
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 4px 14px rgba(0,85,255,0.28)" }}>
+            style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 14px rgba(10,132,255,0.28)" }}>
             <FileSpreadsheet className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>Versions Saved</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: "#0055FF", letterSpacing: "-1.2px" }}>{allStructures.length}</p>
-          <p className="text-[11px] font-semibold truncate" style={{ color: "#5070B0" }}>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Versions Saved</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: "#0A84FF", letterSpacing: "-1.2px" }}>{allStructures.length}</p>
+          <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>
             {latest?.uploadedBy ? `Last by ${latest.uploadedBy.split("@")[0]}` : "No uploads yet"}
           </p>
           <FileSpreadsheet
             className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
-            style={{ color: "#0055FF", opacity: 0.18 }}
+            style={{ color: "#0A84FF", opacity: 0.18 }}
             strokeWidth={2}
           />
         </div>
@@ -2875,22 +2875,22 @@ export default function FeeStructurePage() {
         {/* Students Tracked — violet */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-            boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-            border: "0.5px solid rgba(0,85,255,0.08)",
+            background: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.08)",
           }}>
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: "linear-gradient(135deg, #7B3FF4, #A07CF8)", boxShadow: "0 4px 14px rgba(123,63,244,0.26)" }}>
+            style={{ background: "linear-gradient(135deg, #AF52DE, #AF52DE)", boxShadow: "0 4px 14px rgba(175,82,222,0.26)" }}>
             <Users className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>Students Tracked</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: "#7B3FF4", letterSpacing: "-1.2px" }}>{dStudentCount || "—"}</p>
-          <p className="text-[11px] font-semibold truncate" style={{ color: "#5070B0" }}>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Students Tracked</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: "#AF52DE", letterSpacing: "-1.2px" }}>{dStudentCount || "—"}</p>
+          <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>
             {dStudentCount > 0 ? "Student-level detail" : "Class-level only"}
           </p>
           <Users
             className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
-            style={{ color: "#7B3FF4", opacity: 0.18 }}
+            style={{ color: "#AF52DE", opacity: 0.18 }}
             strokeWidth={2}
           />
         </div>
@@ -2898,25 +2898,25 @@ export default function FeeStructurePage() {
         {/* Academic Year input — green */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-            boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-            border: "0.5px solid rgba(0,85,255,0.08)",
+            background: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+            boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.08)",
           }}>
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: "linear-gradient(135deg, #00C853, #22EE66)", boxShadow: "0 4px 14px rgba(0,200,83,0.26)" }}>
+            style={{ background: "linear-gradient(135deg, #34C759, #34C759)", boxShadow: "0 4px 14px rgba(52,199,89,0.26)" }}>
             <Calendar className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>Academic Year (new upload)</span>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Academic Year (new upload)</span>
           <input
             value={academicYear}
             onChange={e => setAcademicYear(e.target.value)}
             placeholder="e.g., 2026-27"
-            className="w-full h-[40px] px-3 rounded-[11px] text-[15px] font-bold outline-none relative z-[1]"
+            className="w-full h-[40px] px-3 rounded-[11px] text-[15px] font-semibold outline-none relative z-[1]"
             style={{
               background: "#FFFFFF",
-              border: "0.5px solid rgba(0,200,83,0.20)",
-              color: "#007830",
-              boxShadow: "0 1px 2px rgba(0,200,83,0.06)",
+              border: "0.5px solid rgba(52,199,89,0.20)",
+              color: "#248A3D",
+              boxShadow: "0 1px 2px rgba(52,199,89,0.06)",
             }}
           />
         </div>
@@ -2924,15 +2924,15 @@ export default function FeeStructurePage() {
         {/* Notes input — gold */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-            boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-            border: "0.5px solid rgba(0,85,255,0.08)",
+            background: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+            boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.08)",
           }}>
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: "linear-gradient(135deg, #FFAA00, #FFDD44)", boxShadow: "0 4px 14px rgba(255,170,0,0.28)" }}>
+            style={{ background: "linear-gradient(135deg, #FFCC00, #FFCC00)", boxShadow: "0 4px 14px rgba(255,204,0,0.28)" }}>
             <Tag className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>Notes (new upload)</span>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>Notes (new upload)</span>
           <input
             value={notes}
             onChange={e => setNotes(e.target.value)}
@@ -2940,9 +2940,9 @@ export default function FeeStructurePage() {
             className="w-full h-[40px] px-3 rounded-[11px] text-[13px] font-semibold outline-none relative z-[1]"
             style={{
               background: "#FFFFFF",
-              border: "0.5px solid rgba(255,170,0,0.20)",
+              border: "0.5px solid rgba(255,204,0,0.20)",
               color: "#664400",
-              boxShadow: "0 1px 2px rgba(255,170,0,0.06)",
+              boxShadow: "0 1px 2px rgba(255,204,0,0.06)",
             }}
           />
         </div>
@@ -2951,18 +2951,18 @@ export default function FeeStructurePage() {
       {/* Instruction banner when nothing exists and no draft */}
       {!hasAny && (
         <div className="bg-blue-50 border border-blue-100 rounded-2xl p-6 flex items-start gap-4">
-          <div className="w-12 h-12 rounded-xl bg-[#1e3a8a] flex items-center justify-center shrink-0">
+          <div className="w-12 h-12 rounded-xl bg-[#1D1D1F] flex items-center justify-center shrink-0">
             <FileSpreadsheet className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h3 className="text-sm font-extrabold text-[#1e294b] mb-1">Upload your Fee Structure Excel</h3>
+            <h3 className="text-sm font-semibold text-[#1D1D1F] mb-1">Upload your Fee Structure Excel</h3>
             <p className="text-xs text-slate-600 font-medium leading-relaxed mb-3">
               Multi-sheet Excel with one sheet per class. Columns: <b>Roll No, Student Name, Q1..Q4, Half-Yearly, Annual, Monthly, Paid, Pending, Parent Name, Parent Phone</b>.
               Each new upload is kept as a separate version — history is preserved.
             </p>
             <button
               onClick={downloadTemplate}
-              className="text-xs font-bold text-[#1e3a8a] hover:underline flex items-center gap-1"
+              className="text-xs font-semibold text-[#1D1D1F] hover:underline flex items-center gap-1"
             >
               <Download className="w-3 h-3" /> Download sample template
             </button>
@@ -2978,12 +2978,12 @@ export default function FeeStructurePage() {
             <div className="flex items-center justify-between px-5 py-3 border-b bg-amber-50 border-amber-100 gap-3 flex-wrap">
               <div className="flex items-center gap-2 flex-wrap">
                 <FileSpreadsheet className="w-4 h-4 text-amber-600" />
-                <h3 className="text-sm font-extrabold text-[#1e294b]">Review & Publish New Upload</h3>
-                <span className="text-[9px] font-black text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
+                <h3 className="text-sm font-semibold text-[#1D1D1F]">Review & Publish New Upload</h3>
+                <span className="text-[12px] font-semibold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
                   Unsaved
                 </span>
               </div>
-              <p className="text-[10px] font-semibold text-slate-500">
+              <p className="text-[12px] font-semibold text-slate-500">
                 {draft.mode === "student"
                   ? `${draft.studentRows?.length || 0} students · ${draft.rows.length} classes · ${draft.termTypes.length} terms`
                   : `${draft.rows.length} classes × ${draft.termTypes.length} terms`}
@@ -2994,19 +2994,19 @@ export default function FeeStructurePage() {
               <table className="w-full text-left min-w-[600px]">
                 <thead className="bg-slate-50/60">
                   <tr>
-                    <th className="py-3 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
+                    <th className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
                     {draft.termTypes.map(t => (
-                      <th key={t} className="py-3 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">
+                      <th key={t} className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">
                         <span className="inline-flex items-center gap-1"><Calendar className="w-3 h-3" /> {t}</span>
                       </th>
                     ))}
-                    <th className="py-3 px-5 text-left text-[9px] font-black text-[#1e3a8a] uppercase tracking-widest whitespace-nowrap">Total</th>
+                    <th className="py-3 px-5 text-left text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {draft.rows.map((row, i) => (
                     <tr key={i} className="hover:bg-slate-50/40">
-                      <td className="py-3 px-5 text-sm font-bold text-[#1e294b]">{row.className}</td>
+                      <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">{row.className}</td>
                       {draft.termTypes.map(t => (
                         <td key={t} className="py-3 px-5 text-sm font-semibold text-slate-600">
                           <input
@@ -3017,15 +3017,15 @@ export default function FeeStructurePage() {
                           />
                         </td>
                       ))}
-                      <td className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">₹ {currency(grandRow[i] || 0)}</td>
+                      <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
                     </tr>
                   ))}
-                  <tr className="bg-blue-50/50 border-t-2 border-[#1e3a8a]/10">
-                    <td className="py-3 px-5 text-xs font-black text-[#1e3a8a] uppercase tracking-wider">Branch Total</td>
+                  <tr className="bg-blue-50/50 border-t-2 border-[#1D1D1F]/10">
+                    <td className="py-3 px-5 text-xs font-semibold text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
                     {draft.termTypes.map(t => (
-                      <td key={t} className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">₹ {currency(perTerm[t] || 0)}</td>
+                      <td key={t} className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
                     ))}
-                    <td className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">
+                    <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">
                       ₹ {currency(Object.values(perTerm).reduce((a, b) => a + b, 0))}
                     </td>
                   </tr>
@@ -3041,14 +3041,14 @@ export default function FeeStructurePage() {
               <button
                 onClick={() => setDraft(null)}
                 disabled={saving}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-bold hover:bg-slate-50 transition-all"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50 transition-all"
               >
                 <Minus className="w-3.5 h-3.5" /> Discard
               </button>
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#1e3a8a] text-white text-xs font-bold hover:bg-[#1e294b] transition-all shadow-sm disabled:opacity-50"
+                className="flex items-center gap-2 px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-xs font-semibold hover:bg-[#1D1D1F] transition-all shadow-sm disabled:opacity-50"
               >
                 {saving ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                 Publish as New Version
@@ -3062,11 +3062,11 @@ export default function FeeStructurePage() {
       {allStructures.length > 0 && (
         <div className="space-y-3">
           <div className="flex items-center justify-between px-1">
-            <h2 className="text-sm font-black text-[#1e294b] uppercase tracking-widest flex items-center gap-2">
-              <FileSpreadsheet className="w-4 h-4 text-[#1e3a8a]" />
+            <h2 className="text-sm font-semibold text-[#1D1D1F] uppercase tracking-widest flex items-center gap-2">
+              <FileSpreadsheet className="w-4 h-4 text-[#1D1D1F]" />
               Saved Fee Structures · History
             </h2>
-            <p className="text-[10px] font-semibold text-slate-400">
+            <p className="text-[12px] font-semibold text-slate-400">
               {allStructures.length} version{allStructures.length !== 1 ? "s" : ""} · newest first
             </p>
           </div>
@@ -3099,35 +3099,35 @@ export default function FeeStructurePage() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-sm font-extrabold text-[#1e294b] truncate">
+                        <span className="text-sm font-semibold text-[#1D1D1F] truncate">
                           {s.academicYear ? `AY ${s.academicYear}` : "Fee Structure"}
                         </span>
                         {isLatest && (
-                          <span className="text-[9px] font-black text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
+                          <span className="text-[12px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full uppercase tracking-widest">
                             Latest · Live
                           </span>
                         )}
-                        <span className="text-[10px] font-semibold text-slate-400">
+                        <span className="text-[12px] font-semibold text-slate-400">
                           {s.mode === "student"
                             ? `${s.studentRows?.length || 0} students · ${s.rows.length} classes`
                             : `${s.rows.length} classes`} · {s.termTypes.length} terms
                         </span>
                       </div>
                       <div className="flex items-center gap-2 mt-1 flex-wrap">
-                        <span className="text-[10px] text-slate-500 font-semibold">{uploadedDate}</span>
-                        {s.uploadedBy && <span className="text-[10px] text-slate-400 font-medium">· by {s.uploadedBy}</span>}
-                        {s.notes && <span className="text-[10px] text-amber-700 font-semibold truncate">· {s.notes}</span>}
+                        <span className="text-[12px] text-slate-500 font-semibold">{uploadedDate}</span>
+                        {s.uploadedBy && <span className="text-[12px] text-slate-400 font-medium">· by {s.uploadedBy}</span>}
+                        {s.notes && <span className="text-[12px] text-amber-700 font-semibold truncate">· {s.notes}</span>}
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
-                    <span className="text-[11px] font-extrabold text-[#1e3a8a] bg-white px-2.5 py-1 rounded-lg border border-slate-200">
+                    <span className="text-[12px] font-semibold text-[#1D1D1F] bg-white px-2.5 py-1 rounded-lg border border-slate-200">
                       ₹ {currency(branchTotal)}
                     </span>
                     <span
                       role="button"
                       onClick={e => { e.stopPropagation(); s.id && handleDeleteOne(s.id, s.academicYear || uploadedDate); }}
-                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-red-200 text-red-600 text-[10px] font-bold hover:bg-red-50 transition-all cursor-pointer"
+                      className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-white border border-red-200 text-red-600 text-[12px] font-semibold hover:bg-red-50 transition-all cursor-pointer"
                     >
                       <Trash2 className="w-3 h-3" /> Delete
                     </span>
@@ -3140,33 +3140,33 @@ export default function FeeStructurePage() {
                       <table className="w-full text-left min-w-[600px]">
                         <thead className="bg-slate-50/60">
                           <tr>
-                            <th className="py-3 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
+                            <th className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Class</th>
                             {s.termTypes.map(t => (
-                              <th key={t} className="py-3 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">
+                              <th key={t} className="py-3 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">
                                 <span className="inline-flex items-center gap-1"><Calendar className="w-3 h-3" /> {t}</span>
                               </th>
                             ))}
-                            <th className="py-3 px-5 text-left text-[9px] font-black text-[#1e3a8a] uppercase tracking-widest whitespace-nowrap">Total</th>
+                            <th className="py-3 px-5 text-left text-[12px] font-semibold text-[#1D1D1F] uppercase tracking-widest whitespace-nowrap">Total</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
                           {s.rows.map((row, i) => (
                             <tr key={i} className="hover:bg-slate-50/40">
-                              <td className="py-3 px-5 text-sm font-bold text-[#1e294b]">{row.className}</td>
+                              <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">{row.className}</td>
                               {s.termTypes.map(t => (
                                 <td key={t} className="py-3 px-5 text-sm font-semibold text-slate-600">
                                   ₹ {currency(row.amounts[t] || 0)}
                                 </td>
                               ))}
-                              <td className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">₹ {currency(grandRow[i] || 0)}</td>
+                              <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(grandRow[i] || 0)}</td>
                             </tr>
                           ))}
-                          <tr className="bg-blue-50/50 border-t-2 border-[#1e3a8a]/10">
-                            <td className="py-3 px-5 text-xs font-black text-[#1e3a8a] uppercase tracking-wider">Branch Total</td>
+                          <tr className="bg-blue-50/50 border-t-2 border-[#1D1D1F]/10">
+                            <td className="py-3 px-5 text-xs font-semibold text-[#1D1D1F] uppercase tracking-wider">Branch Total</td>
                             {s.termTypes.map(t => (
-                              <td key={t} className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">₹ {currency(perTerm[t] || 0)}</td>
+                              <td key={t} className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(perTerm[t] || 0)}</td>
                             ))}
-                            <td className="py-3 px-5 text-sm font-extrabold text-[#1e3a8a]">₹ {currency(branchTotal)}</td>
+                            <td className="py-3 px-5 text-sm font-semibold text-[#1D1D1F]">₹ {currency(branchTotal)}</td>
                           </tr>
                         </tbody>
                       </table>
@@ -3197,7 +3197,7 @@ export default function FeeStructurePage() {
             uploadedByRole: role,
             isActive: true,
           })}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-bold hover:bg-slate-50 transition-all"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 text-xs font-semibold hover:bg-slate-50 transition-all"
         >
           <Plus className="w-3.5 h-3.5" /> Start from scratch (no Excel)
         </button>
@@ -3267,22 +3267,22 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
     <div className="border-t border-slate-200 bg-slate-50/30">
       <div className="px-5 py-4 flex items-center justify-between border-b border-slate-100 gap-3 flex-wrap">
         <div className="flex items-center gap-2">
-          <User className="w-4 h-4 text-[#1e3a8a]" />
-          <h3 className="text-sm font-extrabold text-[#1e294b]">Student-level Breakdown</h3>
-          <span className="text-[10px] font-semibold text-slate-400 ml-2">
+          <User className="w-4 h-4 text-[#1D1D1F]" />
+          <h3 className="text-sm font-semibold text-[#1D1D1F]">Student-level Breakdown</h3>
+          <span className="text-[12px] font-semibold text-slate-400 ml-2">
             {totalStudents} student{totalStudents !== 1 ? "s" : ""} · click class to expand
           </span>
         </div>
         <div className="flex items-center gap-1.5">
           <button
             onClick={expandAll}
-            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-600 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-semibold uppercase tracking-wider text-slate-600 transition-all"
           >
             Expand All
           </button>
           <button
             onClick={collapseAll}
-            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-600 transition-all"
+            className="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-[12px] font-semibold uppercase tracking-wider text-slate-600 transition-all"
           >
             Collapse All
           </button>
@@ -3298,8 +3298,8 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
           { label: "Discount Given", value: `₹ ${currency(totalDiscount)}`, color: "text-purple-600",  bg: "bg-purple-50" },
         ].map(s => (
           <div key={s.label} className={`${s.bg} rounded-xl p-3 border border-white/60`}>
-            <p className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1">{s.label}</p>
-            <p className={`text-lg font-extrabold ${s.color}`}>{s.value}</p>
+            <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest mb-1">{s.label}</p>
+            <p className={`text-lg font-semibold ${s.color}`}>{s.value}</p>
           </div>
         ))}
       </div>
@@ -3312,7 +3312,7 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
             value={search}
             onChange={e => setSearch(e.target.value)}
             placeholder="Search student or roll no..."
-            className="w-full pl-9 pr-3 py-2 text-xs border border-slate-200 rounded-lg bg-slate-50 outline-none focus:border-blue-300"
+            className="w-full pl-8 pr-3 py-2 text-xs border border-slate-200 rounded-lg bg-slate-50 outline-none focus:border-blue-300"
           />
         </div>
         <select
@@ -3327,8 +3327,8 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
             <button
               key={v}
               onClick={() => setStatusFilter(v)}
-              className={`px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-wider transition-all ${
-                statusFilter === v ? "bg-white text-[#1e3a8a] shadow-sm" : "text-slate-500"
+              className={`px-3 py-1 rounded-md text-[12px] font-semibold uppercase tracking-wider transition-all ${
+                statusFilter === v ? "bg-white text-[#1D1D1F] shadow-sm" : "text-slate-500"
               }`}
             >
               {v === "all" ? "All" : v === "paid" ? "Paid" : "Pending"}
@@ -3353,12 +3353,12 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <ChevronRight className={`w-4 h-4 text-slate-400 transition-transform ${isOpen ? "rotate-90" : ""}`} />
-                  <span className="text-sm font-extrabold text-[#1e294b]">{className}</span>
-                  <span className="text-[10px] font-semibold text-slate-500">
+                  <span className="text-sm font-semibold text-[#1D1D1F]">{className}</span>
+                  <span className="text-[12px] font-semibold text-slate-500">
                     {list.length} student{list.length !== 1 ? "s" : ""}
                   </span>
                 </div>
-                <div className="flex items-center gap-3 text-[11px] font-bold">
+                <div className="flex items-center gap-3 text-[12px] font-semibold">
                   <span className="text-emerald-600">₹ {currency(paidSum)} paid</span>
                   {pendingSum > 0 && <span className="text-red-600">₹ {currency(pendingSum)} pending</span>}
                 </div>
@@ -3369,27 +3369,27 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
                   <table className="w-full text-left min-w-[700px]">
                     <thead className="bg-slate-50/60">
                       <tr>
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">Roll</th>
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">Student Name</th>
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">Parent · Phone</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Roll</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Student Name</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">Parent · Phone</th>
                         {termTypes.map(t => (
-                          <th key={t} className="py-2.5 px-5 text-left text-[9px] font-black text-slate-500 uppercase tracking-widest whitespace-nowrap">{t}</th>
+                          <th key={t} className="py-2.5 px-5 text-left text-[12px] font-semibold text-slate-500 uppercase tracking-widest whitespace-nowrap">{t}</th>
                         ))}
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-purple-600 uppercase tracking-widest whitespace-nowrap">Discount</th>
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-emerald-600 uppercase tracking-widest whitespace-nowrap">Paid</th>
-                        <th className="py-2.5 px-5 text-left text-[9px] font-black text-red-600 uppercase tracking-widest whitespace-nowrap">Pending</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-purple-600 uppercase tracking-widest whitespace-nowrap">Discount</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-emerald-600 uppercase tracking-widest whitespace-nowrap">Paid</th>
+                        <th className="py-2.5 px-5 text-left text-[12px] font-semibold text-red-600 uppercase tracking-widest whitespace-nowrap">Pending</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
                       {list.map((s, i) => (
                         <tr key={i} className={`hover:bg-slate-50/40 ${s.pending > 0 ? "bg-red-50/20" : ""}`}>
-                          <td className="py-2.5 px-5 text-xs font-bold text-slate-600">{s.rollNo || "—"}</td>
-                          <td className="py-2.5 px-5 text-sm font-bold text-[#1e294b]">{s.studentName}</td>
+                          <td className="py-2.5 px-5 text-xs font-semibold text-slate-600">{s.rollNo || "—"}</td>
+                          <td className="py-2.5 px-5 text-sm font-semibold text-[#1D1D1F]">{s.studentName}</td>
                           <td className="py-2.5 px-5 text-xs font-semibold text-slate-600">
                             {s.parentName || s.parentPhone ? (
                               <div className="flex flex-col">
-                                {s.parentName && <span className="text-slate-700 font-bold">{s.parentName}</span>}
-                                {s.parentPhone && <span className="text-[10px] text-slate-400 font-medium">{s.parentPhone}</span>}
+                                {s.parentName && <span className="text-slate-700 font-semibold">{s.parentName}</span>}
+                                {s.parentPhone && <span className="text-[12px] text-slate-400 font-medium">{s.parentPhone}</span>}
                               </div>
                             ) : "—"}
                           </td>
@@ -3398,11 +3398,11 @@ function StudentBreakdown({ students, termTypes }: { students: StudentFeeRow[]; 
                               ₹ {currency(s.amounts[t] || 0)}
                             </td>
                           ))}
-                          <td className="py-2.5 px-5 text-xs font-bold text-purple-600">
+                          <td className="py-2.5 px-5 text-xs font-semibold text-purple-600">
                             {s.discount > 0 ? `₹ ${currency(s.discount)}` : "—"}
                           </td>
-                          <td className="py-2.5 px-5 text-xs font-extrabold text-emerald-600">₹ {currency(s.paid)}</td>
-                          <td className={`py-2.5 px-5 text-xs font-extrabold ${s.pending > 0 ? "text-red-600" : "text-slate-400"}`}>
+                          <td className="py-2.5 px-5 text-xs font-semibold text-emerald-600">₹ {currency(s.paid)}</td>
+                          <td className={`py-2.5 px-5 text-xs font-semibold ${s.pending > 0 ? "text-red-600" : "text-slate-400"}`}>
                             {s.pending > 0 ? `₹ ${currency(s.pending)}` : "✓ Cleared"}
                           </td>
                         </tr>

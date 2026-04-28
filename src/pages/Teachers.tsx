@@ -46,7 +46,7 @@ const TEMPLATE_DATA = [
 const USE_MOCK_DATA = true;
 
 const _T_COLORS = [
-  "bg-[#1e3a8a]", "bg-emerald-600", "bg-amber-500",
+  "bg-[#1D1D1F]", "bg-emerald-600", "bg-amber-500",
   "bg-rose-500",  "bg-indigo-600",  "bg-teal-600",
 ];
 const _initials = (n: string) => n.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2);
@@ -170,7 +170,7 @@ const Teachers = () => {
     const q = query(collection(db, "teachers"), ...constraints);
     const unsub = onSnapshot(q, (snap) => {
       const COLORS = [
-        "bg-[#1e3a8a]", "bg-emerald-600", "bg-amber-500",
+        "bg-[#1D1D1F]", "bg-emerald-600", "bg-amber-500",
         "bg-rose-500",  "bg-indigo-600",  "bg-teal-600",
       ];
       const teachers = snap.docs.map((d, i) => {
@@ -337,7 +337,7 @@ const Teachers = () => {
             await sendEmail({
               to: emailObj,
               subject: `Welcome Back to ${userData?.schoolName || "Edullent"}`,
-              html: `<div style="font-family:sans-serif;padding:20px"><h2 style="color:#1e3a8a">Welcome Back, ${inviteForm.name}!</h2><p>Your account has been restored at <strong>${userData?.schoolName || "the institution"}</strong>.</p><div style="margin:24px 0"><a href="https://teacher-dashboard-ochre.vercel.app" style="background:#1e3a8a;color:white;padding:12px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Open Teacher Dashboard</a></div></div>`,
+              html: `<div style="font-family:sans-serif;padding:20px"><h2 style="color:#1D1D1F">Welcome Back, ${inviteForm.name}!</h2><p>Your account has been restored at <strong>${userData?.schoolName || "the institution"}</strong>.</p><div style="margin:24px 0"><a href="https://teacher-dashboard-ochre.vercel.app" style="background:#1D1D1F;color:white;padding:12px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Open Teacher Dashboard</a></div></div>`,
             });
           } catch (emailErr: any) {
             toast.warning(`Teacher restored, but email failed: ${emailErr?.message || "Unknown error"}`);
@@ -363,7 +363,7 @@ const Teachers = () => {
         await sendEmail({
           to: emailObj,
           subject: `Invitation to join ${userData?.schoolName || "Edullent"}`,
-          html: `<div style="font-family:sans-serif;padding:20px"><h2 style="color:#1e3a8a">Welcome, ${inviteForm.name}!</h2><p>You have been invited to <strong>${userData?.schoolName || "the institution"}</strong>.</p><div style="margin:24px 0"><a href="https://teacher-dashboard-ochre.vercel.app" style="background:#1e3a8a;color:white;padding:12px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Login to Teacher Portal</a></div></div>`,
+          html: `<div style="font-family:sans-serif;padding:20px"><h2 style="color:#1D1D1F">Welcome, ${inviteForm.name}!</h2><p>You have been invited to <strong>${userData?.schoolName || "the institution"}</strong>.</p><div style="margin:24px 0"><a href="https://teacher-dashboard-ochre.vercel.app" style="background:#1D1D1F;color:white;padding:12px 24px;text-decoration:none;border-radius:8px;font-weight:bold">Login to Teacher Portal</a></div></div>`,
         });
         toast.success("Teacher invited & email sent successfully!");
       } catch (emailErr: any) {
@@ -480,29 +480,29 @@ const Teachers = () => {
           to: t.email,
           subject: `Invitation to join ${userData?.schoolName || "Edullent"}`,
           html: `
-            <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:0;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
-              <div style="background:#1e3a8a;padding:24px 28px;">
+            <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:0;border:1px solid #EBEBF0;border-radius:12px;overflow:hidden;">
+              <div style="background:#1D1D1F;padding:24px 28px;">
                 <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700;">EDULLENT</h1>
                 <p style="color:#bfdbfe;margin:4px 0 0;font-size:13px;">Teacher Dashboard Invitation</p>
               </div>
               <div style="padding:28px;background:#fff;">
-                <h2 style="color:#1e293b;margin:0 0 12px;">Welcome, ${t.name}!</h2>
-                <p style="color:#475569;font-size:14px;line-height:1.6;margin:0 0 8px;">
+                <h2 style="color:#1D1D1F;margin:0 0 12px;">Welcome, ${t.name}!</h2>
+                <p style="color:#6E6E73;font-size:14px;line-height:1.6;margin:0 0 8px;">
                   You have been invited to join <strong>${userData?.schoolName || "Edullent"}</strong> as a
                   <strong>${t.subject ? `${t.subject} Teacher` : "Teacher"}</strong>.
                 </p>
-                <p style="color:#475569;font-size:14px;line-height:1.6;margin:0 0 24px;">
+                <p style="color:#6E6E73;font-size:14px;line-height:1.6;margin:0 0 24px;">
                   Log in with this email address to access your dashboard.
                 </p>
                 <div style="text-align:center;margin:24px 0;">
                   <a href="https://teacher-dashboard-ochre.vercel.app"
-                     style="background:#1e3a8a;color:#fff;padding:13px 30px;text-decoration:none;border-radius:8px;font-weight:700;font-size:14px;display:inline-block;">
+                     style="background:#1D1D1F;color:#fff;padding:13px 30px;text-decoration:none;border-radius:8px;font-weight:700;font-size:14px;display:inline-block;">
                     Open Teacher Dashboard
                   </a>
                 </div>
               </div>
-              <div style="background:#f1f5f9;padding:14px 28px;text-align:center;">
-                <p style="color:#94a3b8;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
+              <div style="background:#F5F5F7;padding:14px 28px;text-align:center;">
+                <p style="color:#A1A1A6;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
               </div>
             </div>
           `,
@@ -550,56 +550,56 @@ const Teachers = () => {
      MOBILE — Bright Blue Apple UI
      ═══════════════════════════════════════════════════════════════ */
   if (isMobile) {
-    const B1 = "#0055FF", B2 = "#1166FF", B4 = "#4499FF";
-    const BG = "#EEF4FF", BG2 = "#E0ECFF";
-    const T1 = "#001040", T2 = "#002080", T3 = "#5070B0", T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,0.07)";
-    const GREEN = "#00C853", GREEN_D = "#007830", GREEN_S = "rgba(0,200,83,0.10)", GREEN_B = "rgba(0,200,83,0.22)";
-    const RED = "#FF3355", RED_S = "rgba(255,51,85,0.10)", RED_B = "rgba(255,51,85,0.22)";
-    const ORANGE = "#FF8800";
-    const GOLD = "#FFAA00";
-    const SH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 8px rgba(0,85,255,0.08), 0 10px 26px rgba(0,85,255,0.10)";
-    const SH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.11), 0 18px 44px rgba(0,85,255,0.13)";
-    const SH_BTN = "0 6px 22px rgba(0,85,255,0.40), 0 2px 5px rgba(0,85,255,0.20)";
+    const B1 = "#0A84FF", B2 = "#3395FF", B4 = "#7CBBFF";
+    const BG = "#F5F5F7", BG2 = "#EBEBF0";
+    const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,0.07)";
+    const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
+    const RED = "#FF3B30", RED_S = "rgba(255,59,48,0.10)", RED_B = "rgba(255,59,48,0.22)";
+    const ORANGE = "#FF9500";
+    const GOLD = "#FFCC00";
+    const SH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 8px rgba(10,132,255,0.08), 0 10px 26px rgba(10,132,255,0.10)";
+    const SH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.11), 0 18px 44px rgba(10,132,255,0.13)";
+    const SH_BTN = "0 6px 22px rgba(10,132,255,0.40), 0 2px 5px rgba(10,132,255,0.20)";
 
     // Avatar gradient mapping (from existing tailwind color classes)
     const avatarGradient = (color: string) => {
-      if (color?.includes("emerald"))  return { bg: `linear-gradient(135deg, ${GREEN}, #22EE66)`,       shadow: "0 4px 14px rgba(0,200,83,0.28)" };
-      if (color?.includes("amber"))    return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC22)`,       shadow: "0 4px 14px rgba(255,136,0,0.28)" };
-      if (color?.includes("rose"))     return { bg: `linear-gradient(135deg, ${RED}, #FF88AA)`,           shadow: "0 4px 14px rgba(255,51,85,0.28)" };
+      if (color?.includes("emerald"))  return { bg: `linear-gradient(135deg, ${GREEN}, #34C759)`,       shadow: "0 4px 14px rgba(52,199,89,0.28)" };
+      if (color?.includes("amber"))    return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC00)`,       shadow: "0 4px 14px rgba(255,149,0,0.28)" };
+      if (color?.includes("rose"))     return { bg: `linear-gradient(135deg, ${RED}, #FF6961)`,           shadow: "0 4px 14px rgba(255,59,48,0.28)" };
       if (color?.includes("indigo"))   return { bg: "linear-gradient(135deg, #5B6FD4, #8A9AF0)",          shadow: "0 4px 14px rgba(91,111,212,0.28)" };
-      if (color?.includes("teal"))     return { bg: "linear-gradient(135deg, #00C4B4, #22DDCC)",          shadow: "0 4px 14px rgba(0,196,180,0.24)" };
-      return                             { bg: `linear-gradient(135deg, ${B1}, ${B2})`,                 shadow: "0 4px 14px rgba(0,85,255,0.28)" };
+      if (color?.includes("teal"))     return { bg: "linear-gradient(135deg, #5AC8FA, #5AC8FA)",          shadow: "0 4px 14px rgba(90,200,250,0.24)" };
+      return                             { bg: `linear-gradient(135deg, ${B1}, ${B2})`,                 shadow: "0 4px 14px rgba(10,132,255,0.28)" };
     };
     const accentBar = (color: string) => {
-      if (color?.includes("emerald")) return `linear-gradient(180deg, ${GREEN}, #22EE66)`;
-      if (color?.includes("amber"))   return `linear-gradient(180deg, ${ORANGE}, #FFCC22)`;
-      if (color?.includes("rose"))    return `linear-gradient(180deg, ${RED}, #FF88AA)`;
+      if (color?.includes("emerald")) return `linear-gradient(180deg, ${GREEN}, #34C759)`;
+      if (color?.includes("amber"))   return `linear-gradient(180deg, ${ORANGE}, #FFCC00)`;
+      if (color?.includes("rose"))    return `linear-gradient(180deg, ${RED}, #FF6961)`;
       return `linear-gradient(180deg, ${B1}, ${B4})`;
     };
 
     // Status chip
     const statusChip = (status: string) => {
       if (status === "Active")   return { bg: GREEN_S,                       color: GREEN_D, border: GREEN_B,                         dotColor: GREEN };
-      if (status === "On Leave") return { bg: "rgba(255,136,0,0.10)",         color: "#884400", border: "rgba(255,136,0,0.22)",         dotColor: ORANGE };
-      if (status === "Invited")  return { bg: "rgba(0,85,255,0.10)",          color: B1,       border: "rgba(0,85,255,0.20)",           dotColor: B1 };
+      if (status === "On Leave") return { bg: "rgba(255,149,0,0.10)",         color: "#86310C", border: "rgba(255,149,0,0.22)",         dotColor: ORANGE };
+      if (status === "Invited")  return { bg: "rgba(10,132,255,0.10)",          color: B1,       border: "rgba(10,132,255,0.20)",           dotColor: B1 };
       return                     { bg: "rgba(153,170,204,0.10)",              color: T3,       border: "rgba(153,170,204,0.22)",        dotColor: T4 };
     };
 
     return (
       <>
         <div className="animate-in fade-in duration-500 -mx-3 -mt-3"
-          style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+          style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
           {/* Page head */}
           <div className="flex items-start justify-between px-5 pt-4">
             <div>
-              <div className="text-[24px] font-bold mb-[3px]" style={{ color: T1, letterSpacing: "-0.6px" }}>Teachers</div>
-              <div className="text-[11px] font-normal" style={{ color: T3 }}>Manage teaching staff and monitor performance</div>
+              <div className="text-[24px] font-semibold mb-[4px]" style={{ color: T1, letterSpacing: "-0.6px" }}>Teachers</div>
+              <div className="text-[12px] font-normal" style={{ color: T3 }}>Manage teaching staff and monitor performance</div>
             </div>
             <button
               onClick={() => setIsInviteOpen(true)}
-              className="h-10 px-[15px] rounded-[14px] flex items-center gap-[6px] text-[12px] font-bold text-white cursor-pointer whitespace-nowrap shrink-0 mt-1 relative overflow-hidden active:scale-[0.95] transition-transform"
+              className="h-10 px-[16px] rounded-[14px] flex items-center gap-[8px] text-[12px] font-semibold text-white cursor-pointer whitespace-nowrap shrink-0 mt-1 relative overflow-hidden active:scale-[0.95] transition-transform"
               style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
               <Plus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.5} />
@@ -608,28 +608,28 @@ const Teachers = () => {
           </div>
 
           {/* Stat grid 2x2 */}
-          <div className="grid grid-cols-2 gap-[10px] px-5 pt-[14px]">
+          <div className="grid grid-cols-2 gap-[12px] px-5 pt-[16px]">
             {[
-              { title: "Avg Class Performance", val: avgClassPerf !== null ? `${avgClassPerf}%` : "0%", valColor: B1,       sub: "Based on recorded results",    subColor: T3,      icon: TrendingUp,   iconBg: "rgba(0,85,255,0.10)",  iconBorder: "rgba(0,85,255,0.18)",  iconColor: B1,     glow: "rgba(0,85,255,0.10)",    onClick: () => navigate("/teacher-performance") },
-              { title: "Teacher Attendance",    val: teacherAttPct !== null ? `${teacherAttPct}%` : "100%", valColor: GREEN, sub: teacherAttPct !== null && teacherAttPct >= 95 ? "Excellent" : teacherAttPct !== null && teacherAttPct >= 80 ? "Good" : "Needs attention", subColor: GREEN_D, icon: CalendarCheck, iconBg: "rgba(0,200,83,0.10)",  iconBorder: "rgba(0,200,83,0.20)",  iconColor: GREEN,  glow: "rgba(0,200,83,0.10)",    onClick: () => navigate("/attendance") },
-              { title: "Parent Feedback",       val: avgRating !== null ? `${avgRating}/5` : reviewCount > 0 ? "—" : "—",  valColor: GOLD,    sub: `Based on ${reviewCount} review${reviewCount === 1 ? "" : "s"}`, subColor: T3, icon: Star,          iconBg: "rgba(255,170,0,0.12)", iconBorder: "rgba(255,170,0,0.22)", iconColor: GOLD,   glow: "rgba(255,170,0,0.10)",   onClick: () => navigate("/teacher-leaderboard") },
-              { title: "Active Teachers",       val: totalCount > 0 ? `${activeCount}/${totalCount}` : "0", valColor: GREEN_D, sub: onLeaveCount > 0 ? `${onLeaveCount} on leave` : activeCount === totalCount && totalCount > 0 ? "All present" : "—", subColor: GREEN_D, icon: Users,         iconBg: "rgba(0,85,255,0.10)",  iconBorder: "rgba(0,85,255,0.18)",  iconColor: B1,     glow: "rgba(0,200,83,0.10)",    onClick: () => navigate("/teacher-performance") },
+              { title: "Avg Class Performance", val: avgClassPerf !== null ? `${avgClassPerf}%` : "0%", valColor: B1,       sub: "Based on recorded results",    subColor: T3,      icon: TrendingUp,   iconBg: "rgba(10,132,255,0.10)",  iconBorder: "rgba(10,132,255,0.18)",  iconColor: B1,     glow: "rgba(10,132,255,0.10)",    onClick: () => navigate("/teacher-performance") },
+              { title: "Teacher Attendance",    val: teacherAttPct !== null ? `${teacherAttPct}%` : "100%", valColor: GREEN, sub: teacherAttPct !== null && teacherAttPct >= 95 ? "Excellent" : teacherAttPct !== null && teacherAttPct >= 80 ? "Good" : "Needs attention", subColor: GREEN_D, icon: CalendarCheck, iconBg: "rgba(52,199,89,0.10)",  iconBorder: "rgba(52,199,89,0.20)",  iconColor: GREEN,  glow: "rgba(52,199,89,0.10)",    onClick: () => navigate("/attendance") },
+              { title: "Parent Feedback",       val: avgRating !== null ? `${avgRating}/5` : reviewCount > 0 ? "—" : "—",  valColor: GOLD,    sub: `Based on ${reviewCount} review${reviewCount === 1 ? "" : "s"}`, subColor: T3, icon: Star,          iconBg: "rgba(255,204,0,0.12)", iconBorder: "rgba(255,204,0,0.22)", iconColor: GOLD,   glow: "rgba(255,204,0,0.10)",   onClick: () => navigate("/teacher-leaderboard") },
+              { title: "Active Teachers",       val: totalCount > 0 ? `${activeCount}/${totalCount}` : "0", valColor: GREEN_D, sub: onLeaveCount > 0 ? `${onLeaveCount} on leave` : activeCount === totalCount && totalCount > 0 ? "All present" : "—", subColor: GREEN_D, icon: Users,         iconBg: "rgba(10,132,255,0.10)",  iconBorder: "rgba(10,132,255,0.18)",  iconColor: B1,     glow: "rgba(52,199,89,0.10)",    onClick: () => navigate("/teacher-performance") },
             ].map(({ title, val, valColor, sub, subColor, icon: Icon, iconBg, iconBorder, iconColor, glow, onClick }) => (
               <button
                 key={title}
                 onClick={onClick}
                 className="bg-white rounded-[20px] p-4 relative overflow-hidden cursor-pointer active:scale-[0.96] transition-transform text-left"
-                style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+                style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                 <div className="absolute -top-5 -right-4 w-[70px] h-[70px] rounded-full pointer-events-none" style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`, opacity: 0.5 }} />
-                <div className="flex items-start justify-between mb-[10px]">
-                  <div className="text-[9px] font-bold uppercase tracking-[0.07em] leading-[1.4]" style={{ color: T4 }}>{title}</div>
+                <div className="flex items-start justify-between mb-[12px]">
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.07em] leading-[1.4]" style={{ color: T4 }}>{title}</div>
                   <div className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center shrink-0"
                     style={{ background: iconBg, border: `0.5px solid ${iconBorder}` }}>
                     <Icon className="w-[14px] h-[14px]" style={{ color: iconColor }} strokeWidth={2.4} />
                   </div>
                 </div>
-                <div className="text-[26px] font-bold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</div>
-                <div className="text-[11px] font-semibold truncate" style={{ color: subColor }}>{sub}</div>
+                <div className="text-[28px] font-semibold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</div>
+                <div className="text-[12px] font-semibold truncate" style={{ color: subColor }}>{sub}</div>
               </button>
             ))}
           </div>
@@ -637,24 +637,24 @@ const Teachers = () => {
           {/* Search + Subject filter */}
           <div className="flex gap-2 px-5 pt-3">
             <div className="flex-1 relative">
-              <div className="absolute left-[13px] top-1/2 -translate-y-1/2 pointer-events-none">
-                <Search className="w-[15px] h-[15px]" style={{ color: "rgba(0,85,255,0.42)" }} strokeWidth={2.2} />
+              <div className="absolute left-[12px] top-1/2 -translate-y-1/2 pointer-events-none">
+                <Search className="w-[15px] h-[15px]" style={{ color: "rgba(10,132,255,0.42)" }} strokeWidth={2.2} />
               </div>
               <input
                 type="text"
                 placeholder="Search teachers..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="w-full py-3 pr-[14px] pl-[40px] rounded-[14px] text-[13px] font-normal outline-none bg-white"
-                style={{ border: "0.5px solid rgba(0,85,255,0.12)", color: T1, boxShadow: SH, fontFamily: "inherit" }}
+                className="w-full py-3 pr-[16px] pl-[40px] rounded-[14px] text-[13px] font-normal outline-none bg-white"
+                style={{ border: "0.5px solid rgba(10,132,255,0.12)", color: T1, boxShadow: SH, fontFamily: "inherit" }}
               />
             </div>
             <select
               value={subjectFilter}
               onChange={e => setSubjectFilter(e.target.value)}
-              className="px-3 rounded-[14px] text-[11px] font-bold bg-white cursor-pointer appearance-none h-11"
+              className="px-3 rounded-[14px] text-[12px] font-semibold bg-white cursor-pointer appearance-none h-11"
               style={{
-                border: "0.5px solid rgba(0,85,255,0.12)",
+                border: "0.5px solid rgba(10,132,255,0.12)",
                 color: T2,
                 boxShadow: SH,
                 fontFamily: "inherit",
@@ -669,14 +669,14 @@ const Teachers = () => {
           </div>
 
           {/* Action row — Grid/List toggle + Bulk Import */}
-          <div className="flex gap-2 px-5 pt-[10px]">
+          <div className="flex gap-2 px-5 pt-[12px]">
             <button
               onClick={() => setViewMode("grid")}
-              className="h-[38px] px-[14px] rounded-[13px] flex items-center justify-center gap-[6px] text-[11px] font-bold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
               style={{
                 background: viewMode === "grid" ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                 color: viewMode === "grid" ? "#fff" : T2,
-                border: viewMode === "grid" ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,0.14)",
+                border: viewMode === "grid" ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,0.14)",
                 boxShadow: viewMode === "grid" ? SH_BTN : SH,
                 transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
               }}>
@@ -685,20 +685,20 @@ const Teachers = () => {
             </button>
             <button
               onClick={() => setViewMode("list")}
-              className="h-[38px] px-[14px] rounded-[13px] flex items-center justify-center gap-[6px] text-[11px] font-bold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
               style={{
                 background: viewMode === "list" ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                 color: viewMode === "list" ? "#fff" : T2,
-                border: viewMode === "list" ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,0.14)",
+                border: viewMode === "list" ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,0.14)",
                 boxShadow: viewMode === "list" ? SH_BTN : SH,
                 transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
               }}>
-              <List className="w-[13px] h-[13px]" style={{ color: viewMode === "list" ? "#fff" : "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+              <List className="w-[13px] h-[13px]" style={{ color: viewMode === "list" ? "#fff" : "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
               List
             </button>
             <button
               onClick={() => setIsBulkOpen(true)}
-              className="h-[38px] px-[14px] rounded-[13px] flex items-center justify-center gap-[6px] text-[11px] font-bold cursor-pointer active:scale-[0.94] transition-transform"
+              className="h-[38px] px-[16px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold cursor-pointer active:scale-[0.94] transition-transform"
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, color: GREEN_D, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
               <Upload className="w-[13px] h-[13px]" strokeWidth={2.3} />
               Bulk Import
@@ -706,52 +706,52 @@ const Teachers = () => {
           </div>
 
           {/* Section label */}
-          <div className="flex items-center gap-2 px-5 pt-4 text-[9px] font-bold uppercase tracking-[0.10em]" style={{ color: T4 }}>
+          <div className="flex items-center gap-2 px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>
             <span>Faculty Directory</span>
-            <span className="px-[9px] py-[3px] rounded-full ml-1" style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.16)", color: B1 }}>
+            <span className="px-[8px] py-[4px] rounded-full ml-1" style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.16)", color: B1 }}>
               {filtered.length} teacher{filtered.length === 1 ? "" : "s"}
             </span>
-            <span className="flex-1 h-[0.5px]" style={{ background: "rgba(0,85,255,0.12)" }} />
+            <span className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
           </div>
 
           {/* Teacher cards */}
           {filtered.length === 0 ? (
-            <div className="mx-5 mt-3 bg-white rounded-[24px] py-12 flex flex-col items-center gap-2"
-              style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+            <div className="mx-5 mt-3 bg-white rounded-[24px] py-10 flex flex-col items-center gap-2"
+              style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
               <GraduationCap className="w-12 h-12" style={{ color: T4 }} strokeWidth={1.8} />
-              <div className="text-[14px] font-bold" style={{ color: T2 }}>No teachers found</div>
-              <div className="text-[11px]" style={{ color: T4 }}>Try changing your search or filters</div>
+              <div className="text-[14px] font-semibold" style={{ color: T2 }}>No teachers found</div>
+              <div className="text-[12px]" style={{ color: T4 }}>Try changing your search or filters</div>
             </div>
           ) : (
             filtered.map(t => {
               const av = avatarGradient(t.color);
               const chip = statusChip(t.status);
               const subjectChipColor = t.subject === "Math" || t.subject?.toLowerCase().includes("math")
-                ? { bg: "rgba(255,136,0,0.10)", color: "#884400", border: "rgba(255,136,0,0.22)" }
-                : { bg: "rgba(0,85,255,0.10)", color: B1,          border: "rgba(0,85,255,0.20)" };
+                ? { bg: "rgba(255,149,0,0.10)", color: "#86310C", border: "rgba(255,149,0,0.22)" }
+                : { bg: "rgba(10,132,255,0.10)", color: B1,          border: "rgba(10,132,255,0.20)" };
               return (
                 <div key={t.id} className="mx-5 mt-3 bg-white rounded-[24px] overflow-hidden relative"
-                  style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+                  style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
                   {/* Left accent */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-[2px]" style={{ background: accentBar(t.color) }} />
 
                   {/* Card header */}
-                  <div className="flex items-start gap-[14px] pl-[22px] pr-[18px] pt-[18px] pb-4 relative" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+                  <div className="flex items-start gap-[16px] pl-[24px] pr-[16px] pt-[16px] pb-4 relative" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                     {/* Avatar */}
-                    <div className="w-[52px] h-[52px] rounded-[17px] flex items-center justify-center text-[18px] font-bold text-white shrink-0"
+                    <div className="w-[52px] h-[52px] rounded-[17px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
                       style={{ background: av.bg, boxShadow: av.shadow }}>
                       {t.initials}
                     </div>
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                       {editingId === t.id ? (
-                        <div className="flex items-center gap-[6px] mb-[3px]">
+                        <div className="flex items-center gap-[8px] mb-[4px]">
                           <input
                             autoFocus
                             value={editName}
                             onChange={e => setEditName(e.target.value)}
                             onKeyDown={e => e.key === "Enter" && handleSaveName(t.id)}
-                            className="flex-1 text-[15px] font-bold px-2 py-1 rounded-[8px] outline-none"
+                            className="flex-1 text-[15px] font-semibold px-2 py-1 rounded-[8px] outline-none"
                             style={{ border: `1px solid ${B1}66`, color: T1 }}
                           />
                           <button onClick={() => handleSaveName(t.id)} className="w-7 h-7 rounded-[8px] flex items-center justify-center text-white shrink-0"
@@ -760,42 +760,42 @@ const Teachers = () => {
                           </button>
                         </div>
                       ) : (
-                        <div className="text-[17px] font-bold mb-[3px] truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{t.name}</div>
+                        <div className="text-[18px] font-semibold mb-[4px] truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{t.name}</div>
                       )}
-                      <div className="text-[11px] font-semibold uppercase tracking-[0.06em] mb-2" style={{ color: T3 }}>{t.subject}</div>
-                      <div className="inline-flex items-center gap-1 px-[11px] py-[4px] rounded-full text-[10px] font-bold"
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.06em] mb-2" style={{ color: T3 }}>{t.subject}</div>
+                      <div className="inline-flex items-center gap-1 px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
                         style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                         <span className="w-[5px] h-[5px] rounded-full" style={{ background: chip.dotColor, boxShadow: `0 0 0 1.5px ${chip.dotColor}33` }} />
                         {t.status}
                       </div>
                     </div>
                     {/* Icon tray */}
-                    <div className="flex gap-[6px] absolute top-[16px] right-[16px]">
+                    <div className="flex gap-[8px] absolute top-[16px] right-[16px]">
                       <button
                         onClick={() => setSelectedTeacher(t)}
                         className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center active:scale-[0.90] transition-transform"
-                        style={{ background: BG, border: "0.5px solid rgba(0,85,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
+                        style={{ background: BG, border: "0.5px solid rgba(10,132,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
                         aria-label="View">
-                        <Eye className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.55)" }} strokeWidth={2.3} />
+                        <Eye className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.55)" }} strokeWidth={2.3} />
                       </button>
                       <button
                         onClick={() => handleTogglePrimary(t)}
                         className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center active:scale-[0.90] transition-transform"
                         style={{
-                          background: t.isPrimarySchool ? "rgba(255,170,0,0.10)" : BG,
-                          border: `0.5px solid ${t.isPrimarySchool ? "rgba(255,170,0,0.24)" : "rgba(0,85,255,0.12)"}`,
+                          background: t.isPrimarySchool ? "rgba(255,204,0,0.10)" : BG,
+                          border: `0.5px solid ${t.isPrimarySchool ? "rgba(255,204,0,0.24)" : "rgba(10,132,255,0.12)"}`,
                           transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
                         }}
                         aria-label="Primary">
                         <Star className={`w-[13px] h-[13px] ${t.isPrimarySchool ? "fill-current" : ""}`}
-                          style={{ color: t.isPrimarySchool ? GOLD : "rgba(0,85,255,0.55)" }} strokeWidth={2.3} />
+                          style={{ color: t.isPrimarySchool ? GOLD : "rgba(10,132,255,0.55)" }} strokeWidth={2.3} />
                       </button>
                       <button
                         onClick={() => handleStartEdit(t)}
                         className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center active:scale-[0.90] transition-transform"
-                        style={{ background: BG, border: "0.5px solid rgba(0,85,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
+                        style={{ background: BG, border: "0.5px solid rgba(10,132,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
                         aria-label="Edit">
-                        <Edit3 className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.55)" }} strokeWidth={2.3} />
+                        <Edit3 className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.55)" }} strokeWidth={2.3} />
                       </button>
                       <button
                         onClick={() => handleDeleteTeacher(t.id, t.name)}
@@ -809,64 +809,64 @@ const Teachers = () => {
 
                   {/* Metrics strip */}
                   <div className="flex" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="flex-1 px-3 py-[14px] flex flex-col items-center gap-[5px] relative">
-                      <div className="text-[20px] font-bold leading-none" style={{ color: B1, letterSpacing: "-0.5px" }}>
+                    <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px] relative">
+                      <div className="text-[20px] font-semibold leading-none" style={{ color: B1, letterSpacing: "-0.5px" }}>
                         {t.classCount === null ? <Loader2 className="w-4 h-4 animate-spin inline" /> : t.classCount}
                       </div>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Classes</div>
-                      <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(0,85,255,0.10)" }} />
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Classes</div>
+                      <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(10,132,255,0.10)" }} />
                     </div>
-                    <div className="flex-1 px-3 py-[14px] flex flex-col items-center gap-[5px] relative">
-                      <div className="text-[20px] font-bold leading-none" style={{ color: teacherAttPct !== null ? GREEN_D : T4, letterSpacing: "-0.5px" }}>
+                    <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px] relative">
+                      <div className="text-[20px] font-semibold leading-none" style={{ color: teacherAttPct !== null ? GREEN_D : T4, letterSpacing: "-0.5px" }}>
                         {teacherAttPct !== null ? `${teacherAttPct}%` : "N/A"}
                       </div>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
-                      <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(0,85,255,0.10)" }} />
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Attendance</div>
+                      <span className="absolute right-0 top-3 bottom-3 w-[0.5px]" style={{ background: "rgba(10,132,255,0.10)" }} />
                     </div>
-                    <div className="flex-1 px-3 py-[14px] flex flex-col items-center gap-[5px]">
-                      <div className="flex items-center gap-[3px]">
+                    <div className="flex-1 px-3 py-[16px] flex flex-col items-center gap-[4px]">
+                      <div className="flex items-center gap-[4px]">
                         <Star className="w-[14px] h-[14px]" fill={GOLD} stroke={GOLD} />
-                        <span className="text-[20px] font-bold" style={{ color: GOLD, letterSpacing: "-0.5px" }}>{t.rating}</span>
+                        <span className="text-[20px] font-semibold" style={{ color: GOLD, letterSpacing: "-0.5px" }}>{t.rating}</span>
                       </div>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Rating</div>
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Rating</div>
                     </div>
                   </div>
 
                   {/* Detail rows */}
                   <div className="py-1">
-                    <div className="flex items-center justify-between px-[18px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+                    <div className="flex items-center justify-between px-[16px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                       <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
-                        <CalendarCheck className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.2} />
+                        <CalendarCheck className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Experience
                       </div>
-                      <div className="text-[13px] font-bold" style={{ color: t.experience === "N/A" ? T4 : T1, letterSpacing: "-0.1px" }}>{t.experience}</div>
+                      <div className="text-[13px] font-semibold" style={{ color: t.experience === "N/A" ? T4 : T1, letterSpacing: "-0.1px" }}>{t.experience}</div>
                     </div>
-                    <div className="flex items-center justify-between px-[18px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+                    <div className="flex items-center justify-between px-[16px] py-3" style={{ borderBottom: `0.5px solid ${SEP}` }}>
                       <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
-                        <BookOpen className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.2} />
+                        <BookOpen className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Subject
                       </div>
-                      <span className="px-[9px] py-[3px] rounded-full text-[11px] font-bold"
+                      <span className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
                         style={{ background: subjectChipColor.bg, color: subjectChipColor.color, border: `0.5px solid ${subjectChipColor.border}` }}>
                         {t.subject}
                       </span>
                     </div>
-                    <div className="flex items-center justify-between px-[18px] py-3">
+                    <div className="flex items-center justify-between px-[16px] py-3">
                       <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: T3 }}>
-                        <MapPin className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.2} />
+                        <MapPin className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
                         Campus
                       </div>
-                      <div className="text-[13px] font-bold truncate max-w-[140px]" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                      <div className="text-[13px] font-semibold truncate max-w-[140px]" style={{ color: T1, letterSpacing: "-0.1px" }}>
                         {userData?.schoolName || "—"}
                       </div>
                     </div>
                   </div>
 
                   {/* Action bar */}
-                  <div className="flex gap-2 px-4 py-[13px]" style={{ background: "rgba(238,244,255,0.50)" }}>
+                  <div className="flex gap-2 px-4 py-[12px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                     <button
                       onClick={() => setSelectedTeacher(t)}
-                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[7px] text-[12px] font-bold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
+                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
                       style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                       <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                       <Eye className="w-[13px] h-[13px] relative z-10" strokeWidth={2.2} />
@@ -874,17 +874,17 @@ const Teachers = () => {
                     </button>
                     <button
                       onClick={() => navigate("/teacher-notes")}
-                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[7px] text-[12px] font-bold text-white active:scale-[0.95] transition-transform"
-                      style={{ background: "linear-gradient(135deg, #001040, #001888)", boxShadow: "0 4px 14px rgba(0,8,64,0.24)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+                      className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform"
+                      style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.24)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                       <MessageSquare className="w-[13px] h-[13px]" strokeWidth={2.2} />
                       Message
                     </button>
                     <button
                       onClick={() => handleOpenRoster(t)}
                       className="w-[48px] h-[42px] rounded-[13px] flex items-center justify-center active:scale-[0.90] transition-transform"
-                      style={{ background: BG, border: "0.5px solid rgba(0,85,255,0.16)", color: T2, boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
+                      style={{ background: BG, border: "0.5px solid rgba(10,132,255,0.16)", color: T2, boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
                       aria-label="More">
-                      <MoreHorizontal className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+                      <MoreHorizontal className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     </button>
                   </div>
                 </div>
@@ -894,9 +894,9 @@ const Teachers = () => {
 
           {/* AI Faculty Summary */}
           {totalCount > 0 && (
-            <div className="mx-5 mt-3 rounded-[24px] px-[22px] py-5 relative overflow-hidden"
+            <div className="mx-5 mt-3 rounded-[24px] px-[24px] py-5 relative overflow-hidden"
               style={{
-                background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+                background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
                 boxShadow: "0 8px 28px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.14)",
               }}>
               <div className="absolute -top-9 -right-6 w-[155px] h-[155px] rounded-full pointer-events-none"
@@ -905,31 +905,31 @@ const Teachers = () => {
                 backgroundImage: "linear-gradient(rgba(255,255,255,0.014) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px)",
                 backgroundSize: "24px 24px",
               }} />
-              <div className="flex items-center gap-[6px] mb-3 relative z-10">
+              <div className="flex items-center gap-[8px] mb-3 relative z-10">
                 <div className="w-7 h-7 rounded-[9px] flex items-center justify-center"
                   style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                   <TrendingUp className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
                 </div>
-                <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Faculty Intelligence</span>
+                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Faculty Intelligence</span>
               </div>
               <p className="text-[13px] leading-[1.72] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-                <strong style={{ color: "#fff", fontWeight: 700 }}>{totalCount} teacher{totalCount === 1 ? "" : "s"}</strong> on faculty · {activeCount === totalCount ? "All active" : `${activeCount} active`}{onLeaveCount > 0 && `, ${onLeaveCount} on leave`}.
-                {teacherAttPct !== null && <> Teacher attendance is <strong style={{ color: "#fff", fontWeight: 700 }}>{teacherAttPct}%</strong>.</>}
-                {avgRating !== null && <> Average rating from parent feedback: <strong style={{ color: "#fff", fontWeight: 700 }}>{avgRating}/5 stars</strong>.</>}
-                {avgClassPerf !== null && <> Avg class performance across results: <strong style={{ color: "#fff", fontWeight: 700 }}>{avgClassPerf}%</strong>.</>}
+                <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} teacher{totalCount === 1 ? "" : "s"}</strong> on faculty · {activeCount === totalCount ? "All active" : `${activeCount} active`}{onLeaveCount > 0 && `, ${onLeaveCount} on leave`}.
+                {teacherAttPct !== null && <> Teacher attendance is <strong style={{ color: "#fff", fontWeight: 600 }}>{teacherAttPct}%</strong>.</>}
+                {avgRating !== null && <> Average rating from parent feedback: <strong style={{ color: "#fff", fontWeight: 600 }}>{avgRating}/5 stars</strong>.</>}
+                {avgClassPerf !== null && <> Avg class performance across results: <strong style={{ color: "#fff", fontWeight: 600 }}>{avgClassPerf}%</strong>.</>}
               </p>
-              <div className="grid grid-cols-3 rounded-[16px] overflow-hidden mt-[14px] relative z-10" style={{ gap: "1px", background: "rgba(255,255,255,0.12)" }}>
-                <div className="py-[13px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-bold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{totalCount}</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Teachers</div>
+              <div className="grid grid-cols-3 rounded-[16px] overflow-hidden mt-[16px] relative z-10" style={{ gap: "1px", background: "rgba(255,255,255,0.12)" }}>
+                <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{totalCount}</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Teachers</div>
                 </div>
-                <div className="py-[13px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-bold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{avgRating !== null ? `${avgRating} ★` : "—"}</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Avg Rating</div>
+                <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{avgRating !== null ? `${avgRating} ★` : "—"}</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Avg Rating</div>
                 </div>
-                <div className="py-[13px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
-                  <div className="text-[22px] font-bold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{teacherAttPct !== null ? `${teacherAttPct}%` : "100%"}</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Attendance</div>
+                <div className="py-[12px] px-3 text-center" style={{ background: "rgba(255,255,255,0.08)" }}>
+                  <div className="text-[22px] font-semibold text-white leading-none mb-1" style={{ letterSpacing: "-0.6px" }}>{teacherAttPct !== null ? `${teacherAttPct}%` : "100%"}</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: "rgba(255,255,255,0.40)" }}>Attendance</div>
                 </div>
               </div>
             </div>
@@ -942,7 +942,7 @@ const Teachers = () => {
         <Dialog open={isInviteOpen} onOpenChange={setIsInviteOpen}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[440px] rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-bold text-[#1e3a8a]">Invite Teacher</DialogTitle>
+              <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Invite Teacher</DialogTitle>
               <DialogDescription className="text-slate-500">Send an email invitation to a new faculty member.</DialogDescription>
             </DialogHeader>
             <form onSubmit={handleInvite} className="space-y-4 py-2">
@@ -966,7 +966,7 @@ const Teachers = () => {
                 <select
                   value={inviteForm.assignClassId}
                   onChange={e => setInviteForm({ ...inviteForm, assignClassId: e.target.value })}
-                  className="w-full h-11 px-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full h-11 px-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 >
                   <option value="">— Not assigned —</option>
                   {availableClasses.map(c => (
@@ -975,7 +975,7 @@ const Teachers = () => {
                 </select>
               </div>
               <button type="submit" disabled={isSending}
-                className="w-full h-11 rounded-xl bg-[#1e3a8a] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isSending ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</> : <><CheckCircle className="w-4 h-4" /> Send Invitation</>}
               </button>
@@ -987,7 +987,7 @@ const Teachers = () => {
         <Dialog open={isBulkOpen} onOpenChange={(v) => { setIsBulkOpen(v); if (!v) { setBulkData([]); setBulkDone(false); } }}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[85vh] overflow-y-auto rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-bold text-[#1e3a8a] flex items-center gap-2">
+              <DialogTitle className="text-xl font-semibold text-[#1D1D1F] flex items-center gap-2">
                 <FileSpreadsheet className="w-5 h-5 text-emerald-600" /> Bulk Import Teachers
               </DialogTitle>
               <DialogDescription className="text-slate-500">Upload an Excel/CSV file to import multiple teachers at once.</DialogDescription>
@@ -1001,7 +1001,7 @@ const Teachers = () => {
                   </button>
                   <input ref={fileInputRef} type="file" accept=".xlsx,.xls,.csv" onChange={handleFileUpload} className="hidden" />
                   <button onClick={() => fileInputRef.current?.click()}
-                    className="w-full h-12 rounded-xl bg-[#1e3a8a] text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90">
+                    className="w-full h-12 rounded-xl bg-[#1D1D1F] text-white font-semibold text-sm flex items-center justify-center gap-2 hover:opacity-90">
                     <Upload className="w-4 h-4" /> Choose Excel / CSV File
                   </button>
                 </div>
@@ -1011,9 +1011,9 @@ const Teachers = () => {
                     <table className="w-full text-sm">
                       <thead className="bg-slate-50 sticky top-0">
                         <tr>
-                          <th className="px-3 py-2 text-left text-[10px] font-bold uppercase text-slate-500">Name</th>
-                          <th className="px-3 py-2 text-left text-[10px] font-bold uppercase text-slate-500">Email</th>
-                          <th className="px-3 py-2 text-right text-[10px] font-bold uppercase text-slate-500">Status</th>
+                          <th className="px-3 py-2 text-left text-[12px] font-semibold uppercase text-slate-500">Name</th>
+                          <th className="px-3 py-2 text-left text-[12px] font-semibold uppercase text-slate-500">Email</th>
+                          <th className="px-3 py-2 text-right text-[12px] font-semibold uppercase text-slate-500">Status</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
@@ -1022,7 +1022,7 @@ const Teachers = () => {
                             <td className="px-3 py-2 font-semibold text-slate-800 text-xs">{t.name}</td>
                             <td className="px-3 py-2 text-xs text-slate-500 truncate max-w-[140px]">{t.email}</td>
                             <td className="px-3 py-2 text-right">
-                              <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-full ${
+                              <span className={`inline-block text-[12px] font-semibold px-2 py-0.5 rounded-full ${
                                 t._status === "success" ? "bg-green-100 text-green-700" :
                                 t._status === "duplicate" ? "bg-amber-100 text-amber-700" :
                                 t._status === "error" ? "bg-rose-100 text-rose-700" :
@@ -1039,7 +1039,7 @@ const Teachers = () => {
                   <div className="mt-3 flex gap-2">
                     {!bulkDone && (
                       <button onClick={handleBulkImport} disabled={isBulkProcessing}
-                        className="flex-1 h-11 rounded-xl bg-[#1e3a8a] text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50">
+                        className="flex-1 h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold text-sm flex items-center justify-center gap-2 disabled:opacity-50">
                         {isBulkProcessing ? <><Loader2 className="w-4 h-4 animate-spin" /> Importing…</> : <><Upload className="w-4 h-4" /> Import {bulkData.length} Teachers</>}
                       </button>
                     )}
@@ -1058,12 +1058,12 @@ const Teachers = () => {
         <Dialog open={isRosterOpen} onOpenChange={setIsRosterOpen}>
           <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[80vh] overflow-y-auto rounded-2xl">
             <DialogHeader>
-              <DialogTitle className="text-xl font-bold text-[#1e3a8a]">Class Roster — {teacherToAssign?.name}</DialogTitle>
+              <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
               <DialogDescription className="text-slate-500">Students currently enrolled under this teacher.</DialogDescription>
             </DialogHeader>
             <div className="py-2">
               {loadingRoster ? (
-                <div className="flex justify-center py-12"><Loader2 className="w-7 h-7 animate-spin text-[#1e3a8a]" /></div>
+                <div className="flex justify-center py-10"><Loader2 className="w-7 h-7 animate-spin text-[#1D1D1F]" /></div>
               ) : teacherRoster.length > 0 ? (
                 <div className="rounded-xl overflow-hidden border border-slate-100">
                   <div className="divide-y divide-slate-50">
@@ -1071,15 +1071,15 @@ const Teachers = () => {
                       <div key={s.id} className="flex items-center justify-between px-4 py-3">
                         <div className="min-w-0">
                           <p className="font-semibold text-slate-800 text-sm truncate">{s.studentName}</p>
-                          <p className="text-[11px] text-slate-400 truncate">{s.studentEmail}</p>
+                          <p className="text-[12px] text-slate-400 truncate">{s.studentEmail}</p>
                         </div>
-                        <span className="font-semibold text-[#1e3a8a] text-xs shrink-0">{s.className || "General"}</span>
+                        <span className="font-semibold text-[#1D1D1F] text-xs shrink-0">{s.className || "General"}</span>
                       </div>
                     ))}
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-12 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                <div className="text-center py-10 bg-slate-50 rounded-xl border border-dashed border-slate-200">
                   <Users className="w-10 h-10 text-slate-200 mx-auto mb-3" />
                   <p className="text-sm font-semibold text-slate-400">No enrollment records found</p>
                 </div>
@@ -1094,63 +1094,63 @@ const Teachers = () => {
   // ═══════════════════════════════════════════════════════════════
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
-  const dB1 = "#0055FF", dB2 = "#1166FF", dB4 = "#4499FF";
-  const dBG = "#EEF4FF", dBG2 = "#E0ECFF";
-  const dT1 = "#001040", dT2 = "#002080", dT3 = "#5070B0", dT4 = "#99AACC";
-  const dSEP = "rgba(0,85,255,0.08)";
-  const dGREEN = "#00C853", dGREEN_D = "#007830", dGREEN_S = "rgba(0,200,83,0.10)", dGREEN_B = "rgba(0,200,83,0.22)";
-  const dRED = "#FF3355";
-  const dORANGE = "#FF8800";
-  const dGOLD = "#FFAA00";
-  const dVIOLET = "#7B3FF4";
-  const dSH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 10px rgba(0,85,255,0.07), 0 10px 28px rgba(0,85,255,0.09)";
-  const dSH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.10), 0 18px 44px rgba(0,85,255,0.12)";
-  const dSH_BTN = "0 6px 22px rgba(0,85,255,0.38), 0 2px 5px rgba(0,85,255,0.18)";
+  const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
+  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
+  const dSEP = "rgba(10,132,255,0.08)";
+  const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
+  const dRED = "#FF3B30";
+  const dORANGE = "#FF9500";
+  const dGOLD = "#FFCC00";
+  const dVIOLET = "#AF52DE";
+  const dSH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 10px rgba(10,132,255,0.07), 0 10px 28px rgba(10,132,255,0.09)";
+  const dSH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.10), 0 18px 44px rgba(10,132,255,0.12)";
+  const dSH_BTN = "0 6px 22px rgba(10,132,255,0.38), 0 2px 5px rgba(10,132,255,0.18)";
 
   // Avatar gradient
   const avatarGradD = (color: string) => {
-    if (color?.includes("emerald"))  return { bg: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, shadow: "0 4px 14px rgba(0,200,83,0.26)" };
-    if (color?.includes("amber"))    return { bg: `linear-gradient(135deg, ${dORANGE}, #FFCC22)`, shadow: "0 4px 14px rgba(255,136,0,0.26)" };
-    if (color?.includes("rose"))     return { bg: `linear-gradient(135deg, ${dRED}, #FF88AA)`, shadow: "0 4px 14px rgba(255,51,85,0.26)" };
-    if (color?.includes("indigo"))   return { bg: `linear-gradient(135deg, ${dVIOLET}, #A07CF8)`, shadow: "0 4px 14px rgba(123,63,244,0.26)" };
-    if (color?.includes("teal"))     return { bg: "linear-gradient(135deg, #00C4B4, #22DDCC)", shadow: "0 4px 14px rgba(0,196,180,0.22)" };
-    return                            { bg: `linear-gradient(135deg, ${dB1}, ${dB2})`, shadow: "0 4px 14px rgba(0,85,255,0.26)" };
+    if (color?.includes("emerald"))  return { bg: `linear-gradient(135deg, ${dGREEN}, #34C759)`, shadow: "0 4px 14px rgba(52,199,89,0.26)" };
+    if (color?.includes("amber"))    return { bg: `linear-gradient(135deg, ${dORANGE}, #FFCC00)`, shadow: "0 4px 14px rgba(255,149,0,0.26)" };
+    if (color?.includes("rose"))     return { bg: `linear-gradient(135deg, ${dRED}, #FF6961)`, shadow: "0 4px 14px rgba(255,59,48,0.26)" };
+    if (color?.includes("indigo"))   return { bg: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`, shadow: "0 4px 14px rgba(175,82,222,0.26)" };
+    if (color?.includes("teal"))     return { bg: "linear-gradient(135deg, #5AC8FA, #5AC8FA)", shadow: "0 4px 14px rgba(90,200,250,0.22)" };
+    return                            { bg: `linear-gradient(135deg, ${dB1}, ${dB2})`, shadow: "0 4px 14px rgba(10,132,255,0.26)" };
   };
 
   const statusChipD = (status: string) => {
     if (status === "Active")   return { bg: dGREEN_S, color: dGREEN_D, border: dGREEN_B };
-    if (status === "On Leave") return { bg: "rgba(255,136,0,0.10)", color: "#884400", border: "rgba(255,136,0,0.22)" };
-    if (status === "Invited")  return { bg: "rgba(0,85,255,0.10)", color: dB1, border: "rgba(0,85,255,0.20)" };
+    if (status === "On Leave") return { bg: "rgba(255,149,0,0.10)", color: "#86310C", border: "rgba(255,149,0,0.22)" };
+    if (status === "Invited")  return { bg: "rgba(10,132,255,0.10)", color: dB1, border: "rgba(10,132,255,0.20)" };
     return                     { bg: "rgba(153,170,204,0.10)", color: dT3, border: "rgba(153,170,204,0.22)" };
   };
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-            style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(0,85,255,0.28)" }}>
+            style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(10,132,255,0.28)" }}>
             <GraduationCap className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-bold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Teachers</div>
+            <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Teachers</div>
             <div className="text-[12px] mt-1" style={{ color: dT3 }}>Manage teaching staff and monitor performance</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={() => setIsBulkOpen(true)}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-bold transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold transition-transform hover:scale-[1.02]"
             style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, color: dGREEN_D }}>
             <Upload className="w-[14px] h-[14px]" strokeWidth={2.3} />
             Bulk Import
           </button>
           <button
             onClick={() => setIsInviteOpen(true)}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-bold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: dSH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Plus className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -1160,9 +1160,9 @@ const Teachers = () => {
       </div>
 
       {/* Dark Hero */}
-      <div className="rounded-[22px] px-7 py-6 relative overflow-hidden text-white"
+      <div className="rounded-[22px] px-8 py-6 relative overflow-hidden text-white"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 10px 36px rgba(0,51,204,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
         }}>
         <div className="absolute -right-12 -top-12 w-[220px] h-[220px] rounded-full pointer-events-none"
@@ -1174,9 +1174,9 @@ const Teachers = () => {
               <Users className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.16em] mb-[6px]" style={{ color: "rgba(255,255,255,0.55)" }}>Faculty Directory</div>
+              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Faculty Directory</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[48px] font-bold leading-none tracking-tight">{totalCount}</span>
+                <span className="text-[28px] font-semibold leading-none tracking-tight">{totalCount}</span>
                 <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>active teachers</span>
               </div>
             </div>
@@ -1188,8 +1188,8 @@ const Teachers = () => {
                 <CheckCircle className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Active</div>
-                <div className="text-[22px] font-bold leading-none" style={{ letterSpacing: "-0.5px" }}>{activeCount}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Active</div>
+                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{activeCount}</div>
               </div>
             </div>
             <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.18)" }} />
@@ -1199,8 +1199,8 @@ const Teachers = () => {
                 <Star className="w-[18px] h-[18px] text-white" strokeWidth={2.3} fill="white" />
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Avg Rating</div>
-                <div className="text-[22px] font-bold leading-none" style={{ letterSpacing: "-0.5px" }}>{avgRating !== null ? `${avgRating}/5` : "—"}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Avg Rating</div>
+                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{avgRating !== null ? `${avgRating}/5` : "—"}</div>
               </div>
             </div>
           </div>
@@ -1210,10 +1210,10 @@ const Teachers = () => {
       {/* 4 Stat Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
         {[
-          { title: "Avg Class Performance", val: avgClassPerf !== null ? `${avgClassPerf}%` : "—", valColor: dB1, sub: avgClassPerf !== null ? "Based on recorded results" : "No results yet", subColor: dT3, Icon: TrendingUp, grad: `linear-gradient(135deg, ${dB1}, ${dB2})`, glow: "rgba(0,85,255,0.10)", shadow: "0 4px 14px rgba(0,85,255,0.26)", onClick: () => navigate("/teacher-performance") },
-          { title: "Teacher Attendance", val: teacherAttPct !== null ? `${teacherAttPct}%` : "—", valColor: dGREEN_D, sub: teacherAttPct !== null ? (teacherAttPct >= 90 ? "Excellent" : teacherAttPct >= 75 ? "Good" : "Needs attention") : "No records yet", subColor: dGREEN_D, Icon: CalendarCheck, grad: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, glow: "rgba(0,200,83,0.10)", shadow: "0 4px 14px rgba(0,200,83,0.22)", onClick: () => navigate("/attendance") },
-          { title: "Parent Feedback", val: avgRating !== null ? `${avgRating}/5` : "—", valColor: dGOLD, sub: reviewCount > 0 ? `Based on ${reviewCount} reviews` : "No reviews yet", subColor: dT3, Icon: Star, grad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`, glow: "rgba(255,170,0,0.12)", shadow: "0 4px 14px rgba(255,170,0,0.26)", onClick: () => navigate("/teacher-leaderboard") },
-          { title: "Active Teachers", val: totalCount > 0 ? `${activeCount}/${totalCount}` : "0", valColor: dVIOLET, sub: onLeaveCount > 0 ? `${onLeaveCount} on leave` : activeCount === totalCount && totalCount > 0 ? "All present" : "—", subColor: onLeaveCount > 0 ? dORANGE : dGREEN_D, Icon: Users, grad: `linear-gradient(135deg, ${dVIOLET}, #A07CF8)`, glow: "rgba(123,63,244,0.10)", shadow: "0 4px 14px rgba(123,63,244,0.24)", onClick: () => navigate("/teacher-performance") },
+          { title: "Avg Class Performance", val: avgClassPerf !== null ? `${avgClassPerf}%` : "—", valColor: dB1, sub: avgClassPerf !== null ? "Based on recorded results" : "No results yet", subColor: dT3, Icon: TrendingUp, grad: `linear-gradient(135deg, ${dB1}, ${dB2})`, glow: "rgba(10,132,255,0.10)", shadow: "0 4px 14px rgba(10,132,255,0.26)", onClick: () => navigate("/teacher-performance") },
+          { title: "Teacher Attendance", val: teacherAttPct !== null ? `${teacherAttPct}%` : "—", valColor: dGREEN_D, sub: teacherAttPct !== null ? (teacherAttPct >= 90 ? "Excellent" : teacherAttPct >= 75 ? "Good" : "Needs attention") : "No records yet", subColor: dGREEN_D, Icon: CalendarCheck, grad: `linear-gradient(135deg, ${dGREEN}, #34C759)`, glow: "rgba(52,199,89,0.10)", shadow: "0 4px 14px rgba(52,199,89,0.22)", onClick: () => navigate("/attendance") },
+          { title: "Parent Feedback", val: avgRating !== null ? `${avgRating}/5` : "—", valColor: dGOLD, sub: reviewCount > 0 ? `Based on ${reviewCount} reviews` : "No reviews yet", subColor: dT3, Icon: Star, grad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, glow: "rgba(255,204,0,0.12)", shadow: "0 4px 14px rgba(255,204,0,0.26)", onClick: () => navigate("/teacher-leaderboard") },
+          { title: "Active Teachers", val: totalCount > 0 ? `${activeCount}/${totalCount}` : "0", valColor: dVIOLET, sub: onLeaveCount > 0 ? `${onLeaveCount} on leave` : activeCount === totalCount && totalCount > 0 ? "All present" : "—", subColor: onLeaveCount > 0 ? dORANGE : dGREEN_D, Icon: Users, grad: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`, glow: "rgba(175,82,222,0.10)", shadow: "0 4px 14px rgba(175,82,222,0.24)", onClick: () => navigate("/teacher-performance") },
         ].map(({ title, val, valColor, sub, subColor, Icon, grad, glow, shadow, onClick }) => (
           <button key={title} onClick={onClick}
             className="bg-white rounded-[20px] p-5 relative overflow-hidden text-left transition-transform hover:scale-[1.02]"
@@ -1221,14 +1221,14 @@ const Teachers = () => {
             <div className="absolute -top-6 -right-6 w-[100px] h-[100px] rounded-full pointer-events-none"
               style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }} />
             <div className="flex items-center justify-between mb-4 relative">
-              <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>{title}</span>
               <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                 style={{ background: grad, boxShadow: shadow }}>
                 <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
             </div>
-            <p className="text-[30px] font-bold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</p>
-            <p className="text-[11px] font-semibold truncate" style={{ color: subColor }}>{sub}</p>
+            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1px" }}>{val}</p>
+            <p className="text-[12px] font-semibold truncate" style={{ color: subColor }}>{sub}</p>
           </button>
         ))}
       </div>
@@ -1236,13 +1236,13 @@ const Teachers = () => {
       {/* Filter Row */}
       <div className="flex items-center gap-3 mt-5 flex-wrap">
         <div className="relative flex-1 min-w-[220px]">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(0,85,255,0.42)" }} strokeWidth={2.2} />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(10,132,255,0.42)" }} strokeWidth={2.2} />
           <input
             type="text"
             placeholder="Search teachers…"
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-11 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
+            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
             style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
           />
         </div>
@@ -1293,7 +1293,7 @@ const Teachers = () => {
       <Dialog open={isBulkOpen} onOpenChange={(o) => { if (!o) { setIsBulkOpen(false); setBulkDone(false); setBulkData([]); } else setIsBulkOpen(true); }}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[560px] max-h-[90vh] overflow-y-auto rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#1e3a8a]">Bulk Import Teachers</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Bulk Import Teachers</DialogTitle>
             <DialogDescription className="text-slate-500">Upload an Excel (.xlsx) file to invite multiple teachers at once.</DialogDescription>
           </DialogHeader>
           <div className="space-y-4 py-2">
@@ -1301,14 +1301,14 @@ const Teachers = () => {
               <div>
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-slate-200 rounded-xl p-10 text-center cursor-pointer hover:border-[#1e3a8a]/40 hover:bg-slate-50 transition-all"
+                  className="border-2 border-dashed border-slate-200 rounded-xl p-10 text-center cursor-pointer hover:border-[#1D1D1F]/40 hover:bg-slate-50 transition-all"
                 >
                   <Upload className="w-10 h-10 text-slate-300 mx-auto mb-3" />
                   <p className="text-sm font-semibold text-slate-500">Click to upload Excel file</p>
                   <p className="text-xs text-slate-400 mt-1">.xlsx or .xls format</p>
                   <input type="file" hidden ref={fileInputRef} accept=".xlsx,.xls" onChange={handleFileUpload} />
                 </div>
-                <button onClick={downloadTemplate} className="mt-2 text-xs font-semibold text-[#1e3a8a] flex items-center gap-1.5 mx-auto hover:underline">
+                <button onClick={downloadTemplate} className="mt-2 text-xs font-semibold text-[#1D1D1F] flex items-center gap-1.5 mx-auto hover:underline">
                   <Download className="w-3 h-3" /> Download template
                 </button>
               </div>
@@ -1321,7 +1321,7 @@ const Teachers = () => {
                       <p className="text-sm font-semibold text-slate-800">{t.name}</p>
                       <p className="text-xs text-slate-400">{t.email}</p>
                     </div>
-                    <span className={`text-[10px] font-bold px-2 py-1 rounded-full uppercase ${
+                    <span className={`text-[12px] font-semibold px-2 py-1 rounded-full uppercase ${
                       t._status === "success"   ? "bg-green-50 text-green-600"  :
                       t._status === "duplicate" ? "bg-amber-50 text-amber-600"  :
                       t._status === "error"     ? "bg-red-50 text-red-600"      :
@@ -1339,8 +1339,8 @@ const Teachers = () => {
                   { label: "Failed",     color: "bg-red-50 text-red-600",      count: bulkData.filter(t => t._status === "error").length      },
                 ].map(({ label, color, count }) => (
                   <div key={label} className={`p-4 rounded-xl border text-center ${color.replace("text-", "border-").replace("600", "100")}`}>
-                    <p className={`text-2xl font-black ${color.split(" ")[1]}`}>{count}</p>
-                    <p className={`text-[10px] font-bold uppercase ${color.split(" ")[1]}`}>{label}</p>
+                    <p className={`text-2xl font-semibold ${color.split(" ")[1]}`}>{count}</p>
+                    <p className={`text-[12px] font-semibold uppercase ${color.split(" ")[1]}`}>{label}</p>
                   </div>
                 ))}
               </div>
@@ -1351,7 +1351,7 @@ const Teachers = () => {
               <button
                 onClick={handleBulkImport}
                 disabled={bulkData.length === 0 || isBulkProcessing}
-                className="w-full h-11 rounded-xl bg-[#1e3a8a] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+                className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
               >
                 {isBulkProcessing ? <><Loader2 className="w-4 h-4 animate-spin" /> Importing…</> : <><Upload className="w-4 h-4" /> Import & Invite All</>}
               </button>
@@ -1371,7 +1371,7 @@ const Teachers = () => {
       <Dialog open={isInviteOpen} onOpenChange={setIsInviteOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[425px] rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#1e3a8a]">Add Teacher</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Add Teacher</DialogTitle>
             <DialogDescription className="text-slate-500">
               They'll receive an email invitation to join {userData?.schoolName || "the school"}.
             </DialogDescription>
@@ -1397,7 +1397,7 @@ const Teachers = () => {
               <select
                 value={inviteForm.assignClassId}
                 onChange={e => setInviteForm({ ...inviteForm, assignClassId: e.target.value })}
-                className="w-full h-11 px-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full h-11 px-3 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               >
                 <option value="">— Not assigned —</option>
                 {availableClasses.map(c => (
@@ -1406,7 +1406,7 @@ const Teachers = () => {
               </select>
             </div>
             <button type="submit" disabled={isSending}
-              className="w-full h-11 rounded-xl bg-[#1e3a8a] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full h-11 rounded-xl bg-[#1D1D1F] text-white font-semibold hover:opacity-90 transition flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {isSending ? <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</> : <><CheckCircle className="w-4 h-4" /> Send Invitation</>}
             </button>
@@ -1418,16 +1418,16 @@ const Teachers = () => {
       <Dialog open={isRosterOpen} onOpenChange={setIsRosterOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[640px] max-h-[80vh] overflow-y-auto rounded-2xl">
           <DialogHeader>
-            <DialogTitle className="text-xl font-bold text-[#1e3a8a]">Class Roster — {teacherToAssign?.name}</DialogTitle>
+            <DialogTitle className="text-xl font-semibold text-[#1D1D1F]">Class Roster — {teacherToAssign?.name}</DialogTitle>
             <DialogDescription className="text-slate-500">Students currently enrolled under this teacher.</DialogDescription>
           </DialogHeader>
           <div className="py-2">
             {loadingRoster ? (
-              <div className="flex justify-center py-12"><Loader2 className="w-7 h-7 animate-spin text-[#1e3a8a]" /></div>
+              <div className="flex justify-center py-10"><Loader2 className="w-7 h-7 animate-spin text-[#1D1D1F]" /></div>
             ) : teacherRoster.length > 0 ? (
               <div className="rounded-xl overflow-hidden border border-slate-100 overflow-x-auto">
                 <table className="w-full text-sm min-w-[400px]">
-                  <thead className="bg-[#1e3a8a] text-white">
+                  <thead className="bg-[#1D1D1F] text-white">
                     <tr>
                       <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide">Student</th>
                       <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide">Class</th>
@@ -1439,11 +1439,11 @@ const Teachers = () => {
                       <tr key={s.id} className="hover:bg-slate-50 transition-colors">
                         <td className="px-5 py-3">
                           <p className="font-semibold text-slate-800">{s.studentName}</p>
-                          <p className="text-xs text-slate-400 mt-0.5">{s.studentEmail}</p>
+                          <p className="text-xs text-slate-400 mt-1">{s.studentEmail}</p>
                         </td>
-                        <td className="px-5 py-3 font-semibold text-[#1e3a8a]">{s.className || "General"}</td>
+                        <td className="px-5 py-3 font-semibold text-[#1D1D1F]">{s.className || "General"}</td>
                         <td className="px-5 py-3 text-right">
-                          <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase ${
+                          <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full uppercase ${
                             s.status === "Active" ? "bg-green-50 text-green-600" : "bg-blue-50 text-blue-600"
                           }`}>{s.status}</span>
                         </td>
@@ -1453,7 +1453,7 @@ const Teachers = () => {
                 </table>
               </div>
             ) : (
-              <div className="text-center py-16 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+              <div className="text-center py-10 bg-slate-50 rounded-xl border border-dashed border-slate-200">
                 <Users className="w-10 h-10 text-slate-200 mx-auto mb-3" />
                 <p className="text-sm font-semibold text-slate-400">No enrollment records found</p>
               </div>
@@ -1465,25 +1465,25 @@ const Teachers = () => {
       {/* Section Label */}
       <div className="flex items-center gap-3 mt-6 mb-3">
         <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-          style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.22)" }}>
+          style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
           <GraduationCap className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Faculty Directory</div>
-        <span className="text-[11px] font-bold px-3 py-1 rounded-full"
-          style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.18)" }}>
+        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Faculty Directory</div>
+        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+          style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length} teacher{filtered.length === 1 ? "" : "s"}
         </span>
       </div>
 
       {/* Teacher Grid / List / Empty */}
       {filtered.length === 0 ? (
-        <div className="bg-white rounded-[20px] py-20 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-16 h-16 rounded-[18px] flex items-center justify-center"
-            style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.22)" }}>
+            style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
             <GraduationCap className="w-8 h-8" style={{ color: dB1 }} strokeWidth={2} />
           </div>
-          <p className="text-[14px] font-bold" style={{ color: dT1 }}>No teachers found</p>
-          <p className="text-[11px]" style={{ color: dT4 }}>Try changing your search or filters</p>
+          <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No teachers found</p>
+          <p className="text-[12px]" style={{ color: dT4 }}>Try changing your search or filters</p>
         </div>
       ) : viewMode === "grid" ? (
         /* GRID */
@@ -1508,8 +1508,8 @@ const Teachers = () => {
                   <button onClick={e => { e.stopPropagation(); handleTogglePrimary(t); }}
                     className="w-8 h-8 rounded-[10px] flex items-center justify-center"
                     style={{
-                      background: t.isPrimarySchool ? "rgba(255,170,0,0.12)" : "#fff",
-                      border: `0.5px solid ${t.isPrimarySchool ? "rgba(255,170,0,0.30)" : dSEP}`,
+                      background: t.isPrimarySchool ? "rgba(255,204,0,0.12)" : "#fff",
+                      border: `0.5px solid ${t.isPrimarySchool ? "rgba(255,204,0,0.30)" : dSEP}`,
                       color: t.isPrimarySchool ? dGOLD : dT4,
                       boxShadow: dSH,
                     }}
@@ -1532,7 +1532,7 @@ const Teachers = () => {
 
                 {/* Avatar row */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-white text-[15px] font-bold shrink-0"
+                  <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-white text-[15px] font-semibold shrink-0"
                     style={{ background: av.bg, boxShadow: av.shadow }}>
                     {t.initials}
                   </div>
@@ -1542,7 +1542,7 @@ const Teachers = () => {
                         <input autoFocus value={editName}
                           onChange={e => setEditName(e.target.value)}
                           onKeyDown={e => e.key === "Enter" && handleSaveName(t.id)}
-                          className="w-full text-[14px] font-bold rounded-[8px] px-2 py-1 outline-none"
+                          className="w-full text-[14px] font-semibold rounded-[8px] px-2 py-1 outline-none"
                           style={{ border: `1px solid ${dB1}66`, color: dT1 }} />
                         <button onClick={() => handleSaveName(t.id)}
                           className="w-7 h-7 rounded-[8px] flex items-center justify-center text-white shrink-0"
@@ -1551,20 +1551,20 @@ const Teachers = () => {
                         </button>
                       </div>
                     ) : (
-                      <h3 className="text-[14px] font-bold truncate leading-tight" style={{ color: dT1, letterSpacing: "-0.1px" }}>{t.name}</h3>
+                      <h3 className="text-[14px] font-semibold truncate leading-tight" style={{ color: dT1, letterSpacing: "-0.1px" }}>{t.name}</h3>
                     )}
-                    <p className="text-[11px] mt-0.5 truncate" style={{ color: dT3 }}>{t.subject}</p>
+                    <p className="text-[12px] mt-1 truncate" style={{ color: dT3 }}>{t.subject}</p>
                   </div>
                 </div>
 
                 {/* Stats */}
-                <div className="space-y-[10px] pt-3" style={{ borderTop: `0.5px solid ${dSEP}` }}>
+                <div className="space-y-[12px] pt-3" style={{ borderTop: `0.5px solid ${dSEP}` }}>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
                       <BookOpen className="w-[12px] h-[12px]" strokeWidth={2.2} />
                       Classes
                     </span>
-                    <span className="text-[13px] font-bold" style={{ color: dT1 }}>
+                    <span className="text-[13px] font-semibold" style={{ color: dT1 }}>
                       {t.classCount === null ? <Loader2 className="w-3.5 h-3.5 animate-spin inline" style={{ color: dT4 }} /> : t.classCount}
                     </span>
                   </div>
@@ -1573,7 +1573,7 @@ const Teachers = () => {
                       <MapPin className="w-[12px] h-[12px]" strokeWidth={2.2} />
                       Experience
                     </span>
-                    <span className="text-[13px] font-bold" style={{ color: dT1 }}>{t.experience}</span>
+                    <span className="text-[13px] font-semibold" style={{ color: dT1 }}>{t.experience}</span>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
@@ -1581,16 +1581,16 @@ const Teachers = () => {
                       Rating
                     </span>
                     <span className="flex items-center gap-1 px-2 py-[2px] rounded-full"
-                      style={{ background: "rgba(255,170,0,0.10)", border: "0.5px solid rgba(255,170,0,0.22)" }}>
+                      style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                       <Star className="w-[11px] h-[11px]" style={{ color: dGOLD, fill: dGOLD }} />
-                      <span className="text-[12px] font-bold" style={{ color: "#884400" }}>{t.rating}</span>
+                      <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
                     </span>
                   </div>
                 </div>
 
                 {/* Status Badge */}
                 <div className="mt-4">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-[5px] rounded-full text-[10px] font-bold uppercase tracking-[0.08em]"
+                  <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
                     style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                     <span className="w-[6px] h-[6px] rounded-full" style={{ background: chip.color }} />
                     {t.status}
@@ -1609,7 +1609,7 @@ const Teachers = () => {
               <thead>
                 <tr style={{ background: dBG, borderBottom: `0.5px solid ${dSEP}` }}>
                   {["Teacher", "Subject", "Classes", "Experience", "Rating", "Status", "Actions"].map((h, i) => (
-                    <th key={h} className={`px-5 py-3 text-[10px] font-bold uppercase tracking-[0.10em] ${i >= 2 && i <= 5 ? "text-center" : i === 6 ? "text-right" : "text-left"}`}
+                    <th key={h} className={`px-5 py-3 text-[12px] font-semibold uppercase tracking-[0.10em] ${i >= 2 && i <= 5 ? "text-center" : i === 6 ? "text-right" : "text-left"}`}
                       style={{ color: dT4 }}>{h}</th>
                   ))}
                 </tr>
@@ -1625,35 +1625,35 @@ const Teachers = () => {
                       style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-bold shrink-0"
+                          <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
                             style={{ background: av.bg, boxShadow: av.shadow }}>
                             {t.initials}
                           </div>
                           <div>
-                            <p className="text-[13px] font-bold" style={{ color: dT1 }}>{t.name}</p>
-                            <p className="text-[11px] font-medium" style={{ color: dT3 }}>{t.email}</p>
+                            <p className="text-[13px] font-semibold" style={{ color: dT1 }}>{t.name}</p>
+                            <p className="text-[12px] font-medium" style={{ color: dT3 }}>{t.email}</p>
                           </div>
                         </div>
                       </td>
                       <td className="px-5 py-4">
-                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[11px] font-bold"
-                          style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.20)" }}>
+                        <span className="inline-flex items-center px-3 py-[4px] rounded-full text-[12px] font-semibold"
+                          style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                           {t.subject}
                         </span>
                       </td>
-                      <td className="px-5 py-4 text-center text-[13px] font-bold" style={{ color: dT1 }}>
+                      <td className="px-5 py-4 text-center text-[13px] font-semibold" style={{ color: dT1 }}>
                         {t.classCount === null ? "…" : t.classCount}
                       </td>
                       <td className="px-5 py-4 text-center text-[12px] font-medium" style={{ color: dT3 }}>{t.experience}</td>
                       <td className="px-5 py-4 text-center">
                         <span className="inline-flex items-center justify-center gap-1 px-3 py-[4px] rounded-full"
-                          style={{ background: "rgba(255,170,0,0.10)", border: "0.5px solid rgba(255,170,0,0.22)" }}>
+                          style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                           <Star className="w-[11px] h-[11px]" style={{ color: dGOLD, fill: dGOLD }} />
-                          <span className="text-[12px] font-bold" style={{ color: "#884400" }}>{t.rating}</span>
+                          <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
                         </span>
                       </td>
                       <td className="px-5 py-4 text-center">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[10px] font-bold uppercase tracking-[0.08em]"
+                        <span className="inline-flex items-center gap-1.5 px-3 py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
                           style={{ background: chip.bg, color: chip.color, border: `0.5px solid ${chip.border}` }}>
                           <span className="w-[6px] h-[6px] rounded-full" style={{ background: chip.color }} />
                           {t.status}

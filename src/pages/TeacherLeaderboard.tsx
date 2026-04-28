@@ -304,60 +304,60 @@ export default function TeacherLeaderboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="w-8 h-8 animate-spin text-[#1e3a8a]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#1D1D1F]" />
       </div>
     );
   }
 
   // ───────────────────────── MOBILE RETURN ─────────────────────────────────
   if (isMobile) {
-    const B1 = "#0055FF";
-    const B2 = "#1166FF";
-    const B3 = "#2277FF";
-    const GREEN = "#00C853";
-    const RED = "#FF3355";
-    const ORANGE = "#FF8800";
-    const GOLD = "#FFAA00";
-    const VIOLET = "#7B3FF4";
-    const T1 = "#001040";
-    const T2 = "#002080";
-    const T3 = "#5070B0";
-    const T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,.07)";
+    const B1 = "#0A84FF";
+    const B2 = "#3395FF";
+    const B3 = "#5BA9FF";
+    const GREEN = "#34C759";
+    const RED = "#FF3B30";
+    const ORANGE = "#FF9500";
+    const GOLD = "#FFCC00";
+    const VIOLET = "#AF52DE";
+    const T1 = "#1D1D1F";
+    const T2 = "#3A3A3C";
+    const T3 = "#6E6E73";
+    const T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,.07)";
 
     const toneToColor = (tone: string) => {
       switch (tone) {
-        case "gold":    return { bg: "rgba(255,170,0,.10)", color: "#885500", border: "rgba(255,170,0,.22)" };
-        case "emerald": return { bg: "rgba(0,200,83,.10)", color: "#007830", border: "rgba(0,200,83,.22)" };
-        case "blue":    return { bg: "rgba(0,85,255,.10)", color: B1, border: "rgba(0,85,255,.18)" };
-        case "violet":  return { bg: "rgba(123,63,244,.10)", color: VIOLET, border: "rgba(123,63,244,.22)" };
-        case "rose":    return { bg: "rgba(255,51,85,.10)", color: "#B01030", border: "rgba(255,51,85,.22)" };
-        default:        return { bg: "rgba(0,85,255,.10)", color: B1, border: "rgba(0,85,255,.18)" };
+        case "gold":    return { bg: "rgba(255,204,0,.10)", color: "#86310C", border: "rgba(255,204,0,.22)" };
+        case "emerald": return { bg: "rgba(52,199,89,.10)", color: "#248A3D", border: "rgba(52,199,89,.22)" };
+        case "blue":    return { bg: "rgba(10,132,255,.10)", color: B1, border: "rgba(10,132,255,.18)" };
+        case "violet":  return { bg: "rgba(175,82,222,.10)", color: VIOLET, border: "rgba(175,82,222,.22)" };
+        case "rose":    return { bg: "rgba(255,59,48,.10)", color: "#86170E", border: "rgba(255,59,48,.22)" };
+        default:        return { bg: "rgba(10,132,255,.10)", color: B1, border: "rgba(10,132,255,.18)" };
       }
     };
 
     const avatarGradFor = (rank: number, composite: number) => {
-      if (rank === 1) return `linear-gradient(135deg, ${GOLD}, #FFCC22)`;
+      if (rank === 1) return `linear-gradient(135deg, ${GOLD}, #FFCC00)`;
       if (rank === 2) return `linear-gradient(135deg, #B0B8C0, #D8DDE2)`;
-      if (rank === 3) return `linear-gradient(135deg, ${ORANGE}, #FFAA00)`;
-      if (composite >= 80) return `linear-gradient(135deg, ${GREEN}, #22EE66)`;
+      if (rank === 3) return `linear-gradient(135deg, ${ORANGE}, #FFCC00)`;
+      if (composite >= 80) return `linear-gradient(135deg, ${GREEN}, #34C759)`;
       if (composite >= 60) return `linear-gradient(135deg, ${B1}, ${B3})`;
-      if (composite > 0) return `linear-gradient(135deg, ${ORANGE}, #FFCC22)`;
-      return `linear-gradient(135deg, ${RED}, #FF7788)`;
+      if (composite > 0) return `linear-gradient(135deg, ${ORANGE}, #FFCC00)`;
+      return `linear-gradient(135deg, ${RED}, #FF5E55)`;
     };
     const avShadowFor = (rank: number, composite: number) => {
-      if (rank === 1) return "0 4px 12px rgba(255,170,0,.35)";
-      if (rank === 3) return "0 4px 12px rgba(255,136,0,.28)";
-      if (composite >= 60) return "0 4px 12px rgba(0,85,255,.24)";
-      if (composite > 0) return "0 4px 12px rgba(255,136,0,.24)";
-      return "0 4px 12px rgba(255,51,85,.24)";
+      if (rank === 1) return "0 4px 12px rgba(255,204,0,.35)";
+      if (rank === 3) return "0 4px 12px rgba(255,149,0,.28)";
+      if (composite >= 60) return "0 4px 12px rgba(10,132,255,.24)";
+      if (composite > 0) return "0 4px 12px rgba(255,149,0,.24)";
+      return "0 4px 12px rgba(255,59,48,.24)";
     };
     const accentFor = (composite: number, hasDataFlag: boolean) => {
-      if (!hasDataFlag) return `linear-gradient(180deg, ${RED}, #FF7788)`;
-      if (composite >= 80) return `linear-gradient(180deg, ${GREEN}, #66EE88)`;
-      if (composite >= 60) return `linear-gradient(180deg, ${B1}, #4499FF)`;
-      if (composite >= 40) return `linear-gradient(180deg, ${ORANGE}, #FFCC22)`;
-      return `linear-gradient(180deg, ${RED}, #FF7788)`;
+      if (!hasDataFlag) return `linear-gradient(180deg, ${RED}, #FF5E55)`;
+      if (composite >= 80) return `linear-gradient(180deg, ${GREEN}, #34C759)`;
+      if (composite >= 60) return `linear-gradient(180deg, ${B1}, #7CBBFF)`;
+      if (composite >= 40) return `linear-gradient(180deg, ${ORANGE}, #FFCC00)`;
+      return `linear-gradient(180deg, ${RED}, #FF5E55)`;
     };
     const compositeColor = (n: number) => n >= 80 ? GREEN : n >= 60 ? B1 : n >= 40 ? ORANGE : RED;
 
@@ -366,13 +366,13 @@ export default function TeacherLeaderboard() {
 
     const avgTierInfo =
       stats.avg >= 80
-        ? { label: "Excellent", bg: "rgba(0,200,83,.22)", border: "rgba(0,200,83,.38)", color: "#66EE88", icon: <Check size={11} strokeWidth={2.5} /> }
+        ? { label: "Excellent", bg: "rgba(52,199,89,.22)", border: "rgba(52,199,89,.38)", color: "#34C759", icon: <Check size={11} strokeWidth={2.5} /> }
         : stats.avg >= 60
-        ? { label: "Healthy", bg: "rgba(0,85,255,.22)", border: "rgba(0,85,255,.38)", color: "#99BBFF", icon: <TrendingUp size={11} strokeWidth={2.5} /> }
+        ? { label: "Healthy", bg: "rgba(10,132,255,.22)", border: "rgba(10,132,255,.38)", color: "#99BBFF", icon: <TrendingUp size={11} strokeWidth={2.5} /> }
         : stats.avg >= 40
-        ? { label: "Average", bg: "rgba(255,170,0,.22)", border: "rgba(255,170,0,.38)", color: "#FFDD44", icon: <TrendingUp size={11} strokeWidth={2.5} /> }
+        ? { label: "Average", bg: "rgba(255,204,0,.22)", border: "rgba(255,204,0,.38)", color: "#FFCC00", icon: <TrendingUp size={11} strokeWidth={2.5} /> }
         : stats.avg > 0
-        ? { label: "Needs Focus", bg: "rgba(255,51,85,.22)", border: "rgba(255,51,85,.38)", color: "#FF99AA", icon: <AlertTriangle size={11} strokeWidth={2.5} /> }
+        ? { label: "Needs Focus", bg: "rgba(255,59,48,.22)", border: "rgba(255,59,48,.38)", color: "#FF6961", icon: <AlertTriangle size={11} strokeWidth={2.5} /> }
         : { label: "No Data", bg: "rgba(153,170,204,.18)", border: "rgba(153,170,204,.32)", color: "#CCDDEE", icon: <AlertTriangle size={11} strokeWidth={2.5} /> };
 
     // ── DETAIL VIEW ──
@@ -389,19 +389,19 @@ export default function TeacherLeaderboard() {
 
       const barColorFor = (n: number) =>
         n >= 80
-          ? `linear-gradient(90deg, ${GREEN}, #66EE88)`
+          ? `linear-gradient(90deg, ${GREEN}, #34C759)`
           : n >= 60
-          ? `linear-gradient(90deg, ${B1}, #4499FF)`
+          ? `linear-gradient(90deg, ${B1}, #7CBBFF)`
           : n >= 40
-          ? `linear-gradient(90deg, ${ORANGE}, #FFCC22)`
-          : `linear-gradient(90deg, ${RED}, #FF7788)`;
+          ? `linear-gradient(90deg, ${ORANGE}, #FFCC00)`
+          : `linear-gradient(90deg, ${RED}, #FF5E55)`;
 
       return (
         <div
           data-sfpro
           style={{
-            fontFamily: "'SF Pro Display', -apple-system, sans-serif",
-            background: "#EEF4FF",
+            fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+            background: "#F5F5F7",
             minHeight: "100vh",
             paddingBottom: 24,
           }}
@@ -419,15 +419,15 @@ export default function TeacherLeaderboard() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   cursor: "pointer",
                 }}
                 aria-label="Back"
               >
                 <ChevronLeft size={16} color={B1} strokeWidth={2.3} />
               </button>
-              <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px" }}>Teacher Details</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px" }}>Teacher Details</div>
             </div>
           </div>
 
@@ -435,7 +435,7 @@ export default function TeacherLeaderboard() {
           <div
             style={{
               margin: "14px 20px 0",
-              background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+              background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
               borderRadius: 22,
               padding: "22px 18px 20px",
               position: "relative",
@@ -462,12 +462,12 @@ export default function TeacherLeaderboard() {
                   width: 74,
                   height: 74,
                   borderRadius: "50%",
-                  background: "linear-gradient(140deg,#fff,#E5EEFF)",
+                  background: "linear-gradient(140deg,#fff,#EBEBF0)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 22,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: B1,
                   boxShadow: "0 10px 24px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.25)",
                 }}
@@ -483,27 +483,27 @@ export default function TeacherLeaderboard() {
                     width: 26,
                     height: 26,
                     borderRadius: 9,
-                    background: "linear-gradient(140deg,#FFCC44,#FF8800)",
+                    background: "linear-gradient(140deg,#FFCC00,#FF9500)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 4px 10px rgba(255,136,0,.5), 0 0 0 2px rgba(0,24,136,1)",
+                    boxShadow: "0 4px 10px rgba(255,149,0,.5), 0 0 0 2px rgba(0,24,136,1)",
                   }}
                 >
                   <Crown size={13} color="#fff" strokeWidth={2.4} />
                 </div>
               )}
             </div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.4px", position: "relative", zIndex: 1, marginBottom: 3 }}>
+            <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.4px", position: "relative", zIndex: 1, marginBottom: 3 }}>
               {selected.teacher.name || selected.teacher.email || "Teacher"}
             </div>
             <div style={{ fontSize: 11, color: "rgba(255,255,255,.55)", fontWeight: 500, position: "relative", zIndex: 1, marginBottom: 14 }}>
               {selected.teacher.email || "No email"}
             </div>
-            <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 4, position: "relative", zIndex: 1 }}>
+            <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 4, position: "relative", zIndex: 1 }}>
               Composite Score
             </div>
-            <div style={{ fontSize: 44, fontWeight: 700, color: "#66EEAA", letterSpacing: "-1.6px", lineHeight: 1, position: "relative", zIndex: 1, marginBottom: 14 }}>
+            <div style={{ fontSize: 44, fontWeight: 600, color: "#66EEAA", letterSpacing: "-1.6px", lineHeight: 1, position: "relative", zIndex: 1, marginBottom: 14 }}>
               {selected.composite.toFixed(1)}%
             </div>
             {selected.reasons.length > 0 && (
@@ -514,11 +514,11 @@ export default function TeacherLeaderboard() {
                     style={{
                       padding: "5px 11px",
                       borderRadius: 100,
-                      background: "rgba(255,170,0,.22)",
-                      border: "0.5px solid rgba(255,170,0,.38)",
+                      background: "rgba(255,204,0,.22)",
+                      border: "0.5px solid rgba(255,204,0,.38)",
                       fontSize: 10,
-                      fontWeight: 700,
-                      color: "#FFCC44",
+                      fontWeight: 600,
+                      color: "#FFCC00",
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 4,
@@ -538,24 +538,24 @@ export default function TeacherLeaderboard() {
               margin: "12px 20px 0",
               background: "#fff",
               borderRadius: 20,
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-              border: "0.5px solid rgba(0,85,255,.10)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+              border: "0.5px solid rgba(10,132,255,.10)",
               overflow: "hidden",
             }}
           >
             <div style={{ padding: "14px 16px 10px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: T4 }}>
+              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: T4 }}>
                 Score Breakdown
               </div>
               <div
                 style={{
                   fontSize: 9,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: B1,
                   padding: "2px 8px",
                   borderRadius: 100,
-                  background: "rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.16)",
+                  background: "rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.16)",
                 }}
               >
                 {signalsWithData}/5 signals
@@ -602,10 +602,10 @@ export default function TeacherLeaderboard() {
                         style={{
                           padding: "2px 7px",
                           borderRadius: 100,
-                          background: "rgba(0,85,255,.08)",
-                          border: "0.5px solid rgba(0,85,255,.14)",
+                          background: "rgba(10,132,255,.08)",
+                          border: "0.5px solid rgba(10,132,255,.14)",
                           fontSize: 8,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           letterSpacing: "0.06em",
                           textTransform: "uppercase",
                           color: B1,
@@ -628,7 +628,7 @@ export default function TeacherLeaderboard() {
                       {displayVal}
                     </div>
                   </div>
-                  <div style={{ height: 6, background: "#E0ECFF", borderRadius: 3, overflow: "hidden" }}>
+                  <div style={{ height: 6, background: "#EBEBF0", borderRadius: 3, overflow: "hidden" }}>
                     <div
                       style={{
                         height: "100%",
@@ -636,10 +636,10 @@ export default function TeacherLeaderboard() {
                         background: hasData
                           ? m.raw
                             ? Number(m.value) > 0
-                              ? `linear-gradient(90deg, ${GREEN}, #66EE88)`
-                              : `linear-gradient(90deg, ${RED}, #FF7788)`
+                              ? `linear-gradient(90deg, ${GREEN}, #34C759)`
+                              : `linear-gradient(90deg, ${RED}, #FF5E55)`
                             : barColorFor(numVal)
-                          : "#E0ECFF",
+                          : "#EBEBF0",
                         width: `${pctBar}%`,
                       }}
                     />
@@ -663,14 +663,14 @@ export default function TeacherLeaderboard() {
                   borderRadius: 14,
                   padding: "12px 8px",
                   textAlign: "center",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.10)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.10)",
                 }}
               >
-                <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, marginBottom: 5 }}>
                   {s.lbl}
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: s.color, letterSpacing: "-0.5px", lineHeight: 1 }}>{s.val}</div>
+                <div style={{ fontSize: 22, fontWeight: 600, color: s.color, letterSpacing: "-0.5px", lineHeight: 1 }}>{s.val}</div>
               </div>
             ))}
           </div>
@@ -680,9 +680,9 @@ export default function TeacherLeaderboard() {
             style={{
               margin: "12px 20px 0",
               padding: "10px 14px",
-              background: "rgba(0,85,255,.04)",
+              background: "rgba(10,132,255,.04)",
               borderRadius: 12,
-              border: "0.5px dashed rgba(0,85,255,.20)",
+              border: "0.5px dashed rgba(10,132,255,.20)",
               fontSize: 10,
               color: T3,
               fontWeight: 500,
@@ -691,18 +691,18 @@ export default function TeacherLeaderboard() {
             }}
           >
             Weighted signals:{" "}
-            <strong style={{ color: B1, fontWeight: 700 }}>scores 35%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 700 }}>pass rate 20%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 700 }}>attendance 20%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 700 }}>assignments 15%</strong> ·{" "}
-            <strong style={{ color: B1, fontWeight: 700 }}>punctuality 10%</strong>
+            <strong style={{ color: B1, fontWeight: 600 }}>scores 35%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 600 }}>pass rate 20%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 600 }}>attendance 20%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 600 }}>assignments 15%</strong> ·{" "}
+            <strong style={{ color: B1, fontWeight: 600 }}>punctuality 10%</strong>
           </div>
 
           {/* AI */}
           <div
             style={{
               margin: "12px 20px 0",
-              background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)",
+              background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)",
               borderRadius: 22,
               padding: "18px 20px",
               boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -737,20 +737,20 @@ export default function TeacherLeaderboard() {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Teacher Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 700 }}>
+              <strong style={{ color: "#fff", fontWeight: 600 }}>
                 {selected.teacher.name || "This teacher"}
               </strong>
               's{" "}
-              <strong style={{ color: "#fff", fontWeight: 700 }}>
+              <strong style={{ color: "#fff", fontWeight: 600 }}>
                 {selected.composite.toFixed(1)}%
               </strong>{" "}
               composite is tracked across{" "}
-              <strong style={{ color: "#fff", fontWeight: 700 }}>
+              <strong style={{ color: "#fff", fontWeight: 600 }}>
                 {signalsWithData} of 5
               </strong>{" "}
               signals.{" "}
@@ -758,7 +758,7 @@ export default function TeacherLeaderboard() {
                 <>
                   Standout: {selected.reasons.slice(0, 2).map((r, i) => (
                     <span key={i}>
-                      <strong style={{ color: "#fff", fontWeight: 700 }}>
+                      <strong style={{ color: "#fff", fontWeight: 600 }}>
                         {r.label.toLowerCase()} ({r.value})
                       </strong>
                       {i < Math.min(selected.reasons.length, 2) - 1 ? ", " : "."}
@@ -784,13 +784,13 @@ export default function TeacherLeaderboard() {
               {[
                 { v: `${signalsWithData}/5`, l: "Signals", c: "#fff" },
                 { v: `${selected.composite.toFixed(1)}%`, l: "Composite", c: "#66EEAA" },
-                { v: `#${selectedRank}`, l: "Rank", c: "#FFDD44" },
+                { v: `#${selectedRank}`, l: "Rank", c: "#FFCC00" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 700, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -813,10 +813,10 @@ export default function TeacherLeaderboard() {
               justifyContent: "center",
               gap: 8,
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 600,
               cursor: "pointer",
               border: "none",
-              boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+              boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
               letterSpacing: "0.02em",
             }}
           >
@@ -834,8 +834,8 @@ export default function TeacherLeaderboard() {
       <div
         data-sfpro
         style={{
-          fontFamily: "'SF Pro Display', -apple-system, sans-serif",
-          background: "#EEF4FF",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -843,7 +843,7 @@ export default function TeacherLeaderboard() {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
+            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 7 }}>
               <Trophy size={22} color={GOLD} strokeWidth={2.2} />
               Leaderboard
             </div>
@@ -859,13 +859,13 @@ export default function TeacherLeaderboard() {
                 appearance: "none",
                 WebkitAppearance: "none",
                 background: "#fff",
-                border: "0.5px solid rgba(0,85,255,.14)",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                border: "0.5px solid rgba(10,132,255,.14)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 borderRadius: 14,
                 padding: "8px 32px 8px 11px",
                 fontFamily: "inherit",
                 fontSize: 12,
-                fontWeight: 700,
+                fontWeight: 600,
                 color: T1,
                 outline: "none",
                 cursor: "pointer",
@@ -879,7 +879,7 @@ export default function TeacherLeaderboard() {
             <div style={{ position: "absolute", right: 11, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "flex" }}>
               <ChevronDown size={13} color={T3} strokeWidth={2.4} />
             </div>
-            <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginTop: 4, textAlign: "center" }}>
+            <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4, marginTop: 4, textAlign: "center" }}>
               {currentClassName.length > 16 ? currentClassName.slice(0, 14) + "…" : ""}
             </div>
           </div>
@@ -898,15 +898,15 @@ export default function TeacherLeaderboard() {
                   padding: "9px 6px",
                   borderRadius: 12,
                   background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#fff",
-                  border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,.12)",
+                  border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.12)",
                   color: isActive ? "#fff" : T3,
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   boxShadow: isActive
-                    ? "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)"
-                    : "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                    ? "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)"
+                    : "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                   cursor: "pointer",
                   fontFamily: "inherit",
                 }}
@@ -921,7 +921,7 @@ export default function TeacherLeaderboard() {
         <div
           style={{
             margin: "14px 20px 0",
-            background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+            background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
             borderRadius: 22,
             padding: "16px 18px",
             position: "relative",
@@ -958,10 +958,10 @@ export default function TeacherLeaderboard() {
                 <Trophy size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>
                   Branch Avg Score
                 </div>
-                <div style={{ fontSize: 26, fontWeight: 700, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>
                   {stats.avg.toFixed(1)}%
                 </div>
               </div>
@@ -976,7 +976,7 @@ export default function TeacherLeaderboard() {
                 background: avgTierInfo.bg,
                 border: `0.5px solid ${avgTierInfo.border}`,
                 fontSize: 11,
-                fontWeight: 700,
+                fontWeight: 600,
                 color: avgTierInfo.color,
               }}
             >
@@ -998,14 +998,14 @@ export default function TeacherLeaderboard() {
           >
             {[
               { v: stats.total, l: "Teachers", c: "#fff" },
-              { v: dataTeachers.length, l: "Top Perf.", c: "#FFDD44" },
-              { v: noDataTeachers.length, l: "No Data", c: noDataTeachers.length > 0 ? "#FF8899" : "#fff" },
+              { v: dataTeachers.length, l: "Top Perf.", c: "#FFCC00" },
+              { v: noDataTeachers.length, l: "No Data", c: noDataTeachers.length > 0 ? "#FF6961" : "#fff" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "11px 12px", textAlign: "center" }}>
-                <div style={{ fontSize: 18, fontWeight: 700, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
+                <div style={{ fontSize: 18, fontWeight: 600, color: s.c, letterSpacing: "-0.4px", lineHeight: 1, marginBottom: 3 }}>
                   {s.v}
                 </div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                   {s.l}
                 </div>
               </div>
@@ -1023,20 +1023,20 @@ export default function TeacherLeaderboard() {
               color: B1,
               subColor: T4,
               icon: <Users size={13} color={B1} strokeWidth={2.4} />,
-              bg: "rgba(0,85,255,.10)",
-              border: "rgba(0,85,255,.18)",
-              glow: "rgba(0,85,255,.10)",
+              bg: "rgba(10,132,255,.10)",
+              border: "rgba(10,132,255,.18)",
+              glow: "rgba(10,132,255,.10)",
             },
             {
               label: "Avg Performance",
               value: `${stats.avg.toFixed(1)}%`,
               sub: "Across set",
               color: stats.avg >= 80 ? GREEN : stats.avg >= 60 ? B1 : stats.avg >= 40 ? ORANGE : stats.avg > 0 ? RED : T4,
-              subColor: stats.avg >= 60 ? "#007830" : stats.avg > 0 ? "#884400" : T4,
+              subColor: stats.avg >= 60 ? "#248A3D" : stats.avg > 0 ? "#86310C" : T4,
               icon: <TrendingUp size={13} color={ORANGE} strokeWidth={2.4} />,
-              bg: "rgba(255,136,0,.10)",
-              border: "rgba(255,136,0,.22)",
-              glow: "rgba(255,136,0,.10)",
+              bg: "rgba(255,149,0,.10)",
+              border: "rgba(255,149,0,.22)",
+              glow: "rgba(255,149,0,.10)",
             },
             {
               label: "Active Teachers",
@@ -1045,20 +1045,20 @@ export default function TeacherLeaderboard() {
               color: stats.active > 0 ? VIOLET : T3,
               subColor: T4,
               icon: <Sparkles size={13} color={VIOLET} strokeWidth={2.4} />,
-              bg: "rgba(123,63,244,.10)",
-              border: "rgba(123,63,244,.22)",
-              glow: "rgba(123,63,244,.10)",
+              bg: "rgba(175,82,222,.10)",
+              border: "rgba(175,82,222,.22)",
+              glow: "rgba(175,82,222,.10)",
             },
             {
               label: "Top Performer",
               value: stats.top ? `${stats.top.composite.toFixed(0)}%` : "—",
               sub: stats.top?.teacher.name || "No teachers yet",
               color: GOLD,
-              subColor: "#885500",
+              subColor: "#86310C",
               icon: <Crown size={13} color={GOLD} strokeWidth={2.4} />,
-              bg: "rgba(255,170,0,.12)",
-              border: "rgba(255,170,0,.22)",
-              glow: "rgba(255,170,0,.10)",
+              bg: "rgba(255,204,0,.12)",
+              border: "rgba(255,204,0,.22)",
+              glow: "rgba(255,204,0,.10)",
             },
           ].map((c, i) => (
             <div
@@ -1067,8 +1067,8 @@ export default function TeacherLeaderboard() {
                 background: "#fff",
                 borderRadius: 20,
                 padding: 15,
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-                border: "0.5px solid rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+                border: "0.5px solid rgba(10,132,255,.10)",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -1102,10 +1102,10 @@ export default function TeacherLeaderboard() {
               >
                 {c.icon}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
+              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.07em", textTransform: "uppercase", color: T4, marginBottom: 9 }}>
                 {c.label}
               </div>
-              <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
+              <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 4, color: c.color }}>
                 {c.value}
               </div>
               <div style={{ fontSize: 10, fontWeight: 600, color: c.subColor, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -1122,13 +1122,13 @@ export default function TeacherLeaderboard() {
             style={{
               margin: "14px 20px 0",
               width: "calc(100% - 40px)",
-              background: "linear-gradient(140deg,#FFF6D6 0%,#FFE58A 42%,#FFCC44 100%)",
+              background: "linear-gradient(140deg,#FFF6D6 0%,#FFE58A 42%,#FFCC00 100%)",
               borderRadius: 22,
               padding: "18px 18px",
               position: "relative",
               overflow: "hidden",
-              border: "0.5px solid rgba(255,170,0,.28)",
-              boxShadow: "0 8px 28px rgba(255,170,0,.24), 0 0 0 .5px rgba(255,170,0,.22)",
+              border: "0.5px solid rgba(255,204,0,.28)",
+              boxShadow: "0 8px 28px rgba(255,204,0,.24), 0 0 0 .5px rgba(255,204,0,.22)",
               cursor: "pointer",
               textAlign: "left",
             }}
@@ -1154,15 +1154,15 @@ export default function TeacherLeaderboard() {
                   padding: "5px 11px",
                   borderRadius: 100,
                   background: "rgba(255,255,255,.65)",
-                  border: "0.5px solid rgba(255,170,0,.35)",
+                  border: "0.5px solid rgba(255,204,0,.35)",
                   fontSize: 9,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#885500",
+                  color: "#86310C",
                 }}
               >
-                <Award size={10} color="#885500" strokeWidth={2.5} />
+                <Award size={10} color="#86310C" strokeWidth={2.5} />
                 Top Performer
               </div>
               <div
@@ -1173,11 +1173,11 @@ export default function TeacherLeaderboard() {
                   gap: 4,
                   padding: "5px 10px",
                   borderRadius: 100,
-                  background: "linear-gradient(135deg,#FF8800,#FFAA00)",
+                  background: "linear-gradient(135deg,#FF9500,#FFCC00)",
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: "#fff",
-                  boxShadow: "0 4px 12px rgba(255,136,0,.35)",
+                  boxShadow: "0 4px 12px rgba(255,149,0,.35)",
                 }}
               >
                 <Crown size={11} color="#fff" strokeWidth={2.5} />
@@ -1196,17 +1196,17 @@ export default function TeacherLeaderboard() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: 24,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: B1,
-                  boxShadow: "0 10px 24px rgba(0,85,255,.20), 0 0 0 4px rgba(255,170,0,.25)",
+                  boxShadow: "0 10px 24px rgba(10,132,255,.20), 0 0 0 4px rgba(255,204,0,.25)",
                 }}
               >
                 {initialsOf(stats.top.teacher.name)}
               </div>
-              <div style={{ fontSize: 18, fontWeight: 700, color: "#331F00", letterSpacing: "-0.3px", marginTop: 2 }}>
+              <div style={{ fontSize: 18, fontWeight: 600, color: "#331F00", letterSpacing: "-0.3px", marginTop: 2 }}>
                 {stats.top.teacher.name || stats.top.teacher.email || "Teacher"}
               </div>
-              <div style={{ fontSize: 42, fontWeight: 700, color: "#00994A", letterSpacing: "-1.6px", lineHeight: 1, marginTop: -2 }}>
+              <div style={{ fontSize: 42, fontWeight: 600, color: "#00994A", letterSpacing: "-1.6px", lineHeight: 1, marginTop: -2 }}>
                 {stats.top.composite.toFixed(0)}%
               </div>
               {stats.top.reasons.length > 0 && (
@@ -1218,16 +1218,16 @@ export default function TeacherLeaderboard() {
                         padding: "5px 11px",
                         borderRadius: 100,
                         background: "rgba(255,255,255,.75)",
-                        border: "0.5px solid rgba(255,170,0,.35)",
+                        border: "0.5px solid rgba(255,204,0,.35)",
                         fontSize: 10,
-                        fontWeight: 700,
-                        color: "#885500",
+                        fontWeight: 600,
+                        color: "#86310C",
                         display: "inline-flex",
                         alignItems: "center",
                         gap: 4,
                       }}
                     >
-                      <Check size={9} color="#885500" strokeWidth={2.6} />
+                      <Check size={9} color="#86310C" strokeWidth={2.6} />
                       {r.label} · {r.value}
                     </div>
                   ))}
@@ -1240,7 +1240,7 @@ export default function TeacherLeaderboard() {
         {/* SEARCH */}
         <div style={{ margin: "14px 20px 0", position: "relative" }}>
           <div style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "flex" }}>
-            <Search size={15} color="rgba(0,85,255,.42)" strokeWidth={2.2} />
+            <Search size={15} color="rgba(10,132,255,.42)" strokeWidth={2.2} />
           </div>
           <input
             value={search}
@@ -1251,13 +1251,13 @@ export default function TeacherLeaderboard() {
               padding: "12px 16px 12px 42px",
               background: "#fff",
               borderRadius: 14,
-              border: "0.5px solid rgba(0,85,255,.12)",
+              border: "0.5px solid rgba(10,132,255,.12)",
               fontFamily: "inherit",
               fontSize: 13,
               color: T1,
               fontWeight: 400,
               outline: "none",
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
             }}
           />
         </div>
@@ -1273,10 +1273,10 @@ export default function TeacherLeaderboard() {
                 gap: 5,
                 padding: "6px 11px",
                 borderRadius: 100,
-                background: "rgba(0,85,255,.08)",
-                border: "0.5px solid rgba(0,85,255,.16)",
+                background: "rgba(10,132,255,.08)",
+                border: "0.5px solid rgba(10,132,255,.16)",
                 fontSize: 10,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 color: B1,
@@ -1293,7 +1293,7 @@ export default function TeacherLeaderboard() {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -1309,10 +1309,10 @@ export default function TeacherLeaderboard() {
             style={{
               padding: "3px 9px",
               borderRadius: 100,
-              background: "rgba(0,85,255,.10)",
-              border: "0.5px solid rgba(0,85,255,.16)",
+              background: "rgba(10,132,255,.10)",
+              border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 700,
+              fontWeight: 600,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -1320,7 +1320,7 @@ export default function TeacherLeaderboard() {
           >
             {ranked.length} teacher{ranked.length === 1 ? "" : "s"}
           </span>
-          <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+          <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
         </div>
 
         {/* RANK LIST */}
@@ -1331,8 +1331,8 @@ export default function TeacherLeaderboard() {
               background: "#fff",
               borderRadius: 22,
               padding: "32px 20px",
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
-              border: "0.5px dashed rgba(0,85,255,.22)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
+              border: "0.5px dashed rgba(10,132,255,.22)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -1340,8 +1340,8 @@ export default function TeacherLeaderboard() {
               textAlign: "center",
             }}
           >
-            <Trophy size={44} color="rgba(0,85,255,.22)" strokeWidth={1.8} />
-            <div style={{ fontSize: 14, fontWeight: 700, color: T1 }}>No teachers to rank yet</div>
+            <Trophy size={44} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
+            <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>No teachers to rank yet</div>
             <div style={{ fontSize: 11, color: T4, maxWidth: 260, lineHeight: 1.5 }}>
               {classFilter !== "All"
                 ? "No teachers assigned to this class yet, or no performance data recorded."
@@ -1365,8 +1365,8 @@ export default function TeacherLeaderboard() {
                   background: "#fff",
                   borderRadius: 18,
                   padding: "14px 16px 14px 18px",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08), 0 10px 26px rgba(0,85,255,.10)",
-                  border: "0.5px solid rgba(0,85,255,.08)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08), 0 10px 26px rgba(10,132,255,.10)",
+                  border: "0.5px solid rgba(10,132,255,.08)",
                   position: "relative",
                   overflow: "hidden",
                   cursor: "pointer",
@@ -1384,7 +1384,7 @@ export default function TeacherLeaderboard() {
                   }}
                 />
                 <div style={{ display: "flex", alignItems: "center", gap: 11 }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: T4, letterSpacing: "-0.2px", minWidth: 22 }}>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: T4, letterSpacing: "-0.2px", minWidth: 22 }}>
                     #{rank}
                   </div>
                   <div
@@ -1397,7 +1397,7 @@ export default function TeacherLeaderboard() {
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 12,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: "#fff",
                       flexShrink: 0,
                       boxShadow: avShadowFor(rank, r.composite),
@@ -1406,7 +1406,7 @@ export default function TeacherLeaderboard() {
                     {initText}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                       {r.teacher.name || r.teacher.email || "Teacher"}
                     </div>
                     <div style={{ fontSize: 10, color: T4, fontWeight: 500, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", maxWidth: 155 }}>
@@ -1414,10 +1414,10 @@ export default function TeacherLeaderboard() {
                     </div>
                   </div>
                   <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 2, flexShrink: 0 }}>
-                    <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: "-0.5px", lineHeight: 1, color: compositeColor(r.composite) }}>
+                    <div style={{ fontSize: 20, fontWeight: 600, letterSpacing: "-0.5px", lineHeight: 1, color: compositeColor(r.composite) }}>
                       {r.composite.toFixed(0)}%
                     </div>
-                    <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Composite
                     </div>
                   </div>
@@ -1429,16 +1429,16 @@ export default function TeacherLeaderboard() {
                         padding: "4px 10px",
                         borderRadius: 100,
                         fontSize: 9,
-                        fontWeight: 700,
-                        background: "rgba(255,51,85,.10)",
-                        color: "#B01030",
-                        border: "0.5px solid rgba(255,51,85,.22)",
+                        fontWeight: 600,
+                        background: "rgba(255,59,48,.10)",
+                        color: "#86170E",
+                        border: "0.5px solid rgba(255,59,48,.22)",
                         display: "inline-flex",
                         alignItems: "center",
                         gap: 5,
                       }}
                     >
-                      <AlertTriangle size={9} color="#B01030" strokeWidth={2.6} />
+                      <AlertTriangle size={9} color="#86170E" strokeWidth={2.6} />
                       New Teacher · No data yet
                     </div>
                   </div>
@@ -1453,7 +1453,7 @@ export default function TeacherLeaderboard() {
                             padding: "4px 10px",
                             borderRadius: 100,
                             fontSize: 9,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             background: tc.bg,
                             color: tc.color,
                             border: `0.5px solid ${tc.border}`,
@@ -1470,12 +1470,12 @@ export default function TeacherLeaderboard() {
                   </div>
                 ) : null}
                 {rowHasData && (
-                  <div style={{ marginTop: 10, height: 4, background: "#E0ECFF", borderRadius: 2, overflow: "hidden" }}>
+                  <div style={{ marginTop: 10, height: 4, background: "#EBEBF0", borderRadius: 2, overflow: "hidden" }}>
                     <div
                       style={{
                         height: "100%",
                         borderRadius: 2,
-                        background: `linear-gradient(90deg, ${compositeColor(r.composite)}, ${r.composite >= 80 ? "#66EE88" : r.composite >= 60 ? "#4499FF" : r.composite >= 40 ? "#FFCC22" : "#FF7788"})`,
+                        background: `linear-gradient(90deg, ${compositeColor(r.composite)}, ${r.composite >= 80 ? "#34C759" : r.composite >= 60 ? "#7CBBFF" : r.composite >= 40 ? "#FFCC00" : "#FF5E55"})`,
                         width: `${Math.min(100, Math.max(2, r.composite))}%`,
                       }}
                     />
@@ -1491,7 +1491,7 @@ export default function TeacherLeaderboard() {
           <div
             style={{
               margin: "12px 20px 0",
-              background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)",
+              background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)",
               borderRadius: 22,
               padding: "18px 20px",
               boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -1526,18 +1526,18 @@ export default function TeacherLeaderboard() {
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Leaderboard Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
               {stats.top ? (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>
                     {stats.top.teacher.name || "Top teacher"}
                   </strong>{" "}
                   dominates the board with a{" "}
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>
                     {stats.top.composite.toFixed(0)}% composite
                   </strong>
                   {stats.top.reasons.length > 0 && (
@@ -1545,7 +1545,7 @@ export default function TeacherLeaderboard() {
                       {" "}— leading on{" "}
                       {stats.top.reasons.slice(0, 2).map((r, i) => (
                         <span key={i}>
-                          <strong style={{ color: "#fff", fontWeight: 700 }}>
+                          <strong style={{ color: "#fff", fontWeight: 600 }}>
                             {r.label.toLowerCase()} ({r.value})
                           </strong>
                           {i < Math.min(stats.top!.reasons.length, 2) - 1 ? " and " : ""}
@@ -1560,11 +1560,11 @@ export default function TeacherLeaderboard() {
               )}
               {noDataTeachers.length > 0 && (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>
                     {noDataTeachers.length} teacher{noDataTeachers.length === 1 ? "" : "s"}
                   </strong>{" "}
                   {noDataTeachers.length === 1 ? "is" : "are"} new with{" "}
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>no data yet</strong>. Schedule their first assessments to unlock full rankings.
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>no data yet</strong>. Schedule their first assessments to unlock full rankings.
                 </>
               )}
             </div>
@@ -1583,14 +1583,14 @@ export default function TeacherLeaderboard() {
             >
               {[
                 { v: stats.total, l: "Teachers", c: "#fff" },
-                { v: stats.top ? `${stats.top.composite.toFixed(0)}%` : "—", l: "Top Score", c: "#FFDD44" },
-                { v: noDataTeachers.length, l: "New", c: noDataTeachers.length > 0 ? "#FF99AA" : "#fff" },
+                { v: stats.top ? `${stats.top.composite.toFixed(0)}%` : "—", l: "Top Score", c: "#FFCC00" },
+                { v: noDataTeachers.length, l: "New", c: noDataTeachers.length > 0 ? "#FF6961" : "#fff" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 700, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1606,13 +1606,13 @@ export default function TeacherLeaderboard() {
 
   const desktopAvgTier =
     stats.avg >= 80
-      ? { label: "Excellent", bg: "rgba(0,200,83,.22)", border: "rgba(0,200,83,.38)", color: "#66EE88" }
+      ? { label: "Excellent", bg: "rgba(52,199,89,.22)", border: "rgba(52,199,89,.38)", color: "#34C759" }
       : stats.avg >= 60
-      ? { label: "Healthy", bg: "rgba(0,85,255,.22)", border: "rgba(0,85,255,.38)", color: "#99BBFF" }
+      ? { label: "Healthy", bg: "rgba(10,132,255,.22)", border: "rgba(10,132,255,.38)", color: "#99BBFF" }
       : stats.avg >= 40
-      ? { label: "Average", bg: "rgba(255,170,0,.22)", border: "rgba(255,170,0,.38)", color: "#FFDD44" }
+      ? { label: "Average", bg: "rgba(255,204,0,.22)", border: "rgba(255,204,0,.38)", color: "#FFCC00" }
       : stats.avg > 0
-      ? { label: "Needs Focus", bg: "rgba(255,51,85,.22)", border: "rgba(255,51,85,.38)", color: "#FF99AA" }
+      ? { label: "Needs Focus", bg: "rgba(255,59,48,.22)", border: "rgba(255,59,48,.38)", color: "#FF6961" }
       : { label: "No Data", bg: "rgba(153,170,204,.18)", border: "rgba(153,170,204,.32)", color: "#CCDDEE" };
 
   return (
@@ -1620,7 +1620,7 @@ export default function TeacherLeaderboard() {
       data-sfpro
       className="animate-in fade-in duration-300"
       style={{
-        fontFamily: "'SF Pro Display', -apple-system, sans-serif",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
         paddingBottom: 40,
       }}
     >
@@ -1641,20 +1641,20 @@ export default function TeacherLeaderboard() {
               width: 48,
               height: 48,
               borderRadius: 14,
-              background: "linear-gradient(135deg, #FFAA00, #FFCC44)",
+              background: "linear-gradient(135deg, #FFCC00, #FFCC00)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 8px 22px rgba(255,170,0,.35)",
+              boxShadow: "0 8px 22px rgba(255,204,0,.35)",
             }}
           >
             <Trophy size={24} color="#fff" strokeWidth={2.2} />
           </div>
           <div>
-            <h1 style={{ fontSize: 28, fontWeight: 700, color: "#001040", letterSpacing: "-0.7px", margin: 0, lineHeight: 1.1 }}>
+            <h1 style={{ fontSize: 28, fontWeight: 600, color: "#1D1D1F", letterSpacing: "-0.7px", margin: 0, lineHeight: 1.1 }}>
               Teacher Leaderboard
             </h1>
-            <p style={{ fontSize: 13, color: "#5070B0", fontWeight: 400, marginTop: 4, margin: 0 }}>
+            <p style={{ fontSize: 13, color: "#6E6E73", fontWeight: 400, marginTop: 4, margin: 0 }}>
               Top performers in your branch — auto-ranked by student outcomes + engagement
             </p>
           </div>
@@ -1669,8 +1669,8 @@ export default function TeacherLeaderboard() {
               background: "#fff",
               padding: 4,
               borderRadius: 14,
-              border: "0.5px solid rgba(0,85,255,.12)",
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+              border: "0.5px solid rgba(10,132,255,.12)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
             }}
           >
             {(["term", "month", "all"] as TimeRange[]).map((r) => {
@@ -1682,15 +1682,15 @@ export default function TeacherLeaderboard() {
                   style={{
                     padding: "7px 14px",
                     borderRadius: 10,
-                    background: active ? "linear-gradient(135deg, #0055FF, #1166FF)" : "transparent",
-                    color: active ? "#fff" : "#5070B0",
+                    background: active ? "linear-gradient(135deg, #0A84FF, #3395FF)" : "transparent",
+                    color: active ? "#fff" : "#6E6E73",
                     fontSize: 10,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     border: "none",
                     cursor: "pointer",
-                    boxShadow: active ? "0 3px 10px rgba(0,85,255,.32)" : "none",
+                    boxShadow: active ? "0 3px 10px rgba(10,132,255,.32)" : "none",
                     transition: "all .18s",
                     fontFamily: "inherit",
                   }}
@@ -1705,7 +1705,7 @@ export default function TeacherLeaderboard() {
           <div style={{ position: "relative" }}>
             <BookOpen
               size={14}
-              color="rgba(0,85,255,.6)"
+              color="rgba(10,132,255,.6)"
               strokeWidth={2.2}
               style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
             />
@@ -1716,16 +1716,16 @@ export default function TeacherLeaderboard() {
                 appearance: "none",
                 WebkitAppearance: "none",
                 background: "#fff",
-                border: "0.5px solid rgba(0,85,255,.14)",
+                border: "0.5px solid rgba(10,132,255,.14)",
                 borderRadius: 14,
                 padding: "9px 34px 9px 34px",
                 fontSize: 12,
-                fontWeight: 700,
-                color: "#002080",
+                fontWeight: 600,
+                color: "#3A3A3C",
                 outline: "none",
                 cursor: "pointer",
                 minWidth: 190,
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 fontFamily: "inherit",
               }}
             >
@@ -1735,7 +1735,7 @@ export default function TeacherLeaderboard() {
             </select>
             <ChevronDown
               size={14}
-              color="rgba(0,85,255,.6)"
+              color="rgba(10,132,255,.6)"
               strokeWidth={2.2}
               style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
             />
@@ -1746,7 +1746,7 @@ export default function TeacherLeaderboard() {
       {/* ─── Dark Hero Banner ────────────────────────────────────────── */}
       <div
         style={{
-          background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+          background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
           borderRadius: 24,
           padding: "22px 28px",
           position: "relative",
@@ -1807,7 +1807,7 @@ export default function TeacherLeaderboard() {
               <div
                 style={{
                   fontSize: 9,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   color: "rgba(255,255,255,.50)",
@@ -1819,7 +1819,7 @@ export default function TeacherLeaderboard() {
               <div
                 style={{
                   fontSize: 40,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: "#fff",
                   letterSpacing: "-1.2px",
                   lineHeight: 1,
@@ -1840,7 +1840,7 @@ export default function TeacherLeaderboard() {
               background: desktopAvgTier.bg,
               border: `0.5px solid ${desktopAvgTier.border}`,
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 600,
               color: desktopAvgTier.color,
             }}
           >
@@ -1861,8 +1861,8 @@ export default function TeacherLeaderboard() {
           >
             {[
               { v: stats.total, l: "Teachers", c: "#fff" },
-              { v: dataTeachers.length, l: "With Data", c: "#FFDD44" },
-              { v: noDataTeachers.length, l: "New", c: noDataTeachers.length > 0 ? "#FF99AA" : "#fff" },
+              { v: dataTeachers.length, l: "With Data", c: "#FFCC00" },
+              { v: noDataTeachers.length, l: "New", c: noDataTeachers.length > 0 ? "#FF6961" : "#fff" },
             ].map((s, i) => (
               <div
                 key={i}
@@ -1876,7 +1876,7 @@ export default function TeacherLeaderboard() {
                 <div
                   style={{
                     fontSize: 22,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: s.c,
                     letterSpacing: "-0.5px",
                     lineHeight: 1,
@@ -1888,7 +1888,7 @@ export default function TeacherLeaderboard() {
                 <div
                   style={{
                     fontSize: 9,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,.40)",
@@ -1910,44 +1910,44 @@ export default function TeacherLeaderboard() {
             value: stats.total,
             sub: classFilter === "All" ? "In branch" : "Teaching this class",
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-            tileGrad: "linear-gradient(135deg, #0055FF, #1166FF)",
-            tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
-            valColor: "#0055FF",
-            decorColor: "#0055FF",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
+            tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
+            valColor: "#0A84FF",
+            decorColor: "#0A84FF",
           },
           {
             label: "Avg Performance",
             value: `${stats.avg.toFixed(1)}%`,
             sub: "Across filtered set",
             Icon: TrendingUp,
-            cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-            tileGrad: "linear-gradient(135deg, #00C853, #22EE66)",
-            tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
-            valColor: "#007830",
-            decorColor: "#00C853",
+            cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+            tileGrad: "linear-gradient(135deg, #34C759, #34C759)",
+            tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
+            valColor: "#248A3D",
+            decorColor: "#34C759",
           },
           {
             label: "Active Teachers",
             value: stats.active,
             sub: "With recent data",
             Icon: Sparkles,
-            cardGrad: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-            tileGrad: "linear-gradient(135deg, #7B3FF4, #A07CF8)",
-            tileShadow: "0 4px 14px rgba(123,63,244,0.26)",
-            valColor: "#7B3FF4",
-            decorColor: "#7B3FF4",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
+            tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
+            valColor: "#AF52DE",
+            decorColor: "#AF52DE",
           },
           {
             label: "Top Performer",
             value: stats.top ? `${stats.top.composite.toFixed(0)}%` : "—",
             sub: stats.top?.teacher.name || "No teachers yet",
             Icon: Crown,
-            cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-            tileGrad: "linear-gradient(135deg, #FFAA00, #FFDD44)",
-            tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
-            valColor: "#FFAA00",
-            decorColor: "#FFAA00",
+            cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+            tileGrad: "linear-gradient(135deg, #FFCC00, #FFCC00)",
+            tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
+            valColor: "#FFCC00",
+            decorColor: "#FFCC00",
           },
         ].map((c, i) => {
           const Icon = c.Icon;
@@ -1957,8 +1957,8 @@ export default function TeacherLeaderboard() {
               className="rounded-[20px] p-5 relative overflow-hidden"
               style={{
                 background: c.cardGrad,
-                boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-                border: "0.5px solid rgba(0,85,255,0.08)",
+                boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+                border: "0.5px solid rgba(10,132,255,0.08)",
               }}
             >
               <div
@@ -1967,9 +1967,9 @@ export default function TeacherLeaderboard() {
               >
                 <Icon size={26} color="#fff" strokeWidth={2.3} />
               </div>
-              <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>{c.label}</span>
-              <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5 truncate" style={{ color: c.valColor, letterSpacing: "-1.2px" }}>{c.value}</p>
-              <p className="text-[11px] font-semibold truncate" style={{ color: "#5070B0" }}>{c.sub}</p>
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{c.label}</span>
+              <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5 truncate" style={{ color: c.valColor, letterSpacing: "-1.2px" }}>{c.value}</p>
+              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{c.sub}</p>
               <Icon
                 size={56}
                 color={c.decorColor}
@@ -1987,18 +1987,18 @@ export default function TeacherLeaderboard() {
         <div
           style={{
             background: "#fff",
-            border: "0.5px dashed rgba(0,85,255,.22)",
+            border: "0.5px dashed rgba(10,132,255,.22)",
             borderRadius: 24,
             padding: "64px 24px",
             textAlign: "center",
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
           }}
         >
-          <Trophy size={56} color="rgba(0,85,255,.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
-          <h3 style={{ fontSize: 16, fontWeight: 700, color: "#001040", margin: "0 0 6px 0" }}>
+          <Trophy size={56} color="rgba(10,132,255,.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
+          <h3 style={{ fontSize: 16, fontWeight: 600, color: "#1D1D1F", margin: "0 0 6px 0" }}>
             No teachers to rank yet
           </h3>
-          <p style={{ fontSize: 13, color: "#5070B0", fontWeight: 400, maxWidth: 440, margin: "0 auto", lineHeight: 1.55 }}>
+          <p style={{ fontSize: 13, color: "#6E6E73", fontWeight: 400, maxWidth: 440, margin: "0 auto", lineHeight: 1.55 }}>
             {classFilter !== "All"
               ? "No teachers assigned to this class yet, or no performance data recorded."
               : "Once teachers are added and academic data is recorded, they'll appear here with rankings."}
@@ -2053,10 +2053,10 @@ export default function TeacherLeaderboard() {
                   <div
                     style={{
                       fontSize: 10,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       letterSpacing: "0.10em",
                       textTransform: "uppercase",
-                      color: "#99AACC",
+                      color: "#A1A1A6",
                       marginBottom: 3,
                     }}
                   >
@@ -2065,8 +2065,8 @@ export default function TeacherLeaderboard() {
                   <div
                     style={{
                       fontSize: 17,
-                      fontWeight: 700,
-                      color: "#001040",
+                      fontWeight: 600,
+                      color: "#1D1D1F",
                       letterSpacing: "-0.3px",
                       lineHeight: 1.1,
                     }}
@@ -2102,7 +2102,7 @@ export default function TeacherLeaderboard() {
             <div style={{ position: "relative", flex: 1, maxWidth: 460 }}>
               <Search
                 size={16}
-                color="rgba(0,85,255,.42)"
+                color="rgba(10,132,255,.42)"
                 strokeWidth={2.2}
                 style={{ position: "absolute", left: 14, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
               />
@@ -2116,13 +2116,13 @@ export default function TeacherLeaderboard() {
                   padding: "12px 16px 12px 42px",
                   background: "#fff",
                   borderRadius: 14,
-                  border: "0.5px solid rgba(0,85,255,.12)",
+                  border: "0.5px solid rgba(10,132,255,.12)",
                   fontFamily: "inherit",
                   fontSize: 13,
-                  color: "#001040",
+                  color: "#1D1D1F",
                   fontWeight: 400,
                   outline: "none",
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
                 }}
               />
             </div>
@@ -2135,13 +2135,13 @@ export default function TeacherLeaderboard() {
                   gap: 5,
                   padding: "8px 14px",
                   borderRadius: 100,
-                  background: "rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.16)",
+                  background: "rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 11,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  color: "#0055FF",
+                  color: "#0A84FF",
                   cursor: "pointer",
                   fontFamily: "inherit",
                 }}
@@ -2157,16 +2157,16 @@ export default function TeacherLeaderboard() {
             style={{
               background: "#fff",
               borderRadius: 24,
-              border: "0.5px solid rgba(0,85,255,.10)",
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
+              border: "0.5px solid rgba(10,132,255,.10)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
               overflow: "hidden",
             }}
           >
             <div
               style={{
                 padding: "16px 22px",
-                borderBottom: "0.5px solid rgba(0,85,255,.07)",
-                background: "linear-gradient(90deg, rgba(0,85,255,.04), transparent)",
+                borderBottom: "0.5px solid rgba(10,132,255,.07)",
+                background: "linear-gradient(90deg, rgba(10,132,255,.04), transparent)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
@@ -2175,8 +2175,8 @@ export default function TeacherLeaderboard() {
               <h3
                 style={{
                   fontSize: 11,
-                  fontWeight: 700,
-                  color: "#001040",
+                  fontWeight: 600,
+                  color: "#1D1D1F",
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
                   display: "flex",
@@ -2185,17 +2185,17 @@ export default function TeacherLeaderboard() {
                   margin: 0,
                 }}
               >
-                <Filter size={13} color="#0055FF" strokeWidth={2.3} />
+                <Filter size={13} color="#0A84FF" strokeWidth={2.3} />
                 Full Rankings
                 <span
                   style={{
                     padding: "3px 9px",
                     borderRadius: 100,
-                    background: "rgba(0,85,255,.10)",
-                    border: "0.5px solid rgba(0,85,255,.16)",
+                    background: "rgba(10,132,255,.10)",
+                    border: "0.5px solid rgba(10,132,255,.16)",
                     fontSize: 10,
-                    fontWeight: 700,
-                    color: "#0055FF",
+                    fontWeight: 600,
+                    color: "#0A84FF",
                     letterSpacing: "0.04em",
                     textTransform: "none",
                   }}
@@ -2209,7 +2209,7 @@ export default function TeacherLeaderboard() {
                 const rank = rest.length > 0 ? i + 4 : i + 1;
                 const isLast = i === (rest.length > 0 ? rest.length - 1 : ranked.length - 1);
                 return (
-                  <div key={r.teacher.id} style={{ borderBottom: isLast ? "none" : "0.5px solid rgba(0,85,255,.07)" }}>
+                  <div key={r.teacher.id} style={{ borderBottom: isLast ? "none" : "0.5px solid rgba(10,132,255,.07)" }}>
                     <TeacherRow rank={rank} score={r} onClick={() => setSelected(r)} />
                   </div>
                 );
@@ -2228,26 +2228,26 @@ export default function TeacherLeaderboard() {
 // Helpers for desktop visual tokens (shared by PodiumCard / TeacherRow / Modal)
 const toneSwatch = (tone: string) => {
   switch (tone) {
-    case "gold":    return { bg: "rgba(255,170,0,.10)", color: "#885500", border: "rgba(255,170,0,.22)" };
-    case "emerald": return { bg: "rgba(0,200,83,.10)", color: "#007830", border: "rgba(0,200,83,.22)" };
-    case "blue":    return { bg: "rgba(0,85,255,.10)", color: "#0055FF", border: "rgba(0,85,255,.18)" };
-    case "violet":  return { bg: "rgba(123,63,244,.10)", color: "#7B3FF4", border: "rgba(123,63,244,.22)" };
-    case "rose":    return { bg: "rgba(255,51,85,.10)", color: "#B01030", border: "rgba(255,51,85,.22)" };
-    default:        return { bg: "rgba(0,85,255,.10)", color: "#0055FF", border: "rgba(0,85,255,.18)" };
+    case "gold":    return { bg: "rgba(255,204,0,.10)", color: "#86310C", border: "rgba(255,204,0,.22)" };
+    case "emerald": return { bg: "rgba(52,199,89,.10)", color: "#248A3D", border: "rgba(52,199,89,.22)" };
+    case "blue":    return { bg: "rgba(10,132,255,.10)", color: "#0A84FF", border: "rgba(10,132,255,.18)" };
+    case "violet":  return { bg: "rgba(175,82,222,.10)", color: "#AF52DE", border: "rgba(175,82,222,.22)" };
+    case "rose":    return { bg: "rgba(255,59,48,.10)", color: "#86170E", border: "rgba(255,59,48,.22)" };
+    default:        return { bg: "rgba(10,132,255,.10)", color: "#0A84FF", border: "rgba(10,132,255,.18)" };
   }
 };
 
 const compositeHex = (n: number) =>
-  n >= 80 ? "#00994A" : n >= 60 ? "#0055FF" : n >= 40 ? "#FF8800" : "#FF3355";
+  n >= 80 ? "#00994A" : n >= 60 ? "#0A84FF" : n >= 40 ? "#FF9500" : "#FF3B30";
 
 const compositeBar = (n: number) =>
   n >= 80
-    ? "linear-gradient(90deg, #00C853, #66EE88)"
+    ? "linear-gradient(90deg, #34C759, #34C759)"
     : n >= 60
-    ? "linear-gradient(90deg, #0055FF, #4499FF)"
+    ? "linear-gradient(90deg, #0A84FF, #7CBBFF)"
     : n >= 40
-    ? "linear-gradient(90deg, #FF8800, #FFCC22)"
-    : "linear-gradient(90deg, #FF3355, #FF7788)";
+    ? "linear-gradient(90deg, #FF9500, #FFCC00)"
+    : "linear-gradient(90deg, #FF3B30, #FF5E55)";
 
 function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherScore; onClick: () => void }) {
   const minH = rank === 1 ? 300 : rank === 2 ? 260 : 240;
@@ -2269,17 +2269,17 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
           badge: "linear-gradient(135deg,#7E8CA0,#A8B4C4)",
           badgeShadow: "0 6px 18px rgba(126,140,160,.4)",
           avRing: "rgba(126,140,160,.35)",
-          avShadow: "0 0 0 4px rgba(160,172,190,.2), 0 10px 24px rgba(0,85,255,.15)",
+          avShadow: "0 0 0 4px rgba(160,172,190,.2), 0 10px 24px rgba(10,132,255,.15)",
           crownColor: "#7E8CA0",
         }
       : {
           bg: "linear-gradient(140deg,#fff 0%,#FFE8D4 60%,#FFC58A 100%)",
-          border: "rgba(255,136,0,.45)",
-          badge: "linear-gradient(135deg,#FF8800,#FFAA55)",
-          badgeShadow: "0 6px 18px rgba(255,136,0,.4)",
-          avRing: "rgba(255,136,0,.4)",
-          avShadow: "0 0 0 4px rgba(255,136,0,.2), 0 10px 24px rgba(255,136,0,.22)",
-          crownColor: "#FF8800",
+          border: "rgba(255,149,0,.45)",
+          badge: "linear-gradient(135deg,#FF9500,#FFAA55)",
+          badgeShadow: "0 6px 18px rgba(255,149,0,.4)",
+          avRing: "rgba(255,149,0,.4)",
+          avShadow: "0 0 0 4px rgba(255,149,0,.2), 0 10px 24px rgba(255,149,0,.22)",
+          crownColor: "#FF9500",
         };
 
   return (
@@ -2319,7 +2319,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
           justifyContent: "center",
           color: "#fff",
           fontSize: 18,
-          fontWeight: 700,
+          fontWeight: 600,
           boxShadow: accent.badgeShadow,
           border: "4px solid #fff",
         }}
@@ -2338,14 +2338,14 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
           width: 66,
           height: 66,
           borderRadius: "50%",
-          background: "linear-gradient(140deg,#fff,#E5EEFF)",
+          background: "linear-gradient(140deg,#fff,#EBEBF0)",
           border: `3px solid ${accent.avRing}`,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           fontSize: 20,
-          fontWeight: 700,
-          color: "#0055FF",
+          fontWeight: 600,
+          color: "#0A84FF",
           boxShadow: accent.avShadow,
           marginBottom: 14,
         }}
@@ -2356,8 +2356,8 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
       <h4
         style={{
           fontSize: 16,
-          fontWeight: 700,
-          color: "#001040",
+          fontWeight: 600,
+          color: "#1D1D1F",
           letterSpacing: "-0.3px",
           margin: "0 0 8px 0",
           padding: "0 8px",
@@ -2373,7 +2373,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
       <div
         style={{
           fontSize: 32,
-          fontWeight: 700,
+          fontWeight: 600,
           color: compositeHex(score.composite),
           letterSpacing: "-1px",
           lineHeight: 1,
@@ -2396,7 +2396,7 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
                 color: tc.color,
                 border: `0.5px solid ${tc.border}`,
                 fontSize: 9,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.02em",
               }}
             >
@@ -2410,36 +2410,36 @@ function PodiumCard({ rank, score, onClick }: { rank: 1 | 2 | 3; score: TeacherS
 }
 
 function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScore; onClick: () => void }) {
-  const GREEN = "#00C853";
-  const RED = "#FF3355";
-  const ORANGE = "#FF8800";
-  const B1 = "#0055FF";
+  const GREEN = "#34C759";
+  const RED = "#FF3B30";
+  const ORANGE = "#FF9500";
+  const B1 = "#0A84FF";
   const composite = score.composite;
 
   const avatarGrad =
     composite >= 80
-      ? `linear-gradient(135deg, ${GREEN}, #22EE66)`
+      ? `linear-gradient(135deg, ${GREEN}, #34C759)`
       : composite >= 60
-      ? `linear-gradient(135deg, ${B1}, #4499FF)`
+      ? `linear-gradient(135deg, ${B1}, #7CBBFF)`
       : composite >= 40
-      ? `linear-gradient(135deg, ${ORANGE}, #FFCC22)`
-      : `linear-gradient(135deg, ${RED}, #FF7788)`;
+      ? `linear-gradient(135deg, ${ORANGE}, #FFCC00)`
+      : `linear-gradient(135deg, ${RED}, #FF5E55)`;
 
   const avShadow =
     composite >= 80
-      ? "0 4px 12px rgba(0,200,83,.28)"
+      ? "0 4px 12px rgba(52,199,89,.28)"
       : composite >= 60
-      ? "0 4px 12px rgba(0,85,255,.28)"
+      ? "0 4px 12px rgba(10,132,255,.28)"
       : composite >= 40
-      ? "0 4px 12px rgba(255,136,0,.28)"
-      : "0 4px 12px rgba(255,51,85,.28)";
+      ? "0 4px 12px rgba(255,149,0,.28)"
+      : "0 4px 12px rgba(255,59,48,.28)";
 
   return (
     <div
       onClick={onClick}
       role="button"
       tabIndex={0}
-      onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(0,85,255,.03)")}
+      onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(10,132,255,.03)")}
       onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
       style={{
         padding: "16px 22px",
@@ -2454,8 +2454,8 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         style={{
           width: 40,
           fontSize: 13,
-          fontWeight: 700,
-          color: "#99AACC",
+          fontWeight: 600,
+          color: "#A1A1A6",
           letterSpacing: "-0.2px",
           textAlign: "center",
           flexShrink: 0,
@@ -2473,7 +2473,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
           alignItems: "center",
           justifyContent: "center",
           fontSize: 14,
-          fontWeight: 700,
+          fontWeight: 600,
           color: "#fff",
           flexShrink: 0,
           boxShadow: avShadow,
@@ -2485,8 +2485,8 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         <p
           style={{
             fontSize: 14,
-            fontWeight: 700,
-            color: "#001040",
+            fontWeight: 600,
+            color: "#1D1D1F",
             letterSpacing: "-0.2px",
             margin: 0,
             overflow: "hidden",
@@ -2501,7 +2501,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
             style={{
               fontSize: 11,
               fontWeight: 500,
-              color: "#99AACC",
+              color: "#A1A1A6",
               margin: "2px 0 0 0",
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -2533,7 +2533,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
                 color: tc.color,
                 border: `0.5px solid ${tc.border}`,
                 fontSize: 10,
-                fontWeight: 700,
+                fontWeight: 600,
                 whiteSpace: "nowrap",
               }}
             >
@@ -2546,7 +2546,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
         <p
           style={{
             fontSize: 18,
-            fontWeight: 700,
+            fontWeight: 600,
             color: compositeHex(composite),
             letterSpacing: "-0.4px",
             margin: 0,
@@ -2560,7 +2560,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
             width: 140,
             height: 6,
             borderRadius: 3,
-            background: "#E0ECFF",
+            background: "#EBEBF0",
             overflow: "hidden",
             marginTop: 6,
           }}
@@ -2576,7 +2576,7 @@ function TeacherRow({ rank, score, onClick }: { rank: number; score: TeacherScor
           />
         </div>
       </div>
-      <ChevronRight size={16} color="#99AACC" strokeWidth={2.3} />
+      <ChevronRight size={16} color="#A1A1A6" strokeWidth={2.3} />
     </div>
   );
 }
@@ -2627,14 +2627,14 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
           overflow: "hidden",
           boxShadow: "0 40px 80px rgba(0,10,60,.45), 0 0 0 .5px rgba(255,255,255,.1)",
           animation: "popIn .4s cubic-bezier(.34,1.26,.64,1) both",
-          fontFamily: "'SF Pro Display', -apple-system, sans-serif",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
         }}
       >
         {/* Dark hero header */}
         <div
           style={{
             padding: "24px 28px",
-            background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)",
+            background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)",
             position: "relative",
             overflow: "hidden",
             display: "flex",
@@ -2662,13 +2662,13 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                 width: 64,
                 height: 64,
                 borderRadius: "50%",
-                background: "linear-gradient(140deg,#fff,#E5EEFF)",
+                background: "linear-gradient(140deg,#fff,#EBEBF0)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: 20,
-                fontWeight: 700,
-                color: "#0055FF",
+                fontWeight: 600,
+                color: "#0A84FF",
                 boxShadow: "0 10px 24px rgba(0,0,0,.25), 0 0 0 3px rgba(255,255,255,.25)",
                 flexShrink: 0,
               }}
@@ -2676,20 +2676,20 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               {initialsOf(score.teacher.name)}
             </div>
             <div>
-              <h3 style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.4px", margin: 0 }}>
+              <h3 style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.4px", margin: 0 }}>
                 {score.teacher.name || score.teacher.email}
               </h3>
               <p style={{ fontSize: 12, color: "rgba(255,255,255,.55)", fontWeight: 500, margin: "3px 0 0 0" }}>
                 {score.teacher.email || "No email"}
               </p>
               <div style={{ display: "flex", alignItems: "baseline", gap: 10, marginTop: 10 }}>
-                <span style={{ fontSize: 32, fontWeight: 700, color: "#66EEAA", letterSpacing: "-0.8px", lineHeight: 1 }}>
+                <span style={{ fontSize: 32, fontWeight: 600, color: "#66EEAA", letterSpacing: "-0.8px", lineHeight: 1 }}>
                   {score.composite.toFixed(1)}%
                 </span>
                 <span
                   style={{
                     fontSize: 9,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,.50)",
@@ -2728,10 +2728,10 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 style={{
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#99AACC",
+                  color: "#A1A1A6",
                   marginBottom: 10,
                 }}
               >
@@ -2750,7 +2750,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                         color: tc.color,
                         border: `0.5px solid ${tc.border}`,
                         fontSize: 12,
-                        fontWeight: 700,
+                        fontWeight: 600,
                       }}
                     >
                       {b.label} · {b.value}
@@ -2773,10 +2773,10 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 style={{
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "#99AACC",
+                  color: "#A1A1A6",
                 }}
               >
                 Score Breakdown
@@ -2785,11 +2785,11 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                 style={{
                   padding: "3px 10px",
                   borderRadius: 100,
-                  background: "rgba(0,85,255,.08)",
-                  border: "0.5px solid rgba(0,85,255,.16)",
+                  background: "rgba(10,132,255,.08)",
+                  border: "0.5px solid rgba(10,132,255,.16)",
                   fontSize: 10,
-                  fontWeight: 700,
-                  color: "#0055FF",
+                  fontWeight: 600,
+                  color: "#0A84FF",
                 }}
               >
                 {signalsWithData}/5 signals
@@ -2808,9 +2808,9 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                   : "No data";
                 const pctBar = hasData && !m.raw ? Math.min(100, numVal) : m.raw && Number(m.value) > 0 ? 4 : 0;
                 const valColor = !hasData
-                  ? "#99AACC"
+                  ? "#A1A1A6"
                   : m.raw
-                  ? Number(m.value) > 0 ? "#00994A" : "#FF3355"
+                  ? Number(m.value) > 0 ? "#00994A" : "#FF3B30"
                   : compositeHex(numVal);
                 return (
                   <div key={m.label}>
@@ -2823,20 +2823,20 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                       }}
                     >
                       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                        <span style={{ fontSize: 13, fontWeight: 600, color: "#002080", letterSpacing: "-0.1px" }}>
+                        <span style={{ fontSize: 13, fontWeight: 600, color: "#3A3A3C", letterSpacing: "-0.1px" }}>
                           {m.label}
                         </span>
                         <span
                           style={{
                             padding: "2px 8px",
                             borderRadius: 100,
-                            background: "rgba(0,85,255,.08)",
-                            border: "0.5px solid rgba(0,85,255,.14)",
+                            background: "rgba(10,132,255,.08)",
+                            border: "0.5px solid rgba(10,132,255,.14)",
                             fontSize: 9,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             letterSpacing: "0.08em",
                             textTransform: "uppercase",
-                            color: "#0055FF",
+                            color: "#0A84FF",
                           }}
                         >
                           {m.weight}% Weight
@@ -2845,7 +2845,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                       <span
                         style={{
                           fontSize: 14,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: valColor,
                           fontStyle: !hasData ? "italic" : "normal",
                         }}
@@ -2857,7 +2857,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                       style={{
                         height: 7,
                         borderRadius: 4,
-                        background: "#E0ECFF",
+                        background: "#EBEBF0",
                         overflow: "hidden",
                       }}
                     >
@@ -2868,10 +2868,10 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
                           background: hasData
                             ? m.raw
                               ? Number(m.value) > 0
-                                ? "linear-gradient(90deg, #00C853, #66EE88)"
-                                : "linear-gradient(90deg, #FF3355, #FF7788)"
+                                ? "linear-gradient(90deg, #34C759, #34C759)"
+                                : "linear-gradient(90deg, #FF3B30, #FF5E55)"
                               : compositeBar(numVal)
-                            : "#E0ECFF",
+                            : "#EBEBF0",
                           width: `${pctBar}%`,
                           transition: "width .5s ease",
                         }}
@@ -2892,26 +2892,26 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 key={i}
                 style={{
-                  background: "#EEF4FF",
+                  background: "#F5F5F7",
                   borderRadius: 14,
                   padding: 16,
                   textAlign: "center",
-                  border: "0.5px solid rgba(0,85,255,.10)",
+                  border: "0.5px solid rgba(10,132,255,.10)",
                 }}
               >
                 <div
                   style={{
                     fontSize: 9,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "#99AACC",
+                    color: "#A1A1A6",
                     marginBottom: 6,
                   }}
                 >
                   {s.lbl}
                 </div>
-                <div style={{ fontSize: 22, fontWeight: 700, color: "#001040", letterSpacing: "-0.5px", lineHeight: 1 }}>
+                <div style={{ fontSize: 22, fontWeight: 600, color: "#1D1D1F", letterSpacing: "-0.5px", lineHeight: 1 }}>
                   {s.val}
                 </div>
               </div>
@@ -2923,8 +2923,8 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
         <div
           style={{
             padding: "14px 28px",
-            borderTop: "0.5px solid rgba(0,85,255,.07)",
-            background: "#EEF4FF",
+            borderTop: "0.5px solid rgba(10,132,255,.07)",
+            background: "#F5F5F7",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -2932,26 +2932,26 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
             flexShrink: 0,
           }}
         >
-          <p style={{ fontSize: 11, color: "#5070B0", fontWeight: 500, margin: 0, lineHeight: 1.55 }}>
+          <p style={{ fontSize: 11, color: "#6E6E73", fontWeight: 500, margin: 0, lineHeight: 1.55 }}>
             Weighted signals:{" "}
-            <strong style={{ color: "#0055FF", fontWeight: 700 }}>scores 35%</strong> ·{" "}
-            <strong style={{ color: "#0055FF", fontWeight: 700 }}>pass 20%</strong> ·{" "}
-            <strong style={{ color: "#0055FF", fontWeight: 700 }}>attendance 20%</strong> ·{" "}
-            <strong style={{ color: "#0055FF", fontWeight: 700 }}>assignments 15%</strong> ·{" "}
-            <strong style={{ color: "#0055FF", fontWeight: 700 }}>punctuality 10%</strong>
+            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>scores 35%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>pass 20%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>attendance 20%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>assignments 15%</strong> ·{" "}
+            <strong style={{ color: "#0A84FF", fontWeight: 600 }}>punctuality 10%</strong>
           </p>
           <button
             onClick={onClose}
             style={{
               padding: "10px 22px",
               borderRadius: 12,
-              background: "linear-gradient(135deg, #0055FF, #1166FF)",
+              background: "linear-gradient(135deg, #0A84FF, #3395FF)",
               color: "#fff",
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 600,
               border: "none",
               cursor: "pointer",
-              boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+              boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
               fontFamily: "inherit",
               letterSpacing: "0.02em",
               display: "flex",

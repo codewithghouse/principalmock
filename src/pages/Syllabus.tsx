@@ -94,7 +94,7 @@ const StatCard = ({
         <Icon className="w-4.5 h-4.5" />
       </div>
     </div>
-    <div className="text-2xl font-bold text-[#1e294b] mb-1">{value}</div>
+    <div className="text-2xl font-semibold text-[#1D1D1F] mb-1">{value}</div>
     {subtitle && (
       <span className="text-xs font-semibold text-slate-400">{subtitle}</span>
     )}
@@ -288,7 +288,7 @@ const Syllabus = () => {
     return (
       <div className="flex flex-col items-center justify-center py-28 bg-white rounded-2xl border border-dashed border-slate-200">
         <Library className="w-12 h-12 text-slate-200 mb-4" />
-        <p className="text-base font-bold text-slate-400">Please sign in</p>
+        <p className="text-base font-semibold text-slate-400">Please sign in</p>
         <p className="text-sm text-slate-300 mt-1">You need to be logged in to view syllabi.</p>
       </div>
     );
@@ -327,24 +327,24 @@ const Syllabus = () => {
 
   // ───────────────────────────────────────── MOBILE RETURN ─────────────────
   if (isMobile) {
-    const B1 = "#0055FF";
-    const B2 = "#1166FF";
-    const GREEN = "#00C853";
-    const RED = "#FF3355";
-    const VIOLET = "#7B3FF4";
-    const GOLD = "#FFAA00";
-    const T1 = "#001040";
-    const T2 = "#002080";
-    const T3 = "#5070B0";
-    const T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,.07)";
+    const B1 = "#0A84FF";
+    const B2 = "#3395FF";
+    const GREEN = "#34C759";
+    const RED = "#FF3B30";
+    const VIOLET = "#AF52DE";
+    const GOLD = "#FFCC00";
+    const T1 = "#1D1D1F";
+    const T2 = "#3A3A3C";
+    const T3 = "#6E6E73";
+    const T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,.07)";
 
     const stripeFor = (idx: number) => {
       const palette = [
-        `linear-gradient(180deg, ${B1}, #4499FF)`,
+        `linear-gradient(180deg, ${B1}, #7CBBFF)`,
         `linear-gradient(180deg, ${VIOLET}, #AA77FF)`,
-        `linear-gradient(180deg, ${GREEN}, #22EE66)`,
-        `linear-gradient(180deg, ${GOLD}, #FFCC55)`,
+        `linear-gradient(180deg, ${GREEN}, #34C759)`,
+        `linear-gradient(180deg, ${GOLD}, #FFCC00)`,
       ];
       return palette[idx % palette.length];
     };
@@ -352,17 +352,17 @@ const Syllabus = () => {
       const palette = [
         `linear-gradient(135deg, ${B1}, ${B2})`,
         `linear-gradient(135deg, ${VIOLET}, #AA77FF)`,
-        `linear-gradient(135deg, ${GREEN}, #22EE66)`,
-        `linear-gradient(135deg, ${GOLD}, #FFCC55)`,
+        `linear-gradient(135deg, ${GREEN}, #34C759)`,
+        `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
       ];
       return palette[idx % palette.length];
     };
     const chipShadow = (idx: number) => {
       const palette = [
-        "0 2px 8px rgba(0,85,255,.28)",
-        "0 2px 8px rgba(123,63,244,.28)",
-        "0 2px 8px rgba(0,200,83,.28)",
-        "0 2px 8px rgba(255,170,0,.28)",
+        "0 2px 8px rgba(10,132,255,.28)",
+        "0 2px 8px rgba(175,82,222,.28)",
+        "0 2px 8px rgba(52,199,89,.28)",
+        "0 2px 8px rgba(255,204,0,.28)",
       ];
       return palette[idx % palette.length];
     };
@@ -393,8 +393,8 @@ const Syllabus = () => {
     return (
       <div
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
-          background: "#EEF4FF",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -402,7 +402,7 @@ const Syllabus = () => {
         {/* PAGE HEAD */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 24, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
+            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3 }}>
               Syllabus
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400, lineHeight: 1.5 }}>
@@ -420,11 +420,11 @@ const Syllabus = () => {
               alignItems: "center",
               gap: 6,
               fontSize: 12,
-              fontWeight: 700,
+              fontWeight: 600,
               color: "#fff",
               border: "none",
               cursor: "pointer",
-              boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+              boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
               marginTop: 4,
               flexShrink: 0,
             }}
@@ -443,9 +443,9 @@ const Syllabus = () => {
               sub: totalCount === 0 ? "None uploaded yet" : "Across all classes",
               valColor: B1,
               subColor: T3,
-              cardBg: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
+              cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
               iconBg: `linear-gradient(135deg, ${B1}, ${B2})`,
-              iconShadow: "0 4px 14px rgba(0,85,255,0.28)",
+              iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
               icon: Library,
               decorIcon: Library,
               decorColor: B1,
@@ -456,11 +456,11 @@ const Syllabus = () => {
               label: "Classes\nCovered",
               value: classesCount,
               sub: classesCount === 0 ? "No classes yet" : "With at least one syllabus",
-              valColor: "#007830",
-              subColor: "#007830",
-              cardBg: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-              iconBg: `linear-gradient(135deg, ${GREEN}, #22EE66)`,
-              iconShadow: "0 4px 14px rgba(0,200,83,0.26)",
+              valColor: "#248A3D",
+              subColor: "#248A3D",
+              cardBg: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+              iconBg: `linear-gradient(135deg, ${GREEN}, #34C759)`,
+              iconShadow: "0 4px 14px rgba(52,199,89,0.26)",
               icon: Building2,
               decorIcon: Building2,
               decorColor: GREEN,
@@ -479,9 +479,9 @@ const Syllabus = () => {
               sub: subjectsCount === 0 ? "No subjects yet" : "Distinct subjects",
               valColor: VIOLET,
               subColor: T3,
-              cardBg: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-              iconBg: `linear-gradient(135deg, ${VIOLET}, #A07CF8)`,
-              iconShadow: "0 4px 14px rgba(123,63,244,0.26)",
+              cardBg: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+              iconBg: `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
+              iconShadow: "0 4px 14px rgba(175,82,222,0.26)",
               icon: BookOpen,
               decorIcon: BookOpen,
               decorColor: VIOLET,
@@ -500,9 +500,9 @@ const Syllabus = () => {
               sub: "Past 7 days",
               valColor: "#A86A00",
               subColor: T3,
-              cardBg: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-              iconBg: `linear-gradient(135deg, ${GOLD}, #FFDD44)`,
-              iconShadow: "0 4px 14px rgba(255,170,0,0.28)",
+              cardBg: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+              iconBg: `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
+              iconShadow: "0 4px 14px rgba(255,204,0,0.28)",
               icon: Calendar,
               decorIcon: Calendar,
               decorColor: GOLD,
@@ -527,8 +527,8 @@ const Syllabus = () => {
                   background: card.cardBg,
                   borderRadius: 20,
                   padding: 16,
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-                  border: "0.5px solid rgba(0,85,255,0.10)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+                  border: "0.5px solid rgba(10,132,255,0.10)",
                   position: "relative",
                   overflow: "hidden",
                   cursor: "pointer",
@@ -553,10 +553,10 @@ const Syllabus = () => {
                 >
                   <Icon size={22} color="#fff" strokeWidth={2.3} />
                 </div>
-                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, lineHeight: 1.3, marginBottom: 6, whiteSpace: "pre-line", position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, lineHeight: 1.3, marginBottom: 6, whiteSpace: "pre-line", position: "relative", zIndex: 1 }}>
                   {card.label}
                 </div>
-                <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-1px", lineHeight: 1, marginBottom: 6, color: card.valColor, position: "relative", zIndex: 1 }}>
+                <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-1px", lineHeight: 1, marginBottom: 6, color: card.valColor, position: "relative", zIndex: 1 }}>
                   {card.value}
                 </div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: card.subColor, position: "relative", zIndex: 1 }}>{card.sub}</div>
@@ -574,7 +574,7 @@ const Syllabus = () => {
         <div style={{ margin: "12px 20px 0", display: "flex", gap: 8 }}>
           <div style={{ flex: 1, position: "relative" }}>
             <div style={{ position: "absolute", left: 13, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "flex" }}>
-              <Search size={15} color="rgba(0,85,255,.42)" strokeWidth={2.2} />
+              <Search size={15} color="rgba(10,132,255,.42)" strokeWidth={2.2} />
             </div>
             <input
               value={searchQuery}
@@ -585,13 +585,13 @@ const Syllabus = () => {
                 padding: "12px 14px 12px 42px",
                 background: "#fff",
                 borderRadius: 14,
-                border: "0.5px solid rgba(0,85,255,.12)",
+                border: "0.5px solid rgba(10,132,255,.12)",
                 fontFamily: "inherit",
                 fontSize: 13,
                 color: T1,
                 fontWeight: 400,
                 outline: "none",
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08), 0 10px 26px rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08), 0 10px 26px rgba(10,132,255,.10)",
               }}
             />
           </div>
@@ -607,12 +607,12 @@ const Syllabus = () => {
               padding: "0 12px",
               background: "#fff",
               borderRadius: 14,
-              border: "0.5px solid rgba(0,85,255,.12)",
+              border: "0.5px solid rgba(10,132,255,.12)",
               fontFamily: "inherit",
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               color: T2,
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
               cursor: "pointer",
               height: 46,
               appearance: "none",
@@ -632,12 +632,12 @@ const Syllabus = () => {
               padding: "0 12px",
               background: "#fff",
               borderRadius: 14,
-              border: "0.5px solid rgba(0,85,255,.12)",
+              border: "0.5px solid rgba(10,132,255,.12)",
               fontFamily: "inherit",
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               color: T2,
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
               cursor: "pointer",
               height: 46,
               appearance: "none",
@@ -655,7 +655,7 @@ const Syllabus = () => {
         <div
           style={{
             fontSize: 9,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -670,10 +670,10 @@ const Syllabus = () => {
             style={{
               padding: "3px 9px",
               borderRadius: 100,
-              background: "rgba(0,85,255,.10)",
-              border: "0.5px solid rgba(0,85,255,.16)",
+              background: "rgba(10,132,255,.10)",
+              border: "0.5px solid rgba(10,132,255,.16)",
               fontSize: 9,
-              fontWeight: 700,
+              fontWeight: 600,
               color: B1,
               textTransform: "none",
               letterSpacing: "0.04em",
@@ -681,7 +681,7 @@ const Syllabus = () => {
           >
             {filtered.length} document{filtered.length === 1 ? "" : "s"}
           </span>
-          <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+          <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
         </div>
 
         {/* ERROR */}
@@ -690,8 +690,8 @@ const Syllabus = () => {
             style={{
               margin: "12px 20px 0",
               padding: 14,
-              background: "rgba(255,51,85,.08)",
-              border: "0.5px solid rgba(255,51,85,.18)",
+              background: "rgba(255,59,48,.08)",
+              border: "0.5px solid rgba(255,59,48,.18)",
               borderRadius: 14,
               fontSize: 12,
               color: RED,
@@ -715,7 +715,7 @@ const Syllabus = () => {
               background: "#fff",
               borderRadius: 22,
               padding: "32px 20px 28px",
-              boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
+              boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
@@ -731,7 +731,7 @@ const Syllabus = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 0 0 10px rgba(0,85,255,.07)",
+                boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 0 0 10px rgba(10,132,255,.07)",
                 marginBottom: 4,
               }}
             >
@@ -741,7 +741,7 @@ const Syllabus = () => {
                 <FileText size={28} color="#fff" strokeWidth={2.2} />
               )}
             </div>
-            <div style={{ fontSize: 17, fontWeight: 700, color: T1, letterSpacing: "-0.3px", textAlign: "center" }}>
+            <div style={{ fontSize: 17, fontWeight: 600, color: T1, letterSpacing: "-0.3px", textAlign: "center" }}>
               {syllabi.length === 0 ? "No syllabi uploaded yet" : "No syllabi match your filters"}
             </div>
             <div style={{ fontSize: 12, color: T3, textAlign: "center", maxWidth: 220, lineHeight: 1.6, fontWeight: 400 }}>
@@ -759,10 +759,10 @@ const Syllabus = () => {
                   background: `linear-gradient(135deg, ${B1}, ${B2})`,
                   color: "#fff",
                   fontSize: 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   border: "none",
                   cursor: "pointer",
-                  boxShadow: "0 6px 22px rgba(0,85,255,.40)",
+                  boxShadow: "0 6px 22px rgba(10,132,255,.40)",
                 }}
               >
                 Clear Filters
@@ -789,8 +789,8 @@ const Syllabus = () => {
                   margin: "12px 20px 0",
                   background: "#fff",
                   borderRadius: 24,
-                  boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-                  border: "0.5px solid rgba(0,85,255,.10)",
+                  boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+                  border: "0.5px solid rgba(10,132,255,.10)",
                   overflow: "hidden",
                   position: "relative",
                 }}
@@ -806,7 +806,7 @@ const Syllabus = () => {
                         padding: "5px 13px",
                         borderRadius: 100,
                         fontSize: 11,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
                         flexShrink: 0,
@@ -822,8 +822,8 @@ const Syllabus = () => {
                         width: 36,
                         height: 36,
                         borderRadius: 12,
-                        background: isRecent ? "rgba(0,200,83,.10)" : "rgba(0,85,255,.10)",
-                        border: `0.5px solid ${isRecent ? "rgba(0,200,83,.22)" : "rgba(0,85,255,.18)"}`,
+                        background: isRecent ? "rgba(52,199,89,.10)" : "rgba(10,132,255,.10)",
+                        border: `0.5px solid ${isRecent ? "rgba(52,199,89,.22)" : "rgba(10,132,255,.18)"}`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -837,7 +837,7 @@ const Syllabus = () => {
                   </div>
 
                   <div style={{ flex: 1, paddingLeft: 4, minWidth: 0 }}>
-                    <div style={{ fontSize: 16, fontWeight: 700, color: T1, letterSpacing: "-0.3px", marginBottom: 6, lineHeight: 1.3 }}>
+                    <div style={{ fontSize: 16, fontWeight: 600, color: T1, letterSpacing: "-0.3px", marginBottom: 6, lineHeight: 1.3 }}>
                       {title}
                     </div>
 
@@ -848,9 +848,9 @@ const Syllabus = () => {
                         alignItems: "center",
                         gap: 7,
                         padding: "8px 10px",
-                        background: "rgba(0,85,255,.05)",
+                        background: "rgba(10,132,255,.05)",
                         borderRadius: 11,
-                        border: "0.5px solid rgba(0,85,255,.10)",
+                        border: "0.5px solid rgba(10,132,255,.10)",
                         marginBottom: 8,
                         cursor: "pointer",
                         width: "100%",
@@ -862,8 +862,8 @@ const Syllabus = () => {
                           width: 26,
                           height: 26,
                           borderRadius: 8,
-                          background: "rgba(255,51,85,.10)",
-                          border: "0.5px solid rgba(255,51,85,.18)",
+                          background: "rgba(255,59,48,.10)",
+                          border: "0.5px solid rgba(255,59,48,.18)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -875,7 +875,7 @@ const Syllabus = () => {
                       <span
                         style={{
                           fontSize: 11,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: T2,
                           letterSpacing: "-0.1px",
                           flex: 1,
@@ -889,10 +889,10 @@ const Syllabus = () => {
                       <span
                         style={{
                           fontSize: 10,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: T4,
                           flexShrink: 0,
-                          background: "#E0ECFF",
+                          background: "#EBEBF0",
                           padding: "2px 7px",
                           borderRadius: 100,
                         }}
@@ -909,8 +909,8 @@ const Syllabus = () => {
                           gap: 6,
                           padding: "4px 10px",
                           borderRadius: 100,
-                          background: "#EEF4FF",
-                          border: "0.5px solid rgba(0,85,255,.12)",
+                          background: "#F5F5F7",
+                          border: "0.5px solid rgba(10,132,255,.12)",
                         }}
                       >
                         <div
@@ -918,19 +918,19 @@ const Syllabus = () => {
                             width: 20,
                             height: 20,
                             borderRadius: 6,
-                            background: `linear-gradient(135deg, ${GREEN}, #22EE66)`,
+                            background: `linear-gradient(135deg, ${GREEN}, #34C759)`,
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
                             fontSize: 8,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             color: "#fff",
                             flexShrink: 0,
                           }}
                         >
                           {teacherInit}
                         </div>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: T2 }}>{teacherName}</span>
+                        <span style={{ fontSize: 11, fontWeight: 600, color: T2 }}>{teacherName}</span>
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, fontWeight: 600, color: T4 }}>
                         <Clock size={11} strokeWidth={2.3} />
@@ -944,10 +944,10 @@ const Syllabus = () => {
                             gap: 4,
                             padding: "4px 10px",
                             borderRadius: 100,
-                            background: "rgba(123,63,244,.10)",
-                            border: "0.5px solid rgba(123,63,244,.20)",
+                            background: "rgba(175,82,222,.10)",
+                            border: "0.5px solid rgba(175,82,222,.20)",
                             fontSize: 10,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             color: VIOLET,
                           }}
                         >
@@ -963,10 +963,10 @@ const Syllabus = () => {
                             gap: 4,
                             padding: "4px 10px",
                             borderRadius: 100,
-                            background: "rgba(0,85,255,.10)",
-                            border: "0.5px solid rgba(0,85,255,.18)",
+                            background: "rgba(10,132,255,.10)",
+                            border: "0.5px solid rgba(10,132,255,.18)",
                             fontSize: 10,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             color: B1,
                           }}
                         >
@@ -991,12 +991,12 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       background: `linear-gradient(135deg, ${B1}, ${B2})`,
                       color: "#fff",
                       border: "none",
                       cursor: "pointer",
-                      boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+                      boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
                     }}
                   >
                     <Eye size={13} strokeWidth={2.2} />
@@ -1013,10 +1013,10 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 700,
-                      background: "rgba(0,200,83,.10)",
-                      color: "#007830",
-                      border: "0.5px solid rgba(0,200,83,.22)",
+                      fontWeight: 600,
+                      background: "rgba(52,199,89,.10)",
+                      color: "#248A3D",
+                      border: "0.5px solid rgba(52,199,89,.22)",
                       cursor: "pointer",
                     }}
                   >
@@ -1035,10 +1035,10 @@ const Syllabus = () => {
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 12,
-                      fontWeight: 700,
-                      background: "rgba(255,51,85,.10)",
+                      fontWeight: 600,
+                      background: "rgba(255,59,48,.10)",
                       color: RED,
-                      border: "0.5px solid rgba(255,51,85,.22)",
+                      border: "0.5px solid rgba(255,59,48,.22)",
                       cursor: "pointer",
                       opacity: deletingId === s.id ? 0.5 : 1,
                     }}
@@ -1059,7 +1059,7 @@ const Syllabus = () => {
           <div
             style={{
               margin: "12px 20px 0",
-              background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+              background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
               borderRadius: 24,
               padding: "20px 22px",
               boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -1094,23 +1094,23 @@ const Syllabus = () => {
               >
                 <Sparkles size={14} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Syllabus Intelligence
               </span>
             </div>
             <div style={{ fontSize: 13, color: "rgba(255,255,255,.85)", lineHeight: 1.72, fontWeight: 400, position: "relative", zIndex: 1 }}>
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{totalCount} syllab{totalCount === 1 ? "us" : "i"}</strong> uploaded for{" "}
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} syllab{totalCount === 1 ? "us" : "i"}</strong> uploaded for{" "}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong>.{" "}
               Subject coverage at{" "}
-              <strong style={{ color: "#fff", fontWeight: 700 }}>
+              <strong style={{ color: "#fff", fontWeight: 600 }}>
                 {classesCount === 0 ? "0%" : `${Math.min(100, Math.round((subjectsCount / Math.max(1, classesCount)) * 100))}%`}
               </strong>
               {subjectsCount === 0 ? " — no subject tags assigned yet." : "."}
               {lastUploadRel && (
                 <>
                   {" "}
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>{lastUploadRel.by}</strong> uploaded the latest document{" "}
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>{lastUploadRel.rel}</strong>.
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.by}</strong> uploaded the latest document{" "}
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.rel}</strong>.
                 </>
               )}
               {subjectsCount === 0 && " Consider adding subject metadata to improve tracking and student accessibility."}
@@ -1134,10 +1134,10 @@ const Syllabus = () => {
                 { v: lastUploadShort, l: "Last Upload" },
               ].map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "13px 12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
+                  <div style={{ fontSize: 20, fontWeight: 600, color: "#fff", letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 4 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -1155,37 +1155,37 @@ const Syllabus = () => {
   // ═══════════════════════════════════════════════════════════════
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
-  const dB1 = "#0055FF", dB2 = "#1166FF", dB4 = "#4499FF";
-  const dBG = "#EEF4FF", dBG2 = "#E0ECFF";
-  const dT1 = "#001040", dT2 = "#002080", dT3 = "#5070B0", dT4 = "#99AACC";
-  const dSEP = "rgba(0,85,255,0.08)";
-  const dGREEN = "#00C853", dGREEN_D = "#007830", dGREEN_S = "rgba(0,200,83,0.10)", dGREEN_B = "rgba(0,200,83,0.22)";
-  const dRED = "#FF3355";
-  const dGOLD = "#FFAA00";
-  const dVIOLET = "#7B3FF4";
-  const dSH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 10px rgba(0,85,255,0.07), 0 10px 28px rgba(0,85,255,0.09)";
-  const dSH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.10), 0 18px 44px rgba(0,85,255,0.12)";
+  const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
+  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
+  const dSEP = "rgba(10,132,255,0.08)";
+  const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
+  const dRED = "#FF3B30";
+  const dGOLD = "#FFCC00";
+  const dVIOLET = "#AF52DE";
+  const dSH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 10px rgba(10,132,255,0.07), 0 10px 28px rgba(10,132,255,0.09)";
+  const dSH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.10), 0 18px 44px rgba(10,132,255,0.12)";
 
   return (
     <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center gap-4 pt-2 pb-5">
         <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(0,85,255,0.28)" }}>
+          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(10,132,255,0.28)" }}>
           <Library className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-bold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Syllabus</div>
+          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Syllabus</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>View and manage syllabi uploaded by teachers for your branch</div>
         </div>
       </div>
 
       {/* Dark Hero */}
-      <div className="rounded-[22px] px-7 py-6 relative overflow-hidden text-white"
+      <div className="rounded-[22px] px-8 py-6 relative overflow-hidden text-white"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 10px 36px rgba(0,51,204,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
         }}>
         <div className="absolute -right-12 -top-12 w-[220px] h-[220px] rounded-full pointer-events-none"
@@ -1197,9 +1197,9 @@ const Syllabus = () => {
               <FileText className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.16em] mb-[6px]" style={{ color: "rgba(255,255,255,0.55)" }}>Syllabus Library</div>
+              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Syllabus Library</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[48px] font-bold leading-none tracking-tight">{loading ? "—" : totalCount}</span>
+                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : totalCount}</span>
                 <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>total documents</span>
               </div>
             </div>
@@ -1211,8 +1211,8 @@ const Syllabus = () => {
                 <Clock className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Last Upload</div>
-                <div className="text-[18px] font-bold leading-none" style={{ letterSpacing: "-0.3px" }}>{lastUploadShort}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>Last Upload</div>
+                <div className="text-[18px] font-semibold leading-none" style={{ letterSpacing: "-0.3px" }}>{lastUploadShort}</div>
               </div>
             </div>
             <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.18)" }} />
@@ -1222,8 +1222,8 @@ const Syllabus = () => {
                 <CheckCircle2 className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>This Week</div>
-                <div className="text-[22px] font-bold leading-none" style={{ letterSpacing: "-0.5px" }}>{updatedThisWeek}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>This Week</div>
+                <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{updatedThisWeek}</div>
               </div>
             </div>
           </div>
@@ -1237,36 +1237,36 @@ const Syllabus = () => {
             title: "Total Syllabi", val: totalCount, valColor: dB1,
             sub: totalCount === 0 ? "None uploaded yet" : "Across all classes",
             Icon: Library,
-            cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
             tileGrad: `linear-gradient(135deg, ${dB1}, ${dB2})`,
-            tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
+            tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             decorColor: dB1,
           },
           {
             title: "Classes Covered", val: classesCount, valColor: dVIOLET,
             sub: classesCount === 0 ? "No classes yet" : "With ≥ 1 syllabus",
             Icon: Building2,
-            cardGrad: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-            tileGrad: `linear-gradient(135deg, ${dVIOLET}, #A07CF8)`,
-            tileShadow: "0 4px 14px rgba(123,63,244,0.26)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            tileGrad: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`,
+            tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             decorColor: dVIOLET,
           },
           {
             title: "Subjects Covered", val: subjectsCount, valColor: dGREEN_D,
             sub: subjectsCount === 0 ? "No subjects yet" : "Distinct subjects",
             Icon: BookOpen,
-            cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-            tileGrad: `linear-gradient(135deg, ${dGREEN}, #22EE66)`,
-            tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
+            cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+            tileGrad: `linear-gradient(135deg, ${dGREEN}, #34C759)`,
+            tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
             decorColor: dGREEN,
           },
           {
             title: "Updated This Week", val: updatedThisWeek, valColor: dGOLD,
             sub: "Past 7 days",
             Icon: Calendar,
-            cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-            tileGrad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`,
-            tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
+            cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+            tileGrad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`,
+            tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
             decorColor: dGOLD,
           },
         ].map(({ title, val, valColor, sub, Icon, cardGrad, tileGrad, tileShadow, decorColor }) => (
@@ -1281,9 +1281,9 @@ const Syllabus = () => {
             >
               <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
             </div>
-            <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
-            <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-            <p className="text-[11px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
+            <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>{title}</span>
+            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+            <p className="text-[12px] font-semibold truncate" style={{ color: dT3 }}>{sub}</p>
             <Icon
               className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
               style={{ color: decorColor, opacity: 0.18 }}
@@ -1296,13 +1296,13 @@ const Syllabus = () => {
       {/* Filter Row */}
       <div className="flex items-center gap-3 mt-5 flex-wrap">
         <div className="relative flex-1 min-w-[220px]">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(0,85,255,0.42)" }} strokeWidth={2.2} />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: "rgba(10,132,255,0.42)" }} strokeWidth={2.2} />
           <input
             type="text"
             placeholder="Search by filename, title, or teacher…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full h-11 pl-11 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
+            className="w-full h-11 pl-10 pr-4 bg-white rounded-[14px] text-[13px] font-medium outline-none"
             style={{ border: `0.5px solid ${dSEP}`, color: dT1, boxShadow: dSH, fontFamily: "inherit" }}
           />
         </div>
@@ -1332,7 +1332,7 @@ const Syllabus = () => {
       {/* Error */}
       {error && !loading && (
         <div className="mt-4 p-4 rounded-[14px] text-[13px] font-medium"
-          style={{ background: "rgba(255,51,85,0.06)", border: "0.5px solid rgba(255,51,85,0.20)", color: dRED }}>
+          style={{ background: "rgba(255,59,48,0.06)", border: "0.5px solid rgba(255,59,48,0.20)", color: dRED }}>
           {error}
         </div>
       )}
@@ -1340,26 +1340,26 @@ const Syllabus = () => {
       {/* Section Label */}
       <div className="flex items-center gap-3 mt-6 mb-3">
         <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(0,85,255,0.26)" }}>
+          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
           <FileText className="w-4 h-4 text-white" strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Uploaded Syllabi</div>
-        <span className="text-[11px] font-bold px-3 py-1 rounded-full"
-          style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.18)" }}>
+        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Uploaded Syllabi</div>
+        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+          style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length}
         </span>
       </div>
 
       {/* Cards Grid */}
       {loading ? (
-        <div className="bg-white rounded-[20px] py-16 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <Loader2 className="w-8 h-8 animate-spin" style={{ color: dB1 }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: dT4 }}>Loading syllabi…</p>
+          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Loading syllabi…</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="bg-white rounded-[20px] py-20 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-16 h-16 rounded-[18px] flex items-center justify-center"
-            style={{ background: "rgba(0,85,255,0.08)", border: `0.5px solid ${dSEP}` }}>
+            style={{ background: "rgba(10,132,255,0.08)", border: `0.5px solid ${dSEP}` }}>
             {syllabi.length === 0 ? (
               <Library className="w-8 h-8" style={{ color: dT4 }} strokeWidth={2} />
             ) : (
@@ -1368,13 +1368,13 @@ const Syllabus = () => {
           </div>
           {syllabi.length === 0 ? (
             <>
-              <p className="text-[14px] font-bold" style={{ color: dT1 }}>No syllabi uploaded yet</p>
-              <p className="text-[11px] max-w-[280px]" style={{ color: dT4 }}>Teachers can upload syllabi from their dashboard.</p>
+              <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No syllabi uploaded yet</p>
+              <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>Teachers can upload syllabi from their dashboard.</p>
             </>
           ) : (
             <>
-              <p className="text-[14px] font-bold" style={{ color: dT1 }}>No syllabi match your filters</p>
-              <p className="text-[11px] max-w-[280px]" style={{ color: dT4 }}>Try clearing filters or changing your search.</p>
+              <p className="text-[14px] font-semibold" style={{ color: dT1 }}>No syllabi match your filters</p>
+              <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>Try clearing filters or changing your search.</p>
             </>
           )}
         </div>
@@ -1390,49 +1390,49 @@ const Syllabus = () => {
                 {/* Top header with gradient icon */}
                 <div className="flex items-start gap-3 p-5" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                   <div className="w-11 h-11 rounded-[13px] flex items-center justify-center shrink-0"
-                    style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(0,85,255,0.26)" }}>
+                    style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
                     <FileText className="w-5 h-5 text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.08em] px-[9px] py-[3px] rounded-full"
-                        style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.20)" }}>
+                      <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
+                        style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.20)" }}>
                         {classLabel}
                       </span>
                       {s.subject && (
-                        <span className="text-[10px] font-bold uppercase tracking-[0.08em] px-[9px] py-[3px] rounded-full"
-                          style={{ background: "rgba(123,63,244,0.10)", color: dVIOLET, border: "0.5px solid rgba(123,63,244,0.22)" }}>
+                        <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[8px] py-[4px] rounded-full"
+                          style={{ background: "rgba(175,82,222,0.10)", color: dVIOLET, border: "0.5px solid rgba(175,82,222,0.22)" }}>
                           {s.subject}
                         </span>
                       )}
                     </div>
-                    <h3 className="text-[14px] font-bold leading-tight line-clamp-2" style={{ color: dT1, letterSpacing: "-0.2px" }}>{title}</h3>
+                    <h3 className="text-[14px] font-semibold leading-tight line-clamp-2" style={{ color: dT1, letterSpacing: "-0.2px" }}>{title}</h3>
                   </div>
                 </div>
 
                 {/* Body */}
                 <div className="flex-1 p-5 flex flex-col gap-3">
-                  <div className="flex items-center gap-2 text-[11px] font-medium" style={{ color: dT3 }}>
-                    <FileText className="w-[12px] h-[12px] shrink-0" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.4} />
+                  <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <FileText className="w-[12px] h-[12px] shrink-0" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.4} />
                     <span className="truncate">{s.fileName || "file.pdf"}</span>
-                    <span className="text-[10px] font-bold px-[7px] py-[2px] rounded-full shrink-0"
+                    <span className="text-[12px] font-semibold px-[8px] py-[2px] rounded-full shrink-0"
                       style={{ background: dBG, color: dT2 }}>
                       {formatFileSize(s.fileSize)}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 text-[11px] font-medium" style={{ color: dT3 }}>
-                    <div className="w-5 h-5 rounded-[6px] flex items-center justify-center text-[9px] font-bold text-white shrink-0"
+                  <div className="flex items-center gap-2 text-[12px] font-medium" style={{ color: dT3 }}>
+                    <div className="w-5 h-5 rounded-[6px] flex items-center justify-center text-[12px] font-semibold text-white shrink-0"
                       style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})` }}>
                       {(s.uploadedByName || "U").split(" ").map(w => w[0]).filter(Boolean).slice(0, 2).join("").toUpperCase()}
                     </div>
                     <span className="truncate" style={{ color: dT2, fontWeight: 600 }}>{s.uploadedByName || "Unknown"}</span>
-                    <span className="text-[10px]" style={{ color: dT4 }}>·</span>
+                    <span className="text-[12px]" style={{ color: dT4 }}>·</span>
                     <span>{formatRelativeTime(s.uploadedAt)}</span>
                   </div>
                   {s.academicYear && (
                     <div>
-                      <span className="inline-flex items-center gap-1 text-[10px] font-bold px-[9px] py-[3px] rounded-full uppercase tracking-[0.08em]"
-                        style={{ background: "rgba(255,170,0,0.10)", color: "#884400", border: "0.5px solid rgba(255,170,0,0.22)" }}>
+                      <span className="inline-flex items-center gap-1 text-[12px] font-semibold px-[8px] py-[4px] rounded-full uppercase tracking-[0.08em]"
+                        style={{ background: "rgba(255,204,0,0.10)", color: "#86310C", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                         <Calendar className="w-[11px] h-[11px]" strokeWidth={2.4} />
                         {s.academicYear}
                       </span>
@@ -1443,15 +1443,15 @@ const Syllabus = () => {
                 {/* Actions */}
                 <div className="flex gap-2 p-4" style={{ borderTop: `0.5px solid ${dSEP}`, background: dBG }}>
                   <button onClick={() => handleView(s.fileUrl)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-bold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
-                    style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(0,85,255,0.26)" }}>
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
+                    style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
                     <Eye className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
                     <span className="relative z-10">View PDF</span>
                   </button>
                   <button onClick={() => handleDelete(s)} disabled={deletingId === s.id}
                     className="w-10 h-10 rounded-[12px] flex items-center justify-center bg-white disabled:opacity-50 transition-transform hover:scale-[1.04]"
-                    style={{ border: `0.5px solid rgba(255,51,85,0.20)`, color: dRED }}
+                    style={{ border: `0.5px solid rgba(255,59,48,0.20)`, color: dRED }}
                     title="Delete syllabus">
                     {deletingId === s.id
                       ? <Loader2 className="w-[13px] h-[13px] animate-spin" />
@@ -1466,9 +1466,9 @@ const Syllabus = () => {
 
       {/* AI Intelligence Card */}
       {!loading && totalCount > 0 && lastUploadRel && (
-        <div className="mt-5 rounded-[22px] px-7 py-6 relative overflow-hidden"
+        <div className="mt-5 rounded-[22px] px-8 py-6 relative overflow-hidden"
           style={{
-            background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+            background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
             boxShadow: "0 10px 36px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
           }}>
           <div className="absolute -top-10 -right-7 w-[200px] h-[200px] rounded-full pointer-events-none"
@@ -1478,16 +1478,16 @@ const Syllabus = () => {
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Syllabus Intelligence</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Syllabus Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            Your library has <strong style={{ color: "#fff", fontWeight: 700 }}>{totalCount} syllabi</strong> across <strong style={{ color: "#fff", fontWeight: 700 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong> and <strong style={{ color: "#fff", fontWeight: 700 }}>{subjectsCount} subject{subjectsCount === 1 ? "" : "s"}</strong>.
-            Latest upload by <strong style={{ color: "#fff", fontWeight: 700 }}>{lastUploadRel.by}</strong> was <strong style={{ color: "#fff", fontWeight: 700 }}>{lastUploadRel.rel}</strong>.
-            {updatedThisWeek > 0 && <> <strong style={{ color: "#fff", fontWeight: 700 }}>{updatedThisWeek}</strong> new document{updatedThisWeek === 1 ? "" : "s"} added this week.</>}
+            Your library has <strong style={{ color: "#fff", fontWeight: 600 }}>{totalCount} syllabi</strong> across <strong style={{ color: "#fff", fontWeight: 600 }}>{classesCount} class{classesCount === 1 ? "" : "es"}</strong> and <strong style={{ color: "#fff", fontWeight: 600 }}>{subjectsCount} subject{subjectsCount === 1 ? "" : "s"}</strong>.
+            Latest upload by <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.by}</strong> was <strong style={{ color: "#fff", fontWeight: 600 }}>{lastUploadRel.rel}</strong>.
+            {updatedThisWeek > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{updatedThisWeek}</strong> new document{updatedThisWeek === 1 ? "" : "s"} added this week.</>}
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-            <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}

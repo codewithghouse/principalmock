@@ -23,7 +23,7 @@ const StatCard = ({ title, value, subtitle, subtitleColor = "muted", icon: Icon,
         <span className="text-sm text-muted-foreground">{title}</span>
         {Icon && <Icon className={`w-5 h-5 ${iconColor || "text-muted-foreground"}`} />}
       </div>
-      <div className="text-2xl font-bold text-foreground">{value}</div>
+      <div className="text-2xl font-semibold text-foreground">{value}</div>
       {subtitle && (
         <span className={`text-xs ${subtitleColors[subtitleColor]}`}>{subtitle}</span>
       )}

@@ -254,16 +254,16 @@ export default function MigrationEngine() {
   };
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-12 shadow-2xl text-white relative overflow-hidden text-left">
+    <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-10 shadow-2xl text-white relative overflow-hidden text-left">
        <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
        <div className="relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 border-b border-white/10 pb-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-10 border-b border-white/10 pb-8">
              <div>
-                <h2 className="text-3xl font-black text-white tracking-tight flex items-center gap-4">
+                <h2 className="text-3xl font-semibold text-white tracking-tight flex items-center gap-4">
                    <Database className="w-8 h-8 text-indigo-400" /> Infrastructure Maintenance Engine
                 </h2>
-                <p className="text-xs font-black text-slate-400 uppercase tracking-widest mt-3 max-w-2xl leading-relaxed">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mt-3 max-w-2xl leading-relaxed">
                    Repair institutional context and migrate legacy architecture to Phase 2/3 Assignment-based systems.
                 </p>
              </div>
@@ -272,14 +272,14 @@ export default function MigrationEngine() {
                 <button
                     onClick={repairInstitutionalContext}
                     disabled={analyzing || migrating}
-                    className="shrink-0 px-8 py-4 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all flex items-center gap-3 disabled:opacity-50"
+                    className="shrink-0 px-8 py-4 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 rounded-2xl text-[12px] font-semibold uppercase tracking-[0.2em] transition-all flex items-center gap-3 disabled:opacity-50"
                  >
                     <ShieldCheck className="w-4 h-4"/> Heal Ghost Records
                  </button>
                 <button
                     onClick={analyzeDatabase}
                     disabled={analyzing || migrating}
-                    className="shrink-0 px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all shadow-xl shadow-indigo-900/50 flex items-center gap-3 disabled:opacity-50"
+                    className="shrink-0 px-8 py-4 bg-indigo-500 hover:bg-indigo-600 text-white rounded-2xl text-[12px] font-semibold uppercase tracking-[0.2em] transition-all shadow-xl shadow-indigo-900/50 flex items-center gap-3 disabled:opacity-50"
                  >
                     {analyzing ? <Loader2 className="w-4 h-4 animate-spin"/> : <RefreshCcw className="w-4 h-4"/>}
                     Run Full Audit
@@ -288,17 +288,17 @@ export default function MigrationEngine() {
           </div>
 
           {!report && !analyzing && (
-              <div className="py-20 text-center border-2 border-dashed border-white/10 rounded-[2rem] bg-white/5">
+              <div className="py-10 text-center border-2 border-dashed border-white/10 rounded-[2rem] bg-white/5">
                  <ShieldCheck className="w-16 h-16 text-slate-600 mx-auto mb-6" />
-                 <h3 className="text-lg font-black tracking-tight mb-2">Systems Ready for Inspection</h3>
-                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Execute an Audit or Heal Ghost records to restore institutional visibility.</p>
+                 <h3 className="text-lg font-semibold tracking-tight mb-2">Systems Ready for Inspection</h3>
+                 <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Execute an Audit or Heal Ghost records to restore institutional visibility.</p>
               </div>
           )}
 
           {analyzing && (
-              <div className="py-20 flex flex-col items-center justify-center border-2 border-dashed border-indigo-500/30 rounded-[2rem] bg-indigo-500/5">
+              <div className="py-10 flex flex-col items-center justify-center border-2 border-dashed border-indigo-500/30 rounded-[2rem] bg-indigo-500/5">
                  <Loader2 className="w-16 h-16 text-indigo-400 animate-spin mb-6" />
-                 <p className="text-[10px] font-black text-indigo-300 uppercase tracking-widest animate-pulse">Scanning production schema structures...</p>
+                 <p className="text-[12px] font-semibold text-indigo-300 uppercase tracking-widest animate-pulse">Scanning production schema structures...</p>
               </div>
           )}
 
@@ -306,19 +306,19 @@ export default function MigrationEngine() {
               <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4">
                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md">
-                       <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-2">Valid Architecture</p>
-                       <p className="text-5xl font-black">{report.totalValid}</p>
-                       <p className="text-[9px] font-bold text-slate-400 mt-2">Documents already aligned with Phase 2</p>
+                       <p className="text-[12px] font-semibold text-emerald-400 uppercase tracking-widest mb-2">Valid Architecture</p>
+                       <p className="text-5xl font-semibold">{report.totalValid}</p>
+                       <p className="text-[12px] font-semibold text-slate-400 mt-2">Documents already aligned with Phase 2</p>
                     </div>
                     <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-3xl p-8 backdrop-blur-md">
-                       <p className="text-[10px] font-black text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Play className="w-3 h-3"/> Pending Migration</p>
-                       <p className="text-5xl font-black text-indigo-300">{report.totalToMigrate}</p>
-                       <p className="text-[9px] font-bold text-slate-400 mt-2">Ready for Assignment ID injection</p>
+                       <p className="text-[12px] font-semibold text-indigo-400 uppercase tracking-widest mb-2 flex items-center gap-2"><Play className="w-3 h-3"/> Pending Migration</p>
+                       <p className="text-5xl font-semibold text-indigo-300">{report.totalToMigrate}</p>
+                       <p className="text-[12px] font-semibold text-slate-400 mt-2">Ready for Assignment ID injection</p>
                     </div>
                     <div className="bg-rose-500/10 border border-rose-500/20 rounded-3xl p-8 backdrop-blur-md">
-                       <p className="text-[10px] font-black text-rose-400 uppercase tracking-widest mb-2 flex items-center gap-2"><AlertTriangle className="w-3 h-3"/> Orphaned Data</p>
-                       <p className="text-5xl font-black text-rose-300">{report.totalOrphaned}</p>
-                       <p className="text-[9px] font-bold text-slate-400 mt-2">Missing origin class or teacher</p>
+                       <p className="text-[12px] font-semibold text-rose-400 uppercase tracking-widest mb-2 flex items-center gap-2"><AlertTriangle className="w-3 h-3"/> Orphaned Data</p>
+                       <p className="text-5xl font-semibold text-rose-300">{report.totalOrphaned}</p>
+                       <p className="text-[12px] font-semibold text-slate-400 mt-2">Missing origin class or teacher</p>
                     </div>
                  </div>
 
@@ -326,19 +326,19 @@ export default function MigrationEngine() {
                     <table className="w-full text-left">
                        <thead className="bg-white/5">
                           <tr>
-                             <th className="py-5 px-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] border-b border-white/5">Collection Matrix</th>
-                             <th className="py-5 px-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-center border-b border-white/5">Healthy</th>
-                             <th className="py-5 px-6 text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em] text-center border-b border-white/5">To Upgrade</th>
-                             <th className="py-5 px-6 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-center border-b border-white/5">Ignored</th>
+                             <th className="py-5 px-6 text-[12px] font-semibold text-slate-400 uppercase tracking-[0.2em] border-b border-white/5">Collection Matrix</th>
+                             <th className="py-5 px-6 text-[12px] font-semibold text-slate-400 uppercase tracking-[0.2em] text-center border-b border-white/5">Healthy</th>
+                             <th className="py-5 px-6 text-[12px] font-semibold text-indigo-400 uppercase tracking-[0.2em] text-center border-b border-white/5">To Upgrade</th>
+                             <th className="py-5 px-6 text-[12px] font-semibold text-slate-400 uppercase tracking-[0.2em] text-center border-b border-white/5">Ignored</th>
                           </tr>
                        </thead>
                        <tbody className="divide-y divide-white/5">
                           {COLLECTIONS.map(col => (
                              <tr key={col} className="hover:bg-white/5 transition-colors">
-                                <td className="py-4 px-6 text-sm font-black text-slate-200">{col}</td>
-                                <td className="py-4 px-6 text-center text-emerald-400 text-sm font-bold">{report.stats[col].valid}</td>
-                                <td className="py-4 px-6 text-center text-indigo-300 text-sm font-black">{report.stats[col].toMigrate}</td>
-                                <td className="py-4 px-6 text-center text-slate-500 text-xs font-bold">{report.stats[col].orphan}</td>
+                                <td className="py-4 px-6 text-sm font-semibold text-slate-200">{col}</td>
+                                <td className="py-4 px-6 text-center text-emerald-400 text-sm font-semibold">{report.stats[col].valid}</td>
+                                <td className="py-4 px-6 text-center text-indigo-300 text-sm font-semibold">{report.stats[col].toMigrate}</td>
+                                <td className="py-4 px-6 text-center text-slate-500 text-xs font-semibold">{report.stats[col].orphan}</td>
                              </tr>
                           ))}
                        </tbody>
@@ -346,13 +346,13 @@ export default function MigrationEngine() {
                  </div>
 
                  <div className="flex items-center justify-between pt-6 border-t border-white/10">
-                    <button onClick={() => setShowDebug(!showDebug)} className="text-[10px] font-black uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <button onClick={() => setShowDebug(!showDebug)} className="text-[12px] font-semibold uppercase tracking-widest text-indigo-400 hover:text-indigo-300 transition-colors">
                        {showDebug ? "Hide Trace Logs" : "Show Trace Logs & Orphan Details"}
                     </button>
                     <button
                        onClick={executeMigration}
                        disabled={report.totalToMigrate === 0 || migrating}
-                       className="px-10 py-5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] transition-all shadow-xl shadow-indigo-900/50 flex items-center gap-3 disabled:opacity-50 disabled:bg-slate-700"
+                       className="px-10 py-5 bg-indigo-500 hover:bg-indigo-600 text-white rounded-2xl text-xs font-semibold uppercase tracking-[0.2em] transition-all shadow-xl shadow-indigo-900/50 flex items-center gap-3 disabled:opacity-50 disabled:bg-slate-700"
                     >
                        {migrating ? <Loader2 className="w-5 h-5 animate-spin"/> : <CheckCircle2 className="w-5 h-5"/>}
                        {migrating ? "Processing..." : "Complete Architecture Migration"}
@@ -361,10 +361,10 @@ export default function MigrationEngine() {
 
                  {showDebug && (
                     <div className="mt-10 space-y-6 animate-in slide-in-from-top-4 duration-500">
-                       <h4 className="text-sm font-black uppercase tracking-widest text-slate-500 flex items-center gap-2"> Trace Logs</h4>
+                       <h4 className="text-sm font-semibold uppercase tracking-widest text-slate-500 flex items-center gap-2"> Trace Logs</h4>
                        <div className="bg-black/20 border border-white/5 rounded-2xl p-4 max-h-[400px] overflow-y-auto space-y-2">
                           {debugLogs.map((log, i) => (
-                             <div key={i} className={`p-4 rounded-xl text-[10px] font-mono ${log.type === 'error' ? 'bg-rose-500/10 text-rose-300' : 'bg-indigo-500/10 text-indigo-300'}`}>
+                             <div key={i} className={`p-4 rounded-xl text-[12px] font-mono ${log.type === 'error' ? 'bg-rose-500/10 text-rose-300' : 'bg-indigo-500/10 text-indigo-300'}`}>
                                 <b>[{log.type.toUpperCase()}]</b> {log.col ? `${log.col} • ${log.id}` : log.msg}
                              </div>
                           ))}

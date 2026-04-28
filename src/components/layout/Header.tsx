@@ -24,10 +24,10 @@ const Header = ({ onMenuClick }: HeaderProps) => {
           <GraduationCap className="w-5 h-5 text-primary-foreground" />
         </div>
         <div className="flex flex-col min-w-0">
-          <span className="text-sm font-bold text-primary uppercase leading-tight truncate max-w-[120px] sm:max-w-none">
+          <span className="text-sm font-semibold text-primary uppercase leading-tight truncate max-w-[120px] sm:max-w-none">
             {userData?.schoolName || "EDULLENT"}
           </span>
-          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-none">
+          <span className="text-[12px] font-semibold text-muted-foreground uppercase tracking-widest leading-none">
             {userData?.branchName || userData?.branch || userData?.branchId || "Portal"}
           </span>
         </div>
@@ -40,10 +40,10 @@ const Header = ({ onMenuClick }: HeaderProps) => {
         <div className="h-8 w-[1px] bg-border mx-1 hidden sm:block" />
         <div className="flex items-center gap-2 md:gap-3">
           <div className="flex flex-col items-end hidden sm:flex">
-            <span className="text-sm font-bold text-foreground leading-none">
+            <span className="text-sm font-semibold text-foreground leading-none">
               {userData?.name || user?.displayName || "User"}
             </span>
-            <span className="text-[10px] font-medium text-muted-foreground uppercase">
+            <span className="text-[12px] font-medium text-muted-foreground uppercase">
               {userData?.role || "Administrator"}
             </span>
           </div>

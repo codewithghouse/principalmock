@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component<Props, State> {
             <AlertTriangle className="w-8 h-8 text-rose-500" />
           </div>
           <div className="text-center max-w-md">
-            <h1 className="text-xl font-black text-slate-900 mb-2">Something went wrong</h1>
+            <h1 className="text-xl font-semibold text-slate-900 mb-2">Something went wrong</h1>
             <p className="text-sm text-slate-500 font-medium mb-6">
               {this.state.error?.message || "An unexpected error occurred. Please reload the page."}
             </p>
@@ -40,7 +40,7 @@ class ErrorBoundary extends React.Component<Props, State> {
                 this.setState({ hasError: false, error: null });
                 window.location.reload();
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] transition-colors"
             >
               <RefreshCw className="w-4 h-4" /> Reload Page
             </button>

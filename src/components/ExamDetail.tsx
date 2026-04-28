@@ -70,8 +70,8 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       subtitle: `Date: ${exam.dateLabel} · Total Students: ${exam.totalStudents}`,
       badge: "Exam Results",
       heroStats: [
-        { label: "Pass Rate",  value: `${exam.passRate}%`,  color: exam.passRate  >= 75 ? "#4ade80" : "#fbbf24" },
-        { label: "Average",    value: `${exam.avgPct}%`,    color: exam.avgPct    >= 75 ? "#4ade80" : "#fbbf24" },
+        { label: "Pass Rate",  value: `${exam.passRate}%`,  color: exam.passRate  >= 75 ? "#34C759" : "#FFCC00" },
+        { label: "Average",    value: `${exam.avgPct}%`,    color: exam.avgPct    >= 75 ? "#34C759" : "#FFCC00" },
         { label: "Appeared",   value: exam.totalStudents },
         { label: "Passed",     value: presentScores.filter(s => (s.percentage || 0) >= 50).length },
       ],
@@ -153,8 +153,8 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
         <div className="bg-card rounded-2xl w-full max-w-lg shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
           <div className="flex items-center justify-between px-6 py-4 border-b border-border">
-            <h3 className="text-base font-bold text-foreground flex items-center gap-2">
-              <BarChart2 className="w-4 h-4 text-[#1e3a8a]" /> Compare with Previous
+            <h3 className="text-base font-semibold text-foreground flex items-center gap-2">
+              <BarChart2 className="w-4 h-4 text-[#1D1D1F]" /> Compare with Previous
             </h3>
             <button onClick={() => setShowCompare(false)} className="p-1.5 hover:bg-muted rounded-full">
               <X className="w-4 h-4" />
@@ -181,16 +181,16 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
                       <div className="flex items-center gap-4">
                         <div className="text-center">
                           <p className="text-xs text-muted-foreground">{prev.name}</p>
-                          <p className="text-lg font-black text-foreground">{row.prev}{row.unit}</p>
+                          <p className="text-lg font-semibold text-foreground">{row.prev}{row.unit}</p>
                         </div>
                         <span className="text-muted-foreground">→</span>
                         <div className="text-center">
                           <p className="text-xs text-muted-foreground">{curr.name}</p>
-                          <p className="text-lg font-black text-foreground">{row.curr}{row.unit}</p>
+                          <p className="text-lg font-semibold text-foreground">{row.curr}{row.unit}</p>
                         </div>
                       </div>
                     </div>
-                    <div className={`flex items-center gap-1 text-sm font-bold ${d.color}`}>
+                    <div className={`flex items-center gap-1 text-sm font-semibold ${d.color}`}>
                       <Icon className="w-4 h-4" /> {d.label}
                     </div>
                   </div>
@@ -205,7 +205,7 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
 
   /* ─── render ─────────────────────────────────────────────────── */
   return (
-    <div className="animate-in fade-in duration-300 pb-12">
+    <div className="animate-in fade-in duration-300 pb-10">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
@@ -217,22 +217,22 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       </div>
 
       {/* ── Header card ── */}
-      <div className="bg-card border border-border rounded-2xl p-7 mb-6 shadow-sm">
+      <div className="bg-card border border-border rounded-2xl p-8 mb-6 shadow-sm">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-foreground mb-1">{exam.name}</h1>
+            <h1 className="text-2xl font-semibold text-foreground mb-1">{exam.name}</h1>
             <p className="text-sm text-muted-foreground">
               Date: {exam.dateLabel || "—"} &nbsp;•&nbsp; Total Students: {exam.totalStudents}
             </p>
           </div>
           <div className="flex gap-8 shrink-0">
             <div className="text-right">
-              <p className={`text-3xl font-black ${rateColor(exam.passRate)}`}>{exam.passRate}%</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Pass Rate</p>
+              <p className={`text-3xl font-semibold ${rateColor(exam.passRate)}`}>{exam.passRate}%</p>
+              <p className="text-xs text-muted-foreground mt-1">Pass Rate</p>
             </div>
             <div className="text-right">
-              <p className={`text-3xl font-black ${rateColor(exam.avgPct)}`}>{exam.avgPct}%</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Average</p>
+              <p className={`text-3xl font-semibold ${rateColor(exam.avgPct)}`}>{exam.avgPct}%</p>
+              <p className="text-xs text-muted-foreground mt-1">Average</p>
             </div>
           </div>
         </div>
@@ -240,8 +240,8 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
 
       {/* ── Class-wise Results Summary ── */}
       <div className="bg-card border border-border rounded-2xl shadow-sm overflow-hidden mb-6">
-        <div className="px-7 py-4 border-b border-border">
-          <h2 className="text-base font-bold text-foreground">Class-wise Results Summary</h2>
+        <div className="px-8 py-4 border-b border-border">
+          <h2 className="text-base font-semibold text-foreground">Class-wise Results Summary</h2>
         </div>
         <div className="overflow-x-auto">
           {exam.classSummary.length === 0 ? (
@@ -251,7 +251,7 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
               <thead>
                 <tr className="border-b border-border">
                   {["Section", "Appeared", "Passed", "Failed", "Pass %", "Topper", "Avg %"].map(h => (
-                    <th key={h} className="px-6 py-3 text-left text-xs font-bold text-[#1e3a8a] uppercase tracking-wider whitespace-nowrap">
+                    <th key={h} className="px-6 py-3 text-left text-xs font-semibold text-[#1D1D1F] uppercase tracking-wider whitespace-nowrap">
                       {h}
                     </th>
                   ))}
@@ -260,13 +260,13 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
               <tbody className="divide-y divide-border">
                 {exam.classSummary.map((row, i) => (
                   <tr key={i} className={`hover:bg-muted/10 transition-colors ${rowHighlight(row.passRate)}`}>
-                    <td className="px-6 py-4 text-sm font-bold text-foreground">{row.section}</td>
+                    <td className="px-6 py-4 text-sm font-semibold text-foreground">{row.section}</td>
                     <td className="px-6 py-4 text-sm text-muted-foreground">{row.appeared}</td>
-                    <td className={`px-6 py-4 text-sm font-bold ${rateColor(row.passRate)}`}>{row.passed}</td>
-                    <td className="px-6 py-4 text-sm font-bold text-red-500">{row.failed}</td>
-                    <td className={`px-6 py-4 text-sm font-bold ${rateColor(row.passRate)}`}>{row.passRate}%</td>
+                    <td className={`px-6 py-4 text-sm font-semibold ${rateColor(row.passRate)}`}>{row.passed}</td>
+                    <td className="px-6 py-4 text-sm font-semibold text-red-500">{row.failed}</td>
+                    <td className={`px-6 py-4 text-sm font-semibold ${rateColor(row.passRate)}`}>{row.passRate}%</td>
                     <td className="px-6 py-4 text-sm text-muted-foreground">{row.topper}</td>
-                    <td className={`px-6 py-4 text-sm font-bold ${rateColor(row.avgPct)}`}>{row.avgPct}%</td>
+                    <td className={`px-6 py-4 text-sm font-semibold ${rateColor(row.avgPct)}`}>{row.avgPct}%</td>
                   </tr>
                 ))}
               </tbody>
@@ -279,10 +279,10 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
 
         {/* Merit List */}
-        <div className="bg-card border border-border rounded-2xl p-7 shadow-sm">
+        <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
           <div className="flex items-center justify-between mb-5">
-            <h3 className="text-base font-bold text-foreground">School Merit List (Top 5)</h3>
-            <button className="text-xs font-bold text-blue-600 hover:underline flex items-center gap-1">
+            <h3 className="text-base font-semibold text-foreground">School Merit List (Top 5)</h3>
+            <button className="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
               View All <ArrowRight className="w-3 h-3" />
             </button>
           </div>
@@ -292,25 +292,25 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
             ) : exam.meritList.map((s, i) => (
               <div key={i} className="flex items-center justify-between p-4 bg-green-50/30 border border-green-100 rounded-xl">
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white shadow-sm ${rankBg(s.rank)}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold text-white shadow-sm ${rankBg(s.rank)}`}>
                     {s.rank}
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-foreground">{s.name}</p>
+                    <p className="text-sm font-semibold text-foreground">{s.name}</p>
                     {s.className && <p className="text-xs text-muted-foreground">{s.className}</p>}
                   </div>
                 </div>
-                <span className="text-sm font-bold text-green-600">{s.avgPct}%</span>
+                <span className="text-sm font-semibold text-green-600">{s.avgPct}%</span>
               </div>
             ))}
           </div>
         </div>
 
         {/* Fail List */}
-        <div className="bg-card border border-border rounded-2xl p-7 shadow-sm">
+        <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
           <div className="flex items-center justify-between mb-5">
-            <h3 className="text-base font-bold text-foreground">Fail List (Needs Attention)</h3>
-            <button className="text-xs font-bold text-red-500 hover:underline flex items-center gap-1">
+            <h3 className="text-base font-semibold text-foreground">Fail List (Needs Attention)</h3>
+            <button className="text-xs font-semibold text-red-500 hover:underline flex items-center gap-1">
               View All <ArrowRight className="w-3 h-3" />
             </button>
           </div>
@@ -320,15 +320,15 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
             ) : exam.failList.map((s, i) => (
               <div key={i} className={`flex items-center justify-between p-4 border rounded-xl ${i === 0 ? "bg-red-50/60 border-red-100" : "bg-red-50/20 border-red-50"}`}>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-red-500 rounded-full flex items-center justify-center text-white text-[10px] font-bold shadow-sm">
+                  <div className="w-9 h-9 bg-red-500 rounded-full flex items-center justify-center text-white text-[12px] font-semibold shadow-sm">
                     {s.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-foreground">{s.name}</p>
+                    <p className="text-sm font-semibold text-foreground">{s.name}</p>
                     {s.className && <p className="text-xs text-muted-foreground">{s.className}</p>}
                   </div>
                 </div>
-                <span className="text-sm font-bold text-red-500">{s.avgPct}%</span>
+                <span className="text-sm font-semibold text-red-500">{s.avgPct}%</span>
               </div>
             ))}
           </div>
@@ -339,27 +339,27 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       <div className="flex flex-wrap items-center gap-3">
         <button
           onClick={handleDownload}
-          className="flex items-center gap-2 px-6 py-2.5 bg-[#1e3a8a] text-white rounded-lg text-sm font-bold shadow-md hover:bg-[#1e3a8a]/90 transition-colors"
+          className="flex items-center gap-2 px-6 py-2.5 bg-[#1D1D1F] text-white rounded-lg text-sm font-semibold shadow-md hover:bg-[#1D1D1F]/90 transition-colors"
         >
           <Download className="w-4 h-4" /> Download Results
         </button>
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-bold hover:bg-muted/30 transition-colors shadow-sm"
+          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-semibold hover:bg-muted/30 transition-colors shadow-sm"
         >
           <Printer className="w-4 h-4 text-muted-foreground" /> Print Report Cards
         </button>
         <button
           onClick={handleShare}
           disabled={sharingParents}
-          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-bold hover:bg-muted/30 transition-colors shadow-sm disabled:opacity-60"
+          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-semibold hover:bg-muted/30 transition-colors shadow-sm disabled:opacity-60"
         >
           <Share2 className="w-4 h-4 text-muted-foreground" />
           {sharingParents ? "Sharing…" : "Share with Parents"}
         </button>
         <button
           onClick={() => setShowCompare(true)}
-          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-bold hover:bg-muted/30 transition-colors shadow-sm"
+          className="flex items-center gap-2 px-6 py-2.5 bg-card border border-border text-foreground rounded-lg text-sm font-semibold hover:bg-muted/30 transition-colors shadow-sm"
         >
           <BarChart2 className="w-4 h-4 text-muted-foreground" /> Compare with Previous
         </button>
@@ -369,7 +369,7 @@ export default function ExamDetail({ exam, allExams, onBack, userData }: ExamDet
       <div className="mt-8">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-xl text-sm font-bold text-foreground shadow-sm hover:bg-muted/30 transition-colors"
+          className="flex items-center gap-2 px-5 py-2.5 bg-card border border-border rounded-xl text-sm font-semibold text-foreground shadow-sm hover:bg-muted/30 transition-colors"
         >
           <ChevronLeft className="w-4 h-4" /> Back to Exams
         </button>

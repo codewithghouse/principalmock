@@ -70,20 +70,20 @@ const MobileTabBar = () => {
               key={t.key}
               type="button"
               onClick={() => handleClick(t)}
-              className="flex-1 h-full flex flex-col items-center justify-center gap-[3px] transition-transform active:scale-[0.92]"
+              className="flex-1 h-full flex flex-col items-center justify-center gap-[4px] transition-transform active:scale-[0.92]"
               style={{ transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
               aria-label={t.label}
               aria-current={active ? "page" : undefined}
             >
               <Icon
                 className="w-[20px] h-[20px] transition-colors"
-                style={{ color: active ? "#111FA2" : "#94A3B8" }}
+                style={{ color: active ? "#111FA2" : "#A1A1A6" }}
                 strokeWidth={active ? 2.4 : 2}
               />
               <span
-                className="text-[10px] tracking-tight leading-tight transition-colors"
+                className="text-[12px] tracking-tight leading-tight transition-colors"
                 style={{
-                  color: active ? "#111FA2" : "#94A3B8",
+                  color: active ? "#111FA2" : "#A1A1A6",
                   fontWeight: active ? 700 : 500,
                 }}
               >

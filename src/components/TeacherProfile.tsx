@@ -8,19 +8,19 @@ import { toast } from "sonner";
 
 // ── Tokens — aligned to principal-dashboard palette ─────────────────────
 const T = {
-  bg:   "#EEF4FF",
+  bg:   "#F5F5F7",
   white:"#fff",
-  ink:  "#001040",
-  ink2: "#5070B0",
-  ink3: "#99AACC",
-  bdr:  "rgba(0,85,255,0.10)",
-  s1:   "rgba(0,85,255,0.04)",
-  s2:   "rgba(0,85,255,0.08)",
-  blue: "#0055FF",
-  blBg: "rgba(0,85,255,0.10)",
-  grn:  "#00C853", glBg: "rgba(0,200,83,0.10)",
-  red:  "#FF3355", rlBg: "rgba(255,51,85,0.10)",
-  amb:  "#FF8800", alBg: "rgba(255,136,0,0.10)",
+  ink:  "#1D1D1F",
+  ink2: "#6E6E73",
+  ink3: "#A1A1A6",
+  bdr:  "rgba(10,132,255,0.10)",
+  s1:   "rgba(10,132,255,0.04)",
+  s2:   "rgba(10,132,255,0.08)",
+  blue: "#0A84FF",
+  blBg: "rgba(10,132,255,0.10)",
+  grn:  "#34C759", glBg: "rgba(52,199,89,0.10)",
+  red:  "#FF3B30", rlBg: "rgba(255,59,48,0.10)",
+  amb:  "#FF9500", alBg: "rgba(255,149,0,0.10)",
 };
 const toDate=(v:any):Date|null=>{if(!v)return null;if(v?.toDate)return v.toDate();if(v?.seconds)return new Date(v.seconds*1000);const d=new Date(v);return isNaN(d.getTime())?null:d;};
 const MONTHS=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
@@ -34,7 +34,7 @@ const Card=({children,title,action,style:st}:{children:React.ReactNode;title?:st
     className="bg-white rounded-[16px] overflow-hidden"
     style={{
       border:`0.5px solid ${T.bdr}`,
-      boxShadow:"0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.12), 0 18px 44px rgba(0,85,255,.15)",
+      boxShadow:"0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.12), 0 18px 44px rgba(10,132,255,.15)",
       ...st,
     }}>
     {title&&<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",padding:"14px 20px",borderBottom:`1px solid ${T.s2}`}}><span style={{fontSize:14,fontWeight:600,color:T.ink}}>{title}</span>{action||null}</div>}
@@ -42,7 +42,7 @@ const Card=({children,title,action,style:st}:{children:React.ReactNode;title?:st
   </div>
 );
 const DLink=()=><span style={{fontSize:11,color:T.blue,fontWeight:500,cursor:"pointer"}}>Details →</span>;
-const StarRow=({rating}:{rating:number})=><div style={{display:"flex",gap:2}}>{[1,2,3,4,5].map(i=><Star key={i} size={14} fill={i<=Math.round(rating)?"#f59e0b":"none"} color={i<=Math.round(rating)?"#f59e0b":"#e2e8f0"}/>)}</div>;
+const StarRow=({rating}:{rating:number})=><div style={{display:"flex",gap:2}}>{[1,2,3,4,5].map(i=><Star key={i} size={14} fill={i<=Math.round(rating)?"#FF9500":"none"} color={i<=Math.round(rating)?"#FF9500":"#EBEBF0"}/>)}</div>;
 
 // ═══════════════════════════════════════════════════════════════════════════════
 interface TeacherProfileProps { teacher: any; onBack: () => void; }
@@ -211,14 +211,14 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
         <div style={{display:"flex",flexDirection:"column",gap:16}}>
           <Card title="Teaching Performance">
             <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:16}}>
-              <div style={{position:"relative",width:64,height:64}}><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke={T.s2} strokeWidth="6"/><circle cx="32" cy="32" r="26" fill="none" stroke={T.blue} strokeWidth="6" strokeLinecap="round" strokeDasharray={2*Math.PI*26} strokeDashoffset={2*Math.PI*26*(1-perfMetrics.classAvg/100)} transform="rotate(-90 32 32)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight:700,color:T.blue}}>{perfMetrics.classAvg}%</div></div>
-              <div><div style={{fontSize:28,fontWeight:800,color:T.ink}}>{perfMetrics.classAvg}%</div><div style={{fontSize:11,color:T.ink3}}>Class Average // {assignedClasses.length} classes</div></div>
+              <div style={{position:"relative",width:64,height:64}}><svg width="64" height="64" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke={T.s2} strokeWidth="6"/><circle cx="32" cy="32" r="26" fill="none" stroke={T.blue} strokeWidth="6" strokeLinecap="round" strokeDasharray={2*Math.PI*26} strokeDashoffset={2*Math.PI*26*(1-perfMetrics.classAvg/100)} transform="rotate(-90 32 32)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:14,fontWeight: 600,color:T.blue}}>{perfMetrics.classAvg}%</div></div>
+              <div><div style={{fontSize:28,fontWeight: 600,color:T.ink}}>{perfMetrics.classAvg}%</div><div style={{fontSize:11,color:T.ink3}}>Class Average // {assignedClasses.length} classes</div></div>
             </div>
             {[{l:"Pass Rate",v:perfMetrics.passRate},{l:"Satisfaction",v:perfMetrics.satisfaction},{l:"Attendance",v:attRate}].map(r=>{const c=r.v>=80?T.grn:r.v>=50?T.amb:T.red;return<div key={r.l} style={{marginBottom:8}}><div style={{display:"flex",justifyContent:"space-between",fontSize:11,marginBottom:3}}><span style={{color:T.ink3}}>{r.l}</span><span style={{fontWeight:600,color:c}}>{r.v}%</span></div><div style={{height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:c,borderRadius:3,transition:"width 1s"}}/></div></div>;})}
           </Card>
           <Card title="Attendance">
             <div style={{display:"flex",alignItems:"center",gap:16}}>
-              <div style={{position:"relative",width:72,height:72}}><svg width="72" height="72" viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke={T.s2} strokeWidth="7"/><circle cx="36" cy="36" r="28" fill="none" stroke={attRate>=85?T.grn:T.amb} strokeWidth="7" strokeLinecap="round" strokeDasharray={2*Math.PI*28} strokeDashoffset={2*Math.PI*28*(1-attRate/100)} transform="rotate(-90 36 36)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,fontWeight:700,color:attRate>=85?T.grn:T.amb}}>{attRate}%</div></div>
+              <div style={{position:"relative",width:72,height:72}}><svg width="72" height="72" viewBox="0 0 72 72"><circle cx="36" cy="36" r="28" fill="none" stroke={T.s2} strokeWidth="7"/><circle cx="36" cy="36" r="28" fill="none" stroke={attRate>=85?T.grn:T.amb} strokeWidth="7" strokeLinecap="round" strokeDasharray={2*Math.PI*28} strokeDashoffset={2*Math.PI*28*(1-attRate/100)} transform="rotate(-90 36 36)" style={{transition:"stroke-dashoffset 1s"}}/></svg><div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:16,fontWeight: 600,color:attRate>=85?T.grn:T.amb}}>{attRate}%</div></div>
               <div><div style={{fontSize:15,fontWeight:600,color:T.ink}}>This Month</div><div style={{fontSize:12,color:T.ink3,marginTop:2}}>Classes: {thisMonth.classesTaken}/{thisMonth.totalClasses}</div><div style={{fontSize:11,color:T.ink3,marginTop:2}}>Tests: {thisMonth.testsCount} // Meetings: {thisMonth.meetingsCount}</div></div>
             </div>
           </Card>
@@ -230,8 +230,8 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
 
         {/* CENTER */}
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",paddingTop:20}}>
-          <div style={{width:140,height:140,borderRadius:"50%",border:`4px solid ${T.blue}`,background:T.blBg,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,boxShadow:"0 8px 30px rgba(59,91,219,0.15)"}}><span style={{fontSize:42,fontWeight:800,color:T.blue}}>{initials}</span></div>
-          <h2 style={{fontSize:20,fontWeight:700,color:T.ink,textAlign:"center",marginBottom:4}}>{name}</h2>
+          <div style={{width:140,height:140,borderRadius:"50%",border:`4px solid ${T.blue}`,background:T.blBg,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,boxShadow:"0 8px 30px rgba(59,91,219,0.15)"}}><span style={{fontSize:42,fontWeight: 600,color:T.blue}}>{initials}</span></div>
+          <h2 style={{fontSize:20,fontWeight: 600,color:T.ink,textAlign:"center",marginBottom:4}}>{name}</h2>
           <p style={{fontSize:12,color:T.ink3,textAlign:"center",marginBottom:4}}>{subject} Teacher</p>
           <p style={{fontSize:11,color:T.ink3,textAlign:"center",marginBottom:6}}>{teacher.experience||"—"} exp // {teacher.email||"—"}</p>
           <div style={{display:"flex",alignItems:"center",gap:4,marginBottom:10}}><StarRow rating={avgRating}/><span style={{fontSize:12,fontWeight:600,color:T.amb,marginLeft:4}}>{avgRating.toFixed(1)}</span></div>
@@ -258,7 +258,7 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
               </div>)}
           </Card>
           <Card title="AI Intelligence" action={<DLink/>}>
-            <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:8}}><span style={{fontSize:11,color:T.ink3}}>Overall rating:</span><span style={{fontSize:20,fontWeight:700,color:T.blue}}>{perfMetrics.classAvg>=75?"Excellent":perfMetrics.classAvg>=50?"Good":"Needs Improvement"}</span></div>
+            <div style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:8}}><span style={{fontSize:11,color:T.ink3}}>Overall rating:</span><span style={{fontSize:20,fontWeight: 600,color:T.blue}}>{perfMetrics.classAvg>=75?"Excellent":perfMetrics.classAvg>=50?"Good":"Needs Improvement"}</span></div>
             <p style={{fontSize:11,color:T.ink3,lineHeight:1.6}}>{perfMetrics.classAvg>=75?"Strong teaching performance. Students consistently achieving above average.":perfMetrics.classAvg>=50?"Moderate performance. Consider focused improvement strategies.":"Performance below expectations. Intervention recommended."}</p>
           </Card>
           <Card title={`Reviews · ${reviews.length}`} action={<DLink/>}>
@@ -286,10 +286,10 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
       <Card title="Teaching Activity" action={<span style={{fontSize:11,color:T.ink3}}>All time · from teacher's actions</span>} style={{marginBottom:20}}>
         <div style={{display:"grid",gridTemplateColumns:"repeat(4, 1fr)",gap:16}}>
           {[
-            {icon:FileText,      l:"Tests Created",  v:activity.testsCreated,       col:"#7c3aed", bg:"#f5f3ff"},
-            {icon:ClipboardList, l:"Assignments",    v:activity.assignmentsCreated, col:"#ea580c", bg:"#fff7ed"},
+            {icon:FileText,      l:"Tests Created",  v:activity.testsCreated,       col:"#AF52DE", bg:"#f5f3ff"},
+            {icon:ClipboardList, l:"Assignments",    v:activity.assignmentsCreated, col:"#FF9500", bg:"#fff7ed"},
             {icon:NotebookPen,   l:"Lesson Plans",   v:activity.lessonPlansCount,   col:"#0d9488", bg:"#f0fdfa"},
-            {icon:MessageSquare, l:"Parent Notes",   v:activity.parentNotesCount,   col:"#db2777", bg:"#fdf2f8"},
+            {icon:MessageSquare, l:"Parent Notes",   v:activity.parentNotesCount,   col:"#FF2D55", bg:"#fdf2f8"},
           ].map(a=>(
             <div key={a.l} style={{background:a.bg,borderRadius:14,padding:"16px 18px",display:"flex",alignItems:"center",gap:14,border:`1px solid ${T.bdr}`,transition:"transform 0.2s, box-shadow 0.2s",cursor:"default"}}
               onMouseEnter={e=>{e.currentTarget.style.transform="translateY(-3px)";e.currentTarget.style.boxShadow="0 10px 20px rgba(0,0,0,0.08)";}}
@@ -299,7 +299,7 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
                 <a.icon size={20} color={a.col}/>
               </div>
               <div style={{minWidth:0}}>
-                <div style={{fontSize:28,fontWeight:800,color:a.col,lineHeight:1}}>{a.v}</div>
+                <div style={{fontSize:28,fontWeight: 600,color:a.col,lineHeight:1}}>{a.v}</div>
                 <div style={{fontSize:11,fontWeight:600,color:T.ink3,marginTop:4,textTransform:"uppercase",letterSpacing:"0.04em"}}>{a.l}</div>
               </div>
             </div>
@@ -311,14 +311,14 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:20,marginBottom:20}}>
         <Card title={`Top Students · ${studentRankings.length}`} action={<span style={{fontSize:11,color:T.blue,cursor:"pointer"}}>View All →</span>}>
           {studentRankings.slice(0,5).map((s,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:`1px solid ${T.s2}`}}>
-            <div style={{width:28,height:28,borderRadius:8,background:i<3?T.blBg:T.s1,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight:700,color:i<3?T.blue:T.ink3}}>{i+1}</div>
+            <div style={{width:28,height:28,borderRadius:8,background:i<3?T.blBg:T.s1,display:"flex",alignItems:"center",justifyContent:"center",fontSize:11,fontWeight: 600,color:i<3?T.blue:T.ink3}}>{i+1}</div>
             <div style={{flex:1,minWidth:0}}><div style={{fontSize:12,fontWeight:500,color:T.ink}}>{s.name}</div><div style={{fontSize:10,color:T.ink3}}>{s.className}</div></div>
-            <span style={{fontSize:13,fontWeight:700,color:s.avg>=75?T.grn:s.avg>=50?T.amb:T.red}}>{s.avg}%</span>
+            <span style={{fontSize:13,fontWeight: 600,color:s.avg>=75?T.grn:s.avg>=50?T.amb:T.red}}>{s.avg}%</span>
           </div>)}
           {studentRankings.length===0&&<p style={{fontSize:12,color:T.ink3,textAlign:"center"}}>No student data</p>}
         </Card>
         <Card title="Risk Assessment" action={<DLink/>}>
-          <div style={{fontSize:22,fontWeight:800,color:riskColor,marginBottom:14}}>{riskLevel}</div>
+          <div style={{fontSize:22,fontWeight: 600,color:riskColor,marginBottom:14}}>{riskLevel}</div>
           {[{l:"CLASS AVG",v:perfMetrics.classAvg},{l:"PASS RATE",v:perfMetrics.passRate},{l:"ATTENDANCE",v:attRate},{l:"SATISFACTION",v:perfMetrics.satisfaction}].map(r=><div key={r.l} style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}><span style={{fontSize:11,color:T.ink3,width:100}}>{r.l}</span><div style={{flex:1,height:6,background:T.s1,borderRadius:3,overflow:"hidden"}}><div style={{height:"100%",width:`${r.v}%`,background:r.v>=80?T.blue:r.v>=50?T.amb:T.red,borderRadius:3}}/></div><span style={{fontSize:12,fontWeight:600,color:r.v>=80?T.blue:r.v>=50?T.amb:T.red,width:40,textAlign:"right"}}>{r.v}%</span></div>)}
         </Card>
       </div>
@@ -332,7 +332,7 @@ const TeacherProfile = ({ teacher, onBack }: TeacherProfileProps) => {
             <button onClick={()=>setCalMonth(new Date(calY,calM+1))} style={{background:"none",border:"none",cursor:"pointer",color:T.ink3}}><ChevronRight size={16}/></button>
           </div>
           <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8,marginBottom:14}}>
-            {[{v:calP,c:T.grn,l:"PRESENT"},{v:calL,c:T.amb,l:"LATE"},{v:calA,c:T.red,l:"ABSENT"}].map(x=><div key={x.l} style={{textAlign:"center",padding:"10px 0",background:x.c===T.grn?T.glBg:x.c===T.amb?T.alBg:T.rlBg,borderRadius:10}}><div style={{fontSize:20,fontWeight:700,color:x.c}}>{x.v}</div><div style={{fontSize:10,color:x.c}}>{x.l}</div></div>)}
+            {[{v:calP,c:T.grn,l:"PRESENT"},{v:calL,c:T.amb,l:"LATE"},{v:calA,c:T.red,l:"ABSENT"}].map(x=><div key={x.l} style={{textAlign:"center",padding:"10px 0",background:x.c===T.grn?T.glBg:x.c===T.amb?T.alBg:T.rlBg,borderRadius:10}}><div style={{fontSize:20,fontWeight: 600,color:x.c}}>{x.v}</div><div style={{fontSize:10,color:x.c}}>{x.l}</div></div>)}
           </div>
           <div style={{display:"grid",gridTemplateColumns:"repeat(7,1fr)",gap:4,textAlign:"center"}}>
             {["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].map(d=><div key={d} style={{fontSize:10,fontWeight:600,color:T.ink3,padding:"4px 0"}}>{d}</div>)}

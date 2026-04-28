@@ -178,10 +178,10 @@ const StudentProfile = ({ student, onBack }: Props) => {
           subject: `Important School Notification — ${name}`,
           html: `
             <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;">
-              <h2 style="color:#1e3a8a;margin-bottom:8px;">School Notification</h2>
+              <h2 style="color:#1D1D1F;margin-bottom:8px;">School Notification</h2>
               <p style="color:#555;">This is an important notification regarding <strong>${name}</strong> from the school administration.</p>
-              ${attPct > 0 && attPct < 75 ? `<p style="color:#dc2626;font-weight:bold;">⚠️ Attendance Alert: Current attendance is ${attPct}%, below the 75% threshold.</p>` : ""}
-              ${avgScore !== null && avgScore < 50 ? `<p style="color:#dc2626;font-weight:bold;">⚠️ Academic Alert: Average score is ${avgScore}%, below the passing threshold.</p>` : ""}
+              ${attPct > 0 && attPct < 75 ? `<p style="color:#FF3B30;font-weight:bold;">⚠️ Attendance Alert: Current attendance is ${attPct}%, below the 75% threshold.</p>` : ""}
+              ${avgScore !== null && avgScore < 50 ? `<p style="color:#FF3B30;font-weight:bold;">⚠️ Academic Alert: Average score is ${avgScore}%, below the passing threshold.</p>` : ""}
               <p style="color:#888;font-size:12px;margin-top:24px;">Please contact the school for further details.</p>
             </div>
           `,
@@ -289,12 +289,12 @@ const StudentProfile = ({ student, onBack }: Props) => {
       ));
 
     const subjectRows = subjectAvgs.map((s: any) => {
-      const color = s.avg >= 60 ? "#16a34a" : s.avg >= 40 ? "#d97706" : "#dc2626";
+      const color = s.avg >= 60 ? "#34C759" : s.avg >= 40 ? "#86310C" : "#FF3B30";
       return `<tr><td>${esc(s.subject)}</td><td style="color:${color};font-weight:bold">${esc(s.avg)}%</td></tr>`;
     }).join("");
 
     const attRows = attRecords.slice(0, 20).map((r: any) => {
-      const color = r.status === "present" ? "#16a34a" : r.status === "absent" ? "#dc2626" : "#d97706";
+      const color = r.status === "present" ? "#34C759" : r.status === "absent" ? "#FF3B30" : "#86310C";
       return `<tr><td>${esc(r.date || "—")}</td><td>${esc(r.className || "—")}</td><td style="color:${color};font-weight:bold;text-transform:capitalize">${esc(r.status)}</td></tr>`;
     }).join("");
 
@@ -307,25 +307,25 @@ const StudentProfile = ({ student, onBack }: Props) => {
       <!DOCTYPE html><html><head><meta charset="UTF-8"><title>Progress Report — ${esc(name)}</title>
       <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Arial, sans-serif; padding: 48px; max-width: 820px; margin: auto; color: #1e293b; }
-        .header { border-bottom: 3px solid #1e3a8a; padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-start; }
-        .title { font-size: 13px; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; }
-        h1 { font-size: 28px; color: #1e3a8a; margin: 6px 0 4px; }
-        .sub { font-size: 14px; color: #64748b; }
+        body { font-family: Arial, sans-serif; padding: 48px; max-width: 820px; margin: auto; color: #1D1D1F; }
+        .header { border-bottom: 3px solid #1D1D1F; padding-bottom: 24px; margin-bottom: 32px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .title { font-size: 13px; color: #6E6E73; text-transform: uppercase; letter-spacing: 0.1em; }
+        h1 { font-size: 28px; color: #1D1D1F; margin: 6px 0 4px; }
+        .sub { font-size: 14px; color: #6E6E73; }
         .badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: bold; text-transform: uppercase; }
-        .risk { background: #fee2e2; color: #dc2626; }
-        .ok   { background: #dcfce7; color: #16a34a; }
-        .warn { background: #fef3c7; color: #d97706; }
+        .risk { background: #fee2e2; color: #FF3B30; }
+        .ok   { background: #dcfce7; color: #34C759; }
+        .warn { background: #fef3c7; color: #86310C; }
         section { margin-bottom: 32px; }
-        h2 { font-size: 16px; color: #1e3a8a; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0; }
+        h2 { font-size: 16px; color: #1D1D1F; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #EBEBF0; }
         .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-        .stat { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; text-align: center; }
-        .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 6px; }
-        .stat-value { font-size: 24px; font-weight: 900; color: #1e293b; }
+        .stat { background: #F5F5F7; border: 1px solid #EBEBF0; border-radius: 10px; padding: 16px; text-align: center; }
+        .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #A1A1A6; margin-bottom: 6px; }
+        .stat-value { font-size: 24px; font-weight: 900; color: #1D1D1F; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        th { background: #f8fafc; padding: 10px 14px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; border-bottom: 2px solid #e2e8f0; }
-        td { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; }
-        .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #e2e8f0; font-size: 11px; color: #94a3b8; display: flex; justify-content: space-between; }
+        th { background: #F5F5F7; padding: 10px 14px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #6E6E73; border-bottom: 2px solid #EBEBF0; }
+        td { padding: 10px 14px; border-bottom: 1px solid #F5F5F7; }
+        .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #EBEBF0; font-size: 11px; color: #A1A1A6; display: flex; justify-content: space-between; }
         @media print { body { padding: 24px; } }
       </style></head><body>
       <div class="header">
@@ -336,7 +336,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
         </div>
         <div style="text-align:right">
           ${isAtRisk ? '<span class="badge risk">AT RISK</span>' : '<span class="badge ok">On Track</span>'}
-          <div style="font-size:12px;color:#94a3b8;margin-top:8px;">Generated ${esc(new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }))}</div>
+          <div style="font-size:12px;color:#A1A1A6;margin-top:8px;">Generated ${esc(new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }))}</div>
         </div>
       </div>
 
@@ -344,11 +344,11 @@ const StudentProfile = ({ student, onBack }: Props) => {
         <h2>Attendance Summary</h2>
         <div class="stats">
           <div class="stat"><div class="stat-label">Total Days</div><div class="stat-value">${esc(totalAtt)}</div></div>
-          <div class="stat"><div class="stat-label">Present</div><div class="stat-value" style="color:#16a34a">${esc(presentCount)}</div></div>
-          <div class="stat"><div class="stat-label">Absent</div><div class="stat-value" style="color:#dc2626">${esc(absentCount)}</div></div>
-          <div class="stat"><div class="stat-label">Percentage</div><div class="stat-value" style="color:${attPct >= 75 ? "#16a34a" : "#dc2626"}">${totalAtt > 0 ? esc(attPct) + "%" : "—"}</div></div>
+          <div class="stat"><div class="stat-label">Present</div><div class="stat-value" style="color:#34C759">${esc(presentCount)}</div></div>
+          <div class="stat"><div class="stat-label">Absent</div><div class="stat-value" style="color:#FF3B30">${esc(absentCount)}</div></div>
+          <div class="stat"><div class="stat-label">Percentage</div><div class="stat-value" style="color:${attPct >= 75 ? "#34C759" : "#FF3B30"}">${totalAtt > 0 ? esc(attPct) + "%" : "—"}</div></div>
         </div>
-        ${attRows ? `<table><thead><tr><th>Date</th><th>Class</th><th>Status</th></tr></thead><tbody>${attRows}</tbody></table>` : "<p style='color:#94a3b8;font-size:13px'>No attendance records.</p>"}
+        ${attRows ? `<table><thead><tr><th>Date</th><th>Class</th><th>Status</th></tr></thead><tbody>${attRows}</tbody></table>` : "<p style='color:#A1A1A6;font-size:13px'>No attendance records.</p>"}
       </section>
 
       ${subjectAvgs.length > 0 ? `
@@ -418,7 +418,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
       {/* Back */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-800 mb-6 transition-colors"
+        className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-800 mb-6 transition-colors"
       >
         <ChevronLeft className="w-4 h-4" /> Back to Students
       </button>
@@ -427,23 +427,23 @@ const StudentProfile = ({ student, onBack }: Props) => {
       <div className="bg-white border border-slate-100 rounded-2xl p-6 mb-6 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-5">
-            <div className="w-[72px] h-[72px] rounded-full bg-[#1e3a8a] flex items-center justify-center text-white text-2xl font-bold shadow-lg shrink-0">
+            <div className="w-[72px] h-[72px] rounded-full bg-[#1D1D1F] flex items-center justify-center text-white text-2xl font-semibold shadow-lg shrink-0">
               {initials}
             </div>
             <div>
               <div className="flex items-center gap-3 mb-1 flex-wrap">
-                <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{name}</h1>
+                <h1 className="text-2xl font-semibold text-slate-900 tracking-tight">{name}</h1>
                 {isAtRisk && (
-                  <span className="px-3 py-1 rounded-md bg-rose-500 text-white text-[10px] font-black uppercase tracking-wider">AT RISK</span>
+                  <span className="px-3 py-1 rounded-md bg-rose-500 text-white text-[12px] font-semibold uppercase tracking-wider">AT RISK</span>
                 )}
                 {!isAtRisk && attPct >= 90 && (
-                  <span className="px-3 py-1 rounded-md bg-emerald-500 text-white text-[10px] font-black uppercase tracking-wider">EXCELLENT</span>
+                  <span className="px-3 py-1 rounded-md bg-emerald-500 text-white text-[12px] font-semibold uppercase tracking-wider">EXCELLENT</span>
                 )}
                 {counselorFlag && (
-                  <span className="px-3 py-1 rounded-md bg-purple-500 text-white text-[10px] font-black uppercase tracking-wider">COUNSELING</span>
+                  <span className="px-3 py-1 rounded-md bg-purple-500 text-white text-[12px] font-semibold uppercase tracking-wider">COUNSELING</span>
                 )}
                 {remedialFlag && (
-                  <span className="px-3 py-1 rounded-md bg-amber-500 text-white text-[10px] font-black uppercase tracking-wider">REMEDIAL</span>
+                  <span className="px-3 py-1 rounded-md bg-amber-500 text-white text-[12px] font-semibold uppercase tracking-wider">REMEDIAL</span>
                 )}
               </div>
               <p className="text-sm text-slate-500 font-medium mb-2">
@@ -461,7 +461,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
             <button
               onClick={handleNotifyParent}
               disabled={notifyingParent}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] transition-colors shadow-md disabled:opacity-60"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] transition-colors shadow-md disabled:opacity-60"
             >
               {notifyingParent ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
               Notify Parent
@@ -476,13 +476,13 @@ const StudentProfile = ({ student, onBack }: Props) => {
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`px-6 py-4 text-sm font-bold transition-all relative whitespace-nowrap ${
-              activeTab === tab ? "text-[#1e3a8a]" : "text-slate-400 hover:text-slate-700"
+            className={`px-6 py-4 text-sm font-semibold transition-all relative whitespace-nowrap ${
+              activeTab === tab ? "text-[#1D1D1F]" : "text-slate-400 hover:text-slate-700"
             }`}
           >
             {tab}
             {activeTab === tab && (
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1e3a8a] rounded-full" />
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#1D1D1F] rounded-full" />
             )}
           </button>
         ))}
@@ -490,8 +490,8 @@ const StudentProfile = ({ student, onBack }: Props) => {
 
       {fetching ? (
         <div className="py-32 flex flex-col items-center justify-center">
-          <Loader2 className="w-10 h-10 text-[#1e3a8a] animate-spin mb-4" />
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loading Profile Data...</p>
+          <Loader2 className="w-10 h-10 text-[#1D1D1F] animate-spin mb-4" />
+          <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Loading Profile Data...</p>
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -505,31 +505,31 @@ const StudentProfile = ({ student, onBack }: Props) => {
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-4">
                   <div className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Attendance</p>
-                    <p className={`text-3xl font-black tracking-tighter ${attPct >= 75 ? "text-emerald-600" : "text-rose-600"}`}>
+                    <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Attendance</p>
+                    <p className={`text-3xl font-semibold tracking-tighter ${attPct >= 75 ? "text-emerald-600" : "text-rose-600"}`}>
                       {totalAtt > 0 ? `${attPct}%` : "—"}
                     </p>
-                    <p className="text-[10px] text-slate-400 mt-1">{totalAtt} records</p>
+                    <p className="text-[12px] text-slate-400 mt-1">{totalAtt} records</p>
                   </div>
                   <div className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Avg Score</p>
-                    <p className={`text-3xl font-black tracking-tighter ${avgScore === null ? "text-slate-400" : avgScore >= 60 ? "text-emerald-600" : "text-rose-600"}`}>
+                    <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Avg Score</p>
+                    <p className={`text-3xl font-semibold tracking-tighter ${avgScore === null ? "text-slate-400" : avgScore >= 60 ? "text-emerald-600" : "text-rose-600"}`}>
                       {avgScore !== null ? `${avgScore}%` : "—"}
                     </p>
-                    <p className="text-[10px] text-slate-400 mt-1">{results.length} exams</p>
+                    <p className="text-[12px] text-slate-400 mt-1">{results.length} exams</p>
                   </div>
                   <div className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Incidents</p>
-                    <p className={`text-3xl font-black tracking-tighter ${incidents.length === 0 ? "text-emerald-600" : "text-amber-600"}`}>
+                    <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2">Incidents</p>
+                    <p className={`text-3xl font-semibold tracking-tighter ${incidents.length === 0 ? "text-emerald-600" : "text-amber-600"}`}>
                       {incidents.length}
                     </p>
-                    <p className="text-[10px] text-slate-400 mt-1">total logged</p>
+                    <p className="text-[12px] text-slate-400 mt-1">total logged</p>
                   </div>
                 </div>
 
                 {/* Risk Factors */}
                 <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-base font-bold text-slate-900 mb-5">Risk Factors</h3>
+                  <h3 className="text-base font-semibold text-slate-900 mb-5">Risk Factors</h3>
                   <div className="space-y-3">
                     {totalAtt === 0 && results.length === 0 && incidents.length === 0 && studentFlags.length === 0 ? (
                       <p className="text-sm text-slate-400 font-medium text-center py-6">No data available yet. Risk factors will appear once attendance and results are recorded.</p>
@@ -607,7 +607,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
                 {/* Recent Attendance (last 5) */}
                 {attRecords.length > 0 && (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">Recent Attendance (Last 5)</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">Recent Attendance (Last 5)</h3>
                     <div className="space-y-3">
                       {attRecords.slice(0, 5).map((r, i) => (
                         <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-slate-50/60 border border-slate-100">
@@ -615,11 +615,11 @@ const StudentProfile = ({ student, onBack }: Props) => {
                             {r.status === "present" && <UserCheck className="w-4 h-4 text-emerald-500" />}
                             {r.status === "absent"  && <UserX    className="w-4 h-4 text-rose-500"    />}
                             {r.status === "late"    && <Clock    className="w-4 h-4 text-amber-500"   />}
-                            <span className="text-sm font-bold text-slate-700">{r.date}</span>
+                            <span className="text-sm font-semibold text-slate-700">{r.date}</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <span className="text-xs text-slate-500 font-medium">{r.className || ""}</span>
-                            <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider ${
+                            <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider ${
                               r.status === "present" ? "bg-emerald-50 text-emerald-600" :
                               r.status === "absent"  ? "bg-rose-50 text-rose-600" :
                               "bg-amber-50 text-amber-600"
@@ -640,13 +640,13 @@ const StudentProfile = ({ student, onBack }: Props) => {
               <>
                 {subjectAvgs.length > 0 ? (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">Subject-wise Performance</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">Subject-wise Performance</h3>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       {subjectAvgs.map((s, i) => (
                         <div key={i} className="bg-slate-50/60 border border-slate-100 rounded-xl p-5 text-center hover:shadow-md transition-all">
-                          <p className="text-xs font-bold text-slate-400 uppercase mb-3 truncate">{s.subject}</p>
-                          <p className="text-3xl font-black tracking-tighter"
-                            style={{ color: s.avg >= 60 ? "#22c55e" : s.avg >= 40 ? "#f59e0b" : "#ef4444" }}>
+                          <p className="text-xs font-semibold text-slate-400 uppercase mb-3 truncate">{s.subject}</p>
+                          <p className="text-3xl font-semibold tracking-tighter"
+                            style={{ color: s.avg >= 60 ? "#34C759" : s.avg >= 40 ? "#FF9500" : "#FF3B30" }}>
                             {s.avg}%
                           </p>
                         </div>
@@ -659,15 +659,15 @@ const StudentProfile = ({ student, onBack }: Props) => {
 
                 {results.length > 0 && (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">All Exam Records</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">All Exam Records</h3>
                     <div className="space-y-3">
                       {results.map((r, i) => (
                         <div key={i} className="flex items-center justify-between p-4 bg-slate-50/60 rounded-xl border border-slate-100">
                           <div>
-                            <p className="text-sm font-bold text-slate-800">{r.assignmentTitle || r.examName || r.subject || "Exam"}</p>
-                            <p className="text-xs text-slate-400 font-medium mt-0.5">{r.subject || r.className || ""} {r.date ? `• ${r.date}` : ""}</p>
+                            <p className="text-sm font-semibold text-slate-800">{r.assignmentTitle || r.examName || r.subject || "Exam"}</p>
+                            <p className="text-xs text-slate-400 font-medium mt-1">{r.subject || r.className || ""} {r.date ? `• ${r.date}` : ""}</p>
                           </div>
-                          <span className={`text-lg font-black px-4 py-1.5 rounded-xl border ${
+                          <span className={`text-lg font-semibold px-4 py-1.5 rounded-xl border ${
                             Number(r.percentage || r.score || 0) >= 60
                               ? "text-emerald-600 bg-emerald-50 border-emerald-100"
                               : "text-rose-600 bg-rose-50 border-rose-100"
@@ -687,39 +687,39 @@ const StudentProfile = ({ student, onBack }: Props) => {
               <>
                 <div className="grid grid-cols-4 gap-4">
                   {[
-                    { label: "Total Days",  value: totalAtt,     color: "#1e3a8a" },
-                    { label: "Present",     value: presentCount, color: "#22c55e" },
-                    { label: "Absent",      value: absentCount,  color: "#ef4444" },
-                    { label: "Percentage",  value: totalAtt > 0 ? `${attPct}%` : "—", color: attPct >= 75 ? "#22c55e" : "#ef4444" },
+                    { label: "Total Days",  value: totalAtt,     color: "#1D1D1F" },
+                    { label: "Present",     value: presentCount, color: "#34C759" },
+                    { label: "Absent",      value: absentCount,  color: "#FF3B30" },
+                    { label: "Percentage",  value: totalAtt > 0 ? `${attPct}%` : "—", color: attPct >= 75 ? "#34C759" : "#FF3B30" },
                   ].map((item, i) => (
                     <div key={i} className="bg-white border border-slate-100 rounded-2xl p-5 text-center shadow-sm">
-                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{item.label}</p>
-                      <p className="text-2xl font-black tracking-tighter" style={{ color: item.color }}>{item.value}</p>
+                      <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2">{item.label}</p>
+                      <p className="text-2xl font-semibold tracking-tighter" style={{ color: item.color }}>{item.value}</p>
                     </div>
                   ))}
                 </div>
 
                 {attRecords.length > 0 ? (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">Full Attendance Log</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">Full Attendance Log</h3>
                     <div className="overflow-x-auto">
                       <table className="w-full text-left text-sm">
                         <thead>
                           <tr className="border-b border-slate-100">
-                            <th className="pb-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Date</th>
-                            <th className="pb-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Class</th>
-                            <th className="pb-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Teacher</th>
-                            <th className="pb-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                            <th className="pb-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Date</th>
+                            <th className="pb-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Class</th>
+                            <th className="pb-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Teacher</th>
+                            <th className="pb-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Status</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-50">
                           {attRecords.map((r, i) => (
                             <tr key={i} className="hover:bg-slate-50/50">
-                              <td className="py-3 font-bold text-slate-700">{r.date}</td>
+                              <td className="py-3 font-semibold text-slate-700">{r.date}</td>
                               <td className="py-3 text-slate-500 font-medium">{r.className || "—"}</td>
                               <td className="py-3 text-slate-500 font-medium">{r.teacherName || "—"}</td>
                               <td className="py-3">
-                                <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider ${
+                                <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider ${
                                   r.status === "present" ? "bg-emerald-50 text-emerald-600" :
                                   r.status === "absent"  ? "bg-rose-50 text-rose-600" :
                                   "bg-amber-50 text-amber-600"
@@ -743,7 +743,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
             {activeTab === "Discipline" && (
               incidents.length > 0 ? (
                 <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-base font-bold text-slate-900 mb-5">Discipline Incidents ({incidents.length})</h3>
+                  <h3 className="text-base font-semibold text-slate-900 mb-5">Discipline Incidents ({incidents.length})</h3>
                   <div className="space-y-3">
                     {incidents.map((inc, i) => (
                       <div key={i} className="flex items-start gap-4 p-4 bg-slate-50/60 rounded-xl border border-slate-100">
@@ -752,13 +752,13 @@ const StudentProfile = ({ student, onBack }: Props) => {
                           inc.severity === "high"     ? "bg-amber-500" : "bg-blue-400"
                         }`} />
                         <div className="flex-1">
-                          <p className="text-sm font-bold text-slate-800">{inc.title || inc.type || "Incident"}</p>
-                          <p className="text-xs text-slate-400 font-medium mt-0.5">
+                          <p className="text-sm font-semibold text-slate-800">{inc.title || inc.type || "Incident"}</p>
+                          <p className="text-xs text-slate-400 font-medium mt-1">
                             {inc.date || (inc.createdAt?.toDate ? inc.createdAt.toDate().toLocaleDateString() : "")}
                           </p>
                           {inc.description && <p className="text-xs text-slate-500 mt-1">{inc.description}</p>}
                         </div>
-                        <span className={`px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider border shrink-0 ${
+                        <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider border shrink-0 ${
                           inc.severity === "critical" ? "bg-red-50 text-red-600 border-red-100" :
                           inc.severity === "high"     ? "bg-amber-50 text-amber-600 border-amber-100" :
                           "bg-blue-50 text-blue-600 border-blue-100"
@@ -778,9 +778,9 @@ const StudentProfile = ({ student, onBack }: Props) => {
             {activeTab === "Parent Communication" && (
               <>
                 <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-base font-bold text-slate-900 mb-5">Add Note / Communication</h3>
+                  <h3 className="text-base font-semibold text-slate-900 mb-5">Add Note / Communication</h3>
                   <textarea
-                    className="w-full h-28 p-4 rounded-xl border border-slate-200 bg-slate-50/50 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 focus:border-[#1e3a8a]/30 placeholder:text-slate-400"
+                    className="w-full h-28 p-4 rounded-xl border border-slate-200 bg-slate-50/50 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 focus:border-[#1D1D1F]/30 placeholder:text-slate-400"
                     placeholder="Add a note about parent communication, follow-up, etc..."
                     value={noteText}
                     onChange={e => setNoteText(e.target.value)}
@@ -788,7 +788,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
                   <button
                     onClick={handleSaveNote}
                     disabled={!noteText.trim()}
-                    className="mt-3 px-6 py-2.5 rounded-xl bg-[#1e3a8a] text-white text-[10px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all disabled:opacity-40"
+                    className="mt-3 px-6 py-2.5 rounded-xl bg-[#1D1D1F] text-white text-[12px] font-semibold uppercase tracking-widest hover:bg-slate-800 transition-all disabled:opacity-40"
                   >
                     Save Note
                   </button>
@@ -797,19 +797,19 @@ const StudentProfile = ({ student, onBack }: Props) => {
                 {/* Scheduled Meetings */}
                 {parentMeetings.length > 0 && (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">Scheduled Meetings</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">Scheduled Meetings</h3>
                     <div className="space-y-3">
                       {parentMeetings.map((m, i) => (
                         <div key={i} className="flex items-start gap-4 p-4 bg-blue-50/60 rounded-xl border border-blue-100">
-                          <Calendar className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                          <Calendar className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
                           <div className="flex-1">
-                            <p className="text-sm font-bold text-slate-800">{m.purpose}</p>
-                            <p className="text-xs text-slate-500 font-medium mt-0.5">
+                            <p className="text-sm font-semibold text-slate-800">{m.purpose}</p>
+                            <p className="text-xs text-slate-500 font-medium mt-1">
                               {m.date}{m.time ? ` at ${m.time}` : ""}
                             </p>
-                            <p className="text-[10px] text-slate-400 font-bold uppercase mt-1">{fmtDate(m.createdAt)}</p>
+                            <p className="text-[12px] text-slate-400 font-semibold uppercase mt-1">{fmtDate(m.createdAt)}</p>
                           </div>
-                          <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider border shrink-0 ${
+                          <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider border shrink-0 ${
                             m.status === "completed" ? "bg-emerald-50 text-emerald-600 border-emerald-100" : "bg-blue-50 text-blue-600 border-blue-100"
                           }`}>
                             {m.status || "scheduled"}
@@ -823,15 +823,15 @@ const StudentProfile = ({ student, onBack }: Props) => {
                 {/* Communication Log */}
                 {parentNotes.length > 0 ? (
                   <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                    <h3 className="text-base font-bold text-slate-900 mb-5">Communication Log</h3>
+                    <h3 className="text-base font-semibold text-slate-900 mb-5">Communication Log</h3>
                     <div className="space-y-3">
                       {parentNotes.map((n, i) => (
                         <div key={i} className={`p-4 rounded-xl border ${n.type === "notification" ? "bg-amber-50 border-amber-100" : "bg-slate-50/60 border-slate-100"}`}>
                           <div className="flex items-start gap-2">
-                            {n.type === "notification" && <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />}
+                            {n.type === "notification" && <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0 mt-1" />}
                             <p className="text-sm font-medium text-slate-700 flex-1">{n.note}</p>
                           </div>
-                          <p className="text-[10px] text-slate-400 font-bold uppercase mt-2">{fmtDate(n.createdAt)}</p>
+                          <p className="text-[12px] text-slate-400 font-semibold uppercase mt-2">{fmtDate(n.createdAt)}</p>
                         </div>
                       ))}
                     </div>
@@ -848,37 +848,37 @@ const StudentProfile = ({ student, onBack }: Props) => {
 
             {/* Quick Actions */}
             <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-bold text-slate-900 mb-5">Quick Actions</h3>
+              <h3 className="text-base font-semibold text-slate-900 mb-5">Quick Actions</h3>
               <div className="space-y-3">
                 <button
                   onClick={() => setMeetingModal(true)}
-                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] transition-colors shadow-md"
+                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] transition-colors shadow-md"
                 >
                   <CalendarCheck className="w-4 h-4" /> Schedule Parent Meeting
                 </button>
                 <button
                   onClick={() => setCounselorModal(true)}
-                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <UserCog className="w-4 h-4 text-purple-500" />
                   {counselorFlag ? "Update Counselor" : "Assign to Counselor"}
                 </button>
                 <button
                   onClick={() => setRemedialModal(true)}
-                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <BookOpen className="w-4 h-4 text-amber-500" />
                   {remedialFlag ? "Update Remedial Class" : "Enroll in Remedial Class"}
                 </button>
                 <button
                   onClick={handleGenerateReport}
-                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <Printer className="w-4 h-4 text-slate-400" /> Generate Progress Report
                 </button>
                 <button
                   onClick={() => setActiveTab("Attendance")}
-                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-bold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center gap-3 p-4 rounded-xl bg-white border border-slate-100 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   <FileText className="w-4 h-4 text-slate-400" /> Full Attendance Log
                 </button>
@@ -888,15 +888,15 @@ const StudentProfile = ({ student, onBack }: Props) => {
             {/* Class Teachers */}
             {teachers.length > 0 && (
               <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-base font-bold text-slate-900 mb-5">Assigned Teachers</h3>
+                <h3 className="text-base font-semibold text-slate-900 mb-5">Assigned Teachers</h3>
                 <div className="space-y-4">
                   {teachers.map((t, i) => (
                     <div key={i} className="flex items-center gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-[#1e3a8a] flex items-center justify-center text-white text-xs font-bold shadow-md">
+                      <div className="w-11 h-11 rounded-xl bg-[#1D1D1F] flex items-center justify-center text-white text-xs font-semibold shadow-md">
                         {(t.name || "T").substring(0, 2).toUpperCase()}
                       </div>
                       <div>
-                        <p className="text-sm font-bold text-slate-800">{t.name}</p>
+                        <p className="text-sm font-semibold text-slate-800">{t.name}</p>
                         <p className="text-xs text-slate-400 font-medium">{t.subject || "Teacher"}</p>
                       </div>
                     </div>
@@ -907,7 +907,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
 
             {/* Contact Info */}
             <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-bold text-slate-900 mb-5">Contact Info</h3>
+              <h3 className="text-base font-semibold text-slate-900 mb-5">Contact Info</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 p-3 bg-slate-50/50 rounded-xl border border-slate-100">
                   <User className="w-4 h-4 text-slate-400" />
@@ -922,7 +922,7 @@ const StudentProfile = ({ student, onBack }: Props) => {
                 <button
                   onClick={handleNotifyParent}
                   disabled={notifyingParent}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 text-white text-sm font-bold hover:bg-emerald-600 transition-colors shadow-md disabled:opacity-60"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 text-white text-sm font-semibold hover:bg-emerald-600 transition-colors shadow-md disabled:opacity-60"
                 >
                   {notifyingParent ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                   Send Notification
@@ -938,43 +938,43 @@ const StudentProfile = ({ student, onBack }: Props) => {
         <Modal title="Schedule Parent Meeting" onClose={() => setMeetingModal(false)}>
           <div className="space-y-4">
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Meeting Date *</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Meeting Date *</label>
               <input
                 type="date"
                 value={meetingForm.date}
                 onChange={e => setMeetingForm(p => ({ ...p, date: e.target.value }))}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Time (optional)</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Time (optional)</label>
               <input
                 type="time"
                 value={meetingForm.time}
                 onChange={e => setMeetingForm(p => ({ ...p, time: e.target.value }))}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Purpose / Agenda *</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Purpose / Agenda *</label>
               <textarea
                 value={meetingForm.purpose}
                 onChange={e => setMeetingForm(p => ({ ...p, purpose: e.target.value }))}
                 placeholder="e.g. Discuss attendance concerns, academic performance review..."
-                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setMeetingModal(false)}
-                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
               >
                 Cancel
               </button>
               <button
                 onClick={handleScheduleMeeting}
                 disabled={savingAction}
-                className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] disabled:opacity-60 flex items-center justify-center gap-2"
+                className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {savingAction ? <Loader2 className="w-4 h-4 animate-spin" /> : <CalendarCheck className="w-4 h-4" />}
                 Schedule Meeting
@@ -989,35 +989,35 @@ const StudentProfile = ({ student, onBack }: Props) => {
         <Modal title="Assign to Counselor" onClose={() => setCounselorModal(false)}>
           <div className="space-y-4">
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Counselor Name *</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Counselor Name *</label>
               <input
                 type="text"
                 value={counselorForm.name}
                 onChange={e => setCounselorForm(p => ({ ...p, name: e.target.value }))}
                 placeholder="Enter counselor's name"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Notes (optional)</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Notes (optional)</label>
               <textarea
                 value={counselorForm.notes}
                 onChange={e => setCounselorForm(p => ({ ...p, notes: e.target.value }))}
                 placeholder="Reason for referral, specific concerns..."
-                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setCounselorModal(false)}
-                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
               >
                 Cancel
               </button>
               <button
                 onClick={handleAssignCounselor}
                 disabled={savingAction}
-                className="flex-1 py-3 rounded-xl bg-purple-600 text-white text-sm font-bold hover:bg-purple-700 disabled:opacity-60 flex items-center justify-center gap-2"
+                className="flex-1 py-3 rounded-xl bg-purple-600 text-white text-sm font-semibold hover:bg-purple-700 disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {savingAction ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserCog className="w-4 h-4" />}
                 Assign Counselor
@@ -1032,35 +1032,35 @@ const StudentProfile = ({ student, onBack }: Props) => {
         <Modal title="Enroll in Remedial Class" onClose={() => setRemedialModal(false)}>
           <div className="space-y-4">
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Class / Program Name *</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Class / Program Name *</label>
               <input
                 type="text"
                 value={remedialForm.className}
                 onChange={e => setRemedialForm(p => ({ ...p, className: e.target.value }))}
                 placeholder="e.g. Math Remedial Batch A, Extra English Class"
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div>
-              <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Reason (optional)</label>
+              <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Reason (optional)</label>
               <textarea
                 value={remedialForm.reason}
                 onChange={e => setRemedialForm(p => ({ ...p, reason: e.target.value }))}
                 placeholder="Subject weakness, exam failure, teacher recommendation..."
-                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                className="w-full h-24 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
               />
             </div>
             <div className="flex gap-3 pt-2">
               <button
                 onClick={() => setRemedialModal(false)}
-                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
               >
                 Cancel
               </button>
               <button
                 onClick={handleEnrollRemedial}
                 disabled={savingAction}
-                className="flex-1 py-3 rounded-xl bg-amber-500 text-white text-sm font-bold hover:bg-amber-600 disabled:opacity-60 flex items-center justify-center gap-2"
+                className="flex-1 py-3 rounded-xl bg-amber-500 text-white text-sm font-semibold hover:bg-amber-600 disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {savingAction ? <Loader2 className="w-4 h-4 animate-spin" /> : <BookOpen className="w-4 h-4" />}
                 Enroll Student
@@ -1087,11 +1087,11 @@ const RiskRow = ({
         {icon}
       </div>
       <div>
-        <p className="text-sm font-bold text-slate-900">{title}</p>
+        <p className="text-sm font-semibold text-slate-900">{title}</p>
         <p className="text-xs text-slate-500 font-medium">{detail}</p>
       </div>
     </div>
-    <span className={`px-3.5 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-wider text-white shadow-sm shrink-0 ml-3 ${badgeBg}`}>
+    <span className={`px-3.5 py-1.5 rounded-lg text-[12px] font-semibold uppercase tracking-wider text-white shadow-sm shrink-0 ml-3 ${badgeBg}`}>
       {badge}
     </span>
   </div>
@@ -1101,7 +1101,7 @@ const Modal = ({ title, onClose, children }: { title: string; onClose: () => voi
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md animate-in fade-in zoom-in-95 duration-200">
       <div className="flex items-center justify-between p-6 border-b border-slate-100">
-        <h3 className="text-base font-bold text-slate-900">{title}</h3>
+        <h3 className="text-base font-semibold text-slate-900">{title}</h3>
         <button onClick={onClose} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors">
           <X className="w-4 h-4 text-slate-600" />
         </button>
@@ -1112,9 +1112,9 @@ const Modal = ({ title, onClose, children }: { title: string; onClose: () => voi
 );
 
 const EmptyState = ({ icon, message }: { icon: React.ReactNode; message: string }) => (
-  <div className="bg-white border border-slate-100 rounded-2xl py-24 flex flex-col items-center justify-center text-slate-300 shadow-sm">
+  <div className="bg-white border border-slate-100 rounded-2xl py-10 flex flex-col items-center justify-center text-slate-300 shadow-sm">
     <div className="mb-4 opacity-30">{icon}</div>
-    <p className="text-sm font-black uppercase tracking-widest text-slate-400">{message}</p>
+    <p className="text-sm font-semibold uppercase tracking-widest text-slate-400">{message}</p>
   </div>
 );
 

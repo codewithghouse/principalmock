@@ -25,7 +25,7 @@ const getScore = (r: any): number => {
   return total > 0 ? Math.round((Number(raw) / Number(total)) * 100) : 0;
 };
 
-const barColor = (v: number) => v >= 75 ? "#22c55e" : v >= 55 ? "#f59e0b" : "#ef4444";
+const barColor = (v: number) => v >= 75 ? "#34C759" : v >= 55 ? "#FF9500" : "#FF3B30";
 
 // ─── props ────────────────────────────────────────────────────────────────────
 interface SubjectAnalysisProps {
@@ -151,11 +151,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
     // ── 3. Marks distribution ───────────────────────────────────────────────
     const allScores = results.map((r) => getScore(r));
     setMarksDistData([
-      { range: "0-20",   students: allScores.filter((s) => s <= 20).length,            color: "#ef4444" },
+      { range: "0-20",   students: allScores.filter((s) => s <= 20).length,            color: "#FF3B30" },
       { range: "21-40",  students: allScores.filter((s) => s > 20 && s <= 40).length,  color: "#f97316" },
-      { range: "41-60",  students: allScores.filter((s) => s > 40 && s <= 60).length,  color: "#f59e0b" },
-      { range: "61-80",  students: allScores.filter((s) => s > 60 && s <= 80).length,  color: "#1e3a8a" },
-      { range: "81-100", students: allScores.filter((s) => s > 80).length,             color: "#22c55e" },
+      { range: "41-60",  students: allScores.filter((s) => s > 40 && s <= 60).length,  color: "#FF9500" },
+      { range: "61-80",  students: allScores.filter((s) => s > 60 && s <= 80).length,  color: "#1D1D1F" },
+      { range: "81-100", students: allScores.filter((s) => s > 80).length,             color: "#34C759" },
     ]);
 
     // ── 4. Teacher effectiveness ────────────────────────────────────────────
@@ -169,7 +169,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       teacherGroups[tid].grades.add(cName);
     });
 
-    const colors = ["#1e3a8a", "#22c55e", "#f59e0b", "#8b5cf6", "#ef4444"];
+    const colors = ["#1D1D1F", "#34C759", "#FF9500", "#AF52DE", "#FF3B30"];
     const teachers = Object.entries(teacherGroups).map(([tid, data], idx) => {
       const avg = Math.round(data.scores.reduce((a, b) => a + b, 0) / data.scores.length);
       return {
@@ -177,7 +177,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
         name:     data.name,
         grades:   Array.from(data.grades).slice(0, 3).join(", ") || "—",
         avg,
-        avgColor: avg < 60 ? "#ef4444" : avg < 75 ? "#f59e0b" : "#22c55e",
+        avgColor: avg < 60 ? "#FF3B30" : avg < 75 ? "#FF9500" : "#34C759",
         initials: data.name.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2),
         avatarBg: colors[idx % colors.length],
       };
@@ -202,7 +202,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       subtitle: `Overall Average: ${subject.avg} · ${totalStudents} students`,
       badge: subject.name,
       heroStats: [
-        { label: "Overall Average", value: subject.avg, color: overallAvg >= 75 ? "#4ade80" : overallAvg >= 55 ? "#fbbf24" : "#f87171" },
+        { label: "Overall Average", value: subject.avg, color: overallAvg >= 75 ? "#34C759" : overallAvg >= 55 ? "#FFCC00" : "#f87171" },
         { label: "Total Students",  value: totalStudents },
         { label: "Sections",        value: sectionData.length },
         { label: "Teachers",        value: teacherData.length },
@@ -242,7 +242,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
   const avgColor = avgNum < 60 ? "text-red-500" : avgNum < 75 ? "text-amber-500" : "text-green-600";
 
   return (
-    <div className="animate-in fade-in duration-500 pb-12">
+    <div className="animate-in fade-in duration-500 pb-10">
 
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
@@ -258,9 +258,9 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
             <subject.icon className={`w-7 h-7 ${subject.iconColor || "text-slate-500"}`} />
           </div>
           <div>
-            <h1 className="text-2xl font-black text-foreground tracking-tight">{subject.name}</h1>
-            <p className="text-sm text-muted-foreground font-medium mt-0.5">
-              Overall Average: <span className={`font-black ${avgColor}`}>{subject.avg}</span>
+            <h1 className="text-2xl font-semibold text-foreground tracking-tight">{subject.name}</h1>
+            <p className="text-sm text-muted-foreground font-medium mt-1">
+              Overall Average: <span className={`font-semibold ${avgColor}`}>{subject.avg}</span>
               {totalStudents > 0 && <><span className="mx-2">•</span>{totalStudents} students</>}
             </p>
           </div>
@@ -268,7 +268,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
         <div className="flex gap-3 shrink-0">
           <button
             onClick={handleExportPDF}
-            className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-xl text-sm font-bold bg-card text-foreground hover:bg-secondary transition-colors"
+            className="flex items-center gap-2 px-5 py-2.5 border border-border rounded-xl text-sm font-semibold bg-card text-foreground hover:bg-secondary transition-colors"
           >
             <Printer className="w-4 h-4" /> Export PDF
           </button>
@@ -276,8 +276,8 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center py-24">
-          <Loader2 className="w-8 h-8 animate-spin text-[#1e3a8a]" />
+        <div className="flex items-center justify-center py-10">
+          <Loader2 className="w-8 h-8 animate-spin text-[#1D1D1F]" />
         </div>
       ) : (
         <>
@@ -286,31 +286,31 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Section-wise Performance */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-bold text-foreground mb-5">Section-wise Performance</h3>
+              <h3 className="text-base font-semibold text-foreground mb-5">Section-wise Performance</h3>
               {sectionData.length === 0 ? (
-                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-bold">
+                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-semibold">
                   No section data yet
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={Math.max(220, sectionData.length * 42)}>
                   <BarChart data={sectionData} layout="vertical" margin={{ top: 5, right: 50, left: 10, bottom: 5 }} barCategoryGap="20%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" horizontal={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" horizontal={false} />
                     <XAxis
                       type="number" domain={[0, 100]}
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 11, fontWeight: 700, fill: "#94a3b8" }}
+                      tick={{ fontSize: 11, fontWeight: 600, fill: "#A1A1A6" }}
                       tickFormatter={(v) => `${v}%`}
                     />
                     <YAxis
                       type="category" dataKey="section"
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 12, fontWeight: 700, fill: "#64748b" }}
+                      tick={{ fontSize: 12, fontWeight: 600, fill: "#6E6E73" }}
                       width={40}
                     />
                     <Tooltip
                       content={({ active, payload }: any) =>
                         active && payload?.length ? (
-                          <div className="bg-[#1e293b] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
+                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
                             {payload[0].payload.section}: {payload[0].value}%
                           </div>
                         ) : null
@@ -318,7 +318,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                       cursor={{ fill: "rgba(0,0,0,0.02)" }}
                     />
                     <Bar dataKey="value" radius={[0, 6, 6, 0]} animationDuration={1000} barSize={20}
-                      label={{ position: "right", fontSize: 11, fontWeight: 700, fill: "#64748b", formatter: (v: number) => `${v}%` }}
+                      label={{ position: "right", fontSize: 11, fontWeight: 600, fill: "#6E6E73", formatter: (v: number) => `${v}%` }}
                     >
                       {sectionData.map((entry, i) => (
                         <Cell key={i} fill={entry.color} />
@@ -338,11 +338,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <TrendingUp className="w-4 h-4 text-green-500" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-foreground mb-1">Top Performing Section</h4>
+                    <h4 className="text-sm font-semibold text-foreground mb-1">Top Performing Section</h4>
                     {insights?.top ? (
                       <p className="text-sm text-muted-foreground font-medium">
-                        <span className="font-black text-foreground">{insights.top.section}</span> with{" "}
-                        <span className="text-green-600 font-black">{insights.top.value}%</span> average
+                        <span className="font-semibold text-foreground">{insights.top.section}</span> with{" "}
+                        <span className="text-green-600 font-semibold">{insights.top.value}%</span> average
                         {insights.top.teacherName !== "—" && ` (${insights.top.teacherName})`}
                       </p>
                     ) : (
@@ -359,11 +359,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     <TrendingDown className="w-4 h-4 text-red-500" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-foreground mb-1">Weakest Section</h4>
+                    <h4 className="text-sm font-semibold text-foreground mb-1">Weakest Section</h4>
                     {insights?.weak ? (
                       <p className="text-sm text-muted-foreground font-medium">
-                        <span className="font-black text-foreground">{insights.weak.section}</span> with{" "}
-                        <span className="text-red-500 font-black">{insights.weak.value}%</span> average
+                        <span className="font-semibold text-foreground">{insights.weak.section}</span> with{" "}
+                        <span className="text-red-500 font-semibold">{insights.weak.value}%</span> average
                         {insights.weak.teacherName !== "—" && ` (${insights.weak.teacherName})`}
                       </p>
                     ) : (
@@ -375,7 +375,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
               {/* Key Issues */}
               <div className="bg-card border border-border rounded-2xl p-5 shadow-sm flex-1">
-                <h4 className="text-sm font-bold text-foreground mb-3">Key Issues Identified</h4>
+                <h4 className="text-sm font-semibold text-foreground mb-3">Key Issues Identified</h4>
                 <ul className="space-y-2.5">
                   {(insights?.issues || ["No issues to report"]).map((issue, i) => (
                     <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground font-medium">
@@ -393,27 +393,27 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Student Marks Distribution */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-bold text-foreground mb-5">Student Marks Distribution</h3>
+              <h3 className="text-base font-semibold text-foreground mb-5">Student Marks Distribution</h3>
               {marksDistData.every((d) => d.students === 0) ? (
-                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-bold">
+                <div className="flex items-center justify-center h-52 text-slate-400 text-sm font-semibold">
                   No marks data yet
                 </div>
               ) : (
                 <ResponsiveContainer width="100%" height={240}>
                   <BarChart data={marksDistData} barCategoryGap="20%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
                     <XAxis
                       dataKey="range" axisLine={false} tickLine={false}
-                      tick={{ fontSize: 11, fontWeight: 700, fill: "#94a3b8" }}
+                      tick={{ fontSize: 11, fontWeight: 600, fill: "#A1A1A6" }}
                     />
                     <YAxis
                       axisLine={false} tickLine={false}
-                      tick={{ fontSize: 10, fontWeight: 700, fill: "#94a3b8" }}
+                      tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }}
                     />
                     <Tooltip
                       content={({ active, payload }: any) =>
                         active && payload?.length ? (
-                          <div className="bg-[#1e293b] text-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-lg">
+                          <div className="bg-[#1D1D1F] text-white px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
                             {payload[0].payload.range}: {payload[0].value} students
                           </div>
                         ) : null
@@ -432,11 +432,11 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
 
             {/* Teacher Effectiveness */}
             <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-              <h3 className="text-base font-bold text-foreground mb-5">Teacher Effectiveness</h3>
+              <h3 className="text-base font-semibold text-foreground mb-5">Teacher Effectiveness</h3>
               {teacherData.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-14 text-slate-400">
+                <div className="flex flex-col items-center justify-center py-10 text-slate-400">
                   <User className="w-10 h-10 mb-3 opacity-20" />
-                  <p className="text-sm font-bold">No teacher data found</p>
+                  <p className="text-sm font-semibold">No teacher data found</p>
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -447,19 +447,19 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
                     >
                       <div className="flex items-center gap-3">
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-sm font-black shadow-sm"
+                          className="w-11 h-11 rounded-xl flex items-center justify-center text-white text-sm font-semibold shadow-sm"
                           style={{ backgroundColor: t.avatarBg }}
                         >
                           {t.initials}
                         </div>
                         <div>
-                          <p className="text-sm font-bold text-foreground">{t.name}</p>
+                          <p className="text-sm font-semibold text-foreground">{t.name}</p>
                           <p className="text-xs text-muted-foreground font-medium">{t.grades}</p>
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-lg font-black" style={{ color: t.avgColor }}>{t.avg}%</p>
-                        <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">avg</p>
+                        <p className="text-lg font-semibold" style={{ color: t.avgColor }}>{t.avg}%</p>
+                        <p className="text-[12px] font-semibold text-muted-foreground uppercase tracking-wider">avg</p>
                       </div>
                     </div>
                   ))}
@@ -474,7 +474,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
       <div className="mt-8">
         <button
           onClick={onBack}
-          className="px-6 py-2.5 bg-card border border-border rounded-xl text-sm font-bold text-foreground shadow-sm hover:bg-secondary transition-colors inline-flex items-center gap-2"
+          className="px-6 py-2.5 bg-card border border-border rounded-xl text-sm font-semibold text-foreground shadow-sm hover:bg-secondary transition-colors inline-flex items-center gap-2"
         >
           <ChevronLeft className="w-4 h-4" /> Back to Academics
         </button>

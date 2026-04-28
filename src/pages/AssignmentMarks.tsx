@@ -113,26 +113,26 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
 
   // ───────────────────────── MOBILE DETAIL ─────────────────────────────────
   if (isMobile) {
-    const B1 = "#0055FF";
-    const B2 = "#1166FF";
-    const B3 = "#2277FF";
-    const GREEN = "#00C853";
-    const RED = "#FF3355";
-    const ORANGE = "#FF8800";
-    const GOLD = "#FFAA00";
-    const VIOLET = "#7B3FF4";
-    const T1 = "#001040";
-    const T2 = "#002080";
-    const T3 = "#5070B0";
-    const T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,.07)";
+    const B1 = "#0A84FF";
+    const B2 = "#3395FF";
+    const B3 = "#5BA9FF";
+    const GREEN = "#34C759";
+    const RED = "#FF3B30";
+    const ORANGE = "#FF9500";
+    const GOLD = "#FFCC00";
+    const VIOLET = "#AF52DE";
+    const T1 = "#1D1D1F";
+    const T2 = "#3A3A3C";
+    const T3 = "#6E6E73";
+    const T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,.07)";
 
     const avGrads = [
-      `linear-gradient(135deg, #002DBB, ${B1})`,
+      `linear-gradient(135deg, #0A84FF, ${B1})`,
       `linear-gradient(135deg, ${B1}, ${B3})`,
       `linear-gradient(135deg, ${VIOLET}, #AA77FF)`,
-      `linear-gradient(135deg, ${GREEN}, #22EE66)`,
-      `linear-gradient(135deg, ${GOLD}, #FFCC55)`,
+      `linear-gradient(135deg, ${GREEN}, #34C759)`,
+      `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
     ];
 
     const topShort = (group.topStudent || "—").split(" ").slice(0, 2).join(" ");
@@ -140,8 +140,8 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
     return (
       <div
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
-          background: "#EEF4FF",
+          fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
+          background: "#F5F5F7",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -152,7 +152,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             onClick={onBack}
             style={{
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               color: B1,
               cursor: "pointer",
               display: "flex",
@@ -167,7 +167,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             Assignments & Marks
           </button>
           <span style={{ fontSize: 11, color: T4 }}>/</span>
-          <span style={{ fontSize: 11, fontWeight: 700, color: T2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
+          <span style={{ fontSize: 11, fontWeight: 600, color: T2, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}>
             {group.title}
           </span>
         </div>
@@ -179,8 +179,8 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             background: "#fff",
             borderRadius: 22,
             padding: "18px 20px",
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)",
-            border: "0.5px solid rgba(0,85,255,.10)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)",
+            border: "0.5px solid rgba(10,132,255,.10)",
             position: "relative",
             overflow: "hidden",
           }}
@@ -192,14 +192,14 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               right: -18,
               width: 100,
               height: 100,
-              background: "radial-gradient(circle, rgba(0,85,255,.06) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(10,132,255,.06) 0%, transparent 70%)",
               borderRadius: "50%",
               pointerEvents: "none",
             }}
           />
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 12, gap: 10 }}>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: T1, letterSpacing: "-0.4px", textTransform: "capitalize", marginBottom: 5, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <div style={{ fontSize: 20, fontWeight: 600, color: T1, letterSpacing: "-0.4px", textTransform: "capitalize", marginBottom: 5, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                 {group.title}
               </div>
               <div style={{ fontSize: 11, color: T4, fontWeight: 600, display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap" }}>
@@ -210,7 +210,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                     background: `linear-gradient(135deg, ${B1}, ${B2})`,
                     color: "#fff",
                     fontSize: 10,
-                    fontWeight: 700,
+                    fontWeight: 600,
                   }}
                 >
                   {group.className}
@@ -231,11 +231,11 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 alignItems: "center",
                 gap: 6,
                 fontSize: 12,
-                fontWeight: 700,
+                fontWeight: 600,
                 color: "#fff",
                 cursor: "pointer",
                 border: "none",
-                boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)",
+                boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)",
                 flexShrink: 0,
                 marginTop: 4,
               }}
@@ -244,12 +244,12 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               Download
             </button>
           </div>
-          <div style={{ height: 8, background: "#E0ECFF", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ height: 8, background: "#EBEBF0", borderRadius: 4, overflow: "hidden" }}>
             <div
               style={{
                 height: "100%",
                 borderRadius: 4,
-                background: `linear-gradient(90deg, ${B1}, #66BBFF)`,
+                background: `linear-gradient(90deg, ${B1}, #7CBBFF)`,
                 width: `${Math.min(100, Math.max(0, group.avgScore))}%`,
               }}
             />
@@ -264,9 +264,9 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               value: group.gradedCount,
               color: GREEN,
               icon: <Check size={13} color={GREEN} strokeWidth={2.4} />,
-              bg: "rgba(0,200,83,.10)",
-              border: "rgba(0,200,83,.22)",
-              glow: "rgba(0,200,83,.10)",
+              bg: "rgba(52,199,89,.10)",
+              border: "rgba(52,199,89,.22)",
+              glow: "rgba(52,199,89,.10)",
               isText: false,
             },
             {
@@ -274,9 +274,9 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               value: `${group.avgScore}%`,
               color: ORANGE,
               icon: <TrendingUp size={13} color={ORANGE} strokeWidth={2.4} />,
-              bg: "rgba(255,136,0,.10)",
-              border: "rgba(255,136,0,.22)",
-              glow: "rgba(255,136,0,.10)",
+              bg: "rgba(255,149,0,.10)",
+              border: "rgba(255,149,0,.22)",
+              glow: "rgba(255,149,0,.10)",
               isText: false,
             },
             {
@@ -284,9 +284,9 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               value: `${group.topScore}%`,
               color: GREEN,
               icon: <Trophy size={13} color={GOLD} strokeWidth={2.4} />,
-              bg: "rgba(255,170,0,.10)",
-              border: "rgba(255,170,0,.22)",
-              glow: "rgba(0,200,83,.10)",
+              bg: "rgba(255,204,0,.10)",
+              border: "rgba(255,204,0,.22)",
+              glow: "rgba(52,199,89,.10)",
               isText: false,
             },
             {
@@ -294,9 +294,9 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               value: topShort,
               color: T1,
               icon: <Users size={13} color={B1} strokeWidth={2.4} />,
-              bg: "rgba(0,85,255,.10)",
-              border: "rgba(0,85,255,.18)",
-              glow: "rgba(0,85,255,.10)",
+              bg: "rgba(10,132,255,.10)",
+              border: "rgba(10,132,255,.18)",
+              glow: "rgba(10,132,255,.10)",
               isText: true,
             },
           ].map((c, i) => (
@@ -306,8 +306,8 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 background: "#fff",
                 borderRadius: 18,
                 padding: 14,
-                boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
-                border: "0.5px solid rgba(0,85,255,.10)",
+                boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
+                border: "0.5px solid rgba(10,132,255,.10)",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -342,7 +342,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               <div
                 style={{
                   fontSize: c.isText ? 13 : 22,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   color: c.color,
                   letterSpacing: "-0.5px",
                   lineHeight: 1,
@@ -354,7 +354,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 {c.value}
               </div>
-              <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
+              <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: T4 }}>
                 {c.label}
               </div>
             </div>
@@ -365,7 +365,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
         <div
           style={{
             fontSize: 9,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.10em",
             textTransform: "uppercase",
             color: T4,
@@ -376,7 +376,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
           }}
         >
           <span>Student-wise Marks</span>
-          <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,.12)" }} />
+          <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,.12)" }} />
         </div>
 
         {/* STUDENT MARKS TABLE */}
@@ -386,18 +386,18 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             background: "#fff",
             borderRadius: 22,
             overflow: "hidden",
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11)",
-            border: "0.5px solid rgba(0,85,255,.10)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11)",
+            border: "0.5px solid rgba(10,132,255,.10)",
           }}
         >
           <div style={{ padding: "15px 18px 12px", borderBottom: `0.5px solid ${SEP}` }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: T1 }}>Student-wise Marks</div>
+            <div style={{ fontSize: 14, fontWeight: 600, color: T1 }}>Student-wise Marks</div>
           </div>
 
           {sorted.length === 0 ? (
             <div style={{ padding: "32px 20px", display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
-              <FileText size={36} color="rgba(0,85,255,.22)" strokeWidth={1.8} />
-              <div style={{ fontSize: 13, fontWeight: 700, color: T2 }}>No submissions yet</div>
+              <FileText size={36} color="rgba(10,132,255,.22)" strokeWidth={1.8} />
+              <div style={{ fontSize: 13, fontWeight: 600, color: T2 }}>No submissions yet</div>
             </div>
           ) : (
             sorted.map((r, i) => {
@@ -405,12 +405,12 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               const graded = score !== null && !isNaN(score);
               const gradeInfo = graded
                 ? score! >= 80
-                  ? { letter: "A", bg: "rgba(0,200,83,.10)", color: "#007830", border: "0.5px solid rgba(0,200,83,.22)", barFrom: GREEN, barTo: "#66EE88" }
+                  ? { letter: "A", bg: "rgba(52,199,89,.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,.22)", barFrom: GREEN, barTo: "#34C759" }
                   : score! >= 60
-                  ? { letter: "B", bg: "rgba(0,85,255,.10)", color: B1, border: "0.5px solid rgba(0,85,255,.22)", barFrom: B1, barTo: "#66BBFF" }
+                  ? { letter: "B", bg: "rgba(10,132,255,.10)", color: B1, border: "0.5px solid rgba(10,132,255,.22)", barFrom: B1, barTo: "#7CBBFF" }
                   : score! >= 40
-                  ? { letter: "C", bg: "rgba(255,170,0,.10)", color: "#884400", border: "0.5px solid rgba(255,170,0,.22)", barFrom: GOLD, barTo: "#FFCC55" }
-                  : { letter: "D", bg: "rgba(255,51,85,.10)", color: RED, border: "0.5px solid rgba(255,51,85,.22)", barFrom: RED, barTo: "#FF88AA" }
+                  ? { letter: "C", bg: "rgba(255,204,0,.10)", color: "#86310C", border: "0.5px solid rgba(255,204,0,.22)", barFrom: GOLD, barTo: "#FFCC00" }
+                  : { letter: "D", bg: "rgba(255,59,48,.10)", color: RED, border: "0.5px solid rgba(255,59,48,.22)", barFrom: RED, barTo: "#FF6961" }
                 : null;
               const feedbackText =
                 r.feedback ||
@@ -421,7 +421,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               return (
                 <div key={r.studentId || i} style={{ display: "flex", flexDirection: "column", borderBottom: isLast ? "none" : `0.5px solid ${SEP}` }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 11, padding: "14px 18px" }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: T4, width: 18, textAlign: "center", flexShrink: 0 }}>
+                    <div style={{ fontSize: 11, fontWeight: 600, color: T4, width: 18, textAlign: "center", flexShrink: 0 }}>
                       {i + 1}
                     </div>
                     <div
@@ -434,23 +434,23 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                         alignItems: "center",
                         justifyContent: "center",
                         fontSize: 13,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: "#fff",
                         flexShrink: 0,
-                        boxShadow: "0 3px 10px rgba(0,85,255,.24)",
+                        boxShadow: "0 3px 10px rgba(10,132,255,.24)",
                       }}
                     >
                       {(r.studentName || "ST").substring(0, 2).toUpperCase()}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: T1, letterSpacing: "-0.2px", marginBottom: 3, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {r.studentName || "—"}
                       </div>
                       <div style={{ fontSize: 11, color: T4, fontWeight: 600 }}>
                         {r.className || group.className}
                       </div>
                       {graded && gradeInfo && (
-                        <div style={{ height: 4, width: 120, background: "#E0ECFF", borderRadius: 2, overflow: "hidden", marginTop: 5 }}>
+                        <div style={{ height: 4, width: 120, background: "#EBEBF0", borderRadius: 2, overflow: "hidden", marginTop: 5 }}>
                           <div
                             style={{
                               height: "100%",
@@ -463,7 +463,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                       )}
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 5, flexShrink: 0 }}>
-                      <div style={{ fontSize: 17, fontWeight: 700, letterSpacing: "-0.3px", color: graded ? (gradeInfo!.letter === "D" ? RED : gradeInfo!.letter === "A" ? GREEN : gradeInfo!.color) : T4 }}>
+                      <div style={{ fontSize: 17, fontWeight: 600, letterSpacing: "-0.3px", color: graded ? (gradeInfo!.letter === "D" ? RED : gradeInfo!.letter === "A" ? GREEN : gradeInfo!.color) : T4 }}>
                         {graded ? `${score}/100` : "—"}
                       </div>
                       {gradeInfo && (
@@ -472,7 +472,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                             padding: "4px 11px",
                             borderRadius: 100,
                             fontSize: 11,
-                            fontWeight: 700,
+                            fontWeight: 600,
                             textAlign: "center",
                             background: gradeInfo.bg,
                             color: gradeInfo.color,
@@ -488,7 +488,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                     <div
                       style={{
                         padding: "10px 18px 14px",
-                        background: needsAttention ? "rgba(255,51,85,.04)" : "rgba(0,85,255,.04)",
+                        background: needsAttention ? "rgba(255,59,48,.04)" : "rgba(10,132,255,.04)",
                         borderTop: `0.5px solid ${SEP}`,
                       }}
                     >
@@ -498,7 +498,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                           alignItems: "center",
                           gap: 5,
                           fontSize: 9,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           letterSpacing: "0.10em",
                           textTransform: "uppercase",
                           color: needsAttention ? RED : VIOLET,
@@ -528,7 +528,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
           <div
             style={{
               margin: "12px 20px 0",
-              background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)",
+              background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)",
               borderRadius: 22,
               padding: "18px 20px",
               boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)",
@@ -563,16 +563,16 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
               </div>
-              <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>
                 AI Marks Intelligence
               </span>
             </div>
             <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
               {group.title} shows a class average of{" "}
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{group.avgScore}%</strong>.{" "}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{group.avgScore}%</strong>.{" "}
               {group.topStudent && group.topStudent !== "—" && (
                 <>
-                  <strong style={{ color: "#fff", fontWeight: 700 }}>
+                  <strong style={{ color: "#fff", fontWeight: 600 }}>
                     {group.topStudent} ({group.topScore}%)
                   </strong>{" "}
                   demonstrates excellent understanding.
@@ -607,15 +607,15 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 const lowest = nums.length ? Math.min(...nums) : null;
                 return [
                   { v: `${group.avgScore}%`, l: "Avg Score", color: "#fff" },
-                  { v: `${group.topScore}%`, l: "Highest", color: "#66EE88" },
-                  { v: lowest !== null ? `${lowest}%` : "—", l: "Lowest", color: "#FF8899" },
+                  { v: `${group.topScore}%`, l: "Highest", color: "#34C759" },
+                  { v: lowest !== null ? `${lowest}%` : "—", l: "Lowest", color: "#FF6961" },
                 ];
               })().map((s, i) => (
                 <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                  <div style={{ fontSize: 19, fontWeight: 700, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
+                  <div style={{ fontSize: 19, fontWeight: 600, color: s.color, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>
                     {s.v}
                   </div>
-                  <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
+                  <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>
                     {s.l}
                   </div>
                 </div>
@@ -635,12 +635,12 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             padding: "0 16px",
             borderRadius: 14,
             background: "#fff",
-            border: "0.5px solid rgba(0,85,255,.14)",
+            border: "0.5px solid rgba(10,132,255,.14)",
             fontSize: 13,
-            fontWeight: 700,
+            fontWeight: 600,
             color: T2,
             cursor: "pointer",
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08)",
             margin: "14px 20px 0",
           }}
         >
@@ -652,50 +652,50 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
   }
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-300" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Breadcrumb */}
-      <div className="pt-2 pb-3 flex items-center gap-[6px]">
+      <div className="pt-2 pb-3 flex items-center gap-[8px]">
         <button onClick={onBack}
-          className="flex items-center gap-1 text-[11px] font-bold transition-opacity active:opacity-60 hover:opacity-80"
-          style={{ color: "#0055FF" }}>
+          className="flex items-center gap-1 text-[12px] font-semibold transition-opacity active:opacity-60 hover:opacity-80"
+          style={{ color: "#0A84FF" }}>
           <ChevronLeft className="w-3 h-3" strokeWidth={2.5} />
           Assignments &amp; Marks
         </button>
-        <span className="text-[11px]" style={{ color: "#99AACC" }}>/</span>
-        <span className="text-[11px] font-bold truncate max-w-[280px] capitalize" style={{ color: "#002080" }}>{group.title}</span>
+        <span className="text-[12px]" style={{ color: "#A1A1A6" }}>/</span>
+        <span className="text-[12px] font-semibold truncate max-w-[280px] capitalize" style={{ color: "#3A3A3C" }}>{group.title}</span>
       </div>
 
       {/* Marks hero card */}
       <div className="rounded-[22px] bg-white p-6 relative overflow-hidden mb-4"
-        style={{ boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 16px 40px rgba(0,85,255,.13)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
+        style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
         <div className="absolute -top-6 -right-5 w-[130px] h-[130px] rounded-full pointer-events-none"
-          style={{ background: `radial-gradient(circle, rgba(0,85,255,0.06) 0%, transparent 70%)` }} />
+          style={{ background: `radial-gradient(circle, rgba(10,132,255,0.06) 0%, transparent 70%)` }} />
         <div className="flex items-start justify-between gap-4 relative">
           <div className="min-w-0 flex-1">
-            <div className="text-[24px] font-bold leading-tight tracking-[-0.5px] capitalize mb-[8px]" style={{ color: "#001040" }}>
+            <div className="text-[24px] font-semibold leading-tight tracking-[-0.5px] capitalize mb-[8px]" style={{ color: "#1D1D1F" }}>
               {group.title}
             </div>
-            <div className="text-[12px] font-semibold flex items-center gap-[8px] flex-wrap" style={{ color: "#5070B0" }}>
-              <span className="px-[10px] py-[3px] rounded-full text-[11px] font-bold text-white"
-                style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)" }}>{group.className}</span>
-              <span>Teacher: <strong style={{ color: "#002080", fontWeight: 700 }}>{group.teacherName}</strong></span>
-              <span className="w-[3px] h-[3px] rounded-full" style={{ background: "#99AACC" }} />
+            <div className="text-[12px] font-semibold flex items-center gap-[8px] flex-wrap" style={{ color: "#6E6E73" }}>
+              <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white"
+                style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)" }}>{group.className}</span>
+              <span>Teacher: <strong style={{ color: "#3A3A3C", fontWeight: 600 }}>{group.teacherName}</strong></span>
+              <span className="w-[3px] h-[3px] rounded-full" style={{ background: "#A1A1A6" }} />
               <span>Due: {fmtDate(group.dueDate)}</span>
             </div>
           </div>
           <button onClick={handleDownload}
-            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[7px] text-[12px] font-bold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
-            style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)" }}>
+            className="h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold text-white uppercase tracking-[0.06em] transition-transform active:scale-95 hover:scale-[1.02] relative overflow-hidden flex-shrink-0"
+            style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)" }}>
             <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <Download className="w-[14px] h-[14px] relative z-10" strokeWidth={2.4} />
             <span className="relative z-10">Download Marks</span>
           </button>
         </div>
         {/* Progress bar */}
-        <div className="h-2 rounded-[4px] overflow-hidden mt-5" style={{ background: "#E0ECFF" }}>
+        <div className="h-2 rounded-[4px] overflow-hidden mt-5" style={{ background: "#EBEBF0" }}>
           <div className="h-full rounded-[4px]"
-            style={{ width: `${Math.max(0, Math.min(100, group.avgScore))}%`, background: `linear-gradient(90deg, #0055FF, #66BBFF)` }} />
+            style={{ width: `${Math.max(0, Math.min(100, group.avgScore))}%`, background: `linear-gradient(90deg, #0A84FF, #7CBBFF)` }} />
         </div>
       </div>
 
@@ -707,33 +707,33 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             val: group.gradedCount,
             sub: "Students",
             Icon: Check,
-            cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-            tileGrad: "linear-gradient(135deg, #00C853, #22EE66)",
-            tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
-            valColor: "#007830",
-            decorColor: "#00C853",
+            cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+            tileGrad: "linear-gradient(135deg, #34C759, #34C759)",
+            tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
+            valColor: "#248A3D",
+            decorColor: "#34C759",
           },
           {
             label: "Avg Score",
             val: `${group.avgScore}%`,
             sub: group.avgScore >= 70 ? "Strong" : group.avgScore >= 50 ? "Average" : "Needs work",
             Icon: TrendingUp,
-            cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-            tileGrad: "linear-gradient(135deg, #0055FF, #1166FF)",
-            tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
-            valColor: "#0055FF",
-            decorColor: "#0055FF",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
+            tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
+            valColor: "#0A84FF",
+            decorColor: "#0A84FF",
           },
           {
             label: "Top Score",
             val: `${group.topScore}%`,
             sub: "Highest",
             Icon: Trophy,
-            cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-            tileGrad: "linear-gradient(135deg, #FFAA00, #FFDD44)",
-            tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
-            valColor: "#FFAA00",
-            decorColor: "#FFAA00",
+            cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+            tileGrad: "linear-gradient(135deg, #FFCC00, #FFCC00)",
+            tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
+            valColor: "#FFCC00",
+            decorColor: "#FFCC00",
           },
           {
             label: "Top Student",
@@ -741,11 +741,11 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             sub: "Topper",
             isText: true,
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-            tileGrad: "linear-gradient(135deg, #7B3FF4, #A07CF8)",
-            tileShadow: "0 4px 14px rgba(123,63,244,0.26)",
-            valColor: "#7B3FF4",
-            decorColor: "#7B3FF4",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
+            tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
+            valColor: "#AF52DE",
+            decorColor: "#AF52DE",
           },
         ].map((s, i) => {
           const Icon = s.Icon;
@@ -755,8 +755,8 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               className="rounded-[20px] p-5 relative overflow-hidden"
               style={{
                 background: s.cardGrad,
-                boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-                border: "0.5px solid rgba(0,85,255,0.08)",
+                boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+                border: "0.5px solid rgba(10,132,255,0.08)",
               }}
             >
               <div
@@ -765,13 +765,13 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>{s.label}</span>
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
               {s.isText ? (
-                <p className="text-[20px] font-bold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
+                <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
               ) : (
-                <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
               )}
-              <p className="text-[11px] font-semibold truncate" style={{ color: "#5070B0" }}>{s.sub}</p>
+              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -783,24 +783,24 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
       </div>
 
       {/* Section label */}
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] mb-3" style={{ color: "#99AACC" }}>
+      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         Student-wise Marks
-        <span className="px-[10px] py-[3px] rounded-full text-[10px] font-bold ml-1"
-          style={{ background: "rgba(0,85,255,0.10)", color: "#0055FF", border: "0.5px solid rgba(0,85,255,0.16)" }}>
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+          style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {sorted.length} {sorted.length === 1 ? "student" : "students"}
         </span>
-        <div className="flex-1 h-[0.5px]" style={{ background: "rgba(0,85,255,0.12)" }} />
+        <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
       </div>
 
       {/* Student marks table */}
       <div className="rounded-[22px] bg-white overflow-hidden"
-        style={{ boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 16px 40px rgba(0,85,255,.13)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
+        style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px]">
             <thead>
-              <tr style={{ background: "rgba(0,85,255,0.04)", borderBottom: "0.5px solid rgba(0,85,255,0.07)" }}>
+              <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                 {["#", "Student", "Score", "Grade", "AI Feedback"].map(h => (
-                  <th key={h} className="px-5 py-[14px] text-left text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "#99AACC" }}>{h}</th>
+                  <th key={h} className="px-5 py-[16px] text-left text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "#A1A1A6" }}>{h}</th>
                 ))}
               </tr>
             </thead>
@@ -809,61 +809,61 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                 const score  = r.score !== null && r.score !== undefined ? parseFloat(r.score) : null;
                 const graded = score !== null && !isNaN(score);
                 const lg     = graded ? scoreLetter(score!) : null;
-                const scoreColor = !graded ? "#99AACC" : score! >= 80 ? "#00C853" : score! >= 60 ? "#0055FF" : score! >= 40 ? "#FF8800" : "#FF3355";
+                const scoreColor = !graded ? "#A1A1A6" : score! >= 80 ? "#34C759" : score! >= 60 ? "#0A84FF" : score! >= 40 ? "#FF9500" : "#FF3B30";
                 const gStyle = !lg ? null
-                  : lg.letter === "A" ? { bg: "rgba(0,200,83,0.10)", c: "#007830", bdr: "rgba(0,200,83,0.22)", fill: "linear-gradient(90deg, #00C853, #66EE88)" }
-                  : lg.letter === "B" ? { bg: "rgba(0,85,255,0.10)", c: "#0055FF", bdr: "rgba(0,85,255,0.22)", fill: "linear-gradient(90deg, #0055FF, #4499FF)" }
-                  : lg.letter === "C" ? { bg: "rgba(255,136,0,0.10)", c: "#884400", bdr: "rgba(255,136,0,0.22)", fill: "linear-gradient(90deg, #FF8800, #FFCC22)" }
-                  : { bg: "rgba(255,51,85,0.10)", c: "#FF3355", bdr: "rgba(255,51,85,0.22)", fill: "linear-gradient(90deg, #FF3355, #FF88AA)" };
+                  : lg.letter === "A" ? { bg: "rgba(52,199,89,0.10)", c: "#248A3D", bdr: "rgba(52,199,89,0.22)", fill: "linear-gradient(90deg, #34C759, #34C759)" }
+                  : lg.letter === "B" ? { bg: "rgba(10,132,255,0.10)", c: "#0A84FF", bdr: "rgba(10,132,255,0.22)", fill: "linear-gradient(90deg, #0A84FF, #7CBBFF)" }
+                  : lg.letter === "C" ? { bg: "rgba(255,149,0,0.10)", c: "#86310C", bdr: "rgba(255,149,0,0.22)", fill: "linear-gradient(90deg, #FF9500, #FFCC00)" }
+                  : { bg: "rgba(255,59,48,0.10)", c: "#FF3B30", bdr: "rgba(255,59,48,0.22)", fill: "linear-gradient(90deg, #FF3B30, #FF6961)" };
                 const name = r.studentName || "—";
                 return (
-                  <tr key={r.studentId || i} className="transition-colors hover:bg-[#F5F9FF]"
-                    style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(0,85,255,0.05)" } : {}}>
-                    <td className="px-5 py-[14px] text-[11px] font-bold" style={{ color: "#99AACC" }}>{i + 1}</td>
-                    <td className="px-5 py-[14px]">
+                  <tr key={r.studentId || i} className="transition-colors hover:bg-[#F5F5F7]"
+                    style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
+                    <td className="px-5 py-[16px] text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>{i + 1}</td>
+                    <td className="px-5 py-[16px]">
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-bold flex-shrink-0"
-                          style={{ background: "linear-gradient(135deg, #0044EE, #2277FF)", boxShadow: "0 3px 10px rgba(0,85,255,0.24)" }}>
+                        <div className="w-9 h-9 rounded-[11px] flex items-center justify-center text-white text-[12px] font-semibold flex-shrink-0"
+                          style={{ background: "linear-gradient(135deg, #3395FF, #5BA9FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.24)" }}>
                           {name.substring(0, 2).toUpperCase()}
                         </div>
-                        <span className="text-[13px] font-bold tracking-[-0.2px]" style={{ color: "#001040" }}>{name}</span>
+                        <span className="text-[13px] font-semibold tracking-[-0.2px]" style={{ color: "#1D1D1F" }}>{name}</span>
                       </div>
                     </td>
-                    <td className="px-5 py-[14px]">
+                    <td className="px-5 py-[16px]">
                       {graded ? (
                         <div className="flex items-center gap-3">
-                          <span className="text-[15px] font-bold tracking-[-0.3px]" style={{ color: scoreColor }}>{score}/100</span>
-                          <div className="h-1 w-[80px] rounded-[2px] overflow-hidden" style={{ background: "#E0ECFF" }}>
+                          <span className="text-[15px] font-semibold tracking-[-0.3px]" style={{ color: scoreColor }}>{score}/100</span>
+                          <div className="h-1 w-[80px] rounded-[2px] overflow-hidden" style={{ background: "#EBEBF0" }}>
                             <div className="h-full rounded-[2px]" style={{ width: `${Math.max(0, Math.min(100, score!))}%`, background: gStyle!.fill }} />
                           </div>
                         </div>
                       ) : (
-                        <span className="text-[11px] font-semibold" style={{ color: "#99AACC" }}>Not graded</span>
+                        <span className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>Not graded</span>
                       )}
                     </td>
-                    <td className="px-5 py-[14px]">
+                    <td className="px-5 py-[16px]">
                       {lg && gStyle ? (
-                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-[11px] text-[13px] font-bold"
+                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-[11px] text-[13px] font-semibold"
                           style={{ background: gStyle.bg, color: gStyle.c, border: `0.5px solid ${gStyle.bdr}` }}>
                           {lg.letter}
                         </span>
-                      ) : <span style={{ color: "#99AACC" }}>—</span>}
+                      ) : <span style={{ color: "#A1A1A6" }}>—</span>}
                     </td>
-                    <td className="px-5 py-[14px] max-w-md">
+                    <td className="px-5 py-[16px] max-w-md">
                       {r.feedback ? (
-                        <span className="text-[12px] leading-[1.55]" style={{ color: "#5070B0" }}>{r.feedback}</span>
+                        <span className="text-[12px] leading-[1.55]" style={{ color: "#6E6E73" }}>{r.feedback}</span>
                       ) : graded ? (
                         <div>
-                          <p className="text-[12px] leading-[1.55]" style={{ color: "#5070B0" }}>
+                          <p className="text-[12px] leading-[1.55]" style={{ color: "#6E6E73" }}>
                             {aiFeedback(score!, r.studentName || "", group.title)}
                           </p>
-                          <span className="inline-flex items-center gap-1 mt-[6px] px-[9px] py-[3px] rounded-full text-[10px] font-bold"
-                            style={{ background: "rgba(123,63,244,0.10)", color: "#7B3FF4", border: "0.5px solid rgba(123,63,244,0.22)" }}>
+                          <span className="inline-flex items-center gap-1 mt-[8px] px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+                            style={{ background: "rgba(175,82,222,0.10)", color: "#AF52DE", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                             <Sparkles className="w-[10px] h-[10px]" strokeWidth={2.3} /> AI
                           </span>
                         </div>
                       ) : (
-                        <span style={{ color: "#99AACC" }}>—</span>
+                        <span style={{ color: "#A1A1A6" }}>—</span>
                       )}
                     </td>
                   </tr>
@@ -876,8 +876,8 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
 
       {/* Back button */}
       <button onClick={onBack}
-        className="mt-5 h-[42px] px-5 rounded-[12px] flex items-center gap-[7px] text-[12px] font-bold bg-white transition-transform active:scale-95 hover:scale-[1.02]"
-        style={{ color: "#002080", border: "0.5px solid rgba(0,85,255,0.14)", boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.09)" }}>
+        className="mt-5 h-[42px] px-5 rounded-[12px] flex items-center gap-[8px] text-[12px] font-semibold bg-white transition-transform active:scale-95 hover:scale-[1.02]"
+        style={{ color: "#3A3A3C", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)" }}>
         <ChevronLeft className="w-[14px] h-[14px]" strokeWidth={2.4} />
         Back to Assignments
       </button>
@@ -1098,29 +1098,29 @@ export default function AssignmentMarks() {
 
   /* ── list view (desktop) ── */
   const dSchoolAvgTier = !stats.totalGraded ? { label: "No data", c: "#CCDDEE", bg: "rgba(153,170,204,.18)", bdr: "rgba(153,170,204,.32)" }
-    : stats.avgScore >= 80 ? { label: "Excellent", c: "#66EE88", bg: "rgba(0,200,83,0.22)", bdr: "rgba(0,200,83,0.4)" }
-    : stats.avgScore >= 60 ? { label: "Strong", c: "#66EE88", bg: "rgba(0,200,83,0.22)", bdr: "rgba(0,200,83,0.4)" }
-    : stats.avgScore >= 45 ? { label: "Average", c: "#FFDD88", bg: "rgba(255,170,0,0.22)", bdr: "rgba(255,170,0,0.4)" }
-    : { label: "Needs Work", c: "#FF99AA", bg: "rgba(255,51,85,0.22)", bdr: "rgba(255,51,85,0.4)" };
+    : stats.avgScore >= 80 ? { label: "Excellent", c: "#34C759", bg: "rgba(52,199,89,0.22)", bdr: "rgba(52,199,89,0.4)" }
+    : stats.avgScore >= 60 ? { label: "Strong", c: "#34C759", bg: "rgba(52,199,89,0.22)", bdr: "rgba(52,199,89,0.4)" }
+    : stats.avgScore >= 45 ? { label: "Average", c: "#FFCC00", bg: "rgba(255,204,0,0.22)", bdr: "rgba(255,204,0,0.4)" }
+    : { label: "Needs Work", c: "#FF6961", bg: "rgba(255,59,48,0.22)", bdr: "rgba(255,59,48,0.4)" };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
+    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Top toolbar */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">
         <div className="min-w-0">
-          <div className="text-[28px] font-bold leading-tight tracking-[-0.7px] flex items-center gap-[10px]" style={{ color: "#001040" }}>
+          <div className="text-[28px] font-semibold leading-tight tracking-[-0.7px] flex items-center gap-[12px]" style={{ color: "#1D1D1F" }}>
             <div className="w-9 h-9 rounded-[12px] flex items-center justify-center flex-shrink-0"
-              style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 4px 12px rgba(0,85,255,0.32)" }}>
+              style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 4px 12px rgba(10,132,255,0.32)" }}>
               <FileText className="w-[19px] h-[19px] text-white" strokeWidth={2.4} />
             </div>
             Assignments &amp; Marks
           </div>
-          <div className="text-[12px] font-normal mt-[6px] ml-[46px] flex items-center gap-[6px]" style={{ color: "#5070B0" }}>
+          <div className="text-[12px] font-normal mt-[8px] ml-[46px] flex items-center gap-[8px]" style={{ color: "#6E6E73" }}>
             <span>Class-wise Marks</span>
-            <span className="font-bold" style={{ color: "#99AACC" }}>·</span>
+            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
             <span>Teacher Submissions</span>
-            <span className="font-bold" style={{ color: "#99AACC" }}>·</span>
+            <span className="font-semibold" style={{ color: "#A1A1A6" }}>·</span>
             <span>AI Feedback Engine</span>
           </div>
         </div>
@@ -1129,7 +1129,7 @@ export default function AssignmentMarks() {
       {/* Dark hero banner */}
       <div className="rounded-[22px] px-6 py-5 relative overflow-hidden flex items-center justify-between gap-5 mb-4"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 8px 26px rgba(0,8,60,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
         }}>
         <div className="absolute -top-12 -right-8 w-[180px] h-[180px] rounded-full pointer-events-none"
@@ -1140,28 +1140,28 @@ export default function AssignmentMarks() {
             <TrendingUp className="w-[22px] h-[22px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.1} />
           </div>
           <div className="min-w-0">
-            <div className="text-[9px] font-bold uppercase tracking-[0.14em] mb-[5px]" style={{ color: "rgba(255,255,255,0.50)" }}>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.14em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>
               School Avg Score · {stats.totalGraded} Graded Submission{stats.totalGraded === 1 ? "" : "s"}
             </div>
-            <div className="text-[34px] font-bold text-white leading-none tracking-[-1px]">
+            <div className="text-[28px] font-semibold text-white leading-none tracking-[-1px]">
               {loading ? "—" : `${stats.avgScore}%`}
             </div>
           </div>
         </div>
         <div className="flex items-center gap-3 flex-shrink-0 relative z-10">
-          <div className="flex items-center gap-[5px] px-[14px] py-[7px] rounded-full"
+          <div className="flex items-center gap-[4px] px-[16px] py-[8px] rounded-full"
             style={{ background: dSchoolAvgTier.bg, border: `0.5px solid ${dSchoolAvgTier.bdr}` }}>
-            <span className="text-[12px] font-bold" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label}</span>
+            <span className="text-[12px] font-semibold" style={{ color: dSchoolAvgTier.c }}>{dSchoolAvgTier.label}</span>
           </div>
           <div className="grid grid-cols-3 gap-[1px] rounded-[13px] overflow-hidden" style={{ background: "rgba(255,255,255,0.12)" }}>
             {[
               { val: stats.totalAssignments, label: "Assignments", color: "#fff" },
-              { val: stats.totalGraded, label: "Graded", color: "#66EE88" },
-              { val: stats.topStudent && stats.topStudent !== "—" ? stats.topStudent.split(" ")[0] : "—", label: "Topper", color: "#FFDD88" },
+              { val: stats.totalGraded, label: "Graded", color: "#34C759" },
+              { val: stats.topStudent && stats.topStudent !== "—" ? stats.topStudent.split(" ")[0] : "—", label: "Topper", color: "#FFCC00" },
             ].map(({ val, label, color }) => (
-              <div key={label} className="py-[10px] px-[14px] text-center min-w-[80px]" style={{ background: "rgba(255,255,255,0.08)" }}>
-                <div className="text-[17px] font-bold leading-none mb-[3px] truncate" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
-                <div className="text-[8px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
+              <div key={label} className="py-[12px] px-[16px] text-center min-w-[80px]" style={{ background: "rgba(255,255,255,0.08)" }}>
+                <div className="text-[18px] font-semibold leading-none mb-[4px] truncate" style={{ color, letterSpacing: "-0.4px" }}>{val}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.40)" }}>{label}</div>
               </div>
             ))}
           </div>
@@ -1177,33 +1177,33 @@ export default function AssignmentMarks() {
             val: loading ? "—" : stats.totalAssignments,
             sub: "This term",
             Icon: BookOpen,
-            cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-            tileGrad: "linear-gradient(135deg, #0055FF, #1166FF)",
-            tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
-            valColor: "#0055FF",
-            decorColor: "#0055FF",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
+            tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
+            valColor: "#0A84FF",
+            decorColor: "#0A84FF",
           },
           {
             label: "Total Graded",
             val: loading ? "—" : stats.totalGraded,
             sub: stats.totalAssignments > 0 ? `Across ${stats.totalAssignments} assignment${stats.totalAssignments === 1 ? "" : "s"}` : "No data",
             Icon: Check,
-            cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-            tileGrad: "linear-gradient(135deg, #00C853, #22EE66)",
-            tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
-            valColor: "#007830",
-            decorColor: "#00C853",
+            cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+            tileGrad: "linear-gradient(135deg, #34C759, #34C759)",
+            tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
+            valColor: "#248A3D",
+            decorColor: "#34C759",
           },
           {
             label: "School Avg Score",
             val: loading ? "—" : stats.totalGraded > 0 ? `${stats.avgScore}%` : "—",
             sub: dSchoolAvgTier.label,
             Icon: TrendingUp,
-            cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-            tileGrad: "linear-gradient(135deg, #FFAA00, #FFDD44)",
-            tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
-            valColor: "#FFAA00",
-            decorColor: "#FFAA00",
+            cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+            tileGrad: "linear-gradient(135deg, #FFCC00, #FFCC00)",
+            tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
+            valColor: "#FFCC00",
+            decorColor: "#FFCC00",
           },
           {
             label: "Top Performer",
@@ -1211,11 +1211,11 @@ export default function AssignmentMarks() {
             sub: stats.topStudent && stats.topStudent !== "—" ? "Highest across submissions" : "No data",
             isText: true,
             Icon: Trophy,
-            cardGrad: "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
-            tileGrad: "linear-gradient(135deg, #7B3FF4, #A07CF8)",
-            tileShadow: "0 4px 14px rgba(123,63,244,0.26)",
-            valColor: "#7B3FF4",
-            decorColor: "#7B3FF4",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
+            tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
+            valColor: "#AF52DE",
+            decorColor: "#AF52DE",
           },
         ].map((s, i) => {
           const Icon = s.Icon;
@@ -1225,8 +1225,8 @@ export default function AssignmentMarks() {
               className="rounded-[20px] p-5 relative overflow-hidden"
               style={{
                 background: s.cardGrad,
-                boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-                border: "0.5px solid rgba(0,85,255,0.08)",
+                boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+                border: "0.5px solid rgba(10,132,255,0.08)",
               }}
             >
               <div
@@ -1235,13 +1235,13 @@ export default function AssignmentMarks() {
               >
                 <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
               </div>
-              <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>{s.label}</span>
+              <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>{s.label}</span>
               {s.isText ? (
-                <p className="text-[20px] font-bold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
+                <p className="text-[20px] font-semibold tracking-tight leading-tight mb-1.5 truncate" style={{ color: s.valColor, letterSpacing: "-0.5px" }}>{s.val}</p>
               ) : (
-                <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
+                <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: s.valColor, letterSpacing: "-1.2px" }}>{s.val}</p>
               )}
-              <p className="text-[11px] font-semibold truncate" style={{ color: "#5070B0" }}>{s.sub}</p>
+              <p className="text-[12px] font-semibold truncate" style={{ color: "#6E6E73" }}>{s.sub}</p>
               <Icon
                 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
                 style={{ color: s.decorColor, opacity: 0.18 }}
@@ -1254,15 +1254,15 @@ export default function AssignmentMarks() {
 
       {/* Class filter pills */}
       {!loading && classes.length > 1 && (
-        <div className="flex gap-[7px] flex-wrap mb-5">
+        <div className="flex gap-[8px] flex-wrap mb-5">
           {classes.map(cls => {
             const active = classFilter === cls;
             return (
               <button key={cls} onClick={() => setClassFilter(cls)}
-                className="h-[36px] px-4 rounded-[12px] text-[12px] font-bold whitespace-nowrap transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
+                className="h-[36px] px-4 rounded-[12px] text-[12px] font-semibold whitespace-nowrap transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden"
                 style={active
-                  ? { background: "linear-gradient(135deg, #0055FF, #1166FF)", color: "#fff", boxShadow: "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)", letterSpacing: "0.04em" }
-                  : { background: "#fff", color: "#5070B0", border: "0.5px solid rgba(0,85,255,0.14)", boxShadow: "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.09)", letterSpacing: "0.04em" }}>
+                  ? { background: "linear-gradient(135deg, #0A84FF, #3395FF)", color: "#fff", boxShadow: "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)", letterSpacing: "0.04em" }
+                  : { background: "#fff", color: "#6E6E73", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.09)", letterSpacing: "0.04em" }}>
                 {active && <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />}
                 <span className="relative z-10">{cls}</span>
               </button>
@@ -1272,117 +1272,117 @@ export default function AssignmentMarks() {
       )}
 
       {/* Section label */}
-      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] mb-3" style={{ color: "#99AACC" }}>
+      <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.12em] mb-3" style={{ color: "#A1A1A6" }}>
         {classFilter === "All" ? "All Assignments" : `${classFilter} Assignments`}
-        <span className="px-[10px] py-[3px] rounded-full text-[10px] font-bold ml-1"
-          style={{ background: "rgba(0,85,255,0.10)", color: "#0055FF", border: "0.5px solid rgba(0,85,255,0.16)" }}>
+        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold ml-1"
+          style={{ background: "rgba(10,132,255,0.10)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.16)" }}>
           {filtered.length} {filtered.length === 1 ? "assignment" : "assignments"}
         </span>
-        <div className="flex-1 h-[0.5px]" style={{ background: "rgba(0,85,255,0.12)" }} />
+        <div className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
       </div>
 
       {/* Assignments table */}
       {loading ? (
-        <div className="rounded-[22px] py-16 text-center bg-white"
-          style={{ boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 16px 40px rgba(0,85,255,.13)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
-          <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: "#0055FF" }} />
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em]" style={{ color: "#99AACC" }}>Loading assignments…</p>
+        <div className="rounded-[22px] py-10 text-center bg-white"
+          style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
+          <Loader2 className="w-9 h-9 animate-spin mx-auto mb-3" style={{ color: "#0A84FF" }} />
+          <p className="text-[12px] font-semibold uppercase tracking-[0.16em]" style={{ color: "#A1A1A6" }}>Loading assignments…</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="rounded-[22px] py-16 text-center bg-white"
-          style={{ boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 16px 40px rgba(0,85,255,.13)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
+        <div className="rounded-[22px] py-10 text-center bg-white"
+          style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <div className="w-16 h-16 rounded-[20px] mx-auto mb-4 flex items-center justify-center"
-            style={{ background: "rgba(0,85,255,0.08)", border: "0.5px solid rgba(0,85,255,0.14)" }}>
-            <FileText className="w-7 h-7" style={{ color: "rgba(0,85,255,0.45)" }} strokeWidth={2} />
+            style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
+            <FileText className="w-7 h-7" style={{ color: "rgba(10,132,255,0.45)" }} strokeWidth={2} />
           </div>
-          <p className="text-[13px] font-bold mb-1" style={{ color: "#001040" }}>No assignment marks yet</p>
-          <p className="text-[12px] max-w-[440px] mx-auto leading-[1.55]" style={{ color: "#99AACC" }}>
+          <p className="text-[13px] font-semibold mb-1" style={{ color: "#1D1D1F" }}>No assignment marks yet</p>
+          <p className="text-[12px] max-w-[440px] mx-auto leading-[1.55]" style={{ color: "#A1A1A6" }}>
             Teachers enter marks via Teacher Dashboard → Assignments → Grade Assignment.
           </p>
         </div>
       ) : (
         <div className="rounded-[22px] bg-white overflow-hidden"
-          style={{ boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 16px 40px rgba(0,85,255,.13)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
+          style={{ boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 16px 40px rgba(10,132,255,.13)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <div className="overflow-x-auto">
             <table className="w-full min-w-[900px]">
               <thead>
-                <tr style={{ background: "rgba(0,85,255,0.04)", borderBottom: "0.5px solid rgba(0,85,255,0.07)" }}>
+                <tr style={{ background: "rgba(10,132,255,0.04)", borderBottom: "0.5px solid rgba(10,132,255,0.07)" }}>
                   {["Assignment", "Class", "Teacher", "Due Date", "Graded", "Avg Score", "Top Score", ""].map(h => (
-                    <th key={h} className="px-5 py-[14px] text-left text-[10px] font-bold uppercase tracking-[0.10em] whitespace-nowrap" style={{ color: "#99AACC" }}>{h}</th>
+                    <th key={h} className="px-5 py-[16px] text-left text-[12px] font-semibold uppercase tracking-[0.10em] whitespace-nowrap" style={{ color: "#A1A1A6" }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {filtered.map((g, i, arr) => {
                   const allGraded = g.gradedCount === g.results.length && g.gradedCount > 0;
-                  const avgColor = g.avgScore >= 70 ? "#00C853" : g.avgScore >= 50 ? "#FF8800" : "#FF3355";
+                  const avgColor = g.avgScore >= 70 ? "#34C759" : g.avgScore >= 50 ? "#FF9500" : "#FF3B30";
                   return (
-                    <tr key={g.homeworkId || i} className="transition-colors hover:bg-[#F5F9FF]"
-                      style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(0,85,255,0.05)" } : {}}>
+                    <tr key={g.homeworkId || i} className="transition-colors hover:bg-[#F5F5F7]"
+                      style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                       {/* Assignment name */}
-                      <td className="px-5 py-[14px]">
+                      <td className="px-5 py-[16px]">
                         <div className="flex items-center gap-3">
                           <div className="w-9 h-9 rounded-[11px] flex items-center justify-center flex-shrink-0"
-                            style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 3px 10px rgba(0,85,255,0.28)" }}>
+                            style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.28)" }}>
                             <FileText className="w-[16px] h-[16px] text-white" strokeWidth={2.3} />
                           </div>
-                          <p className="text-[13px] font-bold tracking-[-0.2px] capitalize" style={{ color: "#001040" }}>{g.title}</p>
+                          <p className="text-[13px] font-semibold tracking-[-0.2px] capitalize" style={{ color: "#1D1D1F" }}>{g.title}</p>
                         </div>
                       </td>
                       {/* Class */}
-                      <td className="px-5 py-[14px]">
-                        <span className="px-[10px] py-[3px] rounded-full text-[11px] font-bold text-white"
-                          style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 2px 7px rgba(0,85,255,0.28)" }}>
+                      <td className="px-5 py-[16px]">
+                        <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white"
+                          style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 2px 7px rgba(10,132,255,0.28)" }}>
                           {g.className}
                         </span>
                       </td>
                       {/* Teacher */}
-                      <td className="px-5 py-[14px] text-[12px] font-semibold" style={{ color: "#5070B0" }}>{g.teacherName}</td>
+                      <td className="px-5 py-[16px] text-[12px] font-semibold" style={{ color: "#6E6E73" }}>{g.teacherName}</td>
                       {/* Due date */}
-                      <td className="px-5 py-[14px]">
-                        <span className="text-[11px] font-semibold flex items-center gap-[4px]" style={{ color: "#99AACC" }}>
+                      <td className="px-5 py-[16px]">
+                        <span className="text-[12px] font-semibold flex items-center gap-[4px]" style={{ color: "#A1A1A6" }}>
                           <Clock className="w-3 h-3" strokeWidth={2.3} /> {fmtDate(g.dueDate)}
                         </span>
                       </td>
                       {/* Graded */}
-                      <td className="px-5 py-[14px]">
+                      <td className="px-5 py-[16px]">
                         <div className="flex items-center gap-2">
-                          <span className="text-[13px] font-bold" style={{ color: "#001040" }}>{g.gradedCount}</span>
-                          <span className="text-[11px] font-semibold" style={{ color: "#99AACC" }}>/ {g.results.length}</span>
+                          <span className="text-[13px] font-semibold" style={{ color: "#1D1D1F" }}>{g.gradedCount}</span>
+                          <span className="text-[12px] font-semibold" style={{ color: "#A1A1A6" }}>/ {g.results.length}</span>
                           {allGraded && (
-                            <span className="flex items-center gap-[3px] px-[7px] py-[2px] rounded-full text-[10px] font-bold"
-                              style={{ background: "rgba(0,200,83,0.10)", color: "#007830", border: "0.5px solid rgba(0,200,83,0.22)" }}>
+                            <span className="flex items-center gap-[4px] px-[8px] py-[2px] rounded-full text-[12px] font-semibold"
+                              style={{ background: "rgba(52,199,89,0.10)", color: "#248A3D", border: "0.5px solid rgba(52,199,89,0.22)" }}>
                               <Check className="w-[10px] h-[10px]" strokeWidth={2.6} /> Complete
                             </span>
                           )}
                         </div>
                       </td>
                       {/* Avg score */}
-                      <td className="px-5 py-[14px]">
+                      <td className="px-5 py-[16px]">
                         {g.gradedCount > 0 ? (
                           <div className="flex items-center gap-2">
-                            <span className="text-[14px] font-bold" style={{ color: avgColor, letterSpacing: "-0.2px" }}>{g.avgScore}%</span>
-                            <div className="h-1 w-[70px] rounded-[2px] overflow-hidden" style={{ background: "#E0ECFF" }}>
+                            <span className="text-[14px] font-semibold" style={{ color: avgColor, letterSpacing: "-0.2px" }}>{g.avgScore}%</span>
+                            <div className="h-1 w-[70px] rounded-[2px] overflow-hidden" style={{ background: "#EBEBF0" }}>
                               <div className="h-full rounded-[2px]"
                                 style={{ width: `${Math.max(0, Math.min(100, g.avgScore))}%`, background: `linear-gradient(90deg, ${avgColor}, ${avgColor}AA)` }} />
                             </div>
                           </div>
-                        ) : <span className="text-[11px]" style={{ color: "#99AACC" }}>—</span>}
+                        ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
                       </td>
                       {/* Top score */}
-                      <td className="px-5 py-[14px]">
+                      <td className="px-5 py-[16px]">
                         {g.gradedCount > 0 ? (
                           <div>
-                            <p className="text-[14px] font-bold" style={{ color: "#00C853" }}>{g.topScore}%</p>
-                            <p className="text-[11px] font-semibold truncate max-w-[120px]" style={{ color: "#99AACC" }}>{g.topStudent}</p>
+                            <p className="text-[14px] font-semibold" style={{ color: "#34C759" }}>{g.topScore}%</p>
+                            <p className="text-[12px] font-semibold truncate max-w-[120px]" style={{ color: "#A1A1A6" }}>{g.topStudent}</p>
                           </div>
-                        ) : <span className="text-[11px]" style={{ color: "#99AACC" }}>—</span>}
+                        ) : <span className="text-[12px]" style={{ color: "#A1A1A6" }}>—</span>}
                       </td>
                       {/* View button */}
-                      <td className="px-5 py-[14px]">
+                      <td className="px-5 py-[16px]">
                         <button onClick={() => setSelectedGroup(g)}
-                          className="h-9 px-4 rounded-[11px] flex items-center gap-[5px] text-[11px] font-bold text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
-                          style={{ background: "linear-gradient(135deg, #0055FF, #1166FF)", boxShadow: "0 3px 10px rgba(0,85,255,0.26)" }}>
+                          className="h-9 px-4 rounded-[11px] flex items-center gap-[4px] text-[12px] font-semibold text-white transition-transform active:scale-95 hover:scale-[1.03] relative overflow-hidden whitespace-nowrap"
+                          style={{ background: "linear-gradient(135deg, #0A84FF, #3395FF)", boxShadow: "0 3px 10px rgba(10,132,255,0.26)" }}>
                           <span className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                           <span className="relative z-10">View Marks</span>
                           <ChevronRight className="w-3 h-3 relative z-10" strokeWidth={2.5} />

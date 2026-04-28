@@ -71,31 +71,31 @@ const AcademicsDesktop = ({
   onOpenSchedule: () => void;
   onGenerateReport: () => void;
 }) => {
-  const B1 = "#0055FF", B2 = "#1166FF", B4 = "#4499FF";
-  const BG = "#EEF4FF", BG2 = "#E0ECFF";
-  const T1 = "#001040", T2 = "#002080", T3 = "#5070B0", T4 = "#99AACC";
-  const SEP = "rgba(0,85,255,0.08)";
-  const GREEN = "#00C853", GREEN_D = "#007830", GREEN_S = "rgba(0,200,83,0.10)", GREEN_B = "rgba(0,200,83,0.22)";
-  const RED = "#FF3355", RED_S = "rgba(255,51,85,0.10)", RED_B = "rgba(255,51,85,0.22)";
-  const ORANGE = "#FF8800";
-  const GOLD = "#FFAA00";
-  const VIOLET = "#7B3FF4";
-  const SH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 10px rgba(0,85,255,0.07), 0 10px 28px rgba(0,85,255,0.09)";
-  const SH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.10), 0 18px 44px rgba(0,85,255,0.12)";
-  const SH_BTN = "0 6px 22px rgba(0,85,255,0.38), 0 2px 5px rgba(0,85,255,0.18)";
+  const B1 = "#0A84FF", B2 = "#3395FF", B4 = "#7CBBFF";
+  const BG = "#F5F5F7", BG2 = "#EBEBF0";
+  const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
+  const SEP = "rgba(10,132,255,0.08)";
+  const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
+  const RED = "#FF3B30", RED_S = "rgba(255,59,48,0.10)", RED_B = "rgba(255,59,48,0.22)";
+  const ORANGE = "#FF9500";
+  const GOLD = "#FFCC00";
+  const VIOLET = "#AF52DE";
+  const SH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 10px rgba(10,132,255,0.07), 0 10px 28px rgba(10,132,255,0.09)";
+  const SH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.10), 0 18px 44px rgba(10,132,255,0.12)";
+  const SH_BTN = "0 6px 22px rgba(10,132,255,0.38), 0 2px 5px rgba(10,132,255,0.18)";
 
   const subjectGrad = (name: string) => {
     const n = (name || "").toLowerCase();
-    if (n.includes("math")) return `linear-gradient(135deg, ${RED}, #FF6688)`;
-    if (n.includes("sci") || n.includes("bio") || n.includes("chem") || n.includes("phy")) return `linear-gradient(135deg, ${VIOLET}, #A07CF8)`;
-    if (n.includes("eng") || n.includes("lang") || n.includes("lit")) return `linear-gradient(135deg, ${GOLD}, #FFDD44)`;
-    if (n.includes("social") || n.includes("sst") || n.includes("hist") || n.includes("geo")) return `linear-gradient(135deg, ${GREEN}, #22EE66)`;
+    if (n.includes("math")) return `linear-gradient(135deg, ${RED}, #FF5E55)`;
+    if (n.includes("sci") || n.includes("bio") || n.includes("chem") || n.includes("phy")) return `linear-gradient(135deg, ${VIOLET}, #AF52DE)`;
+    if (n.includes("eng") || n.includes("lang") || n.includes("lit")) return `linear-gradient(135deg, ${GOLD}, #FFCC00)`;
+    if (n.includes("social") || n.includes("sst") || n.includes("hist") || n.includes("geo")) return `linear-gradient(135deg, ${GREEN}, #34C759)`;
     return `linear-gradient(135deg, ${B1}, ${B2})`;
   };
 
   const statusTheme = (status: string) => {
     if (status === "Good")    return { color: GREEN_D, bg: GREEN_S, border: GREEN_B };
-    if (status === "Average") return { color: "#884400", bg: "rgba(255,170,0,0.10)", border: "rgba(255,170,0,0.22)" };
+    if (status === "Average") return { color: "#86310C", bg: "rgba(255,204,0,0.10)", border: "rgba(255,204,0,0.22)" };
     return                        { color: RED, bg: RED_S, border: RED_B };
   };
 
@@ -110,29 +110,29 @@ const AcademicsDesktop = ({
 
   return (
     <div className="pb-10 w-full px-2"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-            style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 6px 18px rgba(0,85,255,0.28)" }}>
+            style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 6px 18px rgba(10,132,255,0.28)" }}>
             <GraduationCap className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
           </div>
           <div>
-            <div className="text-[24px] font-bold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Academic Performance</div>
+            <div className="text-[24px] font-semibold leading-none" style={{ color: T1, letterSpacing: "-0.6px" }}>Academic Performance</div>
             <div className="text-[12px] mt-1" style={{ color: T3 }}>Subject-wise performance across all classes</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={onGenerateReport}
-            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-bold bg-white transition-transform hover:scale-[1.02]"
+            className="h-11 px-4 rounded-[13px] flex items-center gap-2 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
             style={{ border: `0.5px solid ${SEP}`, color: T2, boxShadow: SH }}>
-            <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+            <FileText className="w-[14px] h-[14px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
             Generate Report
           </button>
           <button onClick={onOpenSchedule}
-            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-bold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
+            className="h-11 px-5 rounded-[13px] flex items-center gap-2 text-[13px] font-semibold text-white relative overflow-hidden transition-transform hover:scale-[1.02]"
             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN }}>
             <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
             <CalendarCheck className="w-[14px] h-[14px] relative z-10" strokeWidth={2.5} />
@@ -142,9 +142,9 @@ const AcademicsDesktop = ({
       </div>
 
       {/* Dark Hero */}
-      <div className="rounded-[22px] px-7 py-6 relative overflow-hidden text-white"
+      <div className="rounded-[22px] px-8 py-6 relative overflow-hidden text-white"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 10px 36px rgba(0,51,204,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
         }}>
         <div className="absolute -right-12 -top-12 w-[220px] h-[220px] rounded-full pointer-events-none"
@@ -156,24 +156,24 @@ const AcademicsDesktop = ({
               <TrendingUp className="w-7 h-7 text-white" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.16em] mb-[6px]" style={{ color: "rgba(255,255,255,0.55)" }}>School Average Score</div>
+              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>School Average Score</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[48px] font-bold leading-none tracking-tight">{loading ? "—" : `${overallAvg}%`}</span>
+                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : `${overallAvg}%`}</span>
                 <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>across {totalSubjects} subject{totalSubjects === 1 ? "" : "s"}</span>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-5 flex-wrap">
             {[
-              { label: "Good",    val: goodCount, color: "#66EE88" },
-              { label: "Average", val: avgCount,  color: "#FFDD44" },
-              { label: "Weak",    val: weakCount, color: "#FF88AA" },
+              { label: "Good",    val: goodCount, color: "#34C759" },
+              { label: "Average", val: avgCount,  color: "#FFCC00" },
+              { label: "Weak",    val: weakCount, color: "#FF6961" },
             ].map(s => (
               <div key={s.label} className="flex items-center gap-2">
                 <span className="w-[10px] h-[10px] rounded-full" style={{ background: s.color, boxShadow: `0 0 0 3px ${s.color}33` }} />
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
-                  <div className="text-[22px] font-bold leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.50)" }}>{s.label}</div>
+                  <div className="text-[22px] font-semibold leading-none" style={{ letterSpacing: "-0.5px" }}>{s.val}</div>
                 </div>
               </div>
             ))}
@@ -184,24 +184,24 @@ const AcademicsDesktop = ({
       {/* 4 summary stat cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
         {[
-          { title: "Total Subjects", val: totalSubjects, valColor: B1, sub: "Being tracked", Icon: BookText, grad: `linear-gradient(135deg, ${B1}, ${B2})`, glow: "rgba(0,85,255,0.10)", shadow: "0 4px 14px rgba(0,85,255,0.26)" },
-          { title: "Top Performer", val: topSubject ? `${topSubject.avgNum}%` : "—", valColor: GREEN_D, sub: topSubject ? topSubject.name : "No data yet", Icon: TrendingUp, grad: `linear-gradient(135deg, ${GREEN}, #22EE66)`, glow: "rgba(0,200,83,0.10)", shadow: "0 4px 14px rgba(0,200,83,0.22)" },
-          { title: "Weak Subjects", val: weakCount, valColor: RED, sub: weakCount > 0 ? "Needs remedial" : "All clear", Icon: AlertTriangle, grad: `linear-gradient(135deg, ${RED}, #FF6688)`, glow: "rgba(255,51,85,0.12)", shadow: "0 4px 14px rgba(255,51,85,0.26)" },
-          { title: "Classes Flagged", val: weakItems.length, valColor: GOLD, sub: "Class sections", Icon: Users, grad: `linear-gradient(135deg, ${GOLD}, #FFDD44)`, glow: "rgba(255,170,0,0.12)", shadow: "0 4px 14px rgba(255,170,0,0.26)" },
+          { title: "Total Subjects", val: totalSubjects, valColor: B1, sub: "Being tracked", Icon: BookText, grad: `linear-gradient(135deg, ${B1}, ${B2})`, glow: "rgba(10,132,255,0.10)", shadow: "0 4px 14px rgba(10,132,255,0.26)" },
+          { title: "Top Performer", val: topSubject ? `${topSubject.avgNum}%` : "—", valColor: GREEN_D, sub: topSubject ? topSubject.name : "No data yet", Icon: TrendingUp, grad: `linear-gradient(135deg, ${GREEN}, #34C759)`, glow: "rgba(52,199,89,0.10)", shadow: "0 4px 14px rgba(52,199,89,0.22)" },
+          { title: "Weak Subjects", val: weakCount, valColor: RED, sub: weakCount > 0 ? "Needs remedial" : "All clear", Icon: AlertTriangle, grad: `linear-gradient(135deg, ${RED}, #FF5E55)`, glow: "rgba(255,59,48,0.12)", shadow: "0 4px 14px rgba(255,59,48,0.26)" },
+          { title: "Classes Flagged", val: weakItems.length, valColor: GOLD, sub: "Class sections", Icon: Users, grad: `linear-gradient(135deg, ${GOLD}, #FFCC00)`, glow: "rgba(255,204,0,0.12)", shadow: "0 4px 14px rgba(255,204,0,0.26)" },
         ].map(({ title, val, valColor, sub, Icon, grad, glow, shadow }) => (
           <div key={title} className="bg-white rounded-[20px] p-5 relative overflow-hidden"
             style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
             <div className="absolute -top-6 -right-6 w-[100px] h-[100px] rounded-full pointer-events-none"
               style={{ background: `radial-gradient(circle, ${glow} 0%, transparent 70%)` }} />
             <div className="flex items-center justify-between mb-4 relative">
-              <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: T4 }}>{title}</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: T4 }}>{title}</span>
               <div className="w-10 h-10 rounded-[12px] flex items-center justify-center"
                 style={{ background: grad, boxShadow: shadow }}>
                 <Icon className="w-[18px] h-[18px] text-white" strokeWidth={2.3} />
               </div>
             </div>
-            <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
-            <p className="text-[11px] font-semibold truncate" style={{ color: T3 }}>{sub}</p>
+            <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: valColor, letterSpacing: "-1.2px" }}>{val}</p>
+            <p className="text-[12px] font-semibold truncate" style={{ color: T3 }}>{sub}</p>
           </div>
         ))}
       </div>
@@ -209,12 +209,12 @@ const AcademicsDesktop = ({
       {/* Section Label */}
       <div className="flex items-center gap-3 mt-6 mb-3">
         <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-          style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(0,85,255,0.26)" }}>
+          style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.26)" }}>
           <BookText className="w-4 h-4 text-white" strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Subject Performance</div>
-        <span className="text-[11px] font-bold px-3 py-1 rounded-full"
-          style={{ background: "rgba(0,85,255,0.10)", color: B1, border: "0.5px solid rgba(0,85,255,0.18)" }}>
+        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Subject Performance</div>
+        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+          style={{ background: "rgba(10,132,255,0.10)", color: B1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {subjects.length} subject{subjects.length === 1 ? "" : "s"}
         </span>
       </div>
@@ -232,13 +232,13 @@ const AcademicsDesktop = ({
           ))}
         </div>
       ) : subjects.length === 0 ? (
-        <div className="bg-white rounded-[20px] py-20 flex flex-col items-center gap-3 text-center" style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
           <div className="w-16 h-16 rounded-[18px] flex items-center justify-center"
             style={{ background: BG, border: `0.5px solid ${SEP}` }}>
             <GraduationCap className="w-8 h-8" style={{ color: T4 }} strokeWidth={2} />
           </div>
-          <p className="text-[14px] font-bold" style={{ color: T1 }}>No exam scores recorded yet</p>
-          <p className="text-[11px] max-w-[280px]" style={{ color: T4 }}>Subject performance will appear once teachers record results</p>
+          <p className="text-[14px] font-semibold" style={{ color: T1 }}>No exam scores recorded yet</p>
+          <p className="text-[12px] max-w-[280px]" style={{ color: T4 }}>Subject performance will appear once teachers record results</p>
         </div>
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -254,21 +254,21 @@ const AcademicsDesktop = ({
                   style={{ background: `radial-gradient(circle, ${theme.bg} 0%, transparent 70%)` }} />
                 <div className="flex items-center justify-between mb-4 relative">
                   <div className="w-11 h-11 rounded-[13px] flex items-center justify-center"
-                    style={{ background: grad, boxShadow: "0 4px 14px rgba(0,85,255,0.22)" }}>
+                    style={{ background: grad, boxShadow: "0 4px 14px rgba(10,132,255,0.22)" }}>
                     <s.icon className="w-5 h-5 text-white" strokeWidth={2.3} />
                   </div>
-                  <span className="text-[9px] font-bold uppercase tracking-[0.08em] px-[10px] py-[4px] rounded-full"
+                  <span className="text-[12px] font-semibold uppercase tracking-[0.08em] px-[12px] py-[4px] rounded-full"
                     style={{ background: theme.bg, color: theme.color, border: `0.5px solid ${theme.border}` }}>
                     {s.status}
                   </span>
                 </div>
-                <h3 className="text-[14px] font-bold mb-1 truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{s.name}</h3>
-                <div className="text-[30px] font-bold leading-none mb-3" style={{ color: scoreColor(s.avgNum), letterSpacing: "-1px" }}>{s.avg}</div>
+                <h3 className="text-[14px] font-semibold mb-1 truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{s.name}</h3>
+                <div className="text-[28px] font-semibold leading-none mb-3" style={{ color: scoreColor(s.avgNum), letterSpacing: "-1px" }}>{s.avg}</div>
                 <div className="h-1.5 rounded-[2px] overflow-hidden mb-3" style={{ background: BG2 }}>
                   <div className="h-full rounded-[2px]" style={{ width: `${s.avgNum}%`, background: grad }} />
                 </div>
                 <div className="flex items-center justify-between pt-3" style={{ borderTop: `0.5px solid ${SEP}` }}>
-                  <span className="text-[10px] font-bold" style={{ color: T3 }}>
+                  <span className="text-[12px] font-semibold" style={{ color: T3 }}>
                     {s.weakSections > 0 ? `${s.weakSections} weak section${s.weakSections === 1 ? "" : "s"}` : "All sections good"}
                   </span>
                   <ArrowRight className="w-[14px] h-[14px] transition-transform group-hover:translate-x-1" style={{ color: B1 }} strokeWidth={2.4} />
@@ -285,17 +285,17 @@ const AcademicsDesktop = ({
         {/* Grade Distribution */}
         <div className="bg-white rounded-[20px] overflow-hidden"
           style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
-          <div className="flex items-center gap-[10px] px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="flex items-center gap-[12px] px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
             <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-              style={{ background: "rgba(123,63,244,0.10)", border: "0.5px solid rgba(123,63,244,0.22)" }}>
+              style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
               <FileText className="w-4 h-4" style={{ color: VIOLET }} strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Grade Distribution</h2>
+            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Grade Distribution</h2>
           </div>
           <div className="p-6">
             {gradeDistData.reduce((s, g) => s + g.value, 0) === 0 ? (
               <div className="flex items-center justify-center h-48">
-                <p className="text-[13px] font-bold" style={{ color: T4 }}>No data yet</p>
+                <p className="text-[13px] font-semibold" style={{ color: T4 }}>No data yet</p>
               </div>
             ) : (() => {
               const gradeColors = [GREEN, B1, GOLD, RED];
@@ -338,7 +338,7 @@ const AcademicsDesktop = ({
                               textAnchor={props.textAnchor}
                               dominantBaseline={props.dominantBaseline}
                               fill="#ffffff"
-                              style={{ fontSize: 14, fontWeight: 800, fontFamily: "'DM Sans', sans-serif" }}
+                              style={{ fontSize: 14, fontWeight: 600, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}
                             >
                               {payload.value}
                             </text>
@@ -354,8 +354,8 @@ const AcademicsDesktop = ({
                         <div key={g.name} className="flex items-center gap-2 px-3 py-2 rounded-[12px]"
                           style={{ background: BG, border: `0.5px solid ${SEP}` }}>
                           <span className="w-3 h-3 rounded-[4px]" style={{ background: c }} />
-                          <span className="text-[11px] font-bold flex-1 truncate" style={{ color: T2 }}>{g.name}</span>
-                          <span className="text-[13px] font-bold" style={{ color: c }}>{g.value}</span>
+                          <span className="text-[12px] font-semibold flex-1 truncate" style={{ color: T2 }}>{g.name}</span>
+                          <span className="text-[13px] font-semibold" style={{ color: c }}>{g.value}</span>
                         </div>
                       );
                     })}
@@ -369,30 +369,30 @@ const AcademicsDesktop = ({
         {/* Curriculum Progress */}
         <div className="bg-white rounded-[20px] overflow-hidden"
           style={{ boxShadow: SH_LG, border: `0.5px solid ${SEP}` }}>
-          <div className="flex items-center gap-[10px] px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="flex items-center gap-[12px] px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${SEP}` }}>
             <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}` }}>
               <TrendingUp className="w-4 h-4" style={{ color: GREEN }} strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Curriculum Progress</h2>
+            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Curriculum Progress</h2>
           </div>
           <div className="p-6">
             {curriculumData.length === 0 ? (
               <div className="flex items-center justify-center h-48">
-                <p className="text-[13px] font-bold" style={{ color: T4 }}>No data yet</p>
+                <p className="text-[13px] font-semibold" style={{ color: T4 }}>No data yet</p>
               </div>
             ) : (
               <div className="space-y-4">
                 {curriculumData.map(c => {
-                  const grad = c.progress >= 75 ? `linear-gradient(90deg, ${GREEN}, #66EE88)` :
+                  const grad = c.progress >= 75 ? `linear-gradient(90deg, ${GREEN}, #34C759)` :
                                c.progress >= 55 ? `linear-gradient(90deg, ${B1}, ${B2})` :
-                                                   `linear-gradient(90deg, ${GOLD}, #FFDD44)`;
-                  const color = c.progress >= 75 ? GREEN_D : c.progress >= 55 ? B1 : "#884400";
+                                                   `linear-gradient(90deg, ${GOLD}, #FFCC00)`;
+                  const color = c.progress >= 75 ? GREEN_D : c.progress >= 55 ? B1 : "#86310C";
                   return (
                     <div key={c.subject}>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-[13px] font-bold" style={{ color: T1 }}>{c.subject}</span>
-                        <span className="text-[13px] font-bold" style={{ color }}>{c.progress}%</span>
+                        <span className="text-[13px] font-semibold" style={{ color: T1 }}>{c.subject}</span>
+                        <span className="text-[13px] font-semibold" style={{ color }}>{c.progress}%</span>
                       </div>
                       <div className="h-2.5 rounded-[3px] overflow-hidden" style={{ background: BG2 }}>
                         <div className="h-full rounded-[3px] transition-all duration-700" style={{ width: `${c.progress}%`, background: grad }} />
@@ -410,17 +410,17 @@ const AcademicsDesktop = ({
       {weakItems.length > 0 && (
         <div className="mt-5 rounded-[22px] overflow-hidden relative"
           style={{
-            background: "linear-gradient(145deg, rgba(255,51,85,0.04) 0%, rgba(255,255,255,0.6) 100%)",
+            background: "linear-gradient(145deg, rgba(255,59,48,0.04) 0%, rgba(255,255,255,0.6) 100%)",
             boxShadow: SH_LG,
             border: `0.5px solid ${RED_B}`,
           }}>
-          <div className="flex items-center gap-[10px] px-6 py-[18px] bg-white" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="flex items-center gap-[12px] px-6 py-[16px] bg-white" style={{ borderBottom: `0.5px solid ${SEP}` }}>
             <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-              style={{ background: `linear-gradient(135deg, ${RED}, #FF6688)`, boxShadow: "0 4px 14px rgba(255,51,85,0.26)" }}>
+              style={{ background: `linear-gradient(135deg, ${RED}, #FF5E55)`, boxShadow: "0 4px 14px rgba(255,59,48,0.26)" }}>
               <AlertTriangle className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <h2 className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Weak Subjects Requiring Attention</h2>
-            <span className="text-[11px] font-bold px-3 py-1 rounded-full"
+            <h2 className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Weak Subjects Requiring Attention</h2>
+            <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
               style={{ background: RED_S, color: RED, border: `0.5px solid ${RED_B}` }}>
               {weakItems.length}
             </span>
@@ -430,15 +430,15 @@ const AcademicsDesktop = ({
               <div key={i} className="bg-white rounded-[16px] p-4 flex items-center justify-between"
                 style={{ border: `0.5px solid ${RED_B}`, boxShadow: SH }}>
                 <div className="flex-1 min-w-0">
-                  <p className="text-[13px] font-bold" style={{ color: T1 }}>{w.subject}</p>
-                  <p className="text-[11px] mt-0.5 flex items-center gap-1" style={{ color: T3 }}>
+                  <p className="text-[13px] font-semibold" style={{ color: T1 }}>{w.subject}</p>
+                  <p className="text-[12px] mt-1 flex items-center gap-1" style={{ color: T3 }}>
                     <Users className="w-[11px] h-[11px]" strokeWidth={2.3} />
                     {w.className} · {w.studentCount} students
                   </p>
                 </div>
                 <div className="text-right ml-3">
-                  <div className="text-[22px] font-bold leading-none" style={{ color: RED, letterSpacing: "-0.5px" }}>{w.avg}%</div>
-                  <div className="text-[9px] font-bold uppercase tracking-[0.08em] mt-1" style={{ color: T4 }}>Avg</div>
+                  <div className="text-[22px] font-semibold leading-none" style={{ color: RED, letterSpacing: "-0.5px" }}>{w.avg}%</div>
+                  <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mt-1" style={{ color: T4 }}>Avg</div>
                 </div>
               </div>
             ))}
@@ -448,9 +448,9 @@ const AcademicsDesktop = ({
 
       {/* AI Intelligence Card */}
       {!loading && subjects.length > 0 && (
-        <div className="mt-5 rounded-[22px] px-7 py-6 relative overflow-hidden"
+        <div className="mt-5 rounded-[22px] px-8 py-6 relative overflow-hidden"
           style={{
-            background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+            background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
             boxShadow: "0 10px 36px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
           }}>
           <div className="absolute -top-10 -right-7 w-[200px] h-[200px] rounded-full pointer-events-none"
@@ -460,17 +460,17 @@ const AcademicsDesktop = ({
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Academic Intelligence</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Academic Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            School is averaging <strong style={{ color: "#fff", fontWeight: 700 }}>{overallAvg}%</strong> across <strong style={{ color: "#fff", fontWeight: 700 }}>{totalSubjects} subjects</strong>.
-            {topSubject && <> <strong style={{ color: "#fff", fontWeight: 700 }}>{topSubject.name}</strong> leads with <strong style={{ color: "#fff", fontWeight: 700 }}>{topSubject.avg}</strong>.</>}
-            {weakCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 700 }}>{weakCount}</strong> subject{weakCount === 1 ? " needs" : "s need"} remedial action across <strong style={{ color: "#fff", fontWeight: 700 }}>{weakItems.length} class section{weakItems.length === 1 ? "" : "s"}</strong>.</>}
+            School is averaging <strong style={{ color: "#fff", fontWeight: 600 }}>{overallAvg}%</strong> across <strong style={{ color: "#fff", fontWeight: 600 }}>{totalSubjects} subjects</strong>.
+            {topSubject && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{topSubject.name}</strong> leads with <strong style={{ color: "#fff", fontWeight: 600 }}>{topSubject.avg}</strong>.</>}
+            {weakCount > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{weakCount}</strong> subject{weakCount === 1 ? " needs" : "s need"} remedial action across <strong style={{ color: "#fff", fontWeight: 600 }}>{weakItems.length} class section{weakItems.length === 1 ? "" : "s"}</strong>.</>}
             {" "}Schedule focused revision to lift underperforming cohorts before next assessment.
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: B4 }} />
-            <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}
@@ -510,10 +510,10 @@ const MOCK_SUBJECTS = _A_SUBJECTS.map(s => {
 
 // Grade distribution pie chart — 1100 total scores across the school
 const MOCK_GRADE_DIST_DATA = [
-  { name: "A (80-100%)",   value: 320, color: "#22c55e" },
-  { name: "B (60-79%)",    value: 480, color: "#1e3a8a" },
-  { name: "C (40-59%)",    value: 220, color: "#f59e0b" },
-  { name: "D (Below 40%)", value: 80,  color: "#ef4444" },
+  { name: "A (80-100%)",   value: 320, color: "#34C759" },
+  { name: "B (60-79%)",    value: 480, color: "#1D1D1F" },
+  { name: "C (40-59%)",    value: 220, color: "#FF9500" },
+  { name: "D (Below 40%)", value: 80,  color: "#FF3B30" },
 ];
 
 // Curriculum coverage progress per subject (top 6, sorted asc by avg)
@@ -654,10 +654,10 @@ const Academics = () => {
     const c = allScores.filter((s) => s >= 40 && s < 60).length;
     const d = allScores.filter((s) => s < 40).length;
     setGradeDistData([
-      { name: "A (80-100%)", value: a, color: "#22c55e" },
-      { name: "B (60-79%)",  value: b, color: "#1e3a8a" },
-      { name: "C (40-59%)",  value: c, color: "#f59e0b" },
-      { name: "D (Below 40%)", value: d, color: "#ef4444" },
+      { name: "A (80-100%)", value: a, color: "#34C759" },
+      { name: "B (60-79%)",  value: b, color: "#1D1D1F" },
+      { name: "C (40-59%)",  value: c, color: "#FF9500" },
+      { name: "D (Below 40%)", value: d, color: "#FF3B30" },
     ]);
 
     // ── curriculum progress (coverage proxy) ───────────────────────────────
@@ -721,7 +721,7 @@ const Academics = () => {
 
   // ── main render ───────────────────────────────────────────────────────────
   return (
-    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-12"}>
+    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-10"}>
 
       {isMobile ? (
         <AcademicsMobile
@@ -739,8 +739,8 @@ const Academics = () => {
               heroStats: [
                 { label: "Subjects Tracked", value: subjects.length },
                 { label: "Weak Subjects",    value: subjects.filter(s => s.status === "Weak").length,    color: "#f87171" },
-                { label: "Good Subjects",    value: subjects.filter(s => s.status === "Good").length,    color: "#4ade80" },
-                { label: "Average Subjects", value: subjects.filter(s => s.status === "Average").length, color: "#fbbf24" },
+                { label: "Good Subjects",    value: subjects.filter(s => s.status === "Good").length,    color: "#34C759" },
+                { label: "Average Subjects", value: subjects.filter(s => s.status === "Average").length, color: "#FFCC00" },
               ],
               sections: [
                 {
@@ -773,8 +773,8 @@ const Academics = () => {
             heroStats: [
               { label: "Subjects Tracked", value: subjects.length },
               { label: "Weak Subjects",    value: subjects.filter(s => s.status === "Weak").length,    color: "#f87171" },
-              { label: "Good Subjects",    value: subjects.filter(s => s.status === "Good").length,    color: "#4ade80" },
-              { label: "Average Subjects", value: subjects.filter(s => s.status === "Average").length, color: "#fbbf24" },
+              { label: "Good Subjects",    value: subjects.filter(s => s.status === "Good").length,    color: "#34C759" },
+              { label: "Average Subjects", value: subjects.filter(s => s.status === "Average").length, color: "#FFCC00" },
             ],
             sections: [
               {
@@ -802,7 +802,7 @@ const Academics = () => {
                 <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center">
                   <CalendarCheck className="w-5 h-5 text-amber-600" />
                 </div>
-                <h3 className="text-lg font-black text-foreground">Schedule Remedial</h3>
+                <h3 className="text-lg font-semibold text-foreground">Schedule Remedial</h3>
               </div>
               <button onClick={() => setShowScheduleModal(false)} className="p-2 hover:bg-secondary rounded-lg transition-colors">
                 <X className="w-4 h-4" />
@@ -811,9 +811,9 @@ const Academics = () => {
             <form onSubmit={handleScheduleRemedial} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">Subject</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Subject</label>
                   <select
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.subject}
                     onChange={(e) => setRemedialForm({ ...remedialForm, subject: e.target.value })}
                     required
@@ -823,11 +823,11 @@ const Academics = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">Grade / Class</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Grade / Class</label>
                   <input
                     type="text"
                     placeholder="e.g. Grade 9"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.grade}
                     onChange={(e) => setRemedialForm({ ...remedialForm, grade: e.target.value })}
                     required
@@ -836,20 +836,20 @@ const Academics = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">Date</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Date</label>
                   <input
                     type="date"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.date}
                     onChange={(e) => setRemedialForm({ ...remedialForm, date: e.target.value })}
                     required
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">Time</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Time</label>
                   <input
                     type="time"
-                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     value={remedialForm.time}
                     onChange={(e) => setRemedialForm({ ...remedialForm, time: e.target.value })}
                     required
@@ -857,24 +857,24 @@ const Academics = () => {
                 </div>
               </div>
               <div>
-                <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 block">Assigned Teacher</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 block">Assigned Teacher</label>
                 <input
                   type="text"
                   placeholder="e.g. Mrs. Kavita"
-                  className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full h-11 px-3 rounded-xl border border-border bg-secondary text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                   value={remedialForm.teacher}
                   onChange={(e) => setRemedialForm({ ...remedialForm, teacher: e.target.value })}
                   required
                 />
               </div>
               <div className="flex gap-3 pt-2">
-                <button type="button" onClick={() => setShowScheduleModal(false)} className="flex-1 py-2.5 rounded-xl border border-border text-sm font-bold hover:bg-secondary transition-colors">
+                <button type="button" onClick={() => setShowScheduleModal(false)} className="flex-1 py-2.5 rounded-xl border border-border text-sm font-semibold hover:bg-secondary transition-colors">
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSending}
-                  className="flex-1 py-2.5 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="flex-1 py-2.5 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {isSending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                   {isSending ? "Scheduling…" : "Confirm & Schedule"}

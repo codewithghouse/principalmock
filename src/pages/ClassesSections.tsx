@@ -500,7 +500,7 @@ const ClassesSections = () => {
         body: JSON.stringify({
           to: email,
           subject: `You've been enrolled — ${cls.name}`,
-          html: `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;"><h2 style="color:#1e3a8a;margin-bottom:8px;">Welcome, ${name}!</h2><p style="color:#555;">You have been enrolled in <strong>${cls.name}</strong>${cls.teacherName ? ` — Teacher: <strong>${cls.teacherName}</strong>` : ""}.</p><div style="margin:28px 0;text-align:center;"><a href="https://parent-dashboard-ten.vercel.app/" style="background:#1e3a8a;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">Go to Student Portal</a></div><p style="color:#aaa;font-size:12px;text-align:center;">Use your email (${email}) to sign in.</p></div>`,
+          html: `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;"><h2 style="color:#1D1D1F;margin-bottom:8px;">Welcome, ${name}!</h2><p style="color:#555;">You have been enrolled in <strong>${cls.name}</strong>${cls.teacherName ? ` — Teacher: <strong>${cls.teacherName}</strong>` : ""}.</p><div style="margin:28px 0;text-align:center;"><a href="https://parent-dashboard-ten.vercel.app/" style="background:#1D1D1F;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">Go to Student Portal</a></div><p style="color:#aaa;font-size:12px;text-align:center;">Use your email (${email}) to sign in.</p></div>`,
         }),
       }).catch(() => {});
       toast.success(`${name} enrolled & invitation sent!`);
@@ -524,7 +524,7 @@ const ClassesSections = () => {
 
   // ── Render ───────────────────────────────────────────────────────────────────
   return (
-    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-12"}>
+    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-10"}>
 
       {isMobile ? (
         <ClassesSectionsMobile
@@ -545,12 +545,12 @@ const ClassesSections = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-black text-slate-900 tracking-tight">Classes & Sections</h1>
+          <h1 className="text-3xl font-semibold text-slate-900 tracking-tight">Classes & Sections</h1>
           <p className="text-sm text-slate-400 font-medium mt-1">Overview of all classes and sections</p>
         </div>
         <button
           onClick={() => setAddModal(true)}
-          className="flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] text-white rounded-xl text-sm font-bold hover:bg-[#1e4fc0] transition-colors shadow-md"
+          className="flex items-center gap-2 px-6 py-3 bg-[#1D1D1F] text-white rounded-xl text-sm font-semibold hover:bg-[#0A84FF] transition-colors shadow-md"
         >
           <Plus className="w-4 h-4" /> Add Class
         </button>
@@ -559,7 +559,7 @@ const ClassesSections = () => {
       {loading ? (
         <div className="py-32 flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100 shadow-sm">
           <Loader2 className="w-10 h-10 animate-spin text-slate-300 mb-4" />
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loading Classes...</p>
+          <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Loading Classes...</p>
         </div>
       ) : (
         <>
@@ -571,27 +571,27 @@ const ClassesSections = () => {
                 return (
                   <div key={g.grade} className="bg-white border border-slate-100 rounded-xl p-3.5 shadow-sm hover:shadow-md transition-all">
                     <div className="flex items-center justify-between mb-2.5">
-                      <h3 className="text-sm font-black text-slate-900">Grade {g.grade}</h3>
+                      <h3 className="text-sm font-semibold text-slate-900">Grade {g.grade}</h3>
                       <Icon className={`w-4 h-4 ${healthColor(g.healthScore)}`} />
                     </div>
-                    <div className="space-y-1.5 text-[11px]">
+                    <div className="space-y-1.5 text-[12px]">
                       <div className="flex justify-between">
                         <span className="text-slate-400 font-medium">Sections</span>
-                        <span className="font-black text-slate-900">{g.sections}</span>
+                        <span className="font-semibold text-slate-900">{g.sections}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-400 font-medium">Students</span>
-                        <span className="font-black text-slate-900">{g.students}</span>
+                        <span className="font-semibold text-slate-900">{g.students}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-400 font-medium">Avg Attendance</span>
-                        <span className={`font-black ${g.avgAttendance >= 85 ? "text-green-600" : g.avgAttendance >= 70 ? "text-amber-500" : "text-rose-600"}`}>
+                        <span className={`font-semibold ${g.avgAttendance >= 85 ? "text-green-600" : g.avgAttendance >= 70 ? "text-amber-500" : "text-rose-600"}`}>
                           {g.avgAttendance > 0 ? `${g.avgAttendance}%` : "—"}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-400 font-medium">Health Score</span>
-                        <span className={`font-black ${healthColor(g.healthScore)}`}>
+                        <span className={`font-semibold ${healthColor(g.healthScore)}`}>
                           {g.healthScore > 0 ? `${g.healthScore}/100` : "—"}
                         </span>
                       </div>
@@ -605,16 +605,16 @@ const ClassesSections = () => {
           {/* Section Performance Table */}
           <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
             <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
-              <h2 className="text-base font-bold text-slate-900">Section Performance</h2>
+              <h2 className="text-base font-semibold text-slate-900">Section Performance</h2>
               <span className="text-xs text-slate-400 font-medium">{classes.length} class{classes.length !== 1 ? "es" : ""}</span>
             </div>
 
             {classes.length === 0 ? (
-              <div className="py-24 flex flex-col items-center justify-center text-center">
+              <div className="py-10 flex flex-col items-center justify-center text-center">
                 <div className="w-20 h-20 bg-slate-50 rounded-2xl flex items-center justify-center mb-4">
                   <GraduationCap className="w-10 h-10 text-slate-200" />
                 </div>
-                <p className="text-sm font-black text-slate-400 uppercase tracking-widest">No classes found</p>
+                <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest">No classes found</p>
                 <p className="text-xs text-slate-300 mt-2">Add a class or wait for teachers to create classes</p>
               </div>
             ) : (
@@ -622,14 +622,14 @@ const ClassesSections = () => {
                 <table className="w-full text-sm text-left min-w-[700px]">
                   <thead>
                     <tr className="bg-slate-50/50 border-b border-slate-100">
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Section</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Class Teacher</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Students</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Avg Marks</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Attendance</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Weak Subject</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-right">Actions</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Section</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Class Teacher</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">Students</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">Avg Marks</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">Attendance</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Weak Subject</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Status</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-right">Actions</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50">
@@ -640,15 +640,15 @@ const ClassesSections = () => {
                           {/* Section */}
                           <td className="px-6 py-5">
                             <div className="flex items-center gap-3">
-                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-black shrink-0 shadow-sm ${
+                              <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-white text-xs font-semibold shrink-0 shadow-sm ${
                                 cls.status === "Good" ? "bg-green-500" :
                                 cls.status === "Weak" ? "bg-rose-500" : "bg-amber-500"
                               }`}>
                                 {cls.name.slice(0, 3)}
                               </div>
                               <div>
-                                <p className="font-bold text-slate-900">{cls.name}</p>
-                                {cls.subject && <p className="text-[10px] text-slate-400 font-medium mt-0.5">{cls.subject}</p>}
+                                <p className="font-semibold text-slate-900">{cls.name}</p>
+                                {cls.subject && <p className="text-[12px] text-slate-400 font-medium mt-1">{cls.subject}</p>}
                               </div>
                             </div>
                           </td>
@@ -663,7 +663,7 @@ const ClassesSections = () => {
                                 </div>
                                 <button
                                   onClick={() => { setAssigningClass(cls); setAssignTeacherId(cls.teacherId || ""); setAssignModal(true); }}
-                                  className="text-[10px] text-blue-500 hover:text-blue-700 font-bold underline underline-offset-2"
+                                  className="text-[12px] text-blue-500 hover:text-blue-700 font-semibold underline underline-offset-2"
                                 >
                                   Change
                                 </button>
@@ -671,7 +671,7 @@ const ClassesSections = () => {
                             ) : (
                               <button
                                 onClick={() => { setAssigningClass(cls); setAssignTeacherId(""); setAssignModal(true); }}
-                                className="flex items-center gap-1.5 text-[11px] text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg font-bold hover:bg-amber-100 transition-colors"
+                                className="flex items-center gap-1.5 text-[12px] text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-lg font-semibold hover:bg-amber-100 transition-colors"
                               >
                                 <UserPlus className="w-3 h-3" /> Assign Teacher
                               </button>
@@ -682,13 +682,13 @@ const ClassesSections = () => {
                           <td className="px-6 py-5 text-center">
                             <div className="flex items-center justify-center gap-1.5">
                               <Users className="w-3.5 h-3.5 text-slate-400" />
-                              <span className="font-black text-slate-900">{cls.studentCount}</span>
+                              <span className="font-semibold text-slate-900">{cls.studentCount}</span>
                             </div>
                           </td>
 
                           {/* Avg Marks */}
                           <td className="px-6 py-5 text-center">
-                            <span className={`font-black text-base ${
+                            <span className={`font-semibold text-base ${
                               cls.avgMarksNum >= 70 ? "text-green-600" :
                               cls.avgMarksNum >= 50 ? "text-amber-500" :
                               cls.avgMarksNum > 0   ? "text-rose-600" : "text-slate-300"
@@ -699,7 +699,7 @@ const ClassesSections = () => {
 
                           {/* Attendance */}
                           <td className="px-6 py-5 text-center">
-                            <span className={`font-black text-base ${
+                            <span className={`font-semibold text-base ${
                               cls.attendanceNum >= 85 ? "text-green-600" :
                               cls.attendanceNum >= 70 ? "text-amber-500" :
                               cls.attendanceNum > 0   ? "text-rose-600" : "text-slate-300"
@@ -719,7 +719,7 @@ const ClassesSections = () => {
                           <td className="px-6 py-5">
                             <div className="flex items-center gap-2">
                               <Icon className={`w-4 h-4 ${statusColor(cls.status)}`} />
-                              <span className={`text-sm font-bold ${statusColor(cls.status)}`}>{cls.status}</span>
+                              <span className={`text-sm font-semibold ${statusColor(cls.status)}`}>{cls.status}</span>
                             </div>
                           </td>
 
@@ -728,14 +728,14 @@ const ClassesSections = () => {
                             <div className="flex items-center justify-end gap-2">
                               <button
                                 onClick={() => openStudentModal(cls)}
-                                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700 text-[11px] font-black hover:bg-indigo-100 transition-colors"
+                                className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-indigo-200 bg-indigo-50 text-indigo-700 text-[12px] font-semibold hover:bg-indigo-100 transition-colors"
                                 title="Add students to this class"
                               >
                                 <UserPlus className="w-3.5 h-3.5" /> Students
                               </button>
                               <button
                                 onClick={() => setSelectedSection(cls)}
-                                className="px-5 py-2 rounded-xl bg-slate-900 text-white text-[11px] font-black uppercase tracking-wider hover:bg-[#1e3a8a] transition-colors shadow-sm"
+                                className="px-5 py-2 rounded-xl bg-slate-900 text-white text-[12px] font-semibold uppercase tracking-wider hover:bg-[#1D1D1F] transition-colors shadow-sm"
                               >
                                 View
                               </button>
@@ -759,60 +759,60 @@ const ClassesSections = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md animate-in fade-in zoom-in-95 duration-200">
             <div className="flex items-center justify-between p-6 border-b border-slate-100">
-              <h3 className="text-base font-bold text-slate-900">Add New Class</h3>
+              <h3 className="text-base font-semibold text-slate-900">Add New Class</h3>
               <button onClick={() => setAddModal(false)} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
                 <X className="w-4 h-4 text-slate-600" />
               </button>
             </div>
             <div className="p-6 space-y-4">
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Class Name *</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Class Name *</label>
                 <input
                   type="text"
                   placeholder="e.g. 9A, Class 10B"
                   value={newClass.name}
                   onChange={e => setNewClass(p => ({ ...p, name: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Grade *</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Grade *</label>
                   <input
                     type="text"
                     placeholder="e.g. 9, 10"
                     value={newClass.grade}
                     onChange={e => setNewClass(p => ({ ...p, grade: e.target.value }))}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Section</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Section</label>
                   <input
                     type="text"
                     placeholder="e.g. A, B"
                     value={newClass.section}
                     onChange={e => setNewClass(p => ({ ...p, section: e.target.value }))}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                   />
                 </div>
               </div>
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Subject (optional)</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Subject (optional)</label>
                 <input
                   type="text"
                   placeholder="e.g. Mathematics, Science"
                   value={newClass.subject}
                   onChange={e => setNewClass(p => ({ ...p, subject: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Assign Class Teacher (optional)</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Assign Class Teacher (optional)</label>
                 <select
                   value={newClassTeacherId}
                   onChange={e => setNewClassTeacherId(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-white appearance-none"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-white appearance-none"
                 >
                   <option value="">— Assign later —</option>
                   {teachers.map(t => (
@@ -825,14 +825,14 @@ const ClassesSections = () => {
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => setAddModal(false)}
-                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleAddClass}
                   disabled={saving}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Plus className="w-4 h-4" />}
                   Create Class
@@ -851,10 +851,10 @@ const ClassesSections = () => {
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-slate-100 shrink-0">
               <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <UserPlus className="w-4 h-4 text-[#1e3a8a]" /> Add Students to {studentModalClass.name}
+                <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                  <UserPlus className="w-4 h-4 text-[#1D1D1F]" /> Add Students to {studentModalClass.name}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">Assign existing students or invite new ones</p>
+                <p className="text-xs text-slate-400 mt-1">Assign existing students or invite new ones</p>
               </div>
               <button onClick={() => setStudentModal(false)} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
                 <X className="w-4 h-4 text-slate-600" />
@@ -863,10 +863,10 @@ const ClassesSections = () => {
 
             {/* Tabs */}
             <div className="flex border-b border-slate-100 shrink-0">
-              <button onClick={() => setStudentTab("existing")} className={`flex-1 py-3 text-sm font-bold transition-colors ${studentTab === "existing" ? "text-[#1e3a8a] border-b-2 border-[#1e3a8a]" : "text-slate-400 hover:text-slate-600"}`}>
+              <button onClick={() => setStudentTab("existing")} className={`flex-1 py-3 text-sm font-semibold transition-colors ${studentTab === "existing" ? "text-[#1D1D1F] border-b-2 border-[#1D1D1F]" : "text-slate-400 hover:text-slate-600"}`}>
                 From School List
               </button>
-              <button onClick={() => setStudentTab("invite")} className={`flex-1 py-3 text-sm font-bold transition-colors ${studentTab === "invite" ? "text-[#1e3a8a] border-b-2 border-[#1e3a8a]" : "text-slate-400 hover:text-slate-600"}`}>
+              <button onClick={() => setStudentTab("invite")} className={`flex-1 py-3 text-sm font-semibold transition-colors ${studentTab === "invite" ? "text-[#1D1D1F] border-b-2 border-[#1D1D1F]" : "text-slate-400 hover:text-slate-600"}`}>
                 Invite New Student
               </button>
             </div>
@@ -879,11 +879,11 @@ const ClassesSections = () => {
                     <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input type="text" placeholder="Search by name or email..." value={studentSearch}
                       onChange={e => setStudentSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   {studentsLoading ? (
-                    <div className="py-12 flex items-center justify-center">
+                    <div className="py-10 flex items-center justify-center">
                       <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
                     </div>
                   ) : (() => {
@@ -892,7 +892,7 @@ const ClassesSections = () => {
                       (s.email || "").toLowerCase().includes(studentSearch.toLowerCase())
                     );
                     return filtered.length === 0 ? (
-                      <div className="py-12 text-center">
+                      <div className="py-10 text-center">
                         <Users className="w-10 h-10 text-slate-200 mx-auto mb-2" />
                         <p className="text-sm text-slate-400">
                           {schoolStudents.length === 0 ? "All school students are already in this class." : "No students match your search."}
@@ -902,26 +902,26 @@ const ClassesSections = () => {
                     ) : (
                       <div className="space-y-2">
                         {selectedSids.length > 0 && (
-                          <p className="text-xs font-bold text-[#1e3a8a] mb-1">{selectedSids.length} selected</p>
+                          <p className="text-xs font-semibold text-[#1D1D1F] mb-1">{selectedSids.length} selected</p>
                         )}
                         {filtered.map((s: any) => {
                           const isSel = selectedSids.includes(s.id);
                           return (
                             <div key={s.id} onClick={() => setSelectedSids(prev => isSel ? prev.filter(id => id !== s.id) : [...prev, s.id])}
-                              className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all border ${isSel ? "bg-blue-50 border-[#1e3a8a]/30" : "border-slate-100 hover:bg-slate-50"}`}
+                              className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all border ${isSel ? "bg-blue-50 border-[#1D1D1F]/30" : "border-slate-100 hover:bg-slate-50"}`}
                             >
-                              <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${isSel ? "bg-[#1e3a8a] border-[#1e3a8a]" : "border-slate-300"}`}>
+                              <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${isSel ? "bg-[#1D1D1F] border-[#1D1D1F]" : "border-slate-300"}`}>
                                 {isSel && <Check className="w-3 h-3 text-white" />}
                               </div>
-                              <div className="w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-xs font-black text-indigo-600 shrink-0">
+                              <div className="w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-xs font-semibold text-indigo-600 shrink-0">
                                 {(s.name || "S").substring(0, 2).toUpperCase()}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-bold text-slate-800 truncate">{s.name || "Unknown"}</p>
+                                <p className="text-sm font-semibold text-slate-800 truncate">{s.name || "Unknown"}</p>
                                 <p className="text-xs text-slate-400 truncate">{s.email}</p>
                               </div>
                               {s.className && s.className !== studentModalClass.name && (
-                                <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md shrink-0">{s.className}</span>
+                                <span className="text-[12px] font-semibold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md shrink-0">{s.className}</span>
                               )}
                             </div>
                           );
@@ -933,21 +933,21 @@ const ClassesSections = () => {
               ) : (
                 <div className="space-y-4">
                   <div>
-                    <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Student Name *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Student Name *</label>
                     <input type="text" placeholder="e.g. Rahul Sharma" value={inviteStudentForm.name}
                       onChange={e => setInviteStudentForm(p => ({ ...p, name: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   <div>
-                    <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Email Address *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Email Address *</label>
                     <input type="email" placeholder="student@example.com" value={inviteStudentForm.email}
                       onChange={e => setInviteStudentForm(p => ({ ...p, email: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   <div className="bg-blue-50 border border-blue-100 rounded-xl p-3 flex items-start gap-2">
-                    <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                    <Mail className="w-4 h-4 text-[#1D1D1F] shrink-0 mt-1" />
                     <p className="text-xs text-slate-600">Student will receive an email invitation with their login link.</p>
                   </div>
                 </div>
@@ -956,19 +956,19 @@ const ClassesSections = () => {
 
             {/* Footer */}
             <div className="flex gap-3 p-6 border-t border-slate-100 shrink-0">
-              <button onClick={() => setStudentModal(false)} className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50">
+              <button onClick={() => setStudentModal(false)} className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50">
                 Cancel
               </button>
               {studentTab === "existing" ? (
                 <button onClick={handleAddExistingToClass} disabled={enrolling || selectedSids.length === 0}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {enrolling ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserPlus className="w-4 h-4" />}
                   {enrolling ? "Adding..." : `Add${selectedSids.length > 0 ? ` (${selectedSids.length})` : ""}`}
                 </button>
               ) : (
                 <button onClick={handleInviteStudentToClass} disabled={inviting || !inviteStudentForm.name || !inviteStudentForm.email}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {inviting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
                   {inviting ? "Inviting..." : "Invite & Enroll"}
@@ -985,11 +985,11 @@ const ClassesSections = () => {
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md animate-in fade-in zoom-in-95 duration-200">
             <div className="flex items-center justify-between p-6 border-b border-slate-100">
               <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <UserPlus className="w-4 h-4 text-[#1e3a8a]" />
+                <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                  <UserPlus className="w-4 h-4 text-[#1D1D1F]" />
                   {assigningClass?.teacherName ? "Change Class Teacher" : "Assign Class Teacher"}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5 font-medium">{assigningClass?.name}</p>
+                <p className="text-xs text-slate-400 mt-1 font-medium">{assigningClass?.name}</p>
               </div>
               <button
                 onClick={() => { setAssignModal(false); setAssigningClass(null); setAssignTeacherId(""); }}
@@ -1000,7 +1000,7 @@ const ClassesSections = () => {
             </div>
             <div className="p-6 space-y-4">
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Select Teacher *</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Select Teacher *</label>
                 {teachers.length === 0 ? (
                   <div className="w-full bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm font-medium text-amber-700">
                     No teachers found. Add teachers first from the Teachers page.
@@ -1009,7 +1009,7 @@ const ClassesSections = () => {
                   <select
                     value={assignTeacherId}
                     onChange={e => setAssignTeacherId(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20 bg-white appearance-none"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20 bg-white appearance-none"
                   >
                     <option value="">— Select a teacher —</option>
                     {teachers.map(t => (
@@ -1022,20 +1022,20 @@ const ClassesSections = () => {
               </div>
               {assigningClass?.teacherName && (
                 <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">
-                  Current teacher: <span className="font-bold text-slate-600">{assigningClass.teacherName}</span>
+                  Current teacher: <span className="font-semibold text-slate-600">{assigningClass.teacherName}</span>
                 </p>
               )}
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => { setAssignModal(false); setAssigningClass(null); setAssignTeacherId(""); }}
-                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleAssignTeacher}
                   disabled={assigning || !assignTeacherId}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {assigning ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserCheck className="w-4 h-4" />}
                   {assigning ? "Assigning..." : "Assign Teacher"}

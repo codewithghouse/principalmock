@@ -39,17 +39,17 @@ export interface DashboardMobileProps {
 }
 
 // ── Bright-blue theme tokens ──
-const B1 = "#0055FF", B2 = "#1166FF", B3 = "#2277FF", B4 = "#4499FF";
-const BG = "#EEF4FF", BG2 = "#E0ECFF";
-const T1 = "#001040", T2 = "#002080", T3 = "#5070B0", T4 = "#99AACC";
-const SEP = "rgba(0,85,255,0.07)";
-const GREEN = "#00C853", GREEN_D = "#007830", GREEN_S = "rgba(0,200,83,0.10)", GREEN_B = "rgba(0,200,83,0.22)";
-const RED = "#FF3355";
-const ORANGE = "#FF8800";
-const GOLD = "#FFAA00", GOLD_D = "#A86A00";
-const VIOLET = "#7B3FF4";
-const SH    = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 8px rgba(0,85,255,0.08), 0 10px 26px rgba(0,85,255,0.10)";
-const SH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.11), 0 18px 44px rgba(0,85,255,0.13)";
+const B1 = "#0A84FF", B2 = "#3395FF", B3 = "#5BA9FF", B4 = "#7CBBFF";
+const BG = "#F5F5F7", BG2 = "#EBEBF0";
+const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
+const SEP = "rgba(10,132,255,0.07)";
+const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
+const RED = "#FF3B30";
+const ORANGE = "#FF9500";
+const GOLD = "#FFCC00", GOLD_D = "#A86A00";
+const VIOLET = "#AF52DE";
+const SH    = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 8px rgba(10,132,255,0.08), 0 10px 26px rgba(10,132,255,0.10)";
+const SH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.11), 0 18px 44px rgba(10,132,255,0.13)";
 
 // ── Health labels ──
 const healthStatus = (idx: number | null) => {
@@ -62,23 +62,23 @@ const healthStatus = (idx: number | null) => {
 // ── Heatmap color from tailwind class → hex gradient ──
 const heatGradient = (color: string) => {
   switch (color) {
-    case "bg-green-500": return { bg: `linear-gradient(135deg, ${GREEN}, #66EE88)`, shadow: "0 4px 14px rgba(0,200,83,0.26)" };
-    case "bg-amber-400": return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC22)`, shadow: "0 4px 14px rgba(255,136,0,0.26)" };
-    case "bg-red-500":   return { bg: `linear-gradient(135deg, ${RED}, #FF88AA)`,   shadow: "0 4px 14px rgba(255,51,85,0.26)" };
-    default:             return { bg: `linear-gradient(135deg, ${B1}, ${B4})`,      shadow: "0 4px 14px rgba(0,85,255,0.22)" };
+    case "bg-green-500": return { bg: `linear-gradient(135deg, ${GREEN}, #34C759)`, shadow: "0 4px 14px rgba(52,199,89,0.26)" };
+    case "bg-amber-400": return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC00)`, shadow: "0 4px 14px rgba(255,149,0,0.26)" };
+    case "bg-red-500":   return { bg: `linear-gradient(135deg, ${RED}, #FF6961)`,   shadow: "0 4px 14px rgba(255,59,48,0.26)" };
+    default:             return { bg: `linear-gradient(135deg, ${B1}, ${B4})`,      shadow: "0 4px 14px rgba(10,132,255,0.22)" };
   }
 };
 
 // ── Avatar gradient from existing tailwind class ──
 const avatarGradient = (bg: string) => {
   switch (bg) {
-    case "bg-blue-700":   return { bg: `linear-gradient(135deg, ${B1}, ${B3})`,           shadow: "0 2px 8px rgba(0,85,255,0.26)" };
-    case "bg-green-600":  return { bg: `linear-gradient(135deg, ${GREEN}, #22EE66)`,      shadow: "0 2px 8px rgba(0,200,83,0.24)" };
-    case "bg-amber-500":  return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC22)`,    shadow: "0 2px 8px rgba(255,136,0,0.26)" };
-    case "bg-purple-600": return { bg: "linear-gradient(135deg, #7B3FF4, #AA77FF)",       shadow: "0 2px 8px rgba(123,63,244,0.24)" };
-    case "bg-rose-600":   return { bg: `linear-gradient(135deg, ${RED}, #FF88AA)`,        shadow: "0 2px 8px rgba(255,51,85,0.24)" };
-    case "bg-teal-600":   return { bg: "linear-gradient(135deg, #00C4B4, #22DDCC)",       shadow: "0 2px 8px rgba(0,196,180,0.24)" };
-    default:              return { bg: `linear-gradient(135deg, ${B1}, ${B2})`,           shadow: "0 2px 8px rgba(0,85,255,0.22)" };
+    case "bg-blue-700":   return { bg: `linear-gradient(135deg, ${B1}, ${B3})`,           shadow: "0 2px 8px rgba(10,132,255,0.26)" };
+    case "bg-green-600":  return { bg: `linear-gradient(135deg, ${GREEN}, #34C759)`,      shadow: "0 2px 8px rgba(52,199,89,0.24)" };
+    case "bg-amber-500":  return { bg: `linear-gradient(135deg, ${ORANGE}, #FFCC00)`,    shadow: "0 2px 8px rgba(255,149,0,0.26)" };
+    case "bg-purple-600": return { bg: "linear-gradient(135deg, #AF52DE, #AA77FF)",       shadow: "0 2px 8px rgba(175,82,222,0.24)" };
+    case "bg-rose-600":   return { bg: `linear-gradient(135deg, ${RED}, #FF6961)`,        shadow: "0 2px 8px rgba(255,59,48,0.24)" };
+    case "bg-teal-600":   return { bg: "linear-gradient(135deg, #5AC8FA, #5AC8FA)",       shadow: "0 2px 8px rgba(90,200,250,0.24)" };
+    default:              return { bg: `linear-gradient(135deg, ${B1}, ${B2})`,           shadow: "0 2px 8px rgba(10,132,255,0.22)" };
   }
 };
 
@@ -99,13 +99,13 @@ const DashboardMobile = ({
   const Hero = (
     <div
       onClick={() => navigate("/student-intelligence")}
-      className="mx-5 mt-3 rounded-[24px] px-5 py-[18px] relative overflow-hidden cursor-pointer active:scale-[0.98] transition-transform"
+      className="mx-5 mt-3 rounded-[24px] px-5 py-[16px] relative overflow-hidden cursor-pointer active:scale-[0.98] transition-transform"
       style={{
-        background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+        background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
         boxShadow: "0 8px 28px rgba(0,8,60,0.32), 0 0 0 0.5px rgba(255,255,255,0.12)",
         transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
       }}>
-      <div className="absolute -top-[44px] -right-[30px] w-[180px] h-[180px] rounded-full pointer-events-none"
+      <div className="absolute -top-[44px] -right-[32px] w-[180px] h-[180px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
       <div className="absolute -bottom-[44px] right-[60px] w-[140px] h-[140px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 65%)" }} />
@@ -114,27 +114,27 @@ const DashboardMobile = ({
         backgroundSize: "22px 22px",
       }} />
 
-      <div className="flex items-center justify-between mb-[14px] relative z-10">
-        <div className="flex items-center gap-[10px]">
+      <div className="flex items-center justify-between mb-[16px] relative z-10">
+        <div className="flex items-center gap-[12px]">
           <div className="w-9 h-9 rounded-[12px] flex items-center justify-center"
             style={{ background: "rgba(255,255,255,0.16)", border: "0.5px solid rgba(255,255,255,0.24)", WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}>
             <ShieldCheck className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.1} />
           </div>
           <div>
-            <div className="text-[8px] font-bold uppercase tracking-[0.12em] mb-[3px]" style={{ color: "rgba(255,255,255,0.50)" }}>Academic Health Index</div>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.50)" }}>Academic Health Index</div>
             <div className="flex items-baseline gap-1">
-              <div className="text-[28px] font-bold leading-none text-white" style={{ letterSpacing: "-1px" }}>{displayHealth}</div>
+              <div className="text-[28px] font-semibold leading-none text-white" style={{ letterSpacing: "-1px" }}>{displayHealth}</div>
               <div className="text-[13px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>/100</div>
             </div>
           </div>
         </div>
         <div className="text-right relative z-10">
-          <div className="text-[8px] font-bold uppercase tracking-[0.10em] mb-1" style={{ color: "rgba(255,255,255,0.42)" }}>Overall Status</div>
-          <div className="text-[18px] font-bold text-white" style={{ letterSpacing: "-0.3px" }}>{healthStatus(healthIndex)}</div>
+          <div className="text-[12px] font-semibold uppercase tracking-[0.10em] mb-1" style={{ color: "rgba(255,255,255,0.42)" }}>Overall Status</div>
+          <div className="text-[18px] font-semibold text-white" style={{ letterSpacing: "-0.3px" }}>{healthStatus(healthIndex)}</div>
           {healthDelta !== null && (
-            <div className="flex items-center gap-1 justify-end mt-[2px]" style={{ color: healthDelta >= 0 ? "#66EE88" : "#FF8899" }}>
+            <div className="flex items-center gap-1 justify-end mt-[2px]" style={{ color: healthDelta >= 0 ? "#34C759" : "#FF6961" }}>
               {healthDelta >= 0 ? <TrendingUp className="w-[11px] h-[11px]" /> : <TrendingDown className="w-[11px] h-[11px]" />}
-              <span className="text-[10px] font-bold">{Math.abs(healthDelta)}% vs 7d</span>
+              <span className="text-[12px] font-semibold">{Math.abs(healthDelta)}% vs 7d</span>
             </div>
           )}
         </div>
@@ -148,20 +148,20 @@ const DashboardMobile = ({
 
   const incidentsActive = incidentsNum !== null && incidentsNum > 0;
   const StatGrid = (
-    <div className="grid grid-cols-2 gap-[10px] px-5 pt-[14px]">
+    <div className="grid grid-cols-2 gap-[12px] px-5 pt-[16px]">
       {[
         {
           label: "Total\nStudents", value: displayStudents, sub: "Enrolled this branch",
-          cardBg: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-          icon: Users, iconBg: `linear-gradient(135deg, ${B1}, ${B2})`, iconShadow: "0 4px 14px rgba(0,85,255,0.28)",
+          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+          icon: Users, iconBg: `linear-gradient(135deg, ${B1}, ${B2})`, iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
           valColor: B1, subColor: T3,
           decorIcon: Users, decorColor: B1, decorOpacity: 0.18,
           to: "/students",
         },
         {
           label: "Teachers", value: displayTeachers, sub: "Active staff",
-          cardBg: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-          icon: GraduationCap, iconBg: `linear-gradient(135deg, ${GREEN}, #22EE66)`, iconShadow: "0 4px 14px rgba(0,200,83,0.26)",
+          cardBg: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+          icon: GraduationCap, iconBg: `linear-gradient(135deg, ${GREEN}, #34C759)`, iconShadow: "0 4px 14px rgba(52,199,89,0.26)",
           valColor: GREEN_D, subColor: GREEN_D,
           decorIcon: TrendingUp, decorColor: GREEN, decorOpacity: 0.22,
           to: "/teachers",
@@ -169,8 +169,8 @@ const DashboardMobile = ({
         {
           label: "Today's\nAttendance", value: displayAttendance,
           sub: attDeltaNum !== null ? `${attDeltaNum >= 0 ? "+" : ""}${attDeltaNum}% vs yesterday` : "No data yet",
-          cardBg: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-          icon: CalendarCheck, iconBg: `linear-gradient(135deg, ${GOLD}, #FFDD44)`, iconShadow: "0 4px 14px rgba(255,170,0,0.28)",
+          cardBg: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+          icon: CalendarCheck, iconBg: `linear-gradient(135deg, ${GOLD}, #FFCC00)`, iconShadow: "0 4px 14px rgba(255,204,0,0.28)",
           valColor: GOLD_D,
           subColor: attDeltaNum !== null ? (attDeltaNum >= 0 ? GREEN_D : RED) : T4,
           decorIcon: BarChart3, decorColor: GOLD, decorOpacity: 0.22,
@@ -181,10 +181,10 @@ const DashboardMobile = ({
           sub: incidentsActive ? "Action required" : "All clear",
           cardBg: incidentsActive
             ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-            : "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
+            : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
           icon: AlertCircle,
-          iconBg: incidentsActive ? `linear-gradient(135deg, ${RED}, #FF6688)` : `linear-gradient(135deg, ${VIOLET}, #A07CF8)`,
-          iconShadow: incidentsActive ? "0 4px 14px rgba(255,51,85,0.28)" : "0 4px 14px rgba(123,63,244,0.26)",
+          iconBg: incidentsActive ? `linear-gradient(135deg, ${RED}, #FF5E55)` : `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
+          iconShadow: incidentsActive ? "0 4px 14px rgba(255,59,48,0.28)" : "0 4px 14px rgba(175,82,222,0.26)",
           valColor: incidentsActive ? RED : VIOLET,
           subColor: incidentsActive ? RED : T3,
           decorIcon: PieChart, decorColor: incidentsActive ? RED : VIOLET, decorOpacity: 0.22,
@@ -195,29 +195,29 @@ const DashboardMobile = ({
           key={label}
           onClick={() => navigate(to)}
           className="rounded-[20px] px-4 py-4 relative overflow-hidden cursor-pointer active:scale-[0.96] transition-transform text-left"
-          style={{ background: cardBg, boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+          style={{ background: cardBg, boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
           <div
-            className="w-[44px] h-[44px] rounded-[12px] flex items-center justify-center mb-[10px] relative z-10"
+            className="w-[44px] h-[44px] rounded-[12px] flex items-center justify-center mb-[12px] relative z-10"
             style={{ background: iconBg, boxShadow: iconShadow }}>
             <Icon className="w-[22px] h-[22px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-[6px] leading-[1.3] whitespace-pre-line relative z-10" style={{ color: T4 }}>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-[8px] leading-[1.3] whitespace-pre-line relative z-10" style={{ color: T4 }}>
             {label}
           </span>
-          <div className="text-[28px] font-bold leading-none mb-[6px] relative z-10" style={{ color: valColor, letterSpacing: "-1px" }}>
+          <div className="text-[28px] font-semibold leading-none mb-[8px] relative z-10" style={{ color: valColor, letterSpacing: "-1px" }}>
             {String(value)}
           </div>
-          <div className="text-[11px] font-semibold truncate relative z-10" style={{ color: subColor }}>{sub}</div>
-          <Decor className="absolute bottom-[10px] right-[10px] w-12 h-12 pointer-events-none" style={{ color: decorColor, opacity: decorOpacity }} strokeWidth={2} />
+          <div className="text-[12px] font-semibold truncate relative z-10" style={{ color: subColor }}>{sub}</div>
+          <Decor className="absolute bottom-[12px] right-[12px] w-12 h-12 pointer-events-none" style={{ color: decorColor, opacity: decorOpacity }} strokeWidth={2} />
         </button>
       ))}
     </div>
   );
 
   const SectionLabel = ({ text }: { text: string }) => (
-    <div className="px-5 pt-[18px] text-[9px] font-bold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
+    <div className="px-5 pt-[16px] text-[12px] font-semibold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
       <span>{text}</span>
-      <span className="flex-1 h-[0.5px]" style={{ background: "rgba(0,85,255,0.12)" }} />
+      <span className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
     </div>
   );
 
@@ -226,7 +226,7 @@ const DashboardMobile = ({
       role={onClick ? "button" : undefined}
       tabIndex={onClick ? 0 : undefined}
       className={`mx-5 mt-3 bg-white rounded-[22px] overflow-hidden ${onClick ? "cursor-pointer" : ""} ${className}`}
-      style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+      style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
       {children}
     </div>
   );
@@ -235,10 +235,10 @@ const DashboardMobile = ({
     <>
       <SectionLabel text="Risk Alerts" />
       <SectionCard onClick={() => navigate("/risk-students")}>
-        <div className="px-[18px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</div>
+        <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</div>
           <button onClick={() => navigate("/risk-students")}
-            className="text-[12px] font-bold flex items-center gap-[3px] active:opacity-70"
+            className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
             style={{ color: B1 }}>
             View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
           </button>
@@ -246,7 +246,7 @@ const DashboardMobile = ({
         {riskAlerts.length === 0 ? (
           <div className="flex flex-col items-center gap-2 py-6">
             <div className="w-12 h-12 rounded-[16px] flex items-center justify-center"
-              style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 6px rgba(0,200,83,0.05)" }}>
+              style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 6px rgba(52,199,89,0.05)" }}>
               <CheckCircle2 className="w-5 h-5" style={{ color: GREEN }} strokeWidth={2.2} />
             </div>
             <div className="text-[13px] font-semibold" style={{ color: T3 }}>No active risk alerts</div>
@@ -257,21 +257,21 @@ const DashboardMobile = ({
             return (
               <button key={a.id}
                 onClick={() => navigate("/risk-students")}
-                className="w-full flex items-center gap-3 px-[18px] py-[14px] text-left active:bg-[#F5F9FF] transition-colors"
+                className="w-full flex items-center gap-3 px-[16px] py-[16px] text-left active:bg-[#F5F5F7] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
                 <span className="w-[9px] h-[9px] rounded-full shrink-0"
                   style={{
                     background: critical ? RED : ORANGE,
-                    boxShadow: critical ? "0 0 0 3px rgba(255,51,85,0.18)" : "0 0 0 3px rgba(255,136,0,0.16)",
+                    boxShadow: critical ? "0 0 0 3px rgba(255,59,48,0.18)" : "0 0 0 3px rgba(255,149,0,0.16)",
                   }} />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[14px] font-bold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 3 }}>{a.name}</div>
-                  <div className="text-[11px] font-medium truncate" style={{ color: T3 }}>{a.detail}</div>
+                  <div className="text-[14px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 3 }}>{a.name}</div>
+                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>{a.detail}</div>
                 </div>
-                <div className="px-[10px] py-[5px] rounded-full text-[9px] font-bold text-white uppercase tracking-[0.08em] shrink-0"
+                <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold text-white uppercase tracking-[0.08em] shrink-0"
                   style={{
                     background: critical ? RED : ORANGE,
-                    boxShadow: critical ? "0 2px 8px rgba(255,51,85,0.28)" : "0 2px 8px rgba(255,136,0,0.26)",
+                    boxShadow: critical ? "0 2px 8px rgba(255,59,48,0.28)" : "0 2px 8px rgba(255,149,0,0.26)",
                   }}>
                   {critical ? "Critical" : "Warning"}
                 </div>
@@ -287,17 +287,17 @@ const DashboardMobile = ({
     <SectionCard onClick={() => navigate("/attendance")}>
       <button
         onClick={() => navigate("/attendance")}
-        className="w-full px-[18px] pt-4 pb-3 flex items-center justify-between active:opacity-80"
+        className="w-full px-[16px] pt-4 pb-3 flex items-center justify-between active:opacity-80"
         style={{ borderBottom: `0.5px solid ${SEP}` }}>
-        <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Attendance Trend</div>
-        <div className="text-[11px] font-semibold" style={{ color: T4 }}>Last 30 days</div>
+        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Attendance Trend</div>
+        <div className="text-[12px] font-semibold" style={{ color: T4 }}>Last 30 days</div>
       </button>
-      <div className="p-[18px]">
+      <div className="p-[16px]">
         {trendData.length === 0 ? (
-          <div className="flex flex-col items-center gap-[6px] py-6">
+          <div className="flex flex-col items-center gap-[8px] py-6">
             <div className="w-12 h-12 rounded-[16px] flex items-center justify-center"
-              style={{ background: "rgba(0,85,255,0.08)", border: "0.5px solid rgba(0,85,255,0.14)" }}>
-              <CalendarCheck className="w-5 h-5" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.2} />
+              style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
+              <CalendarCheck className="w-5 h-5" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
             </div>
             <div className="text-[12px] font-medium" style={{ color: T4 }}>No attendance data yet</div>
           </div>
@@ -308,18 +308,18 @@ const DashboardMobile = ({
                 <defs>
                   <linearGradient id="dashMobileLine" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor={B1} />
-                    <stop offset="100%" stopColor="#66BBFF" />
+                    <stop offset="100%" stopColor="#7CBBFF" />
                   </linearGradient>
                   <linearGradient id="dashMobileArea" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor={B1} stopOpacity={0.14} />
                     <stop offset="100%" stopColor={B1} stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="0" vertical={false} stroke="rgba(0,85,255,0.06)" />
+                <CartesianGrid strokeDasharray="0" vertical={false} stroke="rgba(10,132,255,0.06)" />
                 <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 600 }} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 9, fill: T4, fontWeight: 600 }} domain={[0, 100]} width={30} />
                 <Tooltip
-                  contentStyle={{ borderRadius: 12, border: "0.5px solid rgba(0,85,255,0.15)", boxShadow: "0 4px 20px rgba(0,85,255,0.12)", fontSize: 11, padding: "6px 10px" }}
+                  contentStyle={{ borderRadius: 12, border: "0.5px solid rgba(10,132,255,0.15)", boxShadow: "0 4px 20px rgba(10,132,255,0.12)", fontSize: 11, padding: "6px 10px" }}
                   formatter={(val: any) => [`${val}%`, "Attendance"]}
                   labelFormatter={(d: any) => `Day ${d}`}
                 />
@@ -334,49 +334,49 @@ const DashboardMobile = ({
 
   const Heatmap = (
     <SectionCard onClick={() => navigate("/academics")}>
-      <div className="px-[18px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-        <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Class Performance</div>
+      <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+        <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Class Performance</div>
         <button onClick={() => navigate("/academics")}
-          className="text-[12px] font-bold flex items-center gap-[3px] active:opacity-70"
+          className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
           style={{ color: B1 }}>
           Details <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
         </button>
       </div>
-      <div className="p-[14px]">
+      <div className="p-[16px]">
         {heatmapCells.length === 0 ? (
-          <div className="flex flex-col items-center gap-[6px] py-6">
+          <div className="flex flex-col items-center gap-[8px] py-6">
             <div className="text-[12px] font-medium" style={{ color: T4 }}>No class data yet</div>
           </div>
         ) : (
           <>
-            <div className="text-[10px] font-bold uppercase tracking-[0.08em] mb-[10px]" style={{ color: T4 }}>Institutional Grade</div>
-            <div className="flex gap-[10px] items-end overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
+            <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[12px]" style={{ color: T4 }}>Institutional Grade</div>
+            <div className="flex gap-[12px] items-end overflow-x-auto pb-1" style={{ scrollbarWidth: "none" }}>
               {heatmapCells.map((c) => {
                 const grad = heatGradient(c.color);
                 return (
                   <button key={c.cls}
                     onClick={(e) => { e.stopPropagation(); navigate(`/academics?class=${encodeURIComponent(c.cls)}`); }}
-                    className="flex flex-col items-center gap-[6px] shrink-0 active:scale-[0.92] transition-transform"
+                    className="flex flex-col items-center gap-[8px] shrink-0 active:scale-[0.92] transition-transform"
                     style={{ transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <div className="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center"
                       style={{ background: grad.bg, boxShadow: grad.shadow }}>
                       {c.avg !== null && (
-                        <span className="text-[13px] font-bold text-white" style={{ letterSpacing: "-0.2px" }}>{c.avg}%</span>
+                        <span className="text-[13px] font-semibold text-white" style={{ letterSpacing: "-0.2px" }}>{c.avg}%</span>
                       )}
                     </div>
-                    <span className="text-[10px] font-bold tracking-[0.04em]" style={{ color: T3 }}>{c.cls}</span>
+                    <span className="text-[12px] font-semibold tracking-[0.04em]" style={{ color: T3 }}>{c.cls}</span>
                   </button>
                 );
               })}
             </div>
-            <div className="flex items-center gap-[14px] pt-3 mt-3" style={{ borderTop: `0.5px solid ${SEP}` }}>
-              <div className="flex items-center gap-[5px] text-[10px] font-semibold" style={{ color: T3 }}>
+            <div className="flex items-center gap-[16px] pt-3 mt-3" style={{ borderTop: `0.5px solid ${SEP}` }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: GREEN }} />Good (≥75%)
               </div>
-              <div className="flex items-center gap-[5px] text-[10px] font-semibold" style={{ color: T3 }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: ORANGE }} />Average (55-74%)
               </div>
-              <div className="flex items-center gap-[5px] text-[10px] font-semibold" style={{ color: T3 }}>
+              <div className="flex items-center gap-[4px] text-[12px] font-semibold" style={{ color: T3 }}>
                 <span className="w-2 h-2 rounded-full" style={{ background: RED }} />Weak (&lt;55%)
               </div>
             </div>
@@ -390,19 +390,19 @@ const DashboardMobile = ({
     <>
       <SectionLabel text="Faculty" />
       <SectionCard onClick={() => navigate("/teacher-performance")}>
-        <div className="px-[18px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Teacher Performance</div>
+        <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Teacher Performance</div>
           <button onClick={() => navigate("/teacher-performance")}
-            className="text-[12px] font-bold flex items-center gap-[3px] active:opacity-70"
+            className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
             style={{ color: B1 }}>
             View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
           </button>
         </div>
         {teacherRows.length === 0 ? (
-          <div className="flex flex-col items-center gap-[6px] py-6">
+          <div className="flex flex-col items-center gap-[8px] py-6">
             <div className="w-12 h-12 rounded-[16px] flex items-center justify-center"
-              style={{ background: "rgba(0,85,255,0.08)", border: "0.5px solid rgba(0,85,255,0.14)" }}>
-              <GraduationCap className="w-5 h-5" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.2} />
+              style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)" }}>
+              <GraduationCap className="w-5 h-5" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.2} />
             </div>
             <div className="text-[12px] font-medium" style={{ color: T4 }}>No teachers yet</div>
           </div>
@@ -412,17 +412,17 @@ const DashboardMobile = ({
             return (
               <button key={`${t.name}-${i}`}
                 onClick={(e) => { e.stopPropagation(); navigate("/teachers"); }}
-                className="w-full flex items-center gap-3 px-[18px] py-[13px] text-left active:bg-[#F5F9FF] transition-colors"
+                className="w-full flex items-center gap-3 px-[16px] py-[12px] text-left active:bg-[#F5F5F7] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
-                <div className="w-10 h-10 rounded-[13px] flex items-center justify-center text-[13px] font-bold text-white shrink-0"
+                <div className="w-10 h-10 rounded-[13px] flex items-center justify-center text-[13px] font-semibold text-white shrink-0"
                   style={{ background: av.bg, boxShadow: av.shadow }}>
                   {t.ini}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="text-[14px] font-bold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 2 }}>{t.name}</div>
-                  <div className="text-[11px] font-medium truncate" style={{ color: T3 }}>{t.subject}</div>
+                  <div className="text-[14px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.2px", marginBottom: 2 }}>{t.name}</div>
+                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>{t.subject}</div>
                 </div>
-                <div className="flex items-center gap-1 text-[14px] font-bold shrink-0" style={{ color: GOLD }}>
+                <div className="flex items-center gap-1 text-[14px] font-semibold shrink-0" style={{ color: GOLD }}>
                   <Star className="w-[13px] h-[13px]" fill={GOLD} stroke={GOLD} />
                   {t.rating || "—"}
                 </div>
@@ -438,16 +438,16 @@ const DashboardMobile = ({
     <>
       <SectionLabel text="Communications" />
       <SectionCard onClick={() => navigate("/parent-communication")}>
-        <div className="px-[18px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-          <div className="text-[15px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Urgent Communications</div>
+        <div className="px-[16px] pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+          <div className="text-[15px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Urgent Communications</div>
           {urgentComms.length === 0 ? (
-            <div className="px-[10px] py-1 rounded-full text-[10px] font-bold"
+            <div className="px-[12px] py-1 rounded-full text-[12px] font-semibold"
               style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, color: GREEN_D }}>
               All clear
             </div>
           ) : (
             <button onClick={() => navigate("/parent-communication")}
-              className="text-[12px] font-bold flex items-center gap-[3px] active:opacity-70"
+              className="text-[12px] font-semibold flex items-center gap-[4px] active:opacity-70"
               style={{ color: B1 }}>
               View All <ChevronRight className="w-[13px] h-[13px]" strokeWidth={2.5} />
             </button>
@@ -456,11 +456,11 @@ const DashboardMobile = ({
         {urgentComms.length === 0 ? (
           <div className="flex flex-col items-center gap-[8px] px-4 py-5">
             <div className="w-12 h-12 rounded-[16px] flex items-center justify-center"
-              style={{ background: "rgba(0,85,255,0.08)", border: "0.5px solid rgba(0,85,255,0.14)", boxShadow: "0 0 0 8px rgba(0,85,255,0.04)" }}>
-              <CheckCircle2 className="w-[22px] h-[22px]" style={{ color: "rgba(0,85,255,0.5)" }} strokeWidth={2.1} />
+              style={{ background: "rgba(10,132,255,0.08)", border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: "0 0 0 8px rgba(10,132,255,0.04)" }}>
+              <CheckCircle2 className="w-[22px] h-[22px]" style={{ color: "rgba(10,132,255,0.5)" }} strokeWidth={2.1} />
             </div>
             <div className="text-[13px] font-medium" style={{ color: T3 }}>No urgent messages</div>
-            <div className="text-[11px] font-normal text-center max-w-[200px] leading-[1.55]" style={{ color: T4 }}>
+            <div className="text-[12px] font-normal text-center max-w-[200px] leading-[1.55]" style={{ color: T4 }}>
               All communication channels are clear.
             </div>
           </div>
@@ -470,20 +470,20 @@ const DashboardMobile = ({
             return (
               <button key={c.id}
                 onClick={() => navigate("/parent-communication")}
-                className="w-full flex items-start gap-3 px-[18px] py-[13px] text-left active:bg-[#F5F9FF] transition-colors"
+                className="w-full flex items-start gap-3 px-[16px] py-[12px] text-left active:bg-[#F5F5F7] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
-                <div className="w-1 h-10 rounded-full shrink-0 mt-0.5" style={{ background: isHigh ? RED : ORANGE }} />
+                <div className="w-1 h-10 rounded-full shrink-0 mt-1" style={{ background: isHigh ? RED : ORANGE }} />
                 <div className="flex-1 min-w-0">
-                  <div className="text-[13px] font-bold truncate" style={{ color: T1, letterSpacing: "-0.1px", marginBottom: 2 }}>{c.title}</div>
-                  <div className="text-[11px] font-medium truncate" style={{ color: T3 }}>
+                  <div className="text-[13px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.1px", marginBottom: 2 }}>{c.title}</div>
+                  <div className="text-[12px] font-medium truncate" style={{ color: T3 }}>
                     {c.from}{c.time ? ` · ${c.time}` : ""}
                   </div>
                 </div>
-                <div className="px-[9px] py-[3px] rounded-full text-[9px] font-bold shrink-0 uppercase tracking-[0.06em]"
+                <div className="px-[8px] py-[4px] rounded-full text-[12px] font-semibold shrink-0 uppercase tracking-[0.06em]"
                   style={{
-                    background: isHigh ? "rgba(255,51,85,0.10)" : "rgba(255,136,0,0.10)",
-                    color: isHigh ? RED : "#884400",
-                    border: `0.5px solid ${isHigh ? "rgba(255,51,85,0.22)" : "rgba(255,136,0,0.22)"}`,
+                    background: isHigh ? "rgba(255,59,48,0.10)" : "rgba(255,149,0,0.10)",
+                    color: isHigh ? RED : "#86310C",
+                    border: `0.5px solid ${isHigh ? "rgba(255,59,48,0.22)" : "rgba(255,149,0,0.22)"}`,
                   }}>
                   {isHigh ? "High" : "Normal"}
                 </div>
@@ -502,10 +502,10 @@ const DashboardMobile = ({
     return (
       <div
         className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
         <div className="px-5 pt-4">
-          <div className="text-[24px] font-bold" style={{ color: T1, letterSpacing: "-0.6px" }}>Analytics</div>
-          <div className="text-[12px] font-normal mt-[3px]" style={{ color: T3 }}>Attendance trends and class performance</div>
+          <div className="text-[24px] font-semibold" style={{ color: T1, letterSpacing: "-0.6px" }}>Analytics</div>
+          <div className="text-[12px] font-normal mt-[4px]" style={{ color: T3 }}>Attendance trends and class performance</div>
         </div>
         {Hero}
         {TrendChart}
@@ -522,18 +522,18 @@ const DashboardMobile = ({
     return (
       <div
         className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
         <div className="px-5 pt-4">
-          <div className="text-[24px] font-bold" style={{ color: T1, letterSpacing: "-0.6px" }}>Faculty</div>
-          <div className="text-[12px] font-normal mt-[3px]" style={{ color: T3 }}>Teacher performance &amp; ratings</div>
+          <div className="text-[24px] font-semibold" style={{ color: T1, letterSpacing: "-0.6px" }}>Faculty</div>
+          <div className="text-[12px] font-normal mt-[4px]" style={{ color: T3 }}>Teacher performance &amp; ratings</div>
         </div>
         {TeachersCard}
-        <div className="mx-5 mt-3 bg-white rounded-[20px] px-5 py-4" style={{ boxShadow: SH, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+        <div className="mx-5 mt-3 bg-white rounded-[20px] px-5 py-4" style={{ boxShadow: SH, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           <button onClick={() => navigate("/teacher-leaderboard")}
             className="w-full flex items-center justify-between active:opacity-80">
             <div>
-              <div className="text-[14px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Full Leaderboard</div>
-              <div className="text-[11px] font-medium mt-[2px]" style={{ color: T3 }}>See ranked teacher scores</div>
+              <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Full Leaderboard</div>
+              <div className="text-[12px] font-medium mt-[2px]" style={{ color: T3 }}>See ranked teacher scores</div>
             </div>
             <ChevronRight className="w-[16px] h-[16px]" style={{ color: B1 }} strokeWidth={2.5} />
           </button>
@@ -549,7 +549,7 @@ const DashboardMobile = ({
   return (
     <div
       className="animate-in fade-in duration-500 -mx-3 -mt-3"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
       {Hero}
       {StatGrid}
       {RiskAlerts}

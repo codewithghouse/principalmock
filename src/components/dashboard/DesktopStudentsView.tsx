@@ -7,34 +7,34 @@ import {
 import { tilt3D, tilt3DProfile, tilt3DStyle } from "@/lib/use3DTilt";
 
 // ── Palette ───────────────────────────────────────────────────────────────────
-const B1 = "#0055FF";
-const B2 = "#1166FF";
-const B3 = "#2277FF";
-const BG = "#EEF4FF";
-const BG2 = "#E0ECFF";
-const T1 = "#001040";
-const T2 = "#002080";
-const T4 = "#99AACC";
-const SEP = "rgba(0,85,255,0.07)";
-const GREEN = "#00C853";
-const RED = "#FF3355";
+const B1 = "#0A84FF";
+const B2 = "#3395FF";
+const B3 = "#5BA9FF";
+const BG = "#F5F5F7";
+const BG2 = "#EBEBF0";
+const T1 = "#1D1D1F";
+const T2 = "#3A3A3C";
+const T4 = "#A1A1A6";
+const SEP = "rgba(10,132,255,0.07)";
+const GREEN = "#34C759";
+const RED = "#FF3B30";
 
 const GRAD_PRIMARY = `linear-gradient(135deg, ${B1}, ${B2})`;
 const GRAD_FAC_ICO = `linear-gradient(135deg, ${B1}, ${B3})`;
 
 // Soft uniform blue halo — dimmed per user; applied to every card across
 // Dashboard, Students, and StudentIntelligence.
-const SHADOW_SM = "0 0 0 .5px rgba(0,85,255,.09), 0 2px 10px rgba(0,85,255,.10), 0 10px 26px rgba(0,85,255,.12)";
-const SHADOW_LG = "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.12), 0 18px 44px rgba(0,85,255,.15)";
-const SHADOW_BTN = "0 5px 18px rgba(0,85,255,.34), 0 2px 5px rgba(0,85,255,.18)";
+const SHADOW_SM = "0 0 0 .5px rgba(10,132,255,.09), 0 2px 10px rgba(10,132,255,.10), 0 10px 26px rgba(10,132,255,.12)";
+const SHADOW_LG = "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.12), 0 18px 44px rgba(10,132,255,.15)";
+const SHADOW_BTN = "0 5px 18px rgba(10,132,255,.34), 0 2px 5px rgba(10,132,255,.18)";
 
 const AV_PALETTE = [
-  "linear-gradient(135deg, #0044EE, #2277FF)",
-  "linear-gradient(135deg, #002DBB, #0055FF)",
-  "linear-gradient(135deg, #1A3090, #2277FF)",
-  "linear-gradient(135deg, #0066FF, #4499FF)",
-  "linear-gradient(135deg, #002080, #0044EE)",
-  "linear-gradient(135deg, #0055FF, #66BBFF)",
+  "linear-gradient(135deg, #3395FF, #5BA9FF)",
+  "linear-gradient(135deg, #0A84FF, #0A84FF)",
+  "linear-gradient(135deg, #1A3090, #5BA9FF)",
+  "linear-gradient(135deg, #0A84FF, #7CBBFF)",
+  "linear-gradient(135deg, #3A3A3C, #3395FF)",
+  "linear-gradient(135deg, #0A84FF, #7CBBFF)",
 ];
 const avGrad = (seed: string) => {
   let h = 0;
@@ -105,7 +105,7 @@ const DesktopStudentsView = ({
   return (
     <div
       style={{
-        fontFamily: "'DM Sans', -apple-system, sans-serif",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
         background: BG,
         minHeight: "100vh",
         margin: "-16px -24px 0",
@@ -115,7 +115,7 @@ const DesktopStudentsView = ({
       {/* ── Page Head ── */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 24, marginBottom: 18 }}>
         <div style={{ minWidth: 0 }}>
-          <h1 style={{ fontSize: 32, fontWeight: 700, color: T1, letterSpacing: "-0.8px", margin: 0, lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: 32, fontWeight: 600, color: T1, letterSpacing: "-0.8px", margin: 0, lineHeight: 1.1 }}>
             Student Directory
           </h1>
           <div
@@ -125,7 +125,7 @@ const DesktopStudentsView = ({
               gap: 6,
               marginTop: 6,
               fontSize: 10,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               color: B1,
@@ -142,16 +142,16 @@ const DesktopStudentsView = ({
             alignItems: "center",
             padding: "10px 22px",
             borderRadius: 18,
-            background: "rgba(0,85,255,0.08)",
-            border: "0.5px solid rgba(0,85,255,0.18)",
-            boxShadow: "0 0 0 .5px rgba(0,85,255,.06), 0 2px 10px rgba(0,85,255,.06)",
+            background: "rgba(10,132,255,0.08)",
+            border: "0.5px solid rgba(10,132,255,0.18)",
+            boxShadow: "0 0 0 .5px rgba(10,132,255,.06), 0 2px 10px rgba(10,132,255,.06)",
             flexShrink: 0,
           }}
         >
-          <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 3 }}>
+          <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 3 }}>
             Total Scholars
           </div>
-          <div style={{ fontSize: 28, fontWeight: 700, color: B1, letterSpacing: "-0.6px", lineHeight: 1 }}>
+          <div style={{ fontSize: 28, fontWeight: 600, color: B1, letterSpacing: "-0.6px", lineHeight: 1 }}>
             {loading ? "—" : studentsData.length}
           </div>
         </div>
@@ -162,7 +162,7 @@ const DesktopStudentsView = ({
         <div style={{ position: "relative", flex: 1, minWidth: 320, maxWidth: 560 }}>
           <Search
             size={16}
-            color="rgba(0,85,255,0.42)"
+            color="rgba(10,132,255,0.42)"
             strokeWidth={2.2}
             style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }}
           />
@@ -180,7 +180,7 @@ const DesktopStudentsView = ({
               fontWeight: 500,
               color: T1,
               outline: "none",
-              border: "0.5px solid rgba(0,85,255,0.12)",
+              border: "0.5px solid rgba(10,132,255,0.12)",
               boxShadow: SHADOW_SM,
               letterSpacing: "-0.1px",
               fontFamily: "inherit",
@@ -197,14 +197,14 @@ const DesktopStudentsView = ({
               padding: "0 38px 0 36px",
               borderRadius: 14,
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
               cursor: "pointer",
               fontFamily: "inherit",
-              background: classFilter !== "ALL" ? B1 : "rgba(0,85,255,0.10)",
+              background: classFilter !== "ALL" ? B1 : "rgba(10,132,255,0.10)",
               color: classFilter !== "ALL" ? "#fff" : B1,
-              border: `0.5px solid ${classFilter !== "ALL" ? B1 : "rgba(0,85,255,0.22)"}`,
+              border: `0.5px solid ${classFilter !== "ALL" ? B1 : "rgba(10,132,255,0.22)"}`,
               outline: "none",
               appearance: "none",
               WebkitAppearance: "none",
@@ -241,14 +241,14 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             cursor: "pointer",
             fontFamily: "inherit",
-            background: atRiskFilter ? RED : "rgba(255,51,85,0.10)",
+            background: atRiskFilter ? RED : "rgba(255,59,48,0.10)",
             color: atRiskFilter ? "#fff" : RED,
-            border: `0.5px solid ${atRiskFilter ? RED : "rgba(255,51,85,0.22)"}`,
+            border: `0.5px solid ${atRiskFilter ? RED : "rgba(255,59,48,0.22)"}`,
             transition: "transform .15s",
           }}
         >
@@ -273,14 +273,14 @@ const DesktopStudentsView = ({
               justifyContent: "center",
               gap: 6,
               fontSize: 11,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "0.04em",
               textTransform: "uppercase",
               cursor: "pointer",
               fontFamily: "inherit",
               background: "#fff",
               color: T2,
-              border: "0.5px solid rgba(0,85,255,0.16)",
+              border: "0.5px solid rgba(10,132,255,0.16)",
               boxShadow: SHADOW_SM,
             }}
           >
@@ -300,7 +300,7 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 7,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             color: "#fff",
@@ -336,12 +336,12 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
             background: "#fff",
             color: T2,
-            border: "0.5px solid rgba(0,85,255,0.14)",
+            border: "0.5px solid rgba(10,132,255,0.14)",
             boxShadow: SHADOW_SM,
             cursor: "pointer",
             fontFamily: "inherit",
@@ -362,12 +362,12 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
-            background: "rgba(0,200,83,0.10)",
-            color: "#007830",
-            border: "0.5px solid rgba(0,200,83,0.22)",
+            background: "rgba(52,199,89,0.10)",
+            color: "#248A3D",
+            border: "0.5px solid rgba(52,199,89,0.22)",
             cursor: "pointer",
             fontFamily: "inherit",
           }}
@@ -387,12 +387,12 @@ const DesktopStudentsView = ({
             justifyContent: "center",
             gap: 6,
             fontSize: 11,
-            fontWeight: 700,
+            fontWeight: 600,
             letterSpacing: "0.04em",
             textTransform: "uppercase",
-            background: "rgba(255,136,0,0.10)",
-            color: "#884400",
-            border: "0.5px solid rgba(255,136,0,0.22)",
+            background: "rgba(255,149,0,0.10)",
+            color: "#86310C",
+            border: "0.5px solid rgba(255,149,0,0.22)",
             cursor: "pointer",
             fontFamily: "inherit",
           }}
@@ -412,7 +412,7 @@ const DesktopStudentsView = ({
           overflow: "hidden",
           background: "#fff",
           boxShadow: SHADOW_LG,
-          border: "0.5px solid rgba(0,85,255,0.10)",
+          border: "0.5px solid rgba(10,132,255,0.10)",
           position: "relative",
           ...tilt3DStyle,
         }}
@@ -420,12 +420,12 @@ const DesktopStudentsView = ({
         <div data-glow style={{ position: "absolute", inset: 0, pointerEvents: "none", opacity: 0, transition: "opacity 0.3s" }} />
         {[
           { val: loading ? "—" : studentsData.length, label: "Scholars", color: B1 },
-          { val: loading ? "—" : activeCount, label: "Active", color: "#007830" },
+          { val: loading ? "—" : activeCount, label: "Active", color: "#248A3D" },
           { val: loading ? "—" : atRiskCount, label: "At Risk", color: RED },
           {
             val: loading || avgAttendance === null ? "—" : `${avgAttendance}%`,
             label: "Avg Attendance",
-            color: "#884400",
+            color: "#86310C",
           },
         ].map((s, i, arr) => (
           <div
@@ -437,13 +437,13 @@ const DesktopStudentsView = ({
               flexDirection: "column",
               alignItems: "center",
               gap: 4,
-              borderRight: i < arr.length - 1 ? "0.5px solid rgba(0,85,255,0.10)" : "none",
+              borderRight: i < arr.length - 1 ? "0.5px solid rgba(10,132,255,0.10)" : "none",
             }}
           >
-            <div style={{ fontSize: 26, fontWeight: 700, color: s.color, letterSpacing: "-0.7px", lineHeight: 1 }}>
+            <div style={{ fontSize: 26, fontWeight: 600, color: s.color, letterSpacing: "-0.7px", lineHeight: 1 }}>
               {s.val}
             </div>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+            <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
               {s.label}
             </div>
           </div>
@@ -458,7 +458,7 @@ const DesktopStudentsView = ({
           alignItems: "center",
           gap: 8,
           fontSize: 10,
-          fontWeight: 700,
+          fontWeight: 600,
           letterSpacing: "0.12em",
           textTransform: "uppercase",
           color: T4,
@@ -466,7 +466,7 @@ const DesktopStudentsView = ({
         }}
       >
         Scholar Details
-        <div style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,0.12)" }} />
+        <div style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,0.12)" }} />
       </div>
 
       {/* ── Body: loading / empty / cards grid ── */}
@@ -474,7 +474,7 @@ const DesktopStudentsView = ({
         <div style={{ padding: "60px 0", textAlign: "center" }}>
           <Loader2 size={32} color={B1} style={{ animation: "spin 1s linear infinite", marginBottom: 12 }} />
           <style>{`@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}`}</style>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
             Loading roster...
           </p>
         </div>
@@ -486,11 +486,11 @@ const DesktopStudentsView = ({
             background: "#fff",
             textAlign: "center",
             boxShadow: SHADOW_SM,
-            border: "0.5px solid rgba(0,85,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.10)",
           }}
         >
-          <UserIcon size={48} color="rgba(0,85,255,0.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
-          <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#5070B0", margin: 0 }}>
+          <UserIcon size={48} color="rgba(10,132,255,0.22)" strokeWidth={1.8} style={{ margin: "0 auto 12px" }} />
+          <p style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#6E6E73", margin: 0 }}>
             {searchTerm || atRiskFilter ? "No matching scholars" : "No scholars enrolled"}
           </p>
           {(searchTerm || atRiskFilter) && (
@@ -519,11 +519,11 @@ const DesktopStudentsView = ({
                     gap: 7,
                     padding: "6px 14px",
                     borderRadius: 12,
-                    background: "rgba(0,85,255,0.10)",
-                    border: "0.5px solid rgba(0,85,255,0.18)",
+                    background: "rgba(10,132,255,0.10)",
+                    border: "0.5px solid rgba(10,132,255,0.18)",
                     color: B1,
                     fontSize: 12,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}
@@ -534,7 +534,7 @@ const DesktopStudentsView = ({
                 <span
                   style={{
                     fontSize: 11,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.10em",
                     textTransform: "uppercase",
                     color: T4,
@@ -542,7 +542,7 @@ const DesktopStudentsView = ({
                 >
                   {groupedByClass[cls].length} {groupedByClass[cls].length === 1 ? "Scholar" : "Scholars"}
                 </span>
-                <div style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,0.10)" }} />
+                <div style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,0.10)" }} />
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 14, perspective: "1200px" }}>
                 {groupedByClass[cls].map((s: any) => {
@@ -561,7 +561,7 @@ const DesktopStudentsView = ({
                   overflow: "hidden",
                   position: "relative",
                   boxShadow: SHADOW_LG,
-                  border: "0.5px solid rgba(0,85,255,0.10)",
+                  border: "0.5px solid rgba(10,132,255,0.10)",
                   ...tilt3DStyle,
                 }}
               >
@@ -586,10 +586,10 @@ const DesktopStudentsView = ({
                       alignItems: "center",
                       justifyContent: "center",
                       fontSize: 18,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: "#fff",
                       flexShrink: 0,
-                      boxShadow: "0 4px 14px rgba(0,85,255,0.28)",
+                      boxShadow: "0 4px 14px rgba(10,132,255,0.28)",
                     }}
                   >
                     {s.initials}
@@ -598,7 +598,7 @@ const DesktopStudentsView = ({
                     <div
                       style={{
                         fontSize: 17,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: T1,
                         letterSpacing: "-0.3px",
                         textTransform: "uppercase",
@@ -624,7 +624,7 @@ const DesktopStudentsView = ({
                         whiteSpace: "nowrap",
                       }}
                     >
-                      <span style={{ color: B3, fontWeight: 700 }}>#</span>
+                      <span style={{ color: B3, fontWeight: 600 }}>#</span>
                       <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {email || s.id.slice(0, 20)}
                       </span>
@@ -637,11 +637,11 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           letterSpacing: "0.04em",
-                          background: "rgba(255,51,85,0.10)",
+                          background: "rgba(255,59,48,0.10)",
                           color: RED,
-                          border: "0.5px solid rgba(255,51,85,0.22)",
+                          border: "0.5px solid rgba(255,59,48,0.22)",
                         }}
                       >
                         At Risk
@@ -652,11 +652,11 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           letterSpacing: "0.04em",
-                          background: "rgba(0,200,83,0.10)",
-                          color: "#007830",
-                          border: "0.5px solid rgba(0,200,83,0.22)",
+                          background: "rgba(52,199,89,0.10)",
+                          color: "#248A3D",
+                          border: "0.5px solid rgba(52,199,89,0.22)",
                         }}
                       >
                         Active
@@ -667,11 +667,11 @@ const DesktopStudentsView = ({
                           padding: "6px 14px",
                           borderRadius: 100,
                           fontSize: 11,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           letterSpacing: "0.04em",
-                          background: "rgba(0,85,255,0.10)",
+                          background: "rgba(10,132,255,0.10)",
                           color: B1,
-                          border: "0.5px solid rgba(0,85,255,0.20)",
+                          border: "0.5px solid rgba(10,132,255,0.20)",
                         }}
                       >
                         Invited
@@ -692,11 +692,11 @@ const DesktopStudentsView = ({
                       borderBottom: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Campus Branch
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: T1, display: "flex", alignItems: "center", gap: 7, letterSpacing: "-0.1px" }}>
-                      <MapPin size={13} color="rgba(0,85,255,0.6)" strokeWidth={2.3} />
+                    <div style={{ fontSize: 14, fontWeight: 600, color: T1, display: "flex", alignItems: "center", gap: 7, letterSpacing: "-0.1px" }}>
+                      <MapPin size={13} color="rgba(10,132,255,0.6)" strokeWidth={2.3} />
                       {s.branchId || defaultBranchId || "—"}
                     </div>
                   </div>
@@ -709,19 +709,19 @@ const DesktopStudentsView = ({
                       borderBottom: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Institutional Grade
                     </div>
-                    <div style={{ fontSize: 14, fontWeight: 700, display: "flex", alignItems: "center", gap: 7 }}>
+                    <div style={{ fontSize: 14, fontWeight: 600, display: "flex", alignItems: "center", gap: 7 }}>
                       <span
                         style={{
                           padding: "4px 14px",
                           borderRadius: 100,
                           fontSize: 12,
-                          fontWeight: 700,
+                          fontWeight: 600,
                           color: "#fff",
                           background: GRAD_PRIMARY,
-                          boxShadow: "0 2px 7px rgba(0,85,255,0.28)",
+                          boxShadow: "0 2px 7px rgba(10,132,255,0.28)",
                         }}
                       >
                         {s.gradeDisplay || "—"}
@@ -737,13 +737,13 @@ const DesktopStudentsView = ({
                       borderRight: `0.5px solid ${SEP}`,
                     }}
                   >
-                    <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Assigned Faculty
                     </div>
                     <div
                       style={{
                         fontSize: 14,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         color: T1,
                         display: "flex",
                         alignItems: "center",
@@ -772,14 +772,14 @@ const DesktopStudentsView = ({
                     </div>
                   </div>
                   <div style={{ padding: "14px 18px", display: "flex", flexDirection: "column", gap: 4 }}>
-                    <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
+                    <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4 }}>
                       Attendance
                     </div>
                     <div
                       style={{
                         fontSize: 14,
-                        fontWeight: 700,
-                        color: attValid ? (attGood ? "#007830" : RED) : T4,
+                        fontWeight: 600,
+                        color: attValid ? (attGood ? "#248A3D" : RED) : T4,
                         display: "flex",
                         alignItems: "center",
                         gap: 7,
@@ -817,7 +817,7 @@ const DesktopStudentsView = ({
                       justifyContent: "center",
                       gap: 7,
                       fontSize: 13,
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: "#fff",
                       letterSpacing: "0.04em",
                       background: GRAD_PRIMARY,
@@ -851,13 +851,13 @@ const DesktopStudentsView = ({
                       alignItems: "center",
                       justifyContent: "center",
                       background: "#fff",
-                      border: "0.5px solid rgba(0,85,255,0.16)",
+                      border: "0.5px solid rgba(10,132,255,0.16)",
                       boxShadow: SHADOW_SM,
                       cursor: "pointer",
                       flexShrink: 0,
                     }}
                   >
-                    <MessageSquare size={15} color="rgba(0,85,255,0.7)" strokeWidth={2.2} />
+                    <MessageSquare size={15} color="rgba(10,132,255,0.7)" strokeWidth={2.2} />
                   </button>
                   <button
                     onClick={() => onProfileClick(s)}
@@ -870,13 +870,13 @@ const DesktopStudentsView = ({
                       alignItems: "center",
                       justifyContent: "center",
                       background: "#fff",
-                      border: "0.5px solid rgba(0,85,255,0.16)",
+                      border: "0.5px solid rgba(10,132,255,0.16)",
                       boxShadow: SHADOW_SM,
                       cursor: "pointer",
                       flexShrink: 0,
                     }}
                   >
-                    <MoreHorizontal size={15} color="rgba(0,85,255,0.7)" strokeWidth={2.2} />
+                    <MoreHorizontal size={15} color="rgba(10,132,255,0.7)" strokeWidth={2.2} />
                   </button>
                 </div>
               </div>
@@ -901,10 +901,10 @@ const DesktopStudentsView = ({
             justifyContent: "space-between",
             gap: 12,
             boxShadow: SHADOW_SM,
-            border: "0.5px solid rgba(0,85,255,0.10)",
+            border: "0.5px solid rgba(10,132,255,0.10)",
           }}
         >
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, margin: 0 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, margin: 0 }}>
             Showing {pageStart}–{pageEnd} of {filtered.length} {filtered.length === 1 ? "Student" : "Students"}
           </p>
           {totalPages > 1 && (
@@ -915,7 +915,7 @@ const DesktopStudentsView = ({
               style={{
                 padding: 8,
                 borderRadius: 10,
-                border: "0.5px solid rgba(0,85,255,0.12)",
+                border: "0.5px solid rgba(10,132,255,0.12)",
                 background: BG2,
                 cursor: currentPage === 1 ? "not-allowed" : "pointer",
                 opacity: currentPage === 1 ? 0.3 : 1,
@@ -940,10 +940,10 @@ const DesktopStudentsView = ({
                     height: 36,
                     borderRadius: 11,
                     fontSize: 12,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     color: active ? "#fff" : T4,
                     background: active ? GRAD_PRIMARY : "#fff",
-                    border: active ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,0.12)",
+                    border: active ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,0.12)",
                     boxShadow: active ? SHADOW_BTN : "none",
                     cursor: "pointer",
                     fontFamily: "inherit",
@@ -959,7 +959,7 @@ const DesktopStudentsView = ({
               style={{
                 padding: 8,
                 borderRadius: 10,
-                border: "0.5px solid rgba(0,85,255,0.12)",
+                border: "0.5px solid rgba(10,132,255,0.12)",
                 background: BG2,
                 cursor: currentPage === totalPages ? "not-allowed" : "pointer",
                 opacity: currentPage === totalPages ? 0.3 : 1,
@@ -986,7 +986,7 @@ const DesktopStudentsView = ({
             borderRadius: 24,
             position: "relative",
             overflow: "hidden",
-            background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+            background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
             boxShadow: "0 8px 28px rgba(0,51,204,0.30), 0 0 0 0.5px rgba(255,255,255,0.14)",
             ...tilt3DStyle,
           }}
@@ -1007,7 +1007,7 @@ const DesktopStudentsView = ({
           <div
             style={{
               fontSize: 10,
-              fontWeight: 700,
+              fontWeight: 600,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
               color: "rgba(255,255,255,0.48)",
@@ -1043,13 +1043,13 @@ const DesktopStudentsView = ({
                   background: "rgba(255,255,255,0.08)",
                 }}
               >
-                <div style={{ fontSize: 28, fontWeight: 700, color: "#fff", lineHeight: 1, marginBottom: 4, letterSpacing: "-0.8px" }}>
+                <div style={{ fontSize: 28, fontWeight: 600, color: "#fff", lineHeight: 1, marginBottom: 4, letterSpacing: "-0.8px" }}>
                   {val}
                 </div>
                 <div
                   style={{
                     fontSize: 10,
-                    fontWeight: 700,
+                    fontWeight: 600,
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,0.40)",

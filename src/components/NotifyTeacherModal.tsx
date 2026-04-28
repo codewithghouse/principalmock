@@ -162,10 +162,10 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-[#1e3a8a]" />
+              <GraduationCap className="w-5 h-5 text-[#1D1D1F]" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-slate-900">Notify Teacher</h2>
+              <h2 className="text-base font-semibold text-slate-900">Notify Teacher</h2>
               <p className="text-xs text-slate-500">
                 About {student.studentName} · <span style={{ color: meta.color }}>{meta.label}</span>
               </p>
@@ -180,7 +180,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
         <div className="px-6 py-4 space-y-4 overflow-y-auto">
           {/* Teacher selector */}
           <div>
-            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
               Send to teacher
             </label>
             {loadingTeachers ? (
@@ -208,7 +208,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
 
           {/* Message */}
           <div>
-            <label className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 block">
+            <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5 block">
               Message (edit as needed)
             </label>
             <textarea
@@ -217,7 +217,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
               rows={7}
               className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-800 leading-relaxed outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-300 resize-none"
             />
-            <p className="text-[11px] text-slate-400 mt-1.5">
+            <p className="text-[12px] text-slate-400 mt-1.5">
               Teacher will see this in their in-app inbox.
             </p>
           </div>
@@ -227,7 +227,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
             className="rounded-xl p-3 border"
             style={{ background: meta.bg, borderColor: meta.border }}
           >
-            <p className="text-[11px] font-bold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
+            <p className="text-[12px] font-semibold uppercase tracking-wider mb-1" style={{ color: meta.color }}>
               Auto-detected reasons
             </p>
             <ul className="text-xs text-slate-700 leading-relaxed">
@@ -249,7 +249,7 @@ export default function NotifyTeacherModal({ student, onClose }: Props) {
           <button
             onClick={handleSend}
             disabled={sending || !selectedTeacherId || teachers.length === 0}
-            className="px-5 py-2 rounded-xl bg-[#1e3a8a] text-white text-sm font-semibold hover:bg-[#1e4fc0] disabled:opacity-50 flex items-center gap-2"
+            className="px-5 py-2 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] disabled:opacity-50 flex items-center gap-2"
           >
             {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
             Send

@@ -94,11 +94,11 @@ const MOCK_TREND_DATA: TrendPoint[] = (() => {
 })();
 
 const MOCK_RISK_ALERTS: RiskAlert[] = [
-  { id: "att_r1", name: "Rohit Yadav – Grade 7C",   detail: "Attendance 48% – At risk",        level: "CRITICAL", dot: "#ef4444", badge: "bg-red-500",   rowBg: "bg-red-50/60" },
-  { id: "att_r2", name: "Aditi Joshi – Grade 9A",   detail: "Attendance 64% – At risk",        level: "WARNING",  dot: "#f59e0b", badge: "bg-amber-500", rowBg: "" },
-  { id: "inc_r1", name: "Karan Malhotra – Grade 8C", detail: "Repeated late submissions",       level: "WARNING",  dot: "#f59e0b", badge: "bg-amber-500", rowBg: "" },
-  { id: "res_r1", name: "Pranav Desai – Grade 7B",  detail: "Avg score 32% – Below passing",   level: "CRITICAL", dot: "#ef4444", badge: "bg-red-500",   rowBg: "bg-red-50/60" },
-  { id: "res_r2", name: "Saanvi Bose – Grade 6A",   detail: "Avg score 46% – Below passing",   level: "WARNING",  dot: "#f59e0b", badge: "bg-amber-500", rowBg: "" },
+  { id: "att_r1", name: "Rohit Yadav – Grade 7C",   detail: "Attendance 48% – At risk",        level: "CRITICAL", dot: "#FF3B30", badge: "bg-red-500",   rowBg: "bg-red-50/60" },
+  { id: "att_r2", name: "Aditi Joshi – Grade 9A",   detail: "Attendance 64% – At risk",        level: "WARNING",  dot: "#FF9500", badge: "bg-amber-500", rowBg: "" },
+  { id: "inc_r1", name: "Karan Malhotra – Grade 8C", detail: "Repeated late submissions",       level: "WARNING",  dot: "#FF9500", badge: "bg-amber-500", rowBg: "" },
+  { id: "res_r1", name: "Pranav Desai – Grade 7B",  detail: "Avg score 32% – Below passing",   level: "CRITICAL", dot: "#FF3B30", badge: "bg-red-500",   rowBg: "bg-red-50/60" },
+  { id: "res_r2", name: "Saanvi Bose – Grade 6A",   detail: "Avg score 46% – Below passing",   level: "WARNING",  dot: "#FF9500", badge: "bg-amber-500", rowBg: "" },
 ];
 
 const MOCK_TEACHER_ROWS = [
@@ -311,7 +311,7 @@ const Dashboard = () => {
             name: s.cls ? `${s.name} – ${s.cls}` : s.name,
             detail: `Attendance ${s.rate}% – At risk`,
             level: s.rate < 50 ? "CRITICAL" as const : "WARNING" as const,
-            dot:   s.rate < 50 ? "#ef4444" : "#f59e0b",
+            dot:   s.rate < 50 ? "#FF3B30" : "#FF9500",
             badge: s.rate < 50 ? "bg-red-500" : "bg-amber-500",
             rowBg: s.rate < 50 ? "bg-red-50/60" : "",
           }));
@@ -341,7 +341,7 @@ const Dashboard = () => {
             name: d.student?.name || d.studentName || d.title || "Incident",
             detail: d.title || d.incidentType || d.type || "Discipline issue",
             level: d.severity === "critical" ? "CRITICAL" as const : "WARNING" as const,
-            dot:   d.severity === "critical" ? "#ef4444" : "#f59e0b",
+            dot:   d.severity === "critical" ? "#FF3B30" : "#FF9500",
             badge: d.severity === "critical" ? "bg-red-500" : "bg-amber-500",
             rowBg: d.severity === "critical" ? "bg-red-50/60" : "",
           }));
@@ -411,7 +411,7 @@ const Dashboard = () => {
             name: s.cls ? `${s.name} – ${s.cls}` : s.name,
             detail: `Avg score ${s.avg}% – Below passing`,
             level: s.avg < 35 ? "CRITICAL" as const : "WARNING" as const,
-            dot:   s.avg < 35 ? "#ef4444" : "#f59e0b",
+            dot:   s.avg < 35 ? "#FF3B30" : "#FF9500",
             badge: s.avg < 35 ? "bg-red-500" : "bg-amber-500",
             rowBg: s.avg < 35 ? "bg-red-50/60" : "",
           }));
@@ -489,39 +489,39 @@ const Dashboard = () => {
   // ═══════════════════════════════════════════════════════════════
   //  DESKTOP — Blue Apple Design (matches mobile language)
   // ═══════════════════════════════════════════════════════════════
-  const dB1 = "#0055FF", dB2 = "#1166FF", dB4 = "#4499FF";
-  const dBG = "#EEF4FF", dBG2 = "#E0ECFF";
-  const dT1 = "#001040", dT3 = "#5070B0", dT4 = "#99AACC";
-  const dSEP = "rgba(0,85,255,0.08)";
-  const dGREEN = "#00C853", dGREEN_D = "#007830", dGREEN_S = "rgba(0,200,83,0.10)", dGREEN_B = "rgba(0,200,83,0.22)";
-  const dRED = "#FF3355", dRED_S = "rgba(255,51,85,0.10)", dRED_B = "rgba(255,51,85,0.22)";
-  const dORANGE = "#FF8800", dORANGE_S = "rgba(255,136,0,0.10)", dORANGE_B = "rgba(255,136,0,0.22)";
-  const dGOLD = "#FFAA00";
-  const dVIOLET = "#7B3FF4";
+  const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
+  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dT1 = "#1D1D1F", dT3 = "#6E6E73", dT4 = "#A1A1A6";
+  const dSEP = "rgba(10,132,255,0.08)";
+  const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
+  const dRED = "#FF3B30", dRED_S = "rgba(255,59,48,0.10)", dRED_B = "rgba(255,59,48,0.22)";
+  const dORANGE = "#FF9500", dORANGE_S = "rgba(255,149,0,0.10)", dORANGE_B = "rgba(255,149,0,0.22)";
+  const dGOLD = "#FFCC00";
+  const dVIOLET = "#AF52DE";
   // Bright light-blue halo — user said previous values were too faint
   // to register as a real drop shadow. Opacity bumped across all three
-  // layers + wider blur so the sky-blue tone (#4499FF) genuinely pops
+  // layers + wider blur so the sky-blue tone (#7CBBFF) genuinely pops
   // around each card at rest.
   // Matches Students' SHADOW_LG — soft blue-tinted layered glow.
-  const dSH = "0 0 0 .5px rgba(0,85,255,.10), 0 2px 10px rgba(0,85,255,.10), 0 10px 28px rgba(0,85,255,.12)";
-  const dSH_LG = "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.12), 0 18px 44px rgba(0,85,255,.15)";
+  const dSH = "0 0 0 .5px rgba(10,132,255,.10), 0 2px 10px rgba(10,132,255,.10), 0 10px 28px rgba(10,132,255,.12)";
+  const dSH_LG = "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.12), 0 18px 44px rgba(10,132,255,.15)";
 
   const healthLabelText = healthLabel(healthIndex);
   const healthTier = healthIndex === null ? dT3 : healthIndex >= 80 ? dGREEN : healthIndex >= 65 ? dGOLD : dRED;
 
   return (
     <div className="min-h-screen animate-in fade-in duration-500"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: "#EEF4FF" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: "#F5F5F7" }}>
     <div className="pb-10 w-full px-2">
 
       {/* ── Toolbar ───────────────────────────────────────────────────────────── */}
       <div className="flex items-center gap-4 pt-2 pb-5">
         <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(0,85,255,0.28)" }}>
+          style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 6px 18px rgba(10,132,255,0.28)" }}>
           <Heart className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-bold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Principal Dashboard</div>
+          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Principal Dashboard</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>Real-time school intelligence overview</div>
         </div>
       </div>
@@ -530,9 +530,9 @@ const Dashboard = () => {
       <div onClick={() => navigate("/student-intelligence")}
         role="button" tabIndex={0}
         {...tilt3D}
-        className="rounded-[22px] px-7 py-6 flex flex-wrap items-center justify-between gap-5 text-white relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+        className="rounded-[22px] px-8 py-6 flex flex-wrap items-center justify-between gap-5 text-white relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
         style={{
-          background: "linear-gradient(135deg, #001040 0%, #001888 35%, #0033CC 70%, #0055FF 100%)",
+          background: "linear-gradient(135deg, #1D1D1F 0%, #0A84FF 35%, #0A84FF 70%, #0A84FF 100%)",
           boxShadow: "0 10px 36px rgba(0,51,204,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
           ...tilt3DStyle,
         }}>
@@ -550,30 +550,30 @@ const Dashboard = () => {
             <Heart className="w-7 h-7 text-white animate-pulse" strokeWidth={2.2} />
           </div>
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.18em] mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>
               Academic Health Index
             </p>
             <div className="flex items-baseline gap-2">
-              <span className="text-[52px] font-bold tracking-tight leading-none">{displayHealth}</span>
-              <span className="text-lg font-bold" style={{ color: "rgba(255,255,255,0.35)" }}>/100</span>
+              <span className="text-[52px] font-semibold tracking-tight leading-none">{displayHealth}</span>
+              <span className="text-lg font-semibold" style={{ color: "rgba(255,255,255,0.35)" }}>/100</span>
             </div>
           </div>
         </div>
 
-        <div className="flex items-center gap-7 relative z-10">
+        <div className="flex items-center gap-8 relative z-10">
           {healthDelta !== null && (
             <div className="text-right">
-              <div className={`flex items-center gap-1.5 justify-end`} style={{ color: healthDelta >= 0 ? "#66EE88" : "#FF88AA" }}>
+              <div className={`flex items-center gap-1.5 justify-end`} style={{ color: healthDelta >= 0 ? "#34C759" : "#FF6961" }}>
                 {healthDelta >= 0 ? <ArrowUp className="w-4 h-4" /> : <ArrowDown className="w-4 h-4" />}
-                <span className="text-2xl font-bold tracking-tight">{Math.abs(healthDelta)}%</span>
+                <span className="text-2xl font-semibold tracking-tight">{Math.abs(healthDelta)}%</span>
               </div>
-              <p className="text-[11px] font-medium mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>vs Last 7 Days</p>
+              <p className="text-[12px] font-medium mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>vs Last 7 Days</p>
             </div>
           )}
           {healthDelta !== null && <div className="w-px h-10" style={{ background: "rgba(255,255,255,0.20)" }} />}
           <div className="text-right">
-            <p className="text-2xl font-bold tracking-tight">{healthLabelText}</p>
-            <p className="text-[11px] font-medium mt-0.5" style={{ color: "rgba(255,255,255,0.45)" }}>Overall Status</p>
+            <p className="text-2xl font-semibold tracking-tight">{healthLabelText}</p>
+            <p className="text-[12px] font-medium mt-1" style={{ color: "rgba(255,255,255,0.45)" }}>Overall Status</p>
           </div>
         </div>
       </div>
@@ -585,16 +585,16 @@ const Dashboard = () => {
         <div onClick={() => navigate("/students")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40"
-          style={{ background: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
+          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40"
+          style={{ background: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(0,85,255,0.28)", transform: "translateZ(18px)" }}>
+            style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.28)", transform: "translateZ(18px)" }}>
             <Users className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Total Students</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: dB1, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayStudents}</p>
-          <p className="text-[11px] font-semibold" style={{ color: dT3 }}>Enrolled this branch</p>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Total Students</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dB1, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayStudents}</p>
+          <p className="text-[12px] font-semibold" style={{ color: dT3 }}>Enrolled this branch</p>
           <Users className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dB1, opacity: 0.18 }} strokeWidth={2} />
         </div>
 
@@ -602,16 +602,16 @@ const Dashboard = () => {
         <div onClick={() => navigate("/teachers")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40"
-          style={{ background: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
+          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40"
+          style={{ background: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, boxShadow: "0 4px 14px rgba(0,200,83,0.26)", transform: "translateZ(18px)" }}>
+            style={{ background: `linear-gradient(135deg, ${dGREEN}, #34C759)`, boxShadow: "0 4px 14px rgba(52,199,89,0.26)", transform: "translateZ(18px)" }}>
             <GraduationCap className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Teachers</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: dGREEN_D, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayTeachers}</p>
-          <p className="text-[11px] font-semibold" style={{ color: dGREEN_D }}>Active staff</p>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Teachers</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dGREEN_D, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayTeachers}</p>
+          <p className="text-[12px] font-semibold" style={{ color: dGREEN_D }}>Active staff</p>
           <TrendingUp className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dGREEN, opacity: 0.22 }} strokeWidth={2} />
         </div>
 
@@ -619,22 +619,22 @@ const Dashboard = () => {
         <div onClick={() => navigate("/attendance")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40"
-          style={{ background: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
+          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40"
+          style={{ background: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
-            style={{ background: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`, boxShadow: "0 4px 14px rgba(255,170,0,0.28)", transform: "translateZ(18px)" }}>
+            style={{ background: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, boxShadow: "0 4px 14px rgba(255,204,0,0.28)", transform: "translateZ(18px)" }}>
             <CalendarCheck className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Today's Attendance</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: dGOLD, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayAttendance}</p>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Today's Attendance</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: dGOLD, letterSpacing: "-1.2px", transform: "translateZ(10px)" }}>{displayAttendance}</p>
           {attendanceDelta !== null ? (
-            <p className="text-[11px] font-semibold flex items-center gap-1" style={{ color: attendanceDelta >= 0 ? dGREEN_D : dRED }}>
+            <p className="text-[12px] font-semibold flex items-center gap-1" style={{ color: attendanceDelta >= 0 ? dGREEN_D : dRED }}>
               {attendanceDelta >= 0 ? <ArrowUp className="w-3 h-3" /> : <ArrowDown className="w-3 h-3" />}
               {Math.abs(attendanceDelta)}% vs yesterday
             </p>
           ) : (
-            <p className="text-[11px] font-semibold" style={{ color: dT3 }}>No data yet</p>
+            <p className="text-[12px] font-semibold" style={{ color: dT3 }}>No data yet</p>
           )}
           <BarChart3 className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none" style={{ color: dGOLD, opacity: 0.22 }} strokeWidth={2} />
         </div>
@@ -643,27 +643,27 @@ const Dashboard = () => {
         <div onClick={() => navigate("/discipline")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40"
+          className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40"
           style={{
             background: (pendingIncidents ?? 0) > 0
               ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-              : "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
+              : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
             boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle,
           }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
             style={{
-              background: (pendingIncidents ?? 0) > 0 ? `linear-gradient(135deg, ${dRED}, #FF6688)` : `linear-gradient(135deg, ${dVIOLET}, #A07CF8)`,
-              boxShadow: (pendingIncidents ?? 0) > 0 ? "0 4px 14px rgba(255,51,85,0.28)" : "0 4px 14px rgba(123,63,244,0.26)",
+              background: (pendingIncidents ?? 0) > 0 ? `linear-gradient(135deg, ${dRED}, #FF5E55)` : `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`,
+              boxShadow: (pendingIncidents ?? 0) > 0 ? "0 4px 14px rgba(255,59,48,0.28)" : "0 4px 14px rgba(175,82,222,0.26)",
               transform: "translateZ(18px)",
             }}>
             <AlertCircle className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
           </div>
-          <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Pending Incidents</span>
-          <p className="text-[34px] font-bold tracking-tight leading-none mb-1.5" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dVIOLET, letterSpacing: "-1.2px" }}>
+          <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: dT4 }}>Pending Incidents</span>
+          <p className="text-[28px] font-semibold tracking-tight leading-none mb-1.5" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dVIOLET, letterSpacing: "-1.2px" }}>
             {displayIncidents}
           </p>
-          <p className="text-[11px] font-semibold" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dT3 }}>
+          <p className="text-[12px] font-semibold" style={{ color: (pendingIncidents ?? 0) > 0 ? dRED : dT3 }}>
             {(pendingIncidents ?? 0) > 0 ? "Action required" : "All clear"}
           </p>
           <PieChart className="absolute bottom-3 right-3 w-14 h-14 pointer-events-none"
@@ -678,53 +678,53 @@ const Dashboard = () => {
         <div onClick={() => navigate("/risk-students")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="bg-white rounded-[20px] overflow-hidden flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40 relative"
+          className="bg-white rounded-[20px] overflow-hidden flex flex-col cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40 relative"
           style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
-          <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-            <div className="flex items-center gap-[10px]">
+          <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+            <div className="flex items-center gap-[12px]">
               <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
                 style={{ background: dRED_S, border: `0.5px solid ${dRED_B}` }}>
                 <AlertCircle className="w-4 h-4" style={{ color: dRED }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</h2>
+              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Today's Risk Alerts</h2>
             </div>
             <button
               onClick={(e) => { e.stopPropagation(); navigate("/risk-students"); }}
-              className="text-[12px] font-bold flex items-center gap-0.5 transition-colors" style={{ color: dB1 }}>
+              className="text-[12px] font-semibold flex items-center gap-0.5 transition-colors" style={{ color: dB1 }}>
               View All <ChevronRight className="w-3.5 h-3.5" />
             </button>
           </div>
           <div className="flex-1">
             {riskAlerts.length === 0 ? (
-              <div className="px-6 py-12 text-center">
+              <div className="px-6 py-10 text-center">
                 <div className="w-14 h-14 rounded-[16px] mx-auto mb-3 flex items-center justify-center"
                   style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
                   <Heart className="w-6 h-6" style={{ color: dGREEN }} strokeWidth={2.2} />
                 </div>
-                <p className="text-[13px] font-bold" style={{ color: dT1 }}>No active risk alerts</p>
-                <p className="text-[11px] mt-1" style={{ color: dT4 }}>All students are performing within acceptable range</p>
+                <p className="text-[13px] font-semibold" style={{ color: dT1 }}>No active risk alerts</p>
+                <p className="text-[12px] mt-1" style={{ color: dT4 }}>All students are performing within acceptable range</p>
               </div>
             ) : (
               riskAlerts.map((a, idx) => {
                 const isCrit = a.level === "CRITICAL";
                 return (
                   <div key={a.id}
-                    className="flex items-center justify-between px-6 py-4 hover:bg-[#F5F9FF] transition-colors cursor-pointer"
-                    style={{ borderTop: idx > 0 ? `0.5px solid ${dSEP}` : undefined, background: isCrit ? "rgba(255,51,85,0.03)" : "transparent" }}>
+                    className="flex items-center justify-between px-6 py-4 hover:bg-[#F5F5F7] transition-colors cursor-pointer"
+                    style={{ borderTop: idx > 0 ? `0.5px solid ${dSEP}` : undefined, background: isCrit ? "rgba(255,59,48,0.03)" : "transparent" }}>
                     <div className="flex items-center gap-3 min-w-0">
                       <span className="w-[10px] h-[10px] rounded-full shrink-0"
-                        style={{ background: a.dot, boxShadow: `0 0 0 3px ${isCrit ? "rgba(255,51,85,0.15)" : "rgba(255,170,0,0.15)"}` }} />
+                        style={{ background: a.dot, boxShadow: `0 0 0 3px ${isCrit ? "rgba(255,59,48,0.15)" : "rgba(255,204,0,0.15)"}` }} />
                       <div className="min-w-0">
-                        <p className="text-[13px] font-bold truncate" style={{ color: dT1 }}>{a.name}</p>
-                        <p className="text-[11px] mt-0.5" style={{ color: dT3 }}>{a.detail}</p>
+                        <p className="text-[13px] font-semibold truncate" style={{ color: dT1 }}>{a.name}</p>
+                        <p className="text-[12px] mt-1" style={{ color: dT3 }}>{a.detail}</p>
                       </div>
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wide px-3 py-1.5 rounded-[8px] shrink-0 ml-4 text-white"
+                    <span className="text-[12px] font-semibold uppercase tracking-wide px-3 py-1.5 rounded-[8px] shrink-0 ml-4 text-white"
                       style={{
-                        background: isCrit ? `linear-gradient(135deg, ${dRED}, #FF6688)` : `linear-gradient(135deg, ${dGOLD}, #FFCC22)`,
-                        color: isCrit ? "#fff" : "#884400",
-                        boxShadow: isCrit ? "0 2px 8px rgba(255,51,85,0.26)" : "0 2px 8px rgba(255,170,0,0.24)",
+                        background: isCrit ? `linear-gradient(135deg, ${dRED}, #FF5E55)` : `linear-gradient(135deg, ${dGOLD}, #FFCC00)`,
+                        color: isCrit ? "#fff" : "#86310C",
+                        boxShadow: isCrit ? "0 2px 8px rgba(255,59,48,0.26)" : "0 2px 8px rgba(255,204,0,0.24)",
                       }}>
                       {a.level}
                     </span>
@@ -739,22 +739,22 @@ const Dashboard = () => {
         <div onClick={() => navigate("/attendance")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40 relative"
+          className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40 relative"
           style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
-          <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-            <div className="flex items-center gap-[10px]">
+          <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+            <div className="flex items-center gap-[12px]">
               <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.20)" }}>
+                style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
                 <CalendarCheck className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Attendance Trend · 30 Days</h2>
+              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Attendance Trend · 30 Days</h2>
             </div>
           </div>
           <div className="px-4 pt-5 pb-4">
             {trendData.length === 0 ? (
               <div className="h-[220px] flex items-center justify-center">
-                <p className="text-[13px] font-bold" style={{ color: dT4 }}>No attendance data yet</p>
+                <p className="text-[13px] font-semibold" style={{ color: dT4 }}>No attendance data yet</p>
               </div>
             ) : (
               <ResponsiveContainer width="100%" height={220}>
@@ -765,7 +765,7 @@ const Dashboard = () => {
                       <stop offset="95%" stopColor={dB1} stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(0,85,255,0.08)" vertical={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(10,132,255,0.08)" vertical={false} />
                   <XAxis
                     dataKey="day"
                     axisLine={false}
@@ -784,7 +784,7 @@ const Dashboard = () => {
                   />
                   <Tooltip
                     formatter={(v: number) => [`${v}%`, "Attendance"]}
-                    contentStyle={{ borderRadius: 12, border: `0.5px solid ${dSEP}`, boxShadow: dSH, fontSize: 12, fontWeight: 700, fontFamily: "'DM Sans', sans-serif" }}
+                    contentStyle={{ borderRadius: 12, border: `0.5px solid ${dSEP}`, boxShadow: dSH, fontSize: 12, fontWeight: 600, fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}
                     cursor={{ stroke: dB1, strokeWidth: 1, strokeDasharray: "4 4" }}
                   />
                   <Area type="monotone" dataKey="v" stroke={dB1} strokeWidth={2.5} fill="url(#attGrad)" dot={false}
@@ -803,20 +803,20 @@ const Dashboard = () => {
         <div onClick={() => navigate("/academics")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40 relative"
+          className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40 relative"
           style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
-          <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-            <div className="flex items-center gap-[10px]">
+          <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+            <div className="flex items-center gap-[12px]">
               <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                style={{ background: "rgba(123,63,244,0.10)", border: "0.5px solid rgba(123,63,244,0.22)" }}>
+                style={{ background: "rgba(175,82,222,0.10)", border: "0.5px solid rgba(175,82,222,0.22)" }}>
                 <Star className="w-4 h-4" style={{ color: dVIOLET }} strokeWidth={2.4} />
               </div>
-              <h2 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Class Performance Heatmap</h2>
+              <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Class Performance Heatmap</h2>
             </div>
             {heatmapCells.length > 0 && (
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full"
-                style={{ background: "rgba(123,63,244,0.10)", color: dVIOLET, border: "0.5px solid rgba(123,63,244,0.22)" }}>
+              <span className="text-[12px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full"
+                style={{ background: "rgba(175,82,222,0.10)", color: dVIOLET, border: "0.5px solid rgba(175,82,222,0.22)" }}>
                 {heatmapCells.length} {heatmapCells.length === 1 ? "Class" : "Classes"}
               </span>
             )}
@@ -824,8 +824,8 @@ const Dashboard = () => {
           <div className="p-6">
             {heatmapCells.length === 0 ? (
               <div className="py-10 text-center">
-                <p className="text-[13px] font-bold" style={{ color: dT1 }}>No results data yet</p>
-                <p className="text-[11px] mt-1" style={{ color: dT4 }}>Heatmap will populate once exams are graded</p>
+                <p className="text-[13px] font-semibold" style={{ color: dT1 }}>No results data yet</p>
+                <p className="text-[12px] mt-1" style={{ color: dT4 }}>Heatmap will populate once exams are graded</p>
               </div>
             ) : (() => {
               const scored = heatmapCells.filter(c => c.avg !== null);
@@ -834,23 +834,23 @@ const Dashboard = () => {
                 : null;
               const topCell = scored[0]; // already sorted desc by avg
               const atRiskCount = scored.filter(c => (c.avg ?? 100) < 55).length;
-              const overallGrad = (overallAvg ?? 0) >= 75 ? `linear-gradient(135deg, ${dGREEN}, #22EE66)`
-                : (overallAvg ?? 0) >= 55 ? `linear-gradient(135deg, ${dGOLD}, #FFDD44)`
-                : `linear-gradient(135deg, ${dRED}, #FF6688)`;
+              const overallGrad = (overallAvg ?? 0) >= 75 ? `linear-gradient(135deg, ${dGREEN}, #34C759)`
+                : (overallAvg ?? 0) >= 55 ? `linear-gradient(135deg, ${dGOLD}, #FFCC00)`
+                : `linear-gradient(135deg, ${dRED}, #FF5E55)`;
 
               return (
                 <>
                   {/* Summary stats strip */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
-                    <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(0,85,255,0.05)", border: "0.5px solid rgba(0,85,255,0.10)" }}>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Classes</p>
-                      <p className="text-[20px] font-bold leading-tight mt-0.5" style={{ color: dB1, letterSpacing: "-0.5px" }}>{heatmapCells.length}</p>
+                    <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(10,132,255,0.05)", border: "0.5px solid rgba(10,132,255,0.10)" }}>
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Classes</p>
+                      <p className="text-[20px] font-semibold leading-tight mt-1" style={{ color: dB1, letterSpacing: "-0.5px" }}>{heatmapCells.length}</p>
                     </div>
                     <div className="no-card-hover rounded-[12px] p-3 relative overflow-hidden"
                       style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Overall Avg</p>
-                      <div className="flex items-baseline gap-1 mt-0.5">
-                        <p className="text-[20px] font-bold leading-tight" style={{ color: dGREEN_D, letterSpacing: "-0.5px" }}>
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Overall Avg</p>
+                      <div className="flex items-baseline gap-1 mt-1">
+                        <p className="text-[20px] font-semibold leading-tight" style={{ color: dGREEN_D, letterSpacing: "-0.5px" }}>
                           {overallAvg !== null ? `${overallAvg}%` : "—"}
                         </p>
                       </div>
@@ -858,21 +858,21 @@ const Dashboard = () => {
                         <span className="absolute right-2 bottom-2 w-2.5 h-2.5 rounded-full" style={{ background: overallGrad }} />
                       )}
                     </div>
-                    <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(255,170,0,0.08)", border: "0.5px solid rgba(255,170,0,0.20)" }}>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Top Class</p>
+                    <div className="no-card-hover rounded-[12px] p-3" style={{ background: "rgba(255,204,0,0.08)", border: "0.5px solid rgba(255,204,0,0.20)" }}>
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>Top Class</p>
                       {topCell ? (
-                        <div className="flex items-baseline gap-1.5 mt-0.5">
-                          <p className="text-[15px] font-bold leading-tight truncate" style={{ color: "#884400", letterSpacing: "-0.3px" }}>{topCell.cls}</p>
-                          <span className="text-[11px] font-bold" style={{ color: dGOLD }}>{topCell.avg}%</span>
+                        <div className="flex items-baseline gap-1.5 mt-1">
+                          <p className="text-[15px] font-semibold leading-tight truncate" style={{ color: "#86310C", letterSpacing: "-0.3px" }}>{topCell.cls}</p>
+                          <span className="text-[12px] font-semibold" style={{ color: dGOLD }}>{topCell.avg}%</span>
                         </div>
                       ) : (
-                        <p className="text-[15px] font-bold leading-tight mt-0.5" style={{ color: dT4 }}>—</p>
+                        <p className="text-[15px] font-semibold leading-tight mt-1" style={{ color: dT4 }}>—</p>
                       )}
                     </div>
                     <div className="no-card-hover rounded-[12px] p-3"
                       style={{ background: atRiskCount > 0 ? dRED_S : dGREEN_S, border: `0.5px solid ${atRiskCount > 0 ? dRED_B : dGREEN_B}` }}>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.10em]" style={{ color: dT4 }}>At Risk</p>
-                      <p className="text-[20px] font-bold leading-tight mt-0.5"
+                      <p className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: dT4 }}>At Risk</p>
+                      <p className="text-[20px] font-semibold leading-tight mt-1"
                         style={{ color: atRiskCount > 0 ? dRED : dGREEN_D, letterSpacing: "-0.5px" }}>
                         {atRiskCount}
                       </p>
@@ -882,8 +882,8 @@ const Dashboard = () => {
                   {/* Vertical bar chart — refined, aesthetic */}
                   <div className="mb-5 rounded-[16px] p-4 pt-5"
                     style={{
-                      background: "linear-gradient(180deg, rgba(0,85,255,0.025) 0%, rgba(0,85,255,0.01) 100%)",
-                      border: "0.5px solid rgba(0,85,255,0.08)",
+                      background: "linear-gradient(180deg, rgba(10,132,255,0.025) 0%, rgba(10,132,255,0.01) 100%)",
+                      border: "0.5px solid rgba(10,132,255,0.08)",
                       boxShadow: "inset 0 1px 0 rgba(255,255,255,0.6)",
                     }}>
                     {/* Plot area: Y-axis gridlines + bars */}
@@ -892,57 +892,57 @@ const Dashboard = () => {
                       {[100, 75, 50, 25, 0].map(v => (
                         <div key={v} className="absolute left-0 right-0 pointer-events-none"
                           style={{ bottom: `${v}%` }}>
-                          <span className="absolute left-0 top-0 -translate-y-1/2 text-[9px] font-bold w-[28px] text-right pr-1.5" style={{ color: dT4, letterSpacing: "0.02em" }}>
+                          <span className="absolute left-0 top-0 -translate-y-1/2 text-[12px] font-semibold w-[28px] text-right pr-1.5" style={{ color: dT4, letterSpacing: "0.02em" }}>
                             {v}
                           </span>
-                          <div className="ml-[34px] h-px" style={{
-                            background: v === 0 ? "rgba(0,85,255,0.20)" : "rgba(0,85,255,0.06)",
-                            backgroundImage: v === 0 ? undefined : `repeating-linear-gradient(90deg, rgba(0,85,255,0.10) 0 3px, transparent 3px 7px)`,
+                          <div className="ml-[32px] h-px" style={{
+                            background: v === 0 ? "rgba(10,132,255,0.20)" : "rgba(10,132,255,0.06)",
+                            backgroundImage: v === 0 ? undefined : `repeating-linear-gradient(90deg, rgba(10,132,255,0.10) 0 3px, transparent 3px 7px)`,
                           }} />
                         </div>
                       ))}
                       {/* School-avg dashed reference line */}
                       {overallAvg !== null && (
-                        <div className="absolute left-[34px] right-2 pointer-events-none z-10"
+                        <div className="absolute left-[32px] right-2 pointer-events-none z-10"
                           style={{ bottom: `${overallAvg}%` }}>
                           <div className="h-px" style={{
                             backgroundImage: `repeating-linear-gradient(90deg, ${dT1} 0 5px, transparent 5px 10px)`,
                             opacity: 0.6,
                           }} />
-                          <span className="absolute right-0 -top-[9px] text-[8.5px] font-bold px-2 py-[2px] rounded-full"
+                          <span className="absolute right-0 -top-[8px] text-[8.5px] font-semibold px-2 py-[2px] rounded-full"
                             style={{
-                              background: `linear-gradient(135deg, ${dT1}, #002080)`,
+                              background: `linear-gradient(135deg, ${dT1}, #3A3A3C)`,
                               color: "#fff",
                               letterSpacing: "0.06em",
-                              boxShadow: "0 2px 6px rgba(0,16,64,0.28)",
+                              boxShadow: "0 2px 6px rgba(29,29,31,0.28)",
                             }}>
                             AVG {overallAvg}%
                           </span>
                         </div>
                       )}
                       {/* Bars */}
-                      <div className="absolute left-[34px] right-2 top-0 bottom-0 flex items-end justify-around gap-2.5">
+                      <div className="absolute left-[32px] right-2 top-0 bottom-0 flex items-end justify-around gap-2.5">
                         {heatmapCells.map((c, i) => {
                           const avgNum = c.avg ?? 0;
                           const tier = avgNum >= 75 ? "good" : avgNum >= 55 ? "avg" : "weak";
-                          const fillGrad = tier === "good" ? `linear-gradient(180deg, #44FF88 0%, ${dGREEN} 60%, #00A040 100%)` :
+                          const fillGrad = tier === "good" ? `linear-gradient(180deg, #44FF88 0%, ${dGREEN} 60%, #248A3D 100%)` :
                                            tier === "avg"  ? `linear-gradient(180deg, #FFE066 0%, ${dGOLD} 60%, #CC7700 100%)` :
-                                                              `linear-gradient(180deg, #FF99AA 0%, ${dRED} 60%, #CC1133 100%)`;
-                          const fillShadow = tier === "good" ? "0 -1px 10px rgba(0,200,83,0.32), 0 4px 10px rgba(0,200,83,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)" :
-                                             tier === "avg"  ? "0 -1px 10px rgba(255,170,0,0.32), 0 4px 10px rgba(255,170,0,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)" :
-                                                                "0 -1px 10px rgba(255,51,85,0.32), 0 4px 10px rgba(255,51,85,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)";
-                          const scoreColor = tier === "good" ? dGREEN_D : tier === "avg" ? "#884400" : dRED;
-                          const scoreBg    = tier === "good" ? dGREEN_S : tier === "avg" ? "rgba(255,170,0,0.10)" : dRED_S;
-                          const scoreBorder= tier === "good" ? dGREEN_B : tier === "avg" ? "rgba(255,170,0,0.22)" : dRED_B;
+                                                              `linear-gradient(180deg, #FF6961 0%, ${dRED} 60%, #CC1133 100%)`;
+                          const fillShadow = tier === "good" ? "0 -1px 10px rgba(52,199,89,0.32), 0 4px 10px rgba(52,199,89,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)" :
+                                             tier === "avg"  ? "0 -1px 10px rgba(255,204,0,0.32), 0 4px 10px rgba(255,204,0,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)" :
+                                                                "0 -1px 10px rgba(255,59,48,0.32), 0 4px 10px rgba(255,59,48,0.20), inset 0 0 0 0.5px rgba(255,255,255,0.18)";
+                          const scoreColor = tier === "good" ? dGREEN_D : tier === "avg" ? "#86310C" : dRED;
+                          const scoreBg    = tier === "good" ? dGREEN_S : tier === "avg" ? "rgba(255,204,0,0.10)" : dRED_S;
+                          const scoreBorder= tier === "good" ? dGREEN_B : tier === "avg" ? "rgba(255,204,0,0.22)" : dRED_B;
                           const rank = i + 1;
                           return (
                             <div key={c.cls} className="flex-1 max-w-[40px] h-full flex flex-col items-center justify-end relative"
                               title={c.students > 0 ? `${c.cls} · ${c.avg ?? 0}% · ${c.students} student${c.students === 1 ? "" : "s"} · Rank #${rank}` : `${c.cls} · ${c.avg ?? 0}% · Rank #${rank}`}>
                               {/* Faint vertical lane behind bar */}
                               <span className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[18px] rounded-t-[4px] pointer-events-none"
-                                style={{ background: "rgba(0,85,255,0.025)" }} />
+                                style={{ background: "rgba(10,132,255,0.025)" }} />
                               {/* Score pill above bar */}
-                              <span className="text-[9.5px] font-bold mb-[5px] leading-none shrink-0 px-1.5 py-[2px] rounded-full relative z-10"
+                              <span className="text-[9.5px] font-semibold mb-[4px] leading-none shrink-0 px-1.5 py-[2px] rounded-full relative z-10"
                                 style={{
                                   color: scoreColor,
                                   background: scoreBg,
@@ -976,18 +976,18 @@ const Dashboard = () => {
                     </div>
                     {/* X-axis: class names + rank pills */}
                     <div className="flex items-start justify-around gap-2.5 mt-3 pt-2"
-                      style={{ paddingLeft: "34px", paddingRight: "10px", borderTop: "0.5px solid rgba(0,85,255,0.06)" }}>
+                      style={{ paddingLeft: "34px", paddingRight: "10px", borderTop: "0.5px solid rgba(10,132,255,0.06)" }}>
                       {heatmapCells.map((c, i) => {
                         const rank = i + 1;
                         const isPodium = c.avg !== null && rank <= 3;
                         return (
-                          <div key={c.cls} className="flex-1 max-w-[40px] flex flex-col items-center gap-[5px]">
-                            <span className="text-[10px] font-bold truncate max-w-full" style={{ color: dT1, letterSpacing: "-0.1px" }}>{c.cls}</span>
-                            <span className="text-[8px] font-bold w-[15px] h-[15px] rounded-full flex items-center justify-center leading-none"
+                          <div key={c.cls} className="flex-1 max-w-[40px] flex flex-col items-center gap-[4px]">
+                            <span className="text-[12px] font-semibold truncate max-w-full" style={{ color: dT1, letterSpacing: "-0.1px" }}>{c.cls}</span>
+                            <span className="text-[12px] font-semibold w-[15px] h-[15px] rounded-full flex items-center justify-center leading-none"
                               style={{
-                                background: isPodium ? `linear-gradient(135deg, ${dGOLD}, #FFDD44)` : dBG2,
+                                background: isPodium ? `linear-gradient(135deg, ${dGOLD}, #FFCC00)` : dBG2,
                                 color: isPodium ? "#fff" : dT3,
-                                boxShadow: isPodium ? "0 1.5px 4px rgba(255,170,0,0.32)" : "none",
+                                boxShadow: isPodium ? "0 1.5px 4px rgba(255,204,0,0.32)" : "none",
                               }}>
                               {rank}
                             </span>
@@ -998,19 +998,19 @@ const Dashboard = () => {
                   </div>
                   <div className="flex items-center gap-x-5 gap-y-2 pt-4 flex-wrap" style={{ borderTop: `0.5px solid ${dSEP}` }}>
                     {[
-                      { color: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, label: "Good (≥75%)" },
-                      { color: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`, label: "Average (55–74%)" },
-                      { color: `linear-gradient(135deg, ${dRED}, #FF6688)`, label: "Weak (<55%)" },
+                      { color: `linear-gradient(135deg, ${dGREEN}, #34C759)`, label: "Good (≥75%)" },
+                      { color: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, label: "Average (55–74%)" },
+                      { color: `linear-gradient(135deg, ${dRED}, #FF5E55)`, label: "Weak (<55%)" },
                     ].map(({ color, label }) => (
-                      <div key={label} className="flex items-center gap-[6px]">
+                      <div key={label} className="flex items-center gap-[8px]">
                         <span className="w-3 h-3 rounded-[4px]" style={{ background: color }} />
-                        <span className="text-[11px] font-semibold" style={{ color: dT3 }}>{label}</span>
+                        <span className="text-[12px] font-semibold" style={{ color: dT3 }}>{label}</span>
                       </div>
                     ))}
                     {overallAvg !== null && (
-                      <div className="flex items-center gap-[6px]">
+                      <div className="flex items-center gap-[8px]">
                         <span className="w-[2px] h-3.5 rounded-full" style={{ background: dT1, opacity: 0.55 }} />
-                        <span className="text-[11px] font-semibold" style={{ color: dT3 }}>School avg ({overallAvg}%)</span>
+                        <span className="text-[12px] font-semibold" style={{ color: dT3 }}>School avg ({overallAvg}%)</span>
                       </div>
                     )}
                   </div>
@@ -1027,42 +1027,42 @@ const Dashboard = () => {
           <div onClick={() => navigate("/teacher-performance")}
             role="button" tabIndex={0}
             {...tilt3D}
-            className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40 relative"
+            className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40 relative"
             style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
             <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
-            <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-              <div className="flex items-center gap-[10px]">
+            <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+              <div className="flex items-center gap-[12px]">
                 <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
                   style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}` }}>
                   <GraduationCap className="w-4 h-4" style={{ color: dGREEN }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Top Teachers</h2>
+                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Top Teachers</h2>
               </div>
               <button
                 onClick={(e) => { e.stopPropagation(); navigate("/teacher-performance"); }}
-                className="text-[12px] font-bold flex items-center gap-0.5" style={{ color: dB1 }}>
+                className="text-[12px] font-semibold flex items-center gap-0.5" style={{ color: dB1 }}>
                 View All <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>
             <div className="p-5">
               {teacherRows.length === 0 ? (
-                <p className="text-[13px] font-bold text-center py-6" style={{ color: dT4 }}>No teachers added yet</p>
+                <p className="text-[13px] font-semibold text-center py-6" style={{ color: dT4 }}>No teachers added yet</p>
               ) : (
                 <div className="space-y-3">
                   {teacherRows.map(t => (
                     <div key={t.ini + t.name} className="flex items-center gap-3 py-1">
-                      <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-bold shrink-0"
-                        style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(0,85,255,0.22)" }}>
+                      <div className="w-10 h-10 rounded-[12px] flex items-center justify-center text-white text-[12px] font-semibold shrink-0"
+                        style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 3px 10px rgba(10,132,255,0.22)" }}>
                         {t.ini}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-[13px] font-bold truncate leading-tight" style={{ color: dT1 }}>{t.name}</p>
-                        <p className="text-[11px] font-medium mt-0.5" style={{ color: dT3 }}>{t.subject}</p>
+                        <p className="text-[13px] font-semibold truncate leading-tight" style={{ color: dT1 }}>{t.name}</p>
+                        <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>{t.subject}</p>
                       </div>
-                      <div className="flex items-center gap-1 shrink-0 px-[10px] py-[5px] rounded-full"
-                        style={{ background: "rgba(255,170,0,0.10)", border: "0.5px solid rgba(255,170,0,0.22)" }}>
+                      <div className="flex items-center gap-1 shrink-0 px-[12px] py-[4px] rounded-full"
+                        style={{ background: "rgba(255,204,0,0.10)", border: "0.5px solid rgba(255,204,0,0.22)" }}>
                         <Star className="w-[13px] h-[13px]" style={{ color: dGOLD, fill: dGOLD }} />
-                        <span className="text-[12px] font-bold" style={{ color: "#884400" }}>{t.rating}</span>
+                        <span className="text-[12px] font-semibold" style={{ color: "#86310C" }}>{t.rating}</span>
                       </div>
                     </div>
                   ))}
@@ -1075,39 +1075,39 @@ const Dashboard = () => {
           <div onClick={() => navigate("/parent-communication")}
             role="button" tabIndex={0}
             {...tilt3D}
-            className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0055FF]/40 relative"
+            className="bg-white rounded-[20px] overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40 relative"
             style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
             <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
-            <div className="flex items-center justify-between px-6 py-[18px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-              <div className="flex items-center gap-[10px]">
+            <div className="flex items-center justify-between px-6 py-[16px]" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
+              <div className="flex items-center gap-[12px]">
                 <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
                   style={{ background: dORANGE_S, border: `0.5px solid ${dORANGE_B}` }}>
                   <AlertCircle className="w-4 h-4" style={{ color: dORANGE }} strokeWidth={2.4} />
                 </div>
-                <h2 className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Urgent Communications</h2>
+                <h2 className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Urgent Communications</h2>
               </div>
               {urgentComms.length > 0 && (
-                <span className="text-[10px] font-bold px-3 py-[5px] rounded-full text-white"
-                  style={{ background: `linear-gradient(135deg, ${dRED}, #FF6688)`, boxShadow: "0 2px 8px rgba(255,51,85,0.26)" }}>
+                <span className="text-[12px] font-semibold px-3 py-[4px] rounded-full text-white"
+                  style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 2px 8px rgba(255,59,48,0.26)" }}>
                   {urgentComms.length} New
                 </span>
               )}
             </div>
             <div className="p-5">
               {urgentComms.length === 0 ? (
-                <p className="text-[13px] font-bold text-center py-6" style={{ color: dT4 }}>No urgent messages</p>
+                <p className="text-[13px] font-semibold text-center py-6" style={{ color: dT4 }}>No urgent messages</p>
               ) : (
                 <div className="space-y-2.5">
                   {urgentComms.map(c => {
                     const isHigh = c.border.includes("red");
                     return (
-                      <div key={c.id} className="rounded-[14px] px-4 py-3 transition-colors cursor-pointer hover:bg-[#F5F9FF]"
+                      <div key={c.id} className="rounded-[14px] px-4 py-3 transition-colors cursor-pointer hover:bg-[#F5F5F7]"
                         style={{
                           background: dBG,
                           borderLeft: `3px solid ${isHigh ? dRED : dGOLD}`,
                         }}>
-                        <p className="text-[13px] font-bold leading-snug" style={{ color: dT1 }}>{c.title}</p>
-                        <p className="text-[11px] font-medium mt-0.5" style={{ color: dT3 }}>
+                        <p className="text-[13px] font-semibold leading-snug" style={{ color: dT1 }}>{c.title}</p>
+                        <p className="text-[12px] font-medium mt-1" style={{ color: dT3 }}>
                           From: {c.from}{c.time ? ` · ${c.time}` : ""}
                         </p>
                       </div>
@@ -1125,9 +1125,9 @@ const Dashboard = () => {
         <div onClick={() => navigate("/reports")}
           role="button" tabIndex={0}
           {...tilt3D}
-          className="mt-5 rounded-[22px] px-7 py-6 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+          className="mt-5 rounded-[22px] px-8 py-6 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
           style={{
-            background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+            background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
             boxShadow: "0 10px 36px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
             ...tilt3DStyle,
           }}>
@@ -1139,18 +1139,18 @@ const Dashboard = () => {
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
               <Star className="w-4 h-4 text-white" strokeWidth={2.4} />
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI School Intelligence</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI School Intelligence</span>
           </div>
           <p className="text-[14px] leading-[1.75] font-normal relative z-10 max-w-[900px]" style={{ color: "rgba(255,255,255,0.88)" }}>
-            School is operating at <strong style={{ color: "#fff", fontWeight: 700 }}>{displayHealth}/100 health</strong>
-            {healthLabelText !== "Loading" && <> · <strong style={{ color: "#fff", fontWeight: 700 }}>{healthLabelText}</strong> tier</>}.
-            {riskAlerts.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 700 }}>{riskAlerts.length} student{riskAlerts.length === 1 ? "" : "s"}</strong> flagged for immediate attention.</>}
-            {attendanceToday !== null && <> Today's attendance at <strong style={{ color: "#fff", fontWeight: 700 }}>{attendanceToday}%</strong>{attendanceDelta !== null ? ` (${attendanceDelta >= 0 ? "+" : ""}${attendanceDelta}% vs yesterday)` : ""}.</>}
+            School is operating at <strong style={{ color: "#fff", fontWeight: 600 }}>{displayHealth}/100 health</strong>
+            {healthLabelText !== "Loading" && <> · <strong style={{ color: "#fff", fontWeight: 600 }}>{healthLabelText}</strong> tier</>}.
+            {riskAlerts.length > 0 && <> <strong style={{ color: "#fff", fontWeight: 600 }}>{riskAlerts.length} student{riskAlerts.length === 1 ? "" : "s"}</strong> flagged for immediate attention.</>}
+            {attendanceToday !== null && <> Today's attendance at <strong style={{ color: "#fff", fontWeight: 600 }}>{attendanceToday}%</strong>{attendanceDelta !== null ? ` (${attendanceDelta >= 0 ? "+" : ""}${attendanceDelta}% vs yesterday)` : ""}.</>}
             {" "}Review risk alerts and urgent communications to maintain momentum.
           </p>
           <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
             <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-            <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
           </div>
         </div>
       )}

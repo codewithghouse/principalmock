@@ -322,32 +322,32 @@ const AccessRequests = () => {
   };
 
   // ── Render ────────────────────────────────────────────────────────────────
-  const B1 = "#0055FF";
-  const B2 = "#1166FF";
-  const B3 = "#2277FF";
-  const BG = "#EEF4FF";
-  const T1 = "#001040";
-  const T2 = "#002080";
-  const T3 = "#5070B0";
-  const T4 = "#99AACC";
-  const SEP = "rgba(0,85,255,0.07)";
-  const GREEN = "#00C853";
-  const GREEN_D = "#007830";
-  const RED = "#FF3355";
-  const RED_D = "#B01030";
-  const ORANGE_D = "#884400";
-  const VIOLET = "#7B3FF4";
+  const B1 = "#0A84FF";
+  const B2 = "#3395FF";
+  const B3 = "#5BA9FF";
+  const BG = "#F5F5F7";
+  const T1 = "#1D1D1F";
+  const T2 = "#3A3A3C";
+  const T3 = "#6E6E73";
+  const T4 = "#A1A1A6";
+  const SEP = "rgba(10,132,255,0.07)";
+  const GREEN = "#34C759";
+  const GREEN_D = "#248A3D";
+  const RED = "#FF3B30";
+  const RED_D = "#86170E";
+  const ORANGE_D = "#86310C";
+  const VIOLET = "#AF52DE";
 
   const GRAD_PRIMARY = `linear-gradient(135deg, ${B1}, ${B2})`;
-  const SHADOW_SM = "0 0 0 .5px rgba(0,85,255,.08), 0 2px 8px rgba(0,85,255,.08), 0 10px 26px rgba(0,85,255,.10)";
-  const SHADOW_LG = "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.11), 0 18px 44px rgba(0,85,255,.13)";
-  const SHADOW_BTN = "0 6px 22px rgba(0,85,255,.40), 0 2px 5px rgba(0,85,255,.20)";
+  const SHADOW_SM = "0 0 0 .5px rgba(10,132,255,.08), 0 2px 8px rgba(10,132,255,.08), 0 10px 26px rgba(10,132,255,.10)";
+  const SHADOW_LG = "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.11), 0 18px 44px rgba(10,132,255,.13)";
+  const SHADOW_BTN = "0 6px 22px rgba(10,132,255,.40), 0 2px 5px rgba(10,132,255,.20)";
 
   const AV_PALETTE = [
     `linear-gradient(135deg, ${B1}, ${B3})`,
-    `linear-gradient(135deg, ${VIOLET}, #A075FF)`,
+    `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
     `linear-gradient(135deg, ${GREEN}, #22DD77)`,
-    `linear-gradient(135deg, #FF8800, #FFCC44)`,
+    `linear-gradient(135deg, #FF9500, #FFCC00)`,
   ];
   const avGrad = (seed: string) => {
     let h = 0;
@@ -356,7 +356,7 @@ const AccessRequests = () => {
   };
 
   const statTabs: Array<{ k: TabKey; label: string; color: "yellow" | "green" | "red" | "grey"; icon: any; iconColor: string; numColor: string; lblColor: string }> = [
-    { k: "pending",  label: "Pending",  color: "yellow", icon: Clock,        iconColor: "#FF8800", numColor: "#664400", lblColor: "#664400" },
+    { k: "pending",  label: "Pending",  color: "yellow", icon: Clock,        iconColor: "#FF9500", numColor: "#664400", lblColor: "#664400" },
     { k: "approved", label: "Approved", color: "green",  icon: CheckCircle2, iconColor: GREEN,     numColor: "#004018", lblColor: "#005A20" },
     { k: "rejected", label: "Rejected", color: "red",    icon: XCircle,      iconColor: RED,       numColor: "#60081A", lblColor: "#8A0A22" },
     { k: "revoked",  label: "Revoked",  color: "grey",   icon: Shield,       iconColor: "#3A4358", numColor: "#3A4358", lblColor: "#3A4358" },
@@ -368,15 +368,15 @@ const AccessRequests = () => {
     grey:   "linear-gradient(135deg,#E8ECF5 0%,#C8D0E0 55%,#AEB8CC 100%)",
   };
   const tabBorderMap: Record<"yellow" | "green" | "red" | "grey", string> = {
-    yellow: "rgba(255,170,0,0.4)",
-    green:  "rgba(0,200,83,0.4)",
-    red:    "rgba(255,51,85,0.4)",
+    yellow: "rgba(255,204,0,0.4)",
+    green:  "rgba(52,199,89,0.4)",
+    red:    "rgba(255,59,48,0.4)",
     grey:   "rgba(120,130,155,0.4)",
   };
   const slblBadgeStyle: Record<TabKey, React.CSSProperties> = {
-    pending:  { background: "rgba(255,170,0,0.14)", color: "#885500", border: "0.5px solid rgba(255,170,0,0.32)" },
-    approved: { background: "rgba(0,200,83,0.10)", color: GREEN_D, border: "0.5px solid rgba(0,200,83,0.22)" },
-    rejected: { background: "rgba(255,51,85,0.10)", color: RED_D, border: "0.5px solid rgba(255,51,85,0.22)" },
+    pending:  { background: "rgba(255,204,0,0.14)", color: "#86310C", border: "0.5px solid rgba(255,204,0,0.32)" },
+    approved: { background: "rgba(52,199,89,0.10)", color: GREEN_D, border: "0.5px solid rgba(52,199,89,0.22)" },
+    rejected: { background: "rgba(255,59,48,0.10)", color: RED_D, border: "0.5px solid rgba(255,59,48,0.22)" },
     revoked:  { background: "rgba(120,130,155,0.10)", color: "#3A4358", border: "0.5px solid rgba(120,130,155,0.22)" },
   };
 
@@ -391,20 +391,20 @@ const AccessRequests = () => {
       .toUpperCase()
       .slice(0, 2);
     const statusTag = req.status === "approved"
-      ? { label: "✓ Approved", bg: "rgba(0,200,83,0.10)", color: GREEN_D, border: "0.5px solid rgba(0,200,83,0.22)" }
+      ? { label: "✓ Approved", bg: "rgba(52,199,89,0.10)", color: GREEN_D, border: "0.5px solid rgba(52,199,89,0.22)" }
       : req.status === "rejected"
-      ? { label: "Rejected", bg: "rgba(255,51,85,0.10)", color: RED_D, border: "0.5px solid rgba(255,51,85,0.22)" }
+      ? { label: "Rejected", bg: "rgba(255,59,48,0.10)", color: RED_D, border: "0.5px solid rgba(255,59,48,0.22)" }
       : req.status === "revoked"
       ? { label: "Revoked", bg: "rgba(120,130,155,0.10)", color: "#3A4358", border: "0.5px solid rgba(120,130,155,0.22)" }
-      : { label: "Pending", bg: "rgba(255,170,0,0.14)", color: "#885500", border: "0.5px solid rgba(255,170,0,0.32)" };
+      : { label: "Pending", bg: "rgba(255,204,0,0.14)", color: "#86310C", border: "0.5px solid rgba(255,204,0,0.32)" };
 
     const stripeGradient = req.status === "approved"
-      ? `linear-gradient(180deg, ${GREEN}, #66EE88)`
+      ? `linear-gradient(180deg, ${GREEN}, #34C759)`
       : req.status === "rejected"
-      ? `linear-gradient(180deg, ${RED}, #FF7788)`
+      ? `linear-gradient(180deg, ${RED}, #FF5E55)`
       : req.status === "revoked"
       ? "linear-gradient(180deg, #AEB8CC, #C8D0E0)"
-      : "linear-gradient(180deg, #FF8800, #FFCC44)";
+      : "linear-gradient(180deg, #FF9500, #FFCC00)";
 
     return (
       <div
@@ -414,7 +414,7 @@ const AccessRequests = () => {
           background: "#fff",
           borderRadius: 20,
           boxShadow: SHADOW_LG,
-          border: "0.5px solid rgba(0,85,255,0.10)",
+          border: "0.5px solid rgba(10,132,255,0.10)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -432,17 +432,17 @@ const AccessRequests = () => {
               alignItems: "center",
               justifyContent: "center",
               fontSize: compact ? 15 : 19,
-              fontWeight: 700,
+              fontWeight: 600,
               color: "#fff",
               flexShrink: 0,
-              boxShadow: "0 4px 12px rgba(0,85,255,0.24)",
+              boxShadow: "0 4px 12px rgba(10,132,255,0.24)",
             }}
           >
             {initials}
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: "flex", alignItems: "center", gap: compact ? 6 : 10, marginBottom: compact ? 3 : 7, flexWrap: "wrap" }}>
-              <div style={{ fontSize: compact ? 15 : 18, fontWeight: 700, color: T1, letterSpacing: "-0.25px" }}>
+              <div style={{ fontSize: compact ? 15 : 18, fontWeight: 600, color: T1, letterSpacing: "-0.25px" }}>
                 {req.name || "—"}
               </div>
               <div
@@ -450,7 +450,7 @@ const AccessRequests = () => {
                   padding: compact ? "2px 8px" : "4px 11px",
                   borderRadius: 100,
                   fontSize: compact ? 8 : 9,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   background: statusTag.bg,
@@ -487,11 +487,11 @@ const AccessRequests = () => {
                       style={{
                         padding: "4px 11px",
                         borderRadius: 100,
-                        background: "rgba(0,200,83,0.10)",
+                        background: "rgba(52,199,89,0.10)",
                         color: GREEN_D,
-                        border: "0.5px solid rgba(0,200,83,0.22)",
+                        border: "0.5px solid rgba(52,199,89,0.22)",
                         fontSize: 10,
-                        fontWeight: 700,
+                        fontWeight: 600,
                         letterSpacing: "0.02em",
                       }}
                     >
@@ -514,11 +514,11 @@ const AccessRequests = () => {
                   style={{
                     padding: "3px 9px",
                     borderRadius: 100,
-                    background: "rgba(0,200,83,0.10)",
+                    background: "rgba(52,199,89,0.10)",
                     color: GREEN_D,
-                    border: "0.5px solid rgba(0,200,83,0.22)",
+                    border: "0.5px solid rgba(52,199,89,0.22)",
                     fontSize: 9,
-                    fontWeight: 700,
+                    fontWeight: 600,
                   }}
                 >
                   {pg?.label || p}
@@ -529,19 +529,19 @@ const AccessRequests = () => {
         )}
 
         {req.reason && (
-          <div style={{ padding: compact ? "8px 16px" : "10px 22px", background: "rgba(0,85,255,0.03)", borderTop: `0.5px solid ${SEP}`, fontSize: compact ? 10 : 12, color: T3, fontWeight: 500, display: "flex", alignItems: "flex-start", gap: 6 }}>
+          <div style={{ padding: compact ? "8px 16px" : "10px 22px", background: "rgba(10,132,255,0.03)", borderTop: `0.5px solid ${SEP}`, fontSize: compact ? 10 : 12, color: T3, fontWeight: 500, display: "flex", alignItems: "flex-start", gap: 6 }}>
             <FileText size={compact ? 11 : 13} strokeWidth={2.2} color={T3} style={{ flexShrink: 0, marginTop: 1 }} />
-            <span><strong style={{ color: T1, fontWeight: 700 }}>Reason:</strong> {req.reason}</span>
+            <span><strong style={{ color: T1, fontWeight: 600 }}>Reason:</strong> {req.reason}</span>
           </div>
         )}
         {req.status === "rejected" && req.rejectionReason && (
-          <div style={{ padding: compact ? "8px 16px" : "10px 22px", background: "rgba(255,51,85,0.04)", borderTop: `0.5px solid ${SEP}`, fontSize: compact ? 10 : 12, color: RED_D, fontWeight: 500 }}>
-            <strong style={{ fontWeight: 700 }}>Rejection:</strong> {req.rejectionReason}
+          <div style={{ padding: compact ? "8px 16px" : "10px 22px", background: "rgba(255,59,48,0.04)", borderTop: `0.5px solid ${SEP}`, fontSize: compact ? 10 : 12, color: RED_D, fontWeight: 500 }}>
+            <strong style={{ fontWeight: 600 }}>Rejection:</strong> {req.rejectionReason}
           </div>
         )}
 
         {/* Actions */}
-        <div style={{ padding: compact ? "10px 12px" : "12px 18px", display: "flex", gap: compact ? 6 : 10, background: "rgba(0,85,255,0.03)", borderTop: `0.5px solid ${SEP}` }}>
+        <div style={{ padding: compact ? "10px 12px" : "12px 18px", display: "flex", gap: compact ? 6 : 10, background: "rgba(10,132,255,0.03)", borderTop: `0.5px solid ${SEP}` }}>
           {req.status === "pending" && (
             <>
               <button
@@ -557,12 +557,12 @@ const AccessRequests = () => {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: compact ? 10 : 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
                   border: "none",
                   cursor: "pointer",
-                  boxShadow: "0 4px 12px rgba(0,200,83,0.32)",
+                  boxShadow: "0 4px 12px rgba(52,199,89,0.32)",
                   fontFamily: "inherit",
                 }}
               >
@@ -575,17 +575,17 @@ const AccessRequests = () => {
                   flex: 1,
                   height: compact ? 34 : 40,
                   borderRadius: compact ? 10 : 12,
-                  background: "rgba(255,51,85,0.10)",
+                  background: "rgba(255,59,48,0.10)",
                   color: RED_D,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
                   fontSize: compact ? 10 : 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "0.5px solid rgba(255,51,85,0.22)",
+                  border: "0.5px solid rgba(255,59,48,0.22)",
                   cursor: "pointer",
                   fontFamily: "inherit",
                 }}
@@ -602,17 +602,17 @@ const AccessRequests = () => {
                   flex: 1,
                   height: compact ? 34 : 40,
                   borderRadius: compact ? 10 : 12,
-                  background: "rgba(0,200,83,0.10)",
+                  background: "rgba(52,199,89,0.10)",
                   color: GREEN_D,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
                   fontSize: compact ? 10 : 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "0.5px solid rgba(0,200,83,0.22)",
+                  border: "0.5px solid rgba(52,199,89,0.22)",
                 }}
               >
                 <CheckCircle2 size={compact ? 11 : 13} strokeWidth={2.5} />
@@ -631,11 +631,11 @@ const AccessRequests = () => {
                   justifyContent: "center",
                   gap: 5,
                   fontSize: compact ? 10 : 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "0.5px solid rgba(0,85,255,0.22)",
-                  boxShadow: "0 2px 6px rgba(0,85,255,0.10)",
+                  border: "0.5px solid rgba(10,132,255,0.22)",
+                  boxShadow: "0 2px 6px rgba(10,132,255,0.10)",
                   cursor: "pointer",
                   fontFamily: "inherit",
                 }}
@@ -649,17 +649,17 @@ const AccessRequests = () => {
                   flex: 1,
                   height: compact ? 34 : 40,
                   borderRadius: compact ? 10 : 12,
-                  background: "rgba(255,51,85,0.10)",
+                  background: "rgba(255,59,48,0.10)",
                   color: RED_D,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 5,
                   fontSize: compact ? 10 : 12,
-                  fontWeight: 700,
+                  fontWeight: 600,
                   letterSpacing: "0.06em",
                   textTransform: "uppercase",
-                  border: "0.5px solid rgba(255,51,85,0.22)",
+                  border: "0.5px solid rgba(255,59,48,0.22)",
                   cursor: "pointer",
                   fontFamily: "inherit",
                 }}
@@ -683,7 +683,7 @@ const AccessRequests = () => {
                 justifyContent: "center",
                 gap: 5,
                 fontSize: compact ? 10 : 12,
-                fontWeight: 700,
+                fontWeight: 600,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 border: "none",
@@ -706,19 +706,19 @@ const AccessRequests = () => {
   // ─── MOBILE RETURN ──────────────────────────────────────────────────────
   if (isMobile) {
     return (
-      <div style={{ fontFamily: "'DM Sans', -apple-system, sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0", paddingBottom: 24 }}>
+      <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh", margin: "-12px -12px 0", paddingBottom: 24 }}>
         {/* Page head */}
         <div style={{ padding: "14px 20px 0", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 24, fontWeight: 700, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 30, height: 30, borderRadius: 10, background: GRAD_PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(0,85,255,.32)" }}>
+            <div style={{ fontSize: 24, fontWeight: 600, color: T1, letterSpacing: "-0.6px", marginBottom: 3, display: "flex", alignItems: "center", gap: 8 }}>
+              <div style={{ width: 30, height: 30, borderRadius: 10, background: GRAD_PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 4px 12px rgba(10,132,255,.32)" }}>
                 <Shield size={16} color="#fff" strokeWidth={2.4} />
               </div>
               Staff Access
             </div>
             <div style={{ fontSize: 11, color: T3, fontWeight: 400, lineHeight: 1.5, display: "flex", alignItems: "center", gap: 5 }}>
               <span>DEO Requests</span>
-              <span style={{ color: T4, fontWeight: 700 }}>·</span>
+              <span style={{ color: T4, fontWeight: 600 }}>·</span>
               <span>Approval Flow</span>
             </div>
           </div>
@@ -739,7 +739,7 @@ const AccessRequests = () => {
             justifyContent: "center",
             gap: 7,
             fontSize: 13,
-            fontWeight: 700,
+            fontWeight: 600,
             cursor: "pointer",
             border: "none",
             boxShadow: SHADOW_BTN,
@@ -753,26 +753,26 @@ const AccessRequests = () => {
         </button>
 
         {/* Info card */}
-        <div style={{ margin: "14px 20px 0", background: "#fff", borderRadius: 18, padding: "14px 16px", boxShadow: SHADOW_SM, border: "0.5px solid rgba(0,85,255,.12)", position: "relative", overflow: "hidden" }}>
+        <div style={{ margin: "14px 20px 0", background: "#fff", borderRadius: 18, padding: "14px 16px", boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,.12)", position: "relative", overflow: "hidden" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 9, marginBottom: 9 }}>
-            <div style={{ width: 28, height: 28, borderRadius: 9, background: "rgba(0,85,255,.10)", border: "0.5px solid rgba(0,85,255,.22)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+            <div style={{ width: 28, height: 28, borderRadius: 9, background: "rgba(10,132,255,.10)", border: "0.5px solid rgba(10,132,255,.22)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Link2 size={14} color={B1} strokeWidth={2.3} />
             </div>
-            <div style={{ fontSize: 12, fontWeight: 700, color: B1 }}>How to invite a DEO</div>
+            <div style={{ fontSize: 12, fontWeight: 600, color: B1 }}>How to invite a DEO</div>
           </div>
           <div style={{ fontSize: 10, color: T3, fontWeight: 500, lineHeight: 1.6, marginBottom: 8 }}>
-            Click <strong style={{ color: T1, fontWeight: 700 }}>"Copy Request Link"</strong> and share it. They fill the form — request appears here as <em style={{ color: ORANGE_D, fontStyle: "italic", fontWeight: 600 }}>Pending</em>. You approve and choose which pages they can access.
+            Click <strong style={{ color: T1, fontWeight: 600 }}>"Copy Request Link"</strong> and share it. They fill the form — request appears here as <em style={{ color: ORANGE_D, fontStyle: "italic", fontWeight: 600 }}>Pending</em>. You approve and choose which pages they can access.
           </div>
-          <div style={{ padding: "8px 11px", background: "rgba(0,200,83,0.08)", borderRadius: 10, border: "0.5px solid rgba(0,200,83,0.2)", display: "flex", alignItems: "flex-start", gap: 7 }}>
+          <div style={{ padding: "8px 11px", background: "rgba(52,199,89,0.08)", borderRadius: 10, border: "0.5px solid rgba(52,199,89,0.2)", display: "flex", alignItems: "flex-start", gap: 7 }}>
             <ShieldCheck size={13} color={GREEN_D} strokeWidth={2.5} style={{ flexShrink: 0, marginTop: 1 }} />
             <div style={{ fontSize: 10, color: GREEN_D, fontWeight: 500, lineHeight: 1.55 }}>
-              <strong style={{ color: "#004018", fontWeight: 700 }}>Data is safe:</strong> editing pages or revoking access <em style={{ fontStyle: "italic", fontWeight: 600 }}>never deletes</em> records the DEO created.
+              <strong style={{ color: "#004018", fontWeight: 600 }}>Data is safe:</strong> editing pages or revoking access <em style={{ fontStyle: "italic", fontWeight: 600 }}>never deletes</em> records the DEO created.
             </div>
           </div>
         </div>
 
         {/* Hero */}
-        <div style={{ margin: "14px 20px 0", background: "linear-gradient(135deg,#001040 0%,#001888 35%,#0033CC 70%,#0055FF 100%)", borderRadius: 22, padding: "16px 18px", position: "relative", overflow: "hidden", boxShadow: "0 8px 26px rgba(0,8,60,.28), 0 0 0 .5px rgba(255,255,255,.12)" }}>
+        <div style={{ margin: "14px 20px 0", background: "linear-gradient(135deg,#1D1D1F 0%,#0A84FF 35%,#0A84FF 70%,#0A84FF 100%)", borderRadius: 22, padding: "16px 18px", position: "relative", overflow: "hidden", boxShadow: "0 8px 26px rgba(0,8,60,.28), 0 0 0 .5px rgba(255,255,255,.12)" }}>
           <div style={{ position: "absolute", top: -36, right: -24, width: 150, height: 150, background: "radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 65%)", borderRadius: "50%", pointerEvents: "none" }} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14, position: "relative", zIndex: 1 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -780,25 +780,25 @@ const AccessRequests = () => {
                 <ShieldCheck size={18} color="rgba(255,255,255,.92)" strokeWidth={2.1} />
               </div>
               <div>
-                <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>Access Workflow</div>
-                <div style={{ fontSize: 26, fontWeight: 700, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>{counts.approved + counts.pending} Active</div>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.50)", marginBottom: 3 }}>Access Workflow</div>
+                <div style={{ fontSize: 26, fontWeight: 600, color: "#fff", letterSpacing: "-0.8px", lineHeight: 1 }}>{counts.approved + counts.pending} Active</div>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: 5, padding: "5px 12px", borderRadius: 100, background: "rgba(0,200,83,.22)", border: "0.5px solid rgba(0,200,83,.4)", fontSize: 11, fontWeight: 700, color: "#66FFAA" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 5, padding: "5px 12px", borderRadius: 100, background: "rgba(52,199,89,.22)", border: "0.5px solid rgba(52,199,89,.4)", fontSize: 11, fontWeight: 600, color: "#66FFAA" }}>
               <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#66FFAA", boxShadow: "0 0 8px rgba(102,255,170,.8)" }} />
               Secure
             </div>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 1, background: "rgba(255,255,255,.12)", borderRadius: 14, overflow: "hidden", position: "relative", zIndex: 1 }}>
             {[
-              { v: counts.pending, l: "Pending", c: "#FFDD88" },
-              { v: counts.approved, l: "Approved", c: "#66EE88" },
-              { v: counts.rejected, l: "Rejected", c: "#FF99AA" },
+              { v: counts.pending, l: "Pending", c: "#FFCC00" },
+              { v: counts.approved, l: "Approved", c: "#34C759" },
+              { v: counts.rejected, l: "Rejected", c: "#FF6961" },
               { v: counts.revoked, l: "Revoked", c: "#fff" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "10px 6px", textAlign: "center" }}>
-                <div style={{ fontSize: 14, fontWeight: 700, color: s.c, letterSpacing: "-0.2px", lineHeight: 1, marginBottom: 3 }}>{s.v}</div>
-                <div style={{ fontSize: 8, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>{s.l}</div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: s.c, letterSpacing: "-0.2px", lineHeight: 1, marginBottom: 3 }}>{s.v}</div>
+                <div style={{ fontSize: 8, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -830,20 +830,20 @@ const AccessRequests = () => {
                 <div style={{ width: 30, height: 30, borderRadius: 10, background: "rgba(255,255,255,.75)", border: "0.5px solid rgba(255,255,255,.95)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 8, position: "relative", zIndex: 1, boxShadow: "0 2px 6px rgba(0,0,0,.05)" }}>
                   <Ico size={15} color={t.iconColor} strokeWidth={2.5} />
                 </div>
-                <div style={{ fontSize: 28, fontWeight: 700, letterSpacing: "-0.9px", lineHeight: 1, marginBottom: 4, color: t.numColor, position: "relative", zIndex: 1 }}>{counts[t.k]}</div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: t.lblColor, position: "relative", zIndex: 1 }}>{t.label}</div>
+                <div style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.9px", lineHeight: 1, marginBottom: 4, color: t.numColor, position: "relative", zIndex: 1 }}>{counts[t.k]}</div>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: t.lblColor, position: "relative", zIndex: 1 }}>{t.label}</div>
               </button>
             );
           })}
         </div>
 
         {/* Section label */}
-        <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, padding: "16px 20px 0", display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: T4, padding: "16px 20px 0", display: "flex", alignItems: "center", gap: 8 }}>
           <span>{statTabs.find((s) => s.k === tab)?.label} {tab === "pending" ? "Requests" : tab === "approved" ? "Staff" : "List"}</span>
-          <span style={{ padding: "3px 9px", borderRadius: 100, fontSize: 9, fontWeight: 700, ...slblBadgeStyle[tab] }}>
+          <span style={{ padding: "3px 9px", borderRadius: 100, fontSize: 9, fontWeight: 600, ...slblBadgeStyle[tab] }}>
             {counts[tab]} {tab === "pending" ? "awaiting" : tab === "approved" ? "active" : "total"}
           </span>
-          <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,0.12)" }} />
+          <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,0.12)" }} />
         </div>
 
         {/* Body */}
@@ -853,11 +853,11 @@ const AccessRequests = () => {
             <style>{`@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}`}</style>
           </div>
         ) : filtered.length === 0 ? (
-          <div style={{ margin: "14px 20px 0", background: "#fff", borderRadius: 20, padding: "40px 20px", boxShadow: SHADOW_SM, border: "0.5px dashed rgba(0,85,255,0.22)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-            <div style={{ width: 60, height: 60, borderRadius: 18, background: "linear-gradient(135deg,#E5EEFF,#D4E4FF)", border: "0.5px solid rgba(0,85,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>
+          <div style={{ margin: "14px 20px 0", background: "#fff", borderRadius: 20, padding: "40px 20px", boxShadow: SHADOW_SM, border: "0.5px dashed rgba(10,132,255,0.22)", textAlign: "center", position: "relative", overflow: "hidden" }}>
+            <div style={{ width: 60, height: 60, borderRadius: 18, background: "linear-gradient(135deg,#EBEBF0,#D4E4FF)", border: "0.5px solid rgba(10,132,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 14px" }}>
               <ShieldCheck size={26} color={B1} strokeWidth={2.2} />
             </div>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T3, marginBottom: 6 }}>No {tab} Requests</div>
+            <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: T3, marginBottom: 6 }}>No {tab} Requests</div>
             {tab === "pending" && (
               <div style={{ fontSize: 11, color: T4, fontWeight: 500, lineHeight: 1.5 }}>
                 Share the request link with<br />your data entry team
@@ -871,26 +871,26 @@ const AccessRequests = () => {
         )}
 
         {/* AI Card */}
-        <div style={{ margin: "12px 20px 0", background: "linear-gradient(140deg,#001888 0%,#0033CC 48%,#0055FF 100%)", borderRadius: 22, padding: "18px 20px", boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)", position: "relative", overflow: "hidden" }}>
+        <div style={{ margin: "12px 20px 0", background: "linear-gradient(140deg,#0A84FF 0%,#0A84FF 48%,#0A84FF 100%)", borderRadius: 22, padding: "18px 20px", boxShadow: "0 8px 28px rgba(0,51,204,.28), 0 0 0 .5px rgba(255,255,255,.14)", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "absolute", top: -34, right: -22, width: 140, height: 140, background: "radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 65%)", borderRadius: "50%", pointerEvents: "none" }} />
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 10, position: "relative", zIndex: 1 }}>
             <div style={{ width: 26, height: 26, borderRadius: 8, background: "rgba(255,255,255,.18)", border: "0.5px solid rgba(255,255,255,.26)", display: "flex", alignItems: "center", justifyContent: "center" }}>
               <Sparkles size={13} color="rgba(255,255,255,.90)" strokeWidth={2.3} />
             </div>
-            <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>AI Access Intelligence</span>
+            <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,.55)" }}>AI Access Intelligence</span>
           </div>
           <div style={{ fontSize: 12, color: "rgba(255,255,255,.85)", lineHeight: 1.72, position: "relative", zIndex: 1 }}>
-            Inbox has <strong style={{ color: "#fff", fontWeight: 700 }}>{counts.pending} pending</strong>. <strong style={{ color: "#fff", fontWeight: 700 }}>{counts.approved} approved DEOs</strong> actively handling data entry. {counts.pending > 0 ? "Review pending requests within 24h to keep ops moving." : "Inbox is clear — share your link with trusted team members only."}
+            Inbox has <strong style={{ color: "#fff", fontWeight: 600 }}>{counts.pending} pending</strong>. <strong style={{ color: "#fff", fontWeight: 600 }}>{counts.approved} approved DEOs</strong> actively handling data entry. {counts.pending > 0 ? "Review pending requests within 24h to keep ops moving." : "Inbox is clear — share your link with trusted team members only."}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 1, background: "rgba(255,255,255,.12)", borderRadius: 14, overflow: "hidden", position: "relative", zIndex: 1, marginTop: 12 }}>
             {[
-              { v: counts.pending, l: "Pending", c: "#FFDD88" },
-              { v: counts.approved, l: "Active", c: "#66EE88" },
-              { v: counts.rejected, l: "Rejected", c: "#FF99AA" },
+              { v: counts.pending, l: "Pending", c: "#FFCC00" },
+              { v: counts.approved, l: "Active", c: "#34C759" },
+              { v: counts.rejected, l: "Rejected", c: "#FF6961" },
             ].map((s, i) => (
               <div key={i} style={{ background: "rgba(255,255,255,.08)", padding: "12px", textAlign: "center" }}>
-                <div style={{ fontSize: 19, fontWeight: 700, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>{s.v}</div>
-                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>{s.l}</div>
+                <div style={{ fontSize: 19, fontWeight: 600, color: s.c, letterSpacing: "-0.5px", lineHeight: 1, marginBottom: 3 }}>{s.v}</div>
+                <div style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.09em", textTransform: "uppercase", color: "rgba(255,255,255,.40)" }}>{s.l}</div>
               </div>
             ))}
           </div>
@@ -903,7 +903,7 @@ const AccessRequests = () => {
   return (
     <div
       style={{
-        fontFamily: "'DM Sans', -apple-system, sans-serif",
+        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif",
         background: BG,
         minHeight: "100vh",
         margin: "-16px -24px 0",
@@ -913,8 +913,8 @@ const AccessRequests = () => {
       {/* Page head */}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 20, marginBottom: 22 }}>
         <div>
-          <h1 style={{ fontSize: 34, fontWeight: 700, color: T1, letterSpacing: "-1px", margin: 0, lineHeight: 1.1, display: "flex", alignItems: "center", gap: 12 }}>
-            <div style={{ width: 46, height: 46, borderRadius: 14, background: GRAD_PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px rgba(0,85,255,.32)" }}>
+          <h1 style={{ fontSize: 34, fontWeight: 600, color: T1, letterSpacing: "-1px", margin: 0, lineHeight: 1.1, display: "flex", alignItems: "center", gap: 12 }}>
+            <div style={{ width: 46, height: 46, borderRadius: 14, background: GRAD_PRIMARY, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px rgba(10,132,255,.32)" }}>
               <Shield size={22} color="#fff" strokeWidth={2.3} />
             </div>
             Staff Access Control
@@ -936,7 +936,7 @@ const AccessRequests = () => {
             alignItems: "center",
             gap: 8,
             fontSize: 12,
-            fontWeight: 700,
+            fontWeight: 600,
             cursor: "pointer",
             boxShadow: SHADOW_BTN,
             border: "none",
@@ -954,19 +954,19 @@ const AccessRequests = () => {
       </div>
 
       {/* Info card */}
-      <div style={{ background: "#fff", borderRadius: 18, padding: "18px 22px", boxShadow: SHADOW_SM, border: "0.5px solid rgba(0,85,255,.12)", marginBottom: 24, display: "flex", alignItems: "flex-start", gap: 14, position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", top: -40, right: -40, width: 180, height: 180, borderRadius: "50%", background: "radial-gradient(circle,rgba(0,85,255,.04) 0%,transparent 70%)", pointerEvents: "none" }} />
-        <div style={{ width: 38, height: 38, borderRadius: 11, background: "rgba(0,85,255,.10)", border: "0.5px solid rgba(0,85,255,.22)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+      <div style={{ background: "#fff", borderRadius: 18, padding: "18px 22px", boxShadow: SHADOW_SM, border: "0.5px solid rgba(10,132,255,.12)", marginBottom: 24, display: "flex", alignItems: "flex-start", gap: 14, position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", top: -40, right: -40, width: 180, height: 180, borderRadius: "50%", background: "radial-gradient(circle,rgba(10,132,255,.04) 0%,transparent 70%)", pointerEvents: "none" }} />
+        <div style={{ width: 38, height: 38, borderRadius: 11, background: "rgba(10,132,255,.10)", border: "0.5px solid rgba(10,132,255,.22)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
           <Link2 size={18} color={B1} strokeWidth={2.3} />
         </div>
         <div style={{ flex: 1, position: "relative", zIndex: 1 }}>
-          <div style={{ fontSize: 14, fontWeight: 700, color: B1, marginBottom: 4 }}>How to invite a Data Entry Operator</div>
+          <div style={{ fontSize: 14, fontWeight: 600, color: B1, marginBottom: 4 }}>How to invite a Data Entry Operator</div>
           <div style={{ fontSize: 12, color: T3, fontWeight: 500, lineHeight: 1.65, marginBottom: 10 }}>
-            Click <strong style={{ color: T1, fontWeight: 700 }}>"Copy Request Link"</strong> and share it with the person. They fill the form — the request appears here as <em style={{ color: ORANGE_D, fontStyle: "italic", fontWeight: 600 }}>Pending</em>. You approve and choose which pages they can access. They then log in with their Google account.
+            Click <strong style={{ color: T1, fontWeight: 600 }}>"Copy Request Link"</strong> and share it with the person. They fill the form — the request appears here as <em style={{ color: ORANGE_D, fontStyle: "italic", fontWeight: 600 }}>Pending</em>. You approve and choose which pages they can access. They then log in with their Google account.
           </div>
           <div style={{ fontSize: 12, color: GREEN_D, fontWeight: 500, lineHeight: 1.55, display: "inline-flex", alignItems: "center", gap: 7 }}>
             <ShieldCheck size={14} color={GREEN_D} strokeWidth={2.5} />
-            <span><strong style={{ color: "#004018", fontWeight: 700 }}>Data is safe:</strong> editing pages or revoking access <em style={{ color: T2, fontStyle: "italic", fontWeight: 600 }}>never deletes</em> records the DEO created. Old attendance, marks &amp; notes stay visible.</span>
+            <span><strong style={{ color: "#004018", fontWeight: 600 }}>Data is safe:</strong> editing pages or revoking access <em style={{ color: T2, fontStyle: "italic", fontWeight: 600 }}>never deletes</em> records the DEO created. Old attendance, marks &amp; notes stay visible.</span>
           </div>
         </div>
       </div>
@@ -979,35 +979,35 @@ const AccessRequests = () => {
           // Map status → dashboard palette
           const palette: Record<typeof t.color, { cardGrad: string; tileGrad: string; tileShadow: string; valColor: string; decorColor: string; ringColor: string }> = {
             yellow: {
-              cardGrad: "linear-gradient(135deg, #FBE5B6 0%, #FEFAEE 100%)",
-              tileGrad: "linear-gradient(135deg, #FFAA00, #FFDD44)",
-              tileShadow: "0 4px 14px rgba(255,170,0,0.28)",
-              valColor: "#FFAA00",
-              decorColor: "#FFAA00",
-              ringColor: "rgba(255,170,0,0.42)",
+              cardGrad: "linear-gradient(135deg, #FFEFD5 0%, #FFFAEB 100%)",
+              tileGrad: "linear-gradient(135deg, #FFCC00, #FFCC00)",
+              tileShadow: "0 4px 14px rgba(255,204,0,0.28)",
+              valColor: "#FFCC00",
+              decorColor: "#FFCC00",
+              ringColor: "rgba(255,204,0,0.42)",
             },
             green: {
-              cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-              tileGrad: "linear-gradient(135deg, #00C853, #22EE66)",
-              tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
-              valColor: "#007830",
-              decorColor: "#00C853",
-              ringColor: "rgba(0,200,83,0.42)",
+              cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+              tileGrad: "linear-gradient(135deg, #34C759, #34C759)",
+              tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
+              valColor: "#248A3D",
+              decorColor: "#34C759",
+              ringColor: "rgba(52,199,89,0.42)",
             },
             red: {
               cardGrad: "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)",
-              tileGrad: "linear-gradient(135deg, #FF3355, #FF6688)",
-              tileShadow: "0 4px 14px rgba(255,51,85,0.28)",
-              valColor: "#FF3355",
-              decorColor: "#FF3355",
-              ringColor: "rgba(255,51,85,0.42)",
+              tileGrad: "linear-gradient(135deg, #FF3B30, #FF5E55)",
+              tileShadow: "0 4px 14px rgba(255,59,48,0.28)",
+              valColor: "#FF3B30",
+              decorColor: "#FF3B30",
+              ringColor: "rgba(255,59,48,0.42)",
             },
             grey: {
               cardGrad: "linear-gradient(135deg, #E2E5EC 0%, #F7F9FC 100%)",
-              tileGrad: "linear-gradient(135deg, #475569, #64748B)",
+              tileGrad: "linear-gradient(135deg, #6E6E73, #6E6E73)",
               tileShadow: "0 4px 14px rgba(71,85,105,0.26)",
-              valColor: "#475569",
-              decorColor: "#475569",
+              valColor: "#6E6E73",
+              decorColor: "#6E6E73",
               ringColor: "rgba(71,85,105,0.36)",
             },
           };
@@ -1023,10 +1023,10 @@ const AccessRequests = () => {
                 overflow: "hidden",
                 cursor: "pointer",
                 background: p.cardGrad,
-                border: `0.5px solid ${active ? p.ringColor : "rgba(0,85,255,0.08)"}`,
+                border: `0.5px solid ${active ? p.ringColor : "rgba(10,132,255,0.08)"}`,
                 boxShadow: active
-                  ? `0 0 0 2px ${p.ringColor}, 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)`
-                  : "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
+                  ? `0 0 0 2px ${p.ringColor}, 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)`
+                  : "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
                 fontFamily: "inherit",
                 textAlign: "left",
                 transition: "transform .18s cubic-bezier(.34,1.56,.64,1)",
@@ -1049,13 +1049,13 @@ const AccessRequests = () => {
               >
                 <Ico size={26} color="#fff" strokeWidth={2.3} />
               </div>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.10em", textTransform: "uppercase", color: "#99AACC", marginBottom: 6 }}>
+              <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: "#A1A1A6", marginBottom: 6 }}>
                 {t.label}
               </div>
-              <div style={{ fontSize: 34, fontWeight: 700, letterSpacing: "-1.2px", lineHeight: 1, marginBottom: 6, color: p.valColor }}>
+              <div style={{ fontSize: 34, fontWeight: 600, letterSpacing: "-1.2px", lineHeight: 1, marginBottom: 6, color: p.valColor }}>
                 {counts[t.k]}
               </div>
-              <div style={{ fontSize: 11, fontWeight: 600, color: "#5070B0" }}>
+              <div style={{ fontSize: 11, fontWeight: 600, color: "#6E6E73" }}>
                 {active ? "Filtering" : "Tap to filter"}
               </div>
               <Ico
@@ -1070,12 +1070,12 @@ const AccessRequests = () => {
       </div>
 
       {/* Section label */}
-      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
+      <div style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: T4, marginBottom: 14, display: "flex", alignItems: "center", gap: 8 }}>
         <span>{statTabs.find((s) => s.k === tab)?.label} {tab === "pending" ? "Requests" : tab === "approved" ? "Staff" : "List"}</span>
-        <span style={{ padding: "3px 10px", borderRadius: 100, fontSize: 10, fontWeight: 700, ...slblBadgeStyle[tab] }}>
+        <span style={{ padding: "3px 10px", borderRadius: 100, fontSize: 10, fontWeight: 600, ...slblBadgeStyle[tab] }}>
           {counts[tab]} {tab === "pending" ? "awaiting" : tab === "approved" ? "active" : "total"}
         </span>
-        <span style={{ flex: 1, height: "0.5px", background: "rgba(0,85,255,0.12)" }} />
+        <span style={{ flex: 1, height: "0.5px", background: "rgba(10,132,255,0.12)" }} />
       </div>
 
       {/* Body */}
@@ -1083,16 +1083,16 @@ const AccessRequests = () => {
         <div style={{ padding: "60px 0", textAlign: "center" }}>
           <Loader2 size={32} color={B1} style={{ animation: "spin 1s linear infinite", marginBottom: 12 }} />
           <style>{`@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}`}</style>
-          <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: T4, margin: 0 }}>
             Loading requests...
           </p>
         </div>
       ) : filtered.length === 0 ? (
-        <div style={{ background: "#fff", borderRadius: 24, padding: "60px 24px", boxShadow: SHADOW_SM, border: "0.5px dashed rgba(0,85,255,0.22)", textAlign: "center", position: "relative", overflow: "hidden" }}>
-          <div style={{ width: 72, height: 72, borderRadius: 22, background: "linear-gradient(135deg,#E5EEFF,#D4E4FF)", border: "0.5px solid rgba(0,85,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+        <div style={{ background: "#fff", borderRadius: 24, padding: "60px 24px", boxShadow: SHADOW_SM, border: "0.5px dashed rgba(10,132,255,0.22)", textAlign: "center", position: "relative", overflow: "hidden" }}>
+          <div style={{ width: 72, height: 72, borderRadius: 22, background: "linear-gradient(135deg,#EBEBF0,#D4E4FF)", border: "0.5px solid rgba(10,132,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
             <ShieldCheck size={32} color={B1} strokeWidth={2.2} />
           </div>
-          <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: T3, marginBottom: 8 }}>No {tab} Requests</div>
+          <div style={{ fontSize: 14, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: T3, marginBottom: 8 }}>No {tab} Requests</div>
           {tab === "pending" && (
             <div style={{ fontSize: 12, color: T4, fontWeight: 500, lineHeight: 1.5 }}>
               Share the request link with your data entry team.
@@ -1112,12 +1112,12 @@ const AccessRequests = () => {
                onClick={() => { setApprovingReq(null); setEditingDeoDoc(null); setModalMode("approve"); }} />
           <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden animate-in zoom-in-95 duration-200 max-h-[90vh] flex flex-col">
 
-            <div className={`${modalMode === "edit" ? "bg-[#1e3a8a]" : "bg-emerald-700"} px-6 py-5 flex items-center gap-3 shrink-0`}>
+            <div className={`${modalMode === "edit" ? "bg-[#1D1D1F]" : "bg-emerald-700"} px-6 py-5 flex items-center gap-3 shrink-0`}>
               <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
                 {modalMode === "edit" ? <Pencil className="w-4 h-4 text-white" /> : <UserCheck className="w-4 h-4 text-white" />}
               </div>
               <div>
-                <h2 className="text-sm font-black text-white">
+                <h2 className="text-sm font-semibold text-white">
                   {modalMode === "edit" ? "Edit Access" : "Approve Access"}
                 </h2>
                 <p className={`text-xs ${modalMode === "edit" ? "text-blue-200" : "text-emerald-200"}`}>
@@ -1129,14 +1129,14 @@ const AccessRequests = () => {
             <div className="p-6 space-y-5 overflow-y-auto">
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                  <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest">
                     Pages they can access
                   </p>
                   <div className="flex items-center gap-1.5">
                     <button
                       type="button"
                       onClick={() => setAllowedPages(ALL_PAGES.map(p => p.path))}
-                      className="text-[9px] font-black text-blue-600 hover:underline uppercase tracking-wider"
+                      className="text-[12px] font-semibold text-blue-600 hover:underline uppercase tracking-wider"
                     >
                       Select All
                     </button>
@@ -1144,7 +1144,7 @@ const AccessRequests = () => {
                     <button
                       type="button"
                       onClick={() => setAllowedPages([])}
-                      className="text-[9px] font-black text-slate-400 hover:underline uppercase tracking-wider"
+                      className="text-[12px] font-semibold text-slate-400 hover:underline uppercase tracking-wider"
                     >
                       Clear
                     </button>
@@ -1168,8 +1168,8 @@ const AccessRequests = () => {
                         className={`w-4 h-4 ${modalMode === "edit" ? "accent-blue-600" : "accent-emerald-600"}`}
                       />
                       <div className="flex-1">
-                        <p className="text-xs font-black text-slate-700">{pg.label}</p>
-                        <p className="text-[10px] text-slate-400">{pg.description}</p>
+                        <p className="text-xs font-semibold text-slate-700">{pg.label}</p>
+                        <p className="text-[12px] text-slate-400">{pg.description}</p>
                       </div>
                       {allowedPages.includes(pg.path) && (
                         <CheckCircle2 className={`w-4 h-4 shrink-0 ${modalMode === "edit" ? "text-blue-500" : "text-emerald-500"}`} />
@@ -1177,20 +1177,20 @@ const AccessRequests = () => {
                     </label>
                   ))}
                 </div>
-                <p className="text-[10px] text-slate-400 mt-2">{allowedPages.length} of {ALL_PAGES.length} page{allowedPages.length !== 1 ? "s" : ""} selected</p>
+                <p className="text-[12px] text-slate-400 mt-2">{allowedPages.length} of {ALL_PAGES.length} page{allowedPages.length !== 1 ? "s" : ""} selected</p>
               </div>
 
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => { setApprovingReq(null); setEditingDeoDoc(null); setModalMode("approve"); }}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-black text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button
                   onClick={modalMode === "edit" ? handleSaveEdit : handleApprove}
                   disabled={approving || allowedPages.length === 0}
-                  className={`flex-1 h-11 rounded-xl text-white text-xs font-black transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
-                    modalMode === "edit" ? "bg-[#1e3a8a] hover:bg-[#1e294b]" : "bg-emerald-600 hover:bg-emerald-700"
+                  className={`flex-1 h-11 rounded-xl text-white text-xs font-semibold transition-colors disabled:opacity-50 flex items-center justify-center gap-2 ${
+                    modalMode === "edit" ? "bg-[#1D1D1F] hover:bg-[#1D1D1F]" : "bg-emerald-600 hover:bg-emerald-700"
                   }`}>
                   {approving
                     ? <Loader2 className="w-4 h-4 animate-spin" />
@@ -1215,7 +1215,7 @@ const AccessRequests = () => {
                 <AlertTriangle className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h2 className="text-sm font-black text-white">Revoke Access?</h2>
+                <h2 className="text-sm font-semibold text-white">Revoke Access?</h2>
                 <p className="text-xs text-rose-200">{revokingReq.name}</p>
               </div>
             </div>
@@ -1224,8 +1224,8 @@ const AccessRequests = () => {
                 This will remove <strong>{revokingReq.name}</strong>'s login access immediately.
               </p>
               <div className="bg-emerald-50 border border-emerald-100 rounded-xl p-3 flex items-start gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p className="text-[11px] text-emerald-800 font-semibold leading-relaxed">
+                <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-1" />
+                <p className="text-[12px] text-emerald-800 font-semibold leading-relaxed">
                   All records created by this DEO — attendance, marks, assignments, notes — <strong>will stay intact</strong>.
                   You can re-approve or invite a new DEO later.
                 </p>
@@ -1233,13 +1233,13 @@ const AccessRequests = () => {
               <div className="flex gap-3">
                 <button
                   onClick={() => setRevokingReq(null)}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-black text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button
                   onClick={handleRevoke}
                   disabled={revoking}
-                  className="flex-1 h-11 rounded-xl bg-rose-600 text-white text-xs font-black hover:bg-rose-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-rose-600 text-white text-xs font-semibold hover:bg-rose-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                   {revoking ? <Loader2 className="w-4 h-4 animate-spin" /> : <Trash2 className="w-4 h-4" />}
                   {revoking ? "Revoking..." : "Revoke Access"}
                 </button>
@@ -1260,14 +1260,14 @@ const AccessRequests = () => {
                 <UserX className="w-4 h-4 text-white" />
               </div>
               <div>
-                <h2 className="text-sm font-black text-white">Reject Request</h2>
+                <h2 className="text-sm font-semibold text-white">Reject Request</h2>
                 <p className="text-xs text-rose-200">{rejectingReq.name}</p>
               </div>
             </div>
 
             <div className="p-6 space-y-4">
               <div>
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 block">Reason (optional)</label>
+                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-1.5 block">Reason (optional)</label>
                 <textarea
                   value={rejectReason}
                   onChange={e => setRejectReason(e.target.value)}
@@ -1278,11 +1278,11 @@ const AccessRequests = () => {
               </div>
               <div className="flex gap-3">
                 <button onClick={() => setRejectingReq(null)}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-black text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button onClick={handleReject} disabled={rejecting}
-                  className="flex-1 h-11 rounded-xl bg-rose-600 text-white text-xs font-black hover:bg-rose-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-rose-600 text-white text-xs font-semibold hover:bg-rose-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                   {rejecting ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserX className="w-4 h-4" />}
                   {rejecting ? "Rejecting..." : "Reject Request"}
                 </button>

@@ -410,7 +410,7 @@ const Students = () => {
             subject: `You've been enrolled — ${cls?.name || "Class"} | ${userData?.schoolName || "School"}`,
             html: `
               <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;">
-                <h2 style="color:#1e3a8a;margin-bottom:8px;">Welcome, ${studentName}!</h2>
+                <h2 style="color:#1D1D1F;margin-bottom:8px;">Welcome, ${studentName}!</h2>
                 <p style="color:#555;">You have been enrolled in <strong>${cls?.name || "your class"}</strong>.</p>
                 <table style="margin:20px 0;width:100%;border-collapse:collapse;">
                   <tr><td style="padding:8px 0;color:#888;font-size:13px;">School</td><td style="font-weight:bold;color:#333;">${userData?.schoolName || schoolId}</td></tr>
@@ -418,7 +418,7 @@ const Students = () => {
                   ${cls?.teacherName ? `<tr><td style="padding:8px 0;color:#888;font-size:13px;">Teacher</td><td style="font-weight:bold;color:#333;">${cls.teacherName}</td></tr>` : ""}
                 </table>
                 <div style="margin:28px 0;text-align:center;">
-                  <a href="https://parent-dashboard-ten.vercel.app/" style="background:#1e3a8a;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">
+                  <a href="https://parent-dashboard-ten.vercel.app/" style="background:#1D1D1F;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">
                     Login to Student Portal
                   </a>
                 </div>
@@ -588,28 +588,28 @@ const Students = () => {
                 to: r.email,
                 subject: `You've been enrolled${cls ? ` — ${cls.name}` : ""}`,
                 html: `
-                  <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:0;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;">
-                    <div style="background:#1e3a8a;padding:24px 28px;">
+                  <div style="font-family:sans-serif;max-width:600px;margin:auto;padding:0;border:1px solid #EBEBF0;border-radius:12px;overflow:hidden;">
+                    <div style="background:#1D1D1F;padding:24px 28px;">
                       <h1 style="color:#fff;margin:0;font-size:20px;font-weight:700;">EDULLENT</h1>
                       <p style="color:#bfdbfe;margin:4px 0 0;font-size:13px;">Student Portal Invitation</p>
                     </div>
                     <div style="padding:28px;background:#fff;">
-                      <h2 style="color:#1e293b;margin:0 0 12px;">Welcome, ${r.name}!</h2>
-                      <p style="color:#475569;font-size:14px;line-height:1.6;margin:0 0 8px;">
+                      <h2 style="color:#1D1D1F;margin:0 0 12px;">Welcome, ${r.name}!</h2>
+                      <p style="color:#6E6E73;font-size:14px;line-height:1.6;margin:0 0 8px;">
                         You have been enrolled${cls ? ` in <strong>${cls.name}</strong>${cls.teacherName ? ` — Teacher: <strong>${cls.teacherName}</strong>` : ""}` : " at your school"}.
                       </p>
-                      <p style="color:#475569;font-size:14px;line-height:1.6;margin:0 0 24px;">
+                      <p style="color:#6E6E73;font-size:14px;line-height:1.6;margin:0 0 24px;">
                         Log in with this email address (<strong>${r.email}</strong>) to access your student portal.
                       </p>
                       <div style="text-align:center;margin:24px 0;">
                         <a href="https://parent-dashboard-ten.vercel.app/"
-                           style="background:#1e3a8a;color:#fff;padding:13px 30px;text-decoration:none;border-radius:8px;font-weight:700;font-size:14px;display:inline-block;">
+                           style="background:#1D1D1F;color:#fff;padding:13px 30px;text-decoration:none;border-radius:8px;font-weight:700;font-size:14px;display:inline-block;">
                           Go to Student Portal
                         </a>
                       </div>
                     </div>
-                    <div style="background:#f1f5f9;padding:14px 28px;text-align:center;">
-                      <p style="color:#94a3b8;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
+                    <div style="background:#F5F5F7;padding:14px 28px;text-align:center;">
+                      <p style="color:#A1A1A6;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
                     </div>
                   </div>
                 `,
@@ -741,8 +741,8 @@ const Students = () => {
   // ── Render ───────────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen" style={{ background: "#EEF4FF" }}>
-    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-12 text-left"}>
+    <div className="min-h-screen" style={{ background: "#F5F5F7" }}>
+    <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-10 text-left"}>
 
       {isMobile ? (() => {
         // Aggregate stats for the mobile UI's stat strip + dark summary card.
@@ -829,7 +829,7 @@ const Students = () => {
                   <FileSpreadsheet className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-black text-white">Bulk Student Upload</h2>
+                  <h2 className="text-sm font-semibold text-white">Bulk Student Upload</h2>
                   <p className="text-xs text-emerald-200">Upload Excel / CSV to enroll multiple students</p>
                 </div>
               </div>
@@ -844,8 +844,8 @@ const Students = () => {
               <div className="border-2 border-dashed border-emerald-200 rounded-2xl p-6 text-center bg-emerald-50/40 hover:bg-emerald-50 transition-colors cursor-pointer"
                 onClick={() => bulkFileRef.current?.click()}>
                 <Upload className="w-8 h-8 text-emerald-500 mx-auto mb-2" />
-                <p className="text-xs font-black text-emerald-700 uppercase tracking-widest">Click to select Excel / CSV file</p>
-                <p className="text-[10px] text-slate-400 mt-1">Any column headers — system auto-detects & lets you re-map below</p>
+                <p className="text-xs font-semibold text-emerald-700 uppercase tracking-widest">Click to select Excel / CSV file</p>
+                <p className="text-[12px] text-slate-400 mt-1">Any column headers — system auto-detects & lets you re-map below</p>
                 <input
                   ref={bulkFileRef}
                   type="file"
@@ -857,7 +857,7 @@ const Students = () => {
 
               {/* Template download */}
               <button onClick={downloadTemplate}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-emerald-200 text-xs font-black text-emerald-600 hover:bg-emerald-50 transition-colors">
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-emerald-200 text-xs font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors">
                 <Download className="w-4 h-4" /> Download Default Template
               </button>
 
@@ -866,14 +866,14 @@ const Students = () => {
                 <div className="rounded-2xl border border-slate-100 bg-slate-50/40 p-4">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Column Mapping</p>
-                      <p className="text-[10px] text-slate-400 mt-0.5">
+                      <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest">Column Mapping</p>
+                      <p className="text-[12px] text-slate-400 mt-1">
                         {bulkHeaders.length} columns detected · auto-matched · adjust if anything looks off
                       </p>
                     </div>
                     <button
                       onClick={() => setBulkMapping(detectColumns(bulkHeaders))}
-                      className="text-[10px] font-black text-emerald-700 hover:text-emerald-800 uppercase tracking-wider px-2 py-1 rounded-md hover:bg-emerald-100 transition-colors">
+                      className="text-[12px] font-semibold text-emerald-700 hover:text-emerald-800 uppercase tracking-wider px-2 py-1 rounded-md hover:bg-emerald-100 transition-colors">
                       Auto-match
                     </button>
                   </div>
@@ -884,7 +884,7 @@ const Students = () => {
                       const ok = value !== "";
                       return (
                         <div key={field} className="flex items-center gap-2">
-                          <label className="text-[10px] font-black text-slate-600 uppercase tracking-wider w-[88px] shrink-0">
+                          <label className="text-[12px] font-semibold text-slate-600 uppercase tracking-wider w-[88px] shrink-0">
                             {cfg.label}{cfg.required && <span className="text-rose-500"> *</span>}
                           </label>
                           <select
@@ -907,7 +907,7 @@ const Students = () => {
                     })}
                   </div>
                   {(!bulkMapping.name || !bulkMapping.email) && (
-                    <p className="text-[10px] font-bold text-rose-600 mt-3">
+                    <p className="text-[12px] font-semibold text-rose-600 mt-3">
                       ⚠ Both <strong>Name</strong> and <strong>Email</strong> must be mapped before uploading.
                     </p>
                   )}
@@ -918,8 +918,8 @@ const Students = () => {
               {bulkRows.length > 0 && (
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{bulkRows.length} rows detected</p>
-                    <div className="flex gap-2 text-[9px] font-black uppercase">
+                    <p className="text-[12px] font-semibold text-slate-500 uppercase tracking-widest">{bulkRows.length} rows detected</p>
+                    <div className="flex gap-2 text-[12px] font-semibold uppercase">
                       <span className="text-slate-400">{bulkRows.filter(r => r._status === "pending").length} pending</span>
                       <span className="text-emerald-600">{bulkRows.filter(r => r._status === "success").length} done</span>
                       <span className="text-amber-500">{bulkRows.filter(r => r._status === "duplicate").length} dup</span>
@@ -930,10 +930,10 @@ const Students = () => {
                     <table className="w-full text-xs">
                       <thead>
                         <tr className="bg-slate-50 text-left">
-                          <th className="px-3 py-2 text-[9px] font-black text-slate-400 uppercase">Name</th>
-                          <th className="px-3 py-2 text-[9px] font-black text-slate-400 uppercase">Email</th>
-                          <th className="px-3 py-2 text-[9px] font-black text-slate-400 uppercase">Class</th>
-                          <th className="px-3 py-2 text-[9px] font-black text-slate-400 uppercase text-center">Status</th>
+                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Name</th>
+                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Email</th>
+                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase">Class</th>
+                          <th className="px-3 py-2 text-[12px] font-semibold text-slate-400 uppercase text-center">Status</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-50">
@@ -943,15 +943,15 @@ const Students = () => {
                             <td className="px-3 py-2 text-slate-400 truncate max-w-[160px]">{r.email}</td>
                             <td className="px-3 py-2 text-slate-500">{r.class || "—"}</td>
                             <td className="px-3 py-2 text-center">
-                              {r._status === "pending"   && <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[9px] font-black">PENDING</span>}
-                              {r._status === "success"   && <span className="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-600 text-[9px] font-black">DONE</span>}
-                              {r._status === "duplicate" && <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-600 text-[9px] font-black">DUP</span>}
-                              {r._status === "error"     && <span className="px-2 py-0.5 rounded-md bg-rose-100 text-rose-600 text-[9px] font-black" title={r._error}>ERR</span>}
+                              {r._status === "pending"   && <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[12px] font-semibold">PENDING</span>}
+                              {r._status === "success"   && <span className="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-600 text-[12px] font-semibold">DONE</span>}
+                              {r._status === "duplicate" && <span className="px-2 py-0.5 rounded-md bg-amber-100 text-amber-600 text-[12px] font-semibold">DUP</span>}
+                              {r._status === "error"     && <span className="px-2 py-0.5 rounded-md bg-rose-100 text-rose-600 text-[12px] font-semibold" title={r._error}>ERR</span>}
                             </td>
                           </tr>
                         ))}
                         {bulkRows.length > 50 && (
-                          <tr><td colSpan={4} className="px-3 py-2 text-center text-[10px] text-slate-400">+{bulkRows.length - 50} more rows</td></tr>
+                          <tr><td colSpan={4} className="px-3 py-2 text-center text-[12px] text-slate-400">+{bulkRows.length - 50} more rows</td></tr>
                         )}
                       </tbody>
                     </table>
@@ -965,7 +965,7 @@ const Students = () => {
                     setShowBulkModal(false);
                     setBulkRows([]); setBulkRawRows([]); setBulkHeaders([]); setBulkMapping(EMPTY_MAPPING);
                   }}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-black text-slate-500 hover:bg-slate-50 transition-colors">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors">
                   Cancel
                 </button>
                 <button
@@ -975,7 +975,7 @@ const Students = () => {
                     !bulkMapping.name || !bulkMapping.email ||
                     bulkRows.filter(r => r._status === "pending").length === 0
                   }
-                  className="flex-1 h-11 rounded-xl bg-emerald-700 text-white text-xs font-black hover:bg-emerald-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-emerald-700 text-white text-xs font-semibold hover:bg-emerald-800 transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                   {bulkUploading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Upload className="w-4 h-4" />}
                   {bulkUploading ? "Uploading..." : `Upload ${bulkRows.filter(r => r._status === "pending").length} Students`}
                 </button>
@@ -998,7 +998,7 @@ const Students = () => {
                   <Archive className="w-4.5 h-4.5 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-sm font-black text-white">Archive Academic Year</h2>
+                  <h2 className="text-sm font-semibold text-white">Archive Academic Year</h2>
                   <p className="text-xs text-amber-200">Snapshot all students to archive collection</p>
                 </div>
               </div>
@@ -1011,32 +1011,32 @@ const Students = () => {
 
             <div className="p-6 space-y-5">
               <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
-                <p className="text-xs font-bold text-amber-800">
+                <p className="text-xs font-semibold text-amber-800">
                   This will copy all <strong>{studentsData.length} students</strong> into an archive collection under the selected year.
                   Original records will NOT be deleted — this is a snapshot only.
                 </p>
               </div>
 
               <div>
-                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 block">Archive Year</label>
+                <label className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest mb-2 block">Archive Year</label>
                 <input
                   type="number"
                   value={archiveYear}
                   onChange={e => setArchiveYear(e.target.value)}
                   min="2020"
                   max="2040"
-                  className="w-full h-12 px-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-black text-slate-700 outline-none focus:border-amber-400 transition-all"
+                  className="w-full h-12 px-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 outline-none focus:border-amber-400 transition-all"
                 />
-                <p className="text-[10px] text-slate-400 mt-1">Stored at: students_archive/{archiveYear}/students/...</p>
+                <p className="text-[12px] text-slate-400 mt-1">Stored at: students_archive/{archiveYear}/students/...</p>
               </div>
 
               <div className="flex gap-3">
                 <button onClick={() => setShowArchiveModal(false)} disabled={archiving}
-                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-black text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-40">
+                  className="flex-1 h-11 rounded-xl border border-slate-100 text-xs font-semibold text-slate-500 hover:bg-slate-50 transition-colors disabled:opacity-40">
                   Cancel
                 </button>
                 <button onClick={handleArchive} disabled={archiving}
-                  className="flex-1 h-11 rounded-xl bg-amber-600 text-white text-xs font-black hover:bg-amber-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
+                  className="flex-1 h-11 rounded-xl bg-amber-600 text-white text-xs font-semibold hover:bg-amber-700 transition-colors disabled:opacity-60 flex items-center justify-center gap-2">
                   {archiving ? <Loader2 className="w-4 h-4 animate-spin" /> : <CheckCircle className="w-4 h-4" />}
                   {archiving ? "Archiving..." : "Archive Now"}
                 </button>
@@ -1049,44 +1049,44 @@ const Students = () => {
       {/* Add Scholar Modal */}
       <Dialog open={isAddModalOpen} onOpenChange={setIsAddModalOpen}>
         <DialogContent className="max-w-[calc(100vw-2rem)] sm:max-w-[480px] rounded-[2rem] p-0 overflow-hidden bg-white">
-          <div className="bg-[#1e3a8a] px-6 sm:px-10 py-6 sm:py-8">
-            <DialogTitle className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-3">
+          <div className="bg-[#1D1D1F] px-6 sm:px-10 py-6 sm:py-8">
+            <DialogTitle className="text-xl sm:text-2xl font-semibold text-white tracking-tight flex items-center gap-3">
               <GraduationCap className="w-6 h-6" /> Add New Scholar
             </DialogTitle>
-            <DialogDescription className="text-blue-200/60 font-bold uppercase text-[10px] tracking-widest mt-1">
+            <DialogDescription className="text-blue-200/60 font-semibold uppercase text-[12px] tracking-widest mt-1">
               Institutional Enrollment Registry
             </DialogDescription>
           </div>
 
           <div className="p-6 sm:p-10 space-y-5">
             <div className="space-y-2">
-              <Label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Full Name *</Label>
+              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Full Name *</Label>
               <Input
                 placeholder="e.g. Rahul Sharma"
                 value={newStudent.name}
                 onChange={e => setNewStudent({ ...newStudent, name: e.target.value })}
-                className="rounded-xl border-slate-200 font-bold py-6 px-5 focus:ring-[#1e3a8a]"
+                className="rounded-xl border-slate-200 font-semibold py-6 px-5 focus:ring-[#1D1D1F]"
               />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Email</Label>
+              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Email</Label>
               <Input
                 type="email"
                 placeholder="student@example.com"
                 value={newStudent.email}
                 onChange={e => setNewStudent({ ...newStudent, email: e.target.value })}
-                className="rounded-xl border-slate-200 font-bold py-6 px-5"
+                className="rounded-xl border-slate-200 font-semibold py-6 px-5"
               />
             </div>
 
             <div className="space-y-2">
-              <Label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Class *</Label>
+              <Label className="text-[12px] font-semibold uppercase tracking-widest text-slate-500 ml-1">Class *</Label>
               {classes.length > 0 ? (
                 <select
                   value={newStudent.classId}
                   onChange={e => setNewStudent({ ...newStudent, classId: e.target.value })}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1e3a8a] appearance-none"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#1D1D1F] appearance-none"
                 >
                   <option value="">Select a class...</option>
                   {classes.map(c => (
@@ -1096,7 +1096,7 @@ const Students = () => {
                   ))}
                 </select>
               ) : (
-                <div className="w-full bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm font-bold text-amber-700">
+                <div className="w-full bg-amber-50 border border-amber-200 rounded-xl px-5 py-4 text-sm font-semibold text-amber-700">
                   No classes found. Ask teacher to create classes first.
                 </div>
               )}
@@ -1106,14 +1106,14 @@ const Students = () => {
               <button
                 onClick={handleAddStudent}
                 disabled={saving || !newStudent.name || !newStudent.classId}
-                className="flex-1 bg-[#1e3a8a] text-white px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
+                className="flex-1 bg-[#1D1D1F] text-white px-8 py-4 rounded-xl text-[12px] font-semibold uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {saving && <Loader2 className="w-4 h-4 animate-spin" />}
                 Add Scholar
               </button>
               <button
                 onClick={() => { setIsAddModalOpen(false); setNewStudent({ name: "", email: "", classId: "" }); }}
-                className="px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-50 hover:bg-slate-100 transition-all"
+                className="px-8 py-4 rounded-xl text-[12px] font-semibold uppercase tracking-widest text-slate-500 bg-slate-50 hover:bg-slate-100 transition-all"
               >
                 Cancel
               </button>

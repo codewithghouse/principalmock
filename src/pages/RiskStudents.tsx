@@ -451,44 +451,44 @@ const RiskStudents = () => {
      MOBILE — Bright Blue Apple UI
      ═══════════════════════════════════════════════════════════════ */
   if (isMobile) {
-    const B1 = "#0055FF", B2 = "#1166FF";
-    const BG = "#EEF4FF", BG2 = "#E0ECFF";
-    const T1 = "#001040", T3 = "#5070B0", T4 = "#99AACC";
-    const SEP = "rgba(0,85,255,0.07)";
-    const GREEN = "#00C853", GREEN_D = "#007830", GREEN_S = "rgba(0,200,83,0.10)", GREEN_B = "rgba(0,200,83,0.22)";
-    const RED = "#FF3355";
-    const ORANGE = "#FF8800";
-    const GOLD = "#FFAA00";
-    const SH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 8px rgba(0,85,255,0.08), 0 10px 26px rgba(0,85,255,0.10)";
-    const SH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.11), 0 18px 44px rgba(0,85,255,0.13)";
-    const SH_BTN = "0 6px 22px rgba(0,85,255,0.40), 0 2px 5px rgba(0,85,255,0.20)";
+    const B1 = "#0A84FF", B2 = "#3395FF";
+    const BG = "#F5F5F7", BG2 = "#EBEBF0";
+    const T1 = "#1D1D1F", T3 = "#6E6E73", T4 = "#A1A1A6";
+    const SEP = "rgba(10,132,255,0.07)";
+    const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
+    const RED = "#FF3B30";
+    const ORANGE = "#FF9500";
+    const GOLD = "#FFCC00";
+    const SH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 8px rgba(10,132,255,0.08), 0 10px 26px rgba(10,132,255,0.10)";
+    const SH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.11), 0 18px 44px rgba(10,132,255,0.13)";
+    const SH_BTN = "0 6px 22px rgba(10,132,255,0.40), 0 2px 5px rgba(10,132,255,0.20)";
 
     const monitoringCount = riskStudents.filter(s => s.riskLevel === "MONITORING").length;
 
     const levelTheme = (lvl: RiskLevel) => {
       if (lvl === "CRITICAL") return {
-        accent: `linear-gradient(180deg, ${RED}, #FF6688)`,
-        avBg:   `linear-gradient(135deg, ${RED}, #FF6688)`,
-        avShadow: "0 4px 14px rgba(255,51,85,0.30)",
-        badgeBg: RED, badgeColor: "#fff", badgeShadow: "0 2px 8px rgba(255,51,85,0.28)",
-        dotColor: RED, dotRing: "rgba(255,51,85,0.20)",
-        scoreColor: RED, scoreGrad: `linear-gradient(90deg, ${RED}, #FF88AA)`,
+        accent: `linear-gradient(180deg, ${RED}, #FF5E55)`,
+        avBg:   `linear-gradient(135deg, ${RED}, #FF5E55)`,
+        avShadow: "0 4px 14px rgba(255,59,48,0.30)",
+        badgeBg: RED, badgeColor: "#fff", badgeShadow: "0 2px 8px rgba(255,59,48,0.28)",
+        dotColor: RED, dotRing: "rgba(255,59,48,0.20)",
+        scoreColor: RED, scoreGrad: `linear-gradient(90deg, ${RED}, #FF6961)`,
       };
       if (lvl === "WARNING") return {
-        accent: `linear-gradient(180deg, ${GOLD}, #FFDD44)`,
-        avBg:   `linear-gradient(135deg, ${GOLD}, #FFDD44)`,
-        avShadow: "0 4px 14px rgba(255,170,0,0.30)",
-        badgeBg: GOLD, badgeColor: "#884400", badgeShadow: "0 2px 8px rgba(255,170,0,0.26)",
-        dotColor: GOLD, dotRing: "rgba(255,170,0,0.20)",
-        scoreColor: "#884400", scoreGrad: `linear-gradient(90deg, ${GOLD}, #FFDD44)`,
+        accent: `linear-gradient(180deg, ${GOLD}, #FFCC00)`,
+        avBg:   `linear-gradient(135deg, ${GOLD}, #FFCC00)`,
+        avShadow: "0 4px 14px rgba(255,204,0,0.30)",
+        badgeBg: GOLD, badgeColor: "#86310C", badgeShadow: "0 2px 8px rgba(255,204,0,0.26)",
+        dotColor: GOLD, dotRing: "rgba(255,204,0,0.20)",
+        scoreColor: "#86310C", scoreGrad: `linear-gradient(90deg, ${GOLD}, #FFCC00)`,
       };
       return {
         accent: `linear-gradient(180deg, ${B1}, ${B2})`,
         avBg:   `linear-gradient(135deg, ${B1}, ${B2})`,
-        avShadow: "0 4px 14px rgba(0,85,255,0.28)",
-        badgeBg: B1, badgeColor: "#fff", badgeShadow: "0 2px 8px rgba(0,85,255,0.28)",
-        dotColor: B1, dotRing: "rgba(0,85,255,0.20)",
-        scoreColor: B1, scoreGrad: `linear-gradient(90deg, ${B1}, #4499FF)`,
+        avShadow: "0 4px 14px rgba(10,132,255,0.28)",
+        badgeBg: B1, badgeColor: "#fff", badgeShadow: "0 2px 8px rgba(10,132,255,0.28)",
+        dotColor: B1, dotRing: "rgba(10,132,255,0.20)",
+        scoreColor: B1, scoreGrad: `linear-gradient(90deg, ${B1}, #7CBBFF)`,
       };
     };
 
@@ -500,18 +500,18 @@ const RiskStudents = () => {
 
     return (
       <div data-sfpro className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+        style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif", background: BG, minHeight: "100vh" }}>
 
         {/* Page Head */}
         <div className="px-5 pt-4">
-          <div className="text-[26px] font-bold mb-1" style={{ color: T1, letterSpacing: "-0.7px" }}>Risk Students</div>
+          <div className="text-[28px] font-semibold mb-1" style={{ color: T1, letterSpacing: "-0.7px" }}>Risk Students</div>
           <div className="text-[12px] font-normal" style={{ color: T3 }}>Monitor and intervene with at-risk students</div>
         </div>
 
         {/* Risk Hero Banner (red gradient) */}
-        <div className="mx-5 mt-[14px] rounded-[24px] px-5 py-[18px] relative overflow-hidden"
+        <div className="mx-5 mt-[16px] rounded-[24px] px-5 py-[16px] relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3355 100%)",
+            background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3B30 100%)",
             boxShadow: "0 8px 28px rgba(204,0,51,0.32), 0 0 0 0.5px rgba(255,255,255,0.12)",
           }}>
           <div className="absolute -top-10 -right-7 w-[170px] h-[170px] rounded-full pointer-events-none"
@@ -522,54 +522,54 @@ const RiskStudents = () => {
           }} />
 
           <div className="flex items-center justify-between mb-3 relative z-10">
-            <div className="flex items-center gap-[10px]">
+            <div className="flex items-center gap-[12px]">
               <div className="w-9 h-9 rounded-[12px] flex items-center justify-center"
                 style={{ background: "rgba(255,255,255,0.16)", border: "0.5px solid rgba(255,255,255,0.26)", WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}>
                 <AlertTriangle className="w-[18px] h-[18px]" style={{ color: "rgba(255,255,255,0.92)" }} strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-[8px] font-bold uppercase tracking-[0.12em] mb-[3px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
-                <div className="text-[30px] font-bold leading-none text-white" style={{ letterSpacing: "-1px" }}>{loading ? "—" : riskStudents.length}</div>
+                <div className="text-[12px] font-semibold uppercase tracking-[0.12em] mb-[4px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
+                <div className="text-[28px] font-semibold leading-none text-white" style={{ letterSpacing: "-1px" }}>{loading ? "—" : riskStudents.length}</div>
               </div>
             </div>
-            <div className="flex items-center gap-[5px] px-[13px] py-[6px] rounded-full text-[11px] font-bold text-white"
+            <div className="flex items-center gap-[4px] px-[12px] py-[8px] rounded-full text-[12px] font-semibold text-white"
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)", WebkitBackdropFilter: "blur(8px)", backdropFilter: "blur(8px)" }}>
               <Sparkles className="w-[11px] h-[11px] text-white" strokeWidth={2.5} />
               Needs Action
             </div>
           </div>
-          <div className="flex items-center gap-1 mt-1 text-[11px] font-bold relative z-10" style={{ color: "rgba(255,255,255,0.65)" }}>
+          <div className="flex items-center gap-1 mt-1 text-[12px] font-semibold relative z-10" style={{ color: "rgba(255,255,255,0.65)" }}>
             <span className="mr-[2px]">{newThisWeek >= 0 ? `${newThisWeek} new` : "0"} this week</span>
             <span>· Monitoring Active</span>
           </div>
         </div>
 
         {/* Stat Grid 2x2 — each filters */}
-        <div className="grid grid-cols-2 gap-[10px] px-5 pt-[14px]">
+        <div className="grid grid-cols-2 gap-[12px] px-5 pt-[16px]">
           {[
-            { key: "CRITICAL",   label: "Critical",        val: criticalCount,                                sub: "Immediate action", subColor: RED,     iconColor: RED,    iconBg: "rgba(255,51,85,0.12)",  iconBorder: "rgba(255,51,85,0.22)", Icon: Flame,      valColor: RED },
-            { key: "WARNING",    label: "Warning",         val: warningCount,                                 sub: "Monitor closely",  subColor: "#884400", iconColor: GOLD,   iconBg: "rgba(255,170,0,0.12)", iconBorder: "rgba(255,170,0,0.22)", Icon: Bell,       valColor: GOLD },
-            { key: "All",        label: "New This Week",   val: newThisWeek,                                  sub: "Since Monday",     subColor: T3,      iconColor: B1,     iconBg: "rgba(0,85,255,0.10)",  iconBorder: "rgba(0,85,255,0.18)",  Icon: UserPlus,   valColor: B1 },
-            { key: "MONITORING", label: "Monitoring",      val: monitoringCount,                              sub: "Under watch",      subColor: GREEN_D, iconColor: GREEN,  iconBg: "rgba(0,200,83,0.10)",  iconBorder: "rgba(0,200,83,0.20)",  Icon: ShieldAlert, valColor: GREEN_D },
+            { key: "CRITICAL",   label: "Critical",        val: criticalCount,                                sub: "Immediate action", subColor: RED,     iconColor: RED,    iconBg: "rgba(255,59,48,0.12)",  iconBorder: "rgba(255,59,48,0.22)", Icon: Flame,      valColor: RED },
+            { key: "WARNING",    label: "Warning",         val: warningCount,                                 sub: "Monitor closely",  subColor: "#86310C", iconColor: GOLD,   iconBg: "rgba(255,204,0,0.12)", iconBorder: "rgba(255,204,0,0.22)", Icon: Bell,       valColor: GOLD },
+            { key: "All",        label: "New This Week",   val: newThisWeek,                                  sub: "Since Monday",     subColor: T3,      iconColor: B1,     iconBg: "rgba(10,132,255,0.10)",  iconBorder: "rgba(10,132,255,0.18)",  Icon: UserPlus,   valColor: B1 },
+            { key: "MONITORING", label: "Monitoring",      val: monitoringCount,                              sub: "Under watch",      subColor: GREEN_D, iconColor: GREEN,  iconBg: "rgba(52,199,89,0.10)",  iconBorder: "rgba(52,199,89,0.20)",  Icon: ShieldAlert, valColor: GREEN_D },
           ].map(({ key, label, val, sub, subColor, iconColor, iconBg, iconBorder, Icon, valColor }) => (
             <button
               key={label}
               onClick={() => setFilterTab(key as FilterTab)}
-              className="bg-white rounded-[20px] px-4 py-[15px] relative overflow-hidden cursor-pointer active:scale-[0.96] transition-transform text-left"
-              style={{ boxShadow: SH_LG, border: `0.5px solid ${filterTab === key ? iconColor + "66" : "rgba(0,85,255,0.10)"}`, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
-              <div className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center absolute top-[14px] right-[14px]"
+              className="bg-white rounded-[20px] px-4 py-[16px] relative overflow-hidden cursor-pointer active:scale-[0.96] transition-transform text-left"
+              style={{ boxShadow: SH_LG, border: `0.5px solid ${filterTab === key ? iconColor + "66" : "rgba(10,132,255,0.10)"}`, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+              <div className="w-[30px] h-[30px] rounded-[9px] flex items-center justify-center absolute top-[16px] right-[16px]"
                 style={{ background: iconBg, border: `0.5px solid ${iconBorder}` }}>
                 <Icon className="w-[14px] h-[14px]" style={{ color: iconColor }} strokeWidth={2.4} />
               </div>
-              <div className="text-[9px] font-bold uppercase tracking-[0.08em] mb-2" style={{ color: T4 }}>{label}</div>
-              <div className="text-[28px] font-bold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{loading ? "—" : val}</div>
-              <div className="text-[11px] font-medium truncate" style={{ color: subColor }}>{sub}</div>
+              <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-2" style={{ color: T4 }}>{label}</div>
+              <div className="text-[28px] font-semibold leading-none mb-1" style={{ color: valColor, letterSpacing: "-1px" }}>{loading ? "—" : val}</div>
+              <div className="text-[12px] font-medium truncate" style={{ color: subColor }}>{sub}</div>
             </button>
           ))}
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex gap-[7px] px-5 pt-[14px] overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+        <div className="flex gap-[8px] px-5 pt-[16px] overflow-x-auto" style={{ scrollbarWidth: "none" }}>
           {([
             { key: "All" as FilterTab,         label: "All",        count: riskStudents.length },
             { key: "CRITICAL" as FilterTab,    label: "Critical",   count: criticalCount },
@@ -579,11 +579,11 @@ const RiskStudents = () => {
             const active = filterTab === key;
             return (
               <button key={key} onClick={() => setFilterTab(key)}
-                className="px-4 py-[9px] rounded-[13px] text-[12px] font-bold whitespace-nowrap flex-shrink-0 active:scale-[0.94] transition-transform"
+                className="px-4 py-[8px] rounded-[13px] text-[12px] font-semibold whitespace-nowrap flex-shrink-0 active:scale-[0.94] transition-transform"
                 style={{
                   background: active ? `linear-gradient(135deg, ${B1}, ${B2})` : "#FFFFFF",
                   color: active ? "#fff" : T3,
-                  border: active ? "0.5px solid transparent" : "0.5px solid rgba(0,85,255,0.12)",
+                  border: active ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,0.12)",
                   boxShadow: active ? SH_BTN : SH,
                   transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)",
                 }}>
@@ -594,28 +594,28 @@ const RiskStudents = () => {
         </div>
 
         {/* Section label */}
-        <div className="px-5 pt-4 text-[9px] font-bold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
+        <div className="px-5 pt-4 text-[12px] font-semibold uppercase tracking-[0.10em] flex items-center gap-2" style={{ color: T4 }}>
           <span>Student Risk Profiles</span>
-          <span className="flex-1 h-[0.5px]" style={{ background: "rgba(0,85,255,0.12)" }} />
+          <span className="flex-1 h-[0.5px]" style={{ background: "rgba(10,132,255,0.12)" }} />
         </div>
 
         {/* Loading / Empty / Risk cards */}
         {loading ? (
-          <div className="flex flex-col items-center gap-3 py-14">
+          <div className="flex flex-col items-center gap-3 py-10">
             <Loader2 className="w-10 h-10 animate-spin" style={{ color: B1 }} />
-            <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: T4 }}>Analyzing Student Risk Data…</p>
+            <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: T4 }}>Analyzing Student Risk Data…</p>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="mx-5 mt-3 bg-white rounded-[24px] py-10 flex flex-col items-center gap-[10px]"
-            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+          <div className="mx-5 mt-3 bg-white rounded-[24px] py-10 flex flex-col items-center gap-[12px]"
+            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
             <div className="w-[60px] h-[60px] rounded-[20px] flex items-center justify-center"
-              style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 8px rgba(0,200,83,0.05)" }}>
+              style={{ background: GREEN_S, border: `0.5px solid ${GREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
               <ShieldAlert className="w-7 h-7" style={{ color: GREEN }} strokeWidth={2.2} />
             </div>
-            <div className="text-[14px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>
+            <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>
               {filterTab === "All" ? "No at-risk students detected" : `No ${filterTab.toLowerCase()} students`}
             </div>
-            <div className="text-[11px] text-center max-w-[220px] font-normal leading-[1.55]" style={{ color: T4 }}>
+            <div className="text-[12px] text-center max-w-[220px] font-normal leading-[1.55]" style={{ color: T4 }}>
               {filterTab === "All" ? "Risk factors appear when attendance or results data is recorded." : "Try switching to All to see the full list."}
             </div>
           </div>
@@ -625,28 +625,28 @@ const RiskStudents = () => {
             const initials = getInitials(s.name);
             return (
               <div key={s.id} className="mx-5 mt-3 bg-white rounded-[24px] overflow-hidden relative"
-                style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
+                style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
                 {/* Accent bar */}
                 <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-[2px]" style={{ background: theme.accent }} />
 
                 {/* Top row — tap opens detail view */}
                 <button
                   onClick={() => setSelectedStudent(s)}
-                  className="w-full flex items-start gap-[13px] pl-[22px] pr-[18px] pt-[18px] pb-[14px] text-left active:bg-[#F5F9FF] transition-colors"
+                  className="w-full flex items-start gap-[12px] pl-[24px] pr-[16px] pt-[16px] pb-[16px] text-left active:bg-[#F5F5F7] transition-colors"
                   style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                  <div className="w-12 h-12 rounded-[15px] flex items-center justify-center text-[17px] font-bold text-white shrink-0"
+                  <div className="w-12 h-12 rounded-[15px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
                     style={{ background: theme.avBg, boxShadow: theme.avShadow }}>
                     {initials}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <div className="text-[16px] font-bold truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{s.name}</div>
-                      <div className="px-[11px] py-[5px] rounded-full text-[10px] font-bold uppercase tracking-[0.08em]"
+                      <div className="text-[16px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.3px" }}>{s.name}</div>
+                      <div className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em]"
                         style={{ background: theme.badgeBg, color: theme.badgeColor, boxShadow: theme.badgeShadow }}>
                         {s.riskLevel}
                       </div>
                     </div>
-                    <div className="flex items-center gap-[5px] text-[11px] font-medium" style={{ color: T3 }}>
+                    <div className="flex items-center gap-[4px] text-[12px] font-medium" style={{ color: T3 }}>
                       <Users className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       {s.className || "—"}
                       {s.attPct !== null && ` · Att: ${s.attPct}%`}
@@ -658,42 +658,42 @@ const RiskStudents = () => {
 
                 {/* Meta grid 2x2 */}
                 <div className="grid grid-cols-2">
-                  <div className="px-[14px] py-[13px] flex flex-col gap-1"
+                  <div className="px-[16px] py-[12px] flex flex-col gap-1"
                     style={{ borderRight: `0.5px solid ${SEP}`, borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Level</div>
-                    <div className="flex items-center gap-[5px] text-[13px] font-bold" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Level</div>
+                    <div className="flex items-center gap-[4px] text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>
                       <span className="w-[7px] h-[7px] rounded-full animate-pulse" style={{ background: theme.dotColor, boxShadow: `0 0 0 2.5px ${theme.dotRing}` }} />
                       {s.riskLevel === "CRITICAL" ? "Critical" : s.riskLevel === "WARNING" ? "Warning" : "Monitoring"}
                     </div>
                   </div>
-                  <div className="px-[14px] py-[13px] flex flex-col gap-1" style={{ borderBottom: `0.5px solid ${SEP}` }}>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Days Flagged</div>
-                    <div className="flex items-center gap-[4px] text-[14px] font-bold" style={{ color: ORANGE }}>
+                  <div className="px-[16px] py-[12px] flex flex-col gap-1" style={{ borderBottom: `0.5px solid ${SEP}` }}>
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Days Flagged</div>
+                    <div className="flex items-center gap-[4px] text-[14px] font-semibold" style={{ color: ORANGE }}>
                       <Loader2 className="w-3 h-3" style={{ display: "none" }} />
                       <CalendarPlus className="w-[12px] h-[12px]" strokeWidth={2.4} />
                       {s.daysFlagged > 0 ? `${s.daysFlagged} day${s.daysFlagged === 1 ? "" : "s"}` : "Today"}
                     </div>
                   </div>
-                  <div className="px-[14px] py-[13px] flex flex-col gap-1" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Factors</div>
+                  <div className="px-[16px] py-[12px] flex flex-col gap-1" style={{ borderRight: `0.5px solid ${SEP}` }}>
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Risk Factors</div>
                     <div className="flex flex-wrap gap-1">
                       {s.riskFactors.slice(0, 2).map((f, i) => (
-                        <span key={i} className="inline-flex items-center px-[9px] py-[3px] rounded-full text-[10px] font-bold"
-                          style={{ background: "rgba(255,51,85,0.09)", color: RED, border: "0.5px solid rgba(255,51,85,0.20)" }}>
+                        <span key={i} className="inline-flex items-center px-[8px] py-[4px] rounded-full text-[12px] font-semibold"
+                          style={{ background: "rgba(255,59,48,0.09)", color: RED, border: "0.5px solid rgba(255,59,48,0.20)" }}>
                           {f}
                         </span>
                       ))}
                       {s.riskFactors.length > 2 && (
-                        <span className="text-[10px] font-bold" style={{ color: T3 }}>+{s.riskFactors.length - 2}</span>
+                        <span className="text-[12px] font-semibold" style={{ color: T3 }}>+{s.riskFactors.length - 2}</span>
                       )}
                     </div>
                   </div>
-                  <div className="px-[14px] py-[13px] flex flex-col gap-1">
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned To</div>
-                    <div className="flex items-center gap-[5px] text-[13px] font-bold" style={{ color: T1, letterSpacing: "-0.1px" }}>
+                  <div className="px-[16px] py-[12px] flex flex-col gap-1">
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em]" style={{ color: T4 }}>Assigned To</div>
+                    <div className="flex items-center gap-[4px] text-[13px] font-semibold" style={{ color: T1, letterSpacing: "-0.1px" }}>
                       {s.assignedTo && s.assignedTo !== "—" ? (
                         <>
-                          <span className="w-[22px] h-[22px] rounded-[7px] flex items-center justify-center text-[9px] font-bold text-white"
+                          <span className="w-[22px] h-[22px] rounded-[7px] flex items-center justify-center text-[12px] font-semibold text-white"
                             style={{ background: `linear-gradient(135deg, ${B1}, ${B2})` }}>
                             {getInitials(s.assignedTo)}
                           </span>
@@ -708,27 +708,27 @@ const RiskStudents = () => {
 
                 {/* Score strip */}
                 <div className="flex">
-                  <div className="flex-1 px-[14px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>AVG Score</div>
-                    <div className="text-[22px] font-bold leading-none mb-1" style={{ color: s.avgScore != null && s.avgScore < 40 ? RED : s.avgScore != null && s.avgScore < 55 ? ORANGE : GREEN_D, letterSpacing: "-0.5px" }}>
+                  <div className="flex-1 px-[16px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>AVG Score</div>
+                    <div className="text-[22px] font-semibold leading-none mb-1" style={{ color: s.avgScore != null && s.avgScore < 40 ? RED : s.avgScore != null && s.avgScore < 55 ? ORANGE : GREEN_D, letterSpacing: "-0.5px" }}>
                       {s.avgScore != null ? `${s.avgScore}%` : "—"}
                     </div>
                     <div className="h-1 rounded-[2px] overflow-hidden" style={{ background: BG2 }}>
-                      <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, s.avgScore || 0))}%`, background: s.avgScore != null && s.avgScore < 40 ? `linear-gradient(90deg, ${RED}, #FF88AA)` : s.avgScore != null && s.avgScore < 55 ? `linear-gradient(90deg, ${ORANGE}, #FFDD44)` : `linear-gradient(90deg, ${GREEN}, #66EE88)` }} />
+                      <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, s.avgScore || 0))}%`, background: s.avgScore != null && s.avgScore < 40 ? `linear-gradient(90deg, ${RED}, #FF6961)` : s.avgScore != null && s.avgScore < 55 ? `linear-gradient(90deg, ${ORANGE}, #FFCC00)` : `linear-gradient(90deg, ${GREEN}, #34C759)` }} />
                     </div>
                   </div>
-                  <div className="flex-1 px-[14px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Attendance</div>
-                    <div className="text-[22px] font-bold leading-none mb-1" style={{ color: s.attPct != null && s.attPct >= 85 ? GREEN_D : s.attPct != null && s.attPct >= 70 ? ORANGE : RED, letterSpacing: "-0.5px" }}>
+                  <div className="flex-1 px-[16px] py-3" style={{ borderRight: `0.5px solid ${SEP}` }}>
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Attendance</div>
+                    <div className="text-[22px] font-semibold leading-none mb-1" style={{ color: s.attPct != null && s.attPct >= 85 ? GREEN_D : s.attPct != null && s.attPct >= 70 ? ORANGE : RED, letterSpacing: "-0.5px" }}>
                       {s.attPct != null ? `${s.attPct}%` : "—"}
                     </div>
                     <div className="h-1 rounded-[2px] overflow-hidden" style={{ background: BG2 }}>
-                      <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, s.attPct || 0))}%`, background: s.attPct != null && s.attPct >= 85 ? `linear-gradient(90deg, ${GREEN}, #66EE88)` : s.attPct != null && s.attPct >= 70 ? `linear-gradient(90deg, ${ORANGE}, #FFDD44)` : `linear-gradient(90deg, ${RED}, #FF88AA)` }} />
+                      <div className="h-full rounded-[2px]" style={{ width: `${Math.min(100, Math.max(0, s.attPct || 0))}%`, background: s.attPct != null && s.attPct >= 85 ? `linear-gradient(90deg, ${GREEN}, #34C759)` : s.attPct != null && s.attPct >= 70 ? `linear-gradient(90deg, ${ORANGE}, #FFCC00)` : `linear-gradient(90deg, ${RED}, #FF6961)` }} />
                     </div>
                   </div>
-                  <div className="flex-1 px-[14px] py-3">
-                    <div className="text-[9px] font-bold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Last Action</div>
-                    <div className="text-[13px] font-bold leading-tight mb-1 truncate" style={{ color: s.lastAction && s.lastAction !== "—" ? T1 : T3, letterSpacing: "-0.1px" }}>
+                  <div className="flex-1 px-[16px] py-3">
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.09em] mb-1" style={{ color: T4 }}>Last Action</div>
+                    <div className="text-[13px] font-semibold leading-tight mb-1 truncate" style={{ color: s.lastAction && s.lastAction !== "—" ? T1 : T3, letterSpacing: "-0.1px" }}>
                       {s.lastAction && s.lastAction !== "—" ? s.lastAction : "None yet"}
                     </div>
                     <div className="h-1 rounded-[2px]" style={{ background: BG2 }} />
@@ -736,24 +736,24 @@ const RiskStudents = () => {
                 </div>
 
                 {/* Action buttons */}
-                <div className="flex gap-2 px-4 py-[13px]" style={{ background: "rgba(238,244,255,0.50)" }}>
+                <div className="flex gap-2 px-4 py-[12px]" style={{ background: "rgba(238,244,255,0.50)" }}>
                   <button onClick={() => setMeetingStudent(s)}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[7px] text-[12px] font-bold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${B1}, ${B2})`, boxShadow: SH_BTN, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.14) 0%, transparent 52%)" }} />
                     <CalendarPlus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
                     <span className="relative z-10">Meet</span>
                   </button>
                   <button onClick={() => setSelectedStudent(s)}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[7px] text-[12px] font-bold text-white active:scale-[0.95] transition-transform"
-                    style={{ background: "linear-gradient(135deg, #001040, #001888)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold text-white active:scale-[0.95] transition-transform"
+                    style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                     <ArrowRight className="w-[13px] h-[13px]" strokeWidth={2.3} />
                     View Action
                   </button>
                   <button onClick={() => navigate("/parent-communication")}
-                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[7px] text-[12px] font-bold active:scale-[0.95] transition-transform bg-white"
-                    style={{ border: "0.5px solid rgba(0,85,255,0.16)", color: "#002080", boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
-                    <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+                    className="flex-1 h-[42px] rounded-[13px] flex items-center justify-center gap-[8px] text-[12px] font-semibold active:scale-[0.95] transition-transform bg-white"
+                    style={{ border: "0.5px solid rgba(10,132,255,0.16)", color: "#3A3A3C", boxShadow: SH, transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+                    <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     Notify
                   </button>
                 </div>
@@ -764,59 +764,59 @@ const RiskStudents = () => {
 
         {/* AI Risk Intelligence — contextual on top student */}
         {!loading && topStudent && (
-          <div className="mx-5 mt-3 rounded-[24px] px-[22px] py-5 relative overflow-hidden"
+          <div className="mx-5 mt-3 rounded-[24px] px-[24px] py-5 relative overflow-hidden"
             style={{
-              background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+              background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
               boxShadow: "0 8px 28px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.14)",
             }}>
-            <div className="absolute -top-[38px] -right-[26px] w-[160px] h-[160px] rounded-full pointer-events-none"
+            <div className="absolute -top-[40px] -right-[24px] w-[160px] h-[160px] rounded-full pointer-events-none"
               style={{ background: "radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 65%)" }} />
             <div className="absolute inset-0 pointer-events-none" style={{
               backgroundImage: "linear-gradient(rgba(255,255,255,0.014) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px)",
               backgroundSize: "24px 24px",
             }} />
-            <div className="flex items-center gap-[6px] mb-3 relative z-10">
+            <div className="flex items-center gap-[8px] mb-3 relative z-10">
               <div className="w-7 h-7 rounded-[9px] flex items-center justify-center"
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-[14px] h-[14px]" style={{ color: "rgba(255,255,255,0.90)" }} strokeWidth={2.3} />
               </div>
-              <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
             </div>
             <p className="text-[13px] leading-[1.72] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.85)" }}>
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudent.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudent.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudent.daysFlagged} day{topStudent.daysFlagged === 1 ? "" : "s"}</strong>.
-              {topStudent.avgScore != null && topStudent.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudent.avgScore}%</strong> is significantly below the passing threshold.</>}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.daysFlagged} day{topStudent.daysFlagged === 1 ? "" : "s"}</strong>.
+              {topStudent.avgScore != null && topStudent.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.avgScore}%</strong> is significantly below the passing threshold.</>}
               {topStudent.attPct != null && <> Attendance {topStudent.attPct >= 85 ? "remains strong" : "needs improvement"} at {topStudent.attPct}%.</>}
-              {topStudent.assignedTo && topStudent.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudent.assignedTo}</strong> recommended.</>}
+              {topStudent.assignedTo && topStudent.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudent.assignedTo}</strong> recommended.</>}
             </p>
-            <div className="flex items-center gap-2 mt-[14px] pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
-              <div className="w-[6px] h-[6px] rounded-full" style={{ background: "#4499FF" }} />
-              <span className="text-[9px] font-bold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated · Real-time data</span>
+            <div className="flex items-center gap-2 mt-[16px] pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
+              <div className="w-[6px] h-[6px] rounded-full" style={{ background: "#7CBBFF" }} />
+              <span className="text-[12px] font-semibold uppercase tracking-[0.08em]" style={{ color: "rgba(255,255,255,0.40)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
         )}
 
         {/* Intervention Timeline */}
         {!loading && topStudent && (
-          <div className="mx-5 mt-3 bg-white rounded-[22px] px-[18px] py-[18px]"
-            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
-            <div className="text-[15px] font-bold mb-[14px]" style={{ color: T1, letterSpacing: "-0.2px" }}>Intervention Timeline</div>
+          <div className="mx-5 mt-3 bg-white rounded-[22px] px-[16px] py-[16px]"
+            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
+            <div className="text-[15px] font-semibold mb-[16px]" style={{ color: T1, letterSpacing: "-0.2px" }}>Intervention Timeline</div>
 
             {[
-              { color: RED,    ring: "rgba(255,51,85,0.20)",  action: `Student flagged as ${topStudent.riskLevel.charAt(0) + topStudent.riskLevel.slice(1).toLowerCase()}`, date: `${topStudent.daysFlagged || 0} days ago · Auto-detected`, connector: true },
-              { color: GOLD,   ring: "rgba(255,170,0,0.20)",  action: topStudent.assignedTo && topStudent.assignedTo !== "—" ? `Assigned to ${topStudent.assignedTo}` : "Awaiting counselor assignment", date: topStudent.assignedTo && topStudent.assignedTo !== "—" ? `${topStudent.daysFlagged || 0} days ago · Admin` : "Needs admin review", connector: true },
-              { color: topStudent.lastAction && topStudent.lastAction !== "—" ? B1 : "rgba(0,85,255,0.35)", ring: "rgba(0,85,255,0.12)", action: topStudent.lastAction && topStudent.lastAction !== "—" ? topStudent.lastAction : "No action taken yet", date: topStudent.lastAction && topStudent.lastAction !== "—" ? "Recorded intervention" : "Waiting for teacher intervention", connector: false, muted: !(topStudent.lastAction && topStudent.lastAction !== "—") },
+              { color: RED,    ring: "rgba(255,59,48,0.20)",  action: `Student flagged as ${topStudent.riskLevel.charAt(0) + topStudent.riskLevel.slice(1).toLowerCase()}`, date: `${topStudent.daysFlagged || 0} days ago · Auto-detected`, connector: true },
+              { color: GOLD,   ring: "rgba(255,204,0,0.20)",  action: topStudent.assignedTo && topStudent.assignedTo !== "—" ? `Assigned to ${topStudent.assignedTo}` : "Awaiting counselor assignment", date: topStudent.assignedTo && topStudent.assignedTo !== "—" ? `${topStudent.daysFlagged || 0} days ago · Admin` : "Needs admin review", connector: true },
+              { color: topStudent.lastAction && topStudent.lastAction !== "—" ? B1 : "rgba(10,132,255,0.35)", ring: "rgba(10,132,255,0.12)", action: topStudent.lastAction && topStudent.lastAction !== "—" ? topStudent.lastAction : "No action taken yet", date: topStudent.lastAction && topStudent.lastAction !== "—" ? "Recorded intervention" : "Waiting for teacher intervention", connector: false, muted: !(topStudent.lastAction && topStudent.lastAction !== "—") },
             ].map((row, i) => (
-              <div key={i} className="flex gap-3 mb-[14px] last:mb-0">
+              <div key={i} className="flex gap-3 mb-[16px] last:mb-0">
                 <div className="flex flex-col items-center gap-0 w-4 shrink-0 mt-[2px]">
                   <div className="w-[10px] h-[10px] rounded-full shrink-0" style={{ background: row.color, boxShadow: `0 0 0 2.5px ${row.ring}` }} />
-                  {row.connector && <div className="w-[1.5px] flex-1 min-h-[22px] mt-[3px]" style={{ background: `linear-gradient(180deg, ${row.color}55, rgba(0,85,255,0.10))` }} />}
+                  {row.connector && <div className="w-[1.5px] flex-1 min-h-[22px] mt-[4px]" style={{ background: `linear-gradient(180deg, ${row.color}55, rgba(10,132,255,0.10))` }} />}
                 </div>
                 <div className="flex-1">
-                  <div className="text-[13px] font-bold leading-tight mb-[2px]"
+                  <div className="text-[13px] font-semibold leading-tight mb-[2px]"
                     style={{ color: row.muted ? T4 : T1, letterSpacing: "-0.1px", fontWeight: row.muted ? 600 : 700 }}>
                     {row.action}
                   </div>
-                  <div className="text-[10px] font-semibold" style={{ color: T4 }}>{row.date}</div>
+                  <div className="text-[12px] font-semibold" style={{ color: T4 }}>{row.date}</div>
                 </div>
               </div>
             ))}
@@ -825,30 +825,30 @@ const RiskStudents = () => {
 
         {/* Recommended Actions */}
         {!loading && topStudent && (
-          <div className="mx-5 mt-3 bg-white rounded-[22px] p-[18px]"
-            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(0,85,255,0.10)" }}>
-            <div className="flex items-center gap-[10px] mb-[13px]">
+          <div className="mx-5 mt-3 bg-white rounded-[22px] p-[16px]"
+            style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
+            <div className="flex items-center gap-[12px] mb-[12px]">
               <div className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.18)" }}>
+                style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.18)" }}>
                 <Sparkles className="w-4 h-4" style={{ color: B1 }} strokeWidth={2.3} />
               </div>
-              <div className="text-[14px] font-bold" style={{ color: T1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
+              <div className="text-[14px] font-semibold" style={{ color: T1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
             </div>
             <div className="flex flex-col gap-2">
               {[
                 { label: "Schedule a parent-teacher meeting", sub: "High priority · Within 3 days", ico: CalendarPlus, grad: `linear-gradient(135deg, ${B1}, ${B2})`, onClick: () => setMeetingStudent(topStudent) },
-                { label: "Assign additional practice work",   sub: "Medium priority · This week",   ico: Users,        grad: `linear-gradient(135deg, ${RED}, #FF6688)`, onClick: () => navigate("/assignments") },
-                { label: "Send alert to parent",              sub: "Low priority · Optional",       ico: MessageSquare,grad: `linear-gradient(135deg, ${GREEN}, #22EE66)`, onClick: () => navigate("/parent-communication") },
+                { label: "Assign additional practice work",   sub: "Medium priority · This week",   ico: Users,        grad: `linear-gradient(135deg, ${RED}, #FF5E55)`, onClick: () => navigate("/assignments") },
+                { label: "Send alert to parent",              sub: "Low priority · Optional",       ico: MessageSquare,grad: `linear-gradient(135deg, ${GREEN}, #34C759)`, onClick: () => navigate("/parent-communication") },
               ].map(({ label, sub, ico: Icon, grad, onClick }) => (
                 <button key={label} onClick={onClick}
-                  className="flex items-center gap-[10px] px-[14px] py-3 rounded-[14px] active:scale-[0.98] transition-transform text-left"
-                  style={{ background: BG, border: "0.5px solid rgba(0,85,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
+                  className="flex items-center gap-[12px] px-[16px] py-3 rounded-[14px] active:scale-[0.98] transition-transform text-left"
+                  style={{ background: BG, border: "0.5px solid rgba(10,132,255,0.12)", transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}>
                   <div className="w-7 h-7 rounded-[9px] flex items-center justify-center shrink-0" style={{ background: grad }}>
                     <Icon className="w-[13px] h-[13px] text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[13px] font-bold truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
-                    <div className="text-[11px] font-medium mt-[2px] truncate" style={{ color: T3 }}>{sub}</div>
+                    <div className="text-[13px] font-semibold truncate" style={{ color: T1, letterSpacing: "-0.1px" }}>{label}</div>
+                    <div className="text-[12px] font-medium mt-[2px] truncate" style={{ color: T3 }}>{sub}</div>
                   </div>
                   <ChevronRight className="w-[13px] h-[13px]" style={{ color: T4 }} strokeWidth={2.5} />
                 </button>
@@ -878,24 +878,24 @@ const RiskStudents = () => {
   // ═══════════════════════════════════════════════════════════════
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
-  const dB1 = "#0055FF", dB2 = "#1166FF", dB4 = "#4499FF";
-  const dBG = "#EEF4FF", dBG2 = "#E0ECFF";
-  const dT1 = "#001040", dT2 = "#002080", dT3 = "#5070B0", dT4 = "#99AACC";
-  const dSEP = "rgba(0,85,255,0.08)";
-  const dGREEN = "#00C853", dGREEN_D = "#007830", dGREEN_S = "rgba(0,200,83,0.10)", dGREEN_B = "rgba(0,200,83,0.22)";
-  const dRED = "#FF3355", dRED_S = "rgba(255,51,85,0.10)", dRED_B = "rgba(255,51,85,0.22)";
-  const dORANGE = "#FF8800";
-  const dGOLD = "#FFAA00";
-  const dSH = "0 0 0 0.5px rgba(0,85,255,0.08), 0 2px 10px rgba(0,85,255,0.07), 0 10px 28px rgba(0,85,255,0.09)";
-  const dSH_LG = "0 0 0 0.5px rgba(0,85,255,0.10), 0 4px 16px rgba(0,85,255,0.10), 0 18px 44px rgba(0,85,255,0.12)";
-  const dSH_BTN = "0 6px 22px rgba(0,85,255,0.38), 0 2px 5px rgba(0,85,255,0.18)";
+  const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
+  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
+  const dSEP = "rgba(10,132,255,0.08)";
+  const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
+  const dRED = "#FF3B30", dRED_S = "rgba(255,59,48,0.10)", dRED_B = "rgba(255,59,48,0.22)";
+  const dORANGE = "#FF9500";
+  const dGOLD = "#FFCC00";
+  const dSH = "0 0 0 0.5px rgba(10,132,255,0.08), 0 2px 10px rgba(10,132,255,0.07), 0 10px 28px rgba(10,132,255,0.09)";
+  const dSH_LG = "0 0 0 0.5px rgba(10,132,255,0.10), 0 4px 16px rgba(10,132,255,0.10), 0 18px 44px rgba(10,132,255,0.12)";
+  const dSH_BTN = "0 6px 22px rgba(10,132,255,0.38), 0 2px 5px rgba(10,132,255,0.18)";
 
   const monitoringCount = riskStudents.filter(s => s.riskLevel === "MONITORING").length;
 
   const levelThemeD = (lvl: RiskLevel) => {
-    if (lvl === "CRITICAL") return { color: dRED,    soft: dRED_S,    border: dRED_B,    grad: `linear-gradient(135deg, ${dRED}, #FF6688)`,    shadow: "0 4px 14px rgba(255,51,85,0.26)" };
-    if (lvl === "WARNING")  return { color: dGOLD,   soft: "rgba(255,170,0,0.10)", border: "rgba(255,170,0,0.22)", grad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`, shadow: "0 4px 14px rgba(255,170,0,0.24)" };
-    return                      { color: dB1,    soft: "rgba(0,85,255,0.10)",  border: "rgba(0,85,255,0.20)",  grad: `linear-gradient(135deg, ${dB1}, ${dB2})`,     shadow: "0 4px 14px rgba(0,85,255,0.26)" };
+    if (lvl === "CRITICAL") return { color: dRED,    soft: dRED_S,    border: dRED_B,    grad: `linear-gradient(135deg, ${dRED}, #FF5E55)`,    shadow: "0 4px 14px rgba(255,59,48,0.26)" };
+    if (lvl === "WARNING")  return { color: dGOLD,   soft: "rgba(255,204,0,0.10)", border: "rgba(255,204,0,0.22)", grad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`, shadow: "0 4px 14px rgba(255,204,0,0.24)" };
+    return                      { color: dB1,    soft: "rgba(10,132,255,0.10)",  border: "rgba(10,132,255,0.20)",  grad: `linear-gradient(135deg, ${dB1}, ${dB2})`,     shadow: "0 4px 14px rgba(10,132,255,0.26)" };
   };
 
   const getInitialsD = (name: string) =>
@@ -906,24 +906,24 @@ const RiskStudents = () => {
   // ── Render ───────────────────────────────────────────────────────────────────
   return (
     <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+      style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center gap-4 pt-2 pb-5">
         <div className="w-12 h-12 rounded-[14px] flex items-center justify-center shrink-0"
-          style={{ background: `linear-gradient(135deg, ${dRED}, #FF6688)`, boxShadow: "0 6px 18px rgba(255,51,85,0.28)" }}>
+          style={{ background: `linear-gradient(135deg, ${dRED}, #FF5E55)`, boxShadow: "0 6px 18px rgba(255,59,48,0.28)" }}>
           <AlertTriangle className="w-[22px] h-[22px] text-white" strokeWidth={2.4} />
         </div>
         <div>
-          <div className="text-[24px] font-bold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Risk Students</div>
+          <div className="text-[24px] font-semibold leading-none" style={{ color: dT1, letterSpacing: "-0.6px" }}>Risk Students</div>
           <div className="text-[12px] mt-1" style={{ color: dT3 }}>Monitor and intervene with at-risk students</div>
         </div>
       </div>
 
       {/* Red Hero Banner */}
-      <div className="rounded-[22px] px-7 py-6 relative overflow-hidden text-white"
+      <div className="rounded-[22px] px-8 py-6 relative overflow-hidden text-white"
         style={{
-          background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3355 100%)",
+          background: "linear-gradient(135deg, #660011 0%, #990022 35%, #CC0033 70%, #FF3B30 100%)",
           boxShadow: "0 10px 36px rgba(204,0,51,0.30), 0 0 0 0.5px rgba(255,255,255,0.10)",
         }}>
         <div className="absolute -right-12 -top-12 w-[220px] h-[220px] rounded-full pointer-events-none"
@@ -935,20 +935,20 @@ const RiskStudents = () => {
               <AlertTriangle className="w-7 h-7 text-white animate-pulse" strokeWidth={2.2} />
             </div>
             <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.16em] mb-[6px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
+              <div className="text-[12px] font-semibold uppercase tracking-[0.16em] mb-[8px]" style={{ color: "rgba(255,255,255,0.55)" }}>Total At-Risk</div>
               <div className="flex items-baseline gap-2">
-                <span className="text-[48px] font-bold leading-none tracking-tight">{loading ? "—" : riskStudents.length}</span>
+                <span className="text-[28px] font-semibold leading-none tracking-tight">{loading ? "—" : riskStudents.length}</span>
                 <span className="text-[14px] font-semibold" style={{ color: "rgba(255,255,255,0.50)" }}>students flagged</span>
               </div>
             </div>
           </div>
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-bold"
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full text-[12px] font-semibold"
               style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.28)" }}>
               <Sparkles className="w-[13px] h-[13px]" strokeWidth={2.4} />
               Needs Action
             </div>
-            <div className="flex items-center gap-2 text-[12px] font-bold" style={{ color: "rgba(255,255,255,0.82)" }}>
+            <div className="flex items-center gap-2 text-[12px] font-semibold" style={{ color: "rgba(255,255,255,0.82)" }}>
               <UserPlus className="w-[14px] h-[14px]" strokeWidth={2.4} />
               {newThisWeek} new this week
             </div>
@@ -959,17 +959,17 @@ const RiskStudents = () => {
       {/* 4 Stat Cards (filters) — Apple-level minimal */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
         {[
-          { key: "CRITICAL" as FilterTab,   label: "Critical",      val: criticalCount,   sub: "Immediate action", Icon: Flame,       grad: `linear-gradient(135deg, ${dRED}, #FF6688)`,   valColor: dRED,     ringColor: "rgba(255,51,85,0.18)",  shadow: "0 6px 16px rgba(255,51,85,0.22)"  },
-          { key: "WARNING" as FilterTab,    label: "Warning",       val: warningCount,    sub: "Monitor closely",  Icon: Bell,        grad: `linear-gradient(135deg, ${dGOLD}, #FFDD44)`,  valColor: dGOLD,    ringColor: "rgba(255,170,0,0.20)",  shadow: "0 6px 16px rgba(255,170,0,0.22)"  },
-          { key: "All" as FilterTab,        label: "New This Week", val: newThisWeek,     sub: "Since Monday",     Icon: UserPlus,    grad: `linear-gradient(135deg, ${dB1}, ${dB2})`,     valColor: dB1,      ringColor: "rgba(0,85,255,0.18)",   shadow: "0 6px 16px rgba(0,85,255,0.22)"  },
-          { key: "MONITORING" as FilterTab, label: "Monitoring",    val: monitoringCount, sub: "Under watch",      Icon: ShieldAlert, grad: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, valColor: dGREEN_D, ringColor: "rgba(0,200,83,0.20)",   shadow: "0 6px 16px rgba(0,200,83,0.22)"  },
+          { key: "CRITICAL" as FilterTab,   label: "Critical",      val: criticalCount,   sub: "Immediate action", Icon: Flame,       grad: `linear-gradient(135deg, ${dRED}, #FF5E55)`,   valColor: dRED,     ringColor: "rgba(255,59,48,0.18)",  shadow: "0 6px 16px rgba(255,59,48,0.22)"  },
+          { key: "WARNING" as FilterTab,    label: "Warning",       val: warningCount,    sub: "Monitor closely",  Icon: Bell,        grad: `linear-gradient(135deg, ${dGOLD}, #FFCC00)`,  valColor: dGOLD,    ringColor: "rgba(255,204,0,0.20)",  shadow: "0 6px 16px rgba(255,204,0,0.22)"  },
+          { key: "All" as FilterTab,        label: "New This Week", val: newThisWeek,     sub: "Since Monday",     Icon: UserPlus,    grad: `linear-gradient(135deg, ${dB1}, ${dB2})`,     valColor: dB1,      ringColor: "rgba(10,132,255,0.18)",   shadow: "0 6px 16px rgba(10,132,255,0.22)"  },
+          { key: "MONITORING" as FilterTab, label: "Monitoring",    val: monitoringCount, sub: "Under watch",      Icon: ShieldAlert, grad: `linear-gradient(135deg, ${dGREEN}, #34C759)`, valColor: dGREEN_D, ringColor: "rgba(52,199,89,0.20)",   shadow: "0 6px 16px rgba(52,199,89,0.22)"  },
         ].map(({ key, label, val, sub, Icon, grad, valColor, ringColor, shadow }) => {
           const active = filterTab === key;
           return (
             <button
               key={label}
               onClick={() => setFilterTab(key)}
-              className="bg-white rounded-[18px] px-5 py-[18px] relative text-left transition-all duration-200 ease-out hover:-translate-y-[1px] focus:outline-none"
+              className="bg-white rounded-[18px] px-5 py-[16px] relative text-left transition-all duration-200 ease-out hover:-translate-y-[1px] focus:outline-none"
               style={{
                 boxShadow: active
                   ? `0 0 0 1px ${ringColor}, 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06)`
@@ -977,7 +977,7 @@ const RiskStudents = () => {
               }}
             >
               <div className="flex items-start justify-between mb-3">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.12em]" style={{ color: "#94A3B8" }}>
+                <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "#A1A1A6" }}>
                   {label}
                 </span>
                 <div
@@ -988,12 +988,12 @@ const RiskStudents = () => {
                 </div>
               </div>
               <p
-                className="text-[32px] font-bold tracking-tight leading-none mb-2"
+                className="text-[28px] font-semibold tracking-tight leading-none mb-2"
                 style={{ color: valColor, letterSpacing: "-1px", fontFeatureSettings: "'tnum' 1" }}
               >
                 {loading ? "—" : val}
               </p>
-              <p className="text-[11px] font-medium" style={{ color: "#94A3B8" }}>{sub}</p>
+              <p className="text-[12px] font-medium" style={{ color: "#A1A1A6" }}>{sub}</p>
             </button>
           );
         })}
@@ -1008,7 +1008,7 @@ const RiskStudents = () => {
             <button
               key={tab}
               onClick={() => setFilterTab(tab)}
-              className="h-10 px-5 rounded-[13px] text-[13px] font-bold transition-transform hover:scale-[1.02]"
+              className="h-10 px-5 rounded-[13px] text-[13px] font-semibold transition-transform hover:scale-[1.02]"
               style={{
                 background: active ? `linear-gradient(135deg, ${dB1}, ${dB2})` : "#FFFFFF",
                 color: active ? "#fff" : dT3,
@@ -1024,32 +1024,32 @@ const RiskStudents = () => {
       {/* Section Label */}
       <div className="flex items-center gap-3 mt-6 mb-3">
         <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-          style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.22)" }}>
+          style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.22)" }}>
           <Users className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
         </div>
-        <div className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Student Risk Profiles</div>
-        <span className="text-[11px] font-bold px-3 py-1 rounded-full"
-          style={{ background: "rgba(0,85,255,0.10)", color: dB1, border: "0.5px solid rgba(0,85,255,0.18)" }}>
+        <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Student Risk Profiles</div>
+        <span className="text-[12px] font-semibold px-3 py-1 rounded-full"
+          style={{ background: "rgba(10,132,255,0.10)", color: dB1, border: "0.5px solid rgba(10,132,255,0.18)" }}>
           {filtered.length}
         </span>
       </div>
 
       {/* Cards grid */}
       {loading ? (
-        <div className="bg-white rounded-[20px] py-16 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <Loader2 className="w-10 h-10 animate-spin" style={{ color: dB1 }} />
-          <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: dT4 }}>Analyzing Student Risk Data…</p>
+          <p className="text-[12px] font-semibold uppercase tracking-widest" style={{ color: dT4 }}>Analyzing Student Risk Data…</p>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="bg-white rounded-[20px] py-20 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
+        <div className="bg-white rounded-[20px] py-10 flex flex-col items-center gap-3 text-center" style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
           <div className="w-16 h-16 rounded-[18px] flex items-center justify-center"
-            style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(0,200,83,0.05)" }}>
+            style={{ background: dGREEN_S, border: `0.5px solid ${dGREEN_B}`, boxShadow: "0 0 0 8px rgba(52,199,89,0.05)" }}>
             <ShieldAlert className="w-8 h-8" style={{ color: dGREEN }} strokeWidth={2.2} />
           </div>
-          <p className="text-[14px] font-bold" style={{ color: dT1 }}>
+          <p className="text-[14px] font-semibold" style={{ color: dT1 }}>
             {filterTab === "All" ? "No at-risk students detected" : `No ${filterTab.toLowerCase()} students`}
           </p>
-          <p className="text-[11px] max-w-[280px]" style={{ color: dT4 }}>
+          <p className="text-[12px] max-w-[280px]" style={{ color: dT4 }}>
             {filterTab === "All" ? "Risk factors appear when attendance or results data is recorded" : "Try switching to All to see the full list"}
           </p>
         </div>
@@ -1066,19 +1066,19 @@ const RiskStudents = () => {
                 <button onClick={() => setSelectedStudent(s)}
                   className="w-full flex items-center gap-4 pl-6 pr-5 pt-5 pb-4 text-left hover:bg-[#F8FAFF] transition-colors"
                   style={{ borderBottom: `0.5px solid ${dSEP}` }}>
-                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[17px] font-bold text-white shrink-0"
+                  <div className="w-[52px] h-[52px] rounded-[16px] flex items-center justify-center text-[18px] font-semibold text-white shrink-0"
                     style={{ background: theme.grad, boxShadow: theme.shadow }}>
                     {getInitialsD(s.name)}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap mb-1">
-                      <div className="text-[15px] font-bold truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{s.name}</div>
-                      <span className="px-[10px] py-[4px] rounded-full text-[9px] font-bold uppercase tracking-[0.08em] text-white"
+                      <div className="text-[15px] font-semibold truncate" style={{ color: dT1, letterSpacing: "-0.2px" }}>{s.name}</div>
+                      <span className="px-[12px] py-[4px] rounded-full text-[12px] font-semibold uppercase tracking-[0.08em] text-white"
                         style={{ background: theme.grad, boxShadow: `0 2px 6px ${theme.color}44` }}>
                         {s.riskLevel}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-medium" style={{ color: dT3 }}>
+                    <div className="flex items-center gap-1.5 text-[12px] font-medium" style={{ color: dT3 }}>
                       <Users className="w-[11px] h-[11px]" strokeWidth={2.5} />
                       {s.className || "—"}
                       {s.attPct !== null && ` · Att: ${s.attPct}%`}
@@ -1098,8 +1098,8 @@ const RiskStudents = () => {
                   ].map((cell, i, arr) => (
                     <div key={cell.label} className="px-4 py-3"
                       style={{ borderRight: i < arr.length - 1 ? `0.5px solid ${dSEP}` : undefined, borderBottom: `0.5px solid ${dSEP}` }}>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] mb-[5px]" style={{ color: dT4 }}>{cell.label}</div>
-                      <div className="text-[14px] font-bold truncate" style={{ color: cell.color, letterSpacing: "-0.1px" }}>{cell.val}</div>
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-[4px]" style={{ color: dT4 }}>{cell.label}</div>
+                      <div className="text-[14px] font-semibold truncate" style={{ color: cell.color, letterSpacing: "-0.1px" }}>{cell.val}</div>
                     </div>
                   ))}
                 </div>
@@ -1108,13 +1108,13 @@ const RiskStudents = () => {
                 {s.riskFactors.length > 0 && (
                   <div className="px-6 py-3 flex flex-wrap gap-1.5" style={{ borderBottom: `0.5px solid ${dSEP}` }}>
                     {s.riskFactors.slice(0, 4).map((f, i) => (
-                      <span key={i} className="inline-flex items-center px-[10px] py-[4px] rounded-full text-[10px] font-bold"
+                      <span key={i} className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
                         style={{ background: dRED_S, color: dRED, border: `0.5px solid ${dRED_B}` }}>
                         {f}
                       </span>
                     ))}
                     {s.riskFactors.length > 4 && (
-                      <span className="inline-flex items-center px-[10px] py-[4px] rounded-full text-[10px] font-bold"
+                      <span className="inline-flex items-center px-[12px] py-[4px] rounded-full text-[12px] font-semibold"
                         style={{ background: dBG2, color: dT3 }}>
                         +{s.riskFactors.length - 4} more
                       </span>
@@ -1131,8 +1131,8 @@ const RiskStudents = () => {
                   ].map((cell, i, arr) => (
                     <div key={cell.label} className="px-4 py-3"
                       style={{ borderRight: i < arr.length - 1 ? `0.5px solid ${dSEP}` : undefined, borderBottom: `0.5px solid ${dSEP}` }}>
-                      <div className="text-[9px] font-bold uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
-                      <div className={`${cell.isText ? "text-[13px]" : "text-[20px]"} font-bold leading-none ${cell.isText ? "mb-0 truncate" : "mb-1.5"}`}
+                      <div className="text-[12px] font-semibold uppercase tracking-[0.08em] mb-1" style={{ color: dT4 }}>{cell.label}</div>
+                      <div className={`${cell.isText ? "text-[13px]" : "text-[20px]"} font-semibold leading-none ${cell.isText ? "mb-0 truncate" : "mb-1.5"}`}
                         style={{ color: cell.color, letterSpacing: "-0.3px" }}>{cell.val}</div>
                       {!cell.isText && (
                         <div className="h-1 rounded-[2px]" style={{ background: dBG2 }}>
@@ -1146,22 +1146,22 @@ const RiskStudents = () => {
                 {/* Actions */}
                 <div className="flex gap-2 p-4">
                   <button onClick={() => setMeetingStudent(s)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-bold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02] relative overflow-hidden"
                     style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: dSH_BTN }}>
                     <div className="absolute inset-0 pointer-events-none" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 52%)" }} />
                     <CalendarPlus className="w-[13px] h-[13px] relative z-10" strokeWidth={2.3} />
                     <span className="relative z-10">Schedule Meet</span>
                   </button>
                   <button onClick={() => setSelectedStudent(s)}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-bold text-white transition-transform hover:scale-[1.02]"
-                    style={{ background: "linear-gradient(135deg, #001040, #001888)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)" }}>
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold text-white transition-transform hover:scale-[1.02]"
+                    style={{ background: "linear-gradient(135deg, #1D1D1F, #0A84FF)", boxShadow: "0 4px 14px rgba(0,8,64,0.26)" }}>
                     <ArrowRight className="w-[13px] h-[13px]" strokeWidth={2.3} />
                     View Intervention
                   </button>
                   <button onClick={() => navigate("/parent-communication")}
-                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-bold bg-white transition-transform hover:scale-[1.02]"
+                    className="flex-1 h-10 rounded-[12px] flex items-center justify-center gap-1.5 text-[12px] font-semibold bg-white transition-transform hover:scale-[1.02]"
                     style={{ border: `0.5px solid ${dSEP}`, color: dT2, boxShadow: dSH }}>
-                    <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(0,85,255,0.6)" }} strokeWidth={2.3} />
+                    <MessageSquare className="w-[13px] h-[13px]" style={{ color: "rgba(10,132,255,0.6)" }} strokeWidth={2.3} />
                     Notify Parent
                   </button>
                 </div>
@@ -1176,9 +1176,9 @@ const RiskStudents = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5">
 
           {/* AI Intelligence Card */}
-          <div className="rounded-[22px] px-7 py-6 relative overflow-hidden"
+          <div className="rounded-[22px] px-8 py-6 relative overflow-hidden"
             style={{
-              background: "linear-gradient(140deg, #001888 0%, #0033CC 48%, #0055FF 100%)",
+              background: "linear-gradient(140deg, #0A84FF 0%, #0A84FF 48%, #0A84FF 100%)",
               boxShadow: "0 10px 36px rgba(0,51,204,0.28), 0 0 0 0.5px rgba(255,255,255,0.12)",
             }}>
             <div className="absolute -top-10 -right-7 w-[200px] h-[200px] rounded-full pointer-events-none"
@@ -1188,35 +1188,35 @@ const RiskStudents = () => {
                 style={{ background: "rgba(255,255,255,0.18)", border: "0.5px solid rgba(255,255,255,0.26)" }}>
                 <Sparkles className="w-4 h-4 text-white" strokeWidth={2.4} />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>AI Risk Intelligence</span>
             </div>
             <p className="text-[14px] leading-[1.75] font-normal relative z-10" style={{ color: "rgba(255,255,255,0.88)" }}>
-              <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudentD.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudentD.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudentD.daysFlagged} day{topStudentD.daysFlagged === 1 ? "" : "s"}</strong>.
-              {topStudentD.avgScore != null && topStudentD.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudentD.avgScore}%</strong> is significantly below the passing threshold.</>}
+              <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.name}</strong> has been flagged as <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.riskLevel.toLowerCase()}</strong> for <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.daysFlagged} day{topStudentD.daysFlagged === 1 ? "" : "s"}</strong>.
+              {topStudentD.avgScore != null && topStudentD.avgScore < 40 && <> Average score of <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.avgScore}%</strong> is significantly below the passing threshold.</>}
               {topStudentD.attPct != null && <> Attendance {topStudentD.attPct >= 85 ? "remains strong" : "needs improvement"} at {topStudentD.attPct}%.</>}
-              {topStudentD.assignedTo && topStudentD.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 700 }}>{topStudentD.assignedTo}</strong> recommended.</>}
+              {topStudentD.assignedTo && topStudentD.assignedTo !== "—" && <> Intervention by <strong style={{ color: "#fff", fontWeight: 600 }}>{topStudentD.assignedTo}</strong> recommended.</>}
             </p>
             <div className="flex items-center gap-2 mt-4 pt-3 relative z-10" style={{ borderTop: "0.5px solid rgba(255,255,255,0.12)" }}>
               <div className="w-[6px] h-[6px] rounded-full animate-pulse" style={{ background: dB4 }} />
-              <span className="text-[10px] font-bold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.10em]" style={{ color: "rgba(255,255,255,0.45)" }}>Auto-generated · Real-time data</span>
             </div>
           </div>
 
           {/* Recommended Actions */}
           <div className="bg-white rounded-[22px] p-6"
             style={{ boxShadow: dSH_LG, border: `0.5px solid ${dSEP}` }}>
-            <div className="flex items-center gap-[10px] mb-4">
+            <div className="flex items-center gap-[12px] mb-4">
               <div className="w-9 h-9 rounded-[11px] flex items-center justify-center"
-                style={{ background: "rgba(0,85,255,0.10)", border: "0.5px solid rgba(0,85,255,0.20)" }}>
+                style={{ background: "rgba(10,132,255,0.10)", border: "0.5px solid rgba(10,132,255,0.20)" }}>
                 <Sparkles className="w-4 h-4" style={{ color: dB1 }} strokeWidth={2.4} />
               </div>
-              <div className="text-[15px] font-bold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
+              <div className="text-[15px] font-semibold" style={{ color: dT1, letterSpacing: "-0.2px" }}>Recommended Actions</div>
             </div>
             <div className="flex flex-col gap-2">
               {[
                 { label: "Schedule parent-teacher meeting", sub: "High priority · Within 3 days", Icon: CalendarPlus, grad: `linear-gradient(135deg, ${dB1}, ${dB2})`, onClick: () => setMeetingStudent(topStudentD) },
-                { label: "Assign additional practice work", sub: "Medium priority · This week", Icon: Users, grad: `linear-gradient(135deg, ${dRED}, #FF6688)`, onClick: () => navigate("/assignments") },
-                { label: "Send alert to parent", sub: "Low priority · Optional", Icon: MessageSquare, grad: `linear-gradient(135deg, ${dGREEN}, #22EE66)`, onClick: () => navigate("/parent-communication") },
+                { label: "Assign additional practice work", sub: "Medium priority · This week", Icon: Users, grad: `linear-gradient(135deg, ${dRED}, #FF5E55)`, onClick: () => navigate("/assignments") },
+                { label: "Send alert to parent", sub: "Low priority · Optional", Icon: MessageSquare, grad: `linear-gradient(135deg, ${dGREEN}, #34C759)`, onClick: () => navigate("/parent-communication") },
               ].map(({ label, sub, Icon, grad, onClick }) => (
                 <button key={label} onClick={onClick}
                   className="flex items-center gap-3 px-4 py-3 rounded-[14px] transition-transform hover:scale-[1.01] text-left"
@@ -1225,8 +1225,8 @@ const RiskStudents = () => {
                     <Icon className="w-[14px] h-[14px] text-white" strokeWidth={2.3} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-[13px] font-bold truncate" style={{ color: dT1, letterSpacing: "-0.1px" }}>{label}</div>
-                    <div className="text-[11px] font-medium mt-0.5 truncate" style={{ color: dT3 }}>{sub}</div>
+                    <div className="text-[13px] font-semibold truncate" style={{ color: dT1, letterSpacing: "-0.1px" }}>{label}</div>
+                    <div className="text-[12px] font-medium mt-1 truncate" style={{ color: dT3 }}>{sub}</div>
                   </div>
                   <ChevronRight className="w-[14px] h-[14px]" style={{ color: dT4 }} strokeWidth={2.5} />
                 </button>

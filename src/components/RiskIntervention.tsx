@@ -102,10 +102,10 @@ const RiskIntervention = ({ student, onBack }: Props) => {
         : student.attPct < 75
           ? `Below 75% threshold (currently ${student.attPct}%)`
           : `Good — ${student.attPct}%`,
-      color: student.attPct === null ? "#94a3b8"
-        : student.attPct < 60 ? "#ef4444"
-        : student.attPct < 75 ? "#f59e0b"
-        : "#22c55e",
+      color: student.attPct === null ? "#A1A1A6"
+        : student.attPct < 60 ? "#FF3B30"
+        : student.attPct < 75 ? "#FF9500"
+        : "#34C759",
     },
     {
       label: "Academic Average",
@@ -117,10 +117,10 @@ const RiskIntervention = ({ student, onBack }: Props) => {
           : student.avgScore < 55
             ? `Below average — ${student.avgScore}%`
             : `Passing — ${student.avgScore}%`,
-      color: student.avgScore === null ? "#94a3b8"
-        : student.avgScore < 40 ? "#ef4444"
-        : student.avgScore < 55 ? "#f59e0b"
-        : "#22c55e",
+      color: student.avgScore === null ? "#A1A1A6"
+        : student.avgScore < 40 ? "#FF3B30"
+        : student.avgScore < 55 ? "#FF9500"
+        : "#34C759",
     },
     {
       label: "Discipline Score",
@@ -128,9 +128,9 @@ const RiskIntervention = ({ student, onBack }: Props) => {
       desc: student.incidentCount === 0
         ? "No incidents recorded"
         : `${student.incidentCount} incident${student.incidentCount > 1 ? "s" : ""} logged`,
-      color: student.incidentCount === 0 ? "#22c55e"
-        : student.incidentCount >= 3 ? "#ef4444"
-        : "#f59e0b",
+      color: student.incidentCount === 0 ? "#34C759"
+        : student.incidentCount >= 3 ? "#FF3B30"
+        : "#FF9500",
     },
     {
       label: "Parent Engagement",
@@ -140,9 +140,9 @@ const RiskIntervention = ({ student, onBack }: Props) => {
         : student.parentEngagement < 40
           ? "Low engagement with school"
           : "Actively communicating",
-      color: student.parentEngagement < 20 ? "#ef4444"
-        : student.parentEngagement < 60 ? "#f59e0b"
-        : "#22c55e",
+      color: student.parentEngagement < 20 ? "#FF3B30"
+        : student.parentEngagement < 60 ? "#FF9500"
+        : "#34C759",
     },
   ];
 
@@ -267,7 +267,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
           to: student.email,
           subject: `Risk Alert: ${student.name} needs attention`,
           html: `<div style="font-family:sans-serif;padding:24px">
-            <h2 style="color:#1e3a8a">Risk Alert — ${student.name}</h2>
+            <h2 style="color:#1D1D1F">Risk Alert — ${student.name}</h2>
             <p>Risk Level: <strong>${student.riskLevel}</strong></p>
             <p>Factors: ${student.riskFactors.join(", ")}</p>
             ${student.attPct !== null ? `<p>Attendance: ${student.attPct}%</p>` : ""}
@@ -334,12 +334,12 @@ const RiskIntervention = ({ student, onBack }: Props) => {
 
   // ── Render ───────────────────────────────────────────────────────────────────
   return (
-    <div className="animate-in fade-in duration-500 pb-12 space-y-6">
+    <div className="animate-in fade-in duration-500 pb-10 space-y-6">
 
       {/* Back */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors"
+        className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors"
       >
         <ChevronLeft className="w-4 h-4" /> Back to Risk Students
       </button>
@@ -351,7 +351,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
         "bg-slate-50 border-slate-100"
       }`}>
         <div className="flex items-center gap-5">
-          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-black shadow-md ${
+          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-white text-xl font-semibold shadow-md ${
             student.riskLevel === "CRITICAL" ? "bg-rose-500" :
             student.riskLevel === "WARNING"  ? "bg-amber-500" : "bg-slate-500"
           }`}>
@@ -359,15 +359,15 @@ const RiskIntervention = ({ student, onBack }: Props) => {
           </div>
           <div>
             <div className="flex items-center gap-3 flex-wrap mb-1">
-              <h1 className="text-2xl font-black text-slate-900">{student.name}</h1>
-              <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider text-white ${
+              <h1 className="text-2xl font-semibold text-slate-900">{student.name}</h1>
+              <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider text-white ${
                 student.riskLevel === "CRITICAL" ? "bg-rose-500" :
                 student.riskLevel === "WARNING"  ? "bg-amber-500" : "bg-slate-500"
               }`}>
                 {student.riskLevel} RISK
               </span>
               {student.daysFlagged > 0 && (
-                <span className="px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider bg-amber-100 text-amber-700 border border-amber-200">
+                <span className="px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider bg-amber-100 text-amber-700 border border-amber-200">
                   {student.daysFlagged} Days Flagged
                 </span>
               )}
@@ -387,13 +387,13 @@ const RiskIntervention = ({ student, onBack }: Props) => {
 
           {/* Risk Factor Breakdown */}
           <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-base font-bold text-slate-900 mb-6">Risk Factor Breakdown</h2>
+            <h2 className="text-base font-semibold text-slate-900 mb-6">Risk Factor Breakdown</h2>
             <div className="space-y-6">
               {riskFactorBars.map((f, i) => (
                 <div key={i}>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-bold text-slate-700">{f.label}</span>
-                    <span className="text-sm font-black" style={{ color: f.color }}>
+                    <span className="text-sm font-semibold text-slate-700">{f.label}</span>
+                    <span className="text-sm font-semibold" style={{ color: f.color }}>
                       {f.value}%
                     </span>
                   </div>
@@ -411,7 +411,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
 
           {/* Intervention History */}
           <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-base font-bold text-slate-900 mb-5">Intervention History</h2>
+            <h2 className="text-base font-semibold text-slate-900 mb-5">Intervention History</h2>
             {histLoading ? (
               <div className="py-8 flex justify-center">
                 <Loader2 className="w-6 h-6 text-slate-300 animate-spin" />
@@ -420,7 +420,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
               <p className="text-sm text-slate-400 text-center py-6">No interventions logged yet.</p>
             ) : (
               <div className="relative space-y-4">
-                <div className="absolute left-[18px] top-2 bottom-2 w-0.5 bg-slate-100 rounded-full" />
+                <div className="absolute left-[16px] top-2 bottom-2 w-0.5 bg-slate-100 rounded-full" />
                 {history.map((item, i) => (
                   <div key={i} className="flex items-start gap-4 relative z-10">
                     <div className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 border-2 border-white shadow-sm ${
@@ -436,11 +436,11 @@ const RiskIntervention = ({ student, onBack }: Props) => {
                     </div>
                     <div className="flex-1 pb-1">
                       <div className="flex items-start justify-between gap-2">
-                        <p className="text-sm font-bold text-slate-800">{item.actionTitle}</p>
-                        <span className="text-[10px] text-slate-400 font-bold shrink-0">{item.date || fmtDate(item.createdAt)}</span>
+                        <p className="text-sm font-semibold text-slate-800">{item.actionTitle}</p>
+                        <span className="text-[12px] text-slate-400 font-semibold shrink-0">{item.date || fmtDate(item.createdAt)}</span>
                       </div>
-                      <p className="text-xs text-slate-500 mt-0.5">{item.notes}</p>
-                      {item.assignedTo && <p className="text-[10px] text-slate-400 mt-0.5">Assigned to: {item.assignedTo}</p>}
+                      <p className="text-xs text-slate-500 mt-1">{item.notes}</p>
+                      {item.assignedTo && <p className="text-[12px] text-slate-400 mt-1">Assigned to: {item.assignedTo}</p>}
                     </div>
                   </div>
                 ))}
@@ -454,7 +454,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
 
           {/* Take Action */}
           <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-base font-bold text-slate-900 mb-5">Take Action</h2>
+            <h2 className="text-base font-semibold text-slate-900 mb-5">Take Action</h2>
             <div className="space-y-3">
               {ACTIONS.map((action, i) => (
                 <button
@@ -472,7 +472,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
                   disabled={action.id === "teacher" && notifying}
                   className={`w-full flex items-center gap-4 p-4 rounded-xl border transition-all text-left ${
                     i === 0
-                      ? "bg-[#1e3a8a] border-[#1e3a8a] hover:bg-[#1e4fc0] text-white shadow-md"
+                      ? "bg-[#1D1D1F] border-[#1D1D1F] hover:bg-[#0A84FF] text-white shadow-md"
                       : "bg-white border-slate-100 hover:bg-slate-50 hover:border-slate-200"
                   } disabled:opacity-60`}
                 >
@@ -485,7 +485,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
                     }
                   </div>
                   <div className="flex-1">
-                    <p className={`text-sm font-bold ${i === 0 ? "text-white" : "text-slate-800"}`}>{action.title}</p>
+                    <p className={`text-sm font-semibold ${i === 0 ? "text-white" : "text-slate-800"}`}>{action.title}</p>
                     <p className={`text-xs font-medium ${i === 0 ? "text-white/70" : "text-slate-400"}`}>{action.desc}</p>
                   </div>
                 </button>
@@ -495,40 +495,40 @@ const RiskIntervention = ({ student, onBack }: Props) => {
 
           {/* Schedule Follow-up */}
           <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-base font-bold text-slate-900 mb-5">Schedule Follow-up</h2>
+            <h2 className="text-base font-semibold text-slate-900 mb-5">Schedule Follow-up</h2>
             <div className="space-y-4">
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Follow-up Date *</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Follow-up Date *</label>
                 <input
                   type="date"
                   value={followUp.date}
                   onChange={e => setFollowUp(p => ({ ...p, date: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Assign To</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Assign To</label>
                 <input
                   type="text"
                   placeholder="e.g. Class teacher, Counselor..."
                   value={followUp.assignTo}
                   onChange={e => setFollowUp(p => ({ ...p, assignTo: e.target.value }))}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Notes</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Notes</label>
                 <textarea
                   placeholder="Purpose of follow-up..."
                   value={followUp.notes}
                   onChange={e => setFollowUp(p => ({ ...p, notes: e.target.value }))}
-                  className="w-full h-20 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full h-20 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <button
                 onClick={handleScheduleFollowUp}
                 disabled={savingFollowUp || !followUp.date}
-                className="w-full py-3.5 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-[#1e4fc0] transition-all disabled:opacity-60 flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#0A84FF] transition-all disabled:opacity-60 flex items-center justify-center gap-2"
               >
                 {savingFollowUp ? <Loader2 className="w-4 h-4 animate-spin" /> : <CalendarCheck className="w-4 h-4" />}
                 Schedule Follow-up
@@ -547,7 +547,7 @@ const RiskIntervention = ({ student, onBack }: Props) => {
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${selectedAction.bg}`}>
                   <selectedAction.icon className={`w-5 h-5 ${selectedAction.color}`} />
                 </div>
-                <h3 className="text-base font-bold text-slate-900">{selectedAction.title}</h3>
+                <h3 className="text-base font-semibold text-slate-900">{selectedAction.title}</h3>
               </div>
               <button onClick={() => setActionModal(false)} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
                 <X className="w-4 h-4 text-slate-600" />
@@ -556,38 +556,38 @@ const RiskIntervention = ({ student, onBack }: Props) => {
             <div className="p-6 space-y-4">
               {(selectedAction.id === "meeting" || selectedAction.id === "followup") && (
                 <div>
-                  <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Date</label>
+                  <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Date</label>
                   <input
                     type="date"
                     value={actionDate}
                     onChange={e => setActionDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                   />
                 </div>
               )}
               <div>
-                <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Notes / Reason *</label>
+                <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Notes / Reason *</label>
                 <textarea
                   value={actionNotes}
                   onChange={e => setActionNotes(e.target.value)}
                   placeholder={`Details for ${selectedAction.title.toLowerCase()}...`}
-                  className="w-full h-28 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                  className="w-full h-28 px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium resize-none focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                 />
               </div>
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => setActionModal(false)}
-                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50"
+                  className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleSaveAction}
                   disabled={saving}
-                  className={`flex-1 py-3 rounded-xl text-white text-sm font-bold transition-all disabled:opacity-60 flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-3 rounded-xl text-white text-sm font-semibold transition-all disabled:opacity-60 flex items-center justify-center gap-2 ${
                     selectedAction.id === "counselor" ? "bg-purple-600 hover:bg-purple-700" :
                     selectedAction.id === "remedial"  ? "bg-emerald-600 hover:bg-emerald-700" :
-                    "bg-[#1e3a8a] hover:bg-[#1e4fc0]"
+                    "bg-[#1D1D1F] hover:bg-[#0A84FF]"
                   }`}
                 >
                   {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}

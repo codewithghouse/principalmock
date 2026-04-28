@@ -44,10 +44,10 @@ interface Props {
 
 // ── Colour helpers ─────────────────────────────────────────────────────────────
 const scoreColor = (v: number) =>
-  v >= 70 ? "#22c55e" : v >= 50 ? "#f59e0b" : "#ef4444";
+  v >= 70 ? "#34C759" : v >= 50 ? "#FF9500" : "#FF3B30";
 
 const attColor = (v: number) =>
-  v >= 85 ? "#22c55e" : v >= 70 ? "#f59e0b" : "#ef4444";
+  v >= 85 ? "#34C759" : v >= 70 ? "#FF9500" : "#FF3B30";
 
 const toDateStr = (d: any): string => {
   if (!d) return "";
@@ -200,16 +200,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
   const average   = studentRows.filter(s => s.status === "Average").length;
   const atRisk    = studentRows.filter(s => s.status === "At Risk").length;
   const pieData = [
-    { name: "Excellent", value: excellent, color: "#22c55e" },
-    { name: "Good",      value: good,      color: "#1e3a8a" },
-    { name: "Average",   value: average,   color: "#f59e0b" },
-    { name: "At Risk",   value: atRisk,    color: "#ef4444" },
+    { name: "Excellent", value: excellent, color: "#34C759" },
+    { name: "Good",      value: good,      color: "#1D1D1F" },
+    { name: "Average",   value: average,   color: "#FF9500" },
+    { name: "At Risk",   value: atRisk,    color: "#FF3B30" },
   ].filter(d => d.value > 0);
 
   // If no result data yet, show placeholder pie
   const pieDataFinal = pieData.length > 0
     ? pieData
-    : [{ name: "No data", value: 1, color: "#e2e8f0" }];
+    : [{ name: "No data", value: 1, color: "#EBEBF0" }];
 
   // ── Attendance trend (last 7 days) ────────────────────────────────────────
   const days7 = last7Days();
@@ -356,7 +356,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
         body: JSON.stringify({
           to: email,
           subject: `You've been enrolled — ${classDoc.name}`,
-          html: `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;"><h2 style="color:#1e3a8a;margin-bottom:8px;">Welcome, ${name}!</h2><p style="color:#555;">You have been enrolled in <strong>${classDoc.name}</strong>${classDoc.teacherName ? ` — Teacher: <strong>${classDoc.teacherName}</strong>` : ""}.</p><div style="margin:28px 0;text-align:center;"><a href="https://parent-dashboard-ten.vercel.app/" style="background:#1e3a8a;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">Go to Student Portal</a></div><p style="color:#aaa;font-size:12px;text-align:center;">Use your email (${email}) to sign in.</p></div>`,
+          html: `<div style="font-family:sans-serif;max-width:600px;margin:auto;padding:24px;border:1px solid #eee;border-radius:12px;"><h2 style="color:#1D1D1F;margin-bottom:8px;">Welcome, ${name}!</h2><p style="color:#555;">You have been enrolled in <strong>${classDoc.name}</strong>${classDoc.teacherName ? ` — Teacher: <strong>${classDoc.teacherName}</strong>` : ""}.</p><div style="margin:28px 0;text-align:center;"><a href="https://parent-dashboard-ten.vercel.app/" style="background:#1D1D1F;color:white;padding:14px 28px;text-decoration:none;border-radius:8px;font-weight:bold;display:inline-block;">Go to Student Portal</a></div><p style="color:#aaa;font-size:12px;text-align:center;">Use your email (${email}) to sign in.</p></div>`,
         }),
       }).catch(() => {});
       toast.success(`${name} enrolled & invitation sent!`);
@@ -370,12 +370,12 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
   // ── Render ────────────────────────────────────────────────────────────────
   return (
-    <div className="animate-in fade-in duration-500 pb-12 space-y-6">
+    <div className="animate-in fade-in duration-500 pb-10 space-y-6">
 
       {/* Back */}
       <button
         onClick={onBack}
-        className="flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-slate-800 transition-colors"
+        className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors"
       >
         <ChevronLeft className="w-4 h-4" /> Back to Classes
       </button>
@@ -389,8 +389,8 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2 flex-wrap">
-              <h1 className="text-3xl font-black text-slate-900">{classDoc.name}</h1>
-              <span className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider text-white ${
+              <h1 className="text-3xl font-semibold text-slate-900">{classDoc.name}</h1>
+              <span className={`px-3 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider text-white ${
                 classStatus === "Good" ? "bg-green-500" :
                 classStatus === "Weak" ? "bg-rose-500" : "bg-amber-500"
               }`}>
@@ -414,8 +414,8 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
             </div>
           </div>
           <div className="text-right shrink-0">
-            <p className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1">Class Average</p>
-            <p className={`text-5xl font-black ${scoreColor(classAvgScore)}`} style={{ color: scoreColor(classAvgScore) }}>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">Class Average</p>
+            <p className={`text-5xl font-semibold ${scoreColor(classAvgScore)}`} style={{ color: scoreColor(classAvgScore) }}>
               {loading ? "—" : classAvgScore > 0 ? `${classAvgScore}%` : "—"}
             </p>
           </div>
@@ -425,7 +425,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
       {loading ? (
         <div className="py-32 flex flex-col items-center justify-center bg-white rounded-2xl border border-slate-100">
           <Loader2 className="w-10 h-10 text-slate-300 animate-spin mb-4" />
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Loading Class Data...</p>
+          <p className="text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Loading Class Data...</p>
         </div>
       ) : (
         <>
@@ -438,12 +438,12 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   value: totalStudents,
                   subtitle: "Enrolled in this class",
                   Icon: Users,
-                  cardGrad: "linear-gradient(135deg, #DEE6F8 0%, #F8FAFE 100%)",
-                  tileGrad: "linear-gradient(135deg, #0055FF, #1166FF)",
-                  tileShadow: "0 4px 14px rgba(0,85,255,0.28)",
-                  numColor: "#0055FF",
-                  subColor: "#5070B0",
-                  decorColor: "#0055FF",
+                  cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+                  tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
+                  tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
+                  numColor: "#0A84FF",
+                  subColor: "#6E6E73",
+                  decorColor: "#0A84FF",
                 },
                 {
                   label: "Class Average",
@@ -451,7 +451,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   subtitle: classAvgScore > 0 ? "Average score" : "No data yet",
                   Icon: TrendingUp,
                   cardGrad: "linear-gradient(135deg, #E2E0FA 0%, #F8F7FE 100%)",
-                  tileGrad: "linear-gradient(135deg, #4F46E5, #6366F1)",
+                  tileGrad: "linear-gradient(135deg, #4F46E5, #0A84FF)",
                   tileShadow: "0 4px 14px rgba(79,70,229,0.28)",
                   numColor: "#4F46E5",
                   subColor: "#6B6FA8",
@@ -462,12 +462,12 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   value: classAttPct !== null ? `${classAttPct}%` : "—",
                   subtitle: classAttPct !== null ? "Class average" : "No data yet",
                   Icon: CalendarCheck,
-                  cardGrad: "linear-gradient(135deg, #D6ECDD 0%, #F7FBF8 100%)",
-                  tileGrad: "linear-gradient(135deg, #00C853, #22EE66)",
-                  tileShadow: "0 4px 14px rgba(0,200,83,0.26)",
-                  numColor: "#007830",
-                  subColor: "#007830",
-                  decorColor: "#00C853",
+                  cardGrad: "linear-gradient(135deg, #F0F8F1 0%, #F0F8F1 100%)",
+                  tileGrad: "linear-gradient(135deg, #34C759, #34C759)",
+                  tileShadow: "0 4px 14px rgba(52,199,89,0.26)",
+                  numColor: "#248A3D",
+                  subColor: "#248A3D",
+                  decorColor: "#34C759",
                 },
                 {
                   label: "At Risk",
@@ -476,16 +476,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   Icon: AlertTriangle,
                   cardGrad: atRisk > 0
                     ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-                    : "linear-gradient(135deg, #DDD0EF 0%, #F8F4FD 100%)",
+                    : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
                   tileGrad: atRisk > 0
-                    ? "linear-gradient(135deg, #FF3355, #FF6688)"
-                    : "linear-gradient(135deg, #7B3FF4, #A07CF8)",
+                    ? "linear-gradient(135deg, #FF3B30, #FF5E55)"
+                    : "linear-gradient(135deg, #AF52DE, #AF52DE)",
                   tileShadow: atRisk > 0
-                    ? "0 4px 14px rgba(255,51,85,0.28)"
-                    : "0 4px 14px rgba(123,63,244,0.26)",
-                  numColor: atRisk > 0 ? "#FF3355" : "#7B3FF4",
-                  subColor: atRisk > 0 ? "#FF3355" : "#5070B0",
-                  decorColor: atRisk > 0 ? "#FF3355" : "#7B3FF4",
+                    ? "0 4px 14px rgba(255,59,48,0.28)"
+                    : "0 4px 14px rgba(175,82,222,0.26)",
+                  numColor: atRisk > 0 ? "#FF3B30" : "#AF52DE",
+                  subColor: atRisk > 0 ? "#FF3B30" : "#6E6E73",
+                  decorColor: atRisk > 0 ? "#FF3B30" : "#AF52DE",
                 },
               ];
               return cards.map((c, i) => {
@@ -496,8 +496,8 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                     className="rounded-[20px] p-5 relative overflow-hidden"
                     style={{
                       background: c.cardGrad,
-                      boxShadow: "0 0 0 0.5px rgba(0,85,255,0.14), 0 6px 20px rgba(0,85,255,0.10), 0 22px 56px rgba(0,85,255,0.10)",
-                      border: "0.5px solid rgba(0,85,255,0.08)",
+                      boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
+                      border: "0.5px solid rgba(10,132,255,0.08)",
                     }}
                   >
                     <div
@@ -506,16 +506,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                     >
                       <Icon className="w-[26px] h-[26px] text-white" strokeWidth={2.3} />
                     </div>
-                    <span className="block text-[10px] font-bold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#99AACC" }}>
+                    <span className="block text-[12px] font-semibold uppercase tracking-[0.10em] mb-1.5" style={{ color: "#A1A1A6" }}>
                       {c.label}
                     </span>
                     <p
-                      className="text-[34px] font-bold tracking-tight leading-none mb-1.5"
+                      className="text-[28px] font-semibold tracking-tight leading-none mb-1.5"
                       style={{ color: c.numColor, letterSpacing: "-1.2px" }}
                     >
                       {c.value}
                     </p>
-                    <p className="text-[11px] font-semibold" style={{ color: c.subColor }}>
+                    <p className="text-[12px] font-semibold" style={{ color: c.subColor }}>
                       {c.subtitle}
                     </p>
                     <Icon
@@ -536,8 +536,8 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
             <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm flex flex-col">
               <div className="flex items-start justify-between gap-3 mb-2">
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900">Performance Distribution</h3>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Tap a tier to highlight</p>
+                  <h3 className="text-sm font-semibold text-slate-900">Performance Distribution</h3>
+                  <p className="text-[12px] text-slate-400 mt-1">Tap a tier to highlight</p>
                 </div>
                 {pieDataFinal.length > 0 && (
                   <Select
@@ -618,16 +618,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                               <text
                                 x={x}
                                 y={y}
-                                fill="#0f172a"
+                                fill="#1D1D1F"
                                 textAnchor={x > cx ? "start" : "end"}
                                 dominantBaseline="central"
-                                style={{ fontSize: 11, fontWeight: 700 }}
+                                style={{ fontSize: 11, fontWeight: 600 }}
                               >
                                 {value} ({Math.round(percent * 100)}%)
                               </text>
                             );
                           }}
-                          labelLine={{ stroke: "#cbd5e1", strokeWidth: 1 }}
+                          labelLine={{ stroke: "#A1A1A6", strokeWidth: 1 }}
                         >
                           {pieDataFinal.map((entry, i) => (
                             <Cell key={i} fill={entry.color} className="cursor-pointer" />
@@ -635,20 +635,20 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                         </Pie>
                         <Tooltip
                           formatter={(v: number, n: string) => [`${v} students`, n]}
-                          contentStyle={{ borderRadius: 10, border: "1px solid #e2e8f0", fontSize: 12, fontWeight: 700 }}
+                          contentStyle={{ borderRadius: 10, border: "1px solid #EBEBF0", fontSize: 12, fontWeight: 600 }}
                         />
                       </PieChart>
                     </ResponsiveContainer>
                     {/* Center label — shows active tier value */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                      <div className="text-[28px] font-black text-slate-900 leading-none tracking-tight">
+                      <div className="text-[28px] font-semibold text-slate-900 leading-none tracking-tight">
                         {pieDataFinal[Math.min(activePieIdx, pieDataFinal.length - 1)]?.value ?? 0}
                       </div>
-                      <div className="text-[10px] font-bold uppercase tracking-wider mt-1.5"
-                        style={{ color: pieDataFinal[Math.min(activePieIdx, pieDataFinal.length - 1)]?.color ?? "#94a3b8" }}>
+                      <div className="text-[12px] font-semibold uppercase tracking-wider mt-1.5"
+                        style={{ color: pieDataFinal[Math.min(activePieIdx, pieDataFinal.length - 1)]?.color ?? "#A1A1A6" }}>
                         {pieDataFinal[Math.min(activePieIdx, pieDataFinal.length - 1)]?.name ?? "Students"}
                       </div>
-                      <div className="text-[9px] font-semibold text-slate-400 mt-0.5">
+                      <div className="text-[12px] font-semibold text-slate-400 mt-1">
                         of {totalStudents} total
                       </div>
                     </div>
@@ -667,8 +667,8 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                         >
                           <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: d.color }} />
                           <div className="flex-1 min-w-0">
-                            <div className="text-[11px] font-bold text-slate-700 truncate">{d.name}</div>
-                            <div className="text-[10px] font-semibold text-slate-400">{d.value} · {pct}%</div>
+                            <div className="text-[12px] font-semibold text-slate-700 truncate">{d.name}</div>
+                            <div className="text-[12px] font-semibold text-slate-400">{d.value} · {pct}%</div>
                           </div>
                         </button>
                       );
@@ -680,18 +680,18 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
             {/* Bar — Subject-wise Average */}
             <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-sm font-bold text-slate-900 mb-4">Subject-wise Average</h3>
+              <h3 className="text-sm font-semibold text-slate-900 mb-4">Subject-wise Average</h3>
               {subjectBarData.length === 0 ? (
                 <div className="h-[200px] flex items-center justify-center text-slate-300 text-sm font-medium">No results data</div>
               ) : (
                 <ResponsiveContainer width="100%" height={200}>
                   <BarChart data={subjectBarData} barCategoryGap="25%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                    <XAxis dataKey="subject" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 700, fill: "#94a3b8" }} />
-                    <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 700, fill: "#94a3b8" }} tickFormatter={v => `${v}%`} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
+                    <XAxis dataKey="subject" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }} />
+                    <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }} tickFormatter={v => `${v}%`} />
                     <Tooltip
                       formatter={(v: number, _: any, props: any) => [`${v}%`, props.payload.subject]}
-                      contentStyle={{ borderRadius: 10, border: "1px solid #e2e8f0", fontSize: 12, fontWeight: 700 }}
+                      contentStyle={{ borderRadius: 10, border: "1px solid #EBEBF0", fontSize: 12, fontWeight: 600 }}
                       cursor={{ fill: "rgba(0,0,0,0.02)" }}
                     />
                     <Bar dataKey="avg" radius={[4, 4, 0, 0]} animationDuration={1000}>
@@ -706,7 +706,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
             {/* Area — Attendance Trend */}
             <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-sm font-bold text-slate-900 mb-4">Attendance Trend (7 Days)</h3>
+              <h3 className="text-sm font-semibold text-slate-900 mb-4">Attendance Trend (7 Days)</h3>
               {attRecords.length === 0 ? (
                 <div className="h-[200px] flex items-center justify-center text-slate-300 text-sm font-medium">No attendance data</div>
               ) : (
@@ -714,25 +714,25 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   <AreaChart data={attTrendData}>
                     <defs>
                       <linearGradient id="attGrad2" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="5%"  stopColor="#1e3a8a" stopOpacity={0.15} />
-                        <stop offset="95%" stopColor="#1e3a8a" stopOpacity={0} />
+                        <stop offset="5%"  stopColor="#1D1D1F" stopOpacity={0.15} />
+                        <stop offset="95%" stopColor="#1D1D1F" stopOpacity={0} />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
-                    <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 700, fill: "#94a3b8" }} />
-                    <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 700, fill: "#94a3b8" }} tickFormatter={v => `${v}%`} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
+                    <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }} />
+                    <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 600, fill: "#A1A1A6" }} tickFormatter={v => `${v}%`} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "Attendance"]}
-                      contentStyle={{ borderRadius: 10, border: "1px solid #e2e8f0", fontSize: 12, fontWeight: 700 }}
+                      contentStyle={{ borderRadius: 10, border: "1px solid #EBEBF0", fontSize: 12, fontWeight: 600 }}
                     />
                     <Area
                       type="monotone"
                       dataKey="value"
-                      stroke="#1e3a8a"
+                      stroke="#1D1D1F"
                       strokeWidth={2.5}
                       fill="url(#attGrad2)"
-                      dot={{ r: 4, fill: "#fff", stroke: "#1e3a8a", strokeWidth: 2 }}
-                      activeDot={{ r: 6, fill: "#1e3a8a", stroke: "#fff", strokeWidth: 2 }}
+                      dot={{ r: 4, fill: "#fff", stroke: "#1D1D1F", strokeWidth: 2 }}
+                      activeDot={{ r: 6, fill: "#1D1D1F", stroke: "#fff", strokeWidth: 2 }}
                       animationDuration={1000}
                     />
                   </AreaChart>
@@ -744,20 +744,20 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
           {/* Student Performance Table */}
           <div className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm">
             <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between gap-3 flex-wrap">
-              <h2 className="text-base font-bold text-slate-900">
+              <h2 className="text-base font-semibold text-slate-900">
                 Student Performance
                 {totalStudents > 0 && <span className="ml-2 text-xs font-medium text-slate-400">({totalStudents} students)</span>}
               </h2>
               <div className="flex items-center gap-2">
                 <button
                   onClick={openAddModal}
-                  className="flex items-center gap-2 px-4 py-2 bg-[#1e3a8a] text-white rounded-xl text-xs font-bold hover:bg-blue-800 transition-colors shadow-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#1D1D1F] text-white rounded-xl text-xs font-semibold hover:bg-blue-800 transition-colors shadow-sm"
                 >
                   <UserPlus className="w-4 h-4" /> Add Student
                 </button>
                 <button
                   onClick={handleExport}
-                  className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-50 transition-colors"
                 >
                   <Download className="w-4 h-4" /> Export
                 </button>
@@ -765,9 +765,9 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
             </div>
 
             {totalStudents === 0 ? (
-              <div className="py-20 flex flex-col items-center justify-center text-center">
+              <div className="py-10 flex flex-col items-center justify-center text-center">
                 <Users className="w-12 h-12 text-slate-200 mb-3" />
-                <p className="text-sm font-black text-slate-400 uppercase tracking-widest">No students enrolled</p>
+                <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest">No students enrolled</p>
                 <p className="text-xs text-slate-300 mt-1">Students will appear here once enrolled in this class</p>
               </div>
             ) : (
@@ -775,16 +775,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                 <table className="w-full text-sm text-left">
                   <thead>
                     <tr className="bg-slate-50/50 border-b border-slate-100">
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Rank</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Student</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Rank</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Student</th>
                       {allSubjects.slice(0, 4).map(sub => (
-                        <th key={sub} className="px-4 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">
+                        <th key={sub} className="px-4 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">
                           {sub.slice(0, 6)}
                         </th>
                       ))}
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Total</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest text-center">Attendance</th>
-                      <th className="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Status</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">Total</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest text-center">Attendance</th>
+                      <th className="px-6 py-4 text-[12px] font-semibold text-slate-400 uppercase tracking-widest">Status</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-50">
@@ -795,7 +795,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                       >
                         {/* Rank */}
                         <td className="px-6 py-4">
-                          <span className={`text-base font-black ${s.rank <= 3 ? "text-amber-500" : "text-slate-400"}`}>
+                          <span className={`text-base font-semibold ${s.rank <= 3 ? "text-amber-500" : "text-slate-400"}`}>
                             {s.rank}
                           </span>
                         </td>
@@ -803,16 +803,16 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                         {/* Student */}
                         <td className="px-6 py-4">
                           <div className="flex items-center gap-3">
-                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-white text-[10px] font-black shrink-0 ${
+                            <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-white text-[12px] font-semibold shrink-0 ${
                               s.status === "Excellent" ? "bg-green-500" :
                               s.status === "At Risk"   ? "bg-rose-500" :
-                              s.status === "Good"      ? "bg-[#1e3a8a]" : "bg-amber-500"
+                              s.status === "Good"      ? "bg-[#1D1D1F]" : "bg-amber-500"
                             }`}>
                               {s.initials}
                             </div>
                             <div>
-                              <p className="font-bold text-slate-900 text-sm">{s.name}</p>
-                              <p className="text-[10px] text-slate-400 font-medium truncate max-w-[140px]">{s.email}</p>
+                              <p className="font-semibold text-slate-900 text-sm">{s.name}</p>
+                              <p className="text-[12px] text-slate-400 font-medium truncate max-w-[140px]">{s.email}</p>
                             </div>
                           </div>
                         </td>
@@ -823,7 +823,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                           return (
                             <td key={sub} className="px-4 py-4 text-center">
                               {score !== undefined ? (
-                                <span className="font-black text-sm" style={{ color: scoreColor(score) }}>
+                                <span className="font-semibold text-sm" style={{ color: scoreColor(score) }}>
                                   {score}%
                                 </span>
                               ) : (
@@ -835,21 +835,21 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
                         {/* Avg total */}
                         <td className="px-6 py-4 text-center">
-                          <span className="font-black text-sm" style={{ color: s.avgScore > 0 ? scoreColor(s.avgScore) : "#94a3b8" }}>
+                          <span className="font-semibold text-sm" style={{ color: s.avgScore > 0 ? scoreColor(s.avgScore) : "#A1A1A6" }}>
                             {s.avgScore > 0 ? `${s.avgScore}%` : "—"}
                           </span>
                         </td>
 
                         {/* Attendance */}
                         <td className="px-6 py-4 text-center">
-                          <span className="font-black text-sm" style={{ color: s.attPct !== null ? attColor(s.attPct) : "#cbd5e1" }}>
+                          <span className="font-semibold text-sm" style={{ color: s.attPct !== null ? attColor(s.attPct) : "#A1A1A6" }}>
                             {s.attPct !== null ? `${s.attPct}%` : "—"}
                           </span>
                         </td>
 
                         {/* Status */}
                         <td className="px-6 py-4">
-                          <span className={`px-2.5 py-1 rounded-lg text-[10px] font-black uppercase tracking-wider border ${
+                          <span className={`px-2.5 py-1 rounded-lg text-[12px] font-semibold uppercase tracking-wider border ${
                             s.status === "Excellent" ? "bg-green-50 text-green-700 border-green-100" :
                             s.status === "Good"      ? "bg-blue-50 text-blue-700 border-blue-100" :
                             s.status === "Average"   ? "bg-amber-50 text-amber-700 border-amber-100" :
@@ -876,10 +876,10 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-slate-100 shrink-0">
               <div>
-                <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <UserPlus className="w-4 h-4 text-[#1e3a8a]" /> Add Students to {classDoc.name}
+                <h3 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+                  <UserPlus className="w-4 h-4 text-[#1D1D1F]" /> Add Students to {classDoc.name}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">Assign existing students or invite new ones</p>
+                <p className="text-xs text-slate-400 mt-1">Assign existing students or invite new ones</p>
               </div>
               <button onClick={() => setAddModal(false)} className="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 flex items-center justify-center">
                 <X className="w-4 h-4 text-slate-600" />
@@ -888,10 +888,10 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
             {/* Tabs */}
             <div className="flex border-b border-slate-100 shrink-0">
-              <button onClick={() => setAddTab("existing")} className={`flex-1 py-3 text-sm font-bold transition-colors ${addTab === "existing" ? "text-[#1e3a8a] border-b-2 border-[#1e3a8a]" : "text-slate-400 hover:text-slate-600"}`}>
+              <button onClick={() => setAddTab("existing")} className={`flex-1 py-3 text-sm font-semibold transition-colors ${addTab === "existing" ? "text-[#1D1D1F] border-b-2 border-[#1D1D1F]" : "text-slate-400 hover:text-slate-600"}`}>
                 From School List
               </button>
-              <button onClick={() => setAddTab("invite")} className={`flex-1 py-3 text-sm font-bold transition-colors ${addTab === "invite" ? "text-[#1e3a8a] border-b-2 border-[#1e3a8a]" : "text-slate-400 hover:text-slate-600"}`}>
+              <button onClick={() => setAddTab("invite")} className={`flex-1 py-3 text-sm font-semibold transition-colors ${addTab === "invite" ? "text-[#1D1D1F] border-b-2 border-[#1D1D1F]" : "text-slate-400 hover:text-slate-600"}`}>
                 Invite New Student
               </button>
             </div>
@@ -904,11 +904,11 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                     <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <input type="text" placeholder="Search by name or email..." value={studentSearch}
                       onChange={e => setStudentSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full pl-10 pr-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   {studentsLoading ? (
-                    <div className="py-12 flex items-center justify-center">
+                    <div className="py-10 flex items-center justify-center">
                       <Loader2 className="w-6 h-6 animate-spin text-slate-400" />
                     </div>
                   ) : (() => {
@@ -917,7 +917,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                       (s.email || "").toLowerCase().includes(studentSearch.toLowerCase())
                     );
                     return filtered.length === 0 ? (
-                      <div className="py-12 text-center">
+                      <div className="py-10 text-center">
                         <Users className="w-10 h-10 text-slate-200 mx-auto mb-2" />
                         <p className="text-sm text-slate-400">
                           {schoolStudents.length === 0 ? "No other students in this school yet." : "No students match your search."}
@@ -927,26 +927,26 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                     ) : (
                       <div className="space-y-2">
                         {selectedSids.length > 0 && (
-                          <p className="text-xs font-bold text-[#1e3a8a] mb-1">{selectedSids.length} selected</p>
+                          <p className="text-xs font-semibold text-[#1D1D1F] mb-1">{selectedSids.length} selected</p>
                         )}
                         {filtered.map((s: any) => {
                           const isSelected = selectedSids.includes(s.id);
                           return (
                             <div key={s.id} onClick={() => setSelectedSids(prev => isSelected ? prev.filter(id => id !== s.id) : [...prev, s.id])}
-                              className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all border ${isSelected ? "bg-blue-50 border-[#1e3a8a]/30" : "border-slate-100 hover:bg-slate-50"}`}
+                              className={`flex items-center gap-3 p-3 rounded-xl cursor-pointer transition-all border ${isSelected ? "bg-blue-50 border-[#1D1D1F]/30" : "border-slate-100 hover:bg-slate-50"}`}
                             >
-                              <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${isSelected ? "bg-[#1e3a8a] border-[#1e3a8a]" : "border-slate-300"}`}>
+                              <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center shrink-0 transition-all ${isSelected ? "bg-[#1D1D1F] border-[#1D1D1F]" : "border-slate-300"}`}>
                                 {isSelected && <Check className="w-3 h-3 text-white" />}
                               </div>
-                              <div className="w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-xs font-black text-indigo-600 shrink-0">
+                              <div className="w-9 h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-xs font-semibold text-indigo-600 shrink-0">
                                 {(s.name || "S").substring(0, 2).toUpperCase()}
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-bold text-slate-800 truncate">{s.name || "Unknown"}</p>
+                                <p className="text-sm font-semibold text-slate-800 truncate">{s.name || "Unknown"}</p>
                                 <p className="text-xs text-slate-400 truncate">{s.email}</p>
                               </div>
                               {s.className && s.className !== classDoc.name && (
-                                <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md shrink-0">{s.className}</span>
+                                <span className="text-[12px] font-semibold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md shrink-0">{s.className}</span>
                               )}
                             </div>
                           );
@@ -958,21 +958,21 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
               ) : (
                 <div className="space-y-4">
                   <div>
-                    <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Student Name *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Student Name *</label>
                     <input type="text" placeholder="e.g. Rahul Sharma" value={inviteForm.name}
                       onChange={e => setInviteForm(p => ({ ...p, name: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   <div>
-                    <label className="text-xs font-black text-slate-500 uppercase tracking-widest block mb-2">Email Address *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-widest block mb-2">Email Address *</label>
                     <input type="email" placeholder="student@example.com" value={inviteForm.email}
                       onChange={e => setInviteForm(p => ({ ...p, email: e.target.value }))}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1e3a8a]/20"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#1D1D1F]/20"
                     />
                   </div>
                   <div className="bg-blue-50 border border-blue-100 rounded-xl p-3 flex items-start gap-2">
-                    <Mail className="w-4 h-4 text-[#1e3a8a] shrink-0 mt-0.5" />
+                    <Mail className="w-4 h-4 text-[#1D1D1F] shrink-0 mt-1" />
                     <p className="text-xs text-slate-600">Student will receive an email invitation with their login link.</p>
                   </div>
                 </div>
@@ -981,19 +981,19 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
 
             {/* Footer */}
             <div className="flex gap-3 p-6 border-t border-slate-100 shrink-0">
-              <button onClick={() => setAddModal(false)} className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-bold text-slate-600 hover:bg-slate-50">
+              <button onClick={() => setAddModal(false)} className="flex-1 py-3 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:bg-slate-50">
                 Cancel
               </button>
               {addTab === "existing" ? (
                 <button onClick={handleAddExisting} disabled={enrolling || selectedSids.length === 0}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {enrolling ? <Loader2 className="w-4 h-4 animate-spin" /> : <UserPlus className="w-4 h-4" />}
                   {enrolling ? "Adding..." : `Add${selectedSids.length > 0 ? ` (${selectedSids.length})` : ""}`}
                 </button>
               ) : (
                 <button onClick={handleInviteStudent} disabled={inviting || !inviteForm.name || !inviteForm.email}
-                  className="flex-1 py-3 rounded-xl bg-[#1e3a8a] text-white text-sm font-bold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 rounded-xl bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-blue-800 disabled:opacity-60 flex items-center justify-center gap-2"
                 >
                   {inviting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
                   {inviting ? "Inviting..." : "Invite & Enroll"}

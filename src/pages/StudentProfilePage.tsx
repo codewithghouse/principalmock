@@ -8,21 +8,21 @@ import { useAuth } from "@/lib/AuthContext";
 
 // ── Tokens — aligned to principal-dashboard palette ─────────────────────────
 const T = {
-  bg:    "#EEF4FF",                  // scaffold background matches dashboard
+  bg:    "#F5F5F7",                  // scaffold background matches dashboard
   white: "#ffffff",
-  ink:   "#001040",                  // T1 primary text
-  ink2:  "#5070B0",                  // T3 secondary text
-  ink3:  "#99AACC",                  // T4 muted text
-  bdr:   "rgba(0,85,255,0.10)",      // blue-tinted border
-  s1:    "rgba(0,85,255,0.04)",      // subtle surface tint
-  s2:    "rgba(0,85,255,0.08)",      // separator
-  blue:  "#0055FF",                  // B1 primary blue
-  blBg:  "rgba(0,85,255,0.10)",
-  blBdr: "rgba(0,85,255,0.22)",
-  grn:   "#00C853", glBg: "rgba(0,200,83,0.10)",
-  red:   "#FF3355", rlBg: "rgba(255,51,85,0.10)",
-  amb:   "#FF8800", alBg: "rgba(255,136,0,0.10)",
-  pur:   "#7B3FF4",
+  ink:   "#1D1D1F",                  // T1 primary text
+  ink2:  "#6E6E73",                  // T3 secondary text
+  ink3:  "#A1A1A6",                  // T4 muted text
+  bdr:   "rgba(10,132,255,0.10)",      // blue-tinted border
+  s1:    "rgba(10,132,255,0.04)",      // subtle surface tint
+  s2:    "rgba(10,132,255,0.08)",      // separator
+  blue:  "#0A84FF",                  // B1 primary blue
+  blBg:  "rgba(10,132,255,0.10)",
+  blBdr: "rgba(10,132,255,0.22)",
+  grn:   "#34C759", glBg: "rgba(52,199,89,0.10)",
+  red:   "#FF3B30", rlBg: "rgba(255,59,48,0.10)",
+  amb:   "#FF9500", alBg: "rgba(255,149,0,0.10)",
+  pur:   "#AF52DE",
 };
 
 const toDate = (v: any): Date | null => { if (!v) return null; if (v?.toDate) return v.toDate(); if (v?.seconds) return new Date(v.seconds * 1000); const d = new Date(v); return isNaN(d.getTime()) ? null : d; };
@@ -36,7 +36,7 @@ const Card = ({ children, title, action, style }: { children: React.ReactNode; t
       className="bg-white rounded-[16px] overflow-hidden"
       style={{
         border: `0.5px solid ${T.bdr}`,
-        boxShadow: "0 0 0 .5px rgba(0,85,255,.10), 0 4px 16px rgba(0,85,255,.12), 0 18px 44px rgba(0,85,255,.15)",
+        boxShadow: "0 0 0 .5px rgba(10,132,255,.10), 0 4px 16px rgba(10,132,255,.12), 0 18px 44px rgba(10,132,255,.15)",
         ...style,
       }}
     >
@@ -248,7 +248,7 @@ const StudentProfilePage = () => {
   // RENDER
   // ══════════════════════════════════════════════════════════════════════════════
   return (
-    <div style={{ minHeight: "100vh", background: T.bg, padding: "20px 24px 60px", fontFamily: "'Inter','Plus Jakarta Sans',-apple-system,sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: T.bg, padding: "20px 24px 60px", fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', sans-serif" }}>
 
       {/* ═══ TOP BAR ══════════════════════════════════════════════════════════ */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
@@ -280,10 +280,10 @@ const StudentProfilePage = () => {
                     strokeDasharray={2 * Math.PI * 26} strokeDashoffset={2 * Math.PI * 26 * (1 - m.avg / 100)} transform="rotate(-90 32 32)"
                     style={{ transition: "stroke-dashoffset 1s ease" }} />
                 </svg>
-                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 700, color: T.blue }}>{(m.avg / 25).toFixed(1)}</div>
+                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14, fontWeight: 600, color: T.blue }}>{(m.avg / 25).toFixed(1)}</div>
               </div>
               <div>
-                <div style={{ fontSize: 28, fontWeight: 800, color: T.ink }}>{Math.round(m.avg)}%</div>
+                <div style={{ fontSize: 28, fontWeight: 600, color: T.ink }}>{Math.round(m.avg)}%</div>
                 <div style={{ fontSize: 11, color: T.ink3, display: "flex", alignItems: "center", gap: 4 }}>
                   Avg Score // {testScores.length} tests
                   {m.trend === "up" && <TrendingUp size={12} color={T.grn} />}
@@ -314,7 +314,7 @@ const StudentProfilePage = () => {
                     strokeDasharray={2 * Math.PI * 28} strokeDashoffset={2 * Math.PI * 28 * (1 - m.attRate / 100)}
                     transform="rotate(-90 36 36)" style={{ transition: "stroke-dashoffset 1s ease" }} />
                 </svg>
-                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 700, color: m.attRate >= 85 ? T.grn : T.amb }}>{Math.round(m.attRate)}%</div>
+                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, fontWeight: 600, color: m.attRate >= 85 ? T.grn : T.amb }}>{Math.round(m.attRate)}%</div>
               </div>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 600, color: T.ink }}>Present</div>
@@ -352,9 +352,9 @@ const StudentProfilePage = () => {
         {/* ── CENTER: Student Photo + Identity ──────────────────────────────── */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 20 }}>
           <div style={{ width: 140, height: 140, borderRadius: "50%", border: `4px solid ${T.blue}`, background: T.blBg, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: 16, boxShadow: "0 8px 30px rgba(59,91,219,0.15)" }}>
-            <span style={{ fontSize: 42, fontWeight: 800, color: T.blue }}>{initials}</span>
+            <span style={{ fontSize: 42, fontWeight: 600, color: T.blue }}>{initials}</span>
           </div>
-          <h2 style={{ fontSize: 20, fontWeight: 700, color: T.ink, textAlign: "center", marginBottom: 4 }}>{student.name}</h2>
+          <h2 style={{ fontSize: 20, fontWeight: 600, color: T.ink, textAlign: "center", marginBottom: 4 }}>{student.name}</h2>
           <p style={{ fontSize: 12, color: T.ink3, textAlign: "center", marginBottom: 4 }}>{student.className || student.class || "—"}</p>
           <p style={{ fontSize: 11, color: T.ink3, textAlign: "center", marginBottom: 12 }}>Roll: {student.rollNo || student.roll || "—"} // ID: {(student.id || "").slice(0, 6).toUpperCase()}</p>
           <div style={{ display: "flex", gap: 6 }}>
@@ -386,7 +386,7 @@ const StudentProfilePage = () => {
           <Card title="AI Intelligence" action={<DetailLink />}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 8 }}>
               <span style={{ fontSize: 11, color: T.ink3 }}>Predicted next score:</span>
-              <span style={{ fontSize: 20, fontWeight: 700, color: T.blue }}>{Math.min(100, Math.round(m.avg + Math.max(0, (100 - m.avg) * 0.05)))}%</span>
+              <span style={{ fontSize: 20, fontWeight: 600, color: T.blue }}>{Math.min(100, Math.round(m.avg + Math.max(0, (100 - m.avg) * 0.05)))}%</span>
             </div>
             <div style={{ fontSize: 11, color: T.ink3, lineHeight: 1.6 }}>
               {m.trend === "up" ? "Performance trend is positive. Student shows consistent growth." :
@@ -462,7 +462,7 @@ const StudentProfilePage = () => {
 
         {/* Risk Assessment */}
         <Card title="Risk Assessment" action={<DetailLink />}>
-          <div style={{ fontSize: 22, fontWeight: 800, color: riskColor, marginBottom: 14 }}>{riskLevel}</div>
+          <div style={{ fontSize: 22, fontWeight: 600, color: riskColor, marginBottom: 14 }}>{riskLevel}</div>
           {[
             { label: "ATTENDANCE", val: m.attRate, color: m.attRate >= 85 ? T.blue : T.amb },
             { label: "ACADEMIC", val: m.avg, color: m.avg >= 75 ? T.blue : m.avg >= 50 ? T.amb : T.red },
@@ -493,13 +493,13 @@ const StudentProfilePage = () => {
           {/* Summary cards */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 14 }}>
             <div style={{ textAlign: "center", padding: "10px 0", background: T.glBg, borderRadius: 10 }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: T.grn }}>{calPresent}</div><div style={{ fontSize: 10, color: T.grn }}>PRESENT</div>
+              <div style={{ fontSize: 20, fontWeight: 600, color: T.grn }}>{calPresent}</div><div style={{ fontSize: 10, color: T.grn }}>PRESENT</div>
             </div>
             <div style={{ textAlign: "center", padding: "10px 0", background: T.alBg, borderRadius: 10 }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: T.amb }}>{calLate}</div><div style={{ fontSize: 10, color: T.amb }}>LATE</div>
+              <div style={{ fontSize: 20, fontWeight: 600, color: T.amb }}>{calLate}</div><div style={{ fontSize: 10, color: T.amb }}>LATE</div>
             </div>
             <div style={{ textAlign: "center", padding: "10px 0", background: T.rlBg, borderRadius: 10 }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: T.red }}>{calAbsent}</div><div style={{ fontSize: 10, color: T.red }}>ABSENT</div>
+              <div style={{ fontSize: 20, fontWeight: 600, color: T.red }}>{calAbsent}</div><div style={{ fontSize: 10, color: T.red }}>ABSENT</div>
             </div>
           </div>
           {/* Grid */}
