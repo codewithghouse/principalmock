@@ -30,7 +30,7 @@ import { getBranchInsight, getPrincipalInsight, LeaderboardInsight } from "@/lib
 // ─────────────────────────────────────────────────────────────
 const FONT = "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif";
 const T = {
-  pageBg: "#F5F5F7", cardBg: "#FFFFFF",
+  pageBg: "#EEF4FF", cardBg: "#FFFFFF",
   B1: "#0A84FF", B2: "#3395FF",
   T1: "#1D1D1F", T3: "#6E6E73", T4: "#A1A1A6",
   GREEN: "#34C759", GREEN_BG: "rgba(52,199,89,0.10)", GREEN_TEXT: "#00833A",

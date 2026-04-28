@@ -438,7 +438,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   value: totalStudents,
                   subtitle: "Enrolled in this class",
                   Icon: Users,
-                  cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+                  cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
                   tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
                   tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
                   numColor: "#0A84FF",
@@ -476,7 +476,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                   Icon: AlertTriangle,
                   cardGrad: atRisk > 0
                     ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-                    : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+                    : "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
                   tileGrad: atRisk > 0
                     ? "linear-gradient(135deg, #FF3B30, #FF5E55)"
                     : "linear-gradient(135deg, #AF52DE, #AF52DE)",
@@ -686,7 +686,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
               ) : (
                 <ResponsiveContainer width="100%" height={200}>
                   <BarChart data={subjectBarData} barCategoryGap="25%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#EEF4FF" vertical={false} />
                     <XAxis dataKey="subject" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 400, fill: "#A1A1A6" }} />
                     <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 400, fill: "#A1A1A6" }} tickFormatter={v => `${v}%`} />
                     <Tooltip
@@ -718,7 +718,7 @@ const ClassPerformance = ({ classDoc, onBack }: Props) => {
                         <stop offset="95%" stopColor="#1D1D1F" stopOpacity={0} />
                       </linearGradient>
                     </defs>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#EEF4FF" vertical={false} />
                     <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 400, fill: "#A1A1A6" }} />
                     <YAxis domain={[0, 100]} axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 400, fill: "#A1A1A6" }} tickFormatter={v => `${v}%`} />
                     <Tooltip

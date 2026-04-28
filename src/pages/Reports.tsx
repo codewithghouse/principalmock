@@ -221,7 +221,7 @@ const Reports = () => {
 
   // Design tokens
   const B1 = "#0A84FF", B2 = "#3395FF", B4 = "#7CBBFF";
-  const BG = "#F5F5F7";
+  const BG = "#EEF4FF";
   const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
   const SEP = "rgba(10,132,255,0.08)";
   const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
@@ -245,7 +245,7 @@ const Reports = () => {
   // Bright accent name color (with green darkened for legibility on pale green).
   const categoryPalette: Record<string, { cardGrad: string; tileGrad: string; tileShadow: string; nameColor: string; decorColor: string; ringColor: string }> = {
     blue: {
-      cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+      cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
       tileGrad: `linear-gradient(135deg, ${B1}, ${B2})`,
       tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
       nameColor: B1,
@@ -277,7 +277,7 @@ const Reports = () => {
       ringColor: "rgba(255,204,0,0.42)",
     },
     violet: {
-      cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+      cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
       tileGrad: `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
       tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
       nameColor: VIOLET,
@@ -302,7 +302,7 @@ const Reports = () => {
     switch (tone) {
       case "blue":
         return {
-          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
           iconBg: `linear-gradient(135deg, ${B1}, ${B2})`,
           iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
           accent: B1, nameColor: "#001055", subColor: T3,
@@ -330,7 +330,7 @@ const Reports = () => {
         };
       case "violet":
         return {
-          cardBg: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+          cardBg: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
           iconBg: `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
           iconShadow: "0 4px 14px rgba(175,82,222,0.26)",
           accent: VIOLET, nameColor: "#280C5C", subColor: "#280C5C",
@@ -344,7 +344,7 @@ const Reports = () => {
         };
       default:
         return {
-          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
           iconBg: `linear-gradient(135deg, ${B1}, ${B2})`,
           iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
           accent: B1, nameColor: "#001055", subColor: T3,

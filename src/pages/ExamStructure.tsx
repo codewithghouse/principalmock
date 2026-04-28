@@ -244,7 +244,7 @@ const ExamStructure = () => {
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -760,7 +760,7 @@ const ExamStructure = () => {
                             }
                             style={{
                               padding: "10px 12px",
-                              background: "#F5F5F7",
+                              background: "#EEF4FF",
                               borderRadius: 11,
                               border: "0.5px solid rgba(10,132,255,.12)",
                               fontFamily: "inherit",
@@ -788,7 +788,7 @@ const ExamStructure = () => {
                         style={{
                           width: "100%",
                           padding: "10px 12px",
-                          background: "#F5F5F7",
+                          background: "#EEF4FF",
                           borderRadius: 11,
                           border: "0.5px solid rgba(10,132,255,.12)",
                           fontFamily: "inherit",
@@ -833,7 +833,7 @@ const ExamStructure = () => {
                       </div>
                       <div
                         style={{
-                          background: "#F5F5F7",
+                          background: "#EEF4FF",
                           borderRadius: 14,
                           overflow: "hidden",
                           border: "0.5px solid rgba(10,132,255,.1)",
@@ -1222,7 +1222,7 @@ const ExamStructure = () => {
                           style={{
                             padding: "7px 11px",
                             borderRadius: 100,
-                            background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#F5F5F7",
+                            background: isActive ? `linear-gradient(135deg, ${B1}, ${B2})` : "#EEF4FF",
                             border: isActive ? "0.5px solid transparent" : "0.5px solid rgba(10,132,255,.14)",
                             fontSize: 10,
                             fontWeight: 400,
@@ -1253,7 +1253,7 @@ const ExamStructure = () => {
                     style={{
                       width: "100%",
                       padding: "11px 13px",
-                      background: "#F5F5F7",
+                      background: "#EEF4FF",
                       borderRadius: 12,
                       border: "0.5px solid rgba(10,132,255,.14)",
                       fontFamily: "inherit",
@@ -1283,7 +1283,7 @@ const ExamStructure = () => {
                         style={{
                           width: "100%",
                           padding: "11px 13px",
-                          background: "#F5F5F7",
+                          background: "#EEF4FF",
                           borderRadius: 12,
                           border: "0.5px solid rgba(10,132,255,.14)",
                           fontFamily: "inherit",
@@ -1309,7 +1309,7 @@ const ExamStructure = () => {
                     style={{
                       width: "100%",
                       padding: "11px 13px",
-                      background: "#F5F5F7",
+                      background: "#EEF4FF",
                       borderRadius: 12,
                       border: "0.5px solid rgba(10,132,255,.14)",
                       fontFamily: "inherit",
@@ -1345,7 +1345,7 @@ const ExamStructure = () => {
                   borderTop: `0.5px solid ${SEP}`,
                   display: "flex",
                   gap: 8,
-                  background: "#F5F5F7",
+                  background: "#EEF4FF",
                   flexShrink: 0,
                 }}
               >
@@ -1495,14 +1495,14 @@ const ExamStructure = () => {
         {[
           {
             label: "Exam Types", val: examTypes.length, sub: "Configured", Icon: BookOpen,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF", decorColor: "#0A84FF",
           },
           {
             label: "Avg Max Marks", val: dAvgMax || "—", sub: "Per exam", Icon: Award,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE", decorColor: "#AF52DE",
@@ -1632,7 +1632,7 @@ const ExamStructure = () => {
                     <Trash2 className="w-[15px] h-[15px]" style={{ color: "#FF3B30" }} strokeWidth={2.2} />
                   </button>
                   <div className="w-8 h-8 rounded-[10px] flex items-center justify-center flex-shrink-0"
-                    style={isExp ? { background: "linear-gradient(135deg, #0A84FF, #3395FF)" } : { background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.10)" }}>
+                    style={isExp ? { background: "linear-gradient(135deg, #0A84FF, #3395FF)" } : { background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.10)" }}>
                     {isExp ? <ChevronUp className="w-[14px] h-[14px] text-white" strokeWidth={2.4} /> : <ChevronDown className="w-[14px] h-[14px]" style={{ color: "#6E6E73" }} strokeWidth={2.4} />}
                   </div>
                 </div>
@@ -1653,7 +1653,7 @@ const ExamStructure = () => {
                           <input type={f.type} value={f.val as string | number}
                             onChange={e => updateExam(exam.id, { [f.key]: f.type === "number" ? parseInt(e.target.value) || 0 : e.target.value })}
                             className="w-full h-10 px-3 rounded-[10px] text-[12px] font-normal outline-none"
-                            style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
+                            style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                         </div>
                       ))}
                     </div>
@@ -1664,7 +1664,7 @@ const ExamStructure = () => {
                         onChange={e => updateExam(exam.id, { applicableClasses: e.target.value })}
                         placeholder='e.g. "All" or "8-A, 9-B, 10-C"'
                         className="w-1/2 h-10 px-3 rounded-[10px] text-[12px] font-normal outline-none"
-                        style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
+                        style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                     </div>
 
                     {/* Grading scale */}
@@ -1680,7 +1680,7 @@ const ExamStructure = () => {
                         </div>
                         <button onClick={() => addGradeRow(exam.id)}
                           className="h-8 px-[12px] rounded-[10px] flex items-center gap-[4px] text-[12px] font-normal uppercase tracking-[0.05em] transition-transform active:scale-95 hover:scale-[1.03]"
-                          style={{ background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.22)" }}>
+                          style={{ background: "linear-gradient(135deg, #EEF4FF, #DDEAFF)", color: "#0A84FF", border: "0.5px solid rgba(10,132,255,0.22)" }}>
                           <Plus className="w-3 h-3" strokeWidth={2.6} /> Add Row
                         </button>
                       </div>
@@ -1699,17 +1699,17 @@ const ExamStructure = () => {
                                 <td className="px-3 py-[12px]">
                                   <input value={g.label} onChange={e => updateGrade(exam.id, g.id, { label: e.target.value })}
                                     className="w-14 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
-                                    style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
+                                    style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
                                   <input type="number" value={g.minPct} onChange={e => updateGrade(exam.id, g.id, { minPct: parseInt(e.target.value) || 0 })}
                                     className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
-                                    style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
+                                    style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
                                   <input type="number" value={g.maxPct} onChange={e => updateGrade(exam.id, g.id, { maxPct: parseInt(e.target.value) || 0 })}
                                     className="w-16 h-8 px-2 rounded-[8px] text-[12px] font-normal text-center outline-none"
-                                    style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
+                                    style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.14)", color: "#1D1D1F" }} />
                                 </td>
                                 <td className="px-3 py-[12px]">
                                   <input type="color" value={g.color} onChange={e => updateGrade(exam.id, g.id, { color: e.target.value })}

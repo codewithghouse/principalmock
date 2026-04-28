@@ -415,7 +415,7 @@ export default function ExamsResults() {
             sub: latestExam?.dateLabel || "No data",
             isText: true,
             Icon: FileText,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF",
@@ -427,7 +427,7 @@ export default function ExamsResults() {
             val: latestExam?.totalStudents ?? "—",
             sub: latestExam ? `${latestExam.scores.filter(s => !s.isAbsent).length} of ${latestExam.scores.length} total` : "—",
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE",
@@ -527,7 +527,7 @@ export default function ExamsResults() {
               const dateStr = fmtDate(exam.testDate || exam.date || "");
               return (
                 <div key={exam.id} className="rounded-[14px] px-4 py-3 relative overflow-hidden transition-transform active:scale-[0.98] hover:scale-[1.02]"
-                  style={{ background: "#F5F5F7", border: "0.5px solid rgba(10,132,255,0.10)", borderLeftWidth: "4px", borderLeftColor: color }}>
+                  style={{ background: "#EEF4FF", border: "0.5px solid rgba(10,132,255,0.10)", borderLeftWidth: "4px", borderLeftColor: color }}>
                   <p className="text-[13px] font-normal truncate" style={{ color: "#1D1D1F" }}>{exam.title || exam.testName}</p>
                   <p className="text-[12px] mt-1 flex items-center gap-1" style={{ color: "#6E6E73" }}>
                     <Calendar className="w-3 h-3" strokeWidth={2.3} /> {dateStr || "Date TBD"}
@@ -749,7 +749,7 @@ export default function ExamsResults() {
                     const passColor = exam.passRate >= 75 ? "#34C759" : exam.passRate >= 50 ? "#FF9500" : "#FF3B30";
                     const avgColor = exam.avgPct >= 70 ? "#34C759" : exam.avgPct >= 50 ? "#FF9500" : "#FF3B30";
                     return (
-                      <tr key={i} className="transition-colors hover:bg-[#F5F5F7]"
+                      <tr key={i} className="transition-colors hover:bg-[#EEF4FF]"
                         style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                         <td className="px-6 py-[16px]">
                           <div className="flex items-center gap-3">

@@ -38,7 +38,7 @@ export interface AssignmentMarksMobileProps {
 
 // ── Palette ───────────────────────────────────────────────────────────────────
 const B1 = "#0A84FF", B2 = "#3395FF", B3 = "#5BA9FF", B4 = "#7CBBFF";
-const BG = "#F5F5F7", BG2 = "#EBEBF0";
+const BG = "#EEF4FF", BG2 = "#EBEBF0";
 const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
 const SEP = "rgba(10,132,255,0.07)";
 const GREEN = "#34C759", RED = "#FF3B30", ORANGE = "#FF9500", GOLD = "#FFCC00";
@@ -368,7 +368,7 @@ const AssignmentMarksMobile = ({
 
         {/* Back button */}
         <button onClick={onBackFromDetail}
-          className="mx-5 mt-3.5 h-[42px] px-4 rounded-[14px] flex items-center gap-[8px] text-[13px] font-normal bg-white transition-colors active:bg-[#F5F5F7]"
+          className="mx-5 mt-3.5 h-[42px] px-4 rounded-[14px] flex items-center gap-[8px] text-[13px] font-normal bg-white transition-colors active:bg-[#EEF4FF]"
           style={{ color: T2, border: "0.5px solid rgba(10,132,255,0.14)", boxShadow: SHADOW_SM }}>
           <ChevronLeft className="w-[13px] h-[13px]" strokeWidth={2.5} />
           Back to Assignments

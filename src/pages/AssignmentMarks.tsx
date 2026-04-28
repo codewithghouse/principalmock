@@ -141,7 +141,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -718,7 +718,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             val: `${group.avgScore}%`,
             sub: group.avgScore >= 70 ? "Strong" : group.avgScore >= 50 ? "Average" : "Needs work",
             Icon: TrendingUp,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF",
@@ -741,7 +741,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
             sub: "Topper",
             isText: true,
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE",
@@ -817,7 +817,7 @@ function AssignmentDetail({ group, onBack }: { group: AssignmentGroup; onBack: (
                   : { bg: "rgba(255,59,48,0.10)", c: "#FF3B30", bdr: "rgba(255,59,48,0.22)", fill: "linear-gradient(90deg, #FF3B30, #FF6961)" };
                 const name = r.studentName || "—";
                 return (
-                  <tr key={r.studentId || i} className="transition-colors hover:bg-[#F5F5F7]"
+                  <tr key={r.studentId || i} className="transition-colors hover:bg-[#EEF4FF]"
                     style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                     <td className="px-5 py-[16px] text-[12px] font-normal" style={{ color: "#A1A1A6" }}>{i + 1}</td>
                     <td className="px-5 py-[16px]">
@@ -1177,7 +1177,7 @@ export default function AssignmentMarks() {
             val: loading ? "—" : stats.totalAssignments,
             sub: "This term",
             Icon: BookOpen,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF",
@@ -1211,7 +1211,7 @@ export default function AssignmentMarks() {
             sub: stats.topStudent && stats.topStudent !== "—" ? "Highest across submissions" : "No data",
             isText: true,
             Icon: Trophy,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE",
@@ -1317,7 +1317,7 @@ export default function AssignmentMarks() {
                   const allGraded = g.gradedCount === g.results.length && g.gradedCount > 0;
                   const avgColor = g.avgScore >= 70 ? "#34C759" : g.avgScore >= 50 ? "#FF9500" : "#FF3B30";
                   return (
-                    <tr key={g.homeworkId || i} className="transition-colors hover:bg-[#F5F5F7]"
+                    <tr key={g.homeworkId || i} className="transition-colors hover:bg-[#EEF4FF]"
                       style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                       {/* Assignment name */}
                       <td className="px-5 py-[16px]">

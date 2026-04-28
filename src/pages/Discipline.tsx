@@ -51,7 +51,7 @@ const getStatusColor = (status: string) => {
 const fieldInputStyle = (t1: string, t4: string): React.CSSProperties => ({
   width: "100%",
   padding: "12px 14px",
-  background: "#F5F5F7",
+  background: "#EEF4FF",
   borderRadius: 13,
   border: "0.5px solid rgba(10,132,255,.12)",
   fontFamily: "inherit",
@@ -69,7 +69,7 @@ const fieldInputStyle = (t1: string, t4: string): React.CSSProperties => ({
 const selectInputStyle = (t1: string): React.CSSProperties => ({
   width: "100%",
   padding: "12px 14px",
-  background: "#F5F5F7",
+  background: "#EEF4FF",
   borderRadius: 13,
   border: "0.5px solid rgba(10,132,255,.12)",
   fontFamily: "inherit",
@@ -395,7 +395,7 @@ const Discipline = () => {
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -1378,7 +1378,7 @@ const Discipline = () => {
                     flex: 1,
                     height: 48,
                     borderRadius: 15,
-                    background: "#F5F5F7",
+                    background: "#EEF4FF",
                     border: "0.5px solid rgba(10,132,255,.16)",
                     display: "flex",
                     alignItems: "center",
@@ -1434,7 +1434,7 @@ const Discipline = () => {
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
   const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
-  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dBG = "#EEF4FF", dBG2 = "#EBEBF0";
   const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
   const dSEP = "rgba(10,132,255,0.08)";
   const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
@@ -1557,14 +1557,14 @@ const Discipline = () => {
               },
               {
                 title: "This Week", val: stats.weekCount, valColor: dB1, sub: "Total incidents", Icon: Calendar,
-                cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+                cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
                 tileGrad: `linear-gradient(135deg, ${dB1}, ${dB2})`,
                 tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
                 decorColor: dB1,
               },
               {
                 title: "Critical Cases", val: stats.criticalCount, valColor: dVIOLET, sub: "High priority", Icon: AlertTriangle,
-                cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+                cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
                 tileGrad: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`,
                 tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
                 decorColor: dVIOLET,

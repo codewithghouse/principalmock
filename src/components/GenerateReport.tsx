@@ -162,7 +162,7 @@ const GenerateReport = ({ templateName, onBack }: Props) => {
   };
 
   const B1 = "#0A84FF", B2 = "#3395FF", B4 = "#7CBBFF";
-  const BG = "#F5F5F7";
+  const BG = "#EEF4FF";
   const T1 = "#1D1D1F", T3 = "#6E6E73", T4 = "#A1A1A6";
   const SEP = "rgba(10,132,255,0.08)";
   const GREEN_D = "#248A3D";

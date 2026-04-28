@@ -8,7 +8,7 @@ import { toast } from "sonner";
 
 // ── Tokens — aligned to principal-dashboard palette ─────────────────────
 const T = {
-  bg:   "#F5F5F7",
+  bg:   "#EEF4FF",
   white:"#fff",
   ink:  "#1D1D1F",
   ink2: "#6E6E73",

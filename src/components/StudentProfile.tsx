@@ -319,12 +319,12 @@ const StudentProfile = ({ student, onBack }: Props) => {
         section { margin-bottom: 32px; }
         h2 { font-size: 16px; color: #1D1D1F; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #EBEBF0; }
         .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
-        .stat { background: #F5F5F7; border: 1px solid #EBEBF0; border-radius: 10px; padding: 16px; text-align: center; }
+        .stat { background: #EEF4FF; border: 1px solid #EBEBF0; border-radius: 10px; padding: 16px; text-align: center; }
         .stat-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #A1A1A6; margin-bottom: 6px; }
         .stat-value { font-size: 24px; font-weight: 900; color: #1D1D1F; }
         table { width: 100%; border-collapse: collapse; font-size: 13px; }
-        th { background: #F5F5F7; padding: 10px 14px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #6E6E73; border-bottom: 2px solid #EBEBF0; }
-        td { padding: 10px 14px; border-bottom: 1px solid #F5F5F7; }
+        th { background: #EEF4FF; padding: 10px 14px; text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #6E6E73; border-bottom: 2px solid #EBEBF0; }
+        td { padding: 10px 14px; border-bottom: 1px solid #EEF4FF; }
         .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid #EBEBF0; font-size: 11px; color: #A1A1A6; display: flex; justify-content: space-between; }
         @media print { body { padding: 24px; } }
       </style></head><body>

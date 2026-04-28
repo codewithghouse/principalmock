@@ -401,7 +401,7 @@ export default function TeacherLeaderboard() {
           data-sfpro
           style={{
             fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-            background: "#F5F5F7",
+            background: "#EEF4FF",
             minHeight: "100vh",
             paddingBottom: 24,
           }}
@@ -835,7 +835,7 @@ export default function TeacherLeaderboard() {
         data-sfpro
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -1910,7 +1910,7 @@ export default function TeacherLeaderboard() {
             value: stats.total,
             sub: classFilter === "All" ? "In branch" : "Teaching this class",
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF",
@@ -1932,7 +1932,7 @@ export default function TeacherLeaderboard() {
             value: stats.active,
             sub: "With recent data",
             Icon: Sparkles,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE",
@@ -2892,7 +2892,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
               <div
                 key={i}
                 style={{
-                  background: "#F5F5F7",
+                  background: "#EEF4FF",
                   borderRadius: 14,
                   padding: 16,
                   textAlign: "center",
@@ -2924,7 +2924,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
           style={{
             padding: "14px 28px",
             borderTop: "0.5px solid rgba(10,132,255,.07)",
-            background: "#F5F5F7",
+            background: "#EEF4FF",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",

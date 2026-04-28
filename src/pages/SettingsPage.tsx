@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import MigrationEngine from "@/components/MigrationEngine";
 
 const B1 = "#0A84FF", B2 = "#3395FF";
-const BG = "#F5F5F7";
+const BG = "#EEF4FF";
 const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
 const SEP = "rgba(10,132,255,0.08)";
 const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";

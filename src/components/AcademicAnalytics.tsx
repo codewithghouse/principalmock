@@ -205,7 +205,7 @@ const AcademicAnalytics = () => {
                      <BarChart data={distributionData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
                         <XAxis dataKey="range" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#6E6E73', fontWeight: 'bold' }} dy={5} />
                         <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#6E6E73' }} dx={-10} />
-                        <RechartsTooltip cursor={{ fill: '#F5F5F7' }} contentStyle={{ borderRadius: '8px', border: '1px solid #EBEBF0', fontSize: '12px', fontWeight: 'bold' }} />
+                        <RechartsTooltip cursor={{ fill: '#EEF4FF' }} contentStyle={{ borderRadius: '8px', border: '1px solid #EBEBF0', fontSize: '12px', fontWeight: 'bold' }} />
                         <Bar dataKey="count" radius={[4, 4, 0, 0]}>
                            {distributionData.map((entry, index) => (
                               <Cell key={`cell-${index}`} fill={index === 2 ? '#0A84FF' : '#A1A1A6'} />
@@ -235,7 +235,7 @@ const AcademicAnalytics = () => {
                               <stop offset="95%" stopColor="#AF52DE" stopOpacity={0}/>
                            </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F5F5F7" />
+                        <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#EEF4FF" />
                         <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#6E6E73', fontWeight: 'bold' }} dy={5} />
                         <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fill: '#6E6E73' }} dx={-10} domain={[40, 100]} />
                         <RechartsTooltip contentStyle={{ borderRadius: '8px', border: '1px solid #EBEBF0', fontSize: '12px', fontWeight: 'bold' }} />

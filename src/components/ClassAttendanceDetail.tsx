@@ -153,7 +153,7 @@ const ClassAttendanceDetail = ({ className, onBack }: ClassAttendanceDetailProps
   }, [userData?.schoolId, userData?.branchId, className]);
 
   const getDayStyle = (d: any) => {
-    if (d.filler || d.weekend || d.pct === null) return { bg: '#F5F5F7', text: '#A1A1A6' };
+    if (d.filler || d.weekend || d.pct === null) return { bg: '#EEF4FF', text: '#A1A1A6' };
     if (d.pct >= 80) return { bg: '#34C759', text: '#ffffff' };
     if (d.pct >= 70) return { bg: '#FF9500', text: '#ffffff' };
     return { bg: '#FF3B30', text: '#ffffff' };

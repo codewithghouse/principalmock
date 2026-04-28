@@ -6,7 +6,7 @@ import MobileTabBar from "./MobileTabBar";
 const DashboardLayout = ({ children }: { children: ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F5F7]">
+    <div className="min-h-screen flex flex-col bg-[#EEF4FF]">
       <Header onMenuClick={() => setSidebarOpen(true)} />
       <div className="flex flex-1 overflow-hidden relative">
         {/* Mobile overlay */}

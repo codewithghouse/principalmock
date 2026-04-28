@@ -294,7 +294,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
               ) : (
                 <ResponsiveContainer width="100%" height={Math.max(220, sectionData.length * 42)}>
                   <BarChart data={sectionData} layout="vertical" margin={{ top: 5, right: 50, left: 10, bottom: 5 }} barCategoryGap="20%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" horizontal={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#EEF4FF" horizontal={false} />
                     <XAxis
                       type="number" domain={[0, 100]}
                       axisLine={false} tickLine={false}
@@ -401,7 +401,7 @@ const SubjectAnalysis = ({ subject, onBack }: SubjectAnalysisProps) => {
               ) : (
                 <ResponsiveContainer width="100%" height={240}>
                   <BarChart data={marksDistData} barCategoryGap="20%">
-                    <CartesianGrid strokeDasharray="3 3" stroke="#F5F5F7" vertical={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="#EEF4FF" vertical={false} />
                     <XAxis
                       dataKey="range" axisLine={false} tickLine={false}
                       tick={{ fontSize: 11, fontWeight: 400, fill: "#A1A1A6" }}

@@ -280,7 +280,7 @@ const TeacherNotes = () => {
         <div
           style={{
             fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-            background: "#F5F5F7",
+            background: "#EEF4FF",
             height: "100vh",
             display: "flex",
             flexDirection: "column",
@@ -464,7 +464,7 @@ const TeacherNotes = () => {
               flexDirection: "column",
               gap: 12,
               minHeight: 0,
-              background: "#F5F5F7",
+              background: "#EEF4FF",
             }}
           >
             {loading ? (
@@ -706,7 +706,7 @@ const TeacherNotes = () => {
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -1287,7 +1287,7 @@ const TeacherNotes = () => {
   const WA_CHAT_BG    = "#EFEAE2";
   const WA_PANEL      = "#F0F0F2";
   const WA_DIVIDER    = "#EBEBF0";
-  const WA_HOVER      = "#F5F5F7";
+  const WA_HOVER      = "#EEF4FF";
   const WA_BADGE      = "#25D366";
 
   // Aliases — keep older references in this scope compiling.
@@ -1426,7 +1426,7 @@ const TeacherNotes = () => {
                   return (
                     <button key={t.id}
                       onClick={() => setSelectedTeacher(t)}
-                      className="w-full flex items-center gap-3 px-3 py-[12px] text-left transition-colors hover:bg-[#F5F5F7]"
+                      className="w-full flex items-center gap-3 px-3 py-[12px] text-left transition-colors hover:bg-[#EEF4FF]"
                       style={{
                         background: active ? WA_HOVER : "#fff",
                         border: "none",

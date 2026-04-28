@@ -396,7 +396,7 @@ export default function StudentIntelligence() {
      ═══════════════════════════════════════════════════════════════ */
   if (isMobile) {
     const B1 = "#0A84FF", B3 = "#5BA9FF", B4 = "#7CBBFF";
-    const BG = "#F5F5F7", BG2 = "#EBEBF0";
+    const BG = "#EEF4FF", BG2 = "#EBEBF0";
     const T1 = "#1D1D1F", T3 = "#6E6E73", T4 = "#A1A1A6";
     const SEP = "rgba(10,132,255,0.07)";
     const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
@@ -439,7 +439,7 @@ export default function StudentIntelligence() {
           style={{ boxShadow: SH_LG, border: "0.5px solid rgba(10,132,255,0.10)" }}>
           {/* Tap row to open profile */}
           <button onClick={() => navigate(`/students/${stu.studentId}`)}
-            className="w-full flex items-start gap-[16px] px-[16px] pt-[16px] pb-4 text-left active:bg-[#F5F5F7] transition-colors"
+            className="w-full flex items-start gap-[16px] px-[16px] pt-[16px] pb-4 text-left active:bg-[#EEF4FF] transition-colors"
             style={{ borderBottom: `0.5px solid ${SEP}` }}>
             <div className="w-[50px] h-[50px] rounded-[16px] flex items-center justify-center text-[18px] font-normal text-white shrink-0"
               style={{ background: avatarGrad, boxShadow: avatarShadow }}>
@@ -719,7 +719,7 @@ export default function StudentIntelligence() {
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
   const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
-  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dBG = "#EEF4FF", dBG2 = "#EBEBF0";
   const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
   const dSEP = "rgba(10,132,255,0.08)";
   const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";

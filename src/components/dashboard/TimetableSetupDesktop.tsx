@@ -39,7 +39,7 @@ const subjectStyle = (s: string) => {
 
 // ── Palette (identical to mobile for continuity) ─────────────────────────────
 const B1 = "#0A84FF", B2 = "#3395FF";
-const BG = "#F5F5F7", BG2 = "#EBEBF0";
+const BG = "#EEF4FF", BG2 = "#EBEBF0";
 const T1 = "#1D1D1F", T3 = "#6E6E73", T4 = "#A1A1A6";
 const SEP = "rgba(10,132,255,0.07)";
 
@@ -211,7 +211,7 @@ const DayCard = ({
         <button onClick={() => onAddPeriod(day)}
           className="flex-1 h-[40px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96] hover:scale-[1.02]"
           style={{
-            background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)",
+            background: "linear-gradient(135deg, #EEF4FF, #DDEAFF)",
             color: B1,
             border: "0.5px solid rgba(10,132,255,0.22)",
             boxShadow: "0 3px 10px rgba(10,132,255,0.14)",
@@ -259,7 +259,7 @@ const GridView = ({ schedule, onJumpToDay }: GridViewProps) => {
         {DAYS.map((d, i) => (
           <button key={d}
             onClick={() => onJumpToDay(d)}
-            className="py-[16px] px-2 text-center text-[12px] font-normal transition-colors hover:bg-[#F5F5F7]"
+            className="py-[16px] px-2 text-center text-[12px] font-normal transition-colors hover:bg-[#EEF4FF]"
             style={{
               background: "rgba(10,132,255,0.04)", color: T1,
               borderRight: i < DAYS.length - 1 ? `1px solid ${SEP}` : undefined,
@@ -515,14 +515,14 @@ const TimetableSetupDesktop = (props: TimetableSetupDesktopProps) => {
         {[
           {
             label: "Total Periods", val: totalPeriods, sub: "Across 6 days", Icon: Clock,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF", decorColor: "#0A84FF",
           },
           {
             label: "Subjects", val: uniqueSubjects, sub: "Assigned", Icon: BookOpen,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE", decorColor: "#AF52DE",

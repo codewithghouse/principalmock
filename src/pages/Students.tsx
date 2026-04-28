@@ -608,7 +608,7 @@ const Students = () => {
                         </a>
                       </div>
                     </div>
-                    <div style="background:#F5F5F7;padding:14px 28px;text-align:center;">
+                    <div style="background:#EEF4FF;padding:14px 28px;text-align:center;">
                       <p style="color:#A1A1A6;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
                     </div>
                   </div>
@@ -741,7 +741,7 @@ const Students = () => {
   // ── Render ───────────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen" style={{ background: "#F5F5F7" }}>
+    <div className="min-h-screen" style={{ background: "#EEF4FF" }}>
     <div className={isMobile ? "animate-in fade-in duration-500" : "space-y-8 animate-in fade-in duration-500 pb-10 text-left"}>
 
       {isMobile ? (() => {

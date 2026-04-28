@@ -238,11 +238,11 @@ function buildParentEmailHtml({
       <div style="padding: 28px; background: #fff;">
         <h2 style="color: #1D1D1F; font-size: 17px; margin: 0 0 6px;">About ${safeName}</h2>
         <p style="color: #6E6E73; font-size: 12px; margin: 0 0 18px;">Sent by ${safePrincipal}</p>
-        <div style="background: #F5F5F7; border-left: 3px solid #1D1D1F; padding: 16px 18px; border-radius: 0 8px 8px 0; color: #3A3A3C; font-size: 14px; line-height: 1.65;">
+        <div style="background: #EEF4FF; border-left: 3px solid #1D1D1F; padding: 16px 18px; border-radius: 0 8px 8px 0; color: #3A3A3C; font-size: 14px; line-height: 1.65;">
           ${safeBody}
         </div>
       </div>
-      <div style="background: #F5F5F7; padding: 14px 28px; text-align: center;">
+      <div style="background: #EEF4FF; padding: 14px 28px; text-align: center;">
         <p style="color: #A1A1A6; font-size: 11px; margin: 0;">Powered by Edullent &middot; ${safeSchool}</p>
       </div>
     </div>

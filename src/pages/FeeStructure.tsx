@@ -722,7 +722,7 @@ export default function FeeStructurePage() {
         <div
           style={{
             fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-            background: "#F5F5F7",
+            background: "#EEF4FF",
             minHeight: "100vh",
             paddingBottom: 24,
           }}
@@ -1548,7 +1548,7 @@ export default function FeeStructurePage() {
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -1901,7 +1901,7 @@ export default function FeeStructurePage() {
               style={{
                 width: "100%",
                 padding: "10px 14px",
-                background: "#F5F5F7",
+                background: "#EEF4FF",
                 borderRadius: 12,
                 border: "0.5px solid rgba(10,132,255,.14)",
                 fontFamily: "inherit",
@@ -1923,7 +1923,7 @@ export default function FeeStructurePage() {
               style={{
                 width: "100%",
                 padding: "10px 14px",
-                background: "#F5F5F7",
+                background: "#EEF4FF",
                 borderRadius: 12,
                 border: "0.5px solid rgba(10,132,255,.14)",
                 fontFamily: "inherit",
@@ -1965,7 +1965,7 @@ export default function FeeStructurePage() {
               marginTop: 8,
               height: 36,
               borderRadius: 11,
-              background: "#F5F5F7",
+              background: "#EEF4FF",
               color: B1,
               display: "flex",
               alignItems: "center",
@@ -2852,7 +2852,7 @@ export default function FeeStructurePage() {
         {/* Versions Saved — blue */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            background: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
             border: "0.5px solid rgba(10,132,255,0.08)",
           }}>
@@ -2875,7 +2875,7 @@ export default function FeeStructurePage() {
         {/* Students Tracked — violet */}
         <div className="rounded-[20px] p-5 relative overflow-hidden"
           style={{
-            background: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            background: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             boxShadow: "0 0 0 0.5px rgba(10,132,255,0.14), 0 6px 20px rgba(10,132,255,0.10), 0 22px 56px rgba(10,132,255,0.10)",
             border: "0.5px solid rgba(10,132,255,0.08)",
           }}>

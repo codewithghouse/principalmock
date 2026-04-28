@@ -501,7 +501,7 @@ const Teachers = () => {
                   </a>
                 </div>
               </div>
-              <div style="background:#F5F5F7;padding:14px 28px;text-align:center;">
+              <div style="background:#EEF4FF;padding:14px 28px;text-align:center;">
                 <p style="color:#A1A1A6;font-size:11px;margin:0;">Powered by Edullent Cloud Architecture</p>
               </div>
             </div>
@@ -551,7 +551,7 @@ const Teachers = () => {
      ═══════════════════════════════════════════════════════════════ */
   if (isMobile) {
     const B1 = "#0A84FF", B2 = "#3395FF", B4 = "#7CBBFF";
-    const BG = "#F5F5F7", BG2 = "#EBEBF0";
+    const BG = "#EEF4FF", BG2 = "#EBEBF0";
     const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
     const SEP = "rgba(10,132,255,0.07)";
     const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
@@ -1095,7 +1095,7 @@ const Teachers = () => {
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
   const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
-  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dBG = "#EEF4FF", dBG2 = "#EBEBF0";
   const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
   const dSEP = "rgba(10,132,255,0.08)";
   const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";

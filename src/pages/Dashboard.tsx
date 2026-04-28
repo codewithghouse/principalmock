@@ -490,7 +490,7 @@ const Dashboard = () => {
   //  DESKTOP — Blue Apple Design (matches mobile language)
   // ═══════════════════════════════════════════════════════════════
   const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
-  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dBG = "#EEF4FF", dBG2 = "#EBEBF0";
   const dT1 = "#1D1D1F", dT3 = "#6E6E73", dT4 = "#A1A1A6";
   const dSEP = "rgba(10,132,255,0.08)";
   const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
@@ -511,7 +511,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen animate-in fade-in duration-500"
-      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: "#F5F5F7" }}>
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif", background: "#EEF4FF" }}>
     <div className="pb-10 w-full px-2">
 
       {/* ── Toolbar ───────────────────────────────────────────────────────────── */}
@@ -586,7 +586,7 @@ const Dashboard = () => {
           role="button" tabIndex={0}
           {...tilt3D}
           className="rounded-[20px] p-5 relative overflow-hidden cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A84FF]/40"
-          style={{ background: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
+          style={{ background: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)", boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
           <div className="w-14 h-14 rounded-[14px] flex items-center justify-center mb-3 relative"
             style={{ background: `linear-gradient(135deg, ${dB1}, ${dB2})`, boxShadow: "0 4px 14px rgba(10,132,255,0.28)", transform: "translateZ(18px)" }}>
@@ -647,7 +647,7 @@ const Dashboard = () => {
           style={{
             background: (pendingIncidents ?? 0) > 0
               ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-              : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+              : "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             boxShadow: dSH_LG, border: `0.5px solid ${dSEP}`, ...tilt3DStyle,
           }}>
           <div data-glow className="absolute inset-0 pointer-events-none transition-opacity duration-300" style={{ opacity: 0 }} />
@@ -710,7 +710,7 @@ const Dashboard = () => {
                 const isCrit = a.level === "CRITICAL";
                 return (
                   <div key={a.id}
-                    className="flex items-center justify-between px-6 py-4 hover:bg-[#F5F5F7] transition-colors cursor-pointer"
+                    className="flex items-center justify-between px-6 py-4 hover:bg-[#EEF4FF] transition-colors cursor-pointer"
                     style={{ borderTop: idx > 0 ? `0.5px solid ${dSEP}` : undefined, background: isCrit ? "rgba(255,59,48,0.03)" : "transparent" }}>
                     <div className="flex items-center gap-3 min-w-0">
                       <span className="w-[10px] h-[10px] rounded-full shrink-0"
@@ -1101,7 +1101,7 @@ const Dashboard = () => {
                   {urgentComms.map(c => {
                     const isHigh = c.border.includes("red");
                     return (
-                      <div key={c.id} className="rounded-[14px] px-4 py-3 transition-colors cursor-pointer hover:bg-[#F5F5F7]"
+                      <div key={c.id} className="rounded-[14px] px-4 py-3 transition-colors cursor-pointer hover:bg-[#EEF4FF]"
                         style={{
                           background: dBG,
                           borderLeft: `3px solid ${isHigh ? dRED : dGOLD}`,

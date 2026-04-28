@@ -8,7 +8,7 @@ import { useAuth } from "@/lib/AuthContext";
 
 // ── Tokens — aligned to principal-dashboard palette ─────────────────────────
 const T = {
-  bg:    "#F5F5F7",                  // scaffold background matches dashboard
+  bg:    "#EEF4FF",                  // scaffold background matches dashboard
   white: "#ffffff",
   ink:   "#1D1D1F",                  // T1 primary text
   ink2:  "#6E6E73",                  // T3 secondary text

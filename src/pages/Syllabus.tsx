@@ -394,7 +394,7 @@ const Syllabus = () => {
       <div
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -443,7 +443,7 @@ const Syllabus = () => {
               sub: totalCount === 0 ? "None uploaded yet" : "Across all classes",
               valColor: B1,
               subColor: T3,
-              cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+              cardBg: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
               iconBg: `linear-gradient(135deg, ${B1}, ${B2})`,
               iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
               icon: Library,
@@ -479,7 +479,7 @@ const Syllabus = () => {
               sub: subjectsCount === 0 ? "No subjects yet" : "Distinct subjects",
               valColor: VIOLET,
               subColor: T3,
-              cardBg: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+              cardBg: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
               iconBg: `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
               iconShadow: "0 4px 14px rgba(175,82,222,0.26)",
               icon: BookOpen,
@@ -909,7 +909,7 @@ const Syllabus = () => {
                           gap: 6,
                           padding: "4px 10px",
                           borderRadius: 100,
-                          background: "#F5F5F7",
+                          background: "#EEF4FF",
                           border: "0.5px solid rgba(10,132,255,.12)",
                         }}
                       >
@@ -1156,7 +1156,7 @@ const Syllabus = () => {
   //  DESKTOP — Blue Apple Design
   // ═══════════════════════════════════════════════════════════════
   const dB1 = "#0A84FF", dB2 = "#3395FF", dB4 = "#7CBBFF";
-  const dBG = "#F5F5F7", dBG2 = "#EBEBF0";
+  const dBG = "#EEF4FF", dBG2 = "#EBEBF0";
   const dT1 = "#1D1D1F", dT2 = "#3A3A3C", dT3 = "#6E6E73", dT4 = "#A1A1A6";
   const dSEP = "rgba(10,132,255,0.08)";
   const dGREEN = "#34C759", dGREEN_D = "#248A3D", dGREEN_S = "rgba(52,199,89,0.10)", dGREEN_B = "rgba(52,199,89,0.22)";
@@ -1237,7 +1237,7 @@ const Syllabus = () => {
             title: "Total Syllabi", val: totalCount, valColor: dB1,
             sub: totalCount === 0 ? "None uploaded yet" : "Across all classes",
             Icon: Library,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: `linear-gradient(135deg, ${dB1}, ${dB2})`,
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             decorColor: dB1,
@@ -1246,7 +1246,7 @@ const Syllabus = () => {
             title: "Classes Covered", val: classesCount, valColor: dVIOLET,
             sub: classesCount === 0 ? "No classes yet" : "With ≥ 1 syllabus",
             Icon: Building2,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: `linear-gradient(135deg, ${dVIOLET}, #AF52DE)`,
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             decorColor: dVIOLET,

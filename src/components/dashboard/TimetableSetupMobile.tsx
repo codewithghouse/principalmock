@@ -52,7 +52,7 @@ const DAY_DOT: Record<string, string> = {
 
 // ── Palette ───────────────────────────────────────────────────────────────────
 const B1 = "#0A84FF", B2 = "#3395FF";
-const BG = "#F5F5F7", BG2 = "#EBEBF0";
+const BG = "#EEF4FF", BG2 = "#EBEBF0";
 const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
 const SEP = "rgba(10,132,255,0.07)";
 
@@ -418,7 +418,7 @@ const TimetableSetupMobile = ({
                     <button onClick={() => onAddPeriod(day)}
                       className="flex-1 h-[42px] rounded-[12px] flex items-center justify-center gap-[8px] text-[12px] font-normal uppercase tracking-[0.04em] transition-transform active:scale-[0.96]"
                       style={{
-                        background: "linear-gradient(135deg, #F5F5F7, #DDEAFF)",
+                        background: "linear-gradient(135deg, #EEF4FF, #DDEAFF)",
                         color: B1,
                         border: "0.5px solid rgba(10,132,255,0.22)",
                         boxShadow: "0 3px 10px rgba(10,132,255,0.14)",

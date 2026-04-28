@@ -427,7 +427,7 @@ const TeacherPerformance = () => {
         data-sfpro
         style={{
           fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', sans-serif",
-          background: "#F5F5F7",
+          background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
         }}
@@ -782,7 +782,7 @@ const TeacherPerformance = () => {
                 let trendIconEl = <Minus size={12} color={T4} strokeWidth={2.4} />;
                 let trendColor = T4;
                 let trendLabel = "—";
-                let trendBg = "#F5F5F7";
+                let trendBg = "#EEF4FF";
                 let trendBorder = "rgba(153,170,204,.22)";
                 if (tr) {
                   trendLabel = tr.label;
@@ -1114,7 +1114,7 @@ const TeacherPerformance = () => {
                           gap: 6,
                           fontSize: 12,
                           fontWeight: 400,
-                          background: "#F5F5F7",
+                          background: "#EEF4FF",
                           color: "#3A3A3C",
                           border: "0.5px solid rgba(10,132,255,.16)",
                           cursor: "pointer",
@@ -1361,7 +1361,7 @@ const TeacherPerformance = () => {
             val: teachers.length,
             sub: "In branch",
             Icon: Users,
-            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #0A84FF, #3395FF)",
             tileShadow: "0 4px 14px rgba(10,132,255,0.28)",
             valColor: "#0A84FF",
@@ -1372,7 +1372,7 @@ const TeacherPerformance = () => {
             val: loading ? "—" : `${schoolAvg}%`,
             sub: dSchoolAvgTier.label,
             Icon: BarChart3,
-            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            cardGrad: "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
             tileGrad: "linear-gradient(135deg, #AF52DE, #AF52DE)",
             tileShadow: "0 4px 14px rgba(175,82,222,0.26)",
             valColor: "#AF52DE",
@@ -1481,7 +1481,7 @@ const TeacherPerformance = () => {
                     : g === "C" ? { bg: "rgba(255,204,0,0.10)", c: "#86310C", bdr: "rgba(255,204,0,0.22)" }
                     : { bg: "rgba(255,59,48,0.10)", c: "#FF3B30", bdr: "rgba(255,59,48,0.22)" };
                   return (
-                    <tr key={t.id} className="transition-colors hover:bg-[#F5F5F7]"
+                    <tr key={t.id} className="transition-colors hover:bg-[#EEF4FF]"
                       style={i < arr.length - 1 ? { borderBottom: "0.5px solid rgba(10,132,255,0.05)" } : {}}>
                       <td className="py-[16px] px-5">
                         <div className="flex items-center gap-3">

@@ -40,7 +40,7 @@ export interface DashboardMobileProps {
 
 // ── Bright-blue theme tokens ──
 const B1 = "#0A84FF", B2 = "#3395FF", B3 = "#5BA9FF", B4 = "#7CBBFF";
-const BG = "#F5F5F7", BG2 = "#EBEBF0";
+const BG = "#EEF4FF", BG2 = "#EBEBF0";
 const T1 = "#1D1D1F", T2 = "#3A3A3C", T3 = "#6E6E73", T4 = "#A1A1A6";
 const SEP = "rgba(10,132,255,0.07)";
 const GREEN = "#34C759", GREEN_D = "#248A3D", GREEN_S = "rgba(52,199,89,0.10)", GREEN_B = "rgba(52,199,89,0.22)";
@@ -152,7 +152,7 @@ const DashboardMobile = ({
       {[
         {
           label: "Total\nStudents", value: displayStudents, sub: "Enrolled this branch",
-          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #F5F5F7 100%)",
+          cardBg: "linear-gradient(135deg, #EBEBF0 0%, #EEF4FF 100%)",
           icon: Users, iconBg: `linear-gradient(135deg, ${B1}, ${B2})`, iconShadow: "0 4px 14px rgba(10,132,255,0.28)",
           valColor: B1, subColor: T3,
           decorIcon: Users, decorColor: B1, decorOpacity: 0.18,
@@ -181,7 +181,7 @@ const DashboardMobile = ({
           sub: incidentsActive ? "Action required" : "All clear",
           cardBg: incidentsActive
             ? "linear-gradient(135deg, #F5CFD7 0%, #FDF3F5 100%)"
-            : "linear-gradient(135deg, #E5D5FF 0%, #F5F5F7 100%)",
+            : "linear-gradient(135deg, #E5D5FF 0%, #EEF4FF 100%)",
           icon: AlertCircle,
           iconBg: incidentsActive ? `linear-gradient(135deg, ${RED}, #FF5E55)` : `linear-gradient(135deg, ${VIOLET}, #AF52DE)`,
           iconShadow: incidentsActive ? "0 4px 14px rgba(255,59,48,0.28)" : "0 4px 14px rgba(175,82,222,0.26)",
@@ -257,7 +257,7 @@ const DashboardMobile = ({
             return (
               <button key={a.id}
                 onClick={() => navigate("/risk-students")}
-                className="w-full flex items-center gap-3 px-[16px] py-[16px] text-left active:bg-[#F5F5F7] transition-colors"
+                className="w-full flex items-center gap-3 px-[16px] py-[16px] text-left active:bg-[#EEF4FF] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
                 <span className="w-[9px] h-[9px] rounded-full shrink-0"
                   style={{
@@ -412,7 +412,7 @@ const DashboardMobile = ({
             return (
               <button key={`${t.name}-${i}`}
                 onClick={(e) => { e.stopPropagation(); navigate("/teachers"); }}
-                className="w-full flex items-center gap-3 px-[16px] py-[12px] text-left active:bg-[#F5F5F7] transition-colors"
+                className="w-full flex items-center gap-3 px-[16px] py-[12px] text-left active:bg-[#EEF4FF] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
                 <div className="w-10 h-10 rounded-[13px] flex items-center justify-center text-[13px] font-normal text-white shrink-0"
                   style={{ background: av.bg, boxShadow: av.shadow }}>
@@ -470,7 +470,7 @@ const DashboardMobile = ({
             return (
               <button key={c.id}
                 onClick={() => navigate("/parent-communication")}
-                className="w-full flex items-start gap-3 px-[16px] py-[12px] text-left active:bg-[#F5F5F7] transition-colors"
+                className="w-full flex items-start gap-3 px-[16px] py-[12px] text-left active:bg-[#EEF4FF] transition-colors"
                 style={{ borderBottom: i < arr.length - 1 ? `0.5px solid ${SEP}` : "none" }}>
                 <div className="w-1 h-10 rounded-full shrink-0 mt-1" style={{ background: isHigh ? RED : ORANGE }} />
                 <div className="flex-1 min-w-0">
