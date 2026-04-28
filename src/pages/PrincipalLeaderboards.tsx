@@ -851,14 +851,14 @@ const PrincipalLeaderboards: React.FC = () => {
   // ── Render gates
   if (!schoolId) {
     return (
-      <div style={{ background: T.pageBg, minHeight: "100vh", padding: "28px 16px 40px", fontFamily: FONT }}>
+      <div data-sfpro style={{ background: T.pageBg, minHeight: "100vh", padding: "28px 16px 40px", fontFamily: FONT }}>
         <EmptyTab title="No school context" body="Could not determine your school. Please log out and back in." />
       </div>
     );
   }
 
   return (
-    <div style={{ background: T.pageBg, minHeight: "100vh", padding: "28px 16px 40px", fontFamily: FONT }}>
+    <div data-sfpro style={{ background: T.pageBg, minHeight: "100vh", padding: "28px 16px 40px", fontFamily: FONT }}>
       <div style={{ marginBottom: 22 }}>
         <p style={{ fontSize: 10, fontWeight: 800, letterSpacing: "2px", color: T.T4, margin: "0 0 4px", textTransform: "uppercase", fontFamily: FONT }}>
           {schoolName} {data ? `· Week ${data.meta.weekNumber}` : ""}

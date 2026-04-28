@@ -424,8 +424,9 @@ const TeacherPerformance = () => {
 
     return (
       <div
+        data-sfpro
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, sans-serif",
           background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -1277,7 +1278,7 @@ const TeacherPerformance = () => {
     : { label: "Weak", c: "#FF99AA", bg: "rgba(255,51,85,0.22)", bdr: "rgba(255,51,85,0.4)" };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'DM Sans', -apple-system, sans-serif" }}>
+    <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500" style={{ fontFamily: "'SF Pro Display', -apple-system, sans-serif" }}>
 
       {/* Top toolbar */}
       <div className="flex items-start justify-between gap-4 pt-2 mb-5">

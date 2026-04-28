@@ -398,8 +398,9 @@ export default function TeacherLeaderboard() {
 
       return (
         <div
+          data-sfpro
           style={{
-            fontFamily: "'DM Sans', -apple-system, sans-serif",
+            fontFamily: "'SF Pro Display', -apple-system, sans-serif",
             background: "#EEF4FF",
             minHeight: "100vh",
             paddingBottom: 24,
@@ -831,8 +832,9 @@ export default function TeacherLeaderboard() {
     // ── LIST VIEW ──
     return (
       <div
+        data-sfpro
         style={{
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, sans-serif",
           background: "#EEF4FF",
           minHeight: "100vh",
           paddingBottom: 24,
@@ -1615,9 +1617,10 @@ export default function TeacherLeaderboard() {
 
   return (
     <div
+      data-sfpro
       className="animate-in fade-in duration-300"
       style={{
-        fontFamily: "'DM Sans', -apple-system, sans-serif",
+        fontFamily: "'SF Pro Display', -apple-system, sans-serif",
         paddingBottom: 40,
       }}
     >
@@ -2624,7 +2627,7 @@ function DetailModal({ score, onClose }: { score: TeacherScore; onClose: () => v
           overflow: "hidden",
           boxShadow: "0 40px 80px rgba(0,10,60,.45), 0 0 0 .5px rgba(255,255,255,.1)",
           animation: "popIn .4s cubic-bezier(.34,1.26,.64,1) both",
-          fontFamily: "'DM Sans', -apple-system, sans-serif",
+          fontFamily: "'SF Pro Display', -apple-system, sans-serif",
         }}
       >
         {/* Dark hero header */}

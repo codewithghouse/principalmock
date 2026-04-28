@@ -81,6 +81,15 @@ html, body, *, *::before, *::after {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
 }
 
+/* SF Pro Display end-to-end on opted-in pages (data-sfpro on the root).
+   Compound selector raises specificity to (0,2,0) so it wins over the
+   Plus Jakarta override above regardless of source order. */
+[data-sfpro][data-sfpro],
+[data-sfpro][data-sfpro] * {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif !important;
+  font-weight: 400 !important;
+}
+
 @layer components {
   .stat-card {
     @apply bg-card rounded-lg border border-border p-5 flex flex-col gap-2;

@@ -544,8 +544,8 @@ export default function StudentIntelligence() {
     };
 
     return (
-      <div className="animate-in fade-in duration-500 -mx-3 -mt-3"
-        style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
+      <div data-sfpro className="animate-in fade-in duration-500 -mx-3 -mt-3"
+        style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif", background: BG, minHeight: "100vh" }}>
 
         {/* Page Head */}
         <div className="px-5 pt-4">
@@ -739,8 +739,8 @@ export default function StudentIntelligence() {
   };
 
   return (
-    <div className="pb-10 w-full px-2 animate-in fade-in duration-500"
-      style={{ fontFamily: "'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif" }}>
+    <div data-sfpro className="pb-10 w-full px-2 animate-in fade-in duration-500"
+      style={{ fontFamily: "'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif" }}>
 
       {/* Toolbar */}
       <div className="flex items-center justify-between gap-4 pt-2 pb-5 flex-wrap">
